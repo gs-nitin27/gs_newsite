@@ -1,0 +1,294 @@
+body{
+	/*background: url('../img/bg.jpg') top center no-repeat;width:100%;height:1100px;position: absolute;top:0;*/
+	font-family: 'Poppins';
+	font-weight: 400;
+	font-size: 14px;
+    background-color: #f4f4f4;
+}
+a:hover{text-decoration: none;}
+a:foucs{outline: none;}
+ul{margin: 0;padding: 0;list-style: none;}
+/*	==========		Anil Pahariya		==========	*/
+
+.headerSec{padding:15px 0;background-color: #03a9f5; }
+.headerSec .navbar-toggle{background:rgba(0,0,0,0.5);}
+.headerSec .navbar-toggle .icon-bar{background-color: #fff;}
+.logoSec{float: left;}
+.topNav ul{}
+.topNav ul li{display: inline-block;}
+.topNav ul li a{display: inline-block;font:14px/20px 'Poppins'; color: #fff;padding:10px; }
+.topNav ul li img{display: inline-block;vertical-align: middle;margin:-3px 10px 0 0; }
+.topNav .nav>li>a:focus, .topNav .nav>li>a:hover{background-color: transparent;}
+.headerSec .navbar-collapse.collapse{padding-bottom: 0;}
+.topNav .user{margin-top: -8px;}
+.topNav .dropdown-menu{}
+.topNav .dropdown-menu a{color: #666666; font:14px/20px 'Poppins';display: block;}
+.topNav .dropdown-menu a i{margin:0 5px 0 0; }
+.topNav .nav .open>a{background-color: transparent;}
+
+.bodySec{padding:30px 0;}
+.tabSec{}
+.tabSec ul{display: block;}
+.tabSec ul li{display: inline-block;width: 32%;}
+.tabSec ul li:nth-child(2){margin:0 2%; }
+.tabSec ul li a{color: #666666; font:20px/30px 'Poppins';background-color: transparent;border-radius: 6px;box-shadow: 0 4px 16px #c1c1c1; 
+padding:30px 0 30px 130px; position: relative;float: left;background-color: #fff;display:inline-block;width: 100%;}
+.tabSec ul li a.tab01:before{position: absolute;background: url('../img/tab01.png') top center no-repeat;height: 60px;width:60px; content: '';left:  15px;top: 10px;}
+.tabSec ul li a.tab02:before{position: absolute;background: url('../img/tab02.png') top center no-repeat;height: 60px;width:60px; content: '';left:  15px;top: 15px;}
+.tabSec ul li a.tab03:before{position: absolute;background: url('../img/tab03.png') top center no-repeat;height: 60px;width:60px; content: '';left:  15px;top: 10px;}
+.tabSec .nav-tabs{border: none;}
+.tabSec ul li.active {/*background-color: #03a9f5;*/}
+/*.tabSec ul li.active a{background-color: #03a9f5;}*/
+
+.tabSec ul li.active a:hover, .tabSec ul li a:hover{background-color: #03a9f5;/*border: none;*/ color: #fff;}
+.tabSec .nav-tabs > li.active > a, .tabSec .nav-tabs > li.active > a:focus, .tabSec .nav-tabs > li.active > a:hover{
+    background-color: #03a9f5;color: #fff;text-decoration: none;border: none;}
+
+
+.tabSec ul li a img{float: left;margin:0 30px 0 0; }
+.tabSec ul li.active a.tab01:before{position: absolute;background: url('../img/tab01_white.png') top center no-repeat;height: 60px;width:60px; content: '';left:  15px;top: 10px;}
+.tabSec ul li.active a.tab02:before{position: absolute;background: url('../img/tab02_white.png') top center no-repeat;height: 60px;width:60px; content: '';left:  15px;top: 15px;}
+.tabSec ul li.active a.tab03:before{position: absolute;background: url('../img/tab03_white.png') top center no-repeat;height: 60px;width:60px; content: '';left:  15px;top: 10px;}
+
+
+.tabSec ul li:hover a.tab01:before{position: absolute;background: url('../img/tab01_white.png') top center no-repeat;height: 60px;width:60px; content: '';left:  15px;top: 10px;}
+.tabSec ul li:hover a.tab02:before{position: absolute;background: url('../img/tab02_white.png') top center no-repeat;height: 60px;width:60px; content: '';left:  15px;top: 15px;}
+.tabSec ul li:hover a.tab03:before{position: absolute;background: url('../img/tab03_white.png') top center no-repeat;height: 60px;width:60px; content: '';left:  15px;top: 10px;}
+
+
+
+.deshboard2 .tabSec ul li a.tab04:before{position: absolute;background: url('../img/tab04.png') top center no-repeat;height: 78px;width:88px; content: '';left:  15px;top: 10px;}
+.deshboard2 .tabSec ul li a.tab05:before{position: absolute;background: url('../img/tab05.png') top center no-repeat;height: 78px;width:88px; content: '';left:  15px;top: 10px;}
+.deshboard2 .tabSec ul li a.tab06:before{position: absolute;background: url('../img/tab06.png') top center no-repeat;height: 78px;width:88px; content: '';left:  15px;top: 10px;}
+
+.deshboard2 .tabSec ul li.active a.tab04:before{position: absolute;background: url('../img/tab04_white.png') top center no-repeat;height: 78px;width:88px; content: '';left:  15px;top: 10px;}
+.deshboard2 .tabSec ul li.active a.tab05:before{position: absolute;background: url('../img/tab05_white.png') top center no-repeat;height: 78px;width:88px; content: '';left:  15px;top: 15px;}
+.deshboard2 .tabSec ul li.active a.tab06:before{position: absolute;background: url('../img/tab06_white.png') top center no-repeat;height: 78px;width:88px; content: '';left:  15px;top: 10px;}
+
+.deshboard2 .tabSec ul li:hover a.tab04:before{position: absolute;background: url('../img/tab04_white.png') top center no-repeat;height: 78px;width:88px; content: '';left:  15px;top: 10px;}
+.deshboard2 .tabSec ul li:hover a.tab05:before{position: absolute;background: url('../img/tab05_white.png') top center no-repeat;height: 78px;width:88px; content: '';left:  15px;top: 15px;}
+.deshboard2 .tabSec ul li:hover a.tab06:before{position: absolute;background: url('../img/tab06_white.png') top center no-repeat;height: 78px;width:88px; content: '';left:  15px;top: 10px;}
+
+
+.tabSec .btn.btn-n {
+    color: #fff;
+    background-color: #29aae1;
+    border-color: #29aae1;
+    padding: 8px 30px;
+    border-radius: 50px;
+    outline: none;
+    font-weight: normal;
+    font-size: 15px;
+	margin-left:15px;
+}
+
+a.cleateJob{
+    background-color: #27ba1f;
+    color: #fff;    
+    padding: 12px 25px;
+   /* width: 50px;border-radius: 50%;
+    height: 50px;line-height: 33px;animation: 2s ease-in infinite zoomin;*/
+    right: -79px;
+    border-radius: 6px;
+    position: fixed;
+    bottom: 40%;
+    text-align: center;
+    
+    font-size: 20px;
+    box-shadow: 1px 2px 9px #dddddd;
+    /*border-radius: 0px 20px 0px 20px;*/
+    transition: all .5s ease-in-out;
+    transform: rotate(90deg);
+}
+a.cleateJob i{    margin: 0 10px 0 0;
+    border: 2px solid #fff;
+    padding: 6px;
+    text-align: center;
+    border-radius: 50%; }
+.jobsaveTab .publishBtn{background-color: #03a9f5;color:#fff;padding:8px 20px;font:bold 18px/25px 'Poppins';
+    top:0px;left:0px;position:absolute;border-radius: 50px;box-shadow: 1px 5px 9px #6d6d6d;
+}
+.publishBtn{transition: all .5s ease-in-out; animation: 10s ease-in infinite myanimation;}
+.uploadFileBtn{font:16px/20px 'Poppins';text-transform: capitalize;color: #fff ;background-color: #03a9f5;padding:10px 35px; 
+text-align: center;border-radius: 4px;cursor: pointer;margin: 10px 10px 0 0;display: inline-block;border: none;}
+.uploadBlock{position: relative;}
+.uploadBlock:before{position: absolute;content: '\f0c1';font-family: 'FontAwesome';left: 10px;top: 15px;color: #fff;font-size: 20px;}
+.uploadFileBtn i{margin-right: 10px;}
+.uploadFileBtn:hover{color: #fff;}
+#uploadFile{display: none;}
+
+.deshName span{color: #fff; margin: 15px 0 0 0;font:bold 16px/20px 'Poppins';text-transform: uppercase;display:inline-block;}
+
+.toggleBtn{color: #fff;font-size: 30px;position: relative;}
+.sideNav{height:100%;width:250px;position:fixed;z-index:9;top:0;right: -250px;background: rgba(0,0,0,0.9);overflow-x:hidden;transition: 0.5s;padding-top: 35px;}
+.sideNav ul{margin: 0;padding: 0;}
+.sideNav ul li {display: block; margin: 0px 0;}
+.sideNav ul li a {font:16px/20px 'Poppins';text-transform: capitalize;color: #fff ;display: block;padding:10px 0 10px 18px;text-transform: uppercase;}
+.sideNav ul li a:hover{background-color: #03a9f5;}
+.sideNav ul li:first-child a:hover{background-color: transparent;}
+.sideNav ul li a i{margin-right: 12px;}
+.sideNav ul li a i.close_mySidenav{margin:0 10px 0 0;font-size: 24px; position: absolute;right: 10px;top: 10px;}
+
+.sideNav .dropdown-menu{width: 100%;}
+.sideNav .dropdown-menu a{color: #333;}
+
+
+@keyframes zoomin {
+   0% {transform: scale(1);}
+   50% {transform: scale(0.60);}
+   100% {transform: scale(1);}
+ } /*End of Zoom in Keyframes */
+
+ /* Zoom out Keyframes */
+ @keyframes zoomout {
+   0% {transform: scale(1);}
+   50% {transform: scale(0.67);}
+   100% {transform: scale(1);}
+ }
+
+ @keyframes myanimation {
+  0% {background-color: red;}
+  25%{background-color:black;}
+  50%{background-color:green;}
+  75%{background-color:brown;}
+  100%{background-color:#03a9f5;}
+}
+
+
+.tabContentBox .tab-pane{/*text-align:center*/}
+.tabContentBox{margin:30px 0;background-color: #fff;box-shadow: 0 4px 16px #c1c1c1;padding:40px 20px; }
+.tabContentBox label{color: #666666; font:16px/28px 'Poppins';margin: 10px 0 15px 0;display: block;text-transform: capitalize;}
+.tabContentBox textarea{resize: none;height: 80px;}
+.tabContentBox .form-control{}
+.tabContentBox .adrs{position: relative;}
+.tabContentBox .adrs .form-control{padding-left:40px;}
+.tabContentBox .adrs:before{position: absolute;background: url('../img/address.png') top center no-repeat;height: 26px;width:17px; content: '';left:  15px;top: 55px;}
+
+.colSec{width:22%;position:relative;display:inline-block;text-align:center;margin:0 15px 30px 0; padding: 16px; border-radius: 6px;
+  box-shadow: 0 2px 8px #c1c1c1;
+}
+.colSec:last-child{margin-right:0}
+.overLap{position:absolute;width:100%;height:100%;background:rgba(0,0,0,0.3);top:0px;border-radius:5px; left:0px !important;}
+.colBox{padding: 0px 0 0 0;display: inline-block;border-radius: 10px 10px 0 0;position: relative;background-color: #f8f8f8; }
+/*.colBox figure{text-align: center;}*/
+.colBox:after{position: absolute;background: url('../img/eye.png') top center no-repeat;height: 49px;width:49px; content: '';right:10px;top:10px; cursor:pointer}
+.colBox .img-responsive{text-align: center;margin: 0 auto; display: initial;
+  filter: grayscale(100%) brightness(109%) contrast(120%);
+  transition: all .5s ease-in-out;
+}
+
+.publishCard{font: 16px/25px 'Poppins';color: #000;background-color: #dddddd;display: block;padding: 10px 0;transition: all .5s ease-in-out;width: 100%;margin: 0 auto;
+  border-radius: 50px;
+}
+.colSec:hover .publishCard{background: -moz-linear-gradient(42deg, #03a9f5 0%, #005e89 100%);/* FF3.6+ */
+background: -webkit-gradient(linear, 42deg, color-stop(0%, #03a9f5), color-stop(100%, #005e89));/* Chrome,Safari4+ */
+background: -webkit-linear-gradient(42deg, #03a9f5 0%, #005e89 100%);/* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(42deg, #03a9f5 0%, #005e89 100%);/* Opera 11.10+ */
+background: -ms-linear-gradient(42deg, #03a9f5 0%, #005e89 100%);/* IE10+ */
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#03a9f5', endColorstr='#005e89', GradientType='1'); /* for IE */
+background: linear-gradient(48deg, #03a9f5 0%, #005e89 100%);/* W3C */color: #fff;transition: all .5s ease-in-out;}
+.colSec:hover .img-responsive{filter: none;transition: all .5s ease-in-out;}
+.cricket{color: #333; font:13px/16px 'Poppins';margin: 0px 0 0px 0;padding: 20px 0px;background-color: #fff;border-radius: 8px;}
+.cricket i{margin:0px 10px 0 0;font-size: 16px; color: #03A9F5;}
+.colBox p{background:rgba(0,0,0,0.8);color:#fff;font:16px/20px 'Poppins';padding:8px 0 8px 10px;width:100%;display:block;margin:0}
+.uploadBox{border:1px solid #c1c1c1;width:300px;text-align:center;margin:20px auto 0;padding:10px;overflow: hidden;	}
+.uploadBox:hover img{ filter: grayscale(100%) brightness(109%) contrast(120%)}
+
+.jobActiveSec{position:relative}
+.jobsaveTab h1{font:bold 20px/25px 'Poppins';color:#333;margin:20px 0 40px 0; text-transform:uppercase}
+.jobsaveTab .jobSave{text-align:left;margin:0 0 10px 0;position:relative}
+.jobsaveTab .jobSave:after{position:absolute;content:'';height:130px;width:1px; background-color:#ccc;top:0;right:30px;}
+.jobsaveTab .jobSave p{font:14px/15px 'Poppins';color:#666}
+.jobsaveTab .jobSave p span{color: #333;font-weight: bold;margin: 0 5px 0 5px;}
+
+.jobsaveTab .publishBtn i{margin:0 5px 0 0;}
+.publishBtn i{margin:0 5px 0 0;}
+.jobsaveTab .publishBtn:hover{color:#fff;}
+#tab03, .jobsaveTab{position:relative}
+.jobsaveTab .viewBtn.btn.btn-n{background-color: #27ba1f; border: none;;}
+.jobsaveTab .viewBtn i{margin:0 5px 0 0;font-size:20px;}
+.jobsaveTab .viewImg {border: 1px solid #c1c1c1;}
+.emptyDesh img{margin: 0 auto;display: block;}
+
+
+@media only screen and (max-width: 992px){
+    .tabSec ul li a{padding: 45px 0 45px 105px;}
+
+    .tabSec ul li a.tab01:before{left:  15px;top: 25px;}
+    .tabSec ul li a.tab02:before{left:  15px;top: 25px;}
+    .tabSec ul li a.tab03:before{left:  15px;top: 25px;}
+
+    .tabSec ul li.active a.tab01:before{left: 15px;top: 25px;}
+    .tabSec ul li.active a.tab02:before{left: 15px;top: 25px;}
+    .tabSec ul li.active a.tab03:before{left: 15px;top: 25px;}
+
+    .tabSec ul li:hover a.tab01:before{left:  15px;top: 25px;}
+    .tabSec ul li:hover a.tab02:before{left:  15px;top: 25px;}
+    .tabSec ul li:hover a.tab03:before{left:  15px;top: 25px;}
+
+
+    .deshboard2  .tabSec ul li a.tab04:before{left:  15px;top: 25px;}
+    .deshboard2  .tabSec ul li a.tab05:before{left:  15px;top: 25px;}
+    .deshboard2  .tabSec ul li a.tab06:before{left:  15px;top: 25px;}
+
+    .deshboard2  .tabSec ul li.active a.tab04:before{left: 15px;top: 25px;}
+    .deshboard2  .tabSec ul li.active a.tab05:before{left: 15px;top: 25px;}
+    .deshboard2  .tabSec ul li.active a.tab06:before{left: 15px;top: 25px;}
+
+    .deshboard2  .tabSec ul li:hover a.tab04:before{left:  15px;top: 25px;}
+    .deshboard2  .tabSec ul li:hover a.tab05:before{left:  15px;top: 25px;}
+    .deshboard2  .tabSec ul li:hover a.tab06:before{left:  15px;top: 25px;}
+
+     .tabSec ul li a{font: 18px/24px 'Poppins';}
+
+}
+@media only screen and (max-width: 800px){
+   .colSec{width: 30%;}
+  /* .tabSec ul li a{padding: 45px 0 45px 90px;}
+
+  .deshboard2 .tabSec ul li a.tab04:before {left: 0}
+  .deshboard2 .tabSec ul li a.tab05:before {left: 0}
+  .deshboard2 .tabSec ul li a.tab06:before {left: 0}
+
+  .deshboard2 .tabSec ul li:hover a.tab04:before {left: 0}
+  .deshboard2 .tabSec ul li:hover a.tab05:before {left: 0}
+  .deshboard2 .tabSec ul li:hover a.tab06:before {left: 0}
+
+  .deshboard2 .tabSec ul li:active a.tab04:before {left: 0}
+  .deshboard2 .tabSec ul li:active a.tab05:before {left: 0}
+  .deshboard2 .tabSec ul li:active a.tab06:before {left: 0}*/
+
+  .jobsaveTab .jobSave:after {width: 0;}
+}
+
+
+@media only screen and (max-width: 767px){
+    .tabSec ul li{width:100%;margin:20px 0;  }
+    .tabSec ul li:nth-child(2){margin-left:0;margin-right: 0; }
+    #topNav{width: 100%;}
+    .topNav ul li{display: block;margin:10px 0; padding:3px 0;}
+    .topNav ul li a{display: block;}
+    .topNav ul li:hover{background-color:rgba(0,0,0,0.5);}
+    .topNav .dropdown-menu a{padding-left: 20px;color: #fff;display: block;}
+    .viewImg {margin:20px 0 ; }
+
+    .jobsaveTab h1{margin: 20px 0 20px 0;}
+    #spnFilePath{display: block;margin: 15px 0 0 0;}
+    .navbar-toggle{display: none;}
+
+}
+
+
+
+@media only screen and (max-width: 600px){
+    .tabContentBox .mobView{width: 100%;}
+    .colSec{width: 45%;}
+     a.cleateJob{right: 0;border-radius: 50%;padding: 10px;}
+    .cleateJob span{display: none;}
+    a.cleateJob i{margin-right: 0;text-align: center;}
+}
+
+@media only screen and (max-width: 480px){
+    
+    .colSec{width: 100%;margin-right: 0;}
+}
