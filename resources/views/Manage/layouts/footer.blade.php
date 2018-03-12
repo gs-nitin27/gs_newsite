@@ -1,4 +1,4 @@
-<div class="clearfix"></div>
+<!-- <div class="clearfix"></div>
 <div class="relative">
   <div class="foot-top"></div>
      </div>
@@ -18,4 +18,26 @@
 			<span>© 2017 getsporty. All rights reserved</span>
          </div>
       </div>
-   </div>
+   </div> -->
+  <script type="text/javascript">
+    $(document).ready(function() {
+       
+
+      /* $(".uploadFileBtn").click(function() {
+          $('#uploadFile').trigger('click');
+         
+      });*/
+
+
+      $(".toggleBtn").click(function() {
+          $('#mySidenav').css('right', '0px');
+         
+      });
+
+      $(".close_mySidenav").click(function() {
+          $('#mySidenav').css('right', '-250px');
+      });
+});
+    
+
+  </script>

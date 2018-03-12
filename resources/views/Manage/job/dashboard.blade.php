@@ -29,7 +29,7 @@
                     <div class = "tab-pane fade in active jobActiveSec" id = "tab01">
                         <section class="clearfix colSec">                        	
                             <div class="colBox">
-                                <figure><img class="img-responsive" src="img/demo.jpg"></figure>
+                                <figure><img class="img-responsive" src="{{asset('manage_assets/img/demo.jpg')}}"></figure>
                                 <p class="">Assistant Trainer</p>
                             </div>
                             <p class="cricket"><i class="fa fa-map-marker"></i>Ghaizabad Sports - Cricket</p>
@@ -37,7 +37,7 @@
                         </section>
                         <section class="clearfix colSec">                         
                             <div class="colBox">
-                                <figure><img class="img-responsive" src="img/t1.jpg"></figure>
+                                <figure><img class="img-responsive" src="{{asset('manage_assets/img/t1.jpg')}}"></figure>
                                 <p class="">Assistant Trainer</p>
                             </div>
                             <p class="cricket"><i class="fa fa-map-marker"></i>Ghaizabad Sports - Cricket</p>
@@ -45,7 +45,7 @@
                         </section>
                         <section class="clearfix colSec">                         
                             <div class="colBox">
-                                <figure><img class="img-responsive" src="img/t2.jpg"></figure>
+                                <figure><img class="img-responsive" src="{{asset('manage_assets/img/t2.jpg')}}"></figure>
                                 <p class="">Assistant Trainer</p>
                             </div>
                             <p class="cricket"><i class="fa fa-map-marker"></i>Ghaizabad Sports - Cricket</p>
@@ -53,7 +53,7 @@
                         </section>
                         <section class="clearfix colSec">                         
                             <div class="colBox">
-                                <figure><img class="img-responsive" src="img/t3.jpg"></figure>
+                                <figure><img class="img-responsive" src="{{asset('manage_assets/img/t3.jpg')}}"></figure>
                                 <p class="">Assistant Trainer</p>
                             </div>
                             <p class="cricket"><i class="fa fa-map-marker"></i>Ghaizabad Sports - Cricket</p>
@@ -61,7 +61,7 @@
                         </section>
                         <section class="clearfix colSec">                         
                             <div class="colBox">
-                                <figure><img class="img-responsive" src="img/t4.jpg"></figure>
+                                <figure><img class="img-responsive" src="{{asset('manage_assets/img/t4.jpg')}}"></figure>
                                 <p class="">Assistant Trainer</p>
                             </div>
                             <p class="cricket"><i class="fa fa-map-marker"></i>Ghaizabad Sports - Cricket</p>
@@ -69,7 +69,7 @@
                         </section>
                         <section class="clearfix colSec">                         
                             <div class="colBox">
-                                <figure><img class="img-responsive" src="img/t5.jpg"></figure>
+                                <figure><img class="img-responsive" src="{{asset('manage_assets/img/t5.jpg')}}"></figure>
                                 <p class="">Assistant Trainer</p>
                             </div>
                             <p class="cricket"><i class="fa fa-map-marker"></i>Ghaizabad Sports - Cricket</p>
@@ -80,7 +80,7 @@
                      <div class = "tab-pane fade" id = "tab02">
                         <section class="clearfix colSec">                         
                             <div class="colBox">
-                                <figure><img class="img-responsive" src="img/demo.jpg"></figure>
+                                <figure><img class="img-responsive" src="{{asset('manage_assets/img/demo.jpg')}}"></figure>
                                 <p class="">Assistant Trainer</p>
                             </div>
                             <p class="cricket"><i class="fa fa-map-marker"></i>Ghaizabad Sports - Cricket</p>
@@ -89,7 +89,7 @@
                         </section> 
                         <section class="clearfix colSec">                         
                             <div class="colBox">
-                                <figure><img class="img-responsive" src="img/t2.jpg"></figure>
+                                <figure><img class="img-responsive" src="{{asset('manage_assets/img/t2.jpg')}}"></figure>
                                 <p class="">Assistant Trainer</p>
                             </div>
                             <p class="cricket"><i class="fa fa-map-marker"></i>Ghaizabad Sports - Cricket</p>
@@ -98,7 +98,7 @@
                         </section> 
                         <section class="clearfix colSec">                         
                             <div class="colBox">
-                                <figure><img class="img-responsive" src="img/t5.jpg"></figure>
+                                <figure><img class="img-responsive" src="{{asset('manage_assets/img/t5.jpg')}}"></figure>
                                 <p class="">Assistant Trainer</p>
                             </div>
                             <p class="cricket"><i class="fa fa-map-marker"></i>Ghaizabad Sports - Cricket</p>
@@ -107,7 +107,7 @@
                         </section> 
                        <section class="clearfix colSec">                         
                             <div class="colBox">
-                                <figure><img class="img-responsive" src="img/t3.jpg"></figure>
+                                <figure><img class="img-responsive" src="{{asset('manage_assets/img/t3.jpg')}}"></figure>
                                 <p class="">Assistant Trainer</p>
                             </div>
                             <p class="cricket"><i class="fa fa-map-marker"></i>Ghaizabad Sports - Cricket</p>
@@ -120,7 +120,7 @@
 
                         <section class="clearfix colSec">                         
                             <div class="colBox">
-                                <figure><img class="img-responsive" src="img/t1.jpg"></figure>
+                                <figure><img class="img-responsive" src="{{asset('manage_assets/img/t1.jpg')}}"></figure>
                                 <p class="">Assistant Trainer</p>
                             </div>
                             <p class="cricket"><i class="fa fa-map-marker"></i>Ghaizabad Sports - Cricket</p>
@@ -129,7 +129,7 @@
                         </section> 
                         <section class="clearfix colSec">                         
                             <div class="colBox">
-                                <figure><img class="img-responsive" src="img/t2.jpg"></figure>
+                                <figure><img class="img-responsive" src="{{asset('manage_assets/img/t2.jpg')}}"></figure>
                                 <p class="">Assistant Trainer</p>
                             </div>
                             <p class="cricket"><i class="fa fa-map-marker"></i>Ghaizabad Sports - Cricket</p>
@@ -138,7 +138,7 @@
                         </section> 
                         <section class="clearfix colSec">                         
                             <div class="colBox">
-                                <figure><img class="img-responsive" src="img/t5.jpg"></figure>
+                                <figure><img class="img-responsive" src="{{asset('manage_assets/img/t5.jpg')}}"></figure>
                                 <p class="">Assistant Trainer</p>
                             </div>
                             <p class="cricket"><i class="fa fa-map-marker"></i>Ghaizabad Sports - Cricket</p>
@@ -147,7 +147,7 @@
                         </section> 
                        <section class="clearfix colSec">                         
                             <div class="colBox">
-                                <figure><img class="img-responsive" src="img/t1.jpg"></figure>
+                                <figure><img class="img-responsive" src="{{asset('manage_assets/img/t1.jpg')}}"></figure>
                                 <p class="">Assistant Trainer</p>
                             </div>
                             <p class="cricket"><i class="fa fa-map-marker"></i>Ghaizabad Sports - Cricket</p>
@@ -173,7 +173,7 @@
                         </section>
                         <section class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                         	<div class="viewImg ">
-                                <figure><img class="img-responsive" src="img/demo.jpg"></figure>                                
+                                <figure><img class="img-responsive" src="{{asset('manage_assets/img/demo.jpg')}}"></figure>                                
                             </div>
                         </section>
                         <div class="clearfix">
@@ -184,30 +184,6 @@
                 </div>
             </section>
         </div>
-         <a href="#" class="cleateJob"><i class="glyphicon glyphicon-plus"></i><span>Create Job</span></a>
+         <a href="create" class="cleateJob"><i class="glyphicon glyphicon-plus"></i><span>Create Job</span></a>
     </section>
-  <script type="text/javascript">
-    $(document).ready(function() {
-       
-
-      /* $(".uploadFileBtn").click(function() {
-          $('#uploadFile').trigger('click');
-         
-      });*/
-
-
-      $(".toggleBtn").click(function() {
-          $('#mySidenav').css('right', '0px');
-         
-      });
-
-      $(".close_mySidenav").click(function() {
-          $('#mySidenav').css('right', '-250px');
-      });
-});
-    
-
-  </script>
-  </body>
-</html>
-    
+  @stop
