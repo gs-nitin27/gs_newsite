@@ -43,6 +43,11 @@ Route::get('get_Tounament','WebController@get_Tounament');
             return View::make('Manage.job.dashboard');
            //Route::get('get_Tounament','ManageController@get_Tounament');
         });
+        Route::get('/login', function()
+        {
+            return View::make('Manage.login');
+           //Route::get('get_Tounament','ManageController@get_Tounament');
+        });
 
         // subpage for the posts found at /admin/posts (app/views/admin/posts.blade.php)
         Route::get('create', function()
