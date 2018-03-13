@@ -48,5 +48,26 @@ Route::get('article-detail/{id}','WebController@article_detail');
 
 
 
+ Route::group(array('prefix' => 'manage'), function()
+    {
+        // main page for the admin section (app/views/admin/dashboard.blade.php)
+        Route::get('/dashbo', function()
+        {
+            return View::make('Manage.job.dashboard');
+           //Route::get('get_Tounament','ManageController@get_Tounament');
+        });
+
+        // subpage for the posts found at /admin/posts (app/views/admin/posts.blade.php)
+        Route::get('create', function()
+        {
+            return View::make('Manage.job.create-job');
+        });
+
+        // subpage to create a post found at /admin/posts/create (app/views/admin/posts-create.blade.php)
+        Route::get('posts/create', function()
+        {
+            return View::make('admin.posts-create');
+        });
+    });
 
 
