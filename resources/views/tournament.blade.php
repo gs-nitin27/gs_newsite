@@ -56,155 +56,12 @@
                	   <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod<br/> tempor incididunt.</p>
                   </div>   
 
-                  <div id="temp_tour"></div>             
-                  <div class="col-lg-3 col-md-3">
-                      <div class=" hover-boxs">
-                         <div class="job-box">
-                            <img src="img/tournament_img03.jpg">
-                          </div>
-                          <div class="slide-job-list">
-                              <h4>Sports Officer- IIT Mumbai, Indian Institute of Technology</h4>
-          				            <p> Location : <span> Mumbai</span></p>
-          				            <p> Start : <span> Jan 1, 2018 - Jan 27, 2018</span></p>
-          				            <p> Entry : <span> Dec 1, 2017 - Jan 1, 2018 </span></p>
-                              <p> Sport : <span>Lawn Tennis </span></p>
-          				            <div class="read-c"><a href="tournament-detail.php">Read More</a> </div>          				              
-                        </div>     	
-                      </div>
-                  </div> 
+                  <div id="temp_tour"></div>  
 
- 					        <div class="col-lg-3 col-md-3">
-                      <div class=" hover-boxs">
-                           <div class="job-box">
-                                <img src="img/tournament_img04.jpg">
-                            </div>
-                            <div class="slide-job-list">
-                                <h4>Sports Officer- IIT Jammu, Indian Institute of Technology</h4>
-                                <p> Location : <span> Patna</span></p>
-                                <p> Start : <span> Jan 1, 2018 - Jan 27, 2018</span></p>
-                                <p> Entry : <span> Dec 1, 2017 - Jan 1, 2018 </span></p>
-                                <p> Sport : <span>Lawn Tennis </span></p>
-                                <div class="read-c"> <a href="tournament-detail.php">Read More</a> </div>
-                            </div>     	
-                        </div>
-                  </div> 
-                      
-                     <div class="col-lg-3 col-md-3">
-                    <div class=" hover-boxs">
-                     <div class="job-box">
-                      <img src="img/tournament_img05.jpg">
-                       </div>
-                        <div class="slide-job-list">
-                          <h4>Sports Officer- IIT Jammu,
-Indian Institute of
-Technology</h4>
-                   <p> Location : <span> Patna</span></p>
-                    <p> Start : <span> Jan 1, 2018 - Jan 27, 2018</span></p>
-                      <p> Entry : <span> Dec 1, 2017 - Jan 1, 2018 </span></p>
-                      <p> Sport : <span>Lawn Tennis </span></p>
-                       <div class="read-c"> 
-                       <a href="tournament-detail.php">Read More</a> </div>
-                             </div>     	
-                         </div>
-                      </div> 
-                      
-                	 <div class="col-lg-3 col-md-3">
-                    <div class=" hover-boxs">
-                     <div class="job-box">
-                      <img src="img/tournament_img06.jpg">
-                       </div>
-                       <div class="slide-job-list">
-                          <h4>Sports Officer- IIT Jammu,
-Indian Institute of
-Technology</h4>
-                   <p> Location : <span> Patna</span></p>
-                    <p> Start : <span> Jan 1, 2018 - Jan 27, 2018</span></p>
-                      <p> Entry : <span> Dec 1, 2017 - Jan 1, 2018 </span></p>
-                      <p> Sport : <span>Lawn Tennis </span></p>
-                       <div class="read-c"> 
-                       <a href="tournament-detail.php">Read More</a> </div>
-                             </div>    	
-                         </div>
-                      </div>                    
-                      
-                      <div class="col-lg-3 col-md-3">
-                    <div class=" hover-boxs">
-                     <div class="job-box">
-                      <img src="img/tournament_img07.jpg">
-                       </div>
-                         <div class="slide-job-list">
-                          <h4>Sports Officer- IIT Jammu,
-Indian Institute of
-Technology</h4>
-                   <p> Location : <span> Patna</span></p>
-                    <p> Start : <span> Jan 1, 2018 - Jan 27, 2018</span></p>
-                      <p> Entry : <span> Dec 1, 2017 - Jan 1, 2018 </span></p>
-                      <p> Sport : <span>Lawn Tennis </span></p>
-                       <div class="read-c"> 
-                       <a href="tournament-detail.php">Read More</a> </div>
-                             </div>   	
-                         </div>
-                      </div> 
-   
-  				       <div class="col-lg-3 col-md-3">
-                    <div class=" hover-boxs">
-                     <div class="job-box">
-                      <img src="img/tournament_img08.jpg">
-                       </div>
-                         <div class="slide-job-list">
-                          <h4>Sports Officer- IIT Jammu,
-Indian Institute of
-Technology</h4>
-                   <p> Location : <span> Patna</span></p>
-                    <p> Start : <span> Jan 1, 2018 - Jan 27, 2018</span></p>
-                      <p> Entry : <span> Dec 1, 2017 - Jan 1, 2018 </span></p>
-                      <p> Sport : <span>Lawn Tennis </span></p>
-                       <div class="read-c"> 
-                       <a href="tournament-detail.php">Read More</a> </div>
-                             </div>    	
-                         </div>
-                      </div> 
-  
-  				 		 <div class="col-lg-3 col-md-3">
-                    <div class=" hover-boxs">
-                     <div class="job-box">
-                      <img src="img/tournament_img09.jpg">
-                       </div>
-                        <div class="slide-job-list">
-                          <h4>Sports Officer- IIT Jammu,
-Indian Institute of
-Technology</h4>
-                   <p> Location : <span> Patna</span></p>
-                    <p> Start : <span> Jan 1, 2018 - Jan 27, 2018</span></p>
-                      <p> Entry : <span> Dec 1, 2017 - Jan 1, 2018 </span></p>
-                      <p> Sport : <span>Lawn Tennis </span></p>
-                       <div class="read-c"> 
-                       <a href="tournament-detail.php">Read More</a> </div>
-                             </div>     	
-                         </div>
-                      </div> 
-
- 				         <div class="col-lg-3 col-md-3">
-                    <div class=" hover-boxs">
-                     <div class="job-box">
-                      <img src="img/tournament_img10.jpg">
-                       </div>
-                         <div class="slide-job-list">
-                          <h4>Sports Officer- IIT Jammu,
-Indian Institute of
-Technology</h4>
-                   <p> Location : <span> Patna</span></p>
-                    <p> Start : <span> Jan 1, 2018 - Jan 27, 2018</span></p>
-                      <p> Entry : <span> Dec 1, 2017 - Jan 1, 2018 </span></p>
-                      <p> Sport : <span>Lawn Tennis </span></p>
-                       <div class="read-c"> 
-                       <a href="tournament-detail.php">Read More</a> </div>
-                             </div>    	
-                         </div>
-                      </div> 
-                   </div>
-        	 	</div>
-        		 
+                
+                   
+                  
+         
   	       <div class="clearfix margin20"></div>
   	    <!--    <div class="text-center">
   	       	<i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
@@ -225,7 +82,7 @@ Technology</h4>
                       </ul>
                  </div>
           
-    
+ 
    
     
     <script>

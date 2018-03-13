@@ -1,44 +1,7 @@
-<?php
-//include 'session.php';
-ob_start();
-?>
-   <nav class="navbar navbar-default bg0 affix" data-spy="affix" data-offset-top="10">
-         <div class="container">
-          <!-- Brand and toggle get grouped for better mobile display -->
-           <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            </button>
-           <a class="navbar-brand logo" href="index.php"><img class="img-responsive" src="img/logo.png"></a>
-         </div>
-        <!-- Collect the nav links, forms, and other content for toggling -->
-          <div class="collapse navbar-collapse" id="navbar-collapse-1">
-               <ul class="nav navbar-nav navbar-right text-uppercase">
-                 <!--  <li><a href="index.php">Home</a></li> -->
-                  <li ><a href="aboutus.php">About us</a></li>
-                  <!-- <li><a href="#getApp" data-toggle="modal">Get app  </a></li> -->
-                  <li class="active"><a href="event.php" >Event </a></li>
-                  <li ><a href="job-listing.php">Job</a></li>
-                  <li ><a href="tournament.php">Tournaments</a></li>
-                  <li><a href="article.php">Article</a></li>
-                  <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                       Bussiness <b class="caret"></b>
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a class="" href="landing-job.php">  Job Landing </a></li>
-                        <li><a class="" href="landing-event.php">  Event Landing  </a></li>
-                        <li><a class="" href="tournament.php"> Tournament </a></li>
-                    </ul>
-                  </li>
-                  <li><a href="support.php">Contact Us</a></li>
-              </ul>
-           </div><!-- /.navbar-collapse -->
-          </div><!-- /.container -->
-         </nav><!-- /.navbar -->
+@extends('layouts.master')
+@section('pageTitle','Home')
+@section('content')
+
      <div class="joblist-bg eventBg bannerBgSec">
      
           <div class="container">
@@ -77,39 +40,41 @@ ob_start();
         	<div class="container">
         	 	 <div class="row">
         		   <div class="col-lg-7 col-md-7">
-            			 <div class="left-img-job"> <img src="img/tournament.jpg"> </div>		
+
+            			 <div class="left-img-job"> <img src="https://getsporty.in/portal/uploads/event/{{$name[0]->image}}"> </div>		
         		    </div>
         		    <div class="col-lg-5 col-md-5">
         			       <div class="right-list-job" style="padding: 50px 0 0 0;">
-        				          <h4>Sports Trials- Kerala State 
-Sports Council (KSSC)</h4>
-                          <p> Type : <span> Free</span></p>
-                          <p> Organizer Name : <span> Kerala State </span></p>
-                          <p> Location : <span> Central Stadium, Thiruvananthapuram. </span></p>
-                          <p> Email : <span>NA </span></p>
+      				            <h4>
+                          {{$name[0]->name}}
+                          </h4>
+                          <p> Type : <span> {{$name[0]->type}}</span></p>
+                          <p> Organizer Name : <span> {{$name[0]->organizer_name}}</span></p>
+                          <p> Location : <span> {{$name[0]->organizer_city}}. </span></p>
+                          <p> Email : <span>{{$name[0]->email_app_collection}}</span></p>
         			       </div>
         		    </div>
         		    <div class=" clearfix margin15"></div>
         			  <div class="right-list-job pad15">
           			    <p>Event  Description : 
-                        <span> Jain International School, Aurangabad, is looking for Sports Teacher / Physical Education teacher. Candidate should be able to train students in various sports like football, basketball, volleyball, cricket, Gymnastics etc.<br><br>
-            			    	Candidate Should be Multi talented , Energetic with good communication skill, pleasant personality . Fluency in English is a must. Candidate should also be able to train & assist in organizing school functions /events. While knowledge about sports is the most important aspect as far as this job is concerned.
-            			      </span>        			       
+                        <span> {{$name[0]->description}}
+                        </span>        			       
                     </p>        			   
               			<p> Tournamnet Rules : <span>Recognised degree from a reputed university. Adequate experience in the related field preferably in CBSE / International School. Specialization in the subject for which a candidate is applying for the job. </span></p>
               			   
               			<p>Key Requirement :  <span>Fluency in English is a must.</span></p>        			    
-              			<p>Event Name : <span> Jain International School Aurangabad.</span></p>        			     
+              			<p>Event Name : <span> {{$name[0]->name}}.</span></p>        			     
               			<p>Event Organiser : 
-                        <span> Jain International School Aurangabad(M.S) is CBSE affiliated school upto Sr. Sec. level, with lush green 16 acres of campus, pollution free environment with International facilities and a huge infrastructure with day boarding facilities.</span>
+                        <span> {{$name[0]->organizer_name}}.</span>
                     </p>        			
-              			<p>Event Address : <span>Jain International School, Aurangabad , Aurangabad - Nasik Road, Dist. Aurangabad, Maliwada, Maharashtra</span></p>        			
-              			<p>Event City : <span>Aurangabad</span></p>        			 
-            			  <p>Event Pin : <span>431002 </span></p>      			  
-            			  <p>For more info : <span class="read-c"><a href="#"> Click here</a> </span></p>
+              			<p>Event Address : <span>{{$name[0]->address_1}}</span></p>        			
+              			<p>Event City : <span>{{$name[0]->organizer_city}}</span></p>        			 
+            			  <p>Event Pin : <span>{{$name[0]->pin}} </span></p>      			  
+            			  <p>For more info : <span class="read-c"><a href="{{$name[0]->event_links}}"> Click here</a> </span></p>
         			 </div>
         		</div>
         </div>
+
   	 <div class="clearfix margin20"></div>
       <section class="testimonials">
 	        <div class="container">
@@ -143,7 +108,7 @@ Sports Council (KSSC)</h4>
               </div>
           </div>
     </section>  
-
+ 
 
      <div class="sidebarMide">
           <a href="#" class="cleateJob"><i class="fa fa-facebook"></i></a>
@@ -154,18 +119,7 @@ Sports Council (KSSC)</h4>
     </div>
 
 
-           
-
-
-<?php
-//Assign all Page Specific variables
-$pagemaincontent = ob_get_contents();
-ob_end_clean();
-$pagetitle = "Event Detail";
-$contentheader = "";
-//Apply the template
-include("template.php");
-?>  
+ 
  <script>
     jQuery(document).ready(function($) {
         		"use strict";
@@ -194,3 +148,6 @@ include("template.php");
 		    });
 
     </script>
+
+
+@stop   

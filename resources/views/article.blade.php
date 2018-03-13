@@ -58,7 +58,11 @@
                   <div id="temp_article"></div>    
 
                 <div class="img-box"><img src=""></div>
-                             
+                              <div class="white-b">
+                                  <h4>sdsd</h4>
+                                  <p>rtytyrt</p>
+                                  <div class="readMoreBtn"><a href="#">Read More</a> </div>
+                              </div>
 
            <div class="clearfix margin20"></div>
         <!--    <div class="text-center">
