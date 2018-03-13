@@ -8,6 +8,7 @@ use App\Http\Requests;
 use App\WebModel;  // included Model 
     class WebController extends Controller
     {
+       
     public function index()
     {
     $obj  = new WebModel();
@@ -58,10 +59,6 @@ use App\WebModel;  // included Model
 
     public function getlandingevent()
     {
-
-   // $obj  = new WebModel();
- //   $resp = $obj->getHomeData();
-
     return View::make("landing-event");
     }
 
@@ -109,6 +106,43 @@ use App\WebModel;  // included Model
     }
 
 
+    
+    public function event_detail($id)
+    {
+    $obj  = new WebModel();
+
+    $resp = $obj->getEventDetail($id);
+    return View::make("event-detail")->with('name', $resp);
+
+    }
+
+    public function job_detail($id)
+    {
+
+    $obj  = new WebModel();
+    $resp = $obj->getJobDetail($id);
+    
+    return View::make("job-listing-detail")->with('name', $resp);
+
+    }
+
+    public function tournament_detail($id)
+    {
+      
+    $obj  = new WebModel();
+    $resp = $obj->getTournamentDetail($id);
+    
+    return View::make("tournament-detail")->with('name', $resp);
+
+    }
+
+    public function article_detail($id)
+    {
+
+    $obj  = new WebModel();
+    $resp = $obj->getArticleDetail($id);
+    return View::make("article-detail")->with('name', $resp);
+    }
 
 
 

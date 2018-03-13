@@ -15,6 +15,9 @@
 //     return view('welcome');
 // });
 
+
+
+
 Route::get('/','WebController@index');
 
 Route::get('aboutus','WebController@getaboutus');
@@ -32,6 +35,16 @@ Route::get('get_job','WebController@get_Job');
 Route::get('get_Article','WebController@get_Article');
 Route::get('get_Event','WebController@get_Event');
 Route::get('get_Tounament','WebController@get_Tounament');
+
+
+Route::get('event-detail/{id}','WebController@event_detail');
+Route::get('job-detail/{id}','WebController@job_detail');
+
+Route::get('tournament-detail/{id}','WebController@tournament_detail');
+
+Route::get('article-detail/{id}','WebController@article_detail');
+
+
 
 
 

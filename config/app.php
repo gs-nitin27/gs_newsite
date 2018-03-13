@@ -39,6 +39,8 @@ return [
     |
     */
 
+    //'url' => 'https://www.mysite.com/lar2016';
+
     'url' => env('APP_URL', 'http://localhost'),
 
     /*
