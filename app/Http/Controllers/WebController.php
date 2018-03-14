@@ -110,28 +110,18 @@ use App\WebModel;
     public function event_detail($id)
     {
     $obj  = new WebModel();
-
     $resp = $obj->getEventDetail($id);
-
     $sport_name = $resp[0]->sport_name;
-    
     $resp1 = $obj->getEventDetail_data($sport_name);
-
-    //print_r($resp1); die();
-
-    //$data = array('resp' =>$resp ,'resp1'=>$resp1 );
-
-    return View::make("event-detail")->with('name', $resp,'name1',$resp1);
-
-
+    
+    return View::make("event-detail")->with('name', $resp)->with('name1',$resp1);
     }
+
 
     public function job_detail($id)
     {
-
     $obj  = new WebModel();
     $resp = $obj->getJobDetail($id);
-    
     return View::make("job-listing-detail")->with('name', $resp);
 
     }

@@ -42,17 +42,13 @@
         	<div class="container">
         	 	 <div class="row">
         		   <div class="col-lg-7 col-md-7">
-
             			 <div class="left-img-job"> <img src="https://getsporty.in/portal/uploads/event/{{$name[0]->image}}"> </div>		
         		    </div>
         		    <div class="col-lg-5 col-md-5">
         			       <div class="right-list-job" style="padding: 50px 0 0 0;">
                      <h4>  </h4>
       				            <h4>
-                           
-
-                          {{$name[0]->name}}
-
+                          {{$name1[0]->name}}
                           </h4>
                           <p> Type : <span> {{$name[0]->type}}</span></p>
                           <p> Organizer Name : <span> {{$name[0]->organizer_name}}</span></p>
@@ -90,19 +86,23 @@
                	      <p>Learn more about this feature packed App</p>
                   </div>
                   <div id="customers-testimonials2" class="owl-carousel">
+                 @for($i=0;$i<count($name1);$i++)
                       <div class="item">
                           <div class="img-box">
-                              <img src="img/box-img.jpg">
+                              <img src="https://getsporty.in/portal/uploads/event/{{$name1[$i]->image}}">
                           </div>
                           <div class="slide-job-list">
-                              <h4>Lorem Ipsum is simply dummy text of the printing.</h4>
-          				            <p> Location : <span> Paloura, Jammu </span></p>
+                              <h4>{{$name1[$i]->name}}</h4>
+          				            <p> Location : <span> {{$name1[$i]->organizer_city}} </span></p>
           				            <p> Posted : <span> 2 days ago </span></p>
-          				            <p> Organisation Name : <span> IIT Jammu, Indian Institute of Technology </span></p>
+          				            <p> Organisation Name : <span> {{$name1[$i]->organizer_name}} </span></p>
           				            <p class="read-c"> Read More </p>                                  
                           </div>
                       </div>
+                      @endfor
                   </div>
+                  
+
                         <!--<div class="customNavigation">
 							<div class="l-arrow cursor">
 							  <i class="fa fa-arrow-left" aria-hidden="true"></i>
@@ -111,9 +111,12 @@
 								<i class="fa fa-arrow-right" aria-hidden="true"></i>
 								</div>
 						   </div>-->
+
               </div>
           </div>
     </section>  
+    
+       
  
 
      <div class="sidebarMide">

@@ -136,9 +136,7 @@ function getTournamentListing()
         var temp  = '';
         var s = 0;
         var location = '';
-
-var url = "tournament-detail/";
-
+        var url = "tournament-detail/";
         for (var i = 0; i < 11; i++)
         {  
             title             = data[i]['name'].substring(0,20);

@@ -39,11 +39,9 @@
             	       <h3>Event</h3>
                	   <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod<br/> tempor incididunt.</p>
                   </div>      
-                  <div id="temp_event"> </div>
+                  <div id="event_listing"> </div>
                             
-               
-
- 					 
+                					 
   	       <div class="clearfix margin20"></div>
     	      <!--  <div class="text-center">
     	       	<i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>

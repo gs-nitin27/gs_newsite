@@ -66,6 +66,7 @@ Route::get('article-detail/{id}','WebController@article_detail');
         //  // Route::post('/gs_login', function()
         // {
         //    //Route::post('job','WebController@getjob');
+        
 Route::post('/gs_login', 'ManageController@gs_login');
 
 //        });
