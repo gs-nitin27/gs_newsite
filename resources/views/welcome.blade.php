@@ -1,7 +1,9 @@
 @extends('layouts.master')
 @section('pageTitle','Home')
 @section('content')
-
+<!-- <style type="text/css">
+  div.main-text {overflow-x: hidden;width: 800px;} 
+</style> -->
 
  <div id="myCarousel" class="carousel slide slideBox" data-ride="carousel" data-interval="2500">
             <!-- Indicators -->
@@ -238,7 +240,11 @@
               <div class="row pad15">
                 <div class="heading-center"> <h3>Sports Jobs in India</h3>  
                   <p>Learn more about this feature packed App</p> 
-                  <div class="subTitle">Sports sector is one of the fastest growing industries not only in India but across the world. The sports sector is worth around 750 Billion dollars and in India alone, this industry is expected to great.</div>
+                  <div class="subTitle">We are always gratified to live in a country like India, where sports has an approach to connect people through the availability of sports jobs in India. Cricket is considered as a religion, football is a way of life and hockey highlights secularism.
+<!-- Sports jobs in India are also making an identity at various levels, most importantly in cricket, tennis, hockey, athletics and chess. There is a wide range of sports job in India in which an ample number of opportunities are available to give a boost to your career.
+Vaguely, you can treasure your dream job through our website and can conveniently browse through all the latest sports jobs in the government or private sector.Indeed, India as a nation is a breeding ground for sports jobs. Though by having a sports jobs in India you can be the part of taking India to both national and international levels.
+So, if you are passionate about sports and want to handle the business side of the game then there are exciting career options for you of having sports in India available on our website and can take the first step towards your fantasy world.
+ --></div>
                 </div>
                   <div id="customers-testimonials2" class="owl-carousel">
                   @foreach($name['job'] as $value)
@@ -348,7 +354,10 @@
               <div class="container" id="event">
                   <div class="row pad15">
                       <div class="w-h" style="margin: 0;"><h3>Sports event in India</h3><p>See what’s included in the App</p>
-                          <div class="subTitle" style="color: #b3b3b3;">Sports sector is one of the fastest growing industries not only in India but across the world. The sports sector is worth around 750 Billion dollars and in India alone, this industry is expected to great.</div>
+                          <div class="subTitle main-text" style="color: #b3b3b3;">India is scrutinize as a country of teeming popular sports events and their universality is also measured by the regional prominence. While cricket is among one of the most popular sports events in India, the other prominent sports events in India include Football, Hockey, Wrestling, Badminton, Tennis, Chess, Kabaddi, Snooker and boxing.
+<!-- Aloof from national level sports events, India has also hosted several International sports events such as Asian Games during the year 1951 and 1982, 2010 Hockey World Cup and 2010 Commonwealth Games. However, the year 2017 has brought India to the eminence as they hosted FIFA U-17 World Cup and set high standards of the endowment.
+Overall, sports events in India are always amusing to unite with. Every year we all anxiously wait to receive the sports events calendar so we can block our agenda and plan our schedule, travel in advance. Consequently, for the sports events calendar, you don’t have to rush anywhere we will bear you to the latest updates on all the big sports events in India. Be it an upcoming sports trial or just a weekend sporting event, get all the information on your phone through our website hassle-free.
+. --></div>
                       </div>
                       <div class="clearfix margin20"></div>
                       <div id="customers-testimonials3" class="owl-carousel">

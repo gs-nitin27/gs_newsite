@@ -8,8 +8,8 @@
        	     <div class="row">
        	       <div class="col-md-12">
        		     <div class="ban-pera">
-       			  <h1>Lorem ispum is dummy </h1>
-       			  <h3>Lorem ispum is dummy text.</h3>
+       			  <h1>Sports jobs in India</h1>
+       			  <h3>A unique platform dedicated only to Sports Jobs. Browse and apply to thousands of Sports Jobs.</h3>
        			
          	     </div>
                 </div>
@@ -58,8 +58,8 @@
         	    <div class="container">
         	     <div class="row">
         	 	  <div class="heading-center  m0 pad15">
-          	       <h3>Jobs</h3>
-             	   <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
+          	       <h3>Sports jobs in India</h3>
+             	   <p>A unique platform dedicated only to Sports Jobs. Browse and apply to thousands of Sports Jobs.</p>
                     </div>
 
                                   <div id="job_listing"> </div>

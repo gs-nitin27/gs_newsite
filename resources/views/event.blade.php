@@ -7,8 +7,8 @@
        	     <div class="row">
        	       <div class="col-md-12">
          		     <div class="ban-pera">
-             			  <h1>Lorem ispum is dummy </h1>
-             			  <h3>Lorem ispum is dummy text.</h3>         			
+             			  <h1>Sports events in India</h1>
+             			  <h3>Never miss out on Sports Trials or coaching camps. Get first hand information on your GetSporty App.</h3>         			
            	     </div>
                 </div>
             </div>
@@ -37,7 +37,10 @@
         	     <div class="row">
         	 	      <div class="heading-center  m0 pad15">
             	       <h3>Event</h3>
-               	   <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod<br/> tempor incididunt.</p>
+               	   <p>India is scrutinize as a country of teeming popular sports events and their universality is also measured by the regional prominence. While cricket is among one of the most popular sports events in India, the other prominent sports events in India include Football, Hockey, Wrestling, Badminton, Tennis, Chess, Kabaddi, Snooker and boxing.
+Aloof from national level sports events, India has also hosted several International sports events such as Asian Games during the year 1951 and 1982, 2010 Hockey World Cup and 2010 Commonwealth Games. However, the year 2017 has brought India to the eminence as they hosted FIFA U-17 World Cup and set high standards of the endowment.
+Overall, sports events in India are always amusing to unite with. Every year we all anxiously wait to receive the sports events calendar so we can block our agenda and plan our schedule, travel in advance. Consequently, for the sports events calendar, you don’t have to rush anywhere we will bear you to the latest updates on all the big sports events in India. Be it an upcoming sports trial or just a weekend sporting event, get all the information on your phone through our website hassle-free.
+</p>
                   </div>      
                   <div id="temp_event"> </div>
                             
