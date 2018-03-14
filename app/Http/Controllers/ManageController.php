@@ -20,10 +20,15 @@ class ManageController extends Controller
 
    public function get_Dashboard()
    {
-     
-     
     return view('Manage.dashboard');
+   }
+   
 
+
+   public function gs_login()
+   {
+      echo "dkhsdskjs";
+     print_r($_POST);die;
 
    }
 }

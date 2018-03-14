@@ -5,6 +5,7 @@
 <link href="{{asset('manage_assets/css/bootstrap.min.css')}}" rel="stylesheet">
 <link href="{{asset('manage_assets/css/style.css')}}" rel="stylesheet">
 <meta name="google-signin-client_id" content="<?php echo config('constant.GOOGLE_ID');?>">
+<meta name="csrf-token" content="{{ csrf_token() }}">
 <style type="text/css">
    .btn-google {
     background-color: #dd4b39;
@@ -125,7 +126,57 @@ function testAPI() {
         localStorage.setItem("count", 2);
        });
       });
-var data = '{"app":"L","data":{"email":"ntnagarwal27@gmail.com","image":"https://lh3.googleusercontent.com/-6rt_LbRDUJc/AAAAAAAAAAI/AAAAAAAADpU/4GXTlz_Rzbo/photo.jpg","name":"nitin agarwal"},"device_id":"dB0qMexOQec:APA91bH4S4kVMNSpKgtt7ZPu0Mxbf8RC-9GSvC9_8C3dNdTbO_QT0IagAY8VLkoB_g_EdwQnohfxSU4J7UzCS6Ywaa9QGIIjff-EQB20pBSR_njUfzuvrvruFsHfFSCQwzyvvsccsVGr","email":"ntnagarwal27@gmail.com","loginType":"2","password":"","userType":"104"}';
+// var data = '{"app":"L","data":{"email":"ntnagarwal27@gmail.com","image":"https://lh3.googleusercontent.com/-6rt_LbRDUJc/AAAAAAAAAAI/AAAAAAAADpU/4GXTlz_Rzbo/photo.jpg","name":"nitin agarwal"},"device_id":"dB0qMexOQec:APA91bH4S4kVMNSpKgtt7ZPu0Mxbf8RC-9GSvC9_8C3dNdTbO_QT0IagAY8VLkoB_g_EdwQnohfxSU4J7UzCS6Ywaa9QGIIjff-EQB20pBSR_njUfzuvrvruFsHfFSCQwzyvvsccsVGr","email":"ntnagarwal27@gmail.com","loginType":"2","password":"","userType":"104"}';
+
+   
+function login(emailid,user_data,type)
+{  
+   var data1 = {
+     "email"    : emailid,
+     "password" : emailid,
+     "data"     : user_data,
+     "app"      : 'L',
+     "loginType": type
+     };
+     
+
+var url = '<?php echo url('/');//site_url();?>';
+var data = JSON.stringify(data1);
+  $.ajax({
+    type: "POST",
+    headers: {
+        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+    },
+    url:  url+'/manage/gs_login',
+    data: "data="+data,
+    dataType: "text",
+    success: function(result) {
+      var result  = JSON.parse(result);
+      if(result.status==4){// for Successfull login of athlete and parent
+       alert(result.msg);
+       window.location.href = 'https://play.google.com/store/apps/details?id=getsportylite.darkhoprsesport.com.getsportylite&hl=en';//url+"/forms/home";
+    }
+    if(result.status==1){      // for Successfull login
+     window.location.href = url+"/forms/new_registration";
+    }
+    else if(result.status==2) // for updating email and other info
+    { //alert(JSON.stringify(result));//return;
+      data1.status = result.status;
+      //alert(JSON.stringify(data1));return;
+      localStorage.setItem('userdata',JSON.stringify(data1));
+      window.location.href = url+"/forms/new_registration";
+    }
+    else if(result.status==3) // for creating new record
+    { 
+      data1.status = result.status;
+      localStorage.setItem('userdata',JSON.stringify(data1));
+      window.location.href = url+"/forms/new_registration";
+    }
+   }
+  });
+ }
+
+
  function onSignIn(googleUser) {
         var profile = googleUser.getBasicProfile();
         console.log("ID: " + profile.getId()); // Don't send this directly to your server!
@@ -141,14 +192,13 @@ var data = '{"app":"L","data":{"email":"ntnagarwal27@gmail.com","image":"https:/
         {
          var email = profile.getEmail();
          var user_data = {"name":profile.getName(),"image":profile.getImageUrl(),"Email":profile.getEmail(),"id":profile.getId()};
-        alert(JSON.stringify(user_data));return;
-        localStorage.setItem('data2',user_data);
-       //  login(email,user_data,2);
-         }
+           localStorage.setItem('data2',user_data);
+           login(email,user_data,2);
+        }
          else
-         {
+        {
           return false;
-         }
-      };
+        }
+      }
 </script>
 </html>
