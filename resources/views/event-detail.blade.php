@@ -2,6 +2,8 @@
 @section('pageTitle','Home')
 @section('content')
 
+
+
      <div class="joblist-bg eventBg bannerBgSec">
      
           <div class="container">
@@ -45,8 +47,12 @@
         		    </div>
         		    <div class="col-lg-5 col-md-5">
         			       <div class="right-list-job" style="padding: 50px 0 0 0;">
+                     <h4>  </h4>
       				            <h4>
+                           
+
                           {{$name[0]->name}}
+
                           </h4>
                           <p> Type : <span> {{$name[0]->type}}</span></p>
                           <p> Organizer Name : <span> {{$name[0]->organizer_name}}</span></p>
