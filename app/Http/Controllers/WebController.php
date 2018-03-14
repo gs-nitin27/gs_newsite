@@ -5,10 +5,10 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use View;;
 use App\Http\Requests;
-use App\WebModel;  // included Model 
+use App\WebModel;
     class WebController extends Controller
     {
-       
+
     public function index()
     {
     $obj  = new WebModel();
@@ -112,7 +112,17 @@ use App\WebModel;  // included Model
     $obj  = new WebModel();
 
     $resp = $obj->getEventDetail($id);
-    return View::make("event-detail")->with('name', $resp);
+
+    $sport_name = $resp[0]->sport_name;
+    
+    $resp1 = $obj->getEventDetail_data($sport_name);
+
+    //print_r($resp1); die();
+
+    //$data = array('resp' =>$resp ,'resp1'=>$resp1 );
+
+    return View::make("event-detail")->with('name', $resp,'name1',$resp1);
+
 
     }
 
