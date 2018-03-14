@@ -42,7 +42,7 @@
                             <h3>Get started with a professinals consultation</h3>
                         </div>
                         <div class="pull-left col-lg-5 col-md-5 col-sm-5 col-xs-12">
-                            <a href="manage/dashbo" class="pull-right">Create job</a>
+                            <a href="manage/login" class="pull-right">Create job</a>
                         </div>
                     </div>
                 </div>
