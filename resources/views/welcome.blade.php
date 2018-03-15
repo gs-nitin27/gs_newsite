@@ -367,7 +367,7 @@ Overall, sports events in India are always amusing to unite with. Every year we 
                         <section class="item">
                           <div class="img-box"><img src="https://getsporty.in/portal/uploads/event/{{ $value->image }}"></div>
                           <div class="white-b">
-                              <h4>{{$value->name}}</h4>start_date
+                              <h4>{{$value->name}}</h4>
                               <section class="clearfix">
                                   <aside class="pull-left"><p> Start From  : <span>  {{$value->start_date}} </span></p></aside>
                                   <aside class="pull-right"><p> To  : <span> {{$value->end_date}} </span></p></aside>
@@ -383,7 +383,7 @@ Overall, sports events in India are always amusing to unite with. Every year we 
                               <div class="readMoreBtn"><a href="event-detail/{{$value->id}}">Read More</a> </div> 
                           </div>
                         </section>
-  @endforeach   
+                    @endforeach   
 
                    
                  

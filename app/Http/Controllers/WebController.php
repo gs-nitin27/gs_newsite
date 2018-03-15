@@ -122,17 +122,28 @@ use App\WebModel;
     {
     $obj  = new WebModel();
     $resp = $obj->getJobDetail($id);
-    return View::make("job-listing-detail")->with('name', $resp);
 
+    $sport_name = $resp[0]->sport;
+
+    $resp1 = $obj->getJobDetail_data($sport_name);
+    
+   // print_r($resp1);die();
+
+    return View::make("job-listing-detail")->with('name', $resp)->with('name1',$resp1);
     }
+
+
 
     public function tournament_detail($id)
     {
       
     $obj  = new WebModel();
     $resp = $obj->getTournamentDetail($id);
-    
-    return View::make("tournament-detail")->with('name', $resp);
+
+    $sport_name = $resp[0]->sport;
+    $resp1 = $obj->getTournamentDetail_data($sport_name);
+
+    return View::make("tournament-detail")->with('name', $resp)->with('name1',$resp1);
 
     }
 
@@ -141,7 +152,15 @@ use App\WebModel;
 
     $obj  = new WebModel();
     $resp = $obj->getArticleDetail($id);
-    return View::make("article-detail")->with('name', $resp);
+    $topic_of_artical = $resp[0]->topic_of_artical;
+
+    
+
+    $resp1 = $obj->getResourcDetail_data($topic_of_artical);
+
+    
+
+    return View::make("article-detail")->with('name', $resp)->with('name1',$resp1);
     }
 
 

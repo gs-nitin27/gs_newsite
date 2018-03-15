@@ -96,18 +96,21 @@
                	      <p>Learn more about this feature packed App</p>
                   </div>
                   <div id="customers-testimonials2" class="owl-carousel">
+                  @for($i=0;$i<count($name1);$i++)
+
                       <div class="item">
                           <div class="img-box">
-                              <img src="img/box-img.jpg">
+                              <img src="https://getsporty.in/portal/uploads/tournament/{{$name1[0]->image}}">
                           </div>
                           <div class="slide-job-list">
-                              <h4>Lorem Ipsum is simply dummy text of the printing.</h4>
-          				            <p> Location : <span> Paloura, Jammu </span></p>
+                              <h4>{{$name1[$i]->name}}</h4>
+          				            <p> Location : <span> {{$name1[$i]->name}}</span></p>
           				            <p> Posted : <span> 2 days ago </span></p>
-          				            <p> Organisation Name : <span> IIT Jammu, Indian Institute of Technology </span></p>
+          				            <p> Organisation Name : <span> {{$name1[$i]->name}} </span></p>
           				            <p class="read-c"> Read More </p>                                  
                           </div>
                       </div>
+                      @endfor
                   </div>
                         <!--<div class="customNavigation">
 							<div class="l-arrow cursor">

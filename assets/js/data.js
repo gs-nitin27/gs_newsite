@@ -1,9 +1,9 @@
 
 function getEventListing()
-{
+{  //alert(service_url);return;
    $.ajax({
     method: 'GET',
-     url:"/get/gs_newsite/public/get_Event",crossDomain: true ,success: function(result)
+     url:service_url+'/get_Event',crossDomain: true ,success: function(result)
      {
         data         = JSON.parse(result);
         event_data   = data.data;
@@ -32,7 +32,7 @@ function getJobListing()
 
    $.ajax({
      method: 'GET',
-     url:"/get/gs_newsite/public/get_job",crossDomain: true ,success: function(result)
+     url:service_url+'/get_job',crossDomain: true ,success: function(result)
      {
         data = JSON.parse(result);
         job_data = data.data;
@@ -88,7 +88,7 @@ function getArticleListing()
 {
    $.ajax({
     method: 'GET',
-     url:"/get/gs_newsite/public/get_Article",crossDomain: true ,success: function(result)
+     url:service_url+'/get_Article',crossDomain: true ,success: function(result)
      {
         data = JSON.parse(result);
         data = data.data;
@@ -124,7 +124,7 @@ function getTournamentListing()
 
    $.ajax({
     method: 'GET',
-     url:"/get/gs_newsite/public/get_Tounament",crossDomain: true ,success: function(result)
+     url:service_url+'/get_Tounament',crossDomain: true ,success: function(result)
    
     {
         data = JSON.parse(result);
