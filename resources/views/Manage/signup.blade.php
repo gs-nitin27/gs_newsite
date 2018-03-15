@@ -23,7 +23,7 @@
                                 <div class="form-group row">
                                     <label class="col-lg-3 col-form-label form-control-label">Name</label>
                                     <div class="col-lg-9">
-                                        <input class="form-control" type="text" Placeholder="John Doe">
+                                        <input class="form-control" type="text" Placeholder="John Doe" id="name">
                                     </div>
                                 </div>
                                 <!-- <div class="form-group row">
@@ -60,20 +60,21 @@
                                     <label class="col-lg-3 col-form-label form-control-label">Gender</label>
                                     <div class="form-check form-check-inline">
                                     <label class="form-check-label">
-                                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1"> Blue
+                                        <input class="form-check-input" type="radio" name="gender" id="Male" value="Male"> Male
                                     </label>
                                 </div>
                                 <div class="form-check form-check-inline">
                                     <label class="form-check-label">
-                                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"> Red
+                                        <input class="form-check-input" type="radio" name="gender" id="Female" value="Female"> Female
                                     </label>
                                 </div>
                                 </div>
                                 <div class="form-group row">
                                     <label class="col-lg-3 col-form-label form-control-label">Proffession</label>
                                     <div class="col-lg-9">
-                                        <select id="user_time_zone" class="form-control" size="0" id="proffession">
-                                          <option value="5">job-creator</option></select>
+                                        <select class="form-control" size="0" id="proffession">
+                                          <option value="5">job-creator</option>
+                                        </select>
                                     </div>
                                 </div>
                                 <div class="form-group row">
@@ -89,27 +90,25 @@
                 
 </body>
 <script type="text/javascript">
+  var url = '<?php echo config('constant.ENV_URL')?>';
   $(document).ready(function(){
+     var radioValue = $("input[name='gender']:checked").val();
+            if(radioValue){
+                alert("Your are a - " + radioValue);
+            }
+ 
      if(window.localStorage)
-     {
+     {var userid = localStorage.getItem('userid');
       var data = localStorage.getItem('userdata');
       data = JSON.parse(data);
-      alert(data);
       if(data.email != '')
       {
         $('#email_div').hide();
         $('#email').val(data.email);
+        $('#name').val(data.data.name);
       }
      }
-
-
-  });
-  
-  $( function() {
-    $( "#datepicker" ).datepicker();
-  } );
-
-  // validation example for Login form
+     // validation example for Login form
 $("#btnLogin").click(function(event) {
     
     var form = $("#loginForm");
@@ -120,48 +119,56 @@ $("#btnLogin").click(function(event) {
     }
     else
     {
-      var data = {
+      var user_info_data = {
+        'userid':userid,
+        'loginType':data.loginType,
         'email':$('#email').val(),
-        'Mobile':$('#mobile').val(),
+        'phone_no':$('#mobile').val(),
         'location':$('#location').val(),
         'dob':$('#datepicker').val(),
-        'gender':$('#gender').val(),
-        'proffession':$('#proffession').val()
-        }
-   data  = JSON.stringify(data);
-   form.addClass('was-validated');
-//    $item->app            =  $data1->app;
-// $item->userid         =  $data1->userid;
-// $item->loginType      =  $data1->loginType;
-// $item->id             =  $data1->data->id;
-// $item->name           =  $data1->data->name;
-// $item->email          =  $data1->data->email;
-// $item->image          =  $data1->data->image;
-// $item->phone_no       =  $data1->phone_no;
-// $item->prof_name      =  $data1->prof_name;
-// $item->sport          =  $data1->sport;
-// if(isset($data1->login_status)){
-// $item->login_status   =  $data1->login_status;  
-// }
-// $item->gender         =  $data1->gender;
-// $item->dob            =  $data1->dob;
-// $item->userType       =  $data1->userType; 
-// $item->location       =  $data1->location;
-// //$item->forget_code    =  $forgot_code;
-// $item->prof_id        =  $data1->prof_id;
-// $item->device_id      =  $data1->device_id;
-// $device_id_column     =  $item->app."_device_id";
-   $.ajax({
-      url()
+        'gender':$("input[name='gender']:checked").val(),//radioValue,//$('#gender').val(),
+        'prof_name':$('#proffession').text().trim(),
+        'data':data.data,
+        'userType':'103',
+        'prof_id':$('#proffession').val(),
+        'app':data.app,
+        'device_id':'',
+        'sport':'',
+        'app':data.app
 
-   })
-   }
-    
-    // if validation passed form
-    // would post to the server here
-    
-    
+        }
+   user_info_data  = JSON.stringify(user_info_data);
+   console.log(user_info_data);//return;
+   form.addClass('was-validated');
+   $.ajax({
+      url:url+'/user_access_controller.php?act=gs_signup',
+      method:'POST',
+      data:user_info_data,
+      dataType:'text',
+      success:function(result)
+      { 
+        var response  = JSON.parse(result);
+        if(response.status==1)
+        {
+          window.location.href = "<?php echo url('/'); ?>"+"/manage/dashbo";
+        }
+        
+      }
+   });
+}
 });
+
+   });
+  
+  function getGender()
+  {
+    var genderId = id;
+    //var gender = genderId.value;
+    gender = genderId;
+  }
+  $( function() {
+    $( "#datepicker" ).datepicker();
+  } );
 </script>
 <script type="text/javascript" src="http://maps.google.com/maps/api/js?key=AIzaSyDv7v3jJInF4dT2KKMXQIR6SHmtkMLX1SE&sensor=false&libraries=places&language=en-AU"></script>
 <script type="text/javascript">

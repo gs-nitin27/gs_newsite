@@ -21,7 +21,7 @@
                    <li>
                         <a class="tab03" href = "#tab03" data-toggle = "tab">
                             <!-- <img class="img-responsive" src="img/tab03.png"> -->
-                            Orgenization
+                            Organization
                         </a>
                    </li>
                 </ul>
@@ -31,13 +31,13 @@
                             <aside class="col-lg-6 col-md-6 col-sm-6 col-xs-6 mobView">
                                 <div class="form-group">
                                     <label for="" class="">Job Title</label>
-                                    <input class="form-control" placeholder=" " type="text">
+                                    <input class="form-control" placeholder=" " type="text" name="title" id="title">
                                 </div>
                             </aside>
                             <aside class="col-lg-6 col-md-6 col-sm-6 col-xs-6 mobView">
                                 <div class="form-group">
                                     <label for="" class="">Job Location</label>
-                                    <input class="form-control" placeholder=" " type="text">
+                                    <input class="form-control" placeholder=" " type="text" name="city" id="city">
                                 </div>
                             </aside>
                         </section>
@@ -45,7 +45,7 @@
                             <aside class="col-lg-6 col-md-6 col-sm-6 col-xs-6 mobView">
                                 <div class="form-group ">
                                     <label for="" class="">Job type</label>
-                                    <select class="form-control" id="">
+                                    <select class="form-control" id="type" name="type">
                                         <option></option>
                                         <option>2000 - 5000</option>
                                         <option>2000 - 5000</option>                                        
@@ -56,7 +56,7 @@
                             <aside class="col-lg-6 col-md-6 col-sm-6 col-xs-6 mobView">
                                 <div class="form-group ">
                                     <label for="" class="">Job sport</label>
-                                     <select class="form-control" id="">
+                                     <select class="form-control" id="sport" name="sport">
                                         <option></option>
                                         <option>2000 - 5000</option>
                                         <option>2000 - 5000</option>                                        
@@ -93,7 +93,7 @@
                             </aside>                           
                         </section>
                              <div class="form-group">
-                            	<button class="btn btn-n nextBtn " type="button">Next</button>
+                                <a href="#tab02" data-toggle = "tab"><button class="btn btn-n nextBtn " type="button">Next</button></a>
                             </div>
                      </div>
                      
@@ -131,7 +131,7 @@
                             </aside>
                         </section>
                         <div class="form-group">
-                            <button class="btn btn-n nextBtn " type="button">Next</button>
+                            <a href="#tab03" data-toggle = "tab"><button class="btn btn-n nextBtn " type="button">Next</button></a>
                         </div>
                      </div>
                      <div class = "tab-pane fade" id = "tab03">
@@ -221,4 +221,11 @@
             </section>
         </div>
     </section>
+   <script type="text/javascript">
+        $(document).ready(function(){
+  
+             alert("fuioysduifyfd");
+        });
+    </script>
     @stop
+    

@@ -18,7 +18,7 @@
             <!-- Wrapper for slides -->
             <div class="carousel-inner">
                 <section class="item active">
-                    <img src="img/top-banner-top.jpg" alt="Chania">                
+                    <img src="img/top_banner_top.png" alt="Chania">                
                     <div class="carousel-caption">
                         <div class="container">
                             <div class="ban-pera">

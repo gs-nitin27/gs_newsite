@@ -61,33 +61,14 @@ Route::get('article-detail/{id}','WebController@article_detail');
             return View::make('Manage.login');
            //Route::get('get_Tounament','ManageController@get_Tounament');
         });
-<<<<<<< HEAD
-       // Route::post('/gs_login', function()
-        // {
-        //  // Route::post('/gs_login', function()
-        // {
-        //    //Route::post('job','WebController@getjob');
-        
-Route::post('/gs_login', 'ManageController@gs_login');
-
-//        });
-        // subpage for the posts found at /admin/posts (app/views/admin/posts.blade.php)
-=======
         Route::get('/register', function()
         {
             return View::make('Manage.signup');
            //Route::get('get_Tounament','ManageController@get_Tounament');
         });
->>>>>>> e56df1e0c98b3126a0f73789f9858873360599e5
         Route::get('create', function()
         {
             return View::make('Manage.job.create-job');
-        });
-
-        // subpage to create a post found at /admin/posts/create (app/views/admin/posts-create.blade.php)
-        Route::get('posts/create', function()
-        {
-            return View::make('admin.posts-create');
         });
     });
 

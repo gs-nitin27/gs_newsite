@@ -156,26 +156,27 @@ console.log(data);
     success: function(result) {
       var result  = JSON.parse(result);
       if(result.status==4){// for Successfull login of athlete and parent
-       alert(result.status + JSON.stringify(data1));return;
+       alert(result.status + JSON.stringify(result));return;
        //window.location.href = 'https://play.google.com/store/apps/details?id=getsportylite.darkhoprsesport.com.getsportylite&hl=en';//url+"/forms/home";
     }
     if(result.status==1){      // for Successfull login
-      localStorage.setItem('userdata',JSON.stringify(data1));
-      alert(result.status + JSON.stringify(data1));//return;
+      localStorage.setItem('userdata',result.data);
+      alert(result.status + JSON.stringify(result.data));//return;
       window.location.href = "<?php echo url('/'); ?>"+"/manage/dashbo";
     }
     else if(result.status==2) // for updating email and other info
     { 
-      data1.status = result.status;
-      localStorage.setItem('userdata',JSON.stringify(data1));
+      result.status = result.status;
+      localStorage.setItem('userdata',result.data);
       window.location.href = url+"/forms/new_registration";
-      alert(result.status + JSON.stringify(data1));return;
+      alert(result.status + JSON.stringify(result.data));//return;
     }
     else if(result.status==3) // for creating new record
     { 
-      data1.status = result.status;
-      localStorage.setItem('userdata',JSON.stringify(data1));
-      alert(result.status + JSON.stringify(data1));//return;
+      localStorage.setItem('userid',result.data.userid);
+      localStorage.setItem('userdata',data);
+      console.log(JSON.stringify(data));
+      alert(result.status + JSON.stringify(data));//return;
       window.location.href = "<?php echo url('/'); ?>"+"/manage/register";
     }
    }
