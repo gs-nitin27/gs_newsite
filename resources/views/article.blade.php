@@ -7,8 +7,8 @@
              <div class="row">
                <div class="col-md-12">
                  <div class="ban-pera">
-                    <h1>Lorem ispum is dummy </h1>
-                    <h3>Lorem ispum is dummy text.</h3>               
+                    <h1>LATEST RESOURCES</h1>
+                    <h3>Perfectly curated articles, inspirational stories & training manuals, GetSporty has everything for aspiring athletes.</h3>               
                  </div>
                 </div>
             </div>

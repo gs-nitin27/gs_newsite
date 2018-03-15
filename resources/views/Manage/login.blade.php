@@ -136,7 +136,9 @@ function login(emailid,user_data,type)
      "password" : emailid,
      "data"     : user_data,
      "app"      : 'M',
-     "loginType": type
+     "loginType": type,
+     "userType" : '103',
+     "device_id": ''
      };
      
 
@@ -158,13 +160,13 @@ console.log(data);
        //window.location.href = 'https://play.google.com/store/apps/details?id=getsportylite.darkhoprsesport.com.getsportylite&hl=en';//url+"/forms/home";
     }
     if(result.status==1){      // for Successfull login
-     //window.location.href = url+"/forms/new_registration";
-     alert(result.status + JSON.stringify(data1));return;
+      localStorage.setItem('userdata',JSON.stringify(data1));
+      alert(result.status + JSON.stringify(data1));//return;
+      window.location.href = "<?php echo url('/'); ?>"+"/manage/dashbo";
     }
     else if(result.status==2) // for updating email and other info
-    { //alert(JSON.stringify(result));//return;
+    { 
       data1.status = result.status;
-      //alert(JSON.stringify(data1));return;
       localStorage.setItem('userdata',JSON.stringify(data1));
       window.location.href = url+"/forms/new_registration";
       alert(result.status + JSON.stringify(data1));return;
@@ -173,9 +175,8 @@ console.log(data);
     { 
       data1.status = result.status;
       localStorage.setItem('userdata',JSON.stringify(data1));
-      alert(result.status + JSON.stringify(data1));return;
-      window.location.href = "/register";
-      //window.location.href = url+"/forms/new_registration";
+      alert(result.status + JSON.stringify(data1));//return;
+      window.location.href = "<?php echo url('/'); ?>"+"/manage/register";
     }
    }
   });
@@ -196,7 +197,7 @@ console.log(data);
         if( localStorage.getItem("count") == 2)
         {
          var email = profile.getEmail();
-         var user_data = {"name":profile.getName(),"image":profile.getImageUrl(),"Email":profile.getEmail(),"id":profile.getId()};
+         var user_data = {"name":profile.getName(),"image":profile.getImageUrl(),"email":profile.getEmail(),"id":profile.getId()};
            localStorage.setItem('data2',user_data);
            login(email,user_data,2);
         }

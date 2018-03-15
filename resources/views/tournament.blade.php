@@ -7,8 +7,8 @@
        	     <div class="row">
        	       <div class="col-md-12">
          		     <div class="ban-pera">
-             			  <h1>Lorem ispum is dummy </h1>
-             			  <h3>Lorem ispum is dummy text.</h3>         			
+             			  <h1>Sports tournaments in India</h1>
+             			  <h3>Get regular updates about the upcoming Sports Tournaments and apply right away from the App.</h3>         			
            	     </div>
                 </div>
             </div>
