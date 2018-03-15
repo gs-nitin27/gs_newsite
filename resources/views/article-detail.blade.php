@@ -78,50 +78,19 @@
              	  <p>Learn more about this feature packed App</p>
                   </div>
                   <div id="customers-testimonials2" class="owl-carousel">
-                   <div class="item">
-                    <div class="img-box">
-                     <img src="img/box-img.jpg">
-                      </div>
-                       <div class="white-b">
-                        <h4>Aanchal Thakur wins India's first skiing medal</h4>
-				         <p>Aanchal Thakur entered into the history books after she clinched a Bronze medal in the coveted Alpine Ejder 3200 Cup organized by the Federation Internationale de Ski. Aanchal, who hails from a small...</p>
-				          <p class="read-c"> Read More </p>
-                          </div>
-                         </div>
+                  @for($i=0;$i<count($name1);$i++)
 
                    <div class="item">
                     <div class="img-box">
-                     <img src="img/box-img2.jpg">
+                     <img src="https://getsporty.in/portal/uploads/resources/{{$name[0]->image}}">
                       </div>
                        <div class="white-b">
-                        <h4>Aanchal Thakur wins India's first skiing medal</h4>
-				         <p>Aanchal Thakur entered into the history books after she clinched a Bronze medal in the coveted Alpine Ejder 3200 Cup organized by the Federation Internationale de Ski. Aanchal, who hails from a small...</p>
+                        <h4>{{$name1[$i]->topic_of_artical}}</h4>
+				         <p>{{$name1[$i]->summary}}</p>
 				          <p class="read-c"> Read More </p>
-                           </div>
-                          </div>
-                         
-                  <div class="item">
-                   <div class="img-box">
-                    <img src="img/box-img3.jpg">
-                     </div>
-                      <div class="white-b">
-                       <h4>Aanchal Thakur wins India's first skiing medal</h4>
-				        <p>Aanchal Thakur entered into the history books after she clinched a Bronze medal in the coveted Alpine Ejder 3200 Cup organized by the Federation Internationale de Ski. Aanchal, who hails from a small...</p>
-				         <p class="read-c"> Read More </p>
                           </div>
                          </div>
-
-                   <div class="item">
-                    <div class="img-box">
-                     <img src="img/box-img.jpg">
-                      </div>
-                       <div class="white-b">
-                        <h4>Aanchal Thakur wins India's first skiing medal</h4>
-				         <p>Aanchal Thakur entered into the history books after she clinched a Bronze medal in the coveted Alpine Ejder 3200 Cup organized by the Federation Internationale de Ski. Aanchal, who hails from a small...</p>
-				           <p class="read-c"> Read More </p>
-                            </div>
-                            </div>
-                    
+                         @endfor
                           </div>
                         <!--<div class="customNavigation">
 							<div class="l-arrow cursor">

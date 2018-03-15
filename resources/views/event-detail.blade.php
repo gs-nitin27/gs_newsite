@@ -93,9 +93,10 @@
                           </div>
                           <div class="slide-job-list">
                               <h4>{{$name1[$i]->name}}</h4>
-          				            <p> Location : <span> {{$name1[$i]->organizer_city}} </span></p>
-          				            <p> Posted : <span> 2 days ago </span></p>
-          				            <p> Organisation Name : <span> {{$name1[$i]->organizer_name}} </span></p>
+          				            <p> Type :   <span> {{$name1[$i]->type}} </span></p>
+          				            <p> Organizer Name : <span> {{$name1[$i]->organizer_name}} </span></p>
+          				            <p> Location  : <span> {{$name1[$i]->organizer_city}} </span></p>
+                              <p> Email  : <span> {{$name1[$i]->email_app_collection}} </span></p>
           				            <p class="read-c"> Read More </p>                                  
                           </div>
                       </div>

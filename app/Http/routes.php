@@ -61,6 +61,7 @@ Route::get('article-detail/{id}','WebController@article_detail');
             return View::make('Manage.login');
            //Route::get('get_Tounament','ManageController@get_Tounament');
         });
+
         Route::get('/register', function()
         {
             return View::make('Manage.signup');
