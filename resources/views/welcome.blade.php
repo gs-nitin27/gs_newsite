@@ -220,13 +220,13 @@
                               <div class="white-b">
                                   <h4>{{$value->title}}</h4>
                                   <p>{{$value->summary}}</p>
-                                  <div class="readMoreBtn"><a href="#">Read More</a> </div>
+                                  <div class="readMoreBtn"><a href="article-detail/{{$value->id}}">Read More</a> </div>
                               </div>
                           </section>
                             @endforeach                                                                
                       </div>
                       
-                       <a href="#" class="text-center" style="display: inherit;"><button type="button" class="btn btn-more">View All</button></a>
+                       <a href="article" class="text-center" style="display: inherit;"><button type="button" class="btn btn-more">View All</button></a>
                                      
                   </div>
             </div>
@@ -255,7 +255,7 @@ So, if you are passionate about sports and want to handle the business side of t
                            <p> Posted  : <span>  3 days ago </span></p>
                            <p> Place  : <span> {{$value->org_city}} </span></p>   
                            <p> Organisation Name  : <span> {{$value->organisation_name}} </span></p>
-                           <div class="readMoreBtn"><a href="job-listing-detail.php">Read More</a> </div>                         
+                           <div class="readMoreBtn"><a href="job-detail/{{$value->id}}">Read More</a> </div>                         
                         </div>
                     </section>
                             @endforeach   
@@ -332,7 +332,7 @@ So, if you are passionate about sports and want to handle the business side of t
                         </div>
                     </section> -->                                                                                  
                   </div>
-                 <a href="job-listing.php" class="text-center" style="display: inherit;"><button type="button" class="btn btn-more">View All</button></a>
+                 <a href="job" class="text-center" style="display: inherit;"><button type="button" class="btn btn-more">View All</button></a>
               </div>
                                <!-- <div class="text-center">
                            <a href="job-listing.php">
@@ -380,7 +380,7 @@ Overall, sports events in India are always amusing to unite with. Every year we 
                                   <aside class="pull-left"><p>  <span> {{$value->organizer_city}} </span></p></aside>
                                   <aside class="pull-right"><p>    <span>{{$value->sport_name}}  </span></p></aside>
                               </section>
-                              <div class="readMoreBtn"><a href="event-detail.php">Read More</a> </div> 
+                              <div class="readMoreBtn"><a href="event-detail/{{$value->id}}">Read More</a> </div> 
                           </div>
                         </section>
   @endforeach   
@@ -391,7 +391,7 @@ Overall, sports events in India are always amusing to unite with. Every year we 
 
 
 
-                      <a href="event.php" class="text-center" style="display: inherit;"><button type="button" class="btn btn-more">View All</button></a>
+                      <a href="{{ url('/event') }}" class="text-center" style="display: inherit;"><button type="button" class="btn btn-more">View All</button></a>
                   </div>
               </div>
           </section>  
@@ -426,18 +426,12 @@ Overall, sports events in India are always amusing to unite with. Every year we 
                                   <aside class="pull-left"><p>  <span> {{$value->org_city}} </span></p></aside>
                                   <aside class="pull-right"><p>    <span>{{$value->sport}} </span></p></aside>
                               </section>
-                              <div class="readMoreBtn"><a href="tournament-detail.php">Read More</a> </div> 
+                              <div class="readMoreBtn"><a href="tournament-detail/{{$value->id}}">Read More</a> </div> 
                           </div>
                         </section>
-
                        @endforeach    
-
-                 
-                    
-                  
-                    
                       </div>
-                      <a href="tournament.php" class="text-center" style="display: inherit;"><button type="button" class="btn btn-more">View All</button></a>
+                      <a href="tournament" class="text-center" style="display: inherit;"><button type="button" class="btn btn-more">View All</button></a>
                   </div>
               </div>
           </section> 

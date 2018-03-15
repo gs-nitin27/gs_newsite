@@ -15,6 +15,9 @@
            @include('layouts.footer')
         </footer>
          </body>
+         <script type="text/javascript">
+           var image_url = '<?php echo config('constant.IMAGE_URL');?>';
+         </script>
    </html>
 
 
