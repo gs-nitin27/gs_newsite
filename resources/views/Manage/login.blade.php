@@ -135,29 +135,31 @@ function login(emailid,user_data,type)
      "email"    : emailid,
      "password" : emailid,
      "data"     : user_data,
-     "app"      : 'L',
+     "app"      : 'M',
      "loginType": type
      };
      
 
-var url = '<?php echo url('/');//site_url();?>';
+var url = '<?php echo config('constant.ENV_URL')?>';
 var data = JSON.stringify(data1);
+console.log(data);
   $.ajax({
     type: "POST",
     headers: {
         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
     },
-    url:  url+'/manage/gs_login',
-    data: "data="+data,
+    url:  url+'/user_access_controller.php?act=gs_login',
+    data: data,
     dataType: "text",
     success: function(result) {
       var result  = JSON.parse(result);
       if(result.status==4){// for Successfull login of athlete and parent
-       alert(result.msg);
-       window.location.href = 'https://play.google.com/store/apps/details?id=getsportylite.darkhoprsesport.com.getsportylite&hl=en';//url+"/forms/home";
+       alert(result.status + JSON.stringify(data1));return;
+       //window.location.href = 'https://play.google.com/store/apps/details?id=getsportylite.darkhoprsesport.com.getsportylite&hl=en';//url+"/forms/home";
     }
     if(result.status==1){      // for Successfull login
-     window.location.href = url+"/forms/new_registration";
+     //window.location.href = url+"/forms/new_registration";
+     alert(result.status + JSON.stringify(data1));return;
     }
     else if(result.status==2) // for updating email and other info
     { //alert(JSON.stringify(result));//return;
@@ -165,12 +167,15 @@ var data = JSON.stringify(data1);
       //alert(JSON.stringify(data1));return;
       localStorage.setItem('userdata',JSON.stringify(data1));
       window.location.href = url+"/forms/new_registration";
+      alert(result.status + JSON.stringify(data1));return;
     }
     else if(result.status==3) // for creating new record
     { 
       data1.status = result.status;
       localStorage.setItem('userdata',JSON.stringify(data1));
-      window.location.href = url+"/forms/new_registration";
+      alert(result.status + JSON.stringify(data1));return;
+      window.location.href = "/register";
+      //window.location.href = url+"/forms/new_registration";
     }
    }
   });

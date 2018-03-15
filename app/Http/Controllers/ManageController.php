@@ -25,10 +25,5 @@ class ManageController extends Controller
    
 
 
-   public function gs_login()
-   {
-      echo "dkhsdskjs";
-     print_r($_POST);die;
-
-   }
+   
 }
