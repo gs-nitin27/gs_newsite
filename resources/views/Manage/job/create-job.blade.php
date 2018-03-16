@@ -199,10 +199,11 @@
                                     <span class="uploadFileBtn"><i class="fa fa-chain"></i>Attachment</span> -->
 
                                    <div class="uploadBlock">
-                                      <input type="button" id="btnFileUpload" class="uploadFileBtn" value="Attachment" />
+                                      <!-- <input type="button" id="btnFileUpload" class="uploadFileBtn" value="Attachment" /> -->
                                       <span id="spnFilePath"></span>
                                      <!--  <input type="file" id="FileUpload1" style="display: block" /> -->
                                      <input type='file' id="imgInp" />
+                                     <input type="button" id="btnFileUpload" class="uploadFileBtn" value="Attachment" style="display: none" onclick="image_upload()" />
                                   </div>
 
                                 </div>
@@ -210,7 +211,7 @@
                             <aside class="col-lg-6 col-md-6 col-sm-6 col-xs-6 mobView">
                                 <div class="uploadBox">
                                     <figure><!-- <img class="img-responsive" src="{{asset('manage_assets/img/demo.jpg')}}"> -->
-                                        <img id="blah" src="#" alt="your image" />
+                                        <img id="blah" src="#" alt="your image" style="max-width: 100%;" />
                                     </figure>
                                 </div>
                             </aside>
@@ -229,8 +230,8 @@
         var image_data = '';
         var user_data = JSON.parse(localStorage.getItem('userdata'));
         $(document).ready(function(){
-
-            function getSportsList()
+           
+           function getSportsList()
              {
                 $.ajax({
                 url:url+'/angularapi.php?act=sportlisting',
@@ -248,66 +249,77 @@
               }
               getSportsList();
 
-        $('#create_job').click(function(){
-        if(validate())
-          { function image_upload()
-            {
+
+
+
+               $('#create_job').click(function(){
+        if(!validate())
+          {
+            
+           create_job();
+          }
+      });
+           
+
+
+
+               // funtion for creating a job
+           function create_job() 
+           {  //alert(image_data);
+               // var job_data = {
+
+               //  "userid":user_data.userid,
+               //  "title":$('#title').val(),
+               //  "type":$('#type').val(),
+               //  "sports":$('#sport').val(),
+               //  "desc":$('#desc').val(),
+               //  "gender":$('#Gender').val(),
+               //  "work_exp":$('#work_exp').val(),
+               //  "qualification":$('#qualification').val(),
+               //  "keyreq":$('#keyreq').val(),
+               //  "org_address1":$('#org_address1').val(),
+               //  "org_address2":$('#org_address2').val(),
+               //  "org_city":$('#org_city').val(),
+               //  "org_state":$('#org_state').val(),
+               //  "org_pin":$('#org_pin').val(),
+               //  "name":$('#org_name').val(),
+               //  "about":$('#about').val(),
+               //  "address1":$('#address1').val(),
+               //  "address2":$('#address2').val(),
+               //  "org_city":$('#org_city').val(),
+               //  "org_state":$('#org_state').val(),
+               //  "org_pin":$('#org_pin').val(),
+               //  "contact":$('#contact').val(),
+               //  "email":$('#email').val(),
+               //  "image":'',//image_data,
+               //  "salary":''//$('#salary')
+               //  };
+               //  console.log(JSON.stringify(job_data));
+               //  alert(JSON.stringify(job_data));return;
+               var job_data = '{"userid":"565","title":"Cricket Coach","type":"Permanent","sports":"Cricket","desc":"To train the  athletes and teach them winning techniques","gender":"Any","work_exp":"1 yr","qualification":"B.Phd","org_address1":"A20 sector 35","org_address2":"near udhyan marg","org_city":"Noida","name":"Darkhorsesports","about":"A leading sports tech organisation","contact":"8076927155","email":"ntnagarwal27@gmail.com","image":"","salary":""}';
+                
+                console.log(JSON.stringify(job_data));
                 $.ajax({
-                url:url+'/angularapi_image.php?act=jobimage&ui=la',
-                data:image_data,
-                type:'POST',
-                dataType:'text',
-                success:function(result)
-                {  
-                  var image_name = JSON.parse(result);
-                  if(image_name.status == '1')
-                  {
-                  image_name = image_name.data;  
-              }else{
-                    
-                }
-               }
-           });
-        }
-    }
-            image_upload();
-            var job_data = {
-
-                'userid':user_data.userid,
-                'title':$('#title'),
-                'type':$('#type'),
-                'sports':$('#sports'),
-                'gender':$('#Gender'),
-                'work_exp':$('#work_exp'),
-                'qualification':$('#qualification'),
-                'keyreq':$('#keyreq'),
-                'org_address1':$('#org_address1'),
-                'org_address2':$('#org_address2'),
-                'org_city':$('#org_city'),
-                'org_state':$('#org_state'),
-                'org_pin':$('#org_pin'),
-                'name':$('#org_name'),
-                'about':$('#about'),
-                'address1':$('#address1'),
-                'address2':$('#address2'),
-                'org_city':$('#org_city'),
-                'org_state':$('#org_state'),
-                'org_pin':$('#org_pin'),
-                'contact':$('#contact'),
-                'email':$('#email'),
-                'image':image_name,
-                'salary':$('#salary')
-                }
-                $.post({
-                   url:url'/create_databse.php?act=create_job',
-
-
-
-                });
-          
-    
-        });
-    });
+                    type: "POST",
+                    async:false,
+                    url: url+'/create_database.php?act=createjob',
+                    data: job_data,
+                    dataType: "JSON",
+                    success: function(result){
+                    result = JSON.parse(result);
+                    if(result.status == 'success')
+                    {
+                        alert('Job Sucessfully created');
+                    }
+                    else
+                    {
+                        alert('Something went Wrong');
+                    }
+                   }
+                  }); 
+            }
+          //Create job function Ends here
+     });
          function validate()
          {
             $('#validate_div').html('');
@@ -362,10 +374,36 @@
             reader.onload = function (e) {
                 $('#blah').attr('src', e.target.result);
                 image_data = e.target.result;
+               // $('.uploadFileBtn').css("display", "block");
             }
              reader.readAsDataURL(input.files[0]);
         }
     }
+    //function for image upload starts
+        //      function image_upload()
+        //      {
+        //         $.ajax({
+        //         url:url+'/angularapi_image.php?act=jobimage&ui=la',
+        //         data:image_data,
+        //         type:'POST',
+        //         dataType:'text',
+        //         success:function(result)
+        //         {  
+        //           var image_name = JSON.parse(result);
+        //           if(image_name.status == '1')
+        //           {
+        //           image_data = image_name.data;
+        //          // alert(image_data);
+        //           return image_data;
+        //           }
+        //         else
+        //          {
+        //           return false;                   
+        //          }
+        //        }
+        //    });
+        // }
+           //function for image upload ends here
     $("#imgInp").change(function(){
         readURL(this);
     });

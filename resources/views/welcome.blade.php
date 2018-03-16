@@ -11,6 +11,7 @@
               <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
               <li data-target="#myCarousel" data-slide-to="1"></li>
               <li data-target="#myCarousel" data-slide-to="2"></li>
+              <li data-target="#myCarousel" data-slide-to="3"></li>
               <!-- <li data-target="#myCarousel" data-slide-to="2"></li>
               <li data-target="#myCarousel" data-slide-to="3"></li>
               <li data-target="#myCarousel" data-slide-to="4"></li> -->
@@ -18,25 +19,37 @@
             <!-- Wrapper for slides -->
             <div class="carousel-inner">
                 <section class="item active">
-                    <img src="img/top_banner_top.png" alt="Chania">                
+                    <img src="img/sports-trials.png" alt="Chania">                
                     <div class="carousel-caption">
                         <div class="container">
                             <div class="ban-pera">
-                                <h1>Lorem ispum is dummy </h1>
+                                <!-- <h1>Lorem ispum is dummy </h1>
                                 <h3>Lorem ispum is dummy text.</h3>
-                                <button type="button" class="btn btn-read">Read More</button>
+                                <button type="button" class="btn btn-read">Read More</button> -->
                             </div>
                         </div>
                     </div>
                 </section>
                 <section class="item">
-                    <img src="img/team-bg.jpg" alt="Chania">                
+                    <img src="img/sports-trials1.png" alt="Chania">                
                     <div class="carousel-caption">
                         <div class="container">
                             <div class="ban-pera">
-                                <h1>Lorem ispum is dummy </h1>
+                                <!-- <h1>Lorem ispum is dummy </h1>
                                 <h3>Lorem ispum is dummy text.</h3>
-                                <button type="button" class="btn btn-read">Read More</button>
+                                <button type="button" class="btn btn-read">Read More</button> -->
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="item">
+                    <img src="img/sports-trials2.png" alt="Chania">                
+                    <div class="carousel-caption">
+                        <div class="container">
+                            <div class="ban-pera">
+                               <!--  <h1>Lorem ispum is dummy </h1>
+                                <h3>Lorem ispum is dummy text.</h3>
+                                <button type="button" class="btn btn-read">Read More</button> -->
                             </div>
                         </div>
                     </div>
