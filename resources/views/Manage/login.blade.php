@@ -160,7 +160,7 @@ console.log(data);
        //window.location.href = 'https://play.google.com/store/apps/details?id=getsportylite.darkhoprsesport.com.getsportylite&hl=en';//url+"/forms/home";
     }
     if(result.status==1){      // for Successfull login
-      localStorage.setItem('userdata',result.data);
+      localStorage.setItem('userdata',JSON.stringify(result.data));
       alert(result.status + JSON.stringify(result.data));//return;
       window.location.href = "<?php echo url('/'); ?>"+"/manage/dashbo";
     }
