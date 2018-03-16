@@ -253,7 +253,7 @@
 
 
                $('#create_job').click(function(){
-        if(!validate())
+        if(validate())
           {
             
            create_job();
@@ -266,44 +266,40 @@
                // funtion for creating a job
            function create_job() 
            {  //alert(image_data);
-               // var job_data = {
+               var job_data = {
 
-               //  "userid":user_data.userid,
-               //  "title":$('#title').val(),
-               //  "type":$('#type').val(),
-               //  "sports":$('#sport').val(),
-               //  "desc":$('#desc').val(),
-               //  "gender":$('#Gender').val(),
-               //  "work_exp":$('#work_exp').val(),
-               //  "qualification":$('#qualification').val(),
-               //  "keyreq":$('#keyreq').val(),
-               //  "org_address1":$('#org_address1').val(),
-               //  "org_address2":$('#org_address2').val(),
-               //  "org_city":$('#org_city').val(),
-               //  "org_state":$('#org_state').val(),
-               //  "org_pin":$('#org_pin').val(),
-               //  "name":$('#org_name').val(),
-               //  "about":$('#about').val(),
-               //  "address1":$('#address1').val(),
-               //  "address2":$('#address2').val(),
-               //  "org_city":$('#org_city').val(),
-               //  "org_state":$('#org_state').val(),
-               //  "org_pin":$('#org_pin').val(),
-               //  "contact":$('#contact').val(),
-               //  "email":$('#email').val(),
-               //  "image":'',//image_data,
-               //  "salary":''//$('#salary')
-               //  };
-               //  console.log(JSON.stringify(job_data));
-               //  alert(JSON.stringify(job_data));return;
-               var job_data = '{"userid":"565","title":"Cricket Coach","type":"Permanent","sports":"Cricket","desc":"To train the  athletes and teach them winning techniques","gender":"Any","work_exp":"1 yr","qualification":"B.Phd","org_address1":"A20 sector 35","org_address2":"near udhyan marg","org_city":"Noida","name":"Darkhorsesports","about":"A leading sports tech organisation","contact":"8076927155","email":"ntnagarwal27@gmail.com","image":"","salary":""}';
-                
-                console.log(JSON.stringify(job_data));
+                "userid":user_data.userid,
+                "title":$('#title').val(),
+                "type":$('#type').val(),
+                "sports":$('#sport').val(),
+                "desc":$('#desc').val(),
+                "gender":$('#Gender').val(),
+                "work_exp":$('#work_exp').val(),
+                "qualification":$('#qualification').val(),
+                "keyreq":$('#keyreq').val(),
+                "org_address1":$('#org_address1').val(),
+                "org_address2":$('#org_address2').val(),
+                "org_city":$('#org_city').val(),
+                "org_state":$('#org_state').val(),
+                "org_pin":$('#org_pin').val(),
+                "name":$('#org_name').val(),
+                "about":$('#about').val(),
+                "address1":$('#address1').val(),
+                "address2":$('#address2').val(),
+                "org_city":$('#org_city').val(),
+                "org_state":$('#org_state').val(),
+                "org_pin":$('#org_pin').val(),
+                "contact":$('#contact').val(),
+                "email":$('#email').val(),
+                "image":image_data,
+                "salary":''//$('#salary')
+                };
+                //alert(JSON.stringify(job_data));return;
                 $.ajax({
                     type: "POST",
                     async:false,
                     url: url+'/create_database.php?act=createjob',
-                    data: job_data,
+                    data: JSON.stringify(job_data),
                     dataType: "JSON",
                     success: function(result){
                     result = JSON.parse(result);
@@ -374,35 +370,35 @@
             reader.onload = function (e) {
                 $('#blah').attr('src', e.target.result);
                 image_data = e.target.result;
-               // $('.uploadFileBtn').css("display", "block");
+                $('.uploadFileBtn').css("display", "block");
             }
              reader.readAsDataURL(input.files[0]);
         }
     }
     //function for image upload starts
-        //      function image_upload()
-        //      {
-        //         $.ajax({
-        //         url:url+'/angularapi_image.php?act=jobimage&ui=la',
-        //         data:image_data,
-        //         type:'POST',
-        //         dataType:'text',
-        //         success:function(result)
-        //         {  
-        //           var image_name = JSON.parse(result);
-        //           if(image_name.status == '1')
-        //           {
-        //           image_data = image_name.data;
-        //          // alert(image_data);
-        //           return image_data;
-        //           }
-        //         else
-        //          {
-        //           return false;                   
-        //          }
-        //        }
-        //    });
-        // }
+             function image_upload()
+             {
+                $.ajax({
+                url:url+'/angularapi_image.php?act=jobimage&ui=la',
+                data:image_data,
+                type:'POST',
+                dataType:'text',
+                success:function(result)
+                {  
+                  var image_name = JSON.parse(result);
+                  if(image_name.status == '1')
+                  {
+                  image_data = image_name.data;
+                 // alert(image_data);
+                  return image_data;
+                  }
+                else
+                 {
+                  return false;                   
+                 }
+               }
+           });
+        }
            //function for image upload ends here
     $("#imgInp").change(function(){
         readURL(this);
