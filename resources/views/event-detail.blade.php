@@ -23,7 +23,7 @@
         <div class="relative">
             <div class="blue-bg"></div>
              <div class="play-icon" data-toggle="modal" data-target="#myModal">
-        	  <img src="img/play-icon.svg">
+        	  <img src="{{asset('img/play-icon.svg')}}">
               </div>
             </div>      
          <!-- Modal pop -->
@@ -116,14 +116,33 @@
               </div>
           </div>
     </section>  
-    
-       
- 
 
+
+  
      <div class="sidebarMide">
-          <a href="#" class="cleateJob"><i class="fa fa-facebook"></i></a>
-          <a href="#" class="cleateJob"><i class="fa fa-twitter"></i></a>        
+
+ <div class="fb-share-button" data-href="https://getsporty.in/blog.php?n=12" data-layout="button_count" data-size="small" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse">
+   <i class="fa fa-facebook"></i></a></div>
+
+
+
+    <div class="twitterflat"><a href="https://twitter.com/share" class="twitter-share-button" data-size="large" data-text="{{$name[0]->name}}" data-url="http://localhost/get/gs_newsite/event-detail/{{$name[0]->id}}" data-show-count="false"><i class="fa fa-twitter"></i></a></a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script></div> 
+
+
+
+
+
+
           <a href="#" class="cleateJob" style="background-color: #db2814;"><i class="fa fa-google-plus"></i></a>
+          
+  <div class="linkedinflat">
+  <a href=" https://www.linkedin.com/shareArticle?mini=true&url=http://localhost/get/gs_newsite/event-detail/{{$name[0]->id}}&title={{$name[0]->name}}
+&summary={{$name[0]->name}}&source=LinkedIn" ><i class="fa fa-google-plus"></a>
+  </div>
+
+  
+
+
           <a href="#" class="cleateJob" style="background-color: #1686b0;"><i class="fa fa-linkedin"></i></a>
           <a href="#" class="cleateJob" style="background-color: #FA0001"><i class="fa fa-pinterest-p"></i></a>
     </div>
