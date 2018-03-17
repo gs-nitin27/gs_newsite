@@ -9,7 +9,7 @@
              <span class="icon-bar"></span>
              <span class="icon-bar"></span>
              </button>
-            <a class="navbar-brand logo" href="index.php"><img class="img-responsive" src="img/logo.png"></a>
+            <a class="navbar-brand logo" href="{{ action( 'WebController@index' )}}"><img class="img-responsive" src="{{asset('img/logo.png')}}"></a>
            </div>
           <!-- Collect the nav links, forms, and other content for toggling -->
            <div class="navbar-collapse collapse" id="navbar-collapse-1">
@@ -17,10 +17,10 @@
               <!-- <li class="active"><a href="index.php">Home</a></li> -->
               <li ><a href="aboutus">About us</a></li>
               <!-- <li><a href="#getApp" data-toggle="modal">Get app  </a></li> -->
-              <li><a href="event" >Event </a></li>
-              <li><a href="job">Job</a></li>
-              <li><a href="tournament">Tournaments</a></li>
-              <li><a href="article">Article</a></li>
+              <li><a href="{{url('/event')}}" >Event </a></li>
+              <li><a href="{{url('/job')}}">Job</a></li>
+              <li><a href="{{url('/tournament')}}">Tournaments</a></li>
+              <li><a href="{{url('/article')}}">Article</a></li>
               <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                    Bussiness <b class="caret"></b>

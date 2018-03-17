@@ -2,6 +2,8 @@
 @section('pageTitle','Home')
 @section('content')
 
+
+
          <div class="joblist-bg eventBg bannerBgSec">
            <div class="container">
        	     <div class="row">
@@ -17,7 +19,7 @@
         <div class="relative">
               <div class="blue-bg"></div>
               <div class="play-icon" data-toggle="modal" data-target="#myModal">
-        	       <img src="img/play-icon.svg">
+        	       <img src="{{asset('img/play-icon.svg')}} ">
               </div>
         </div>      
          <!-- Modal pop -->
@@ -46,6 +48,7 @@ Overall, sports events in India are always amusing to unite with. Every year we 
                             
                 					 
   	       <div class="clearfix margin20"></div>
+
     	      <!--  <div class="text-center">
     	       	<i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
   <span class="sr-only">Loading...</span>
