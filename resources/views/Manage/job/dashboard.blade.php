@@ -27,125 +27,33 @@
                 </ul>
                 <div id = "myTabContent" class = "tab-content tabContentBox clearfix">
                     <div class = "tab-pane fade in active jobActiveSec" id = "tab01">
+                    </div>
+                    <div class = "tab-pane fade" id = "tab02">
+                    </div>
+                    <div class = "tab-pane fade jobsaveTab" id = "tab03">
                         
-                                                                    
-                     </div>
-                     
-                     <div class = "tab-pane fade" id = "tab02">
-                        <section class="clearfix colSec">                         
-                            <div class="colBox">
-                                <figure><img class="img-responsive" src="{{asset('manage_assets/img/demo.jpg')}}"></figure>
-                                <p class="">Assistant Trainer</p>
-                            </div>
-                            <p class="cricket"><i class="fa fa-map-marker"></i>Ghaizabad Sports - Cricket</p>
-                            <a href="#" class="publishCard">Publish</a> 
-                                               
-                        </section> 
-                        <section class="clearfix colSec">                         
-                            <div class="colBox">
-                                <figure><img class="img-responsive" src="{{asset('manage_assets/img/t2.jpg')}}"></figure>
-                                <p class="">Assistant Trainer</p>
-                            </div>
-                            <p class="cricket"><i class="fa fa-map-marker"></i>Ghaizabad Sports - Cricket</p>
-                            <a href="#" class="publishCard">Publish</a> 
-                            <div class="overLap"></div>                        
-                        </section> 
-                        <section class="clearfix colSec">                         
-                            <div class="colBox">
-                                <figure><img class="img-responsive" src="{{asset('manage_assets/img/t5.jpg')}}"></figure>
-                                <p class="">Assistant Trainer</p>
-                            </div>
-                            <p class="cricket"><i class="fa fa-map-marker"></i>Ghaizabad Sports - Cricket</p>
-                            <a href="#" class="publishCard">Publish</a> 
-                                                   
-                        </section> 
-                       <section class="clearfix colSec">                         
-                            <div class="colBox">
-                                <figure><img class="img-responsive" src="{{asset('manage_assets/img/t3.jpg')}}"></figure>
-                                <p class="">Assistant Trainer</p>
-                            </div>
-                            <p class="cricket"><i class="fa fa-map-marker"></i>Ghaizabad Sports - Cricket</p>
-                            <a href="#" class="publishCard">Publish</a> 
-                            <div class="overLap"></div>                        
-                        </section>  
-                     </div>
-                     <div class = "tab-pane fade jobsaveTab" id = "tab03">
-
-
-                        <section class="clearfix colSec">                         
-                            <div class="colBox">
-                                <figure><img class="img-responsive" src="{{asset('manage_assets/img/t1.jpg')}}"></figure>
-                                <p class="">Assistant Trainer</p>
-                            </div>
-                            <p class="cricket"><i class="fa fa-map-marker"></i>Ghaizabad Sports - Cricket</p>
-                            <a href="#" class="publishCard">Publish</a> 
-                                               
-                        </section> 
-                        <section class="clearfix colSec">                         
-                            <div class="colBox">
-                                <figure><img class="img-responsive" src="{{asset('manage_assets/img/t2.jpg')}}"></figure>
-                                <p class="">Assistant Trainer</p>
-                            </div>
-                            <p class="cricket"><i class="fa fa-map-marker"></i>Ghaizabad Sports - Cricket</p>
-                            <a href="#" class="publishCard">Publish</a> 
-                            <div class="overLap"></div>                        
-                        </section> 
-                        <section class="clearfix colSec">                         
-                            <div class="colBox">
-                                <figure><img class="img-responsive" src="{{asset('manage_assets/img/t5.jpg')}}"></figure>
-                                <p class="">Assistant Trainer</p>
-                            </div>
-                            <p class="cricket"><i class="fa fa-map-marker"></i>Ghaizabad Sports - Cricket</p>
-                            <a href="#" class="publishCard">Publish</a> 
-                                                   
-                        </section> 
-                       <section class="clearfix colSec">                         
-                            <div class="colBox">
-                                <figure><img class="img-responsive" src="{{asset('manage_assets/img/t1.jpg')}}"></figure>
-                                <p class="">Assistant Trainer</p>
-                            </div>
-                            <p class="cricket"><i class="fa fa-map-marker"></i>Ghaizabad Sports - Cricket</p>
-                            <a href="#" class="publishCard">Publish</a> 
-                            <div class="overLap"></div>                        
-                        </section>
-
-                     	  <h1>Cricket Foundation Heading</h1>
-                        <section class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                        	<div class="clearfix jobSave">
-                            	<p><span>Job Title:</span>  Assistant Trainer </p>
-                                <p><span>Job Location:</span> Mumbai </p>
-                                <p><span>Job Type:</span> Full Time</p>
-                                <p><span>Sport:</span>  Cricket </p>
-                            </div>
-                        </section>
-                        <section class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                        	<div class="clearfix jobSave">
-                            	<p><span>Email:</span>  abc.224@gmail.com </p>
-                                <p><span>WorkExperience:</span> 4 Year </p>
-                               
-                            </div>
-                        </section>
-                        <section class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                        	<div class="viewImg ">
-                                <figure><img class="img-responsive" src="{{asset('manage_assets/img/demo.jpg')}}"></figure>                                
-                            </div>
-                        </section>
-                        <div class="clearfix">
+                        <!-- <div class="clearfix">
                         	<button class="btn btn-n viewBtn"><i class="fa fa-eye"></i> View More</button>
-                        </div>
-                        
+                        </div> -->
                      </div>
                 </div>
-            </section>
-        </div>
-         <a href="create" class="cleateJob"><i class="glyphicon glyphicon-plus"></i><span>Create Job</span></a>
+                </section>
+                </div>
+    <a href="create" class="cleateJob"><i class="glyphicon glyphicon-plus"></i><span>Create Job</span></a>
     </section>
     <script type="text/javascript">
+        function getid(a)
+        {
+            // alert(a.id);  
+             window.location.href = route_url+'/manage/view'+a.id;
+
+
+        }
         
+     
         $(document).ready(function(){
-        
          $.ajax({
-          url:url+'//angularapi.php?act=getjoblist&id='+userdata.userid,
+          url:url+'/angularapi.php?act=getjoblist&id='+sess_userid,
           method:"GET",
           dataType:"text",
           success:function(result)
@@ -159,30 +67,51 @@
               data.forEach(function(data){
                  if(data.publish == 0)
                  { 
-                card1 += '<section class="clearfix colSec"> <div class="colBox"> <figure><img class="img-responsive" src="{{asset("manage_assets/img/demo.jpg")}}"></figure> <p class="">'+data.title+'</p> </div> <p class="cricket"><i class="fa fa-map-marker"></i>'+data.org_city+'- '+data.sport+'</p> <a href="{{url("/manage/View")}}" class="publishCard">Publish</a> </section>';
+                card1 += '<section class="clearfix colSec"> <div class="colBox" id="'+data.id+'" onclick="getid(this);"> <figure><img class="img-responsive" src="'+image_url+'job/'+data.image+'"></figure> <p class="">'+data.title+'</p> </div> <p class="cricket"><i class="fa fa-map-marker"></i>'+data.org_city+'- '+data.sport+'</p> <a href="{{url("/manage/View")}}" class="publishCard">Publish</a> </section>';
                  }
                  if(data.publish == 1)
                  {
-                card2 += '<section class="clearfix colSec"> <div class="colBox"> <figure><img class="img-responsive" src="{{asset("manage_assets/img/demo.jpg")}}"></figure> <p class="">'+data.title+'</p> </div> <p class="cricket"><i class="fa fa-map-marker"></i>'+data.org_city+'- '+data.sport+'</p> <a href="{{url("/manage/View")}}" class="publishCard">Publish</a> </section>';
-                 }else
+                card2 += '<section class="clearfix colSec"> <div class="colBox" id="'+data.id+'" onclick="getid(this);"> <figure><img class="img-responsive" src="'+image_url+'job/'+data.image+'"></figure> <p class="">'+data.title+'</p> </div> <p class="cricket"><i class="fa fa-map-marker"></i>'+data.org_city+'- '+data.sport+'</p> <a href="{{url("/manage/View")}}" class="publishCard">Publish</a> </section>';
+                 }else if(data.publish < 0)
                  {
-                    card3 += '<section class="clearfix colSec"> <div class="colBox"> <figure><img class="img-responsive" src="{{asset("manage_assets/img/demo.jpg")}}"></figure> <p class="">'+data.title+'</p> </div> <p class="cricket"><i class="fa fa-map-marker"></i>'+data.org_city+'- '+data.sport+'</p> <a href="{{url("/manage/View")}}" class="publishCard">Publish</a> </section>';
+                    card3 += '<section class="clearfix colSec"> <div class="colBox" id="'+data.id+'" onclick="getid(this);"> <figure><img class="img-responsive" src="'+image_url+'job/'+data.image+'"></figure> <p class="">'+data.title+'</p> </div> <p class="cricket"><i class="fa fa-map-marker"></i>'+data.org_city+'- '+data.sport+'</p> <a href="{{url("/manage/View")}}" class="publishCard">Publish</a> </section>';
                  }
+             
 
 
-          });
-               $('#tab01').html(card2);
-               $('#tab02').html(card3);
-               $('#tab03').html(card1);
-            }
+          
+          });  
+              
+               var empty = '<figure><img src="{{asset("manage_assets/img/na.png")}}" alt=""></figure>';
+               if(card2 == '')
+               {
+               $('#tab01').html(empty); 
+               }
+               else
+               {
+                $('#tab01').html(card2);
+               }
 
+               if(card3 == '')
+               {
+               $('#tab02').html(empty); 
+               }
+               else
+               {
+                $('#tab02').html(card3);
+               }
 
+               if(card1 == '')
+               {
+               $('#tab03').html(empty); 
+               }
+               else
+               {
+                $('#tab03').html(card1);
+               }
+             }
           }
-
-         });
-
-
-
         });
+      });
     </script>
   @stop

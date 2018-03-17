@@ -1,6 +1,14 @@
+<?php $value = session('userdata');
+$data = json_decode($value);
+$userid = $data->userid;
+//print_r($data);die;
+?>
 <script type="text/javascript">
     var url = '<?php echo config('constant.ENV_URL')?>';
-    var userdata = JSON.parse(localStorage.getItem('userdata'));
+    var image_url = '<?php echo config('constant.IMAGE_URL')?>';
+    var sess_userid = '<?php echo $userid; ?>';
+   // var route_url = '<?php //echo url('/'); ?>';
+ </script>
 </script>
 <header class="headerSec">
         <div class="container">
