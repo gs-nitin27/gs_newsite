@@ -27,54 +27,8 @@
                 </ul>
                 <div id = "myTabContent" class = "tab-content tabContentBox clearfix">
                     <div class = "tab-pane fade in active jobActiveSec" id = "tab01">
-                        <section class="clearfix colSec">                        	
-                            <div class="colBox">
-                                <figure><img class="img-responsive" src="{{asset('manage_assets/img/demo.jpg')}}"></figure>
-                                <p class="">Assistant Trainer</p>
-                            </div>
-                            <p class="cricket"><i class="fa fa-map-marker"></i>Ghaizabad Sports - Cricket</p>
-                            <a href="#" class="publishCard">Publish</a>                        	
-                        </section>
-                        <section class="clearfix colSec">                         
-                            <div class="colBox">
-                                <figure><img class="img-responsive" src="{{asset('manage_assets/img/t1.jpg')}}"></figure>
-                                <p class="">Assistant Trainer</p>
-                            </div>
-                            <p class="cricket"><i class="fa fa-map-marker"></i>Ghaizabad Sports - Cricket</p>
-                            <a href="#" class="publishCard">Publish</a>                         
-                        </section>
-                        <section class="clearfix colSec">                         
-                            <div class="colBox">
-                                <figure><img class="img-responsive" src="{{asset('manage_assets/img/t2.jpg')}}"></figure>
-                                <p class="">Assistant Trainer</p>
-                            </div>
-                            <p class="cricket"><i class="fa fa-map-marker"></i>Ghaizabad Sports - Cricket</p>
-                            <a href="#" class="publishCard">Publish</a>                         
-                        </section>
-                        <section class="clearfix colSec">                         
-                            <div class="colBox">
-                                <figure><img class="img-responsive" src="{{asset('manage_assets/img/t3.jpg')}}"></figure>
-                                <p class="">Assistant Trainer</p>
-                            </div>
-                            <p class="cricket"><i class="fa fa-map-marker"></i>Ghaizabad Sports - Cricket</p>
-                            <a href="#" class="publishCard">Publish</a>                         
-                        </section>
-                        <section class="clearfix colSec">                         
-                            <div class="colBox">
-                                <figure><img class="img-responsive" src="{{asset('manage_assets/img/t4.jpg')}}"></figure>
-                                <p class="">Assistant Trainer</p>
-                            </div>
-                            <p class="cricket"><i class="fa fa-map-marker"></i>Ghaizabad Sports - Cricket</p>
-                            <a href="#" class="publishCard">Publish</a>                         
-                        </section>
-                        <section class="clearfix colSec">                         
-                            <div class="colBox">
-                                <figure><img class="img-responsive" src="{{asset('manage_assets/img/t5.jpg')}}"></figure>
-                                <p class="">Assistant Trainer</p>
-                            </div>
-                            <p class="cricket"><i class="fa fa-map-marker"></i>Ghaizabad Sports - Cricket</p>
-                            <a href="#" class="publishCard">Publish</a>                         
-                        </section>                                            
+                        
+                                                                    
                      </div>
                      
                      <div class = "tab-pane fade" id = "tab02">
@@ -186,4 +140,49 @@
         </div>
          <a href="create" class="cleateJob"><i class="glyphicon glyphicon-plus"></i><span>Create Job</span></a>
     </section>
+    <script type="text/javascript">
+        
+        $(document).ready(function(){
+        
+         $.ajax({
+          url:url+'//angularapi.php?act=getjoblist&id='+userdata.userid,
+          method:"GET",
+          dataType:"text",
+          success:function(result)
+          {
+            var data = JSON.parse(result);
+            var card1 = '';
+            var card2 = '';
+            var card3 = '';
+            if(data != 0)
+            {
+              data.forEach(function(data){
+                 if(data.publish == 0)
+                 { 
+                card1 += '<section class="clearfix colSec"> <div class="colBox"> <figure><img class="img-responsive" src="{{asset("manage_assets/img/demo.jpg")}}"></figure> <p class="">'+data.title+'</p> </div> <p class="cricket"><i class="fa fa-map-marker"></i>'+data.org_city+'- '+data.sport+'</p> <a href="{{url("/manage/View")}}" class="publishCard">Publish</a> </section>';
+                 }
+                 if(data.publish == 1)
+                 {
+                card2 += '<section class="clearfix colSec"> <div class="colBox"> <figure><img class="img-responsive" src="{{asset("manage_assets/img/demo.jpg")}}"></figure> <p class="">'+data.title+'</p> </div> <p class="cricket"><i class="fa fa-map-marker"></i>'+data.org_city+'- '+data.sport+'</p> <a href="{{url("/manage/View")}}" class="publishCard">Publish</a> </section>';
+                 }else
+                 {
+                    card3 += '<section class="clearfix colSec"> <div class="colBox"> <figure><img class="img-responsive" src="{{asset("manage_assets/img/demo.jpg")}}"></figure> <p class="">'+data.title+'</p> </div> <p class="cricket"><i class="fa fa-map-marker"></i>'+data.org_city+'- '+data.sport+'</p> <a href="{{url("/manage/View")}}" class="publishCard">Publish</a> </section>';
+                 }
+
+
+          });
+               $('#tab01').html(card2);
+               $('#tab02').html(card3);
+               $('#tab03').html(card1);
+            }
+
+
+          }
+
+         });
+
+
+
+        });
+    </script>
   @stop

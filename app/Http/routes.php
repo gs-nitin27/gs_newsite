@@ -67,9 +67,14 @@ Route::get('article-detail/{id}','WebController@article_detail');
             return View::make('Manage.signup');
            //Route::get('get_Tounament','ManageController@get_Tounament');
         });
-        Route::get('create', function()
+        Route::get('/create', function()
         {
             return View::make('Manage.job.create-job');
+        });
+
+        Route::get('/View', function()
+        {
+            return View::make('Manage.job.view-job');
         });
     });
 
