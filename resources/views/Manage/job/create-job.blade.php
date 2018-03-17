@@ -202,8 +202,8 @@
                                       <!-- <input type="button" id="btnFileUpload" class="uploadFileBtn" value="Attachment" /> -->
                                       <span id="spnFilePath"></span>
                                      <!--  <input type="file" id="FileUpload1" style="display: block" /> -->
-                                     <input type='file' id="imgInp" />
-                                     <input type="button" id="btnFileUpload" class="uploadFileBtn" value="Attachment" style="display: none" onclick="image_upload()" />
+                                     <!-- <input  /> -->
+                                     <input type='file' id="imgInp" class="uploadFileBtn" value="Attachment"/>
                                   </div>
 
                                 </div>
@@ -211,7 +211,7 @@
                             <aside class="col-lg-6 col-md-6 col-sm-6 col-xs-6 mobView">
                                 <div class="uploadBox">
                                     <figure><!-- <img class="img-responsive" src="{{asset('manage_assets/img/demo.jpg')}}"> -->
-                                        <img id="blah" src="#" alt="your image" style="max-width: 100%;" />
+                                        <img id="blah" src="{{asset('manage_assets/img/demo.jpg')}}" alt="your image" style="max-width: 100%;" />
                                     </figure>
                                 </div>
                             </aside>
@@ -303,7 +303,7 @@
                     dataType: "JSON",
                     success: function(result){
                     result = JSON.parse(result);
-                    if(result.status == 'success')
+                    if(result.status == '1')
                     {
                         alert('Job Sucessfully created');
                     }
@@ -370,7 +370,8 @@
             reader.onload = function (e) {
                 $('#blah').attr('src', e.target.result);
                 image_data = e.target.result;
-                $('.uploadFileBtn').css("display", "block");
+                console.log(image_data);
+                //$('.uploadFileBtn').css("display", "block");
             }
              reader.readAsDataURL(input.files[0]);
         }
