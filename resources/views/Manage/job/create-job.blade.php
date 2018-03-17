@@ -115,6 +115,20 @@
                         <section class="clearfix">
                             <aside class="col-lg-6 col-md-6 col-sm-6 col-xs-6 mobView">
                                 <div class="form-group">
+                                    <label for="" class="">Key Requirements</label>
+                                    <input class="form-control" placeholder=" " type="text" name="keyreq" id="keyreq">
+                                </div>
+                            </aside>
+                            <aside class="col-lg-6 col-md-6 col-sm-6 col-xs-6 mobView">
+                                <div class="form-group">
+                                    <label for="" class="">Salary</label>
+                                    <input class="form-control" placeholder=" " type="text" name="salary" id="salary">
+                                </div>
+                            </aside>
+                        </section>
+                        <section class="clearfix">
+                            <aside class="col-lg-6 col-md-6 col-sm-6 col-xs-6 mobView">
+                                <div class="form-group">
                                     <label for="" class="">Desired Skill*</label>
                                     <input class="form-control" placeholder=" " type="text" id="desiredskill" name="desiredskill">
                                 </div>
@@ -226,7 +240,7 @@
         </div>
     </section>
    <script type="text/javascript">
-        var url = '<?php echo config('constant.ENV_URL')?>';
+        
         var image_data = '';
         var user_data = JSON.parse(localStorage.getItem('userdata'));
         $(document).ready(function(){
@@ -248,22 +262,15 @@
                });
               }
               getSportsList();
-
-
-
-
-               $('#create_job').click(function(){
+        
+        $('#create_job').click(function(){
         if(validate())
           {
-            
            create_job();
           }
       });
            
-
-
-
-               // funtion for creating a job
+           // funtion for creating a job
            function create_job() 
            {  //alert(image_data);
                var job_data = {
@@ -275,6 +282,7 @@
                 "desc":$('#desc').val(),
                 "gender":$('#Gender').val(),
                 "work_exp":$('#work_exp').val(),
+                "desiredskill":$('#desiredskill').val(),
                 "qualification":$('#qualification').val(),
                 "keyreq":$('#keyreq').val(),
                 "org_address1":$('#org_address1').val(),
@@ -286,13 +294,13 @@
                 "about":$('#about').val(),
                 "address1":$('#address1').val(),
                 "address2":$('#address2').val(),
-                "org_city":$('#org_city').val(),
-                "org_state":$('#org_state').val(),
-                "org_pin":$('#org_pin').val(),
+                "city":$('#city').val(),
+                "state":$('#org_state').val(),
+                "pin":$('#org_pin').val(),
                 "contact":$('#contact').val(),
                 "email":$('#email').val(),
                 "image":image_data,
-                "salary":''//$('#salary')
+                "salary":$('#salary').val()
                 };
                 //alert(JSON.stringify(job_data));return;
                 $.ajax({

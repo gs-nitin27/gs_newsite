@@ -1,3 +1,7 @@
+<script type="text/javascript">
+    var url = '<?php echo config('constant.ENV_URL')?>';
+    var userdata = JSON.parse(localStorage.getItem('userdata'));
+</script>
 <header class="headerSec">
         <div class="container">
            <!-- Brand and toggle get grouped for better mobile display -->
@@ -8,7 +12,7 @@
                  <span class="icon-bar"></span>
                  <span class="icon-bar"></span>
                  </button>
-                 <div class="logoSec"><a href="index.php"><img class="img-responsive" src="{{asset('manage_assets/img/logo.png')}}"></a></div>
+                 <div class="logoSec"><a href="{{url('/manage/dashbo')}}"><img class="img-responsive" src="{{asset('manage_assets/img/logo.png')}}"></a></div>
            <a class="pull-right toggleBtn" href="#"> <i class="fa fa-bars openSideNav"></i></a>
             <div class="text-center deshName"><span class="">Job</span></div>
            <div id="mySidenav" class="sideNav">
