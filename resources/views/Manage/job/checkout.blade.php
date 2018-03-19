@@ -1,11 +1,6 @@
 @extends('Manage.layouts.master')
 @section('pageTitle','Home')
 @section('content')
-{{
-print_r($checkout['plan'][0]->amount)
-
-
-}}
 <div class='container'>
     <div class='row' style='padding-top:25px; padding-bottom:25px;'>
         <div class='col-md-12'>
