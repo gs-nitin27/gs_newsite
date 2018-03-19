@@ -216,8 +216,8 @@
                                       <!-- <input type="button" id="btnFileUpload" class="uploadFileBtn" value="Attachment" /> -->
                                       <span id="spnFilePath"></span>
                                      <!--  <input type="file" id="FileUpload1" style="display: block" /> -->
-                                     <input type='file' id="imgInp" />
-                                     <input type="button" id="btnFileUpload" class="uploadFileBtn" value="Attachment" style="display: none" onclick="image_upload()" />
+                                     <!-- <input  /> -->
+                                     <input type='file' id="imgInp" class="uploadFileBtn" value="Attachment"/>
                                   </div>
 
                                 </div>
@@ -225,7 +225,7 @@
                             <aside class="col-lg-6 col-md-6 col-sm-6 col-xs-6 mobView">
                                 <div class="uploadBox">
                                     <figure><!-- <img class="img-responsive" src="{{asset('manage_assets/img/demo.jpg')}}"> -->
-                                        <img id="blah" src="#" alt="your image" style="max-width: 100%;" />
+                                        <img id="blah" src="{{asset('manage_assets/img/demo.jpg')}}" alt="your image" style="max-width: 100%;" />
                                     </figure>
                                 </div>
                             </aside>
@@ -242,7 +242,6 @@
    <script type="text/javascript">
         
         var image_data = '';
-        var user_data = JSON.parse(localStorage.getItem('userdata'));
         $(document).ready(function(){
            
            function getSportsList()
@@ -275,22 +274,22 @@
            {  //alert(image_data);
                var job_data = {
 
-                "userid":user_data.userid,
+                "userid":sess_userid,
                 "title":$('#title').val(),
                 "type":$('#type').val(),
                 "sports":$('#sport').val(),
-                "desc":$('#desc').val(),
+                "description":$('#desc').val(),
                 "gender":$('#Gender').val(),
-                "work_exp":$('#work_exp').val(),
-                "desiredskill":$('#desiredskill').val(),
+                "work_experience":$('#work_exp').val(),
+                "desired_skills":$('#desiredskill').val(),
                 "qualification":$('#qualification').val(),
-                "keyreq":$('#keyreq').val(),
+                "key_requirement":$('#keyreq').val(),
                 "org_address1":$('#org_address1').val(),
                 "org_address2":$('#org_address2').val(),
                 "org_city":$('#org_city').val(),
                 "org_state":$('#org_state').val(),
                 "org_pin":$('#org_pin').val(),
-                "name":$('#org_name').val(),
+                "organisation_name":$('#org_name').val(),
                 "about":$('#about').val(),
                 "address1":$('#address1').val(),
                 "address2":$('#address2').val(),
@@ -298,7 +297,7 @@
                 "state":$('#org_state').val(),
                 "pin":$('#org_pin').val(),
                 "contact":$('#contact').val(),
-                "email":$('#email').val(),
+                "email_app_collection":$('#email').val(),
                 "image":image_data,
                 "salary":$('#salary').val()
                 };
@@ -308,12 +307,13 @@
                     async:false,
                     url: url+'/create_database.php?act=createjob',
                     data: JSON.stringify(job_data),
-                    dataType: "JSON",
+                    dataType: "text",
                     success: function(result){
                     result = JSON.parse(result);
-                    if(result.status == 'success')
-                    {
+                    if(result.status == '1')
+                    {   
                         alert('Job Sucessfully created');
+                        window.location.href = "{{url('/manage/dashbo')}}";
                     }
                     else
                     {
@@ -378,7 +378,7 @@
             reader.onload = function (e) {
                 $('#blah').attr('src', e.target.result);
                 image_data = e.target.result;
-                $('.uploadFileBtn').css("display", "block");
+                image_data = image_data.split(',')[1];
             }
              reader.readAsDataURL(input.files[0]);
         }

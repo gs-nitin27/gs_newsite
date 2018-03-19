@@ -38,6 +38,7 @@ border: 0.5px solid #ccc;
 
 } </style>   
 </head>
+<script type="text/javascript" src="{{asset('manage_assets/js/set_user_data.js')}}"></script>
 <body>
 <div class="background">
 <div class="loading" id="imagelodar">Loading&#8230;
@@ -161,8 +162,8 @@ console.log(data);
     }
     if(result.status==1){      // for Successfull login
       localStorage.setItem('userdata',JSON.stringify(result.data));
-      alert(result.status + JSON.stringify(result.data));//return;
-      window.location.href = "<?php echo url('/'); ?>"+"/manage/dashbo";
+      set_data();
+      
     }
     else if(result.status==2) // for updating email and other info
     { 
@@ -207,5 +208,30 @@ console.log(data);
           return false;
         }
       }
+    function set_data(){
+      $.ajax({
+      async:false,
+      headers: {
+        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+    },
+      url:"{{url('/manage/setdata')}}",
+      method:"POST",
+      dataType:"text",
+      data:localStorage.getItem('userdata'),
+      success:function(result)
+      {
+        if(result != 0)
+        {
+          window.location.href = "<?php echo url('/'); ?>"+"/manage/dashbo";
+        }
+        else
+        {
+          alert('server Error');
+        }
+        //alert(JSON.stringify(result));
+      } 
+
+    });
+  }
 </script>
 </html>

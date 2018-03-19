@@ -159,13 +159,7 @@ use App\WebModel;
     $obj  = new WebModel();
     $resp = $obj->getArticleDetail($id);
     $topic_of_artical = $resp[0]->topic_of_artical;
-
-    
-
     $resp1 = $obj->getResourcDetail_data($topic_of_artical);
-
-    
-
     return View::make("article-detail")->with('name', $resp)->with('name1',$resp1);
     }
 

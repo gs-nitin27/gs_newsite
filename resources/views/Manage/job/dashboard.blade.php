@@ -3,6 +3,134 @@
 @section('content')
 
     <section class="bodySec deshboard2">
+    <center id="org_div"><button type="button" class="btn btn-warning" data-toggle="modal" data-target="#myModalHorizontal" onclick="getorg_details()"><span class="glyphicon glyphicon-plus"></span>Add Organisation</button></center><br><br><br>
+        
+
+        <div class="modal fade" id="myModalHorizontal" tabindex="-1" role="dialog" 
+     aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog" style="width: 79%;">
+        <div class="modal-content" style="background-color: #fff;">
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <button type="button" class="close" 
+                   data-dismiss="modal">
+                       <span aria-hidden="true">&times;</span>
+                       <span class="sr-only">Close</span>
+                </button>
+                <h4 class="modal-title" id="myModalLabel">
+                    Add Organisation
+                </h4>
+            </div>
+            
+            <!-- Modal Body -->
+            <div class="modal-body">
+                <input type="hidden" class="form-control" id="org_id" />
+                <form class="form-horizontal" role="form">
+                   <div class="form-group">
+                    <label  class="col-sm-2 control-label"
+                              for="inputEmail3">Organisation Name</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" 
+                        id="org_name" placeholder="Organisation Name"/>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label  class="col-sm-2 control-label"
+                              for="inputEmail3">About</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" 
+                        id="about" placeholder="About"/>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label  class="col-sm-2 control-label"
+                              for="inputEmail3">Address1</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" 
+                        id="address1" placeholder="Address1"/>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label  class="col-sm-2 control-label"
+                              for="inputEmail3">Address2</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" 
+                        id="address2" placeholder="Address2"/>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label  class="col-sm-2 control-label"
+                              for="inputEmail3">City</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" 
+                        id="city" placeholder="city"/>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label  class="col-sm-2 control-label"
+                              for="inputEmail3">State</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" 
+                        id="state" placeholder="city"/>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label  class="col-sm-2 control-label"
+                              for="inputEmail3">Pin</label>
+                    <div class="col-sm-10">
+                        <input type="number" class="form-control" 
+                        id="pin" placeholder="Ex.101010"/>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label  class="col-sm-2 control-label"
+                              for="inputEmail3">Mobile No.</label>
+                    <div class="col-sm-10">
+                        <input type="number" class="form-control" 
+                        id="mobile" placeholder="9010202929"/>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label  class="col-sm-2 control-label"
+                              for="inputEmail3">Email</label>
+                    <div class="col-sm-10">
+                        <input type="email" class="form-control" 
+                        id="email" placeholder="Email"/>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-sm-2 control-label"
+                          for="inputPassword3" >GSTIN</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control"
+                            id="gstin" placeholder="GST No."/>
+                    </div>
+                  </div>
+                </form>
+                
+                
+                
+                
+                
+                
+            </div>
+            
+            <!-- Modal Footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default"
+                        data-dismiss="modal" id="close">;
+                            Close
+                </button>
+                <button type="button" class="btn btn-primary" onclick="add_organisation()">
+                    Save changes
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+
         <div class="container">
             <section class="tabSec">
                 <ul id = "myTab" class = "nav-tabs clearfix">
@@ -27,125 +155,52 @@
                 </ul>
                 <div id = "myTabContent" class = "tab-content tabContentBox clearfix">
                     <div class = "tab-pane fade in active jobActiveSec" id = "tab01">
+                    </div>
+                    <div class = "tab-pane fade" id = "tab02">
+                    </div>
+                    <div class = "tab-pane fade jobsaveTab" id = "tab03">
                         
-                                                                    
-                     </div>
-                     
-                     <div class = "tab-pane fade" id = "tab02">
-                        <section class="clearfix colSec">                         
-                            <div class="colBox">
-                                <figure><img class="img-responsive" src="{{asset('manage_assets/img/demo.jpg')}}"></figure>
-                                <p class="">Assistant Trainer</p>
-                            </div>
-                            <p class="cricket"><i class="fa fa-map-marker"></i>Ghaizabad Sports - Cricket</p>
-                            <a href="#" class="publishCard">Publish</a> 
-                                               
-                        </section> 
-                        <section class="clearfix colSec">                         
-                            <div class="colBox">
-                                <figure><img class="img-responsive" src="{{asset('manage_assets/img/t2.jpg')}}"></figure>
-                                <p class="">Assistant Trainer</p>
-                            </div>
-                            <p class="cricket"><i class="fa fa-map-marker"></i>Ghaizabad Sports - Cricket</p>
-                            <a href="#" class="publishCard">Publish</a> 
-                            <div class="overLap"></div>                        
-                        </section> 
-                        <section class="clearfix colSec">                         
-                            <div class="colBox">
-                                <figure><img class="img-responsive" src="{{asset('manage_assets/img/t5.jpg')}}"></figure>
-                                <p class="">Assistant Trainer</p>
-                            </div>
-                            <p class="cricket"><i class="fa fa-map-marker"></i>Ghaizabad Sports - Cricket</p>
-                            <a href="#" class="publishCard">Publish</a> 
-                                                   
-                        </section> 
-                       <section class="clearfix colSec">                         
-                            <div class="colBox">
-                                <figure><img class="img-responsive" src="{{asset('manage_assets/img/t3.jpg')}}"></figure>
-                                <p class="">Assistant Trainer</p>
-                            </div>
-                            <p class="cricket"><i class="fa fa-map-marker"></i>Ghaizabad Sports - Cricket</p>
-                            <a href="#" class="publishCard">Publish</a> 
-                            <div class="overLap"></div>                        
-                        </section>  
-                     </div>
-                     <div class = "tab-pane fade jobsaveTab" id = "tab03">
-
-
-                        <section class="clearfix colSec">                         
-                            <div class="colBox">
-                                <figure><img class="img-responsive" src="{{asset('manage_assets/img/t1.jpg')}}"></figure>
-                                <p class="">Assistant Trainer</p>
-                            </div>
-                            <p class="cricket"><i class="fa fa-map-marker"></i>Ghaizabad Sports - Cricket</p>
-                            <a href="#" class="publishCard">Publish</a> 
-                                               
-                        </section> 
-                        <section class="clearfix colSec">                         
-                            <div class="colBox">
-                                <figure><img class="img-responsive" src="{{asset('manage_assets/img/t2.jpg')}}"></figure>
-                                <p class="">Assistant Trainer</p>
-                            </div>
-                            <p class="cricket"><i class="fa fa-map-marker"></i>Ghaizabad Sports - Cricket</p>
-                            <a href="#" class="publishCard">Publish</a> 
-                            <div class="overLap"></div>                        
-                        </section> 
-                        <section class="clearfix colSec">                         
-                            <div class="colBox">
-                                <figure><img class="img-responsive" src="{{asset('manage_assets/img/t5.jpg')}}"></figure>
-                                <p class="">Assistant Trainer</p>
-                            </div>
-                            <p class="cricket"><i class="fa fa-map-marker"></i>Ghaizabad Sports - Cricket</p>
-                            <a href="#" class="publishCard">Publish</a> 
-                                                   
-                        </section> 
-                       <section class="clearfix colSec">                         
-                            <div class="colBox">
-                                <figure><img class="img-responsive" src="{{asset('manage_assets/img/t1.jpg')}}"></figure>
-                                <p class="">Assistant Trainer</p>
-                            </div>
-                            <p class="cricket"><i class="fa fa-map-marker"></i>Ghaizabad Sports - Cricket</p>
-                            <a href="#" class="publishCard">Publish</a> 
-                            <div class="overLap"></div>                        
-                        </section>
-
-                     	  <h1>Cricket Foundation Heading</h1>
-                        <section class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                        	<div class="clearfix jobSave">
-                            	<p><span>Job Title:</span>  Assistant Trainer </p>
-                                <p><span>Job Location:</span> Mumbai </p>
-                                <p><span>Job Type:</span> Full Time</p>
-                                <p><span>Sport:</span>  Cricket </p>
-                            </div>
-                        </section>
-                        <section class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                        	<div class="clearfix jobSave">
-                            	<p><span>Email:</span>  abc.224@gmail.com </p>
-                                <p><span>WorkExperience:</span> 4 Year </p>
-                               
-                            </div>
-                        </section>
-                        <section class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                        	<div class="viewImg ">
-                                <figure><img class="img-responsive" src="{{asset('manage_assets/img/demo.jpg')}}"></figure>                                
-                            </div>
-                        </section>
-                        <div class="clearfix">
+                        <!-- <div class="clearfix">
                         	<button class="btn btn-n viewBtn"><i class="fa fa-eye"></i> View More</button>
-                        </div>
-                        
+                        </div> -->
                      </div>
                 </div>
-            </section>
-        </div>
-         <a href="create" class="cleateJob"><i class="glyphicon glyphicon-plus"></i><span>Create Job</span></a>
+                </section>
+                </div>
+    <a href="create" class="cleateJob"><i class="glyphicon glyphicon-plus"></i><span>Create Job</span></a>
     </section>
     <script type="text/javascript">
+        function getid(a)
+        {
+               
+             window.location.href = route_url+'/manage/view/'+a.id;
+
+
+        }
         
+          var org_name = '';
+          var org_id = '0';
+          var local_userdata = localStorage.getItem('userdata');
+
+               local_userdata = JSON.parse(local_userdata);
         $(document).ready(function(){
-        
-         $.ajax({
-          url:url+'//angularapi.php?act=getjoblist&id='+userdata.userid,
+          
+          
+          if(local_userdata.org_data.hasOwnProperty('org_id') == true)
+          {   org_name = local_userdata.org_data.org_name;
+              org_id = local_userdata.org_data.org_id;
+              //alert(org_name);return;
+          if(org_name != '')
+          { 
+            var org_div = '<div data-target="#myModalHorizontal" onclick="getorg_details();" data-toggle="modal" style="text-decoration:none"> <h1><span>'+org_name+'</span><h1></div>';
+            $('#org_div').html('');
+            $('#org_div').html(org_div);
+          }
+          }
+          
+          
+          $.ajax({
+          url:url+'/angularapi.php?act=getjoblist&id='+sess_userid,
           method:"GET",
           dataType:"text",
           success:function(result)
@@ -154,35 +209,142 @@
             var card1 = '';
             var card2 = '';
             var card3 = '';
+            var empty = '<figure><img src="{{asset("manage_assets/img/na.png")}}" alt=""></figure>';
             if(data != 0)
             {
               data.forEach(function(data){
                  if(data.publish == 0)
-                 { 
-                card1 += '<section class="clearfix colSec"> <div class="colBox"> <figure><img class="img-responsive" src="{{asset("manage_assets/img/demo.jpg")}}"></figure> <p class="">'+data.title+'</p> </div> <p class="cricket"><i class="fa fa-map-marker"></i>'+data.org_city+'- '+data.sport+'</p> <a href="{{url("/manage/View")}}" class="publishCard">Publish</a> </section>';
+                 { if(data.org_city == undefined)
+                     {
+                      var location = data.location;
+                     }else
+                     {
+                      var location = data.org_city;
+                     }
+                card1 += '<section class="clearfix colSec"> <div class="colBox" id="'+data.id+'" onclick="getid(this);"> <figure><img class="img-responsive" src="'+image_url+'/job/'+data.image+'"></figure> <p class="">'+data.title+'</p> </div> <p class="cricket"><i class="fa fa-map-marker"></i>'+data.org_city+'- '+data.sport+'</p> <a href="{{url("/manage/View")}}" class="publishCard">Publish</a> </section>';
                  }
                  if(data.publish == 1)
                  {
-                card2 += '<section class="clearfix colSec"> <div class="colBox"> <figure><img class="img-responsive" src="{{asset("manage_assets/img/demo.jpg")}}"></figure> <p class="">'+data.title+'</p> </div> <p class="cricket"><i class="fa fa-map-marker"></i>'+data.org_city+'- '+data.sport+'</p> <a href="{{url("/manage/View")}}" class="publishCard">Publish</a> </section>';
-                 }else
+                card2 += '<section class="clearfix colSec"> <div class="colBox" id="'+data.id+'" onclick="getid(this);"> <figure><img class="img-responsive" src="'+image_url+'/job/'+data.image+'"></figure> <p class="">'+data.title+'</p> </div> <p class="cricket"><i class="fa fa-map-marker"></i>'+data.org_city+'- '+data.sport+'</p> <a href="{{url("/manage/View")}}" class="publishCard">Publish</a> </section>';
+                 }else if(data.publish < 0)
                  {
-                    card3 += '<section class="clearfix colSec"> <div class="colBox"> <figure><img class="img-responsive" src="{{asset("manage_assets/img/demo.jpg")}}"></figure> <p class="">'+data.title+'</p> </div> <p class="cricket"><i class="fa fa-map-marker"></i>'+data.org_city+'- '+data.sport+'</p> <a href="{{url("/manage/View")}}" class="publishCard">Publish</a> </section>';
+                    card3 += '<section class="clearfix colSec"> <div class="colBox" id="'+data.id+'" onclick="getid(this);"> <figure><img class="img-responsive" src="'+image_url+'/job/'+data.image+'"></figure> <p class="">'+data.title+'</p> </div> <p class="cricket"><i class="fa fa-map-marker"></i>'+data.org_city+'- '+data.sport+'</p> <a href="{{url("/manage/View")}}" class="publishCard">Publish</a> </section>';
                  }
+             
 
 
-          });
-               $('#tab01').html(card2);
-               $('#tab02').html(card3);
-               $('#tab03').html(card1);
-            }
+          
+          });  
+              
+               
+               if(card2 == '')
+               {
+               $('#tab01').html(empty); 
+               }
+               else
+               {
+                $('#tab01').html(card2);
+               }
 
+               if(card3 == '')
+               {
+               $('#tab02').html(empty); 
+               }
+               else
+               {
+                $('#tab02').html(card3);
+               }
 
+               if(card1 == '')
+               {
+               $('#tab03').html(empty); 
+               }
+               else
+               {
+                $('#tab03').html(card1);
+               }
+             }else
+             {
+              $('#tab01').html(empty); 
+              $('#tab02').html(empty); 
+              $('#tab03').html(empty); 
+
+             }
           }
-
-         });
-
-
-
         });
+      });
+        function add_organisation()
+        {
+
+         var org_data = 
+         { "id":$('#org_id').val(),//org_id,
+           "userid":sess_userid,
+           "org_name":$('#org_name').val(),
+           "about":$('#about').val(),
+           "address1":$('#address1').val(),
+           "address2":$('#address2').val(),
+           "city":$('#city').val(),
+           "pin":$('#pin').val(),
+           "state":$('#state').val(),
+           "mobile":$('#mobile').val(),
+           "email":$('#email').val(),
+           "gstin":$('#gstin').val()
+         }
+       org_data = JSON.stringify(org_data);
+     // alert(org_data);return;
+       $.ajax({
+        url:url+'/angularapi.php?act=addOrg',
+        method:"POST",
+        data:org_data,
+        success:function(result)
+        {//console.log(result);return;
+          var resp_data = result;//JSON.parse(result);
+           if(resp_data != '0')
+           { var org_name = '<a href="javascript:void(0)" data-target="#myModalHorizontal" onclick="getorg_details();" data-toggle="modal" style="text-decoration:none"><h1><span>'+$('#org_name').val()+'</span><h1></a>';
+             alert("Organisation Created");
+             $('#org_div').html('');
+             $('#org_div').html(org_name);
+             var userdata = JSON.parse(localStorage.getItem('userdata'));
+             userdata.org_data.org_id = resp_data;
+             userdata.org_data.org_name = $('#org_name').val();
+             localStorage.setItem('userdata',JSON.stringify(userdata));
+             $('.modal').modal('hide');
+           }
+           else
+           {
+           alert('Something wemt wrong'); 
+           }
+           
+         }
+       });
+      }
+      function getorg_details()
+      {
+
+        $.ajax({
+        url:url+'/angularapi.php?act=getorgdetails&userid='+sess_userid,
+        method:"GET",
+        // data:org_data,
+        success:function(result)
+        {
+           var resp_data = JSON.parse(result);
+           if(resp_data.status == '1')
+           { 
+            var org_data = resp_data.data;
+            $('#org_id').val(org_data.id);
+            $('#org_name').val(org_data.org_name);
+            $('#about').val(org_data.about);
+            $('#address1').val(org_data.address1);
+            $('#address2').val(org_data.address2);
+            $('#city').val(org_data.city);
+            $('#pin').val(org_data.pin);
+            $('#state').val(org_data.state);
+            $('#mobile').val(org_data.mobile);
+            $('#email').val(org_data.email);
+            $('#gstin').val(org_data.gstin);
+           }
+         }
+       });
+      }
     </script>
   @stop
