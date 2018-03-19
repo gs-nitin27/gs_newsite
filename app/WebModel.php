@@ -61,7 +61,7 @@ class WebModel extends Model
 
  public function getJobDetail($id)
     {
-        $job         = DB::table('gs_jobInfo')->select('title', 'description','image','organisation_name','org_city','gender','type','type','work_experience','organisation_name','about','address1','org_city','pin','job_link','sport')->where('id', $id)->get();
+        $job         = DB::table('gs_jobInfo')->select('title', 'description','image','organisation_name','org_city','gender','type','type','work_experience','organisation_name','about','address1','org_city','pin','job_link','sport','salary')->where('id', $id)->get();
 
      return $job;
     }

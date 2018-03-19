@@ -71,14 +71,9 @@ Route::get('article-detail/{id}','WebController@article_detail');
         {
             return View::make('Manage.job.create-job');
         });
+        Route::get('/view/{id}','ManageController@get_job_detail');
 
-        Route::get('/view', function()
-        {
-            return View::make('Manage.job.view-job');
-        });
-        // Route::get('/setdata', function()
-        // {
-       Route::post('setdata/{id}','ManageController@set_user_data');
+        Route::post('setdata','ManageController@set_user_data');
         // });
     });
 

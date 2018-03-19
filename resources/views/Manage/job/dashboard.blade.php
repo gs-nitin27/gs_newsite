@@ -3,6 +3,134 @@
 @section('content')
 
     <section class="bodySec deshboard2">
+    <center id="org_div"><button type="button" class="btn btn-warning" data-toggle="modal" data-target="#myModalHorizontal"><span class="glyphicon glyphicon-plus"></span>Add Organisation</button></center><br><br><br>
+        
+
+        <div class="modal fade" id="myModalHorizontal" tabindex="-1" role="dialog" 
+     aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog" style="width: 79%;">
+        <div class="modal-content" style="background-color: #fff;">
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <button type="button" class="close" 
+                   data-dismiss="modal">
+                       <span aria-hidden="true">&times;</span>
+                       <span class="sr-only">Close</span>
+                </button>
+                <h4 class="modal-title" id="myModalLabel">
+                    Add Organisation
+                </h4>
+            </div>
+            
+            <!-- Modal Body -->
+            <div class="modal-body">
+                <input type="hidden" class="form-control" id="org_id" />
+                <form class="form-horizontal" role="form">
+                   <div class="form-group">
+                    <label  class="col-sm-2 control-label"
+                              for="inputEmail3">Organisation Name</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" 
+                        id="org_name" placeholder="Organisation Name"/>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label  class="col-sm-2 control-label"
+                              for="inputEmail3">About</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" 
+                        id="about" placeholder="About"/>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label  class="col-sm-2 control-label"
+                              for="inputEmail3">Address1</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" 
+                        id="address1" placeholder="Address1"/>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label  class="col-sm-2 control-label"
+                              for="inputEmail3">Address2</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" 
+                        id="address2" placeholder="Address2"/>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label  class="col-sm-2 control-label"
+                              for="inputEmail3">City</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" 
+                        id="city" placeholder="city"/>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label  class="col-sm-2 control-label"
+                              for="inputEmail3">State</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" 
+                        id="state" placeholder="city"/>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label  class="col-sm-2 control-label"
+                              for="inputEmail3">Pin</label>
+                    <div class="col-sm-10">
+                        <input type="number" class="form-control" 
+                        id="pin" placeholder="Ex.101010"/>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label  class="col-sm-2 control-label"
+                              for="inputEmail3">Mobile No.</label>
+                    <div class="col-sm-10">
+                        <input type="number" class="form-control" 
+                        id="mobile" placeholder="9010202929"/>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label  class="col-sm-2 control-label"
+                              for="inputEmail3">Email</label>
+                    <div class="col-sm-10">
+                        <input type="email" class="form-control" 
+                        id="email" placeholder="Email"/>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-sm-2 control-label"
+                          for="inputPassword3" >GSTIN</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control"
+                            id="gstin" placeholder="GST No."/>
+                    </div>
+                  </div>
+                </form>
+                
+                
+                
+                
+                
+                
+            </div>
+            
+            <!-- Modal Footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default"
+                        data-dismiss="modal" id="close">;
+                            Close
+                </button>
+                <button type="button" class="btn btn-primary" onclick="add_organisation()">
+                    Save changes
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+
         <div class="container">
             <section class="tabSec">
                 <ul id = "myTab" class = "nav-tabs clearfix">
@@ -44,15 +172,32 @@
     <script type="text/javascript">
         function getid(a)
         {
-            // alert(a.id);  
-             window.location.href = route_url+'/manage/view'+a.id;
+               
+             window.location.href = route_url+'/manage/view/'+a.id;
 
 
         }
         
-     
+          var org_name = '';
+          var org_id = '0';
+          var userdata = JSON.parse(localStorage.getItem('userdata'));
         $(document).ready(function(){
-         $.ajax({
+          
+          //alert(localStorage.getItem('userdata'));
+          if(userdata.org_data.hasOwnProperty('org_id') == true)
+          {   
+              org_name = userdata.org_data.org_name;
+              org_id = userdata.org_data.org_id;
+          if(org_name != '')
+          { 
+            var org_div = '<div data-target="#myModalHorizontal" onclick="getorg_details();" data-toggle="modal" style="text-decoration:none"> <h1><span>'+org_name+'</span><h1></div>';
+            $('#org_div').html('');
+            $('#org_div').html(org_div);
+          }
+          }
+          
+          
+          $.ajax({
           url:url+'/angularapi.php?act=getjoblist&id='+sess_userid,
           method:"GET",
           dataType:"text",
@@ -62,19 +207,26 @@
             var card1 = '';
             var card2 = '';
             var card3 = '';
+            var empty = '<figure><img src="{{asset("manage_assets/img/na.png")}}" alt=""></figure>';
             if(data != 0)
             {
               data.forEach(function(data){
                  if(data.publish == 0)
-                 { 
-                card1 += '<section class="clearfix colSec"> <div class="colBox" id="'+data.id+'" onclick="getid(this);"> <figure><img class="img-responsive" src="'+image_url+'job/'+data.image+'"></figure> <p class="">'+data.title+'</p> </div> <p class="cricket"><i class="fa fa-map-marker"></i>'+data.org_city+'- '+data.sport+'</p> <a href="{{url("/manage/View")}}" class="publishCard">Publish</a> </section>';
+                 { if(data.org_city == undefined)
+                     {
+                      var location = data.location;
+                     }else
+                     {
+                      var location = data.org_city;
+                     }
+                card1 += '<section class="clearfix colSec"> <div class="colBox" id="'+data.id+'" onclick="getid(this);"> <figure><img class="img-responsive" src="'+image_url+'/job/'+data.image+'"></figure> <p class="">'+data.title+'</p> </div> <p class="cricket"><i class="fa fa-map-marker"></i>'+data.org_city+'- '+data.sport+'</p> <a href="{{url("/manage/View")}}" class="publishCard">Publish</a> </section>';
                  }
                  if(data.publish == 1)
                  {
-                card2 += '<section class="clearfix colSec"> <div class="colBox" id="'+data.id+'" onclick="getid(this);"> <figure><img class="img-responsive" src="'+image_url+'job/'+data.image+'"></figure> <p class="">'+data.title+'</p> </div> <p class="cricket"><i class="fa fa-map-marker"></i>'+data.org_city+'- '+data.sport+'</p> <a href="{{url("/manage/View")}}" class="publishCard">Publish</a> </section>';
+                card2 += '<section class="clearfix colSec"> <div class="colBox" id="'+data.id+'" onclick="getid(this);"> <figure><img class="img-responsive" src="'+image_url+'/job/'+data.image+'"></figure> <p class="">'+data.title+'</p> </div> <p class="cricket"><i class="fa fa-map-marker"></i>'+data.org_city+'- '+data.sport+'</p> <a href="{{url("/manage/View")}}" class="publishCard">Publish</a> </section>';
                  }else if(data.publish < 0)
                  {
-                    card3 += '<section class="clearfix colSec"> <div class="colBox" id="'+data.id+'" onclick="getid(this);"> <figure><img class="img-responsive" src="'+image_url+'job/'+data.image+'"></figure> <p class="">'+data.title+'</p> </div> <p class="cricket"><i class="fa fa-map-marker"></i>'+data.org_city+'- '+data.sport+'</p> <a href="{{url("/manage/View")}}" class="publishCard">Publish</a> </section>';
+                    card3 += '<section class="clearfix colSec"> <div class="colBox" id="'+data.id+'" onclick="getid(this);"> <figure><img class="img-responsive" src="'+image_url+'/job/'+data.image+'"></figure> <p class="">'+data.title+'</p> </div> <p class="cricket"><i class="fa fa-map-marker"></i>'+data.org_city+'- '+data.sport+'</p> <a href="{{url("/manage/View")}}" class="publishCard">Publish</a> </section>';
                  }
              
 
@@ -82,7 +234,7 @@
           
           });  
               
-               var empty = '<figure><img src="{{asset("manage_assets/img/na.png")}}" alt=""></figure>';
+               
                if(card2 == '')
                {
                $('#tab01').html(empty); 
@@ -109,9 +261,88 @@
                {
                 $('#tab03').html(card1);
                }
+             }else
+             {
+              $('#tab01').html(empty); 
+              $('#tab02').html(empty); 
+              $('#tab03').html(empty); 
+
              }
           }
         });
       });
+        function add_organisation()
+        {
+
+         var org_data = 
+         { "id":$('#org_id').val(),//org_id,
+           "userid":sess_userid,
+           "org_name":$('#org_name').val(),
+           "about":$('#about').val(),
+           "address1":$('#address1').val(),
+           "address2":$('#address2').val(),
+           "city":$('#city').val(),
+           "pin":$('#pin').val(),
+           "state":$('#state').val(),
+           "mobile":$('#mobile').val(),
+           "email":$('#email').val(),
+           "gstin":$('#gstin').val()
+         }
+       org_data = JSON.stringify(org_data);
+      // alert(org_data);return;
+       $.ajax({
+        url:url+'/angularapi.php?act=addOrg',
+        method:"POST",
+        data:org_data,
+        success:function(result)
+        {
+          var resp_data = JSON.parse(result);
+           if(resp_data.status != '0')
+           { var org_name = '<a href="javascript:void(0)" data-target="#myModalHorizontal" onclick="getorg_details();" data-toggle="modal" style="text-decoration:none"><h1><span>'+$('#org_name').val()+'</span><h1></a>';
+             alert("Organisation Created");
+             $('#org_div').html('');
+             $('#org_div').html(org_name);
+             var userdata = JSON.parse(localStorage.getItem('userdata'));
+             userdata.org_name.org_id = resp_data.status;
+             userdata.org_name.org_name = $('#org_name').val();
+             localStorage.setItem('userdata',userdata);
+             $('.modal').modal('hide');
+           }
+           else
+           {
+           alert('Something wemt wrong'); 
+           }
+           
+         }
+       });
+      }
+      function getorg_details()
+      {
+
+        $.ajax({
+        url:url+'/angularapi.php?act=getorgdetails&userid='+sess_userid,
+        method:"GET",
+        // data:org_data,
+        success:function(result)
+        {
+           var resp_data = JSON.parse(result);
+           if(resp_data.status == '1')
+           { 
+            var org_data = resp_data.data;
+            $('#org_id').val(org_data.id);
+            $('#org_name').val(org_data.org_name);
+            $('#about').val(org_data.about);
+            $('#address1').val(org_data.address1);
+            $('#address2').val(org_data.address2);
+            $('#city').val(org_data.city);
+            $('#pin').val(org_data.pin);
+            $('#state').val(org_data.state);
+            $('#mobile').val(org_data.mobile);
+            $('#email').val(org_data.email);
+            $('#gstin').val(org_data.gstin);
+           }
+         }
+       });
+      }
     </script>
   @stop

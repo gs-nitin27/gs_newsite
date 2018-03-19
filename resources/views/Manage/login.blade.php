@@ -163,7 +163,7 @@ console.log(data);
     if(result.status==1){      // for Successfull login
       localStorage.setItem('userdata',JSON.stringify(result.data));
       set_data();
-      window.location.href = "<?php echo url('/'); ?>"+"/manage/dashbo";
+      
     }
     else if(result.status==2) // for updating email and other info
     { 
@@ -208,7 +208,7 @@ console.log(data);
           return false;
         }
       }
-       function set_data(){
+    function set_data(){
       $.ajax({
       async:false,
       headers: {
@@ -220,7 +220,14 @@ console.log(data);
       data:localStorage.getItem('userdata'),
       success:function(result)
       {
-        
+        if(result != 0)
+        {
+          window.location.href = "<?php echo url('/'); ?>"+"/manage/dashbo";
+        }
+        else
+        {
+          alert('server Error');
+        }
         //alert(JSON.stringify(result));
       } 
 
