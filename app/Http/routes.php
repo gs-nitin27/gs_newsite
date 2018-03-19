@@ -20,8 +20,9 @@
 
 Route::get('/','WebController@index');
 
-Route::get('aboutus','WebController@getaboutus');
+Route::get('support','WebController@getsupport');
 
+Route::get('aboutus','WebController@getaboutus');
 
 Route::get('event','WebController@getevent');
 
