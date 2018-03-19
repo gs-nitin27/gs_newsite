@@ -3,7 +3,7 @@
 @section('content')
 
     <section class="bodySec deshboard2">
-    <center id="org_div"><button type="button" class="btn btn-warning" data-toggle="modal" data-target="#myModalHorizontal"><span class="glyphicon glyphicon-plus"></span>Add Organisation</button></center><br><br><br>
+    <center id="org_div"><button type="button" class="btn btn-warning" data-toggle="modal" data-target="#myModalHorizontal" onclick="getorg_details()"><span class="glyphicon glyphicon-plus"></span>Add Organisation</button></center><br><br><br>
         
 
         <div class="modal fade" id="myModalHorizontal" tabindex="-1" role="dialog" 
@@ -180,14 +180,16 @@
         
           var org_name = '';
           var org_id = '0';
-          var userdata = JSON.parse(localStorage.getItem('userdata'));
+          var local_userdata = localStorage.getItem('userdata');
+
+               local_userdata = JSON.parse(local_userdata);
         $(document).ready(function(){
           
-          //alert(localStorage.getItem('userdata'));
-          if(userdata.org_data.hasOwnProperty('org_id') == true)
-          {   
-              org_name = userdata.org_data.org_name;
-              org_id = userdata.org_data.org_id;
+          
+          if(local_userdata.org_data.hasOwnProperty('org_id') == true)
+          {   org_name = local_userdata.org_data.org_name;
+              org_id = local_userdata.org_data.org_id;
+              //alert(org_name);return;
           if(org_name != '')
           { 
             var org_div = '<div data-target="#myModalHorizontal" onclick="getorg_details();" data-toggle="modal" style="text-decoration:none"> <h1><span>'+org_name+'</span><h1></div>';
@@ -289,23 +291,23 @@
            "gstin":$('#gstin').val()
          }
        org_data = JSON.stringify(org_data);
-      // alert(org_data);return;
+     // alert(org_data);return;
        $.ajax({
         url:url+'/angularapi.php?act=addOrg',
         method:"POST",
         data:org_data,
         success:function(result)
-        {
-          var resp_data = JSON.parse(result);
-           if(resp_data.status != '0')
+        {//console.log(result);return;
+          var resp_data = result;//JSON.parse(result);
+           if(resp_data != '0')
            { var org_name = '<a href="javascript:void(0)" data-target="#myModalHorizontal" onclick="getorg_details();" data-toggle="modal" style="text-decoration:none"><h1><span>'+$('#org_name').val()+'</span><h1></a>';
              alert("Organisation Created");
              $('#org_div').html('');
              $('#org_div').html(org_name);
              var userdata = JSON.parse(localStorage.getItem('userdata'));
-             userdata.org_name.org_id = resp_data.status;
-             userdata.org_name.org_name = $('#org_name').val();
-             localStorage.setItem('userdata',userdata);
+             userdata.org_data.org_id = resp_data;
+             userdata.org_data.org_name = $('#org_name').val();
+             localStorage.setItem('userdata',JSON.stringify(userdata));
              $('.modal').modal('hide');
            }
            else
