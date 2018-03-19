@@ -5,8 +5,7 @@
 
 
      <div class="joblist-bg eventBg bannerBgSec">
-     
-          <div class="container">
+            <div class="container">
        	    <div class="row">
        	      <div class="col-md-12">
        		    <div class="ban-pera">
@@ -120,31 +119,35 @@
 
   
      <div class="sidebarMide">
+     <div class="fb-share-button" data-href="http://localhost/get/gs_newsite/event-detail/{$name[0]->id}}" data-layout="button_count" data-size="small" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse">
+     <i class="fa fa-facebook"></i></a></div>
 
- <div class="fb-share-button" data-href="https://getsporty.in/blog.php?n=12" data-layout="button_count" data-size="small" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse">
-   <i class="fa fa-facebook"></i></a></div>
+     <a href="https://twitter.com/share" class="twitter-share-button fa fa-twitter" data-size="large" data-text="{{$name[0]->name}}" data-url="http://localhost/get/gs_newsite/event-detail/{{$name[0]->id}}" data-show-count="false" >
+    </a> 
 
+    <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>> 
 
+     <a href=" https://www.linkedin.com/shareArticle?mini=true&url=http://localhost/get/gs_newsite/event-detail/{{$name[0]->id}}&title={{$name[0]->name}}
+    &summary={{$name[0]->name}}&source=LinkedIn" class="cleateJob" style="background-color: #1686b0;"><i class="fa fa-linkedin"></i></a>
 
-    <div class="twitterflat"><a href="https://twitter.com/share" class="twitter-share-button" data-size="large" data-text="{{$name[0]->name}}" data-url="http://localhost/get/gs_newsite/event-detail/{{$name[0]->id}}" data-show-count="false"><i class="fa fa-twitter"></i></a></a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script></div> 
-
-
-
-
-
-
-          <a href="#" class="cleateJob" style="background-color: #db2814;"><i class="fa fa-google-plus"></i></a>
-          
-  <div class="linkedinflat">
-  <a href=" https://www.linkedin.com/shareArticle?mini=true&url=http://localhost/get/gs_newsite/event-detail/{{$name[0]->id}}&title={{$name[0]->name}}
-&summary={{$name[0]->name}}&source=LinkedIn" ><i class="fa fa-google-plus"></a>
+  <div class="pin">
+  <a style="background-color: #FA0001" data-pin-do="buttonPin" href="https://www.pinterest.com/pin/create/button/?url=http://localhost/get/gs_newsite/event-detail/{$name[0]->id}}&media=https://getsporty.in/portal/uploads/resources/summary={{$name[0]->image}}&summary={{$name[0]->name}}" data-pin-config="beside"><i class="fa fa-pinterest-p"></i>  </a>
+  
   </div>
-
   
 
+   <div class="g-plusflat">
+   <script src="https://apis.google.com/js/platform.js" async defer></script>
+     <!-- Place this tag where you want the share button to render. -->
+     <div class="g-plus" data-action="share" data-height="24"></div> 
+  </div>
+        
 
-          <a href="#" class="cleateJob" style="background-color: #1686b0;"><i class="fa fa-linkedin"></i></a>
-          <a href="#" class="cleateJob" style="background-color: #FA0001"><i class="fa fa-pinterest-p"></i></a>
+<!-- 
+          <a href="#" class="cleateJob"><i class="fa fa-twitter"></i></a> 
+
+          <a href="#" class="cleateJob" style="background-color: #db2814;"><i class="fa fa-google-plus"></i></a>
+     -->
     </div>
 
 

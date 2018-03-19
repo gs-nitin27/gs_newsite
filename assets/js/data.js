@@ -8,7 +8,6 @@ function getEventListing()
         data         = JSON.parse(result);
         event_data   = data.data;
         var event_temp = '';
-        
         for (var i = 0; i < event_data.length; i++)
         {  
             var event_title             = event_data[i]['name'];
@@ -20,7 +19,7 @@ function getEventListing()
             var event_url               = "event-detail/"+event_data[i]['id'];
             var event_img               = "event/";
             var event_image_path        = image_url+event_img+event_data[i]['image']; 
-            event_temp +='<div class="col-lg-3 col-md-3"><div class=" hover-boxs"><div class="job-box"><img src="'+event_image_path+'"></div><div class="slide-job-list"><h4>'+event_title+'</h4><p> Type : <span> '+event_type+'</span></p><p> Organizer Name : <span> '+event_org_name+' </span></p><p> Location : <span>'+event_location+'</span></p><p> Email : <span>'+event_email+' </span></p><div class="read-c"><a href="'+event_url+'">Read More</a> </div></div></div></div> ';
+            event_temp +='<div class="col-lg-3 col-md-3"><div class=" hover-boxs"><div class="job-box"><img src="'+event_image_path+'"></div><div class="slide-job-list"><h4>'+event_title+'</h4><p> Type : <span> '+event_type+'</span></p><p> Organizer Name : <span> '+event_org_name+' </span></p><p> Location : <span>'+event_location+'</span></p><p> Email : <span> '+event_email+' </span></p><div class="read-c"><a href="'+event_url+'">Read More</a> </div></div></div></div> ';
          } // End of for Loop
 
      $("#event_listing").html(event_temp);  

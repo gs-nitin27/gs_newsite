@@ -22,6 +22,12 @@ use App\WebModel;
     return View::make("aboutus");
     }
 
+    public function getsupport()
+    {
+       
+    return View::make("support");
+    }
+    
     public function getevent()
     {
     return View::make("event");

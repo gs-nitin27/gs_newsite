@@ -31,7 +31,7 @@
                     <li><a class="" href="tournament"> Tournament </a></li>
                 </ul>
               </li>
-              <li><a href="support.php">Contact Us</a></li>
+              <li><a href="{{url('/support')}}">Contact Us</a></li>
           </ul>
            </div><!-- /.navbar-collapse -->
           </div><!-- /.container -->

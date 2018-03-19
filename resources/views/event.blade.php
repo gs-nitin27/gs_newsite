@@ -44,10 +44,12 @@ Aloof from national level sports events, India has also hosted several Internati
 Overall, sports events in India are always amusing to unite with. Every year we all anxiously wait to receive the sports events calendar so we can block our agenda and plan our schedule, travel in advance. Consequently, for the sports events calendar, you don’t have to rush anywhere we will bear you to the latest updates on all the big sports events in India. Be it an upcoming sports trial or just a weekend sporting event, get all the information on your phone through our website hassle-free.
 </p>
                   </div>      
-                  <div id="event_listing"> </div>
+
+
+ <div id="event_listing"> </div> 
                             
-                					 
-  	       <div class="clearfix margin20"></div>
+         </div>       					 
+  	       
 
     	      <!--  <div class="text-center">
     	       	<i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
@@ -68,8 +70,9 @@ Overall, sports events in India are always amusing to unite with. Every year we 
                       </ul>
                  </div>
     
-  
+  <div class="clearfix margin20"></div>
     <script>
+
 function openNav() {
     document.getElementById("myNav").style.height = "100%";
 }
