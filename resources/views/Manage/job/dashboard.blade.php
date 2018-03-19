@@ -221,7 +221,7 @@
                      {
                       var location = data.org_city;
                      }
-                card1 += '<section class="clearfix colSec"> <div class="colBox" id="'+data.id+'" onclick="getid(this);"> <figure><img class="img-responsive" src="'+image_url+'/job/'+data.image+'"></figure> <p class="">'+data.title+'</p> </div> <p class="cricket"><i class="fa fa-map-marker"></i>'+data.org_city+'- '+data.sport+'</p> <a href="{{url("/manage/View")}}" class="publishCard">Publish</a> </section>';
+                card1 += '<section class="clearfix colSec"> <div class="colBox" id="'+data.id+'" onclick="getid(this);"> <figure><img class="img-responsive" src="'+image_url+'/job/'+data.image+'"></figure> <p class="">'+data.title+'</p> </div> <p class="cricket"><i class="fa fa-map-marker"></i>'+data.org_city+'- '+data.sport+'</p> <a href="javascript:void(0)" class="publishCard" onclick="get_job_id('+data.id+');">Publish</a> </section>';
                  }
                  if(data.publish == 1)
                  {
@@ -320,7 +320,6 @@
       }
       function getorg_details()
       {
-
         $.ajax({
         url:url+'/angularapi.php?act=getorgdetails&userid='+sess_userid,
         method:"GET",
@@ -345,6 +344,12 @@
            }
          }
        });
+      }
+      function get_job_id(id)
+      {
+
+       window.location.href = route_url+'/manage/publish/checkout/'+id;
+
       }
     </script>
   @stop

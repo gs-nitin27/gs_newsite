@@ -56,7 +56,9 @@ Route::get('article-detail/{id}','WebController@article_detail');
             return View::make('Manage.job.dashboard');
            //Route::get('get_Tounament','ManageController@get_Tounament');
         });
-        Route::get('/login', function()
+         Route::get('/publish/checkout/{data}','ManageController@get_job_pricing');
+       
+         Route::get('/login', function()
         {
             return View::make('Manage.login');
            //Route::get('get_Tounament','ManageController@get_Tounament');
