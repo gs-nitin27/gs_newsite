@@ -18,6 +18,16 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
 Route::get('/','WebController@index');
 
 Route::get('support','WebController@getsupport');

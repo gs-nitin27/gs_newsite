@@ -83,9 +83,12 @@ class WebModel extends Model
 
 /*     Card View  Detail Page  */ 
 
-public function  getEventDetail_data($sport_name)
+
+
+
+public function  getEventDetail_data($sport_name,$id)
 {
-     $event      = DB::table('gs_eventinfo')->select('id','name','type', 'description','image','sport_name','organizer_city','start_date','end_date','entry_start_date','entry_end_date','pin','address_1','organizer_name','email_app_collection','event_links')->where('sport_name', $sport_name)->get();
+     $event      = DB::table('gs_eventinfo')->select('id','name','type', 'description','image','sport_name','organizer_city','start_date','end_date','entry_start_date','entry_end_date','pin','address_1','organizer_name','email_app_collection','event_links')->where('id','<>',$id)->where('sport_name',$sport_name)->get();
      return $event;
 
 

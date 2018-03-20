@@ -1,6 +1,7 @@
 
 function getEventListing()
-{  //alert(service_url);return;
+{  
+
    $.ajax({
     method: 'GET',
      url:service_url+'/get_Event',crossDomain: true ,success: function(result)
