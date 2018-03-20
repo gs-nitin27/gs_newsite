@@ -213,7 +213,7 @@ console.log(data);
       async:false,
       headers: {
         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-    },
+      },
       url:"{{url('/manage/setdata')}}",
       method:"POST",
       dataType:"text",

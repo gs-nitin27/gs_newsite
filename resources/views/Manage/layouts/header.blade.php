@@ -3,7 +3,7 @@ $sess_data = json_decode($value);
 $userid = $sess_data->userid;
 // $org_name = $sess_data->org_data->org_name;
 // $org_id = $sess_data->org_data->org_id;
-//print_r($sess_data);die;
+//print_r($sess_data);//die;
 ?>
 <script type="text/javascript">
     var url = '<?php echo config('constant.ENV_URL')?>';

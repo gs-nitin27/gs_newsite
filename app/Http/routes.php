@@ -77,6 +77,16 @@ Route::get('article-detail/{id}','WebController@article_detail');
         Route::get('/view/{id}','ManageController@get_job_detail');
 
         Route::post('setdata','ManageController@set_user_data');
+        Route::get('/job/transaction/success', function()
+        {
+            return View::make('Manage.job.payment-failure');
+           //Route::get('get_Tounament','ManageController@get_Tounament');
+        });
+        Route::get('/job/transaction/failure', function()
+        {
+            return View::make('Manage.job.payment-success');
+           //Route::get('get_Tounament','ManageController@get_Tounament');
+        });
         // });
     });
 
