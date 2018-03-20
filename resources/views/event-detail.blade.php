@@ -47,6 +47,7 @@
         			       <div class="right-list-job" style="padding: 50px 0 0 0;">
                      <h4>  </h4>
       				            <h4>
+                          
                           {{$name1[0]->name}}
                           </h4>
                           <p> Type : <span> {{$name[0]->type}}</span></p>

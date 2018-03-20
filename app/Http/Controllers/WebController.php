@@ -91,8 +91,7 @@ use App\WebModel;
 
 
     public function get_Event()
-    {
-      
+    {      
     $obj  = new WebModel();
     $res = $obj->getEventData();
     $data = array('data'=>$res,'status'=>'1');
@@ -118,7 +117,12 @@ use App\WebModel;
     $obj  = new WebModel();
     $resp = $obj->getEventDetail($id);
     $sport_name = $resp[0]->sport_name;
-    $resp1 = $obj->getEventDetail_data($sport_name);
+    $resp1 = $obj->getEventDetail_data($sport_name,$id);
+    if (count($resp1)==0)
+    {
+     $resp1 = $resp;
+    }
+    
     
     return View::make("event-detail")->with('name', $resp)->with('name1',$resp1);
     }
@@ -166,7 +170,6 @@ use App\WebModel;
 
 
 
-
-
+ 
 
 }
