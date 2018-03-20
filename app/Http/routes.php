@@ -52,6 +52,7 @@ Route::get('article-detail/{id}','WebController@article_detail');
  Route::group(array('prefix' => 'manage'), function()
     {
         // main page for the admin section (app/views/admin/dashboard.blade.php)
+        Route::post('create_hash','ManageController@create_hash');
         Route::get('/dashbo', function()
         {
             return View::make('Manage.job.dashboard');
@@ -87,7 +88,11 @@ Route::get('article-detail/{id}','WebController@article_detail');
             return View::make('Manage.job.payment-success');
            //Route::get('get_Tounament','ManageController@get_Tounament');
         });
-        // });
+
+        Route::post('payuForm', [
+        'uses' => 'ManageController@method'
+     ]);
+
     });
 
 

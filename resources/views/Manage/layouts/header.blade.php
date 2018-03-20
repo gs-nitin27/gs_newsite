@@ -10,6 +10,7 @@ $userid = $sess_data->userid;
     var image_url = '<?php echo config('constant.IMAGE_URL')?>';
     var sess_userid = '<?php echo $userid; ?>';
     var route_url = '<?php echo url('/'); ?>';
+    
    // var org_name ='<?php //echo $org_name;?>';
  </script>
 </script>
