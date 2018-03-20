@@ -43,7 +43,7 @@ class ManageController extends Controller
 public function get_job_pricing($id)
 {
 $obj  = new Manage_Model();
-$resp = $obj->getJobDetail($id);
+$resp = $obj->get_checkout_info($id);
 return View::make("Manage.job.checkout")->with('checkout',$resp);
 }
 
