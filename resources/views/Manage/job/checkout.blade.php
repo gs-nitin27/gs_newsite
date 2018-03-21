@@ -94,67 +94,46 @@ $furl = url('/job/transaction/failure');
                                         <br/><br/>
 
                                         <table class="table table-striped" style="font-weight: bold;">
-                                        <form action="https://secure.payu.in/_payment" method="post" name="payuForm">
-                                           <input type="hidden" name="key" id="key" value="2g3RdB" />
-                                           <input type="hidden" name="hash_string" id="hash_string" value="" />
-                                           <input type="hidden" name="hash"  id="hash" value=""/>
-                                           <input type="hidden" name="txnid" id="txnid" value="" />
-                                                                                       
-                                            
-                                                <td>
-                                                    <input class="form-control" type="hidden" name="amount" value="<?php echo (empty($checkout['plan'][0]->amount)) ? '' : $checkout['plan'][0]->amount + $value ?>"
-                                                           required="required" type="text"/>
-                                                </td>
-                                            
-                                            
-                                             <tr>
-                                                <td style="width: 175px;">
-                                                    <label for="id_first_name">Name:</label></td>
-                                                <td>
-                                                    <input class="form-control" name="firstname" id="firstname" value="<?php echo (empty($sess_data->name)) ? '' : $sess_data->name; ?>" required="required"  type="text"/>
-                                                </td>
-                                            </tr>
-                                            <tr>                                             <td style="width: 175px;">
-                                                    <label for="id_email">Best Email:</label></td>
-                                                <td>
-                                                    <input class="form-control" name="email" id="email" value="<?php echo (empty($sess_data->email)) ? '' : $sess_data->email; ?>" required="required" type="text"/>
-                                                </td>
-                                            </tr>
-                                            
-                                            <!-- <tr>
-                                                <td style="width: 175px;">
-                                                    <label for="id_last_name">Last name:</label></td>
-                                                <td>
-                                                    <input class="form-control" id="id_last_name" name="last_name"
-                                                           required="required" type="text"/>
-                                                       </td></tr> -->
-                                                <tr>
-                                                <td style="width: 175px;">
-                                                    <label for="id_phone">Phone:</label></td>
-                                                <td>
-                                                    <input class="form-control" id="phone" name="phone" value="<?php echo (empty($sess_data->contact_no)) ? '' : $sess_data->contact_no; ?>"    type="text"/>
-                                                </td>
-                                            </tr>
-                                             <input type="hidden" name="productinfo" value="<?php echo (empty($checkout['job'][0]->id)) ? '' : $checkout['job'][0]->id ?>" />
-                                            <input type="hidden" name="surl" id="surl" value="<?php echo ('/url/job/transaction/success'); ?>"/>
-                                             <input type="hidden" name="furl" id="furl" value="<?php echo ('/url//job/transaction/failure'); ?>"/>
-                                             
-                                             <input type="hidden" id="service_provider" name="service_provider" value="payu_paisa" size="64"/>
-                                        </td></tr>
-                                        <input type="hidden" name="lastname" id="lastname" value="" />
-                                          <input type="hidden" name="address1" value="" />
-                                          <input type="hidden" name="address2" value="" />
-                                          <input type="hidden" name="city" value="" />
-                                          <input type="hidden" name="state" value="" />
-                                          <input type="hidden" name="country" value="" />
-                                          <input type="hidden" name="zipcode" value="" />
-                                          <input type="hidden" name="udf1" value="" />
-                                          <input type="hidden" name="udf2" value="" />
-                                          <input type="hidden" name="udf3" value="" />
-                                          <input type="hidden" name="udf4" value="" />
-                                          <input type="hidden" name="udf5" value="" />
-                                          <input type="hidden" name="pg" value="" />
-                                        <tr>
+                                        <form method="post" name="payuForm" action="https://secure.payu.in/_payment">
+       <input type="hidden" name="key" id="key" value="2g3RdB" />
+       <input type="hidden" name="hash_string" id="hash_string" value="" />
+       <input type="hidden" name="hash"  id="hash" value=""/>
+       <input type="hidden" name="txnid" id="txnid" value="" />
+<tr>
+<td>Amount: </td>
+<td><input type="hidden" name="amount" value="500" id="amount"/></td>
+</tr>
+<tr>
+<td>First Name: </td>
+<td><input  name="firstname" id="firstname" value="nitin" /></td>
+</tr>
+<tr>
+<td>Email: </td>
+<td><input  name="email" id="email" value="ntnagarwal27@gmail.com"  /></td>
+</tr>
+<tr>
+<td>Phone: </td>
+<td><input  name="phone" id="phone" value="8601807045" /></td>
+</tr>
+<tr>
+
+<td colspan="3" style="display: none"><textarea type="hidden" name="productinfo" type="hidden" value="Book1" id="productinfo">jhdkjajakhdaakhsd</textarea></td>
+</tr>
+<tr>
+<td colspan="3" style="display: none" ><input type="hidden" name="surl"  size="64" id="surl" value="{{url('/manage/job/transaction/success')}}" /></td>
+</tr>
+<tr>
+<td colspan="3" style="display: none"><input type="hidden" name="furl"  size="64" id="furl" value="{{url('/manage/job/transaction/failure')}}"/></td>
+</tr>
+<tr>
+<td colspan="3" style="display: none"><input type="hidden" name="service_provider" value="payu_paisa" id="service_provider"/></td>
+</tr>
+
+
+   <!--  <input type="hidden" name="OpenPayu-Signature" value="sender=4950450;algorithm=SHA-256;signature=bc94a8026d6032b5e216be112a5fb7544e66e23e68d44b4283ff495bdb3983a8"> -->
+  <!--   <input type="submit" value="Submit" formtarget="_blank" >
+</form > -->
+
                                           
                                             <td colspan="4"><button onclick="submitPayuForm()" value="Submit" >Submit</button></td>
                                                                                   </tr>
@@ -193,11 +172,11 @@ $furl = url('/job/transaction/failure');
        var key = $('#key').val();
        var data = {
                     "key": $('#key').val(),
-                    "amount": '<?php echo $checkout['job'][0]->id; ?>',
+                    "amount": $('#amount').val(),
                     "firstname":$('#firstname').val(),
                     "email":$('#email').val(),
                     "phone":$('#phone').val(),
-                    "productinfo": '<?php echo $checkout['plan'][0]->amount + $value; ?>',
+                    "productinfo":$('#productinfo').val() ,
                     "surl":$('#surl').val(),
                     "furl":$('#furl').val(),
                     "service_provider":$('#service_provider').val()

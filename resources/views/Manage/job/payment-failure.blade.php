@@ -17,7 +17,7 @@ If (isset($_POST["additionalCharges"])) {
                   }
 	else {	  
 
-        $retHashSeq = $salt.'|'.$status.'|||||||||||'.$email.'|'.$firstname.'|'.$productinfo.'|'.$amount.'|'.$txnid.'|'.$key;
+         $retHashSeq = $salt.'|'.$status.'|||||||||||'.$email.'|'.$firstname.'|'.$productinfo.'|'.$amount.'|'.$txnid.'|'.$key;
 
          }
 		 $hash = hash("sha512", $retHashSeq);

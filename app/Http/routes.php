@@ -91,18 +91,19 @@ Route::get('article-detail/{id}','WebController@article_detail');
         Route::get('/job/transaction/success', function()
         {
             return View::make('Manage.job.payment-failure');
-           //Route::get('get_Tounament','ManageController@get_Tounament');
         });
         Route::get('/job/transaction/failure', function()
         {
             return View::make('Manage.job.payment-success');
-           //Route::get('get_Tounament','ManageController@get_Tounament');
         });
 
-        Route::post('payuForm', [
-        'uses' => 'ManageController@method'
-     ]);
-
+        Route::post('/job/transaction/success', [
+        'uses' => 'ManageController@transaction_success'
+        ]);
+        Route::post('/job/transaction/failure', [
+        'uses' => 'ManageController@transaction_failure'
+        ]);
+        
     });
 
 

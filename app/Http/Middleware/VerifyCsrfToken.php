@@ -12,6 +12,7 @@ class VerifyCsrfToken extends BaseVerifier
      * @var array
      */
     protected $except = [
-        //
+       'manage/job/transaction/success/*',
+       'manage/job/transaction/failure/*',
     ];
 }
