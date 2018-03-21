@@ -119,7 +119,7 @@ ob_start();
               <div class="col-lg-5 col-md-5">
           <div class="right-cont">
        	   <h3>Contact:</h3>
-       	    <p><img src="img/latitude.svg"> A 20, Sector 35, Noida, India ,201301</p>
+       	    <p><img src="img/latitude.svg"> Ram A 20, Sector 350000, Noida, India ,201301</p>
        	     <p><img src="img/contact.svg"> +91 120 4511807</p>
        	   	   <p><img src="img/mail.svg"> info@darkhorsesports.in</p>
               </div>

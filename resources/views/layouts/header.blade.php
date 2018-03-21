@@ -15,7 +15,7 @@
            <div class="navbar-collapse collapse" id="navbar-collapse-1">
              <ul class="nav navbar-nav navbar-right text-uppercase">
               <!-- <li class="active"><a href="index.php">Home</a></li> -->
-              <li ><a href="{{url('/aboutus')}}">About us</a></li>
+              
               <!-- <li><a href="#getApp" data-toggle="modal">Get app  </a></li> -->
               <li><a href="{{url('/event')}}" >Event </a></li>
               <li><a href="{{url('/job')}}">Job</a></li>
@@ -26,12 +26,18 @@
                    Bussiness <b class="caret"></b>
                 </a>
                 <ul class="dropdown-menu">
-                    <li><a class="" href="landing-job">  Job Landing </a></li>
-                    <li><a class="" href="landing-event">  Event Landing  </a></li>
-                    <li><a class="" href="tournament"> Tournament </a></li>
+                    <li><a class="" href="{{url('/landing-job')}}">  Job Landing </a></li>
+                    <li><a class="" href="{{url('/landing-event')}}">  Event Landing  </a></li>
+                    <li><a class="" href="{{url('/tournament')}}"> Tournament </a></li>
                 </ul>
               </li>
-              <li><a href="{{url('/support')}}">Contact Us</a></li>
+
+              <li ><a href="{{url('/aboutus')}}">About us</a></li>
+
+              
+
+            <!--     <li><a href="{{url('/support')}}">Contact Us</a></li> -->
+
           </ul>
            </div><!-- /.navbar-collapse -->
           </div><!-- /.container -->

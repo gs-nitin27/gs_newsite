@@ -171,5 +171,13 @@ use App\WebModel;
 
 
  
+public function getw()
+    {
+       
+    return View::make("support");
+    }
+    
+
+
 
 }

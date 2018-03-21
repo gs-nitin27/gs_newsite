@@ -625,21 +625,27 @@ Overall, sports events in India are always amusing to unite with. Every year we 
               <div class="row">
                   <div class="heading-center"><h3>Support</h3><p>For more info and support, contact us!</p></div>
                   <div class="col-lg-6 col-md-6">
-                    <form>
+                  <div>{{Session::get('flash_message')}}
+                  </div>
+                    <form method="POST" action="contact" >
+                     {{ csrf_field() }} 
                         <div class="form-group">
                             <label for="email">Email</label>
-                            <input type="email" class="form-control01" id="" aria-describedby="emailHelp" placeholder="">
+                            <input type="email" class="form-control01" id="email" aria-describedby="emailHelp" placeholder="" name="email">
+                            
+                            
+                            
                         </div>
                         <div class="form-group">
                             <label for="email">Subject</label>
-                            <input type="text" class="form-control01" id="" aria-describedby="emailHelp" placeholder="">
+                            <input type="text" class="form-control01" id="sub" aria-describedby="emailHelp" placeholder="" name="subject">
                         </div>
                         <div class="form-group">
                             <label for="exampleFormControlTextarea1">Example textarea</label>
-                            <textarea class="form-control01" id="exampleFormControlTextarea1" rows="5"></textarea> 
+                            <textarea class="form-control01" id="exampleFormControlTextarea1" rows="5" name="message"></textarea> 
                         </div>
                         <div class="margin15 clearfix"></div>
-                        <button type="button" class="btn btn-send">Send</button>
+                        <input type="submit" class="btn btn-send"></input>
                     </form> 
                   </div>
                   <div class="col-lg-1 col-md-1"></div>
