@@ -40,5 +40,12 @@ class Manage_Model extends Model
 	return $resp;
    }
 
+ public function getJobById($id)
+  {
+
+   $job = DB::table('gs_jobInfo')->select('*')->where('id', $id)->get();
+   return $job;
+  }
+
 
 }

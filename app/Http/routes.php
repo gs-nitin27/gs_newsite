@@ -85,24 +85,30 @@ Route::get('article-detail/{id}','WebController@article_detail');
         {
             return View::make('Manage.job.create-job');
         });
+        // Route::get('/edit', function()
+        // {
+        //     return View::make('Manage.job.edit-job');
+        // });
+        Route::get('/edit/{id}','ManageController@getjobDataforupdate');
         Route::get('/view/{id}','ManageController@get_job_detail');
 
         Route::post('setdata','ManageController@set_user_data');
-        Route::get('/job/transaction/success', function()
-        {
-            return View::make('Manage.job.payment-failure');
-        });
-        Route::get('/job/transaction/failure', function()
-        {
-            return View::make('Manage.job.payment-success');
-        });
+        Route::get('/job/transaction_list', function()
+         {
+             return View::make('Manage.job.view-transaction');
+         });
 
-        Route::post('/job/transaction/success', [
-        'uses' => 'ManageController@transaction_success'
-        ]);
-        Route::post('/job/transaction/failure', [
-        'uses' => 'ManageController@transaction_failure'
-        ]);
+        // Route::get('/logout', function()
+        // {
+        //     return View::make('job/');
+        // });
+
+        // Route::post('/job/transaction/success', [
+        // 'uses' => 'ManageController@transaction_success'
+        // ]);
+        // Route::post('/job/transaction/failure', [
+        // 'uses' => 'ManageController@transaction_failure'
+        // ]);
         
     });
 

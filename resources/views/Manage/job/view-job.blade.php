@@ -33,7 +33,7 @@ $detail = $detail[0];
         <h1>{{$detail->title}}</h1>
              <section class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                             <div class="clearfix jobSave" id="job_details">
-                                <p><span>Job Title:</span>  {{$detail->title}} </p>
+                                <p><span>Job Title:</span>  {{$detail->title}} <a href="{{url('/manage/edit/')}}/{{$detail->id}}">Edit</a></p>
                                 <p><span>Job Description:</span>  {{$detail->description}} </p>
                                 <p><span>Job Location:</span> {{$detail->org_city}} </p>
                                 <p><span>Job Type:</span> {{$detail->type}}</p>
