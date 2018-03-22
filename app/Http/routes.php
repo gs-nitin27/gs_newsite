@@ -64,7 +64,7 @@ Route::get('article-detail/{id}','WebController@article_detail');
         });
          Route::get('/publish/checkout/{data}','ManageController@get_job_pricing');
        
-         Route::get('/login', function()
+         Route::get('/login/{id}', function()
         {
             return View::make('Manage.login');
            //Route::get('get_Tounament','ManageController@get_Tounament');
@@ -91,18 +91,11 @@ Route::get('article-detail/{id}','WebController@article_detail');
          {
              return View::make('Manage.job.view-transaction');
          });
+        
+        Route::get('/create_update',function(){
 
-        // Route::get('/logout', function()
-        // {
-        //     return View::make('job/');
-        // });
-
-        // Route::post('/job/transaction/success', [
-        // 'uses' => 'ManageController@transaction_success'
-        // ]);
-        // Route::post('/job/transaction/failure', [
-        // 'uses' => 'ManageController@transaction_failure'
-        // ]);
+             return View::make('Manage.Tournaments.create_update');
+        });
         
     });
 

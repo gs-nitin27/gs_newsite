@@ -68,7 +68,7 @@ $detail = $detail[0];
     <!-- <li><a data-toggle="tab" href="#menu4">Offer Accepted</a></li> -->
   </ul>
 
-  <div class="tab-content">
+  <div class="tab-content" style="max-height: 200px;overflow-y: scroll;">
     <div id="home" class="tab-pane fade">
       <table class="table table-sm">
   <thead>
@@ -99,34 +99,8 @@ $detail = $detail[0];
       <th scope="col">Offer</th>
     </tr>
   </thead>
-  <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Nitin Agarwal</td>
-      <td>8601807045</td>
-      <td><button class="btb btn-primary">Schedule Interview</button></td>
-      <td>25 March 2018</td>
-      <td><button class="btn btn-success">Sent Offer</button></td>
-    </tr>
-      <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Nitin Agarwal</td>
-      <td>8601807045</td>
-      <td><button class="btb btn-primary">Schedule Interview</button></td>
-      <td>25 March 2018</td>
-      <td><button class="btn btn-success">Sent Offer</button></td>
-    </tr>
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Nitin Agarwal</td>
-      <td>8601807045</td>
-      <td><button class="btb btn-primary">Schedule Interview</button></td>
-      <td>25 March 2018</td>
-      <td><button class="btn btn-success">Sent Offer</button></td>
-    </tr>
+  <tbody id="shortlist">
+    
   </tbody>
 </table>
     </div>
@@ -138,39 +112,13 @@ $detail = $detail[0];
       <th scope="col"></th>
       <th scope="col">Name</th>
       <th scope="col">Location</th>
-      <th scope="col">Mobile/th>
+      <th scope="col">Mobile</th>
       <th scope="col">Age</th>
-      <th scope="col">Status</th>
+      <th scope="col">OFFER STATUS</th>
     </tr>
   </thead>
-  <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Nitin Agarwal</td>
-      <td>8601807045</td>
-      <td><button class="btb btn-primary">Schedule Interview</button></td>
-      <td>25 March 2018</td>
-      <td><button class="btn btn-success">Sent Offer</button></td>
-    </tr>
-      <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Nitin Agarwal</td>
-      <td>8601807045</td>
-      <td><button class="btb btn-primary">Schedule Interview</button></td>
-      <td>25 March 2018</td>
-      <td><button class="btn btn-success">Sent Offer</button></td>
-    </tr>
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Nitin Agarwal</td>
-      <td>8601807045</td>
-      <td><button class="btb btn-primary">Schedule Interview</button></td>
-      <td>25 March 2018</td>
-      <td><button class="btn btn-success">Sent Offer</button></td>
-    </tr>
+  <tbody id="offer">
+    
   </tbody>
 </table>
     </div>
@@ -188,10 +136,8 @@ $detail = $detail[0];
 var id = '';
 $(document).ready(function(){
   var url_string = window.location.href;
-  //alert(url_string);
   var param = url_string.split('/');
   id = param['6'];
-  //alert(id);
   function getJobData()
   {
     $.ajax({
@@ -199,31 +145,45 @@ $(document).ready(function(){
      method:"GET",
      dataType:"text",
      success:function(result)
-     { var status = '';
+     { 
+
+       var status = '';
        var data = JSON.parse(result);       
         if(data != 0)
-        {  var applicant_list = '';
+        {  
+           var applicant_list = '';
            var short_list = '';
+           var offer = '';
+           var i = 0;
+           var j = 0;
+           var k = 0;
           data.forEach(function(data){
+            ++i;
             if(data.status == '1')
             {
-               status = 'Shortlist';
-            }else
+                status = 'Shortlist';
+            }
+            else
             {
                 status = 'Shortlisted';
             }
-            if(data.status == '1')
-            {
-            applicant_list +='<tr> <th scope="row">1</th> <align="center" width="10"> <!----><div > <img  class="pull-left img-circle nav-user-photo" src="assets/images/user.jpg" width="50">&nbsp;&nbsp; </div> <!----> </td> <td>'+data.name+'</td> <td>'+data.location+'</td> <td>'+data.email+'</td> <td>'+getAge(data.dob)+'</td> <td><button class="btn btn-success">Shortlist</button></td> </tr>';
+            
+            applicant_list +='<tr> <th scope="row">'+i+'</th> <align="center" width="10"> <!----><div > <img  class="pull-left img-circle nav-user-photo" src="assets/images/user.jpg" width="50">&nbsp;&nbsp; </div> <!----> </td> <td>'+data.name+'</td> <td>'+data.location+'</td> <td>'+data.email+'</td> <td>'+getAge(data.dob)+'</td> <td><button class="btn btn-success" onclick="shortlistCandidate('+data+');">Shortlist</button></td> </tr>';
+            
+            if(data.status < '4')
+            {++j;
+            short_list +='<tr> <th scope="row">'+j+'</th> <td>Mark</td> <td>'+data.name+'</td> <td>'+data.contact_no+'</td> <td><button class="btb btn-primary">Schedule Interview</button></td> <td>25 March 2018</td> <td><button class="btn btn-success">Sent Offer</button></td> </tr>';
             }
-            else if(data.status <= '3')
-            {
-            short_list +='<tr   class=""> <td   align="center" width="10"> <!----> <!----><div  > <img   class="pull-left img-circle nav-user-photo" width="50" src="https://lh3.googleusercontent.com/-x3RK2qLjO4M/AAAAAAAAAAI/AAAAAAAAACI/iCTNcmvF-zY/photo.jpg">&nbsp;&nbsp; </div> </td> <td  > <a   target="_blank" href="#/allProfile/515/1">'+data.name+'</a> <br  ><i   class="fa fa-envelope"></i> </td> <td  > Delhi </td> <td  > '+data.contact_no+'<br  > </td> <td  >'+getAge(data.dob)+'<br  > </td> <td   align="left"> <!----> <!----><div  > <a   class="btn btn-success btn-block btn-sm">Shortlisted</a> </div> </td> </tr>';
+             else if(data.status > '4')
+            {++k;
+            offer +='<tr> <th scope="row">'+k+'</th> <align="center" width="10"> <!----><div > <img  class="pull-left img-circle nav-user-photo" src="assets/images/user.jpg" width="50">&nbsp;&nbsp; </div> <!----> </td> <td>'+data.name+'</td> <td>'+data.location+'</td> <td>'+data.email+'</td> <td>'+getAge(data.dob)+'</td><td><button class="btn btn-warning">DECLINED</button></td> </tr>';
             }
+           // i++;
           });
 
           $('#cand_list').html(applicant_list);
           $('#shortlist').html(short_list);
+          $('#offer').html(offer);
         }
 
      }
@@ -237,11 +197,22 @@ $(document).ready(function(){
   ageYear = age.getFullYear() - 1970;
 
   return ageYear;
-
-  // ageMonth = age.getMonth(); // Accurate calculation of the month part of the age
-  // ageDay = age.getDate();    // Approximate calculation of the day part of the age
-}
+  }
 });   
+
+function shortlistCandidate(data)
+ {
+  $userid            =  $userdata->userid ;
+  $id                =  $userdata->id;
+  $status            =  $userdata->status;    // Status = 2 for shortlist
+  $module            =  $userdata->module;
+
+
+
+
+
+ }
+
 </script>
                        
 
