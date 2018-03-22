@@ -1,3 +1,9 @@
+<?php 
+
+Auth::logout();
+Session::flush();
+
+?>
 <!DOCTYPE html>
 <html>
 <head>

@@ -69,7 +69,7 @@ public function create_hash()
   $txnid = substr(hash('sha256', mt_rand() . microtime()), 0, 20);
   $data->txnid = $txnid;
   unset($data->hash);
-  $SALT = 'AwGMsoxe';//'e5iIg1jwi8';
+  $SALT = 'e5iIg1jwi8';//'e5iIg1jwi8';
     $hashSequence = "key|txnid|amount|productinfo|firstname|email|udf1|udf2|udf3|udf4|udf5|udf6|udf7|udf8|udf9|udf10";
 
   
@@ -85,82 +85,11 @@ public function create_hash()
   return $resp;
 }
 
-public function transaction_success()
+public function getjobDataforupdate(Request $request)
 {
-
-$status=$_POST["status"];
-$firstname=$_POST["firstname"];
-$amount=$_POST["amount"];
-$txnid=$_POST["txnid"];
-$posted_hash=$_POST["hash"];
-$key=$_POST["key"];
-$productinfo=$_POST["productinfo"];
-$email=$_POST["email"];
-$salt="e5iIg1jwi8";
-
-If (isset($_POST["additionalCharges"])) {
-       $additionalCharges=$_POST["additionalCharges"];
-        $retHashSeq = $additionalCharges.'|'.$salt.'|'.$status.'|||||||||||'.$email.'|'.$firstname.'|'.$productinfo.'|'.$amount.'|'.$txnid.'|'.$key;
-        
-                  }
-  else {    
-
-        $retHashSeq = $salt.'|'.$status.'|||||||||||'.$email.'|'.$firstname.'|'.$productinfo.'|'.$amount.'|'.$txnid.'|'.$key;
-
-         }
-     $hash = hash("sha512", $retHashSeq);
-     
-       if ($hash != $posted_hash) {
-         echo "Invalid Transaction. Please try again";
-       }
-     else {
-               
-          echo "<h3>Thank You. Your order status is ". $status .".</h3>";
-          echo "<h4>Your Transaction ID for this transaction is ".$txnid.".</h4>";
-          echo "<h4>We have received a payment of Rs. " . $amount . ". Your order will soon be shipped.</h4>";
-           
-       }         
-   }
-
-public function transaction_failure()
-{
-
-$status=$_POST["status"];
-$firstname=$_POST["firstname"];
-$amount=$_POST["amount"];
-$txnid=$_POST["txnid"];
-
-$posted_hash=$_POST["hash"];
-$key=$_POST["key"];
-$productinfo=$_POST["productinfo"];
-$email=$_POST["email"];
-$salt="e5iIg1jwi8";
-
-If (isset($_POST["additionalCharges"])) {
-       $additionalCharges=$_POST["additionalCharges"];
-        $retHashSeq = $additionalCharges.'|'.$salt.'|'.$status.'|||||||||||'.$email.'|'.$firstname.'|'.$productinfo.'|'.$amount.'|'.$txnid.'|'.$key;
-        
-                  }
-  else {    
-
-         $retHashSeq = $salt.'|'.$status.'|||||||||||'.$email.'|'.$firstname.'|'.$productinfo.'|'.$amount.'|'.$txnid.'|'.$key;
-
-         }
-     $hash = hash("sha512", $retHashSeq);
-  
-       if ($hash != $posted_hash) {
-         echo "Invalid Transaction. Please try again";
-       }
-     else {
-
-         echo "<h3>Your order status is ". $status .".</h3>";
-         echo "<h4>Your transaction id for this transaction is ".$txnid.". You may try making the payment by clicking the link below.</h4>";
-          
-     }
-
-
-
-  
+$data = new Manage_Model();
+$resp = $data->getJobById($request->id);
+return View::make("Manage.job.edit-job")->with('data',$resp);
 }
 
 }

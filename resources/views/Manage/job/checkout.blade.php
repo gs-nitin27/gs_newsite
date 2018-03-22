@@ -3,9 +3,6 @@
 @section('content')
 <?php $value = session('userdata');
 $sess_data = json_decode($value);
-//print_r($sess_data);die;
-$surl = url('/job/transaction/success');
-$furl = url('/job/transaction/failure');
 ?><div class='container'>
     <div class='row' style='padding-top:25px; padding-bottom:25px;'>
         <div class='col-md-12'>
@@ -94,36 +91,36 @@ $furl = url('/job/transaction/failure');
                                         <br/><br/>
 
                                         <table class="table table-striped" style="font-weight: bold;">
-                                        <form method="post" name="payuForm" action="https://secure.payu.in/_payment">
-       <input type="hidden" name="key" id="key" value="2g3RdB" />
+                                        <form method="post" name="payuForm" action="https://test.payu.in/_payment">
+       <input type="hidden" name="key" id="key" value="rjQUPktU" />
        <input type="hidden" name="hash_string" id="hash_string" value="" />
        <input type="hidden" name="hash"  id="hash" value=""/>
        <input type="hidden" name="txnid" id="txnid" value="" />
 <tr>
 <td>Amount: </td>
-<td><input type="hidden" name="amount" value="500" id="amount"/></td>
+<td><input type="hidden" name="amount" value="{{$checkout['plan'][0]->amount + $value}}" id="amount"/></td>
 </tr>
 <tr>
 <td>First Name: </td>
-<td><input  name="firstname" id="firstname" value="nitin" /></td>
+<td><input  name="firstname" id="firstname" value="{{$sess_data->name}}" /></td>
 </tr>
 <tr>
 <td>Email: </td>
-<td><input  name="email" id="email" value="ntnagarwal27@gmail.com"  /></td>
+<td><input  name="email" id="email" value="{{$sess_data->email}}"  /></td>
 </tr>
 <tr>
 <td>Phone: </td>
-<td><input  name="phone" id="phone" value="8601807045" /></td>
+<td><input  name="phone" id="phone" value="{{$sess_data->contact_no}}" /></td>
 </tr>
 <tr>
 
-<td colspan="3" style="display: none"><textarea type="hidden" name="productinfo" type="hidden" value="Book1" id="productinfo">jhdkjajakhdaakhsd</textarea></td>
+<td colspan="3" style="display: none"><textarea type="hidden" name="productinfo" type="hidden" value="Book1" id="productinfo">{{$checkout['job'][0]->id}}</textarea></td>
 </tr>
 <tr>
-<td colspan="3" style="display: none" ><input type="hidden" name="surl"  size="64" id="surl" value="{{url('/manage/job/transaction/success')}}" /></td>
+<td colspan="3" style="display: none" ><input type="hidden" name="surl"  size="64" id="surl" value="{{ config('constant.ENV_URL')}}/paymentapi/transactionSuccess.php" /></td>
 </tr>
 <tr>
-<td colspan="3" style="display: none"><input type="hidden" name="furl"  size="64" id="furl" value="{{url('/manage/job/transaction/failure')}}"/></td>
+<td colspan="3" style="display: none"><input type="hidden" name="furl"  size="64" id="furl" value="{{ config('constant.ENV_URL')}}/paymentapi/transactionFail.php"/></td>
 </tr>
 <tr>
 <td colspan="3" style="display: none"><input type="hidden" name="service_provider" value="payu_paisa" id="service_provider"/></td>

@@ -1,7 +1,11 @@
 @extends('Manage.layouts.master')
 @section('pageTitle','Home')
 @section('content')
-
+{{print_r($data)}}
+<?php
+$image_url = config('constant.IMAGE_URL').'/job/'.$data[0]->image;
+$image_data = base64_encode(file_get_contents($image_url));
+ ?>
 <section class="bodySec">
         <div class="container">
             <section class="tabSec">
@@ -32,13 +36,13 @@
                             <aside class="col-lg-6 col-md-6 col-sm-6 col-xs-6 mobView">
                                 <div class="form-group">
                                     <label for="" class="">Job Title*</label>
-                                    <input class="form-control" placeholder=" " type="text" name="title" id="title"><span id="jtitle"></span>
+                                    <input class="form-control" placeholder=" " type="text" name="title" id="title" value="{{$data[0]->title}}"><span id="jtitle"></span>
                                 </div>
                             </aside>
                             <aside class="col-lg-6 col-md-6 col-sm-6 col-xs-6 mobView">
                                 <div class="form-group">
                                     <label for="" class="">Job Location*</label>
-                                    <input class="form-control" placeholder=" " type="text" name="city" id="city"><span id="jcity"></span>
+                                    <input class="form-control" placeholder=" " type="text" name="city" id="city" value="{{$data[0]->city}}"><span id="jcity"></span>
                                 </div>
                             </aside>
                         </section>
@@ -46,7 +50,7 @@
                             <aside class="col-lg-6 col-md-6 col-sm-6 col-xs-6 mobView">
                                 <div class="form-group ">
                                     <label for="" class="">Job type*</label>
-                                    <select class="form-control" id="type" name="type">
+                                    <select class="form-control" id="type" name="type" value="{{$data[0]->type}}">
                                         <option></option>
                                         <option>Permanent</option>
                                         <option>Part-time</option>
@@ -59,7 +63,7 @@
                                 <div class="form-group ">
                                     <label for="" class="">Job sport</label>
                                      <select class="form-control" id="sport" name="sport">
-                                        
+                                        <!-- <option value="{{$data[0]->sport}}" selected>{{$data[0]->sport}}</option> -->
                                     </select><span id="jsport"></span>
                                 </div>
                             </aside>
@@ -68,13 +72,13 @@
                             <aside class="col-lg-6 col-md-6 col-sm-6 col-xs-6 mobView">
                                 <div class="form-group adrs">
                                     <label for="" class="">Address Line 1</label>
-                                    <textarea class="form-control" placeholder=" "></textarea>
+                                    <textarea class="form-control" placeholder=" " id="address1">{{$data[0]->address1}}</textarea>
                                 </div>
                             </aside>
                             <aside class="col-lg-6 col-md-6 col-sm-6 col-xs-6 mobView">
                                 <div class="form-group adrs">
                                     <label for="" class="">Address Line 2</label>
-                                    <textarea class="form-control" placeholder=" "></textarea>
+                                    <textarea class="form-control" placeholder=" " id="address2">{{$data[0]->address2}}</textarea>
                                 </div>
                             </aside>
                         </section>
@@ -82,13 +86,13 @@
                             <aside class="col-lg-6 col-md-6 col-sm-6 col-xs-6 mobView">
                                 <div class="form-group">
                                     <label for="" class="">Email*</label>
-                                    <input class="form-control" placeholder=" " type="text" name="email" id="email"><span id="jemail"></span>
+                                    <input class="form-control" placeholder=" " type="text" name="email" id="email" value="{{$data[0]->email}}"><span id="jemail"></span>
                                 </div>
                             </aside>
                             <aside class="col-lg-6 col-md-6 col-sm-6 col-xs-6 mobView">
                                 <div class="form-group">                                    
                                     <label for="" class="">Job  Discription*</label>
-                                    <textarea class="form-control" placeholder=" " name="desc" id="desc"></textarea><span id="jdesc"></span>
+                                    <textarea class="form-control" placeholder=" " name="desc" id="desc">{{$data[0]->email}}</textarea><span id="jdesc"></span>
                                 </div>                                    
                             </aside>                           
                         </section>
@@ -102,13 +106,13 @@
                             <aside class="col-lg-6 col-md-6 col-sm-6 col-xs-6 mobView">
                                 <div class="form-group">
                                     <label for="" class="">Work Experience</label>
-                                    <input class="form-control" placeholder=" " type="text" name="work_exp" id="work_exp">
+                                    <input class="form-control" placeholder=" " type="text" name="work_exp" id="work_exp" value="{{$data[0]->work_experience}}">
                                 </div>
                             </aside>
                             <aside class="col-lg-6 col-md-6 col-sm-6 col-xs-6 mobView">
                                 <div class="form-group">
                                     <label for="" class="">Qualification</label>
-                                    <input class="form-control" placeholder=" " type="text" name="qualification" id="qualification">
+                                    <input class="form-control" placeholder=" " type="text" name="qualification" id="qualification" value="{{$data[0]->qualification}}">
                                 </div>
                             </aside>
                         </section>
@@ -116,13 +120,13 @@
                             <aside class="col-lg-6 col-md-6 col-sm-6 col-xs-6 mobView">
                                 <div class="form-group">
                                     <label for="" class="">Key Requirements</label>
-                                    <input class="form-control" placeholder=" " type="text" name="keyreq" id="keyreq">
+                                    <input class="form-control" placeholder=" " type="text" name="keyreq" id="keyreq" value="{{$data[0]->key_requirement}}">
                                 </div>
                             </aside>
                             <aside class="col-lg-6 col-md-6 col-sm-6 col-xs-6 mobView">
                                 <div class="form-group">
                                     <label for="" class="">Salary</label>
-                                    <input class="form-control" placeholder=" " type="text" name="salary" id="salary">
+                                    <input class="form-control" placeholder=" " type="text" name="salary" id="salary" value="{{$data[0]->salary}}">
                                 </div>
                             </aside>
                         </section>
@@ -130,7 +134,7 @@
                             <aside class="col-lg-6 col-md-6 col-sm-6 col-xs-6 mobView">
                                 <div class="form-group">
                                     <label for="" class="">Desired Skill*</label>
-                                    <input class="form-control" placeholder=" " type="text" id="desiredskill" name="desiredskill">
+                                    <input class="form-control" placeholder=" " type="text" id="desiredskill" name="desiredskill" value="{{$data[0]->desired_skills}}">
                                 </div>
                             </aside>
                             <aside class="col-lg-6 col-md-6 col-sm-6 col-xs-6 mobView">
@@ -153,13 +157,13 @@
                             <aside class="col-lg-6 col-md-6 col-sm-6 col-xs-6 mobView">
                                 <div class="form-group">
                                     <label for="" class="">Orgenization Name</label>
-                                    <input class="form-control" placeholder=" " type="text" name="org_name" id="org_name">
+                                    <input class="form-control" placeholder=" " type="text" name="org_name" id="org_name" value="{{$data[0]->organisation_name}}">
                                 </div>
                             </aside>
                             <aside class="col-lg-6 col-md-6 col-sm-6 col-xs-6 mobView">
                                 <div class="form-group">
                                     <label for="" class="">About Orgenization</label>
-                                    <input class="form-control" placeholder=" " type="text" id="about" name="about">
+                                    <input class="form-control" placeholder=" " type="text" id="about" name="about" value="{{$data[0]->about}}">
                                 </div>
                             </aside>
                          </section>
@@ -167,13 +171,13 @@
                             <aside class="col-lg-6 col-md-6 col-sm-6 col-xs-6 mobView">
                                 <div class="form-group adrs">
                                     <label for="" class="">Address 1</label>
-                                    <textarea class="form-control" placeholder=" " id="org_address1" name="org_address1"></textarea>
+                                    <textarea class="form-control" placeholder=" " id="org_address1" name="org_address1">{{$data[0]->org_address1}}</textarea>
                                 </div>
                             </aside>
                             <aside class="col-lg-6 col-md-6 col-sm-6 col-xs-6 mobView">
                                 <div class="form-group adrs">
                                     <label for="" class="">Address 2</label>
-                                    <textarea class="form-control" placeholder=" " id="org_address2" name="org_address2"></textarea>
+                                    <textarea class="form-control" placeholder=" " id="org_address2" name="org_address2">{{$data[0]->org_address2}}</textarea>
                                 </div>
                             </aside>
                         </section>
@@ -181,13 +185,13 @@
                             <aside class="col-lg-6 col-md-6 col-sm-6 col-xs-6 mobView">
                                 <div class="form-group">
                                     <label for="" class="">Organisation Location</label>
-                                    <input class="form-control" placeholder=" " type="text" name="org_city" id="org_city"><span id="jorg_city"></span>
+                                    <input class="form-control" placeholder=" " type="text" name="org_city" id="org_city" value="{{$data[0]->org_city}}"><span id="jorg_city"></span>
                                 </div>
                             </aside>
                             <aside class="col-lg-6 col-md-6 col-sm-6 col-xs-6 mobView">
                                 <div class="form-group">
                                     <label for="" class="">State</label>
-                                    <input class="form-control" placeholder=" " type="text" name="state" id="org_state">
+                                    <input class="form-control" placeholder=" " type="text" name="state" id="org_state" value="{{$data[0]->org_state}}">
                                 </div>
                             </aside>
                          </section>
@@ -195,13 +199,13 @@
                             <aside class="col-lg-6 col-md-6 col-sm-6 col-xs-6 mobView">
                                 <div class="form-group">
                                     <label for="" class="">Mobile No.*</label>
-                                    <input class="form-control" placeholder=" " type="text" id="contact" name="contact">
+                                    <input class="form-control" placeholder=" " type="text" id="contact" name="contact" value="{{$data[0]->contact}}">
                                 </div>
                             </aside>
                             <aside class="col-lg-6 col-md-6 col-sm-6 col-xs-6 mobView">
                                 <div class="form-group">
                                     <label for="" class="">Pin</label>
-                                    <input class="form-control" placeholder=" " type="text" name="pin" id="org_pin">
+                                    <input class="form-control" placeholder=" " type="text" name="pin" id="org_pin" value="{{$data[0]->org_pin}}">
                                 </div>
                             </aside>
                          </section>
@@ -217,7 +221,7 @@
                                       <span id="spnFilePath"></span>
                                      <!--  <input type="file" id="FileUpload1" style="display: block" /> -->
                                      <!-- <input  /> -->
-                                     <input type='file' id="imgInp" class="uploadFileBtn" value="Attachment"/>
+                                     <input type='file' id="imgInp" class="uploadFileBtn" value="{{$data[0]->image}}"/>
                                   </div>
 
                                 </div>
@@ -225,7 +229,7 @@
                             <aside class="col-lg-6 col-md-6 col-sm-6 col-xs-6 mobView">
                                 <div class="uploadBox">
                                     <figure><!-- <img class="img-responsive" src="{{asset('manage_assets/img/demo.jpg')}}"> -->
-                                        <img id="blah" src="{{asset('manage_assets/img/demo.jpg')}}" alt="your image" style="max-width: 100%;" />
+                                        <img id="blah" src="{{config('constant.IMAGE_URL')}}/job/{{$data[0]->image}}" alt="your image" style="max-width: 100%;" />
                                     </figure>
                                 </div>
                             </aside>
@@ -240,10 +244,14 @@
         </div>
     </section>
    <script type="text/javascript">
-        
-        var image_data = '';
+        $('input').on('change',function(){
+        $('#create_job').show();
+        });
+        var image_data = '<?php echo $image_data ?>';
         $(document).ready(function(){
-           
+           $('#create_job').hide(); 
+           $('#type').val('{{$data[0]->type}}');
+           $('#gender').val('{{$data[0]->gender}}');
            function getSportsList()
              {
                 $.ajax({
@@ -257,6 +265,7 @@
                     option += '<option>'+data.sports+'</option>';
                    });
                     $('#sport').html(option);
+                    $('#sport').val('{{$data[0]->sport}}');
                 }
                });
               }
@@ -273,14 +282,13 @@
            function create_job() 
            {  //alert(image_data);
                var job_data = {
-
+                "id":'{{$data[0]->id}}',
                 "userid":sess_userid,
                 "title":$('#title').val(),
                 "type":$('#type').val(),
                 "sports":$('#sport').val(),
                 "description":$('#desc').val(),
                 "gender":$('#gender').val(),
-                "location":$('#city').val(),
                 "work_experience":$('#work_exp').val(),
                 "desired_skills":$('#desiredskill').val(),
                 "qualification":$('#qualification').val(),
@@ -295,14 +303,15 @@
                 "address1":$('#address1').val(),
                 "address2":$('#address2').val(),
                 "city":$('#city').val(),
-                "state":$('#state').val(),
+                "state":$('#org_state').val(),
                 "pin":$('#org_pin').val(),
                 "contact":$('#contact').val(),
                 "email_app_collection":$('#email').val(),
                 "image":image_data,
-                "salary":$('#salary').val()
+                "salary":$('#salary').val(),
+                "old_image":'{{$data[0]->image}}'
                 };
-                //alert(JSON.stringify(job_data));return;
+                //console.log(JSON.stringify(job_data));return;
                 $.ajax({
                     type: "POST",
                     async:false,
@@ -374,6 +383,7 @@
 
         // Code For image view and Generating base64 Format
         function readURL(input) {
+            //alert(input);return;
         if (input.files && input.files[0]) {
             var reader = new FileReader();
             reader.onload = function (e) {
@@ -385,31 +395,33 @@
         }
     }
     //function for image upload starts
-             function image_upload()
-             {
-                $.ajax({
-                url:url+'/angularapi_image.php?act=jobimage&ui=la',
-                data:image_data,
-                type:'POST',
-                dataType:'text',
-                success:function(result)
-                {  
-                  var image_name = JSON.parse(result);
-                  if(image_name.status == '1')
-                  {
-                  image_data = image_name.data;
-                 // alert(image_data);
-                  return image_data;
-                  }
-                else
-                 {
-                  return false;                   
-                 }
-               }
-           });
-        }
+        //      function image_upload()
+        //      {
+        //         $.ajax({
+        //         url:url+'/angularapi_image.php?act=jobimage&ui=la',
+        //         data:image_data,
+        //         type:'POST',
+        //         dataType:'text',
+        //         success:function(result)
+        //         {  
+        //           var image_name = JSON.parse(result);
+        //           if(image_name.status == '1')
+        //           {
+        //           image_data = image_name.data;
+        //          // alert(image_data);
+        //           return image_data;
+        //           }
+        //         else
+        //          {
+        //           return false;                   
+        //          }
+        //        }
+        //    });
+        // }
            //function for image upload ends here
     $("#imgInp").change(function(){
+        //alert;
+        //alert(this);return;
         readURL(this);
     });
     </script>
