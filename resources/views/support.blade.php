@@ -1,126 +1,200 @@
-@extends('layouts.master')
-@section('pageTitle','Home')
-@section('content')
+<html lang="en">
+<head>
+  <meta charset="utf-8"> 
+  <meta name="viewport" content="width=device-width"> 
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+    <meta name="x-apple-disable-message-reformatting">  
+  <title></title> 
+    <style>
+        html,
+        body {
+          margin: 0 auto !important;
+            padding: 0 !important;
+            height: 100% !important;
+            width: 100% !important;
+        }
+        * {
+            -ms-text-size-adjust: 100%;
+            -webkit-text-size-adjust: 100%;
+        }
+        div[style*="margin: 16px 0"] {
+            margin:0 !important;
+        }
+        table,
+        td {
+            mso-table-lspace: 0pt !important;
+            mso-table-rspace: 0pt !important;
+        }
+        table {
+            border-spacing: 0 !important;
+            border-collapse: collapse !important;
+            table-layout: fixed !important;
+        
+        }
+        table table table {
+            table-layout: auto;
+        }
+        img {
+            -ms-interpolation-mode:bicubic;
+        }
+        *[x-apple-data-detectors] {
+            color: inherit !important;
+            text-decoration: none !important;
+        }
+        .x-gmail-data-detectors,
+        .x-gmail-data-detectors *,
+        .aBn {
+            border-bottom: 0 !important;
+            cursor: default !important;
+        }
+        .a6S {
+          display: none !important;
+          opacity: 0.01 !important;
+        }
+        img.g-img + div {
+          display:none !important;
+      }
+        .button-link {
+            text-decoration: none !important;
+        }
+
+       
+        @media only screen and (min-device-width: 375px) and (max-device-width: 413px) { 
+            .email-container {
+                min-width: 375px !important;
+            }
+        }
+
+    </style>
+
+    <style>
+        .button-td,
+        .button-a {
+            transition: all 100ms ease-in;
+        }
+        .button-td:hover,
+        .button-a:hover {
+            background: #555555 !important;
+            border-color: #555555 !important;
+        }
+        @media screen and (max-width: 600px) {
+
+            .email-container {
+                width: 100% !important;
+                margin: auto !important;
+            }
+            .fluid {
+                max-width: 100% !important;
+                height: auto !important;
+                margin-left: auto !important;
+                margin-right: auto !important;
+            }
+            .stack-column,
+            .stack-column-center {
+                display: block !important;
+                width: 100% !important;
+                max-width: 100% !important;
+                direction: ltr !important;
+            }
+            .stack-column-center {
+                text-align: center !important;
+            }
+            .center-on-narrow {
+                text-align: center !important;
+                display: block !important;
+                margin-left: auto !important;
+                margin-right: auto !important;
+                float: none !important;
+            }
+            table.center-on-narrow {
+                display: inline-block !important;
+            }
+      .email-container p {
+        font-size: 17px !important;
+        line-height: 22px !important;
+      }
+        }
+    </style>
+</head>
+<body width="100%" bgcolor="#fff" style="margin: 0; mso-line-height-rule: exactly;">
+    <center style="width: 100%; text-align: left;">
+        <table role="presentation" aria-hidden="true" cellspacing="0" cellpadding="0" border="0" align="center" width="600" style="margin: auto;" class="email-container">
+          <tr>
+        <td bgcolor="#03a9f4">
+          <img src="http://getsporty.in/emailimages/logo.png" aria-hidden="true" width="180" height="" alt="alt_text" border="0" align="center" style="margin:0 0 0 15px;height: auto; background: #03a9f4; font-family: sans-serif; font-size: 15px; line-height: 20px; color: #555555;" class="g-img">
+        </td>
+            </tr>
+            <tr>
+                <td bgcolor="#ffffff" style="padding: 40px 40px 20px;">
+                    {{ $email }}
+                </td>
+                 
+            </tr>
+
+            <tr>
+                <td bgcolor="#ffffff" style="padding: 0 40px 40px; font-family: sans-serif; font-size: 15px; line-height: 20px; color: #555555;">
+                    <p style="margin: 0;"></p>
+                </td>
+            </tr>
+            <tr>
+                <td bgcolor="#000000" align="center" valign="top" style="padding: 10px;">
+                    <table role="presentation" aria-hidden="true" cellspacing="0" cellpadding="0" border="0" width="100%">
+                        <tr>
+                            <!-- Column : BEGIN -->
+                            <td class="stack-column-center">
+                                <table role="presentation" aria-hidden="true" cellspacing="0" cellpadding="0" border="0">
+                                   
+                                    <tr>
+                                        <td style="font-family: sans-serif; font-size: 15px; line-height: 20px; color: #555555; padding: 0 10px 10px; text-align: left;" class="center-on-narrow">
+                                            <img src="http://getsporty.in/emailimages/logo.png" aria-hidden="true" width="120" height="" alt="alt_text" border="0" align="center" style="margin:0 0 0 15px;height: auto; font-family: sans-serif; font-size: 15px; line-height: 20px; color: #555555;" class="g-img">
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                            <!-- Column : END -->
+                            <!-- Column : BEGIN -->
+                            <td class="stack-column-center">
+                                <table role="presentation" aria-hidden="true" cellspacing="0" cellpadding="0" border="0"  style="float: right;padding-right: 10px;display: inline-block;">
+                                    
+                                    <tr>
+                                        <td style="font-family: sans-serif; font-size: 15px; line-height: 20px; color: #555555; padding: 0 10px 10px; text-align: left;" class="center-on-narrow">
+                                            <ul>
+                                                <li style="list-style:none;display:inline-block;"><a href=""><img style="width:30px" src="http://getsporty.in/emailimages/f.png"></a></li>
+                                                <li style="list-style:none;display:inline-block;"><a href=""><img style="width:30px" src="http://getsporty.in/emailimages/go.png"></a></li>
+                                                <li style="list-style:none;display:inline-block;"><a href=""><img style="width:30px" src="http://getsporty.in/emailimages/ln.png"></a></li>
+                                                <li style="list-style:none;display:inline-block;"><a href=""><img style="width:30px" src="http://getsporty.in/emailimages/t.png"></a></li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                            <!-- Column : END -->
+                        </tr>
+
+                    </table><hr style="width: 90%;margin-top:0">
+                </td>
+            </tr>
+            <!-- 2 Even Columns : END -->
+            
 
 
-        <div class="about-bg bannerBgSec">
-          <div class="container">
-       	    <div class="row">
-       	      <div class="col-md-12">
-       		    <div class="ban-pera">
-       			  <h1>Lorem ispum is dummy </h1>
-       			  <h3>Lorem ispum is dummy text.</h3>	
-         	    </div>
-               </div>
-              </div>
-             </div>        
-            </div>
-          <div class="relative">
-            <div class="blue-bg"></div>
-             <div class="play-icon" data-toggle="modal" data-target="#myModal">
-        	  <img src="img/play-icon.svg">
-              </div>
-            </div>      
-       <!-- Modal pop -->
-             <div id="getApp" class="modal fade" role="dialog">
-                <div class="modal-dialog">                 
-                    <div class="modal-content">
-                       <div class="modal-body">
-                         <button type="button" class="close" data-dismiss="modal">&times;</button>
-                            <section class="getAppBox text-center">
-                                <h3>Get app</h3>
-                                <p>Choose your native platform and get started!</p>
-                                <img src="img/play-btn.png">
-                                <img class="img-responsive" src="img/app.png">
-                            </section>
-                         </div>
-                    </div>
-                </div>
-              </div>
-            <div id="myModal" class="modal fade" role="dialog">
-              <div class="modal-dialog">               
-                <div class="modal-content">
-                   <div class="modal-body">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <iframe width="100%" height="315" src="https://www.youtube.com/embed/YeYXeoYXZwY" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-                   </div>
-                  </div>
-              </div>
-            </div>
-        <!-- Modal Popup -->
-
-
-
-              <div class="clearfix"></div>               
-   <div class="clearfix"></div>
-     <div class="container" id="support">
-       <div class="row">
-          <div class="heading-center">
-            <h3>Support</h3>
-              <p>For more info and support, contact us!</p>
-                </div>
-                  
-         <div class="col-lg-6 col-md-6">
-    <form>
-  <div class="form-group">
-    <label for="email">Email</label>
-    <input type="email" class="form-control01" id="" aria-describedby="emailHelp" placeholder="">
-  </div>
-    <div class="form-group">
-    <label for="email">Subject</label>
-    <input type="text" class="form-control01" id="" aria-describedby="emailHelp" placeholder="">
-  </div>
-   <div class="form-group">
-  <label for="exampleFormControlTextarea1">Example textarea</label>
-    <textarea class="form-control01" id="exampleFormControlTextarea1" rows="5"></textarea> 
-    </div>
-    <div class="margin15 clearfix"></div>
-     <button type="button" class="btn btn-send">Send</button>
-        </form> 
-       </div>
-           <div class="col-lg-1 col-md-1"></div>
-              <div class="col-lg-5 col-md-5">
-          <div class="right-cont">
-       	   <h3>Contact:</h3>
-       	    <p><img src="img/latitude.svg"> A 20, Sector 35, Noida, India ,201301</p>
-       	     <p><img src="img/contact.svg"> +91 120 4511807</p>
-       	   	   <p><img src="img/mail.svg"> info@darkhorsesports.in</p>
-              </div>
-               </div>
-                 </div>
-             </div>
-             <div class="clearfix margin20"></div>
-             <div class="relative">
-             <div class="map">
-             <iframe class="w100" src="https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d58883.73429876116!2d75.82270614616367!3d22.71956488732932!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e6!4m5!1s0x3962fcad1b410ddb%3A0x96ec4da356240f4!2sIndore%2C+Madhya+Pradesh!3m2!1d22.7195687!2d75.8577258!4m0!5e0!3m2!1sen!2sin!4v1503394956409" width="100%" height="400" frameborder="0" style="border:0" allowfullscreen=""></iframe>
-             </div>
- 			 </div> 
-
- 
- <script>
-            $(document).ready(function() {
-              $('.owl-carousel').owlCarousel({
-               loop: true,
-                margin: 20,
-                responsiveClass: true,
-                 autoplay: true,
-                responsive: {
-                  0: {
-                    items: 1,
-                    nav: true
-                  },
-                  600: {
-                    items: 1,
-                    nav: false
-                  },
-                  1000: {
-                    items: 4,
-                    nav: true,
+        <!-- Email Footer : BEGIN -->
+        <table role="presentation" aria-hidden="true" cellspacing="0" cellpadding="0" border="0" align="center" width="600" style="margin: auto;" class="email-container">
+            <tr>
+                <td style="background:#000000;padding: 10px 10px;width: 100%;font-size: 12px; font-family: sans-serif; line-height:18px; text-align: center; color: #888888;" class="x-gmail-data-detectors">
+                    <webversion style="color:#cccccc; text-decoration:underline; font-weight: bold;">Lorem ipsum dolor sit amet</webversion>
+                    <br><br><div class="foot-logo">
+            <a href="index.html" style="border-bottom:none;">
                 
-                  }
-                }
-              })
-            })
- </script> 
+        </a></div><br>consectetur adipiscing elit. In quis fermentum<br>(123) 456-7890
+                    <br><br>
+                    <unsubscribe style="color:#888888; text-decoration:underline;">unsubscribe</unsubscribe>
+                </td>
+            </tr>
+        </table>
+        <!-- Email Footer : END -->
 
-@stop
+    </center>
+</body>
+</html>
+'

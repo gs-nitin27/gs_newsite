@@ -9,7 +9,7 @@
              <span class="icon-bar"></span>
              <span class="icon-bar"></span>
              </button>
-            <a class="navbar-brand logo" href="{{ action( 'WebController@index' )}}"><img class="img-responsive" src="{{asset('img/logo.png')}}"></a>
+            <a class="navbar-brand logo" href="{{url('/')}}"><img class="img-responsive" src="{{asset('img/logo.png')}}"></a>
            </div>
           <!-- Collect the nav links, forms, and other content for toggling -->
            <div class="navbar-collapse collapse" id="navbar-collapse-1">
