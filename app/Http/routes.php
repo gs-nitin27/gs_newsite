@@ -23,7 +23,9 @@
 Route::post('/contact',  'WebEmail@send_mail'); 
 
 
+
 Route::get('/','WebController@index');
+
 Route::get('support','WebController@getsupport');
 
 Route::get('aboutus','WebController@getaboutus');

@@ -17,7 +17,7 @@ use Mail;
 $name = $request->get('email');
         // only for testing purpose use support view
 
-      Mail::send('support',
+      Mail::send('support1',
        array(
            'email' => $request->get('email'),
            'subject' => $request->get('subject'),
