@@ -126,7 +126,7 @@
             </tr>
             <tr>
                 <td bgcolor="#ffffff" style="padding: 40px 40px 20px;">
-                    {{ $email }}
+                  Thanks for Contacting us , Our team will contact you soon
                 </td>
                  
             </tr>
