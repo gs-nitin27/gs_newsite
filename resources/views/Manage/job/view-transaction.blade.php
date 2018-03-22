@@ -11,7 +11,7 @@ body {font-family: "Lato", sans-serif;}
     border: 1px solid #ccc;
     background-color: #f1f1f1;
     width: 30%;
-    height: 300px;
+    height: 30px;
 }
 
 /* Style the buttons inside the tab */
@@ -27,6 +27,7 @@ body {font-family: "Lato", sans-serif;}
     cursor: pointer;
     transition: 0.3s;
     font-size: 17px;
+    max-height: 10px;
 }
 
 /* Change background color of buttons on hover */
@@ -46,7 +47,7 @@ body {font-family: "Lato", sans-serif;}
     border: 1px solid #ccc;
     width: 70%;
     border-left: none;
-    height: 300px;
+    height: 30px;
 }
 </style>
 </head>
@@ -54,28 +55,38 @@ body {font-family: "Lato", sans-serif;}
 
 <p>Click on the buttons inside the tabbed menu:</p>
 
-<div class="tab">
-  <button class="tablinks" onclick="openCity(event, 'London')" id="defaultOpen">London</button>
-  <button class="tablinks" onclick="openCity(event, 'Paris')">Paris</button>
-  <button class="tablinks" onclick="openCity(event, 'Tokyo')">Tokyo</button>
+<div class="tab" id="txn_element">
 </div>
-
-<div id="London" class="tabcontent">
-  <h3>London</h3>
-  <p>London is the capital city of England.</p>
+<div id="detail">
 </div>
-
-<div id="Paris" class="tabcontent">
-  <h3>Paris</h3>
-  <p>Paris is the capital of France.</p> 
-</div>
-
-<div id="Tokyo" class="tabcontent">
-  <h3>Tokyo</h3>
-  <p>Tokyo is the capital of Japan.</p>
-</div>
-
 <script>
+$(document).ready(function(){
+//alert(sess_userid);return;
+      $.ajax({
+          url:url+'/paymentController.php?act=getTransactionList&userid='+sess_userid,
+          method:"GET",
+          success:function(result)
+          {
+            var data = JSON.parse(result);
+            if(data.status == '1')
+            { alert(data.status);
+
+              var struct = '';
+              var detail = '';
+              data = data.data;
+              data.forEach(function(data){
+              struct += '<button class="tablinks" onclick="openCity(event, '+data.invoice_id+')">'+data.invoice_id+'</button>';
+              detail += '<div id="'+data.invoice_id+'" class="tabcontent"> <h3>'+data.invoice_id+'</h3> <p>London is the capital city of England.</p> </div>';
+              });
+              
+              $('#txn_element').html(struct);
+              $('#detail').html(detail);
+             } 
+          }
+
+      });
+});
+
 function openCity(evt, cityName) {
     var i, tabcontent, tablinks;
     tabcontent = document.getElementsByClassName("tabcontent");

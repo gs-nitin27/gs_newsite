@@ -43,10 +43,10 @@ $detail = $detail[0];
                         </section>
                         <section class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                             <div class="clearfix jobSave" id="job_requirements">
-                                <p><span>Email:</span>  {{$detail->description}} </p>
+                                <p><span>Email:</span>  {{$detail->email}} </p>
                                 <p><span>WorkExperience:</span>{{$detail->work_experience}}</p>
-                                <p><span>Key Requirements:</span>{{$detail->description}} </p>
-                                <p><span>Desired Skills:</span>{{$detail->description}}</p>
+                                <p><span>Key Requirements:</span>{{$detail->key_requirement}} </p>
+                                <p><span>Desired Skills:</span>{{$detail->desired_skills}}</p>
                             </div>
                         </section>
                         <section class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
@@ -59,80 +59,125 @@ $detail = $detail[0];
         <div>
         <div class="clearfix">
         <!-- <button class="btn btn-n viewBtn"><i class="fa fa-eye"></i> View More</button> -->
-        <div class="container">
+        <div class="container" style="max-height: 20px;">
   <h2>Applicants List</h2>
   <ul class="nav nav-tabs">
-    <li class="active"><a data-toggle="tab" href="#home">Applied Candidates</a></li>
-    <li><a data-toggle="tab" href="#menu1">Shortslisted</a></li>
-    <li><a data-toggle="tab" href="#menu2">Selected</a></li>
-    <li><a data-toggle="tab" href="#menu3">Offer Accepted</a></li>
+    <li class="active"><a data-toggle="tab" href="#home" aria-expanded="true">Applied Candidates</a></li>
+    <li><a data-toggle="tab" href="#menu2">Shortslisted</a></li>
+    <li><a data-toggle="tab" href="#menu3">Offer</a></li>
+    <!-- <li><a data-toggle="tab" href="#menu4">Offer Accepted</a></li> -->
   </ul>
 
   <div class="tab-content">
-    <div id="home" class="tab-pane fade in active">
-      <div  class="tab-content">
-      <div  class="tab-pane fade active in" id="example1-tab1" role="tabpanel">
-      <table  border="0" class="table-users table">
-      <thead >
-      <tr >
-      <th ></th>
-      <th >Name</th>
-      <th >Location</th>
-      <th >Mobile</th>
-      <th >Age</th>
-      <th >View</th>
-      </tr>
-      </thead>
-      <tbody id="candidates_list">
-      </tbody>
-      </table>
-      </div>
-      
-      <div  class="tab-pane fade" id="example1-tab3" role="tabpanel">
-      <table  border="0" class="table-users table">
-      <thead >
-      <tr >
-      <th ></th>
-      <th >Name</th>
-      <th >Location</th>
-      <th >Mobile</th>
-      <th >Age</th>
-      <th >Status</th>
-      </tr>
-      </thead>
-      <tbody id="shortlist"> 
-      </tbody>
-      </table>              
-      </div>
+    <div id="home" class="tab-pane fade">
+      <table class="table table-sm">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col"></th>
+      <th scope="col">Name</th>
+      <th scope="col">Location</th>
+      <th scope="col">Email</th>
+      <th scope="col">Age</th>
+      <th scope="col">Status</th>
+    </tr>
+  </thead>
+  <tbody id="cand_list">
      
-    
-      <div  class="tab-pane fade" id="example1-tab2" role="tabpanel">
-      <table  border="0" class="table-users table">
-      <thead >
-      <tr >
-      <th ></th>
-      <th >Name</th>
-      <th >Mobile</th>
-      <th >Age</th>
-      <th >Interview</th>
-      <th >Interview Date</th>
-      <th >Sent Offer</th>
-      </tr>
-      </thead>
-      <tbody id="shortlist">  
-      <!---->
-      </tbody>
-      </table>           
-
-    </div>
-    <div id="menu2" class="tab-pane fade">
-      <h3>Menu 2</h3>
-      <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+  </tbody>
+</table>
+    </div><div id="menu2" class="tab-pane fade">
+      <table class="table table-sm">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col"></th>
+      <th scope="col">Name</th>
+      <th scope="col">Mobile</th>
+      <th scope="col">Interview</th>
+      <th scope="col">Interview Date</th>
+      <th scope="col">Offer</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Mark</td>
+      <td>Nitin Agarwal</td>
+      <td>8601807045</td>
+      <td><button class="btb btn-primary">Schedule Interview</button></td>
+      <td>25 March 2018</td>
+      <td><button class="btn btn-success">Sent Offer</button></td>
+    </tr>
+      <tr>
+      <th scope="row">1</th>
+      <td>Mark</td>
+      <td>Nitin Agarwal</td>
+      <td>8601807045</td>
+      <td><button class="btb btn-primary">Schedule Interview</button></td>
+      <td>25 March 2018</td>
+      <td><button class="btn btn-success">Sent Offer</button></td>
+    </tr>
+    <tr>
+      <th scope="row">1</th>
+      <td>Mark</td>
+      <td>Nitin Agarwal</td>
+      <td>8601807045</td>
+      <td><button class="btb btn-primary">Schedule Interview</button></td>
+      <td>25 March 2018</td>
+      <td><button class="btn btn-success">Sent Offer</button></td>
+    </tr>
+  </tbody>
+</table>
     </div>
     <div id="menu3" class="tab-pane fade">
-      <h3>Menu 3</h3>
-      <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+      <table class="table table-sm">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col"></th>
+      <th scope="col">Name</th>
+      <th scope="col">Location</th>
+      <th scope="col">Mobile/th>
+      <th scope="col">Age</th>
+      <th scope="col">Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Mark</td>
+      <td>Nitin Agarwal</td>
+      <td>8601807045</td>
+      <td><button class="btb btn-primary">Schedule Interview</button></td>
+      <td>25 March 2018</td>
+      <td><button class="btn btn-success">Sent Offer</button></td>
+    </tr>
+      <tr>
+      <th scope="row">1</th>
+      <td>Mark</td>
+      <td>Nitin Agarwal</td>
+      <td>8601807045</td>
+      <td><button class="btb btn-primary">Schedule Interview</button></td>
+      <td>25 March 2018</td>
+      <td><button class="btn btn-success">Sent Offer</button></td>
+    </tr>
+    <tr>
+      <th scope="row">1</th>
+      <td>Mark</td>
+      <td>Nitin Agarwal</td>
+      <td>8601807045</td>
+      <td><button class="btb btn-primary">Schedule Interview</button></td>
+      <td>25 March 2018</td>
+      <td><button class="btn btn-success">Sent Offer</button></td>
+    </tr>
+  </tbody>
+</table>
     </div>
+    <!-- <div id="menu4" class="tab-pane fade">
+      <h3>Menu 4</h3>
+      <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+    </div> -->
   </div>
 </div>
         </div>
@@ -145,7 +190,8 @@ $(document).ready(function(){
   var url_string = window.location.href;
   //alert(url_string);
   var param = url_string.split('/');
-  id = param['7'];
+  id = param['6'];
+  //alert(id);
   function getJobData()
   {
     $.ajax({
@@ -168,7 +214,7 @@ $(document).ready(function(){
             }
             if(data.status == '1')
             {
-            applicant_list +='<tr  class="" ><td  align="center" width="10"> <!----><div > <img  class="pull-left img-circle nav-user-photo" src="assets/images/user.jpg" width="50">&nbsp;&nbsp; </div> <!----> </td> <td > <a  target="_blank" href="#/allProfile/486/1">'+data.name+'</a> <br ><i  class="fa fa-envelope"></i> </td> <td >'+data.location+'</td> <td > '+data.contact_no+'<br > </td> <td >'+getAge(data.dob)+'<br > </td> <td  align="left"> <!----> <!----><div > <a  class="btn btn-success btn-block btn-sm">Shortlisted</a> </div></td></tr>';
+            applicant_list +='<tr> <th scope="row">1</th> <align="center" width="10"> <!----><div > <img  class="pull-left img-circle nav-user-photo" src="assets/images/user.jpg" width="50">&nbsp;&nbsp; </div> <!----> </td> <td>'+data.name+'</td> <td>'+data.location+'</td> <td>'+data.email+'</td> <td>'+getAge(data.dob)+'</td> <td><button class="btn btn-success">Shortlist</button></td> </tr>';
             }
             else if(data.status <= '3')
             {
@@ -176,7 +222,7 @@ $(document).ready(function(){
             }
           });
 
-          $('#candidates_list').html(applicant_list);
+          $('#cand_list').html(applicant_list);
           $('#shortlist').html(short_list);
         }
 

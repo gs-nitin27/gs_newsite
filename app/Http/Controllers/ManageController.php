@@ -34,10 +34,10 @@ class ManageController extends Controller
       return view('Manage.dashboard');
      }
    
-   public function get_job_detail($id)
+   public function get_job_detail(Request $request)
      { 
-        $obj  = new WebModel();
-        $resp = $obj->getJobDetail($id);
+        $obj  = new Manage_Model();
+        $resp = $obj->getJobById($request->id);
         
         return View::make("Manage.job.view-job")->with('detail',$resp); 
       

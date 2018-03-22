@@ -1,7 +1,7 @@
 <?php 
 
-Auth::logout();
-Session::flush();
+
+// Session::flush();
 
 ?>
 <!DOCTYPE html>
@@ -46,8 +46,21 @@ border: 0.5px solid #ccc;
 </head>
 <script type="text/javascript" src="{{asset('manage_assets/js/set_user_data.js')}}"></script>
 <body>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = 'https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.11&appId=<?php echo config('constant.FACEBOOK_ID'); ?>';
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+ <div class="pre-loader">
+        <div class="load-con" style="text-align: center;">
+            <img src="<?php //echo base_url('img/logo.png');?>" class="animated fadeInDown" style="width: 296px;height: auto;" alt=""> 
+        </div> 
+    </div>
 <div class="background">
-<div class="loading" id="imagelodar">Loading&#8230;
+<!-- <div class="loading" id="imagelodar">Loading&#8230; -->
 <div class="loader">
 <div class="inner one"></div>
 <div class="inner two"></div>
@@ -67,19 +80,21 @@ border: 0.5px solid #ccc;
 <div class="form-group" >
 <div class="col-md-12">
 <div class="input-group" style="margin-left: 21%;">
-<button class="loginBtn loginBtn--google">
-<span  class="g-signin2" data-onsuccess="onSignIn" style="width:254px;"></span> Sign in with Google
-</button>
+<!-- <button class=""> -->
+<span  class="g-signin2 loginBtn loginBtn--google" data-onsuccess="onSignIn" style="width:254px;"></span> 
+<!-- </button> -->
+<br>
+<div class="fb-login-button" data-width="254" data-size="large" data-button-type="login_with" data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="false" onlogin="checkLoginState()"></div>
 </div>
 </div>
 </div>
 <div class="form-group" style="margin-top: 15%;margin-bottom:40%;margin-left: 18%;">
 <div class="col-md-12">
 <div class="input-group">
-<button class="loginBtn loginBtn--facebook">
+<!-- <button class="loginBtn loginBtn--facebook">
 <span class="fa fa-facebook"></span> Sign in with Facebook
 </button>
-</div>
+ --></div>
 </div>
 </div>
 <hr></body>
@@ -164,18 +179,17 @@ console.log(data);
       var result  = JSON.parse(result);
       if(result.status==4){// for Successfull login of athlete and parent
        alert(result.status + JSON.stringify(result));return;
-       //window.location.href = 'https://play.google.com/store/apps/details?id=getsportylite.darkhoprsesport.com.getsportylite&hl=en';//url+"/forms/home";
+       windlow.location.href("{{url('/')}}");
     }
     if(result.status==1){      // for Successfull login
       localStorage.setItem('userdata',JSON.stringify(result.data));
       set_data();
-      
     }
     else if(result.status==2) // for updating email and other info
     { 
       result.status = result.status;
       localStorage.setItem('userdata',result.data);
-      window.location.href = url+"/forms/new_registration";
+      window.location.href = "<?php echo url('/'); ?>"+"/manage/register";//url+"/forms/new_registration";
       alert(result.status + JSON.stringify(result.data));//return;
     }
     else if(result.status==3) // for creating new record
