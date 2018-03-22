@@ -5,6 +5,7 @@
   div.main-text {overflow-x: hidden;width: 800px;} 
 </style> -->
 
+
  <div id="myCarousel" class="carousel slide slideBox" data-ride="carousel" data-interval="2500">
             <!-- Indicators -->
             <ol class="carousel-indicators">
@@ -623,26 +624,28 @@ Overall, sports events in India are always amusing to unite with. Every year we 
           <section class="clearfix contSec">
               <div class="container" id="support">
               <div class="row">
-                  <div class="heading-center"><h3>Support</h3><p>For more info and support, contact us!</p></div>
+                  <div class="heading-center" id="st"><h3>Support</h3><p>For more info and support, contact us!</p></div>
                   <div class="col-lg-6 col-md-6">
-                  <div>{{Session::get('flash_message')}}
+                  <div>@if(Session::has('success'))
+                  <div class="alert alert-success">
+                  {{ Session::get('success') }}
+                  </div>
+                  @endif
                   </div>
                     <form method="POST" action="contact" >
-                     {{ csrf_field() }} 
+                      {{ csrf_field() }} 
                         <div class="form-group">
                             <label for="email">Email</label>
-                            <input type="email" class="form-control01" id="email" aria-describedby="emailHelp" placeholder="" name="email">
-                            
-                            
+                            <input type="email" class="form-control01" id="email" aria-describedby="emailHelp" placeholder="" name="email" required="email id">
                             
                         </div>
                         <div class="form-group">
                             <label for="email">Subject</label>
-                            <input type="text" class="form-control01" id="sub" aria-describedby="emailHelp" placeholder="" name="subject">
+                            <input type="text" class="form-control01" id="sub" aria-describedby="emailHelp" placeholder="" name="subject" required="subject">
                         </div>
                         <div class="form-group">
-                            <label for="exampleFormControlTextarea1">Example textarea</label>
-                            <textarea class="form-control01" id="exampleFormControlTextarea1" rows="5" name="message"></textarea> 
+                            <label for="exampleFormControlTextarea1">Your Message</label>
+                            <textarea class="form-control01" id="exampleFormControlTextarea1" rows="5" name="message" required="Text"></textarea> 
                         </div>
                         <div class="margin15 clearfix"></div>
                         <input type="submit" class="btn btn-send"></input>

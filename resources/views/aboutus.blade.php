@@ -118,7 +118,7 @@
  				     <div class="item">
  				       <a href="team-detail.php">
 		           <img src="img/dp2.png">
-		           <h4>NITIN AGARWAL</h4>
+		           <h4>Nitin Agarwal </h4>
 		           <span>Head, Web Development</span>
 		            <div class="socails">
 		               <ul>
@@ -157,74 +157,36 @@
 		               </a>
 		             </div>
 
- 					  <div class="item">
- 					    <a href="team-detail.php">
-		           <img src="img/dp4.png">
-		           <h4>Kumar Gaurav</h4>
-		           <span>Head, IOS Development</span>
-		            <div class="socails">
-		               <ul>
-		           		<li><a href="#">
-		           		 <span class="fb"><i class="fa fa-facebook" aria-hidden="true"></i></span>
-		           		   </a>
-		           		    </li>
-		           		<li>
-		           		<a href="#"><span class="twitter"><i class="fa fa-twitter" aria-hidden="true"></i></span></a></li>
-		           		<li><a href="#">
-		           		<span class="google"><i class="fa fa-google-plus" aria-hidden="true"></i>
-		           		  </span></a></li>
-		             	 </ul>
-		               </div>
-		               </a>
-		             </div>
-		             
-		         <div class="item">
-		           <a href="team-detail.php">
-		           <img src="img/dp5.png">
-		           <h4>Anirudh Singh</h4>
-		           <span>Founder & Product Architect</span>
-		            <div class="socails">
-		               <ul>
-		           		<li><a href="#">
-		           		 <span class="fb"><i class="fa fa-facebook" aria-hidden="true"></i></span>
-		           		   </a>
-		           		    </li>
-		           		<li>
-		           		<a href="#"><span class="twitter"><i class="fa fa-twitter" aria-hidden="true"></i></span></a></li>
-		           		<li><a href="#">
-		           		<span class="google"><i class="fa fa-google-plus" aria-hidden="true"></i>
-		           		  </span></a></li>
-		             	 </ul>
-		               </div>
-		               </a>
-		             </div>
+ 				
+    <div class="item">
+               <a href="team-detail.php">
+               <img src="img/dp8.png">
+               <h4>Devendra Kumar Pandey</h4>
+               <span>PHP Developer</span>
+                <div class="socails">
+                   <ul>
+                  <li><a href="#">
+                   <span class="fb"><i class="fa fa-facebook" aria-hidden="true"></i></span>
+                     </a>
+                      </li>
+                  <li>
+                  <a href="#"><span class="twitter"><i class="fa fa-twitter" aria-hidden="true"></i></span></a></li>
+                  <li><a href="#">
+                  <span class="google"><i class="fa fa-google-plus" aria-hidden="true"></i>
+                    </span></a></li>
+                   </ul>
+                   </div>
+                   </a>
+                 </div>
 
- 				     <div class="item">
- 				       <a href="team-detail.php">
-		           <img src="img/dp6.png">
-		           <h4>NITIN AGARWAL</h4>
-		           <span>Head, Web Development</span>
-		            <div class="socails">
-		               <ul>
-		           		<li><a href="#">
-		           		 <span class="fb"><i class="fa fa-facebook" aria-hidden="true"></i></span>
-		           		   </a>
-		           		    </li>
-		           		<li>
-		           		<a href="#"><span class="twitter"><i class="fa fa-twitter" aria-hidden="true"></i></span></a></li>
-		           		<li><a href="#">
-		           		<span class="google"><i class="fa fa-google-plus" aria-hidden="true"></i>
-		           		  </span></a></li>
-		             	 </ul>
-		               </div>
-		               </a>
-		             </div>
 
+
+ 				 
                  <div class="item">
                <a href="team-detail.php">
                <img src="img/dp7.png">
-               <h4>NITIN AGARWAL</h4>
-               <span>Head, Web Development</span>
+               <h4>Shekhar Kashyap </h4>
+               <span>Android Developer</span>
                 <div class="socails">
                    <ul>
                   <li><a href="#">
@@ -242,70 +204,9 @@
                  </div>
 
 
-                 <div class="item">
-               <a href="team-detail.php">
-               <img src="img/dp8.png">
-               <h4>NITIN AGARWAL</h4>
-               <span>Head, Web Development</span>
-                <div class="socails">
-                   <ul>
-                  <li><a href="#">
-                   <span class="fb"><i class="fa fa-facebook" aria-hidden="true"></i></span>
-                     </a>
-                      </li>
-                  <li>
-                  <a href="#"><span class="twitter"><i class="fa fa-twitter" aria-hidden="true"></i></span></a></li>
-                  <li><a href="#">
-                  <span class="google"><i class="fa fa-google-plus" aria-hidden="true"></i>
-                    </span></a></li>
-                   </ul>
-                   </div>
-                   </a>
-                 </div>
-
-                 <div class="item">
-               <a href="team-detail.php">
-               <img src="img/dp9.png">
-               <h4>NITIN AGARWAL</h4>
-               <span>Head, Web Development</span>
-                <div class="socails">
-                   <ul>
-                  <li><a href="#">
-                   <span class="fb"><i class="fa fa-facebook" aria-hidden="true"></i></span>
-                     </a>
-                      </li>
-                  <li>
-                  <a href="#"><span class="twitter"><i class="fa fa-twitter" aria-hidden="true"></i></span></a></li>
-                  <li><a href="#">
-                  <span class="google"><i class="fa fa-google-plus" aria-hidden="true"></i>
-                    </span></a></li>
-                   </ul>
-                   </div>
-                   </a>
-                 </div>
-
-                 <div class="item">
-               <a href="team-detail.php">
-               <img src="img/dp10.png">
-               <h4>NITIN AGARWAL</h4>
-               <span>Head, Web Development</span>
-                <div class="socails">
-                   <ul>
-                  <li><a href="#">
-                   <span class="fb"><i class="fa fa-facebook" aria-hidden="true"></i></span>
-                     </a>
-                      </li>
-                  <li>
-                  <a href="#"><span class="twitter"><i class="fa fa-twitter" aria-hidden="true"></i></span></a></li>
-                  <li><a href="#">
-                  <span class="google"><i class="fa fa-google-plus" aria-hidden="true"></i>
-                    </span></a></li>
-                   </ul>
-                   </div>
-                   </a>
-                 </div>
-
-
+             
+              
+                 
 
 
 
@@ -323,23 +224,29 @@
      <div class="container" id="support">
        <div class="row">
           <div class="heading-center">
-            <h3>Support</h3>
+            <h3 id="st">Support</h3>
               <p>For more info and support, contact us!</p>
                 </div>
                   
 <div class="col-lg-6 col-md-6">
+<div>@if(Session::has('success'))
+                  <div class="alert alert-success">
+                  {{ Session::get('success') }}
+                  </div>
+                  @endif
+                  </div>
      <form method="POST" action="contact" >
                      {{ csrf_field() }} 
   <div class="form-group">
     <label for="email">Email</label>
-    <input type="email" class="form-control01" id="" aria-describedby="emailHelp" placeholder="">
+    <input type="email" class="form-control01" id="" aria-describedby="emailHelp" placeholder="" name="email">
   </div>
     <div class="form-group">
     <label for="email">Subject</label>
-    <input type="text" name ="subject" class="form-control01" id="subject" aria-describedby="emailHelp" placeholder="">
+    <input type="text" name ="subject" class="form-control01" id="subject" aria-describedby="emailHelp" placeholder="" name="subject">
   </div>
    <div class="form-group">
-  <label for="exampleFormControlTextarea1">Example textarea</label>
+  <label for="exampleFormControlTextarea1">Your Message</label>
     <textarea class="form-control01" id="message" rows="5" name="message"></textarea> 
     </div>
     <div class="margin15 clearfix"></div>

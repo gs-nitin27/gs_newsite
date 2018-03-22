@@ -23,13 +23,18 @@
 Route::post('/contact',  'WebEmail@send_mail'); 
 
 
+
 Route::get('/','WebController@index');
+
+
+Route::get('/#st','WebController@index');
+
+
+
 Route::get('support','WebController@getsupport');
 
 Route::get('aboutus','WebController@getaboutus');
-
 Route::get('event','WebController@getevent');
-
 Route::get('job','WebController@getjob');
 Route::get('tournament','WebController@gettournament');
 Route::get('article','WebController@article');

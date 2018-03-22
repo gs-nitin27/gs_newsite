@@ -11,7 +11,7 @@ function getEventListing()
         var event_temp = '';
         for (var i = 0; i < event_data.length; i++)
         {  
-            var event_title             = event_data[i]['name'];
+            var event_title             = event_data[i]['name'].substring(0,20);;
             var event_summary           = event_data[i]['description'];
             var event_org_name          = event_data[i]['organizer_name'];
             var event_type              = event_data[i]['type'];
@@ -20,7 +20,12 @@ function getEventListing()
             var event_url               = "event-detail/"+event_data[i]['id'];
             var event_img               = "event/";
             var event_image_path        = image_url+event_img+event_data[i]['image']; 
-            event_temp +='<div class="col-lg-3 col-md-3"><div class=" hover-boxs"><div class="job-box"><img src="'+event_image_path+'"></div><div class="slide-job-list"><h4>'+event_title+'</h4><p> Type : <span> '+event_type+'</span></p><p> Organizer Name : <span> '+event_org_name+' </span></p><p> Location : <span>'+event_location+'</span></p><p> Email : <span> '+event_email+' </span></p><div class="read-c"><a href="'+event_url+'">Read More</a> </div></div></div></div> ';
+
+      //   event_temp += '<div class="col-lg-3 col-md-3"><div class=" hover-boxs"><div class="job-box"><img src="https://getsporty.in/portal/uploads/resources/'+data[i]['image']+'" alt="img"></div><div class="slide-job-list"><h4>'+title+'</h4> <p><span> '+summary+'</span></p>  <div class="read-c"><a href="'+url+''+data[i]['id']+'">Read More</a> </div>                                                        </div>                            </div>                  </div> ';
+
+         event_temp +='<div class="col-lg-3 col-md-3"><div class=" hover-boxs"><div class="job-box"><img src="'+event_image_path+'"></div><div class="slide-job-list"><h4>'+event_title+'</h4><p> Type : <span> '+event_type+'</span></p><p> Organizer Name : <span> '+event_org_name+' </span></p><p> Location : <span>'+event_location+'</span></p><p> Email : <span> '+event_email+' </span></p><div class="read-c"><a href="'+event_url+'">Read More</a> </div></div></div></div> ';
+         
+        
          } // End of for Loop
 
      $("#event_listing").html(event_temp);  
@@ -95,7 +100,6 @@ function getArticleListing()
      {
         data = JSON.parse(result);
         data = data.data;
-
         var article_temp ='';
         var res_url = '';
         var title   = ''; 
@@ -103,8 +107,6 @@ function getArticleListing()
         var temp  = '';
         var s = 0;
         var url = "article-detail/";
-
-
         for (var i = 0; i < data.length; i++)
         {  
             res_url     = 'blog.php?n='+data[i]['id']+'';//data[i]['url'];
@@ -118,9 +120,10 @@ function getArticleListing()
     $("#temp_article").html(article_temp);    
 
     }}); //End of ajax
-
-
 }
+
+
+
 
 function getTournamentListing()
 {
