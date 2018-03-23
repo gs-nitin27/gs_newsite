@@ -9,6 +9,7 @@ function getEventListing()
         data         = JSON.parse(result);
         event_data   = data.data;
         var event_temp = '';
+        $("#event_temp").empty();
         for (var i = 0; i < event_data.length; i++)
         {  
             var event_title             = event_data[i]['name'].substring(0,20);;
@@ -46,6 +47,8 @@ function getJobListing()
         job_data = data.data;
         var job_temp ='';
         var url = "job-detail/";
+        $("#job_listing").empty();
+
         for (var i = 0; i < job_data.length; i++)
         {              
             var job_title           = job_data[i]['title'].substring(0,32);;
@@ -94,6 +97,7 @@ function getJobListing()
 
 function getArticleListing()
 {
+    
    $.ajax({
     method: 'GET',
      url:service_url+'/get_Article',crossDomain: true ,success: function(result)
@@ -106,20 +110,46 @@ function getArticleListing()
         var summary = ''; 
         var temp  = '';
         var s = 0;
+        var abc ='';
+
+        $("#temp_article").empty();
         var url = "article-detail/";
-        for (var i = 0; i < data.length; i++)
+        for (var i = 0; i <data.length; i++)
         {  
-            res_url     = 'blog.php?n='+data[i]['id']+'';//data[i]['url'];
+         
+            token      = data[i]['token'];
+            if(token==0)
+            {
+                res_url     = data[i]['url'];
+                var abc =''
+            }
+            if (token==1 || token==3) 
+            {
+                var res_url               = "article-detail/"+data[i]['id'];
+                var abc ='';
+            }
+            if (token== 2) 
+            {
+                 res_url     = "https://www.youtube.com/embed/"+data[i]['video_link'];
+
+                var abc =  ' <div class="relative">                         <div class="play-icon" data-toggle="modal" data-target="#myModa">                 <img src="img/play-icon.svg">              </div>        </div> <div id="myModa" class="modal fade" role="dialog">                <div class="modal-dialog">                                 <div class="modal-content">                     <div class="modal-body">                        <button type="button" class="close" data-dismiss="modal">&times;</button>                        <iframe width="100%" height="315" src="'+res_url+'" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>                     </div>                    </div>                </div>            </div>';
+               
+            
+
+            }
+         
             title       = data[i]['title'].substring(0,32);
             summary     = data[i]['summary'].substring(0,200);
-            
-            article_temp +=' <div class="col-lg-3 col-md-3">                      <div class=" hover-boxs">                         <div class="job-box">                            <img src="https://getsporty.in/portal/uploads/resources/'+data[i]['image']+'" alt="img">                          </div>                          <div class="slide-job-list">                              <h4>'+title+'</h4> <p><span> '+summary+'</span></p>  <div class="read-c"><a href="'+url+''+data[i]['id']+'">Read More</a> </div>                                                        </div>                            </div>                  </div> ';
+          
+            article_temp +=' <div class="col-lg-3 col-md-3">                      <div class=" hover-boxs">                         <div class="job-box">                            <img src="https://getsporty.in/portal/uploads/resources/'+data[i]['image']+'" alt="img">                          </div>                          <div class="slide-job-list">                              <h4>'+title+'</h4> <p><span> '+summary+'</span></p>  <div class="read-c"><a href="'+res_url+'">Read More</a> </div>                                                        </div>                            </div>              '+abc+'    </div> ';
             
         } // End of for Loop
 
     $("#temp_article").html(article_temp);    
 
     }}); //End of ajax
+
+
 }
 
 
@@ -142,8 +172,8 @@ function getTournamentListing()
         var temp  = '';
         var s = 0;
         var location = '';
-
-var url = "tournament-detail/";
+        $("#temp_tour").empty();
+        var url = "tournament-detail/";
 
         for (var i = 0; i < 11; i++)
         {  

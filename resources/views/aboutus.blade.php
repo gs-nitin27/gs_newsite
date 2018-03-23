@@ -239,18 +239,22 @@
                      {{ csrf_field() }} 
   <div class="form-group">
     <label for="email">Email</label>
-    <input type="email" class="form-control01" id="" aria-describedby="emailHelp" placeholder="" name="email">
+    <input type="email" class="form-control01" id="email" aria-describedby="emailHelp" placeholder="" name="email" required="email">
   </div>
     <div class="form-group">
     <label for="email">Subject</label>
-    <input type="text" name ="subject" class="form-control01" id="subject" aria-describedby="emailHelp" placeholder="" name="subject">
+    <input type="text" name ="subject" class="form-control01" id="subject" aria-describedby="emailHelp" placeholder="" name="subject" required="subject">
   </div>
    <div class="form-group">
   <label for="exampleFormControlTextarea1">Your Message</label>
-    <textarea class="form-control01" id="message" rows="5" name="message"></textarea> 
+    <textarea class="form-control01" id="message" rows="5" name="message" required="message" 
+    ></textarea> 
     </div>
     <div class="margin15 clearfix"></div>
      <input type="submit" class="btn btn-send"></input>
+
+     <input type="button" class="btn btn-send" value="ok" onclick="save()"></input>
+
         </form> 
        </div>
          <div class="col-lg-1 col-md-1"></div>
@@ -272,7 +276,24 @@
        
                  </div>
              </div>
- 					 
+ 					 <script >
+          function save()    {
+          var email   =  document.getElementById("email").value;
+          var subject =  document.getElementById("subject").value;
+          var message =  document.getElementById("message").value;
+          $.ajax({  
+         type: "POST",  
+         url: "/contact", 
+         data: "album="+ this.title,
+         success: function(response) {
+        content.html(response);
+    }
+});
+
+
+}
+           </script>
+         
 
  <script>
             $(document).ready(function() {

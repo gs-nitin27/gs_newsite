@@ -30,7 +30,7 @@ class WebModel extends Model
 
 	public function getResourcesData()
     {
-     $resources  = DB::table('gs_resources')->select('id','title', 'summary','image')->where('status', '1')->get();
+     $resources  = DB::table('gs_resources')->select('id','title', 'summary','image','token','url','video_link')->orderBy('id', 'desc')->get();
      return $resources;
  	}
 
@@ -76,7 +76,7 @@ class WebModel extends Model
 
  public function getArticleDetail($id)
     {
-        $resources  = DB::table('gs_resources')->select('id','title', 'summary','image','description','date_created','url','location','topic_of_artical')->where('id', $id)->get();
+        $resources  = DB::table('gs_resources')->select('id','title', 'summary','image','description','date_created','url','location','topic_of_artical','token')->where('id', $id)->get();
      return $resources ;
 
     }
@@ -107,7 +107,7 @@ public function  getEventDetail_data($sport_name,$id)
    
     public function  getResourcDetail_data($topic_of_artical)
     {
-          $resources  = DB::table('gs_resources')->select('id','title', 'summary','image','topic_of_artical')->where('topic_of_artical', $topic_of_artical)->get();
+          $resources  = DB::table('gs_resources')->select('id','title', 'summary','image','topic_of_artical','token')->where('topic_of_artical', $topic_of_artical)->get();
     return $resources;
     }
 
