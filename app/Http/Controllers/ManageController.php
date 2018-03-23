@@ -94,8 +94,9 @@ return View::make("Manage.job.edit-job")->with('data',$resp);
 
 public function get_tournament(Request $request)
  {
-   $id = base64_decode($request->id);
-   echo $id;die;
+   $req_data= base64_decode($request->id);
+   $req_data = explode('|', $req_data);
+   $id = $req_data[1];
    $obj = new WebModel();
    $data = $obj->getTournamentDetail($id);
    return View::make("Manage.Tournaments.create_update")->with('data',$data);
