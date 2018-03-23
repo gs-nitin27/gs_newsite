@@ -66,6 +66,7 @@ function getJobListing()
 function getArticleListing()
 {
 
+
    $.ajax({
     method: 'GET',
      url:"/get/gs_newsite/public/get_Article",crossDomain: true ,success: function(result)
@@ -83,7 +84,7 @@ function getArticleListing()
         var url = "article-detail/";
 
 
-        for (var i = 0; i < data.length; i++)
+        for (var i = 0; i < 1; i++)
         {  
             res_url     = 'blog.php?n='+data[i]['id']+'';//data[i]['url'];
             title       = data[i]['title'].substring(0,32);

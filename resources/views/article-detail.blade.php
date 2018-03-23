@@ -59,7 +59,10 @@
         	       <div class="margin15"></div>
         	       <div class="content">
         	       	<p>{{$name[0]->topic_of_artical}} / {{$name[0]->location}} / {{$name[0]->date_created}}</p>
-        	         <h4>{{$name[0]->title}}</h4>
+        	         <h4>
+
+
+                   {{$name[0]->title}}</h4>
         	         <p>{{$name[0]->summary}}
         	         <div class="margin15"></div>
         	         <hr>
@@ -78,6 +81,7 @@
              	  <p>Learn more about this feature packed App</p>
                   </div>
                   <div id="customers-testimonials2" class="owl-carousel">
+
                   @for($i=0;$i<count($name1);$i++)
 
                    <div class="item">

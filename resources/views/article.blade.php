@@ -102,6 +102,7 @@ function closeNav() {
 <script type="text/javascript" >
 jQuery(document).ready(function()
 { 
+  
 getArticleListing();
 
 });// End of Doucument Ready
