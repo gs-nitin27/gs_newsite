@@ -1,7 +1,14 @@
 <?php 
-
-
-// Session::flush();
+$url = $_SERVER['REQUEST_URI'];//die;
+$param = explode('/', $url);
+if($param['4'] == '1')
+{
+$string = '1';  
+}
+else
+{
+$string = base64_decode($param['4']);
+}
 
 ?>
 <!DOCTYPE html>
@@ -129,9 +136,14 @@ function testAPI() {
      //   document.getElementById('status').innerHTML = "<img src='"+response.picture.data.url+"'>";
       }, {scope:'email'});
   }
-
+ var url_param = '';
  $(document).ready(function(){
-
+ if(url_param != '1')
+  {
+   url_param = '<?php echo $string; ?>';
+   url_param = url_param.split('|');
+  }
+ 
 /*  gapi.signin2.render('my-signin2', {
         'scope': 'profile email',
         'width': 240,
@@ -181,7 +193,8 @@ console.log(data);
        alert(result.status + JSON.stringify(result));return;
        windlow.location.href("{{url('/')}}");
     }
-    if(result.status==1){      // for Successfull login
+    if(result.status==1)
+    {      // for Successfull login
       localStorage.setItem('userdata',JSON.stringify(result.data));
       set_data();
     }
@@ -189,7 +202,7 @@ console.log(data);
     { 
       result.status = result.status;
       localStorage.setItem('userdata',result.data);
-      window.location.href = "<?php echo url('/'); ?>"+"/manage/register";//url+"/forms/new_registration";
+      window.location.href = "<?php echo url('/'); ?>"+"/manage/register";
       alert(result.status + JSON.stringify(result.data));//return;
     }
     else if(result.status==3) // for creating new record
@@ -240,9 +253,17 @@ console.log(data);
       data:localStorage.getItem('userdata'),
       success:function(result)
       {
-        if(result != 0)
+          if(result != 0)
         {
-          window.location.href = "<?php echo url('/'); ?>"+"/manage/dashbo";
+          if(url_param == '1')
+          {
+           window.location.href = "<?php echo url('/'); ?>"+"/manage/dashbo";
+          }
+          else
+          { 
+           var id = "<?php echo base64_encode($string); ?>";
+           window.location.href = "<?php echo url('/'); ?>"+"/manage/create_update/"+id;
+          }
         }
         else
         {

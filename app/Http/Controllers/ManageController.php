@@ -92,4 +92,13 @@ $resp = $data->getJobById($request->id);
 return View::make("Manage.job.edit-job")->with('data',$resp);
 }
 
+public function get_tournament(Request $request)
+ {
+   $id = base64_decode($request->id);
+   echo $id;die;
+   $obj = new WebModel();
+   $data = $obj->getTournamentDetail($id);
+   return View::make("Manage.Tournaments.create_update")->with('data',$data);
+ }
+
 }

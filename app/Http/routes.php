@@ -97,10 +97,7 @@ Route::get('article-detail/{id}','WebController@article_detail');
              return View::make('Manage.job.view-transaction');
          });
         
-        Route::get('/create_update',function(){
-
-             return View::make('Manage.Tournaments.create_update');
-        });
+        Route::get('/create_update/{id}','ManageController@get_tournament');
         
     });
 

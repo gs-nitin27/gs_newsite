@@ -5,7 +5,7 @@
   <meta name="csrf-token" content="{{ csrf_token() }}" />
   <link rel="shortcut icon" href="img/fav.png">
   <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-  <title>Deshboard-02</title>
+  
   <!-- Bootstrap -->
   <link href="{{asset('manage_assets/css/bootstrap.min.css')}}" rel="stylesheet">
   <link href="{{asset('manage_assets/css/style.css')}}" rel="stylesheet">

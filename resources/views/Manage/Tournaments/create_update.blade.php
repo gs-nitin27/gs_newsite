@@ -2,8 +2,9 @@
 <html>
 <head>
   @include('Manage.layouts.head')
+ <title>Tournament Updates</title>
   <style type="text/css">
-    body {
+body {
     font-family: "Lato", sans-serif;
 }
 
@@ -46,46 +47,44 @@
   </style>
 </head>
 <body>
+{{print_r($data)}}
 <div class="sidenav">
   <a href="#about">About</a>
   <a href="#services">Services</a>
   <a href="#clients">Clients</a>
   <a href="#contact">Contact</a>
 </div>
-<div class="main">
+<div class="main" style="width: 60%;">
 <div class="container" style="float: left">
   <h2>Rounded Corners</h2>
    <img src="https://getsporty.in/portal/uploads/resources/res_1493288985.jpg" class="img-rounded" alt="Cinque Terre" width="304" height="236"> 
 </div>
+<br><br><br><br><br><br><br><br><br>
 <form>
-  <div class="form-group">
-    <img src="" alt="no image">
-    <!-- <label for="exampleInputEmail1">Title</label>
-    <input type="email" class="form-control" id="title"  placeholder="Enter Title">
-    <small id="titleHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
-  </div>
-  <div class="form-group">
+<div class="form-group">
     <label for="exampleInputEmail1">Title</label>
     <input type="email" class="form-control" id="title"  placeholder="Enter Title">
-    <small id="titleHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-  </div>
+</div>
   <div class="form-group">
     <label for="exampleTextarea">Update Content</label>
     <textarea class="form-control" id="content" rows="3"></textarea>
   </div>
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
+</div>
 </body>
 <script type="text/javascript">
   
-$(document).ready(function(){
+//$(document).ready(function(){
 
+// var id = localStorage.getItem('tour');
 // $.ajax({
 
-      
+// url:''
 
-//     });
-});
+
+//  });
+// });
 
 </script>
 </html>
