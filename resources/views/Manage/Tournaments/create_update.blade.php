@@ -80,6 +80,9 @@ body {
      <h1><center><a class="navbar-brand" href="#" style="color: #fff;text-align:center; ">{{$data[0]->name}}</a></center></h1> 
     </div>
     <ul class="nav navbar-nav">
+     <li style="margin-left: 667px;"><a href="{{url('/manage/login/1')}}" onclick="window.localStorage.clear();"><button type="button" class="btn btn-default btn-sm">
+          <span class="glyphicon glyphicon-log-out"></span> Log out
+        </button></a></li>
     </ul>
   </div>
 </nav>
@@ -95,7 +98,7 @@ body {
 <label class="btn-upload">
 <span id="spnFilePath"></span>
 <input type='file' id="imgInp" value="Attachment"/>
-<button class="btn">Browse</button></label>
+<button class="btn">Browse Image</button></label>
 </div>
 <br>
 <form>
