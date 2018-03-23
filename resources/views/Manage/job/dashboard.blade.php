@@ -118,7 +118,7 @@
             <!-- Modal Footer -->
             <div class="modal-footer">
                 <button type="button" class="btn btn-default"
-                        data-dismiss="modal" id="close">;
+                        data-dismiss="modal" id="close">
                             Close
                 </button>
                 <button type="button" class="btn btn-primary" onclick="add_organisation()">

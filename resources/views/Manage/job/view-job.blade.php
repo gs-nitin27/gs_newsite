@@ -1,28 +1,10 @@
 @extends('Manage.layouts.master')
 @section('pageTitle','Home')
 @section('content')
-<head>
-    <style type="text/css">
-        * {
-    margin: 0; padding: 0;
-}
-html, body, #container {
-    height: 100%;
-}
-header {
-    height: 50px;
-}
-main {
-    height: 100%;
-}
-.half {
-    height: 50%;
-}
-    </style>
-</head>
 @php 
 $detail = $detail[0];
 @endphp
+
 
 <h1></h1>
 
@@ -132,14 +114,68 @@ $detail = $detail[0];
         </div>
         </section>
 </main>
+ <!-- Modal -->
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" 
+     aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog" style="width: 79%;">
+        <div class="modal-content" style="background-color: #fff;">
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <button type="button" class="close" 
+                   data-dismiss="modal">
+                       <span aria-hidden="true">&times;</span>
+                       <span class="sr-only">Close</span>
+                </button>
+                <h4 class="modal-title" id="myModalLabel">
+                    Shedule Interview
+                </h4>
+            </div>
+            
+            <!-- Modal Body -->
+            <div class="modal-body">
+                <input type="hidden" class="form-control" id="org_id" />
+                <form class="form-horizontal" role="form">
+                   <div class="form-group">
+                    <label  class="col-sm-2 control-label"
+                              for="inputEmail3">Interview Date</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" 
+                        id="date" placeholder="Organisation Name"/>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label  class="col-sm-2 control-label"
+                              for="inputEmail3">Venue</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" 
+                        id="venue" placeholder="About"/>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label  class="col-sm-2 control-label"
+                              for="inputEmail3">Message</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" 
+                        id="message" placeholder="Address1"/>
+                    </div>
+                  </div>
+                </form>
+             <div class="modal-footer">
+                <button type="button" class="btn btn-default"
+                        data-dismiss="modal" id="close">
+                            Close
+                </button>
+                <button type="button" class="btn btn-primary" id="schedule_interview">
+                    Save changes
+                </button>
+            </div>
+             </div>
+
 <script type="text/javascript">
 var id = '';
-$(document).ready(function(){
-  var url_string = window.location.href;
-  var param = url_string.split('/');
-  id = param['6'];
-  function getJobData()
-  {
+// var getJobApplicants = function(){};
+window.getJobApplicants = function foo() {
+    {
     $.ajax({
      url:url+'/angularapi.php?act=jobapplyUser&id='+id,
      method:"GET",
@@ -168,11 +204,11 @@ $(document).ready(function(){
                 status = 'Shortlisted';
             }
             
-            applicant_list +='<tr> <th scope="row">'+i+'</th> <align="center" width="10"> <!----><div > <img  class="pull-left img-circle nav-user-photo" src="assets/images/user.jpg" width="50">&nbsp;&nbsp; </div> <!----> </td> <td>'+data.name+'</td> <td>'+data.location+'</td> <td>'+data.email+'</td> <td>'+getAge(data.dob)+'</td> <td><button class="btn btn-success" onclick="shortlistCandidate('+data+');">Shortlist</button></td> </tr>';
+            applicant_list +='<tr> <th scope="row">'+i+'</th> <align="center" width="10"> <!----><div > <img  class="pull-left img-circle nav-user-photo" src="assets/images/user.jpg" width="50">&nbsp;&nbsp; </div> <!----> </td> <td>'+data.name+'</td> <td>'+data.location+'</td> <td>'+data.email+'</td> <td>'+getAge(data.dob)+'</td> <td><button class="btn btn-success" onclick="shortlistCandidate('+data.userid+');">'+status+'</button></td> </tr>';
             
-            if(data.status < '4')
+            if(data.status < '4' && data.status > '1')
             {++j;
-            short_list +='<tr> <th scope="row">'+j+'</th> <td>Mark</td> <td>'+data.name+'</td> <td>'+data.contact_no+'</td> <td><button class="btb btn-primary">Schedule Interview</button></td> <td>25 March 2018</td> <td><button class="btn btn-success">Sent Offer</button></td> </tr>';
+            short_list +='<tr> <th scope="row">'+j+'</th> <td>Mark</td> <td>'+data.name+'</td> <td>'+data.contact_no+'</td> <td><button class="btb btn-primary" id="'+data.userid+'" data-myval="'+data+'" onclick="open_modal(this.data-myval);">Schedule Interview</button></td> <td>25 March 2018</td> <td><button class="btn btn-success">Sent Offer</button></td> </tr>';
             }
              else if(data.status > '4')
             {++k;
@@ -188,30 +224,53 @@ $(document).ready(function(){
 
      }
    });
+  }    // …
   }
-  getJobData();
   function getAge(birth) {
   ageMS = Date.parse(Date()) - Date.parse(birth);
   age = new Date();
   age.setTime(ageMS);
   ageYear = age.getFullYear() - 1970;
-
   return ageYear;
   }
+$(document).ready(function(){
+  var url_string = window.location.href;
+  var param = url_string.split('/');
+  id = param['6'];
+  getJobApplicants();
+
+  
+        
+  
 });   
-
 function shortlistCandidate(data)
- {
-  $userid            =  $userdata->userid ;
-  $id                =  $userdata->id;
-  $status            =  $userdata->status;    // Status = 2 for shortlist
-  $module            =  $userdata->module;
+{
+ var data = {"userid":data,"id":id,"status":'2',"module":"1"};
+ $.ajax({
+    url:url+'/create_database.php?act=shortlist',
+    data:JSON.stringify(data),
+    method:"POST",
+    success:function(result)
+    {
+      var resp  = JSON.parse(result);
+      if(resp.status == '1')
+      {  alert(resp.status);
+         getJobApplicants();
+      }
+    }
+  });
+}
 
 
+function open_modal(data)
+{
 
+$("#myModal").modal();
+$('#schedule_interview').click(function(){
 
+});
 
- }
+}
 
 </script>
                        

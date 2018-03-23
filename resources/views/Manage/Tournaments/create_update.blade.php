@@ -87,7 +87,7 @@ body {
   </div>
 </nav>
 <div class="sidenav">
-<center><span style="background: #ccc"><h4>Tournament Updates</h4></span></center>
+<center><span style="background: #ccc;"><h4>Tournament Updates</h4></span></center>
 <ul class="list-group" id="updates">
 <h1 style="color: #ccc">No Updates yet</h1>
 </ul>
@@ -113,7 +113,8 @@ body {
 </form>
  <button onclick="create_update();" class="btn btn-primary">Submit</button>
 </div>
-</body>
+<!-- <div id="wait" style="display:none;width:69px;height:89px;border:1px solid black;position:absolute;top:50%;left:50%;padding:2px;"><img src='https://www.culturebuffgames.com/resources/dashboard/images/demo_wait.gif' width="64" height="64" /><br>Loading..</div>
+ --></body>
 <script type="text/javascript">
 var tournament_id = '{{$data[0]->id}}';
 var image_data = '';
@@ -167,9 +168,9 @@ function create_update()
 
 function create_update_info(update_info)
  {
-  
+      $("#wait").css("display", "block");
      var data = {"tournamentid":tournament_id,"userid":'234',"update_info":update_info};
-     console.log(JSON.stringify(data));
+    // console.log(JSON.stringify(data));
      $.ajax({
      url: url+'/tournamentcontroller.php?act=post_update',
      method:"POST",
@@ -180,12 +181,13 @@ function create_update_info(update_info)
        if(resp.status == '1')
        {
          var update_data = JSON.parse(resp.data.update_info);
-         console.log(resp.data.update_info);
+         //console.log(resp.data.update_info);
          var list = '';
          update_data.forEach(function(update_data){
          list += '<li class="list-group-item"><img src="{{config("constant.IMAGE_URL")}}tournament/updates/'+update_data.image+'" class="img-rounded" alt="Cinque Terre" width="50" height="50"><h3>'+update_data.title+'</h3><p>'+update_data.description+'</p></li>'
         });
          $('#updates').html(list);
+         $("#wait").css("display", "none");
        }
      }
   });   
@@ -200,7 +202,7 @@ var list = '';
 if(resp.status == '1')
  {
  var update_data = resp.data;
- console.log(resp.data);
+ //console.log(resp.data);
  update_data.forEach(function(update_data){
  list += '<li class="list-group-item"><img src="{{config("constant.IMAGE_URL")}}tournament/updates/'+update_data.image+'" class="img-rounded" alt="Cinque Terre" width="50" height="50"><h3>'+update_data.title+'</h3><p>'+update_data.description+'</p></li>';
  });
