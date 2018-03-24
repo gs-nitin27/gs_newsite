@@ -41,17 +41,16 @@ $detail = $detail[0];
         <div>
         <div class="clearfix">
         <!-- <button class="btn btn-n viewBtn"><i class="fa fa-eye"></i> View More</button> -->
-        <div class="container" style="max-height: 20px;">
+        <div class="container" style="max-height: 20px;width: 100%;">
   <h2>Applicants List</h2>
   <ul class="nav nav-tabs">
-    <li class="active"><a data-toggle="tab" href="#home" aria-expanded="true">Applied Candidates</a></li>
+    <li class="nav active"><a data-toggle="tab" href="#home" aria-expanded="true" id="cabnd">Applied Candidates</a></li>
     <li><a data-toggle="tab" href="#menu2">Shortslisted</a></li>
     <li><a data-toggle="tab" href="#menu3">Offer</a></li>
     <!-- <li><a data-toggle="tab" href="#menu4">Offer Accepted</a></li> -->
   </ul>
 
-  <div class="tab-content" style="max-height: 200px;overflow-y: scroll;">
-    <div id="home" class="tab-pane fade">
+  <div class="tab-content" style="max-height: 400px; overflow-y: scroll; min-height: 400px;"> <div id="home" class="tab-pane active in">
       <table class="table table-sm">
   <thead>
     <tr>
@@ -169,7 +168,7 @@ window.getJobApplicants = function foo() {
                 status = 'Shortlisted';
             }
             
-            applicant_list +='<tr> <th scope="row">'+i+'</th> <align="center" width="10"> <!----><div > <img  class="pull-left img-circle nav-user-photo" src="assets/images/user.jpg" width="50">&nbsp;&nbsp; </div> <!----> </td> <td>'+data.name+'</td> <td>'+data.location+'</td> <td>'+data.email+'</td> <td>'+getAge(data.dob)+'</td> <td><button class="btn btn-success" onclick="shortlistCandidate('+data.userid+');">'+status+'</button></td> </tr>';
+            applicant_list +='<tr> <th scope="row">'+i+'</th> <align="center" width="10"> <!----><div ><td><img src="https://www.w3schools.com/tags/smiley.gif" class="pull-left img-circle nav-user-photo" alt="Smiley face" width="42" height="42">&nbsp;&nbsp; </div> <!----> </td> <td>'+data.name+'</td> <td>'+data.location+'</td> <td>'+data.email+'</td> <td>'+getAge(data.dob)+'</td> <td><button class="btn btn-success" onclick="shortlistCandidate('+data.userid+');">'+status+'</button></td> </tr>';
             
             if(data.status < '4' && data.status > '1')
             {++j;
@@ -183,7 +182,7 @@ window.getJobApplicants = function foo() {
                 interview_status = 'Re-Schedule';
                 offer_status    = '';
             }  
-            short_list +='<tr> <th scope="row">'+j+'</th> <td>Mark</td> <td>'+data.name+'</td> <td>'+data.contact_no+'</td> <td><button class="btb btn-primary" id="'+data.userid+'" data-myval="'+data.name+'" onclick="open_modal(this,1);">'+interview_status+' Interview</button></td> <td>'+data.interview_date+'</td> <td><button class="btn btn-success" '+offer_status+' onclick="open_modal('+data.userid+',2)">'+'Send offer'+'</button></td> </tr>';
+            short_list +='<tr> <th scope="row">'+j+'</th> <td><img src="https://www.w3schools.com/tags/smiley.gif" class="pull-left img-circle nav-user-photo" alt="Smiley face" width="42" height="42">&nbsp;&nbsp; </div> <!----> </td><td>'+data.name+'</td> <td>'+data.contact_no+'</td> <td><button class="btb btn-primary" id="'+data.userid+'" data-myval="'+data.name+'" onclick="open_modal(this,1);">'+interview_status+' Interview</button></td> <td>'+data.interview_date+'</td> <td><button class="btn btn-success" '+offer_status+' onclick="open_modal('+data.userid+',2)">'+'Send offer'+'</button></td> </tr>';
             }
              else if(data.status >= '4')
             {++k;
@@ -197,7 +196,7 @@ window.getJobApplicants = function foo() {
               {
                 cand_status = '<button class="btn btn-danger" Disabled>Declined</button>';
               }
-            offer +='<tr> <th scope="row">'+k+'</th> <align="center" width="10"> <!----><div > <img  class="pull-left img-circle nav-user-photo" src="assets/images/user.jpg" width="50">&nbsp;&nbsp; </div> <!----> </td> <td>'+data.name+'</td> <td>'+data.location+'</td> <td>'+data.email+'</td> <td>'+getAge(data.dob)+'</td><td>'+cand_status+'</td> </tr>';
+            offer +='<tr> <th scope="row">'+k+'</th> <align="center" width="10"> <!----><div ><td><img src="https://www.w3schools.com/tags/smiley.gif" class="pull-left img-circle nav-user-photo" alt="Smiley face" width="42" height="42">&nbsp;&nbsp; </div> <!----> </td></div> <!----> </td> <td>'+data.name+'</td> <td>'+data.location+'</td> <td>'+data.email+'</td> <td>'+getAge(data.dob)+'</td><td>'+cand_status+'</td> </tr>';
             }
            // i++;
           });
