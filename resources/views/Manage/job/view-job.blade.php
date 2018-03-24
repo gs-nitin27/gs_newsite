@@ -4,14 +4,7 @@
 @php 
 $detail = $detail[0];
 @endphp
-
-
-<h1></h1>
-
-
-
-<main>
-        <section class="half">
+<main><section class="half">
         <h1>{{$detail->title}}</h1>
              <section class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                             <div class="clearfix jobSave" id="job_details">
