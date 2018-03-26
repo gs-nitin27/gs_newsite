@@ -2,10 +2,15 @@
 function getEventListing()
 {  
 
+
+
+$('#event_listing').html('<img src="img/200.gif" >');
+
    $.ajax({
     method: 'GET',
      url:service_url+'/get_Event',crossDomain: true ,success: function(result)
      {
+      
         data         = JSON.parse(result);
         event_data   = data.data;
         var event_temp = '';
@@ -32,12 +37,16 @@ function getEventListing()
      $("#event_listing").html(event_temp);  
 
     }}); //End of ajax
+
+
 }
 
 
 
 function getJobListing()
 {
+
+$('#job_listing').html('<img src="img/200.gif" >');
 
    $.ajax({
      method: 'GET',
@@ -97,7 +106,8 @@ function getJobListing()
 
 function getArticleListing()
 {
-    
+    $('#temp_article').html('<img src="img/200.gif" >');
+
    $.ajax({
     method: 'GET',
      url:service_url+'/get_Article',crossDomain: true ,success: function(result)
@@ -157,7 +167,7 @@ function getArticleListing()
 
 function getTournamentListing()
 {
-
+$('#temp_tour').html('<img src="img/200.gif" >');
    $.ajax({
     method: 'GET',
      url:service_url+'/get_Tounament',crossDomain: true ,success: function(result)
