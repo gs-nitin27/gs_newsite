@@ -17,7 +17,7 @@
               <!-- <li class="active"><a href="index.php">Home</a></li> -->
               
               <!-- <li><a href="#getApp" data-toggle="modal">Get app  </a></li> -->
-              <li><a href="{{url('/event')}}" >Event </a></li>
+              <li><a href="{{url('event')}}" >Event </a></li>
               <li><a href="{{url('/job')}}">Job</a></li>
               <li><a href="{{url('/tournament')}}">Tournaments</a></li>
               <li><a href="{{url('/article')}}">Article</a></li>
