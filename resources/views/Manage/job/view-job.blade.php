@@ -4,14 +4,7 @@
 @php 
 $detail = $detail[0];
 @endphp
-
-
-<h1></h1>
-
-
-
-<main>
-        <section class="half">
+<main><section class="half">
         <h1>{{$detail->title}}</h1>
              <section class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                             <div class="clearfix jobSave" id="job_details">
@@ -41,17 +34,16 @@ $detail = $detail[0];
         <div>
         <div class="clearfix">
         <!-- <button class="btn btn-n viewBtn"><i class="fa fa-eye"></i> View More</button> -->
-        <div class="container" style="max-height: 20px;">
+        <div class="container" style="max-height: 20px;width: 100%;">
   <h2>Applicants List</h2>
   <ul class="nav nav-tabs">
-    <li class="active"><a data-toggle="tab" href="#home" aria-expanded="true">Applied Candidates</a></li>
+    <li class="nav active"><a data-toggle="tab" href="#home" aria-expanded="true" id="cabnd">Applied Candidates</a></li>
     <li><a data-toggle="tab" href="#menu2">Shortslisted</a></li>
     <li><a data-toggle="tab" href="#menu3">Offer</a></li>
     <!-- <li><a data-toggle="tab" href="#menu4">Offer Accepted</a></li> -->
   </ul>
 
-  <div class="tab-content" style="max-height: 200px;overflow-y: scroll;">
-    <div id="home" class="tab-pane fade">
+  <div class="tab-content" style="max-height: 400px; overflow-y: scroll; min-height: 400px;"> <div id="home" class="tab-pane active in">
       <table class="table table-sm">
   <thead>
     <tr>
@@ -133,42 +125,7 @@ $detail = $detail[0];
             
             <!-- Modal Body -->
             <div class="modal-body">
-                <input type="hidden" class="form-control" id="org_id" />
-                <form class="form-horizontal" role="form">
-                   <div class="form-group">
-                    <label  class="col-sm-2 control-label"
-                              for="inputEmail3">Interview Date</label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control" 
-                        id="date" placeholder="Organisation Name"/>
-                    </div>
-                  </div>
-                  <div class="form-group">
-                    <label  class="col-sm-2 control-label"
-                              for="inputEmail3">Venue</label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control" 
-                        id="venue" placeholder="About"/>
-                    </div>
-                  </div>
-                  <div class="form-group">
-                    <label  class="col-sm-2 control-label"
-                              for="inputEmail3">Message</label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control" 
-                        id="message" placeholder="Address1"/>
-                    </div>
-                  </div>
-                </form>
-             <div class="modal-footer">
-                <button type="button" class="btn btn-default"
-                        data-dismiss="modal" id="close">
-                            Close
-                </button>
-                <button type="button" class="btn btn-primary" id="schedule_interview">
-                    Save changes
-                </button>
-            </div>
+               
              </div>
 
 <script type="text/javascript">
@@ -204,15 +161,35 @@ window.getJobApplicants = function foo() {
                 status = 'Shortlisted';
             }
             
-            applicant_list +='<tr> <th scope="row">'+i+'</th> <align="center" width="10"> <!----><div > <img  class="pull-left img-circle nav-user-photo" src="assets/images/user.jpg" width="50">&nbsp;&nbsp; </div> <!----> </td> <td>'+data.name+'</td> <td>'+data.location+'</td> <td>'+data.email+'</td> <td>'+getAge(data.dob)+'</td> <td><button class="btn btn-success" onclick="shortlistCandidate('+data.userid+');">'+status+'</button></td> </tr>';
+            applicant_list +='<tr> <th scope="row">'+i+'</th> <align="center" width="10"> <!----><div ><td><img src="https://www.w3schools.com/tags/smiley.gif" class="pull-left img-circle nav-user-photo" alt="Smiley face" width="42" height="42">&nbsp;&nbsp; </div> <!----> </td> <td>'+data.name+'</td> <td>'+data.location+'</td> <td>'+data.email+'</td> <td>'+getAge(data.dob)+'</td> <td><button class="btn btn-success" onclick="shortlistCandidate('+data.userid+');">'+status+'</button></td> </tr>';
             
             if(data.status < '4' && data.status > '1')
             {++j;
-            short_list +='<tr> <th scope="row">'+j+'</th> <td>Mark</td> <td>'+data.name+'</td> <td>'+data.contact_no+'</td> <td><button class="btb btn-primary" id="'+data.userid+'" data-myval="'+data+'" onclick="open_modal(this.data-myval);">Schedule Interview</button></td> <td>25 March 2018</td> <td><button class="btn btn-success">Sent Offer</button></td> </tr>';
+            if(data.status == '2')
+            {
+                interview_status = 'Schedule';
+                offer_status = 'Disabled';
             }
-             else if(data.status > '4')
+            else
+            {
+                interview_status = 'Re-Schedule';
+                offer_status    = '';
+            }  
+            short_list +='<tr> <th scope="row">'+j+'</th> <td><img src="https://www.w3schools.com/tags/smiley.gif" class="pull-left img-circle nav-user-photo" alt="Smiley face" width="42" height="42">&nbsp;&nbsp; </div> <!----> </td><td>'+data.name+'</td> <td>'+data.contact_no+'</td> <td><button class="btb btn-primary" id="'+data.userid+'" data-myval="'+data.name+'" onclick="open_modal(this,1);">'+interview_status+' Interview</button></td> <td>'+data.interview_date+'</td> <td><button class="btn btn-success" '+offer_status+' onclick="open_modal('+data.userid+',2)">'+'Send offer'+'</button></td> </tr>';
+            }
+             else if(data.status >= '4')
             {++k;
-            offer +='<tr> <th scope="row">'+k+'</th> <align="center" width="10"> <!----><div > <img  class="pull-left img-circle nav-user-photo" src="assets/images/user.jpg" width="50">&nbsp;&nbsp; </div> <!----> </td> <td>'+data.name+'</td> <td>'+data.location+'</td> <td>'+data.email+'</td> <td>'+getAge(data.dob)+'</td><td><button class="btn btn-warning">DECLINED</button></td> </tr>';
+              if(data.status > '4')
+              {
+                cand_status = '<button class="btn btn-success" Disabled>Accepted</button>';
+              }else if(data.status == '4')
+              {
+                cand_status = '<button class="btn btn-primary" Disabled>Offer sent</button>';
+              }else if(data.status < '4')
+              {
+                cand_status = '<button class="btn btn-danger" Disabled>Declined</button>';
+              }
+            offer +='<tr> <th scope="row">'+k+'</th> <align="center" width="10"> <!----><div ><td><img src="https://www.w3schools.com/tags/smiley.gif" class="pull-left img-circle nav-user-photo" alt="Smiley face" width="42" height="42">&nbsp;&nbsp; </div> <!----> </td></div> <!----> </td> <td>'+data.name+'</td> <td>'+data.location+'</td> <td>'+data.email+'</td> <td>'+getAge(data.dob)+'</td><td>'+cand_status+'</td> </tr>';
             }
            // i++;
           });
@@ -262,14 +239,133 @@ function shortlistCandidate(data)
 }
 
 
-function open_modal(data)
+function open_modal(data,status)
+{ 
+  var val = 0;
+  $("#myModal").modal();
+  var act = '';
+  if(status == '1')
 {
+  $('.modal-body').html(' <input type="hidden" class="form-control" id="org_id" /> <form class="form-horizontal" role="form"> <div class="form-group"> <label  class="col-sm-2 control-label"for="inputEmail3">Interview Date</label> <div class="col-sm-10"> <span id="idate"><p></p></span> <input type="date" class="form-control"id="date" /> </div> </div> <div class="form-group"> <label  class="col-sm-2 control-label"for="inputEmail3">Venue</label> <div class="col-sm-10"> <span id="ivenue"><p></p></span> <input type="text" class="form-control"id="venue" placeholder="Venue"/> </div> </div> <div class="form-group"> <label  class="col-sm-2 control-label"for="inputEmail3">Message</label> <div class="col-sm-10"> <span id="imessage"><p><p></span> <input type="text" class="form-control"id="message" placeholder="Enter Message..."/> </div> </div> </form> <div class="modal-footer"> <button type="button" class="btn btn-default"data-dismiss="modal" id="close">Cancel</button> <button type="button" class="btn btn-primary" id="schedule_interview">Shedule Interview</button> </div>');
+}
+else
+{
+   $('.modal-body').html(' <input type="hidden" class="form-control" id="org_id" /> <form class="form-horizontal" role="form"> <div class="form-group"> <label  class="col-sm-2 control-label"for="inputEmail3">Joining Date</label> <div class="col-sm-10"> <span id="ijoindate"><p></p></span> <input type="date" class="form-control"id="joindate" /> </div> </div> <div class="form-group"> <label  class="col-sm-2 control-label"for="inputEmail3">Salary</label> <div class="col-sm-10"> <span id="isalary"><p></p></span> <input type="text" class="form-control"id="salary" placeholder="salary"/> </div> </div></form> <div class="modal-footer"> <button type="button" class="btn btn-default"data-dismiss="modal" id="close">Send Later</button> <button type="button" class="btn btn-primary" id="Send_offer">Send Offer </button> </div>');
+}
+  $('#schedule_interview').click(function(){
+  var applicant_data = ''; 
+  var applicant_id = '';
+  $(data).each(function() {
+    $.each(this.attributes, function() {
+    if(this.specified) {
+        console.log(this.name, this.value);
+        if(this.name == 'data-myval')
+        {
+          applicant_data = this.value;
+        }
+        if(this.name == 'id')
+        {
+          applicant_id = this.value;
+        } 
+       }
+     });
+   });
+    if($('#venue').val() == '')
+    {
+      $('#ivenue').text('Please enter the venue');
+      val++;
+    }else
+    {
+      $('#ivenue').text('');
+    }
+    if($('#message').val() == '')
+    {
+      $('#message').text('Please enter the message');
+      val++;
+    }else
+    {
+      $('#message').text('');
+    }
+    if($('#date').val() == '')
+    {
+      $('#message').text('Please select the date of interview');
+      val++;
+    }else
+    {
+      $('#ivenue').text('');
+    }
+    if(val == 0)
+    {  var interview_data = {};
+       interview_data.employer_id =  sess_userid;
+       interview_data.username    =  applicant_data;
+       interview_data.applicant_id=  applicant_id;
+       interview_data.job_id      =  id;
+       interview_data.status      =  '3';
+       interview_data.module      =  '1';
+       interview_data.date        =  $('#date').val();
+       interview_data.msg         =  $('#message').val();
+       interview_data.venue       =  $('#venue').val();
+       act = 'interview_schedule';
+       recruitment_update(interview_data,act);
+    }
+     else
+    {
+      return false;
+    }
+    });
 
-$("#myModal").modal();
-$('#schedule_interview').click(function(){
+  $('#Send_offer').click(function(){
+    if($('#joindate').val() == '')
+    {
+      $('#ijoindate').text('Please enter the joining date');
+      val++;
+    }else
+    {
+      $('#ijoindate').text('');
+    }
+    if($('#salary').val() == '')
+    {
+      $('#isalary').text('Please enter the salary');
+      val++;
+    }else
+    {
+      $('#isalary').text('');
+    }
+    
+    if(val == 0)
+    {  var offer_data = {};
+       offer_data.emp_id       =  sess_userid;
+       offer_data.salary       =  $("#salary").val();
+       offer_data.applicant_id =  data;
+       offer_data.job_id       =  id;
+       offer_data.joining_date =  $("#joindate").val();
+       act = 'send_offer';
+       recruitment_update(offer_data,act);
+    }
+     else
+    {
+      return false;
+    }
+  });
+}
 
-});
-
+function recruitment_update(recruitment_data,act)
+{
+  $.ajax({
+    
+    url:url+'/create_database.php?act='+act,
+    data:JSON.stringify(recruitment_data),
+    method:"POST",
+    success:function(result)
+    {
+       getJobApplicants();
+       $('#myModal').modal('hide');
+    },
+    failure:function()
+    {
+      alert('Server error');
+    }
+  });
 }
 
 </script>
