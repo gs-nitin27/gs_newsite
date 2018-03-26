@@ -1,9 +1,18 @@
 @extends('Manage.layouts.master')
 @section('pageTitle','Home')
 @section('content')
+<!-- {{print_r($data)}} -->
+<?php //die; ?>
 <?php $basic  = $data['basic'][0]; ?>
-<?php $detail = $data['detail'][0]; ?>
-
+<?php if(!empty($data['detail']))
+  {
+   $detail = $data['detail'][0];
+  }
+else
+  {
+   $detail = '';
+  }
+?>
 <link rel="stylesheet" href="http://portal.getsporty.in/assets/css/profile.css">
 <script type="text/javascript">
    window.sportsticket = 0;
@@ -461,18 +470,35 @@ body{
             <p>{{$basic->email}}</p>
             <hr>
 
-@if($basic->prof_id != '')
+@if($basic->prof_id != '' && $detail != '')
+            @php 
+            $user_detail = json_decode($detail->user_detail);
+            @endphp
             <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-certificate fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Header Details</h2>
             <div class="w3-container">
-            <h5 class="w3-opacity"><b>Academy: </b></h5><p id="academy"></p>
+            @if($basic->prof_id == 1)
+            <h5 class="w3-opacity"><b>Rank: </b></h5><p id="academy">{{$user_detail->Header->rank}}</p>
              <hr>
-             <h5 class="w3-opacity"><b>Description : </b></h5><p id="description"></p>
+             <h5 class="w3-opacity"><b>Description : </b></h5><p id="description">{{$user_detail->Header->description}}</p>
              <hr>
-             <h5 class="w3-opacity"><b>Designation : </b></h5><p id="designation"></p>
+             <h5 class="w3-opacity"><b>Level : </b></h5><p id="designation">{{$user_detail->Header->level}}</p>
              <hr>
-             <h5 class="w3-opacity"><b>Location : </b></h5><p id="location"></p>
+             <h5 class="w3-opacity"><b>Location : </b></h5><p id="location">{{$user_detail->Header->location}}</p>
              <hr>
+            @endif
+            @if($basic->prof_id != 1)
+            <h5 class="w3-opacity"><b>Academy: </b></h5><p id="academy">{{$user_detail->HeaderDetails->acamedy}}</p>
+             <hr>
+             <h5 class="w3-opacity"><b>Description : </b></h5><p id="description">{{$user_detail->HeaderDetails->description}}</p>
+             <hr>
+             <h5 class="w3-opacity"><b>Designation : </b></h5><p id="designation">{{$user_detail->HeaderDetails->designation}}</p>
+             <hr>
+             <h5 class="w3-opacity"><b>Location : </b></h5><p id="location">{{$user_detail->HeaderDetails->location}}</p>
+             <hr>
+            @endif
             </div>
+            
+
             </div>
             </div>
     <br>
@@ -485,81 +511,161 @@ body{
        <input type="hidden"  id="designation1" value="Coach">
        <input type="hidden"  id="location1" value="">
     <!-- </div> -->
-  
+
+@if($basic->prof_id != 1)
+                            <!-- NON ATHLETE PROFILE -->
+<!--\\\\\\\\\\\\\\\\\\\\\\\\\\ DIV FOR EDUCATION /////////////////////-->  
+ 
 <!-- DIV FOR FORMAL EDUCATION -->
   <div class="w3-container w3-card w3-white">
-  <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-certificate fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>formalEducation</h2>
- 
+  <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-certificate fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Formal Education</h2>
+   @if(!empty($user_detail->Education->formalEducation))
+   @foreach($user_detail->Education->formalEducation as $formal_edu)
       <div class="w3-container">
-      <h5 class="w3-opacity"><b>Organisation : </b></h5><p>DHS Academy</p>
-      <h5 class="w3-opacity"><b>Degree : </b></h5><p>b.tech</p>
-      <h5 class="w3-opacity"><b>Stream : </b></h5><p>information technologies</p>   
-      <h6 class="w3-text-teal">From<i class="fa fa-calendar fa-fw w3-margin-right"></i>2014-12-30</h6>
+      <h5 class="w3-opacity"><b>College/Institue : </b></h5><p>{{$formal_edu->organisation}}</p>
+      <h5 class="w3-opacity"><b>Degree : </b></h5><p>{{$formal_edu->degree}}</p>
+      <h5 class="w3-opacity"><b>Stream : </b></h5><p>{{$formal_edu->stream}}</p>   
+      <h6 class="w3-text-teal">From<i class="fa fa-calendar fa-fw w3-margin-right"></i>{{$formal_edu->dateFrom}}</h6>
+      @if($formal_edu->tillDate != 0)
+      <h6 class="w3-text-teal">To<i class="fa fa-calendar fa-fw w3-margin-right"></i>{{$formal_edu->dateTo}}</h6>
+      @else
       <h6 class="w3-text-teal">To<i class="fa fa-calendar fa-fw w3-margin-right"></i>Till Date</h6>
+      @endif
       <hr>
       </div>
+      @endforeach
+      @endif
      </div>
 <!-- DIV FOR FORMAL EDUCATION ENDS HERE-->
 
-
-       <br>
+     <br>
 <!-- DIV FOR OTHER CERTIFICATION -->
         <div class="w3-container w3-card w3-white">
-  <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-certificate fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>otherCertification</h2>
- 
-      <div class="w3-container">
-      <h5 class="w3-opacity"><b>Organisation : </b></h5><p>DHS academy</p>
-      <h5 class="w3-opacity"><b>Degree : </b></h5><p>core java</p>
-      <h5 class="w3-opacity"><b>Stream : </b></h5><p>information academy</p>   
-      <h6 class="w3-text-teal">From<i class="fa fa-calendar fa-fw w3-margin-right"></i>2017-12-01</h6>
+        <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-certificate fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Other Certification</h2>
+        @if(!empty($user_detail->Education->otherCertification))
+        @foreach($user_detail->Education->otherCertification as $certification)
+        <div class="w3-container">
+        <h5 class="w3-opacity"><b>Organisation : </b></h5><p>{{$certification->organisation}}</p>
+        <h5 class="w3-opacity"><b>Degree : </b></h5><p>{{$certification->degree}}</p>
+        <h5 class="w3-opacity"><b>Stream : </b></h5><p>{{$certification->stream}}</p>   
+        <h6 class="w3-text-teal">From<i class="fa fa-calendar fa-fw w3-margin-right"></i>{{$certification->dateFrom}}</h6>
+      @if($certification->tillDate != 0)
+      <h6 class="w3-text-teal">To<i class="fa fa-calendar fa-fw w3-margin-right"></i>{{$certification->dateTo}}</h6>
+      @else
       <h6 class="w3-text-teal">To<i class="fa fa-calendar fa-fw w3-margin-right"></i>Till Date</h6>
-      <hr>
-      </div>
-      </div>
-<!-- DIV FOR OTHER CERTIFICATION ENDS-->
+      @endif
+        <hr>
+        </div>
+        @endforeach
+        @endif
+        </div>
+  <!-- DIV FOR OTHER CERTIFICATION ENDS-->
        <br>
        
 <!-- DIV FOR SPORTS EDUCATION-->       
   <div class="w3-container w3-card w3-white">
-  <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-certificate fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>sportEducation</h2>
- 
+  <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-certificate fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Sports Education</h2>
+  @if(!empty($user_detail->Education->sportEducation))
+  @foreach($user_detail->Education->sportEducation as $sprt_edu)
       <div class="w3-container">
-      <h5 class="w3-opacity"><b>Organisation : </b></h5><p>DHS Acacdemy</p>
-      <h5 class="w3-opacity"><b>Degree : </b></h5><p>B.P.Ed.</p>
-      <h5 class="w3-opacity"><b>Stream : </b></h5><p>Coaching & Training</p>   
-      <h6 class="w3-text-teal">From<i class="fa fa-calendar fa-fw w3-margin-right"></i>2017-01-01</h6>
+        <h5 class="w3-opacity"><b>Organisation : </b></h5><p>{{$sprt_edu->organisation}}</p>
+        <h5 class="w3-opacity"><b>Degree : </b></h5><p>{{$sprt_edu->degree}}</p>
+        <h5 class="w3-opacity"><b>Stream : </b></h5><p>{{$sprt_edu->stream}}</p>   
+        <h6 class="w3-text-teal">From<i class="fa fa-calendar fa-fw w3-margin-right"></i>{{$sprt_edu->dateFrom}}</h6>
+      @if($sprt_edu->tillDate != 0)
+      <h6 class="w3-text-teal">To<i class="fa fa-calendar fa-fw w3-margin-right"></i>{{$sprt_edu->dateTo}}</h6>
+      @else
       <h6 class="w3-text-teal">To<i class="fa fa-calendar fa-fw w3-margin-right"></i>Till Date</h6>
-      <hr>
+      @endif
+        <hr>
       </div>
+      @endforeach
+      @endif
       </div>
 <!-- DIV FOR SPORTS EDUCATION ENDS-->
+<!--\\\\\\\\\\\\\\\\\\\\\\\\\\ DIV FOR EDUCATION /////////////////////-->
        <br>
-       
-<!-- DIV FOR Experience as a player-->
-      <div class="w3-container w3-card w3-white w3-margin-bottom" id="exphide">
-      <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-suitcase fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>experienceAsPlayer</h2>
-      <div class="w3-container">
-      <h5 class="w3-opacity"><b>Tournament Name: </b></h5><p>DHS Cup</p> 
-      <h5 class="w3-opacity"><b>Best Result: </b></h5><p>Won</p> 
-      <h5 class="w3-opacity"><b>Level: </b></h5><p>District</p>
-      <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>Dec 1st, 2017<!--  -  <span class="w3-tag w3-teal w3-round"> --><!-- /span> --></h6>
-      <hr>
-      </div>
-      </div>
-<!-- DIV FOR Experience as a player ends-->
+
 <br>
 
       <!-- DIV FOR Work Experience-->
       <div class="w3-container w3-card w3-white w3-margin-bottom" id="exphide">
-      <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-suitcase fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>workExperience</h2>
-
-                   <div class="w3-container">
-      <h5 class="w3-opacity"><b>Organisation Name : </b></h5><p>DHS academy</p> 
-      <h5 class="w3-opacity"><b>Designation : </b></h5><p>S/w engineer</p> 
-      <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>Dec 1st, 2017 -  <span class="w3-tag w3-teal w3-round">Till Date</span></h6>
+      <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-suitcase fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Work Experience</h2>
+       @if(!empty($user_detail->Experience->workExperience))
+       @foreach($user_detail->Experience->workExperience as $exp)
+      <div class="w3-container">
+      <h5 class="w3-opacity"><b>Organisation Name : </b></h5><p>{{$exp->organisationName}}</p> 
+      <h5 class="w3-opacity"><b>Designation : </b></h5><p>{{$exp->designation}}</p> 
+      <h5 class="w3-opacity"><b>Description : </b></h5><p>{{$exp->description}}</p> 
+      <h6 class="w3-text-teal">From<i class="fa fa-calendar fa-fw w3-margin-right"></i>{{$exp->dateFrom}}</h6>
+      @if($exp->tillDate != 0)
+      <h6 class="w3-text-teal">To<i class="fa fa-calendar fa-fw w3-margin-right"></i>{{$exp->dateTo}}</h6>
+      @else
+      <h6 class="w3-text-teal">To<i class="fa fa-calendar fa-fw w3-margin-right"></i>Till Date</h6>
+      @endif
       <hr>
       </div>
+      @endforeach
+      @endif
       </div>
+      @endif
       <!-- DIV FOR Work Experience Ends-->
+      
+      <!--//////////////////// DIV FOR EXPERIENCE ENDS////////////////////////////-->
+       @if($basic->prof_id == 1)                       
+       <!--///////////////////////////// DIV FOR ATHLETE///////////////////////////////////////////-->
+       
+       <!--//////////////////// DIV FOR Achievements////////////////////////////-->     
+      <div class="w3-container w3-card w3-white w3-margin-bottom" id="exphide"> 
+      <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-suitcase fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Achievements</h2>
+       @php 
+       $val = 0; 
+      @endphp
+      @if(!empty($user_detail->Achivement->awards))
+      <h3>Awards</h3>
+       @foreach ($user_detail->Achivement->awards as $award)
+      <div class="w3-container">
+      <h4>{{$award->nameOfAward}}</h4>
+      <h5 class="w3-opacity"><b>Date : </b></h5><p>{{$award->date}}</p> 
+      <h5 class="w3-opacity"><b>Description : </b></h5><p>{{$award->description}}</p> 
+      <hr>
+      </div>
+      @endforeach
+      @endif
+      @if(!empty($user_detail->Achivement->bestResult))
+      <h3>Best Results</h3>
+      @foreach ($user_detail->Achivement->bestResult as $result)
+      <div class="w3-container">
+      <h4>{{$result->nameComptation}}</h4>
+      <h5 class="w3-opacity"><b>Date of competetion : </b></h5><p>{{$result->date}}</p> 
+      <h5 class="w3-opacity"><b>No. of rounds  : </b></h5><p>{{$result->rounds}}</p> 
+      <h5 class="w3-opacity"><b>Result : </b></h5><p>{{$result->result}}</p> 
+      <hr>
+      </div>
+      @endforeach
+      @endif
+      </div>
+      <!--//////////////////// DIV FOR Achievements Ends ////////////////////////////-->
+
+      
+       <!--//////////////////// DIV FOR Latest Results////////////////////////////-->     
+      <div class="w3-container w3-card w3-white w3-margin-bottom" id="exphide"> 
+      <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-suitcase fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Latest Result</h2>
+       @if(!empty($user_detail->LatestResults))
+       @foreach ($user_detail->LatestResults as $latest_result)
+      <div class="w3-container">
+      <h3>{{$latest_result->nameOfCompetation}}</h3>
+      <h5 class="w3-opacity"><b>Date of competetion : </b></h5><p>{{$latest_result->dateOfCompetation}}</p> 
+      <h5 class="w3-opacity"><b>Opponent : </b></h5><p>{{$latest_result->opponent}}</p>
+      <h5 class="w3-opacity"><b>Result : </b></h5><p>{{$latest_result->result}}</p>
+      <h5 class="w3-opacity"><b>Round : </b></h5><p>{{$latest_result->round}}</p> 
+      <hr>
+      </div>
+      @endforeach
+      @endif
+      </div>
+      @endif
+      <!--//////////////////// DIV FOR Latest Result Ends ////////////////////////////-->
+
       @endif
 @stop
