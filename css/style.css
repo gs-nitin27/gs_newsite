@@ -1142,4 +1142,18 @@ margin: 0px;
 .pad20{
 	padding: 22px;
 }
+#temp_article > div,
+#event_listing > div,
+#job_listing > div,
+#temp_tour > div {
+    min-height: 420px;
+    float: left;
+}
+#temp_article > div,
+#event_listing > div,
+#job_listing > div,
+#temp_tour > div {
+    max-height: 420px;
+    float: left;
+}
 

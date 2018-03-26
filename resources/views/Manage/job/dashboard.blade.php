@@ -1,6 +1,24 @@
 @extends('Manage.layouts.master')
 @section('pageTitle','Home')
 @section('content')
+<head>
+  <style type="text/css">
+    .company{
+    background: linear-gradient(#ccc,#03a9f5);
+    box-shadow: #ccc;
+    padding: 9px 9px 9px 9px;
+    box-shadow: 4px #ccc;
+    box-shadow: 18px 6px 20px #ccc;
+    border-radius: 5%;
+    font-size: 27px;
+    color: #fff;
+    color: #f4f4f4;
+    box-shadow: 0 0 black;
+    background-color: #03a9f5;
+    text-decoration: none;
+    }
+  </style>
+</head>
 
     <section class="bodySec deshboard2">
     <center id="org_div"><button type="button" class="btn btn-warning" data-toggle="modal" data-target="#myModalHorizontal" onclick="getorg_details()"><span class="glyphicon glyphicon-plus"></span>Add Organisation</button></center><br><br><br>
@@ -192,8 +210,8 @@
               //alert(org_name);return;
           if(org_name != '')
           { 
-            var org_div = '<div data-target="#myModalHorizontal" onclick="getorg_details();" data-toggle="modal" style="text-decoration:none"> <h1><span>'+org_name+'</span><h1></div>';
-            $('#org_div').html('');
+            var org_div = '<div data-target="#myModalHorizontal" onclick="getorg_details();" data-toggle="modal" style="text-decoration:none"> <h1><a><span class="company">'+org_name+'</span><h1></a></div>';
+            $('#org_div').html(''); 
             $('#org_div').html(org_div);
           }
           }
@@ -300,7 +318,7 @@
         {//console.log(result);return;
           var resp_data = result;//JSON.parse(result);
            if(resp_data != '0')
-           { var org_name = '<a href="javascript:void(0)" data-target="#myModalHorizontal" onclick="getorg_details();" data-toggle="modal" style="text-decoration:none"><h1><span>'+$('#org_name').val()+'</span><h1></a>';
+           { var org_name = '<a href="javascript:void(0)" data-target="#myModalHorizontal" onclick="getorg_details();" data-toggle="modal" style="text-decoration:none"><h1><span class="company">'+$('#org_name').val()+'</span><h1></a>';
              alert("Organisation Created");
              $('#org_div').html('');
              $('#org_div').html(org_name);

@@ -46,6 +46,13 @@ class Manage_Model extends Model
    $job = DB::table('gs_jobInfo')->select('*')->where('id', $id)->get();
    return $job;
   }
-
+public function getUserData($id)
+ {
+   $basic  = DB::table('user')->select('*')->where('userid', $id)->get();
+    $detail   = DB::table('gs_userdata')->select('*')->where('userid',$id)->get();
+    
+    $resp = array('basic' =>$basic ,'detail'=>$detail );
+    return $resp;
+ }
 
 }

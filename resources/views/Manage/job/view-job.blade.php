@@ -161,7 +161,7 @@ window.getJobApplicants = function foo() {
                 status = 'Shortlisted';
             }
             
-            applicant_list +='<tr> <th scope="row">'+i+'</th> <align="center" width="10"> <!----><div ><td><img src="https://www.w3schools.com/tags/smiley.gif" class="pull-left img-circle nav-user-photo" alt="Smiley face" width="42" height="42">&nbsp;&nbsp; </div> <!----> </td> <td>'+data.name+'</td> <td>'+data.location+'</td> <td>'+data.email+'</td> <td>'+getAge(data.dob)+'</td> <td><button class="btn btn-success" onclick="shortlistCandidate('+data.userid+');">'+status+'</button></td> </tr>';
+            applicant_list +='<tr> <th scope="row">'+i+'</th> <align="center" width="10"> <!----><div ><td><a href="'+route_url+'/manage/job/candidate_profile/'+data.userid+'"><img src="https://www.w3schools.com/tags/smiley.gif" class="pull-left img-circle nav-user-photo" alt="Smiley face" width="42" height="42"></a>&nbsp;&nbsp; </div> <!----> </td> <td>'+data.name+'</td> <td>'+data.location+'</td> <td>'+data.email+'</td> <td>'+getAge(data.dob)+'</td> <td><button class="btn btn-success" onclick="shortlistCandidate('+data.userid+');">'+status+'</button></td> </tr>';
             
             if(data.status < '4' && data.status > '1')
             {++j;
@@ -367,6 +367,10 @@ function recruitment_update(recruitment_data,act)
     }
   });
 }
+// function view_candidate_profile(id)
+// {
+//   window.location.href="{{url('/manage/job/candidate_profile/"+id+"')}}";
+// }
 
 </script>
                        

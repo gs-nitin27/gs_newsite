@@ -97,8 +97,13 @@ Route::get('article-detail/{id}','WebController@article_detail');
              return View::make('Manage.job.view-transaction');
          });
         
-        Route::get('/create_update/{id}','ManageController@get_tournament');
-        
+       // Route::get('/create_update/{id}','ManageController@get_tournament');
+       Route::get('/job/candidate_profile/{id}','ManageController@get_candidate_info');
+        // Route::get('/job/candidate_profile', function()
+        // {
+        //     return View::make('Manage.job.profile');
+        //     //Route::get('get_Tounament','ManageController@get_Tounament');
+        // });
     });
 
 

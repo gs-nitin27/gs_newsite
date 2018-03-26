@@ -102,4 +102,12 @@ public function get_tournament(Request $request)
    return View::make("Manage.Tournaments.create_update")->with('data',$data);
  }
 
+ public function get_candidate_info(Request $request)
+  {  $obj = new Manage_Model();
+     $resp = $obj->getUserData($request->id);
+
+    return view::make("Manage.job.profile")->with('data',$resp);
+
+  }
+
 }

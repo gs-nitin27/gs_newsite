@@ -1,6 +1,11 @@
 @extends('layouts.master')
 @section('pageTitle','Home')
 @section('content')
+<style type="text/css">
+  div#temp_article > div {
+    min-height: 394px;
+}
+</style>
 
          <div class="joblist-bg tournamentBg bannerBgSec">
            <div class="container">
