@@ -17,6 +17,9 @@ class ManageController extends Controller
    {
     $userdata = session(['userdata' => $request->data]);
     $value    = session('userdata');
+    Session::set('userdata', $request->data);
+    $value1 = Session::get($key);
+    print_r($value1);die;
     if($value != '')
     {print_r($value);die;
     return $value;  
