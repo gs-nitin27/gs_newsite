@@ -1,22 +1,10 @@
 <?php $value = session('userdata');
 $sess_data = json_decode($value);//print_r($sess_data);die;
-// if (Session::has('userdata')){
-//       echo "data presentertert";die;
-//     }else{
-//        echo "data not present";die;
-//     }
-if(!empty($sess_data))
-{
-    echo "data present";die;
-}else
-{
-    echo "data not present";die;
-}
-// $userid = $sess_data->userid;
-// $sess_name = $sess_data->name;
-// $sess_email = $sess_data->email;
-// $org_name = $sess_data->org_data->org_name;
-// $org_id = $sess_data->org_data->org_id;
+$userid = $sess_data->userid;
+$sess_name = $sess_data->name;
+$sess_email = $sess_data->email;
+$org_name = $sess_data->org_data->org_name;
+$org_id = $sess_data->org_data->org_id;
 //print_r($sess_data);//die;
 ?>
 <style type="text/css">
