@@ -174,7 +174,7 @@ function login(emailid,user_data,type)
      "userType" : '103',
      "device_id": ''
      };
-     
+            
 
 var url = '<?php echo config('constant.ENV_URL')?>';
 var data = JSON.stringify(data1);
@@ -244,9 +244,9 @@ console.log(data);
     function set_data(){
       $.ajax({
       async:false,
-      headers: {
-        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-      },
+      // headers: {
+      //   'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+      // },
       url:"{{url('/manage/setdata')}}",
       method:"POST",
       dataType:"text",
