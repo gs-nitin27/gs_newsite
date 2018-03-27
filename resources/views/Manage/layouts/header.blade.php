@@ -1,5 +1,10 @@
 <?php $value = session('userdata');
 $sess_data = json_decode($value);//print_r($sess_data);die;
+if (Session::has('userdata')){
+      echo "data presentertert";die;
+    }else{
+       echo "data not present";die;
+    }
 if(!empty($sess_data))
 {
     echo "data present";die;
