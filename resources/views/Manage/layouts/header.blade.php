@@ -1,5 +1,5 @@
 <?php $value = session('userdata');
-$sess_data = json_decode($value);//print_r($sess_data);die;
+$sess_data = json_decode($value);print_r($sess_data);die;
 // if (Session::has('userdata')){
 //       echo "data presentertert";die;
 //     }else{
