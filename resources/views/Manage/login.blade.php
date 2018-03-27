@@ -181,9 +181,9 @@ var data = JSON.stringify(data1);
 console.log(data);
   $.ajax({
     type: "POST",
-    headers: {
-        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-    },
+    // headers: {
+    //     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+    // },
     url:  url+'/user_access_controller.php?act=gs_login',
     data: data,
     dataType: "text",
