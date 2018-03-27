@@ -1,42 +1,89 @@
 
 function getEventListing()
 {  
+(function($){   
+    $.fn.loaddata = function(options) {// Settings
+        var settings = $.extend({ 
+            loading_gif_url : "http://www.getsporty.in/staging/uploads/profile/ajax-loader.gif", //url to loading gif
+            end_record_text : 'No more records found!', //no more records to load
+            data_url        : 'https://getsporty.in/testingapp/create_database.php?act=lazy', //url to PHP page
+            start_page      : 1 //initial page
+        }, options);
+        
+        var el = this;  
+        loading  = false; 
+        end_record = false;
+        contents(el, settings); //initial data load
+        
+        $(window).scroll(function() { //detact scroll
+            if($(window).scrollTop() + $(window).height() >= $(document).height()){ //scrolled to bottom of the page
+                contents(el, settings); //load content chunk 
+            }
+        });     
+    }; 
+    //Ajax load function
+    function contents(el, settings){
+        var load_img = $('<img/>').attr('src',settings.loading_gif_url).addClass('loading-image'); //create load image
+        var record_end_txt = $('<div/>').text(settings.end_record_text).addClass('end-record-info'); //end record text
+        
+        if(loading == false && end_record == false){
+            loading = true; //set loading flag on
+            el.append(load_img); //append loading image
+            $.post( settings.data_url, {'page': settings.start_page}, function(data){ //jQuery Ajax post
+                if(data.trim().length == 0){ //no more records
+                    el.append(record_end_txt); //show end record text
+                    load_img.remove(); //remove loading img
+                    end_record = true; //set end record flag on
+                    return; //exit
+                }
+                loading = false;  //set loading flag off
+                load_img.remove(); //remove loading img 
+                el.append(data);  //append content 
+                settings.start_page ++; //page increment
+            })
+        }
+    }
+
+})(jQuery);
+
+$("#event_listing").loaddata();
 
 
 
-$('#event_listing').html('<img src="img/200.gif" >');
 
-   $.ajax({
-    method: 'GET',
-     url:service_url+'/get_Event',crossDomain: true ,success: function(result)
-     {
+// $('#event_listing').html('<img src="img/200.gif" >');
+
+//    $.ajax({
+//     method: 'GET',
+//      url:service_url+'/get_Event',crossDomain: true ,success: function(result)
+//      {
       
-        data         = JSON.parse(result);
-        event_data   = data.data;
-        var event_temp = '';
-        $("#event_temp").empty();
-        for (var i = 0; i < event_data.length; i++)
-        {  
-            var event_title             = event_data[i]['name'].substring(0,20);;
-            var event_summary           = event_data[i]['description'];
-            var event_org_name          = event_data[i]['organizer_name'];
-            var event_type              = event_data[i]['type'];
-            var event_email             = event_data[i]['email_app_collection'];
-            var event_location          = event_data[i]['location'];
-            var event_url               = "event-detail/"+event_data[i]['id'];
-            var event_img               = "event/";
-            var event_image_path        = image_url+event_img+event_data[i]['image']; 
+//         data         = JSON.parse(result);
+//         event_data   = data.data;
+//         var event_temp = '';
+//         $("#event_temp").empty();
+//         for (var i = 0; i < event_data.length; i++)
+//         {  
+//             var event_title             = event_data[i]['name'].substring(0,20);;
+//             var event_summary           = event_data[i]['description'];
+//             var event_org_name          = event_data[i]['organizer_name'];
+//             var event_type              = event_data[i]['type'];
+//             var event_email             = event_data[i]['email_app_collection'];
+//             var event_location          = event_data[i]['location'];
+//             var event_url               = "event-detail/"+event_data[i]['id'];
+//             var event_img               = "event/";
+//             var event_image_path        = image_url+event_img+event_data[i]['image']; 
 
-      //   event_temp += '<div class="col-lg-3 col-md-3"><div class=" hover-boxs"><div class="job-box"><img src="https://getsporty.in/portal/uploads/resources/'+data[i]['image']+'" alt="img"></div><div class="slide-job-list"><h4>'+title+'</h4> <p><span> '+summary+'</span></p>  <div class="read-c"><a href="'+url+''+data[i]['id']+'">Read More</a> </div>                                                        </div>                            </div>                  </div> ';
+//       //   event_temp += '<div class="col-lg-3 col-md-3"><div class=" hover-boxs"><div class="job-box"><img src="https://getsporty.in/portal/uploads/resources/'+data[i]['image']+'" alt="img"></div><div class="slide-job-list"><h4>'+title+'</h4> <p><span> '+summary+'</span></p>  <div class="read-c"><a href="'+url+''+data[i]['id']+'">Read More</a> </div>                                                        </div>                            </div>                  </div> ';
 
-         event_temp +='<div class="col-lg-3 col-md-3"><div class=" hover-boxs"><div class="job-box"><img src="'+event_image_path+'"></div><div class="slide-job-list"><h4>'+event_title+'</h4><p> Type : <span> '+event_type+'</span></p><p> Organizer Name : <span> '+event_org_name+' </span></p><p> Location : <span>'+event_location+'</span></p><p> Email : <span> '+event_email+' </span></p><div class="read-c"><a href="'+event_url+'">Read More</a> </div></div></div></div> ';
+         //event_temp +='<div class="col-lg-3 col-md-3"><div class=" hover-boxs"><div class="job-box"><img src="'+event_image_path+'"></div><div class="slide-job-list"><h4>'+event_title+'</h4><p> Type : <span> '+event_type+'</span></p><p> Organizer Name : <span> '+event_org_name+' </span></p><p> Location : <span>'+event_location+'</span></p><p> Email : <span> '+event_email+' </span></p><div class="read-c"><a href="'+event_url+'">Read More</a> </div></div></div></div> ';
          
         
-         } // End of for Loop
+//          } // End of for Loop
 
-     $("#event_listing").html(event_temp);  
+//      $("#event_listing").html(event_temp);  
 
-    }}); //End of ajax
+//     }}); //End of ajax
 
 
 }
@@ -112,6 +159,11 @@ function getArticleListing()
     method: 'GET',
      url:service_url+'/get_Article',crossDomain: true ,success: function(result)
      {
+
+
+
+
+
         data = JSON.parse(result);
         data = data.data;
         var article_temp ='';
@@ -161,6 +213,9 @@ function getArticleListing()
 
 
 }
+
+
+
 
 
 

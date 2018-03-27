@@ -110,6 +110,7 @@ jQuery(document).ready(function()
   
 getArticleListing();
 
+
 });// End of Doucument Ready
 </script>
 

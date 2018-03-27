@@ -90,12 +90,13 @@ use App\WebModel;
     }
 
 
-    public function get_Event()
-    {      
+    public function get_Event($page)
+    {     
+     
     $obj  = new WebModel();
-    $res = $obj->getEventData();
-    $data = array('data'=>$res,'status'=>'1');
-    echo json_encode($data);
+    $res = $obj->getEventData($page);
+    //$data = array('data'=>$res,'status'=>'1');
+   // echo json_encode($data);
 
     }
 

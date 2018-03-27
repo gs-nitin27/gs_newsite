@@ -1,9 +1,48 @@
-@extends('layouts.master')
-@section('pageTitle','Home')
-@section('content')
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Getsporty- @yield('pageTitle')</title> 
+    <!-- @include('layouts.head') -->
+<style>
+.wrapper{width: 500px;margin: 0 auto;font-family: Georgia, "Times New Roman", Times, serif;}
+.wrapper > ul#results li{margin-bottom: 1px;background: #f9f9f9;padding: 20px;list-style: none;}
+.loading-image {display: block;margin: 5px auto;}
+.end-record-info {text-align: center;border-top: 1px solid #ddd;padding: 5px 0;background: #f9f9f9;}
+</style>
+</head>
+<body>
 
 
 
+
+
+<!--      
+         @include('layouts.head')
+
+         <style>
+.wrapper{width: 500px;margin: 0 auto;font-family: Georgia, "Times New Roman", Times, serif;}
+.wrapper > ul#results li{margin-bottom: 1px;background: #f9f9f9;padding: 20px;list-style: none;}
+.loading-image {display: block;margin: 5px auto;}
+.end-record-info {text-align: center;border-top: 1px solid #ddd;padding: 5px 0;background: #f9f9f9;}
+</style>
+
+     </head>
+
+    
+ -->
+
+<body>
+
+
+
+
+
+
+
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
          <div class="joblist-bg eventBg bannerBgSec">
            <div class="container">
        	     <div class="row">
@@ -46,7 +85,7 @@ Overall, sports events in India are always amusing to unite with. Every year we 
                   </div>      
 
 
- <div id="event_listing"> 
+ <div class="wrapper" id="event_listing"> 
 
 
  </div> 
@@ -58,7 +97,7 @@ Overall, sports events in India are always amusing to unite with. Every year we 
     	       	<i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
   <span class="sr-only">Loading...</span>
     	       </div> -->
-             <div class="text-center">         
+          <!--    <div class="text-center">         
                       <ul class="pagingSec">
                           <li><a href="#">Next</a></li>
                           <li><a href="#">1</a></li>
@@ -72,7 +111,7 @@ Overall, sports events in India are always amusing to unite with. Every year we 
                           <li><a href="#">Prev</a></li>
                       </ul>
                  </div>
-    
+     -->
   <div class="clearfix margin20"></div>
     <script>
 
@@ -85,7 +124,7 @@ function closeNav() {
 }
 </script>
 
-
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 
 <script type="text/javascript" src="assets/js/data.js"></script>
                 
@@ -97,6 +136,9 @@ getEventListing();
 });// End of Doucument Ready
 </script>
 
-
-
-@stop   
+</body>
+         <script type="text/javascript">
+           var image_url = '<?php echo config('constant.IMAGE_URL');?>';
+           var service_url = '<?php echo url('/');?>';
+         </script>
+   </html>  
