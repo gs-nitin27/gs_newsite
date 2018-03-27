@@ -91,7 +91,7 @@ Route::get('article-detail/{id}','WebController@article_detail');
         Route::get('/edit/{id}','ManageController@getjobDataforupdate');
         Route::get('/view/{id}','ManageController@get_job_detail');
 
-        Route::post('setdata','ManageController@set_user_data');
+        Route::get('setdata','ManageController@set_user_data');
         Route::get('/job/transaction_list', function()
          {
              return View::make('Manage.job.view-transaction');

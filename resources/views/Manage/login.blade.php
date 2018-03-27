@@ -194,9 +194,9 @@ var data = JSON.stringify(data1);
 console.log(data);
   $.ajax({
     type: "POST",
-    headers: {
-        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-    },
+    // headers: {
+    //     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+    // },
     url:  url+'/user_access_controller.php?act=gs_login',
     data: data,
     dataType: "text",
@@ -262,9 +262,9 @@ console.log(data);
         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
       },
       url:"{{url('/manage/setdata')}}",
-      method:"POST",
+      method:"GET",
       dataType:"text",
-      data:localStorage.getItem('userdata'),
+      data:'data='+localStorage.getItem('userdata'),
       success:function(result)
       {
           if(result != 0)

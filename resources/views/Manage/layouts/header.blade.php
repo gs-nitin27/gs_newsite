@@ -3,9 +3,6 @@ $sess_data = json_decode($value);
 $userid = $sess_data->userid;
 $sess_name = $sess_data->name;
 $sess_email = $sess_data->email;
-// $org_name = $sess_data->org_data->org_name;
-// $org_id = $sess_data->org_data->org_id;
-//print_r($sess_data);//die;
 ?>
 <style type="text/css">
     span.head_title{
