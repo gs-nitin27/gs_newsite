@@ -35,11 +35,32 @@ class WebModel extends Model
  	}
 
 
-    public function getEventData()
-    {
-     $event 	 = DB::table('gs_eventinfo')->select('id','name', 'description','image','sport_name','organizer_city','start_date','end_date','entry_start_date','entry_end_date','email_app_collection','type','location','organizer_name')->where('publish', '1')->get();
-     return $event;
+public function getEventData($page)
+{
+   // print_r($page); die();
+    //$page_number = $page ;
+    $item_per_page = 5;
+  //  echo "$item_per_page";
+    $results      = DB::table('gs_eventinfo')->select('id','name', 'description','image','sport_name','organizer_city','start_date','end_date','entry_start_date','entry_end_date','email_app_collection','type','location','organizer_name')->where('publish', '1')->limit($item_per_page)->offset($page)->get();
+
+
+  for($i= 0; $i<count($results);$i++)
+  {
+    $data = $results[$i];
+   echo '<li>'.$data->id.') <strong>'.$data->name.'</strong> : '.$data->description.'</li>'; 
+  }
+
+
+     // $event 	 = DB::table('gs_eventinfo')->select('id','name', 'description','image','sport_name','organizer_city','start_date','end_date','entry_start_date','entry_end_date','email_app_collection','type','location','organizer_name')->where('publish', '1')->get();
+     // return $event;
+
+
+//die();
+
  	}
+
+
+
 
 
     public function getTournamentData()

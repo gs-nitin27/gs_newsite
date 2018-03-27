@@ -43,7 +43,7 @@ Route::get('landing-event','WebController@getlandingevent');
 
 Route::get('get_job','WebController@get_Job');
 Route::get('get_Article','WebController@get_Article');
-Route::get('get_Event','WebController@get_Event');
+Route::get('get_Event/{page}','WebController@get_Event');
 Route::get('get_Tounament','WebController@get_Tounament');
 
 
