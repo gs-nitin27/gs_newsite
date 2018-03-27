@@ -1,5 +1,12 @@
 <?php $value = session('userdata');
-$sess_data = json_decode($value);print_r($sess_data);die;
+$sess_data = json_decode($value);//print_r($sess_data);die;
+if(!empty($sess_data))
+{
+    echo "data present";die;
+}else
+{
+    echo "data not present";die;
+}
 $userid = $sess_data->userid;
 $sess_name = $sess_data->name;
 $sess_email = $sess_data->email;
