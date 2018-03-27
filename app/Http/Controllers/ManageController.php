@@ -15,16 +15,14 @@ class ManageController extends Controller
 
    public function set_user_data(Request $request)
    {
-    $data  = file_get_contents("php://input");
-   // print_r($data);die;
     $userdata = session(['userdata' => $request->data]);
     $value    = session('userdata');
     if($value != '')
-    {//print_r($value);die;
+    {print_r($value);die;
     return $value;  
     }
     else
-    {//echo "not set";die;
+    {echo "not set";die;
       return 0;
     } 
    }
