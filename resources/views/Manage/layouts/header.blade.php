@@ -1,5 +1,5 @@
-<?php $value = session('userdata');
-echo "dsdsssd";$sess_data = $value;print_r($sess_data);die;
+<?php //$value = session('userdata');
+$value = Session::get('userdata');print_r($value);die;
 $userid = $sess_data->userid;
 $sess_name = $sess_data->name;
 $sess_email = $sess_data->email;
