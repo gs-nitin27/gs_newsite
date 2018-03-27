@@ -15,18 +15,16 @@ class ManageController extends Controller
 
    public function set_user_data(Request $request)
    {
-    // $userdata = session(['userdata' => $request->data]);
     $value    = $request->data;
     Session::set('userdata', $request->data);
     session()->push('key', $value);
     $value = Session::get('userdata');
-    //print_r($value1);die;
     if($value != '')
-    {//print_r($value);die;
+    {
     return $value;  
     }
     else
-    {//echo "not set";die;
+    {
       return 0;
     } 
    }
