@@ -105,7 +105,7 @@ $('#job_listing').html('<img src="img/200.gif" >');
 
 
 function getArticleListing()
-{
+{  alert(";lkjkljlkjlk");return;
     $('#temp_article').html('<img src="img/200.gif" >');
 
    $.ajax({
@@ -155,7 +155,7 @@ function getArticleListing()
             
         } // End of for Loop
 
-    $("#temp_article").html(article_temp);    
+   // $("#temp_article").html(article_temp);    
 
     }}); //End of ajax
 
