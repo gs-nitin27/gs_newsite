@@ -271,7 +271,7 @@ console.log(data);
         {
           if(url_param == '1')
           {
-           window.location.href = "<?php echo url('/'); ?>"+"/manage/dashbo";
+          // window.location.href = "<?php //echo url('/'); ?>"+"/manage/dashbo";
           }
           else
           { 
