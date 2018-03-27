@@ -1,6 +1,7 @@
 <!DOCTYPE html>
      <html>
      <head>
+        {{ csrf_field() }}
      	   <title>Getsporty- @yield('pageTitle')</title> 
      	   @include('Manage.layouts.head')
      </head>

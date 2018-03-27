@@ -54,7 +54,10 @@ border: 0.5px solid #ccc;
 <script type="text/javascript" src="{{asset('manage_assets/js/set_user_data.js')}}"></script>
 <body>
 <div id="fb-root"></div>
-<script>(function(d, s, id) {
+<script>
+
+
+  (function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
   if (d.getElementById(id)) return;
   js = d.createElement(s); js.id = id;
@@ -110,8 +113,8 @@ border: 0.5px solid #ccc;
 <script src="{{asset('manage_assets/js/bootstrap.min.js')}}"></script>
 <script type="text/javascript" src="{{asset('manage_assets/js/Managelogin.js')}}"></script>
 <script type="text/javascript">
-var app_id = '<?php echo config('constant.FACEBOOK_ID'); ?>';
-var app_version = '<?php echo config('constant.FACEBOOK_VERSION'); ?>';
+// var app_id = '<?php echo config('constant.FACEBOOK_ID'); ?>';
+// var app_version = '<?php echo config('constant.FACEBOOK_VERSION'); ?>';
 
 function checkLoginState(){
 FB.getLoginStatus(function(response) {
@@ -138,6 +141,16 @@ function testAPI() {
   }
  var url_param = '';
  $(document).ready(function(){
+   var app_id = '<?php echo config('constant.FACEBOOK_ID'); ?>';
+   var app_version = '<?php echo config('constant.FACEBOOK_VERSION'); ?>';
+   window.fbAsyncInit = function() {
+    FB.init({
+      appId            : app_id,
+      autoLogAppEvents : true,
+      xfbml            : true,
+      version          : app_version
+    });
+  };
  if(url_param != '1')
   {
    url_param = '<?php echo $string; ?>';
@@ -174,16 +187,16 @@ function login(emailid,user_data,type)
      "userType" : '103',
      "device_id": ''
      };
-            
+     
 
 var url = '<?php echo config('constant.ENV_URL')?>';
 var data = JSON.stringify(data1);
 console.log(data);
   $.ajax({
     type: "POST",
-    // headers: {
-    //     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-    // },
+    headers: {
+        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+    },
     url:  url+'/user_access_controller.php?act=gs_login',
     data: data,
     dataType: "text",
@@ -242,11 +255,12 @@ console.log(data);
         }
       }
     function set_data(){
+      var _token = $('input[name="_token"]').val();
       $.ajax({
       async:false,
-      // headers: {
-      //   'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-      // },
+      headers: {
+        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+      },
       url:"{{url('/manage/setdata')}}",
       method:"POST",
       dataType:"text",
