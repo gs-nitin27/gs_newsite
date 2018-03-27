@@ -1,5 +1,5 @@
 <?php $value = session('userdata');
-$sess_data = json_decode($value);
+$sess_data = json_decode($value);die;
 $userid = $sess_data->userid;
 $sess_name = $sess_data->name;
 $sess_email = $sess_data->email;
