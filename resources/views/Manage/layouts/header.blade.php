@@ -1,6 +1,8 @@
 <?php $value = session('userdata');
 $sess_data = json_decode($value);
 $userid = $sess_data->userid;
+$sess_name = $sess_data->name;
+$sess_email = $sess_data->email;
 // $org_name = $sess_data->org_data->org_name;
 // $org_id = $sess_data->org_data->org_id;
 //print_r($sess_data);//die;
@@ -20,6 +22,8 @@ $userid = $sess_data->userid;
     var url = '<?php echo config('constant.ENV_URL')?>';
     var image_url = '<?php echo config('constant.IMAGE_URL')?>';
     var sess_userid = '<?php echo $userid; ?>';
+    var sess_name = '<?php echo $sess_name; ?>';
+    var sess_email = '<?php echo $sess_email; ?>';
     var route_url = '<?php echo url('/'); ?>';
     
    // var org_name ='<?php //echo $org_name;?>';

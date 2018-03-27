@@ -227,7 +227,7 @@
             var card1 = '';
             var card2 = '';
             var card3 = '';
-            var empty = '<figure><img src="{{asset("manage_assets/img/na.png")}}" alt=""></figure>';
+            var empty = '<center><figure><img src="{{asset("manage_assets/img/na.png")}}" alt=""></figure></center>';
             if(data != 0)
             {
               data.forEach(function(data){
