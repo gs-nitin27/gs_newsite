@@ -1,3 +1,10 @@
+<?php 
+if(!Session::has('userdata'))
+   {  $value = session('userdata');
+Redirect::to('manage/login/1')->send();
+  }else
+   {
+?>
 <!DOCTYPE html>
      <html>
      <head>
@@ -19,6 +26,6 @@
    </html>
 
 
-
+<?php } ?>
 
     

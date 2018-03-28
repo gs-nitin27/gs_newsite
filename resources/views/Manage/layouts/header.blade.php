@@ -1,4 +1,5 @@
-<?php $value = session('userdata');
+<?php 
+$value = session('userdata');
 $sess_data = json_decode($value);//print_r($sess_data);die;
 $userid = $sess_data->userid;
 $sess_name = $sess_data->name;
@@ -54,4 +55,4 @@ $org_id = $sess_data->org_data->org_id;
            </div>
         </div>
     </header>
-    
+   
