@@ -1,4 +1,5 @@
 <?php
+use Illuminate\Http\Request;
 
 /*
 |--------------------------------------------------------------------------
@@ -99,11 +100,17 @@ Route::get('article-detail/{id}','WebController@article_detail');
         
        // Route::get('/create_update/{id}','ManageController@get_tournament');
        Route::get('/job/candidate_profile/{id}','ManageController@get_candidate_info');
-        // Route::get('/job/candidate_profile', function()
-        // {
-        //     return View::make('Manage.job.profile');
-        //     //Route::get('get_Tounament','ManageController@get_Tounament');
-        // });
+       Route::get('/logout', function(Request $request) {
+        //Uncomment to see the logs record
+        //\Log::info("Session before: ".print_r($request->session()->all(), true));
+        if ($request->session()->has('userdata')) {
+           $request->session()->forget('userdata');
+        }
+        //Uncomment to see the logs record
+        //\Log::info("Session after: ".print_r($request->session()->all(), true));
+        return redirect('manage/login/1');
+    });
+    
     });
 
 

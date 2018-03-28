@@ -50,7 +50,7 @@ $org_id = $sess_data->org_data->org_id;
                     <li><a href="{{url('/manage/job/transaction_list')}}"><i class="fa fa-inr"></i>Transaction</a></li>
                     <li><a href="#"><i class="fa fa-briefcase"></i>Job</a></li>
                     <li><a href="#"><i class="fa fa-bell"></i>Notification</a></li>
-                    <li><a href="{{url('/manage/login/1')}}" onclick="window.localStorage.clear();"><i class="fa fa-power-off"></i>Logout</a></li>
+                    <li><a href="{{url('/manage/logout')}}" onclick="window.localStorage.clear();"><i class="fa fa-power-off"></i>Logout</a></li>
                 </ul>
            </div>
         </div>
