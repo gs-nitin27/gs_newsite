@@ -13,7 +13,7 @@ else
    $detail = '';
   }
 ?>
-<link rel="stylesheet" href="http://portal.getsporty.in/assets/css/profile.css">
+<link rel="stylesheet" href="https://getsporty.in/portal/assets/css/profile.css">
 <script type="text/javascript">
    window.sportsticket = 0;
    window.formalticket = 0; 
