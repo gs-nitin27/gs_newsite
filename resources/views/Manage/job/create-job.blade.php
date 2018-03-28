@@ -273,7 +273,7 @@
            function create_job() 
            {  //alert(image_data);
                var job_data = {
-
+                "id":"0",
                 "userid":sess_userid,
                 "title":$('#title').val(),
                 "type":$('#type').val(),
