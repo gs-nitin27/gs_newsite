@@ -377,6 +377,7 @@
         // Code For image view and Generating base64 Format
         function readURL(input) {
         if (input.files && input.files[0]) {
+             $('.loading').show();
             var reader = new FileReader();
             reader.onload = function (e) {
                 $('#blah').attr('src', e.target.result);
@@ -384,32 +385,33 @@
                 image_data = image_data.split(',')[1];
             }
              reader.readAsDataURL(input.files[0]);
+              $('.loading').hide();
         }
     }
     //function for image upload starts
-             function image_upload()
-             {
-                $.ajax({
-                url:url+'/angularapi_image.php?act=jobimage&ui=la',
-                data:image_data,
-                type:'POST',
-                dataType:'text',
-                success:function(result)
-                {  
-                  var image_name = JSON.parse(result);
-                  if(image_name.status == '1')
-                  {
-                  image_data = image_name.data;
-                 // alert(image_data);
-                  return image_data;
-                  }
-                else
-                 {
-                  return false;                   
-                 }
-               }
-           });
-        }
+        //      function image_upload()
+        //      {
+        //         $.ajax({
+        //         url:url+'/angularapi_image.php?act=jobimage&ui=la',
+        //         data:image_data,
+        //         type:'POST',
+        //         dataType:'text',
+        //         success:function(result)
+        //         {  
+        //           var image_name = JSON.parse(result);
+        //           if(image_name.status == '1')
+        //           {
+        //           image_data = image_name.data;
+        //          // alert(image_data);
+        //           return image_data;
+        //           }
+        //         else
+        //          {
+        //           return false;                   
+        //          }
+        //        }
+        //    });
+        // }
            //function for image upload ends here
     $("#imgInp").change(function(){
         readURL(this);
