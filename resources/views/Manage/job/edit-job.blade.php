@@ -1,7 +1,6 @@
 @extends('Manage.layouts.master')
 @section('pageTitle','Home')
 @section('content')
-{{print_r($data)}}
 <?php
 $image_url = config('constant.IMAGE_URL').'/job/'.$data[0]->image;
 $image_data = base64_encode(file_get_contents($image_url));
