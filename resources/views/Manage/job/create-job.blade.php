@@ -271,7 +271,7 @@
            
            // funtion for creating a job
            function create_job() 
-           {  //alert(image_data);
+           {  $('.loading').show();
                var job_data = {
                 "id":"0",
                 "userid":sess_userid,
@@ -314,11 +314,13 @@
                     if(result.status == '1')
                     {   
                         alert('Job Sucessfully created');
+                        $('.loading').hide();
                         window.location.href = "{{url('/manage/dashbo')}}";
                     }
                     else
                     {
                         alert('Something went Wrong');
+                        $('.loading').hide();
                     }
                    }
                   }); 

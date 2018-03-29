@@ -205,7 +205,7 @@ h2{color:#0b56a8;}
 </div><!-- end of container -->
 <script>
 $(document).ready(function(){
-//alert(sess_userid);return;
+$('.loading').show();
       $.ajax({
           url:url+'/paymentController.php?act=getTransactionList&userid='+sess_userid,
           method:"GET",
@@ -244,7 +244,7 @@ $(document).ready(function(){
               $('#invoice_id').html(struct);
               $('#detail').html(detail);
              } 
-         
+         $('.loading').hide();
           }
        
       });

@@ -216,7 +216,7 @@
           }
           }
           
-          
+          $('.loading').show();
           $.ajax({
           url:url+'/angularapi.php?act=getjoblist&id='+sess_userid,
           method:"GET",
@@ -288,12 +288,14 @@
               $('#tab03').html(empty); 
 
              }
+          $('.loading').hide();
           }
+
         });
       });
         function add_organisation()
         {
-
+          $('.loading').show();
          var org_data = 
          { "id":$('#org_id').val(),//org_id,
            "userid":sess_userid,
@@ -332,12 +334,12 @@
            {
            alert('Something wemt wrong'); 
            }
-           
+          $('.loading').hide(); 
          }
        });
       }
       function getorg_details()
-      {
+      {$('.loading').show();
         $.ajax({
         url:url+'/angularapi.php?act=getorgdetails&userid='+sess_userid,
         method:"GET",
@@ -360,7 +362,9 @@
             $('#email').val(org_data.email);
             $('#gstin').val(org_data.gstin);
            }
+         $('.loading').hide();
          }
+
        });
       }
       function get_job_id(id)
