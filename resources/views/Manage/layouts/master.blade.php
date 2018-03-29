@@ -1,9 +1,10 @@
 <?php 
 if(!Session::has('userdata'))
    {  $value = session('userdata');
-Redirect::to('manage/login/1')->send();
+      Redirect::to('manage/login/1')->send();
   }else
    {
+    $value = session('userdata');
 ?>
 <!DOCTYPE html>
      <html>

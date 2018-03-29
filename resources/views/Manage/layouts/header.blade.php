@@ -4,8 +4,15 @@ $sess_data = json_decode($value);//print_r($sess_data);die;
 $userid = $sess_data->userid;
 $sess_name = $sess_data->name;
 $sess_email = $sess_data->email;
+if(!empty($sess_data->org_data))
+{
 $org_name = $sess_data->org_data->org_name;
 $org_id = $sess_data->org_data->org_id;
+}else
+{
+$org_name = '';
+$org_id = '';    
+}
 //print_r($sess_data);//die;
 ?>
 <style type="text/css">

@@ -244,7 +244,7 @@ if(i == 0)
     $( "#datepicker" ).datepicker();
   } );
 </script>
-<script type="text/javascript" src="http://maps.google.com/maps/api/js?key=AIzaSyDv7v3jJInF4dT2KKMXQIR6SHmtkMLX1SE&sensor=false&libraries=places&language=en-AU"></script>
+<script type="text/javascript" src="https://maps.google.com/maps/api/js?key=AIzaSyDv7v3jJInF4dT2KKMXQIR6SHmtkMLX1SE&sensor=false&libraries=places&language=en-AU"></script>
 <script type="text/javascript">
             var autocomplete = new google.maps.places.Autocomplete($("#location")[0], {});
             google.maps.event.addListener(autocomplete, 'place_changed', function() {
