@@ -265,14 +265,14 @@
         $('#create_job').click(function(){
         if(validate())
           {
+           $('.loading').show();
            create_job();
           }
       });
            
            // funtion for creating a job
            function create_job() 
-           {  $('.loading').show();
-               var job_data = {
+           {   var job_data = {
                 "id":"0",
                 "userid":sess_userid,
                 "title":$('#title').val(),
@@ -302,7 +302,8 @@
                 "image":image_data,
                 "salary":$('#salary').val()
                 };
-                //alert(JSON.stringify(job_data));return;
+              //  alert(JSON.stringify(job_data));return;
+                
                 $.ajax({
                     type: "POST",
                     async:false,
