@@ -179,39 +179,33 @@ if($('#name').val()== '')
 {
   $('#rname').text('Please enter the you name');
   i++;
-
 }
 else
 {
   $('#rname').text('');
-    
 }
 if($('#email').val().match(mailformat))
 {
   $('#remail').text('');
-
 }
 else
 {
   $('#remail').text('Please enter a valid email');
   i++;  
- 
 }
 if($('#mobile').val()== '')
 {
   $('#rmobile').text('Please enter the valid number');
   i++;
- 
-}else
+}
+else
 {
   $('#rmobile').text('');
-    
 }
 if($('#location').val() == '')
 {
    $('#rlocation').text('Please enter the location');
    i++;
-   
 }else
 {
    $('#rlocation').text('');
@@ -220,7 +214,6 @@ if($('#datepicker').val() == '')
 {
    $('#rdob').text('Please enter the dob');
    i++;
-   
 }else
 {
    $('#rdob').text('');
@@ -229,7 +222,6 @@ if($('#proffession').val() == '')
 {
    $('#rproffession').text('Please enter the proffession');
    $i++;
-   
 }else
 {  
    $('#rproffession').text('');
@@ -238,7 +230,8 @@ if($('#proffession').val() == '')
 if(i == 0)
 {
   return true;
-}else
+}
+else
 {
   return false;
 }
