@@ -180,7 +180,7 @@ text-align: center;border-radius: 4px;cursor: pointer;margin: 10px 10px 0 0;disp
 .publishCard{font: 16px/25px 'Poppins';color: #000;background-color: #dddddd;display: block;padding: 10px 0;transition: all .5s ease-in-out;width: 100%;margin: 0 auto;
   border-radius: 50px;
 }
-.colSec:hover .publishCard{background: -moz-linear-gradient(42deg, #03a9f5 0%, #005e89 100%);/* FF3.6+ */
+.colSec:hover .publishCard{background: -moz-linear-gradient(42deg, #03a9f5 0%, #005e89 100%),height: 100px,min-height: 100px,max-height: 100px;/* FF3.6+ */
 background: -webkit-gradient(linear, 42deg, color-stop(0%, #03a9f5), color-stop(100%, #005e89));/* Chrome,Safari4+ */
 background: -webkit-linear-gradient(42deg, #03a9f5 0%, #005e89 100%);/* Chrome10+,Safari5.1+ */
 background: -o-linear-gradient(42deg, #03a9f5 0%, #005e89 100%);/* Opera 11.10+ */

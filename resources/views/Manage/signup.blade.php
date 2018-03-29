@@ -172,13 +172,14 @@ $("#btnLogin").click(function(event) {
 });
 function register_validation()
 {
-var mailformat = '/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/';
+var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 
 var i = 0;
 if($('#name').val()== '')
 {
   $('#rname').text('Please enter the you name');
   i++;
+
 }
 else
 {
@@ -188,15 +189,19 @@ else
 if($('#email').val().match(mailformat))
 {
   $('#remail').text('');
-}else
+
+}
+else
 {
   $('#remail').text('Please enter a valid email');
   i++;  
+ 
 }
 if($('#mobile').val()== '')
 {
   $('#rmobile').text('Please enter the valid number');
   i++;
+ 
 }else
 {
   $('#rmobile').text('');
@@ -205,6 +210,8 @@ if($('#mobile').val()== '')
 if($('#location').val() == '')
 {
    $('#rlocation').text('Please enter the location');
+   i++;
+   
 }else
 {
    $('#rlocation').text('');
@@ -212,6 +219,8 @@ if($('#location').val() == '')
 if($('#datepicker').val() == '')
 {
    $('#rdob').text('Please enter the dob');
+   i++;
+   
 }else
 {
    $('#rdob').text('');
@@ -219,8 +228,10 @@ if($('#datepicker').val() == '')
 if($('#proffession').val() == '')
 {
    $('#rproffession').text('Please enter the proffession');
+   $i++;
+   
 }else
-{
+{  
    $('#rproffession').text('');
 }
 
