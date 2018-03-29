@@ -243,7 +243,33 @@
         
         var image_data = '';
         $(document).ready(function(){
-           
+           function getorg_details()
+          {
+        $.ajax({
+        url:url+'/angularapi.php?act=getorgdetails&userid='+sess_userid,
+        method:"GET",
+        // data:org_data,
+        success:function(result)
+        {
+           var resp_data = JSON.parse(result);
+           if(resp_data.status == '1')
+           { 
+            var org_data = resp_data.data;
+            $('#org_id').val(org_data.id);
+            $('#org_name').val(org_data.org_name);
+            $('#about').val(org_data.about);
+            $('#org_address1').val(org_data.address1);
+            $('#org_address2').val(org_data.address2);
+            $('#org_city').val(org_data.city);
+            $('#org_pin').val(org_data.pin);
+            $('#org_state').val(org_data.state);
+            $('#contact').val(org_data.mobile);
+            $('#email').val(org_data.email);
+            //$('#gstin').val(org_data.gstin);
+           }
+         }
+       });
+        }getorg_details();
            function getSportsList()
              {
                 $.ajax({
@@ -390,29 +416,29 @@
         }
     }
     //function for image upload starts
-        //      function image_upload()
-        //      {
-        //         $.ajax({
-        //         url:url+'/angularapi_image.php?act=jobimage&ui=la',
-        //         data:image_data,
-        //         type:'POST',
-        //         dataType:'text',
-        //         success:function(result)
-        //         {  
-        //           var image_name = JSON.parse(result);
-        //           if(image_name.status == '1')
-        //           {
-        //           image_data = image_name.data;
-        //          // alert(image_data);
-        //           return image_data;
-        //           }
-        //         else
-        //          {
-        //           return false;                   
-        //          }
-        //        }
-        //    });
-        // }
+             function image_upload()
+             {
+                $.ajax({
+                url:url+'/angularapi_image.php?act=jobimage&ui=la',
+                data:image_data,
+                type:'POST',
+                dataType:'text',
+                success:function(result)
+                {  
+                  var image_name = JSON.parse(result);
+                  if(image_name.status == '1')
+                  {
+                  image_data = image_name.data;
+                 // alert(image_data);
+                  return image_data;
+                  }
+                else
+                 {
+                  return false;                   
+                 }
+               }
+           });
+        }
            //function for image upload ends here
     $("#imgInp").change(function(){
         readURL(this);
