@@ -9,7 +9,10 @@ else
 {
 $string = base64_decode($param['4']);
 }
-
+if(Session::has('userdata'))
+   {  $value = session('userdata');
+      Redirect::to('manage/dashbo')->send();
+   }
 ?>
 <!DOCTYPE html>
 <html>
