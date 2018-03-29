@@ -8,8 +8,10 @@
         <link href="{{asset('css/font-awesome.min.css')}}" rel="stylesheet">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
         <script src="{{asset('js/bootstrap.min.js')}}"></script>
-        <script src="{{asset('js/data.js')}}"></script>
-        <link rel="stylesheet" href="{{asset('css/animate.css')}}">
+        
+        <!-- <link rel="stylesheet" href="{{asset('css/animate.css')}}"> -->
+
+        
         <link rel="shortcut icon" href="{{asset('img/fav.png')}}">
         <script src="{{asset('js/story-box.min.js')}}"></script>
         <link rel="stylesheet" href="{{asset('css/owl.carousel.min.css')}}">

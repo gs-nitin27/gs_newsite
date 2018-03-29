@@ -1,7 +1,19 @@
 
-@extends('layouts.master')
+<!-- @extends('layouts.master')
 @section('pageTitle','Home')
 @section('content')
+ -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Getsporty- @yield('pageTitle')</title> 
+    @include('layouts.head')
+
+</head>
+
+
+
 
          <div class="joblist-bg bannerBgSec">
            <div class="container">
@@ -61,17 +73,14 @@
           	       <h3>Sports jobs in India</h3>
              	   <p>A unique platform dedicated only to Sports Jobs. Browse and apply to thousands of Sports Jobs.</p>
                     </div>
-
                                   <div id="job_listing"> </div>
    
-      
-
-               
+                     
 </div>
                   
                 
   
-                   <div class="text-center">         
+                  <!--  <div class="text-center">         
                       <ul class="pagingSec">
                           <li><a href="#">Next</a></li>
                           <li><a href="#">1</a></li>
@@ -85,7 +94,7 @@
                           <li><a href="#">Prev</a></li>
                       </ul>
                  </div>
-        	 	</div>
+        	 	</div> -->
         		 
   	       <div class="clearfix margin20"></div>
   	       
@@ -110,8 +119,9 @@ function closeNav() {
 <script type="text/javascript" >
 jQuery(document).ready(function()
 { 
-getJobListing();
-
+var module  = "job";
+var id = "#job_listing";
+getListing(module,id)
 });// End of Doucument Ready
 </script>
 

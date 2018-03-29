@@ -4,17 +4,9 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <title>Getsporty- @yield('pageTitle')</title> 
-    <!-- @include('layouts.head') -->
-<style>
-.wrapper{width: 500px;margin: 0 auto;font-family: Georgia, "Times New Roman", Times, serif;}
-.wrapper > ul#results li{margin-bottom: 1px;background: #f9f9f9;padding: 20px;list-style: none;}
-.loading-image {display: block;margin: 5px auto;}
-.end-record-info {text-align: center;border-top: 1px solid #ddd;padding: 5px 0;background: #f9f9f9;}
-</style>
+    @include('layouts.head')
+
 </head>
-<body>
-
-
 
 
 
@@ -29,25 +21,17 @@
 </style>
 
      </head>
-
     
  -->
 
-<body>
 
 
 
-
-
-
-
-
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-         <div class="joblist-bg eventBg bannerBgSec">
+         <div class="joblist-bg tournamentBg bannerBgSec">
            <div class="container">
-       	     <div class="row">
-       	       <div class="col-md-12">
-         		     <div class="ban-pera">
+             <div class="row">
+               <div class="col-md-12">
+                 <div class="ban-pera">
              			  <h1>Sports events in India</h1>
              			  <h3>Never miss out on Sports Trials or coaching camps. Get first hand information on your GetSporty App.</h3>         			
            	     </div>
@@ -85,7 +69,7 @@ Overall, sports events in India are always amusing to unite with. Every year we 
                   </div>      
 
 
- <div class="wrapper" id="event_listing"> 
+ <div  id="event_listing"> 
 
 
  </div> 
@@ -131,7 +115,9 @@ function closeNav() {
 <script type="text/javascript" >
 jQuery(document).ready(function()
 { 
-getEventListing();
+var module  = "event";
+var id = "#event_listing";
+getListing(module,id);
 
 });// End of Doucument Ready
 </script>
