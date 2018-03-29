@@ -350,7 +350,7 @@ else
 }
 
 function recruitment_update(recruitment_data,act)
-{
+{ $('.loading').show();
   $.ajax({
     
     url:url+'/create_database.php?act='+act,
@@ -360,11 +360,14 @@ function recruitment_update(recruitment_data,act)
     {
        getJobApplicants();
        $('#myModal').modal('hide');
+       $('.loading').hide();
     },
     failure:function()
     {
       alert('Server error');
+      $('.loading').hide();
     }
+
   });
 }
 // function view_candidate_profile(id)

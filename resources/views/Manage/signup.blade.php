@@ -16,9 +16,130 @@
   .invalid{
     color: #de1124;
   }
+  .loading {
+  position: fixed;
+  z-index: 999;
+  height: 2em;
+  width: 2em;
+  overflow: show;
+  margin: auto;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+/* Transparent Overlay */
+.loading:before {
+  content: '';
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+    background: radial-gradient(rgba(20, 20, 20,.8), rgba(0, 0, 0, .8));
+
+  background: -webkit-radial-gradient(rgba(20, 20, 20,.8), rgba(0, 0, 0,.8));
+}
+
+/* :not(:required) hides these rules from IE9 and below */
+.loading:not(:required) {
+  /* hide "loading..." text */
+  font: 0/0 a;
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0;
+}
+
+.loading:not(:required):after {
+  content: '';
+  display: block;
+  font-size: 10px;
+  width: 1em;
+  height: 1em;
+  margin-top: -0.5em;
+  -webkit-animation: spinner 1500ms infinite linear;
+  -moz-animation: spinner 1500ms infinite linear;
+  -ms-animation: spinner 1500ms infinite linear;
+  -o-animation: spinner 1500ms infinite linear;
+  animation: spinner 1500ms infinite linear;
+  border-radius: 0.5em;
+  -webkit-box-shadow: rgba(255,255,255, 0.75) 1.5em 0 0 0, rgba(255,255,255, 0.75) 1.1em 1.1em 0 0, rgba(255,255,255, 0.75) 0 1.5em 0 0, rgba(255,255,255, 0.75) -1.1em 1.1em 0 0, rgba(255,255,255, 0.75) -1.5em 0 0 0, rgba(255,255,255, 0.75) -1.1em -1.1em 0 0, rgba(255,255,255, 0.75) 0 -1.5em 0 0, rgba(255,255,255, 0.75) 1.1em -1.1em 0 0;
+box-shadow: rgba(255,255,255, 0.75) 1.5em 0 0 0, rgba(255,255,255, 0.75) 1.1em 1.1em 0 0, rgba(255,255,255, 0.75) 0 1.5em 0 0, rgba(255,255,255, 0.75) -1.1em 1.1em 0 0, rgba(255,255,255, 0.75) -1.5em 0 0 0, rgba(255,255,255, 0.75) -1.1em -1.1em 0 0, rgba(255,255,255, 0.75) 0 -1.5em 0 0, rgba(255,255,255, 0.75) 1.1em -1.1em 0 0;
+}
+
+/* Animation */
+
+@-webkit-keyframes spinner {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@-moz-keyframes spinner {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@-o-keyframes spinner {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes spinner {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
 </style>
 </head>
 <body>
+<div class="loading" hidden>Loading&#8230;</div>  
  <!-- form user info -->
                     <div class="card card-outline-secondary">
                         <div class="card-header">
@@ -131,7 +252,7 @@ $("#btnLogin").click(function(event) {
 
     }
     else
-    {
+    {$('.loading').show();
       var user_info_data = {
         'userid':userid,
         'loginType':data.loginType,
@@ -166,13 +287,15 @@ $("#btnLogin").click(function(event) {
           window.location.href = "<?php echo url('/'); ?>"+"/manage/dashbo";
         }
         
+      $('.loading').hide();
       }
+
    });
 }
 });
 function register_validation()
 {
-var mailformat = '/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/';
+var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 
 var i = 0;
 if($('#name').val()== '')
@@ -183,12 +306,12 @@ if($('#name').val()== '')
 else
 {
   $('#rname').text('');
-    
 }
 if($('#email').val().match(mailformat))
 {
   $('#remail').text('');
-}else
+}
+else
 {
   $('#remail').text('Please enter a valid email');
   i++;  
@@ -197,14 +320,15 @@ if($('#mobile').val()== '')
 {
   $('#rmobile').text('Please enter the valid number');
   i++;
-}else
+}
+else
 {
   $('#rmobile').text('');
-    
 }
 if($('#location').val() == '')
 {
    $('#rlocation').text('Please enter the location');
+   i++;
 }else
 {
    $('#rlocation').text('');
@@ -212,6 +336,7 @@ if($('#location').val() == '')
 if($('#datepicker').val() == '')
 {
    $('#rdob').text('Please enter the dob');
+   i++;
 }else
 {
    $('#rdob').text('');
@@ -219,15 +344,17 @@ if($('#datepicker').val() == '')
 if($('#proffession').val() == '')
 {
    $('#rproffession').text('Please enter the proffession');
+   $i++;
 }else
-{
+{  
    $('#rproffession').text('');
 }
 
 if(i == 0)
 {
   return true;
-}else
+}
+else
 {
   return false;
 }
@@ -244,7 +371,7 @@ if(i == 0)
     $( "#datepicker" ).datepicker();
   } );
 </script>
-<script type="text/javascript" src="http://maps.google.com/maps/api/js?key=AIzaSyDv7v3jJInF4dT2KKMXQIR6SHmtkMLX1SE&sensor=false&libraries=places&language=en-AU"></script>
+<script type="text/javascript" src="https://maps.google.com/maps/api/js?key=AIzaSyDv7v3jJInF4dT2KKMXQIR6SHmtkMLX1SE&sensor=false&libraries=places&language=en-AU"></script>
 <script type="text/javascript">
             var autocomplete = new google.maps.places.Autocomplete($("#location")[0], {});
             google.maps.event.addListener(autocomplete, 'place_changed', function() {

@@ -280,7 +280,7 @@ $image_data = base64_encode(file_get_contents($image_url));
            
            // funtion for creating a job
            function create_job() 
-           {  //alert(image_data);
+           {  $('.loading').show();
                var job_data = {
                 "id":'{{$data[0]->id}}',
                 "userid":sess_userid,
@@ -329,6 +329,7 @@ $image_data = base64_encode(file_get_contents($image_url));
                     {
                         alert('Something went Wrong');
                     }
+                    $('.loading').hide();
                    }
                   }); 
             }

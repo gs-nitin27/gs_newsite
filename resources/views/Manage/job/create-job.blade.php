@@ -243,7 +243,33 @@
         
         var image_data = '';
         $(document).ready(function(){
-           
+           function getorg_details()
+          {
+        $.ajax({
+        url:url+'/angularapi.php?act=getorgdetails&userid='+sess_userid,
+        method:"GET",
+        // data:org_data,
+        success:function(result)
+        {
+           var resp_data = JSON.parse(result);
+           if(resp_data.status == '1')
+           { 
+            var org_data = resp_data.data;
+            $('#org_id').val(org_data.id);
+            $('#org_name').val(org_data.org_name);
+            $('#about').val(org_data.about);
+            $('#org_address1').val(org_data.address1);
+            $('#org_address2').val(org_data.address2);
+            $('#org_city').val(org_data.city);
+            $('#org_pin').val(org_data.pin);
+            $('#org_state').val(org_data.state);
+            $('#contact').val(org_data.mobile);
+            $('#email').val(org_data.email);
+            //$('#gstin').val(org_data.gstin);
+           }
+         }
+       });
+        }getorg_details();
            function getSportsList()
              {
                 $.ajax({
@@ -265,15 +291,15 @@
         $('#create_job').click(function(){
         if(validate())
           {
+           $('.loading').show();
            create_job();
           }
       });
            
            // funtion for creating a job
            function create_job() 
-           {  //alert(image_data);
-               var job_data = {
-
+           {   var job_data = {
+                "id":"0",
                 "userid":sess_userid,
                 "title":$('#title').val(),
                 "type":$('#type').val(),
@@ -302,7 +328,8 @@
                 "image":image_data,
                 "salary":$('#salary').val()
                 };
-                //alert(JSON.stringify(job_data));return;
+              //  alert(JSON.stringify(job_data));return;
+                
                 $.ajax({
                     type: "POST",
                     async:false,
@@ -314,11 +341,13 @@
                     if(result.status == '1')
                     {   
                         alert('Job Sucessfully created');
+                        $('.loading').hide();
                         window.location.href = "{{url('/manage/dashbo')}}";
                     }
                     else
                     {
                         alert('Something went Wrong');
+                        $('.loading').hide();
                     }
                    }
                   }); 
@@ -375,6 +404,7 @@
         // Code For image view and Generating base64 Format
         function readURL(input) {
         if (input.files && input.files[0]) {
+             $('.loading').show();
             var reader = new FileReader();
             reader.onload = function (e) {
                 $('#blah').attr('src', e.target.result);
@@ -382,6 +412,7 @@
                 image_data = image_data.split(',')[1];
             }
              reader.readAsDataURL(input.files[0]);
+              $('.loading').hide();
         }
     }
     //function for image upload starts

@@ -1,10 +1,18 @@
-<?php $value = session('userdata');
+<?php 
+$value = session('userdata');
 $sess_data = json_decode($value);//print_r($sess_data);die;
 $userid = $sess_data->userid;
 $sess_name = $sess_data->name;
 $sess_email = $sess_data->email;
+if(!empty($sess_data->org_data))
+{
 $org_name = $sess_data->org_data->org_name;
 $org_id = $sess_data->org_data->org_id;
+}else
+{
+$org_name = '';
+$org_id = '';    
+}
 //print_r($sess_data);//die;
 ?>
 <style type="text/css">
@@ -29,7 +37,7 @@ $org_id = $sess_data->org_data->org_id;
    // var org_name ='<?php //echo $org_name;?>';
  </script>
 </script>
-
+<div class="loading" hidden>Loading&#8230;</div>
 <header class="headerSec">
         <div class="container">
            <!-- Brand and toggle get grouped for better mobile display -->
@@ -47,11 +55,11 @@ $org_id = $sess_data->org_data->org_id;
                 <ul>
                     <li><a href="#"><i class="fa fa-times pull-right close_mySidenav"></i></a></li>
                     <li><a href="{{url('/manage/job/transaction_list')}}"><i class="fa fa-inr"></i>Transaction</a></li>
-                    <li><a href="#"><i class="fa fa-briefcase"></i>Job</a></li>
-                    <li><a href="#"><i class="fa fa-bell"></i>Notification</a></li>
-                    <li><a href="{{url('/manage/login/1')}}" onclick="window.localStorage.clear();"><i class="fa fa-power-off"></i>Logout</a></li>
+                    <!-- <li><a href="#"><i class="fa fa-briefcase"></i>Job</a></li>
+                    <li><a href="#"><i class="fa fa-bell"></i>Notification</a></li> -->
+                    <li><a href="{{url('/manage/logout')}}" onclick="window.localStorage.clear();"><i class="fa fa-power-off"></i>Logout</a></li>
                 </ul>
            </div>
         </div>
     </header>
-    
+   
