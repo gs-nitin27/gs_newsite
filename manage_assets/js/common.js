@@ -67,3 +67,15 @@ function Base64Decode(str) {
 
     return str;
 }
+
+$(document).ready(function(){
+
+$('.btn.btn-n.nextBtn').click(function(){ var id = $("#myTabContent div.active").attr('id');
+            $('#myTab li').removeClass('active');
+            var id_val =  parseInt(id['4'])+1;
+            id = id.replace(/.$/,id_val);
+            console.log(id);
+            $('.'+id).parent('li').addClass('active');
+           });
+
+});
