@@ -1,6 +1,20 @@
-@extends('layouts.master')
+<!-- @extends('layouts.master')
 @section('pageTitle','Home')
 @section('content')
+
+ -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Getsporty- @yield('pageTitle')</title> 
+    @include('layouts.head')
+
+</head>
+
+
+ 
 <style type="text/css">
   div#temp_article > div {
     min-height: 394px;
@@ -60,21 +74,21 @@
                      <h3>Article</h3>
                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod<br/> tempor incididunt.</p>
                   </div>     
-                  <div id="temp_article"></div>    
-
+                  <div id="article_listing"></div>    
+<!-- 
                 <div class="img-box"><img src=""></div>
                               <div class="white-b">
                                   <h4>sdsd</h4>
                                   <p>rtytyrt</p>
                                   <div class="readMoreBtn"><a href="#">Read More</a> </div>
-                              </div>
+                              </div> -->
 
            <div class="clearfix margin20"></div>
         <!--    <div class="text-center">
             <i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
 <span class="sr-only">Loading...</span>
            </div> -->
-<div class="text-center">         
+<!-- <div class="text-center">         
                       <ul class="pagingSec">
                           <li><a href="#">Next</a></li>
                           <li><a href="#">1</a></li>
@@ -88,7 +102,7 @@
                           <li><a href="#">Prev</a></li>
                       </ul>
                  </div>
-          
+           -->
     
    
     
@@ -107,9 +121,9 @@ function closeNav() {
 <script type="text/javascript" >
 jQuery(document).ready(function()
 { 
-  
-getArticleListing();
-
+  var module  = "article";
+  var id      = "#article_listing";
+  getListing(module,id);
 
 });// End of Doucument Ready
 </script>
