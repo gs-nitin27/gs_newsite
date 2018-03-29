@@ -55,8 +55,8 @@ $org_id = '';
                 <ul>
                     <li><a href="#"><i class="fa fa-times pull-right close_mySidenav"></i></a></li>
                     <li><a href="{{url('/manage/job/transaction_list')}}"><i class="fa fa-inr"></i>Transaction</a></li>
-                    <li><a href="#"><i class="fa fa-briefcase"></i>Job</a></li>
-                    <li><a href="#"><i class="fa fa-bell"></i>Notification</a></li>
+                    <!-- <li><a href="#"><i class="fa fa-briefcase"></i>Job</a></li>
+                    <li><a href="#"><i class="fa fa-bell"></i>Notification</a></li> -->
                     <li><a href="{{url('/manage/logout')}}" onclick="window.localStorage.clear();"><i class="fa fa-power-off"></i>Logout</a></li>
                 </ul>
            </div>
