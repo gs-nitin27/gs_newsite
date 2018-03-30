@@ -87,7 +87,7 @@
                             </aside>
                             <aside class="col-lg-6 col-md-6 col-sm-6 col-xs-6 mobView">
                                 <div class="form-group">                                    
-                                    <label for="" class="">Job  Discription*</label>
+                                    <label for="" class="">Job  Description*</label>
                                     <textarea class="form-control" placeholder=" " name="desc" id="desc"></textarea><span id="jdesc"></span>
                                 </div>                                    
                             </aside>                           
@@ -152,13 +152,13 @@
                         <section class="clearfix">
                             <aside class="col-lg-6 col-md-6 col-sm-6 col-xs-6 mobView">
                                 <div class="form-group">
-                                    <label for="" class="">Orgenization Name</label>
+                                    <label for="" class="">Organization Name</label>
                                     <input class="form-control" placeholder=" " type="text" name="org_name" id="org_name">
                                 </div>
                             </aside>
                             <aside class="col-lg-6 col-md-6 col-sm-6 col-xs-6 mobView">
                                 <div class="form-group">
-                                    <label for="" class="">About Orgenization</label>
+                                    <label for="" class="">About Organization</label>
                                     <input class="form-control" placeholder=" " type="text" id="about" name="about">
                                 </div>
                             </aside>
@@ -243,6 +243,7 @@
         
         var image_data = '';
         $(document).ready(function(){
+
            function getorg_details()
           {
         $.ajax({
