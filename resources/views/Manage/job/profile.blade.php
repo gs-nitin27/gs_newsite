@@ -12,6 +12,20 @@ else
   {
    $detail = '';
   }
+  if($basic->user_image== '')
+  { if($basic->gender == 'FeMale' || $basic->gender == 'F')
+    {
+      $image = config('constant.RMT_DIR').'/img/female.jpg';
+    }
+    else
+    {
+      $image = config('constant.RMT_DIR').'/img/user.jpg';
+    }
+  }
+  else
+  {
+    $image = $basic->user_image;
+  }
 ?>
 <link rel="stylesheet" href="https://getsporty.in/portal/assets/css/profile.css">
 <script type="text/javascript">
@@ -442,7 +456,7 @@ body{
       <div class="w3-third">
       <div class="w3-white w3-text-grey w3-card-4" id="fixme">
       <div class="w3-display-container">
-      <img src="http://portal.getsporty.in/uploads/profile/profile_1514015242.png" style="width:100%" alt="Avatar">
+      <img src="{{$image}}" style="width:100%" alt="Avatar">
       <div class="w3-display-bottomleft w3-container w3-text-black">
       <h2>{{$basic->name}}</h2>
       </div>

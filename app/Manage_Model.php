@@ -13,7 +13,7 @@ class Manage_Model extends Model
     {
 
      $pricing_plan  = DB::table('gs_pricing_plan')->select('amount','duration')->where('module', '1')->get();
-     $job 	= DB::table('gs_jobInfo')->select('id','title','org_city')->where('id', $id)->limit(8)->get();
+     $job 	= DB::table('gs_jobInfo')->select('id','title','org_city','contact','userid')->where('id', $id)->limit(8)->get();
      $data =  array('plan' =>$pricing_plan ,'job'=>$job );
      return $data;
     }

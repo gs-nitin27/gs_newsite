@@ -3,6 +3,7 @@
 @section('content')
 <?php $value = session('userdata');
 $sess_data = json_decode($value);
+//print_r($checkout);die;
 ?><div class='container'>
     <div class='row' style='padding-top:25px; padding-bottom:25px;'>
         <div class='col-md-12'>
@@ -110,7 +111,16 @@ $sess_data = json_decode($value);
 </tr>
 <tr>
 <td>Phone: </td>
-<td><input  name="phone" id="phone" value="{{$sess_data->contact_no}}" /></td>
+@php
+if($sess_data->contact_no== '')
+{
+$contact = $checkout['job'][0]->contact;
+}else
+{
+$contact = $sess_data->contact_no;    
+}
+@endphp
+<td><input  name="phone" id="phone" value="{{$contact}}" /></td>
 </tr>
 <tr>
 
@@ -124,6 +134,8 @@ $sess_data = json_decode($value);
 </tr>
 <tr>
 <td colspan="3" style="display: none"><input type="hidden" name="service_provider" value="payu_paisa" id="service_provider"/></td>
+</tr>
+<td colspan="3" style="display: none"><input type="hidden" name="udf1" value="{{$sess_data->userid}}" id="udf1"/></td>
 </tr>
 
 
@@ -176,7 +188,8 @@ $sess_data = json_decode($value);
                     "productinfo":$('#productinfo').val() ,
                     "surl":$('#surl').val(),
                     "furl":$('#furl').val(),
-                    "service_provider":$('#service_provider').val()
+                    "service_provider":$('#service_provider').val(),
+                    "udf1":$('#udf1').val()
                  };
 
 
