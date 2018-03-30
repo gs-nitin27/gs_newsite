@@ -335,9 +335,16 @@ console.log(data);
     }
     if(result.status==1)
     {      // for Successfull login
+      if(result.data.prof_id == '5')  // 5 for job creator
+      {
       localStorage.setItem('userdata',JSON.stringify(result.data));
       set_data();
-    }
+      }else
+      {
+        alert("Invalid user");
+      }
+
+  }
     else if(result.status==2) // for updating email and other info
     { 
       result.status = result.status;
