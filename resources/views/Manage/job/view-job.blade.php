@@ -179,7 +179,7 @@ window.getJobApplicants = function foo() {
                   profile_pic = "{{config('constant.RMT_DIR')}}"+'/img/'+'user.jpg';
                 }  
             }
-            applicant_list +='<tr> <th scope="row">'+i+'</th> <align="center" width="10"> <!----><div ><td><a href="'+route_url+'/manage/job/candidate_profile/'+data.userid+'"><img src="'+profile_pic+'" class="pull-left img-circle nav-user-photo" alt="Smiley face" width="42" height="42"></a>&nbsp;&nbsp; </div> <!----> </td> <td>'+data.name+'</td> <td>'+data.location+'</td> <td>'+data.email+'</td> <td>'+getAge(data.dob)+'</td> <td><button class="btn btn-success" onclick="shortlistCandidate('+data.userid+','+data.status+');">'+status+'</button></td> </tr>';
+            applicant_list +='<tr> <th scope="row">'+i+'</th> <align="center" width="10"> <!----><div ><td><a href="'+route_url+'/manage/job/candidate_profile/'+data.userid+'" target="_blank"><img src="'+profile_pic+'" class="pull-left img-circle nav-user-photo" alt="Smiley face" width="42" height="42"></a>&nbsp;&nbsp; </div> <!----> </td> <td>'+data.name+'</td> <td>'+data.location+'</td> <td>'+data.email+'</td> <td>'+getAge(data.dob)+'</td> <td><button class="btn btn-success" onclick="shortlistCandidate('+data.userid+','+data.status+');">'+status+'</button></td> </tr>';
             
             if(data.status < '4' && data.status > '1')
             {++j;
@@ -193,7 +193,7 @@ window.getJobApplicants = function foo() {
                 interview_status = 'Re-Schedule';
                 offer_status    = '';
             }  
-            short_list +='<tr> <th scope="row">'+j+'</th> <td><img src="'+profile_pic+'" class="pull-left img-circle nav-user-photo" alt="Smiley face" width="42" height="42">&nbsp;&nbsp; </div> <!----> </td><td>'+data.name+'</td> <td>'+data.contact_no+'</td> <td><button class="btb btn-primary" id="'+data.userid+'" data-myval="'+data.name+'" onclick="open_modal(this,1);">'+interview_status+' Interview</button></td> <td>'+data.interview_date+'</td> <td><button class="btn btn-success" '+offer_status+' onclick="open_modal('+data.userid+',2)">'+'Send offer'+'</button></td> </tr>';
+            short_list +='<tr> <th scope="row">'+j+'</th> <td><a href="'+route_url+'/manage/job/candidate_profile/'+data.userid+'" target="_blank"><img src="'+profile_pic+'" class="pull-left img-circle nav-user-photo" alt="Smiley face" width="42" height="42" target="_blank"></a>&nbsp;&nbsp; </div> <!----> </td><td>'+data.name+'</td> <td>'+data.contact_no+'</td> <td><button class="btb btn-primary" id="'+data.userid+'" data-myval="'+data.name+'" onclick="open_modal(this,1);">'+interview_status+' Interview</button></td> <td>'+data.interview_date+'</td> <td><button class="btn btn-success" '+offer_status+' onclick="open_modal('+data.userid+',2)">'+'Send offer'+'</button></td> </tr>';
             }
              else if(data.status >= '4')
             {++k;
@@ -207,7 +207,7 @@ window.getJobApplicants = function foo() {
               {
                 cand_status = '<button class="btn btn-danger" Disabled>Declined</button>';
               }
-            offer +='<tr> <th scope="row">'+k+'</th> <align="center" width="10"> <!----><div ><td><img src="'+profile_pic+'" class="pull-left img-circle nav-user-photo" alt="Smiley face" width="42" height="42">&nbsp;&nbsp; </div> <!----> </td></div> <!----> </td> <td>'+data.name+'</td> <td>'+data.location+'</td> <td>'+data.email+'</td> <td>'+getAge(data.dob)+'</td><td>'+cand_status+'</td> </tr>';
+            offer +='<tr> <th scope="row">'+k+'</th> <align="center" width="10"> <!----><div ><td><a href="'+route_url+'/manage/job/candidate_profile/'+data.userid+'" target="_blank"><img src="'+profile_pic+'" class="pull-left img-circle nav-user-photo" alt="Smiley face" width="42" height="42" target="_blank"></a>&nbsp;&nbsp; </div> <!----> </td></div> <!----> </td> <td>'+data.name+'</td> <td>'+data.location+'</td> <td>'+data.email+'</td> <td>'+getAge(data.dob)+'</td><td>'+cand_status+'</td> </tr>';
             }
            // i++;
           });
