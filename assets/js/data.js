@@ -1,7 +1,6 @@
 
 function getListing(module,id)
 {  
-
 $(id).empty();
 (function($){   
     $.fn.loaddata = function(options) {// Settings
