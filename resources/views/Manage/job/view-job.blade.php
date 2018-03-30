@@ -4,6 +4,7 @@
 @php 
 $detail = $detail[0];
 @endphp
+
 <main><section class="half">
         <h1>{{$detail->title}}</h1>
              <section class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
@@ -150,18 +151,35 @@ window.getJobApplicants = function foo() {
            var i = 0;
            var j = 0;
            var k = 0;
+           var profile_pic = '';
+           
+
           data.forEach(function(data){
             ++i;
             if(data.status == '1')
             {
                 status = 'Shortlist';
+
             }
             else
             {
                 status = 'Shortlisted';
             }
-            
-            applicant_list +='<tr> <th scope="row">'+i+'</th> <align="center" width="10"> <!----><div ><td><a href="'+route_url+'/manage/job/candidate_profile/'+data.userid+'"><img src="https://www.w3schools.com/tags/smiley.gif" class="pull-left img-circle nav-user-photo" alt="Smiley face" width="42" height="42"></a>&nbsp;&nbsp; </div> <!----> </td> <td>'+data.name+'</td> <td>'+data.location+'</td> <td>'+data.email+'</td> <td>'+getAge(data.dob)+'</td> <td><button class="btn btn-success" onclick="shortlistCandidate('+data.userid+');">'+status+'</button></td> </tr>';
+            if(data.user_image != '')
+            {
+              profile_pic = data.user_image;
+            }
+            else
+            {
+              if(data.gender == 'F' || data.gender == 'Female')
+                {
+                  profile_pic = "{{config('constant.RMT_DIR')}}"+'/img/'+'female.jpg';
+                }else
+                {
+                  profile_pic = "{{config('constant.RMT_DIR')}}"+'/img/'+'user.jpg';
+                }  
+            }
+            applicant_list +='<tr> <th scope="row">'+i+'</th> <align="center" width="10"> <!----><div ><td><a href="'+route_url+'/manage/job/candidate_profile/'+data.userid+'"><img src="'+profile_pic+'" class="pull-left img-circle nav-user-photo" alt="Smiley face" width="42" height="42"></a>&nbsp;&nbsp; </div> <!----> </td> <td>'+data.name+'</td> <td>'+data.location+'</td> <td>'+data.email+'</td> <td>'+getAge(data.dob)+'</td> <td><button class="btn btn-success" onclick="shortlistCandidate('+data.userid+','+data.status+');">'+status+'</button></td> </tr>';
             
             if(data.status < '4' && data.status > '1')
             {++j;
@@ -175,7 +193,7 @@ window.getJobApplicants = function foo() {
                 interview_status = 'Re-Schedule';
                 offer_status    = '';
             }  
-            short_list +='<tr> <th scope="row">'+j+'</th> <td><img src="https://www.w3schools.com/tags/smiley.gif" class="pull-left img-circle nav-user-photo" alt="Smiley face" width="42" height="42">&nbsp;&nbsp; </div> <!----> </td><td>'+data.name+'</td> <td>'+data.contact_no+'</td> <td><button class="btb btn-primary" id="'+data.userid+'" data-myval="'+data.name+'" onclick="open_modal(this,1);">'+interview_status+' Interview</button></td> <td>'+data.interview_date+'</td> <td><button class="btn btn-success" '+offer_status+' onclick="open_modal('+data.userid+',2)">'+'Send offer'+'</button></td> </tr>';
+            short_list +='<tr> <th scope="row">'+j+'</th> <td><img src="'+profile_pic+'" class="pull-left img-circle nav-user-photo" alt="Smiley face" width="42" height="42">&nbsp;&nbsp; </div> <!----> </td><td>'+data.name+'</td> <td>'+data.contact_no+'</td> <td><button class="btb btn-primary" id="'+data.userid+'" data-myval="'+data.name+'" onclick="open_modal(this,1);">'+interview_status+' Interview</button></td> <td>'+data.interview_date+'</td> <td><button class="btn btn-success" '+offer_status+' onclick="open_modal('+data.userid+',2)">'+'Send offer'+'</button></td> </tr>';
             }
              else if(data.status >= '4')
             {++k;
@@ -189,7 +207,7 @@ window.getJobApplicants = function foo() {
               {
                 cand_status = '<button class="btn btn-danger" Disabled>Declined</button>';
               }
-            offer +='<tr> <th scope="row">'+k+'</th> <align="center" width="10"> <!----><div ><td><img src="https://www.w3schools.com/tags/smiley.gif" class="pull-left img-circle nav-user-photo" alt="Smiley face" width="42" height="42">&nbsp;&nbsp; </div> <!----> </td></div> <!----> </td> <td>'+data.name+'</td> <td>'+data.location+'</td> <td>'+data.email+'</td> <td>'+getAge(data.dob)+'</td><td>'+cand_status+'</td> </tr>';
+            offer +='<tr> <th scope="row">'+k+'</th> <align="center" width="10"> <!----><div ><td><img src="'+profile_pic+'" class="pull-left img-circle nav-user-photo" alt="Smiley face" width="42" height="42">&nbsp;&nbsp; </div> <!----> </td></div> <!----> </td> <td>'+data.name+'</td> <td>'+data.location+'</td> <td>'+data.email+'</td> <td>'+getAge(data.dob)+'</td><td>'+cand_status+'</td> </tr>';
             }
            // i++;
           });
@@ -220,8 +238,9 @@ $(document).ready(function(){
         
   
 });   
-function shortlistCandidate(data)
-{
+function shortlistCandidate(data,status)
+{if(status == 1)
+  {
  var data = {"userid":data,"id":id,"status":'2',"module":"1"};
  $.ajax({
     url:url+'/create_database.php?act=shortlist',
@@ -231,11 +250,13 @@ function shortlistCandidate(data)
     {
       var resp  = JSON.parse(result);
       if(resp.status == '1')
-      {  alert(resp.status);
+      { // alert(resp.status);
          getJobApplicants();
       }
     }
   });
+}
+
 }
 
 

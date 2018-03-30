@@ -15,11 +15,11 @@ else
   if($basic->user_image== '')
   { if($basic->gender == 'FeMale' || $basic->gender == 'F')
     {
-      $image = config('constant.RMT_URL').'/female.jpg';
+      $image = config('constant.RMT_DIR').'/img/female.jpg';
     }
     else
     {
-      $image = config('constant.RMT_URL').'/user.jpg';
+      $image = config('constant.RMT_DIR').'/img/user.jpg';
     }
   }
   else
