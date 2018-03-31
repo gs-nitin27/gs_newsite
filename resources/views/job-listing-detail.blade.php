@@ -74,11 +74,11 @@
         		      </div>
         		     <div class=" clearfix margin15"></div>
         			   <div class="right-list-job pad15">
-        			    <p>Job Description : <span> {{$name[0]->description}}.
+        			    <p>Job Description : <span> {!!$name[0]->description!!}.
         			      </span>
         			       </p>
         			 
-        			 <p> Qualification : <span>{{$name[0]->description}}. </span></p>
+        			 <p> Qualification : <span>{!!$name[0]->description!!}. </span></p>
         			  
         			<p>Key Requirement :  <span>Fluency in English is a must.</span></p>
         			    
