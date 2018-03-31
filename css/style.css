@@ -1142,14 +1142,18 @@ margin: 0px;
 .pad20{
 	padding: 22px;
 }
-#article_listing > div,
+
 #event_listing > div,
 #job_listing > div,
 #tour_listing > div {
-    min-height: 420px;
-    max-height: 420px;
+    min-height: 400px;
+    max-height: 400px;
     float: left;
 }
+#article_listing > div{min-height: 400px;
+    min-height: 430px;
+    max-height: 430px;
+    float: left;}
 /*#temp_article{
     display: none;
 }*/
