@@ -13,6 +13,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>  
   <script src="{{asset('manage_assets/js/bootstrap.min.js')}}"></script>
   <script src="{{asset('manage_assets/js/common.js')}}"></script>
+  <script src="{{asset('manage_assets/js/validation.js')}}"></script>
   <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
 
 <!--  <script type="text/javascript">

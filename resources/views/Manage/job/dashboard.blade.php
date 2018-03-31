@@ -17,6 +17,9 @@
     background-color: #03a9f5;
     text-decoration: none;
     }
+    .invalid{
+      color:#e40d0d;
+    }
   </style>
 </head>
 
@@ -48,6 +51,7 @@
                     <label  class="col-sm-2 control-label"
                               for="inputEmail3">Organisation Name</label>
                     <div class="col-sm-10">
+                       <span id="jorg_name" class="invalid"></span>
                         <input type="text" class="form-control" 
                         id="org_name" placeholder="Organisation Name"/>
                     </div>
@@ -56,6 +60,7 @@
                     <label  class="col-sm-2 control-label"
                               for="inputEmail3">About</label>
                     <div class="col-sm-10">
+                        <span id="jabout" class="invalid"></span>
                         <input type="text" class="form-control" 
                         id="about" placeholder="About"/>
                     </div>
@@ -64,6 +69,7 @@
                     <label  class="col-sm-2 control-label"
                               for="inputEmail3">Address1</label>
                     <div class="col-sm-10">
+                        <span id="jaddress1" class="invalid"></span>
                         <input type="text" class="form-control" 
                         id="address1" placeholder="Address1"/>
                     </div>
@@ -80,6 +86,7 @@
                     <label  class="col-sm-2 control-label"
                               for="inputEmail3">City</label>
                     <div class="col-sm-10">
+                        <span id="jcity" class="invalid"></span>
                         <input type="text" class="form-control" 
                         id="city" placeholder="city"/>
                     </div>
@@ -88,14 +95,16 @@
                     <label  class="col-sm-2 control-label"
                               for="inputEmail3">State</label>
                     <div class="col-sm-10">
+                        <span id="jstate"></span>
                         <input type="text" class="form-control" 
                         id="state" placeholder="city"/>
                     </div>
                   </div>
                   <div class="form-group">
                     <label  class="col-sm-2 control-label"
-                              for="inputEmail3">Pin</label>
+                              for="inputEmail3" >Pin</label>
                     <div class="col-sm-10">
+                        <span id="jpin" class="invalid"></span>
                         <input type="number" class="form-control" 
                         id="pin" placeholder="Ex.101010"/>
                     </div>
@@ -104,6 +113,7 @@
                     <label  class="col-sm-2 control-label"
                               for="inputEmail3">Mobile No.</label>
                     <div class="col-sm-10">
+                        <span id="jmobile" class="invalid"></span>
                         <input type="number" class="form-control" 
                         id="mobile" placeholder="9010202929"/>
                     </div>
@@ -112,6 +122,7 @@
                     <label  class="col-sm-2 control-label"
                               for="inputEmail3">Email</label>
                     <div class="col-sm-10">
+                        <span id="jemail" class="invalid"></span>
                         <input type="email" class="form-control" 
                         id="email" placeholder="Email"/>
                     </div>
@@ -222,7 +233,7 @@
           method:"GET",
           dataType:"text",
           success:function(result)
-          {
+          {  clearconsole();
             var data = JSON.parse(result);
             var card1 = '';
             var card2 = '';
@@ -291,9 +302,10 @@
           }
         });
       });
-        function add_organisation()
+    function add_organisation()
+      {
+          if(addOrg_validate()==true)
         {
-
          var org_data = 
          { "id":$('#org_id').val(),//org_id,
            "userid":sess_userid,
@@ -332,10 +344,10 @@
            {
            alert('Something wemt wrong'); 
            }
-           
-         }
-       });
+          }
+        });
       }
+    }
       function getorg_details()
       {
         $.ajax({

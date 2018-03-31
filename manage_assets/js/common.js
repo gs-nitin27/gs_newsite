@@ -79,3 +79,12 @@ $('.btn.btn-n.nextBtn').click(function(){ var id = $("#myTabContent div.active")
            });
 
 });
+
+window.clearconsole = function clearconsole(){
+
+//function clearconsole() { 
+  console.log(window.console);
+  if(window.console || window.console.firebug) {
+   console.clear();
+  }
+}
