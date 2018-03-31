@@ -70,7 +70,7 @@
         		    <div class=" clearfix margin15"></div>
         			  <div class="right-list-job pad15">
           			    <p>Tournament  Description : 
-                        <span> {{$name[0]->description}}.
+                        <span> {!!$name[0]->description!!}.
             			      </span>        			       
                     </p>        			   
               			<p> Tournamnet Rules : <span>Recognised degree from a reputed university. Adequate experience in the related field preferably in CBSE / International School. Specialization in the subject for which a candidate is applying for the job. </span></p>
