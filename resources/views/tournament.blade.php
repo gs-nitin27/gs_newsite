@@ -1,18 +1,7 @@
-<!-- @extends('layouts.master')
-@section('pageTitle','Home')
-@section('content') -->
-
-
-<!DOCTYPE html>
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>Getsporty- @yield('pageTitle')</title> 
-    @include('layouts.head')
-
-</head>
-
-
+@extends('layouts.master')
+@section('pageTitle','Tournaments')
+@section('content')
+<!-- @include('layouts.head') -->
          <div class="joblist-bg tournamentBg bannerBgSec">
            <div class="container">
        	     <div class="row">
@@ -68,35 +57,8 @@
                   </div>   
 
                   <div id="tour_listing"></div>  
-
-                
-                   
-                  
-         
-  	       <div class="clearfix margin20"></div>
-  	    <!--    <div class="text-center">
-  	       	<i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
-<span class="sr-only">Loading...</span>
-  	       </div> -->
-<!-- <div class="text-center">         
-                      <ul class="pagingSec">
-                          <li><a href="#">Next</a></li>
-                          <li><a href="#">1</a></li>
-                          <li><a href="#">2</a></li>
-                          <li><a href="#" class="active">3</a></li>
-                          <li><a href="#">4</a></li>
-                          <li><a href="#">...</a></li>
-                          <li><a href="#">10</a></li>
-                          <li><a href="#">11</a></li>
-                          <li><a href="#">12</a></li>
-                          <li><a href="#">Prev</a></li>
-                      </ul>
-                 </div> -->
-          
- 
-   
-    
-    <script>
+                 <div class="clearfix margin20"></div>
+<script>
 function openNav() {
     document.getElementById("myNav").style.height = "100%";
 }
@@ -118,8 +80,5 @@ getListing(module,id);
 
 });// End of Doucument Ready
 </script>
-
-
-
 
 @stop   
