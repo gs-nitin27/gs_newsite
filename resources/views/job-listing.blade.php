@@ -7,7 +7,7 @@
        	     <div class="row">
        	       <div class="col-md-12">
        		     <div class="ban-pera">
-       			  <h1>Sports jobs in India</h1>
+       			  <h1>Job</h1>
        			  <h3>A unique platform dedicated only to Sports Jobs. Browse and apply to thousands of Sports Jobs.</h3>
        			
          	     </div>
@@ -58,7 +58,22 @@
         	     <div class="row">
         	 	  <div class="heading-center  m0 pad15">
           	       <h3>Sports jobs in India</h3>
-             	   <p>A unique platform dedicated only to Sports Jobs. Browse and apply to thousands of Sports Jobs.</p>
+             	   <p>We are always gratified to live in a country like India, where sports has an approach to connect people through the availability of sports jobs in India. Cricket is considered as a religion, football is a way of life and hockey highlights secularism.
+Sports jobs in India are also making an identity at various levels, most importantly in cricket, tennis, hockey, athletics and chess. There is a wide range of sports job in India in which an ample number of opportunities are available to give a boost to your career.
+Vaguely, you can treasure your dream job through our website and can conveniently browse through all the latest sports jobs in the government or private sector.Indeed, India as a nation is a breeding ground for sports jobs. Though by having a sports jobs in India you can be the part of taking India to both national and international levels.
+So, if you are passionate about sports and want to handle the business side of the game then there are exciting career options for you of having sports in India available on our website and can take the first step towards your fantasy world.
+Let us assist you to uncover the path of different types of sports job in India and make it easier for you to choose your kind of sports job. So here is a small list of types of sports jobs in India available on our website:
+Sports Agent:
+Sports agents look after the athlete’s professional career and act as a bridge between the player and the outside world.
+Sports Information Directors:
+Sports Informational Directors work closely with a sports team and various media outlets to bolster public relations through positive media coverage.
+Sports Marketing Manager:
+Marketing is an important part of any business and equally so for the world of sports, as it helps in promoting and sponsoring sports events.
+Lecturer:
+With a degree in Sports Management, you can become a lecturer too, and teach at colleges and universities.
+Sports Event Manager:
+A degree in Sports Management also allows you to be a part of the event planning team.
+</p>
                     </div>
                                   <div id="job_listing"> </div>
             </div>

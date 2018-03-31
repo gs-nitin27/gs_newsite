@@ -9,9 +9,8 @@
        	    <div class="row">
        	      <div class="col-md-12">
        		    <div class="ban-pera">
-       			  <h1>Lorem ispum is dummy </h1>
-       			  <h3>Lorem ispum is dummy text.</h3>	
-         	    </div>
+       			  <h1>Sports Articles</h1>
+       			  </div>
                </div>
               </div>
              </div>

@@ -7,7 +7,7 @@
        	     <div class="row">
        	       <div class="col-md-12">
          		     <div class="ban-pera">
-             			  <h1>Sports tournaments in India</h1>
+             			  <h1>Tournament</h1>
              			  <h3>Get regular updates about the upcoming Sports Tournaments and apply right away from the App.</h3>         			
            	     </div>
                 </div>
@@ -52,8 +52,8 @@
         	  <div class="container">
         	     <div class="row">
         	 	      <div class="heading-center  m0 pad15">
-            	       <h3>Tournament</h3>
-               	   <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod<br/> tempor incididunt.</p>
+            	       <h3>Sports tournaments in India</h3>
+               	   <p>Never miss an opportunity to impress and be never short on practice. Get all the updates on the latest and the upcoming sports tournaments in the area near you.</p>
                   </div>   
 
                   <div id="tour_listing"></div>  

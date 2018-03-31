@@ -7,7 +7,7 @@
              <div class="row">
                <div class="col-md-12">
                  <div class="ban-pera">
-                    <h1>LATEST RESOURCES</h1>
+                    <h1>Article</h1>
                     <h3>Perfectly curated articles, inspirational stories & training manuals, GetSporty has everything for aspiring athletes.</h3>               
                  </div>
                 </div>
@@ -52,8 +52,8 @@
             <div class="container">
                <div class="row">
                   <div class="heading-center  m0 pad15">
-                     <h3>Article</h3>
-                   <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod<br/> tempor incididunt.</p>
+                     <h3>Sports Articles</h3>
+                   <p>Not an everyday content but a fearsome approach to take on the state of Indian sports and a complete guide to reveal the path for sports enthusiasts to reach the pinnacle of their sport</p>
                   </div>     
                   <div id="article_listing"></div>    
                  <div class="clearfix margin20"></div>

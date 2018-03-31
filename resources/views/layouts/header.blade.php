@@ -19,7 +19,7 @@
               <!-- <li><a href="#getApp" data-toggle="modal">Get app  </a></li> -->
               <li><a href="{{url('event')}}" >Event </a></li>
               <li><a href="{{url('/job')}}">Job</a></li>
-              <li><a href="{{url('/tournament')}}">Tournaments</a></li>
+              <li><a href="{{url('/tournament')}}">Tournament</a></li>
               <li><a href="{{url('/article')}}">Article</a></li>
               <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
