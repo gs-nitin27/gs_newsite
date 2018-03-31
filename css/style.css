@@ -1146,8 +1146,8 @@ margin: 0px;
 #event_listing > div,
 #job_listing > div,
 #tour_listing > div {
-    min-height: 390px;
-    max-height: 390px;
+    min-height: 420px;
+    max-height: 420px;
     float: left;
 }
 /*#temp_article{
