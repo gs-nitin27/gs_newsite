@@ -1,4 +1,14 @@
 
+@extends('layouts.master')
+@section('pageTitle','Home')
+@section('content')
+
+ 
+
+
+
+
+
 <!DOCTYPE html>
 <html>
 <head>
