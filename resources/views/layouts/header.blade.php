@@ -23,12 +23,12 @@
               <li><a href="{{url('/article')}}">Article</a></li>
               <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                   Bussiness <b class="caret"></b>
+                   Business <b class="caret"></b>
                 </a>
                 <ul class="dropdown-menu">
-                    <li><a class="" href="{{url('/landing-job')}}">  Job Landing </a></li>
-                    <li><a class="" href="{{url('/landing-event')}}">  Event Landing  </a></li>
-                    <li><a class="" href="{{url('/tournament')}}"> Tournament </a></li>
+                    <li><a class="" href="{{url('/landing-job')}}">  Job posting</a></li>
+                    <li><a class="" href="{{url('/landing-event')}}">Create  event </a></li>
+                    <li><a class="" href="{{url('/tournament')}}">Organize tournament </a></li>
                 </ul>
               </li>
 
