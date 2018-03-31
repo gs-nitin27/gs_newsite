@@ -1,43 +1,9 @@
-
 @extends('layouts.master')
-@section('pageTitle','Home')
+@section('pageTitle','Event')
 @section('content')
-
- 
-
-
-
-
-
-<!DOCTYPE html>
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>Getsporty- @yield('pageTitle')</title> 
-    @include('layouts.head')
-
-</head>
-
-
-
-<!--      
-         @include('layouts.head')
-
-         <style>
-.wrapper{width: 500px;margin: 0 auto;font-family: Georgia, "Times New Roman", Times, serif;}
-.wrapper > ul#results li{margin-bottom: 1px;background: #f9f9f9;padding: 20px;list-style: none;}
-.loading-image {display: block;margin: 5px auto;}
-.end-record-info {text-align: center;border-top: 1px solid #ddd;padding: 5px 0;background: #f9f9f9;}
-</style>
-
-     </head>
-    
+ <!--   @include('layouts.head')
  -->
-
-
-
-
-         <div class="joblist-bg tournamentBg bannerBgSec">
+ <div class="joblist-bg tournamentBg bannerBgSec">
            <div class="container">
              <div class="row">
                <div class="col-md-12">
@@ -138,3 +104,4 @@ getListing(module,id);
            var service_url = '<?php echo url('/');?>';
          </script>
    </html>  
+   @stop
