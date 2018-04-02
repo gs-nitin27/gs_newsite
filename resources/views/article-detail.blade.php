@@ -101,7 +101,7 @@
 
                    <div class="item">
                     <div class="img-box">
-                     <img src="https://getsporty.in/portal/uploads/resources/{{$name[0]->image}}">
+                     <img src="https://getsporty.in/portal/uploads/resources/{{$name1[$i]->image}}">
                       </div>
                        <div class="white-b">
                         <h4>{{$name1[$i]->topic_of_artical}}</h4>
