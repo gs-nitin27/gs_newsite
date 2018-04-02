@@ -1,7 +1,11 @@
 @extends('layouts.master')
 @section('pageTitle','Articles')
+@section('description','Get all the latest trending sports news, Sports Events, Sports Tournaments updates on your Getsporty App.')
 @section('content')
 <!-- @include('layouts.head') -->
+<style type="text/css">
+   p{font-size: 10px;}
+ </style>
          <div class="joblist-bg tournamentBg bannerBgSec">
            <div class="container">
              <div class="row">

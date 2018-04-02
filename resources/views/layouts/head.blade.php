@@ -1,5 +1,6 @@
      <meta charset="UTF-8">
      <meta name="viewport" content="width=device-width, initial-scale=1">
+        @yield('meta')
         <link href="{{asset('css/bootstrap.min.css')}}" rel="stylesheet">
         <link href="{{asset('css/style.css')}}" rel="stylesheet">
         <link href="{{asset('css/media.css')}}" rel="stylesheet">

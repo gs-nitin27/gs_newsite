@@ -1,8 +1,13 @@
 @extends('layouts.master')
 @section('pageTitle','Event')
+@section('description','Get all the updates on the latest and the upcoming Events & sports tournaments in India & the area near you.')
+@section('keywords','Sports Events , Sports Tournament ')
 @section('content')
  <!--   @include('layouts.head')
  -->
+ <style type="text/css">
+   p{font-size: 10px;}
+ </style>
  <div class="joblist-bg tournamentBg bannerBgSec">
            <div class="container">
              <div class="row">

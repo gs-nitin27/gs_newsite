@@ -1153,7 +1153,25 @@ margin: 0px;
 #article_listing > div{min-height: 400px;
     min-height: 430px;
     max-height: 430px;
-    float: left;}
+    float: left;
+}
+.about_new_banner {
+    background-image: url(../img/banner-1.jpg);
+    background-size: cover ;
+    height: 414px;
+    background-position: center top;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 59%, 0 99%);
+    clip-path: polygon(0 0, 100% 0, 100% 59%, 0 99%);
+}
+.about-bg .ban-pera h1 {
+    margin-top: 83px;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 3px;
+}
+
+/
 /*#temp_article{
     display: none;
 }*/

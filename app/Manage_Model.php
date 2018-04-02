@@ -55,4 +55,12 @@ public function getUserData($id)
     return $resp;
  }
 
+public function getAdminData($userid)
+{
+  $basic  = DB::table('user')->select('*')->where('userid', $userid)->get();
+  $org    = DB::table('gs_org')->select('*')->where('userid', $userid)->get();
+  $resp   = array('basic' =>$basic,'org'=>$org);
+  return $resp;
+}
+
 }
