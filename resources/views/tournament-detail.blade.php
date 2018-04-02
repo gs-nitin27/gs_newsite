@@ -116,7 +116,7 @@
 
                       <div class="item">
                           <div class="img-box">
-                              <img src="https://getsporty.in/portal/uploads/tournament/{{$name1[0]->image}}">
+                              <img src="https://getsporty.in/portal/uploads/tournament/{{$name1[$i]->image}}">
                           </div>
                           <div class="slide-job-list">
                               <h4>{{$name1[$i]->name}}</h4>
