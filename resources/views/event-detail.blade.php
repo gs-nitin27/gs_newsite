@@ -1,5 +1,21 @@
 @extends('layouts.master')
 @section('pageTitle','Home')
+@section('meta')
+<meta name="description" content="{{$name[0]->summary}}">
+<meta name="keywords" content="@yield('keywords')">
+<meta name="twitter:dnt" content="on">
+<meta property="og:title" content="{{$name[0]->name}}" /> 
+<meta property="og:description" content="{{$name[0]->description}}" />
+<meta property="og:url" content="{{Request::url()}}" />
+<meta property="og:image" content="<?php echo config('constant.IMAGE_URL').'/event/'.$name[0]->image; ?>">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@getsporty" />
+<meta name="twitter:title" content="{{$name[0]->name}}" />
+<meta name="twitter:description" content="{{$name[0]->description}}" />
+<meta name="twitter:image" content="<?php echo config('constant.IMAGE_URL').'/event/'.$name[0]->image; ?>"
+ />
+@endsection
 @section('content')
 
 
@@ -119,20 +135,18 @@
 
 
   
-     <div class="sidebarMide">
-     <div class="fb-share-button" data-href="http://localhost/get/gs_newsite/event-detail/{$name[0]->id}}" data-layout="button_count" data-size="small" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse">
+    <div class="sidebarMide">
+     <div class="fb-share-button" data-href="{{Request::url()}}" data-layout="button_count" data-size="small" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse">
      <i class="fa fa-facebook"></i></a></div>
 
-     <a href="https://twitter.com/share" class="twitter-share-button fa fa-twitter" data-size="large" data-text="{{$name[0]->name}}" data-url="http://localhost/get/gs_newsite/event-detail/{{$name[0]->id}}" data-show-count="false" >
-    </a> 
+     <div><a href="https://twitter.com/share" class="twitter-share-button fa fa-twitter" data-size="large" data-text="{{$name[0]->name}}" data-url="{{Request::url()}}" data-show-count="false" >
+    </a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script></div>
 
-    <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>> 
-
-     <a href=" https://www.linkedin.com/shareArticle?mini=true&url=http://localhost/get/gs_newsite/event-detail/{{$name[0]->id}}&title={{$name[0]->name}}
-    &summary={{$name[0]->name}}&source=LinkedIn" class="cleateJob" style="background-color: #1686b0;"><i class="fa fa-linkedin"></i></a>
+     <a href=" https://www.linkedin.com/shareArticle?mini=true&url={{Request::url()}}&title={{$name[0]->name}}
+    &summary={{$name[0]->summary}}&source=LinkedIn" class="cleateJob" style="background-color: #1686b0;"><i class="fa fa-linkedin"></i></a>
 
   <div class="pin">
-  <a style="background-color: #FA0001" data-pin-do="buttonPin" href="https://www.pinterest.com/pin/create/button/?url=http://localhost/get/gs_newsite/event-detail/{$name[0]->id}}&media=https://getsporty.in/portal/uploads/resources/summary={{$name[0]->image}}&summary={{$name[0]->name}}" data-pin-config="beside"><i class="fa fa-pinterest-p"></i>  </a>
+  <a style="background-color: #FA0001" data-pin-do="buttonPin" href="https://www.pinterest.com/pin/create/button/?url={{Request::url()}}&media=https://getsporty.in/portal/uploads/event/$name[0]->image}}&summary={{$name[0]->name}}" data-pin-config="beside"><i class="fa fa-pinterest-p"></i>  </a>
   
   </div>
   
