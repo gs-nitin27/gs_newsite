@@ -1,5 +1,7 @@
 @extends('layouts.master')
 @section('pageTitle','Tournaments')
+@section('description','Get all the updates on the latest and the upcoming Events & sports tournaments in India & the area near you.')
+@section('keywords','Sports Events , Sports Tournament ')
 @section('content')
 <!-- @include('layouts.head') -->
 <style type="text/css">

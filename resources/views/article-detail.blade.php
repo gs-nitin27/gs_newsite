@@ -1,5 +1,13 @@
 @extends('layouts.master')
 @section('pageTitle','Home')
+@section('url','{{url('/article-detail/')}}<?php echo '/'.$name[0]->id;  ?>')
+@section('image','<?php echo config('constant.IMAGE_URL').'/resources/'.$name[0]->id; ?>')
+@section('title','{{$name[0]->title}}')
+@section('item_desc','{{$name[0]->summary}}')
+@section('summary','{{$name[0]->summary}}')
+@section('title','{{$name[0]->title}}')
+@section('item_desc','{{$name[0]->summary}}')
+@section('image_url','{{url('/article-detail/')}}<?php echo '/'.$name[0]->id;  ?>')
 @section('content')
 
 

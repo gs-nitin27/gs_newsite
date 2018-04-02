@@ -1,5 +1,7 @@
 @extends('layouts.master')
 @section('pageTitle','Jobs')
+@section('description','Find your dream sports job. Browse through all the latest sports jobs in the Goverment or private sector through our specially devoted Sports Job Portal')
+@section('keywords','Latest Jobs')
 @section('content')
 <!-- @include('layouts.head') -->
 <style type="text/css">

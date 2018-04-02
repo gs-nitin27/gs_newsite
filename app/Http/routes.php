@@ -38,7 +38,7 @@ Route::get('aboutus','WebController@getaboutus');
 Route::get('event','WebController@getevent');
 Route::get('job','WebController@getjob');
 Route::get('tournament','WebController@gettournament');
-Route::get('article','WebController@article');
+Route::get('latest-sports-news-resources','WebController@article');
 Route::get('landing-job','WebController@getlandingjob');
 Route::get('landing-event','WebController@getlandingevent');
 
@@ -54,8 +54,11 @@ Route::get('job-detail/{id}','WebController@job_detail');
 Route::get('tournament-detail/{id}','WebController@tournament_detail');
 
 Route::get('article-detail/{id}','WebController@article_detail');
-
-
+Route::get('/career', function()
+        {
+            return View::make('careers');
+           //Route::get('get_Tounament','ManageController@get_Tounament');
+        });
 
 
 
