@@ -1,7 +1,7 @@
 @extends('layouts.master')
 @section('pageTitle','Home')
 @section('meta')
-<meta name="description" content="{{$name[0]->summary}}">
+<meta name="description" content="{{$name[0]->description}}">
 <meta name="keywords" content="@yield('keywords')">
 <meta name="twitter:dnt" content="on">
 <meta property="og:title" content="{{$name[0]->name}}" /> 
