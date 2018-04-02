@@ -2,6 +2,9 @@
 @section('pageTitle','Jobs')
 @section('content')
 <!-- @include('layouts.head') -->
+<style type="text/css">
+   p{font-size: 10px;}
+ </style>
          <div class="joblist-bg bannerBgSec">
            <div class="container">
        	     <div class="row">

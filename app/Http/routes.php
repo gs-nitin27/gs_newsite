@@ -98,19 +98,14 @@ Route::get('article-detail/{id}','WebController@article_detail');
              return View::make('Manage.job.view-transaction');
          });
         
-       // Route::get('/create_update/{id}','ManageController@get_tournament');
        Route::get('/job/candidate_profile/{id}','ManageController@get_candidate_info');
        Route::get('/logout', function(Request $request) {
-        //Uncomment to see the logs record
-        //\Log::info("Session before: ".print_r($request->session()->all(), true));
-        if ($request->session()->has('userdata')) {
+       if ($request->session()->has('userdata')) {
            $request->session()->forget('userdata');
         }
-        //Uncomment to see the logs record
-        //\Log::info("Session after: ".print_r($request->session()->all(), true));
         return redirect('manage/login/1');
     });
-    
+    Route::get('my_profile/{id}','ManageController@getAdminuserData');
     });
 
 

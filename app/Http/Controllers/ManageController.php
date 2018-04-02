@@ -110,4 +110,13 @@ public function get_tournament(Request $request)
 
   }
 
+public function getAdminuserData(Request $request)
+ {
+
+   $userid = base64_decode($request->id);
+   $obj = new Manage_Model();
+   $resp = $obj->getAdminData($userid);
+   return view::make("Manage.job.Myprofile")->with('data',$resp);
+}
+
 }

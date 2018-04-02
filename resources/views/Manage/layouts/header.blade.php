@@ -4,6 +4,8 @@ $sess_data = json_decode($value);//print_r($sess_data);die;
 $userid = $sess_data->userid;
 $sess_name = $sess_data->name;
 $sess_email = $sess_data->email;
+$sess_image = $sess_data->user_image;
+$crt_user_id  = base64_encode($userid);
 if(!empty($sess_data->org_data))
 {
 $org_name = $sess_data->org_data->org_name;
@@ -17,14 +19,11 @@ $org_id = '';
 ?>
 <style type="text/css">
     span.head_title{
-    font-size: 46px;
-    font-style: italic;
     float: left;
+    color: white;
+    font-size: 33px;
     font-family: unset;
-    margin-top: 1%;
-    margin-left: 1%;
-    font-weight: 200;
-    }
+}
     </style>
 <script type="text/javascript">
     var url = '<?php echo config('constant.ENV_URL')?>';
@@ -33,7 +32,8 @@ $org_id = '';
     var sess_name = '<?php echo $sess_name; ?>';
     var sess_email = '<?php echo $sess_email; ?>';
     var route_url = '<?php echo url('/'); ?>';
-    
+
+
    // var org_name ='<?php //echo $org_name;?>';
  </script>
 </script>
@@ -50,11 +50,12 @@ $org_id = '';
                  </button>
                  <div class="logoSec"><a href="{{url('/manage/dashbo')}}"><img class="img-responsive" src="{{asset('manage_assets/img/logo.png')}}"></a></div>
            <a class="pull-right toggleBtn" href="#"> <i class="fa fa-bars openSideNav"></i></a>
-            <center><div class="text-center deshName"><span class="head_title"><i>Job</i></span></div></center>
+            <center><div class="text-center"><span class="head_title"><i>Jobs</i></span></div></center>
            <div id="mySidenav" class="sideNav">
-                <ul>
+                <ul><img src="{{$sess_image}}" height="50" width="50" pull-right>   
+                    <li><a href="{{url('manage/my_profile/')}}<?php echo '/'.$crt_user_id; ?>"><i class="glyphicons glyphicons-user pull-right close_mySidenav"></i>{{$sess_name}}</a></li>
                     <li><a href="#"><i class="fa fa-times pull-right close_mySidenav"></i></a></li>
-                    <li><a href="{{url('/manage/job/transaction_list')}}"><i class="fa fa-inr"></i>Transaction</a></li>
+                    <li><a href="{{url('/manage/job/transaction_list')}}"><i class="fa fa-inr"></i>My transaction</a></li>
                     <!-- <li><a href="#"><i class="fa fa-briefcase"></i>Job</a></li>
                     <li><a href="#"><i class="fa fa-bell"></i>Notification</a></li> -->
                     <li><a href="{{url('/manage/logout')}}" onclick="window.localStorage.clear();"><i class="fa fa-power-off"></i>Logout</a></li>
