@@ -105,8 +105,13 @@
              	  <p>Learn more about this feature packed App</p>
                   </div>
                   <div id="customers-testimonials2" class="owl-carousel">
-
                   @for($i=0;$i<count($name1);$i++)
+                <?php
+                $datetime1 = new DateTime();
+                $datetime2 = new DateTime($name1[$i]->date_updated);
+                $interval = $datetime1->diff($datetime2);
+                $day = $interval->format(' %a Days ago ');
+                ?>
                    <div class="item">
                     <div class="img-box">
                      <img src="https://getsporty.in/portal/uploads/job/{{$name1[$i]->image}}">
@@ -114,13 +119,15 @@
                        <div class="slide-job-list">
                          <h4>{{$name1[$i]->title}}</h4>
 				          <p> Location : <span> {{$name1[$i]->org_city}} </span></p>
-				           <p> Posted : <span> 2 days ago </span></p>
+				           <p> Posted : <span> {{ $day }}</span></p>
 				             <p> Organisation Name : <span> {{$name1[$i]->organisation_name}} </span></p>
-				               <p class="read-c"> Read More </p>
+				               <p class="read-c"> <a href="{{$name1[$i]->id}}" target="_blank">Read More</a></p>
                              </div>
                           </div>
                           @endfor
                           </div>
+
+                          
                         <!--<div class="customNavigation">
 							<div class="l-arrow cursor">
 							  <i class="fa fa-arrow-left" aria-hidden="true"></i>
