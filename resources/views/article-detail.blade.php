@@ -1,18 +1,18 @@
 @extends('layouts.master')
 @section('pageTitle','article-detail')
 @section('meta')
-<meta name="description" content="{{$name[0]->summary}}">
+<meta name="description" content="{!!$name[0]->summary!!}">
 <meta name="keywords" content="@yield('keywords')">
 <meta name="twitter:dnt" content="on">
 <meta property="og:title" content="{{$name[0]->title}}" /> 
-<meta property="og:description" content="{{$name[0]->summary}}" />
+<meta property="og:description" content="{!!$name[0]->summary!!}" />
 <meta property="og:url" content="{{Request::url()}}" />
 <meta property="og:image" content="<?php echo config('constant.IMAGE_URL').'/resources/'.$name[0]->image; ?>">
 <meta http-equiv="x-ua-compatible" content="ie=edge">
-<meta name="twitter:card" content="{{$name[0]->summary}}" />
+<meta name="twitter:card" content="{!!$name[0]->summary!!}" />
 <meta name="twitter:site" content="@getsporty" />
 <meta name="twitter:title" content="{{$name[0]->title}}" />
-<meta name="twitter:description" content="{{$name[0]->summary}}" />
+<meta name="twitter:description" content="{!!$name[0]->summary!!}" />
 <meta name="twitter:image" content="<?php echo config('constant.IMAGE_URL').'/resources/'.$name[0]->image; ?>"
  />
 @endsection
@@ -78,7 +78,7 @@
 
 
                    {{$name[0]->title}}</h4>
-        	         <p>{{$name[0]->summary}}
+        	         <p>{!!$name[0]->summary!!}
         	         <div class="margin15"></div>
         	         <hr>
         	         <h4>Here are some features of our App:</h4>
@@ -133,7 +133,7 @@
     </a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script></div>
 
      <a href=" https://www.linkedin.com/shareArticle?mini=true&url={{Request::url()}}&title={{$name[0]->title}}
-    &summary={{$name[0]->summary}}&source=LinkedIn" class="cleateJob" style="background-color: #1686b0;"><i class="fa fa-linkedin"></i></a>
+    &summary={!!$name[0]->summary!!}&source=LinkedIn" class="cleateJob" style="background-color: #1686b0;"><i class="fa fa-linkedin"></i></a>
 
   <div class="pin">
   <a style="background-color: #FA0001" data-pin-do="buttonPin" href="https://www.pinterest.com/pin/create/button/?url={{Request::url()}}&media=https://getsporty.in/portal/uploads/resources/$name[0]->image}}&summary={{$name[0]->title}}" data-pin-config="beside"><i class="fa fa-pinterest-p"></i>  </a>

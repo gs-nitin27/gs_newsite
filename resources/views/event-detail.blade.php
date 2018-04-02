@@ -1,18 +1,18 @@
 @extends('layouts.master')
 @section('pageTitle','Home')
 @section('meta')
-<meta name="description" content="{{$name[0]->description}}">
+<meta name="description" content="{!!$name[0]->description!!}">
 <meta name="keywords" content="@yield('keywords')">
 <meta name="twitter:dnt" content="on">
 <meta property="og:title" content="{{$name[0]->name}}" /> 
-<meta property="og:description" content="{{$name[0]->description}}" />
+<meta property="og:description" content="{!!$name[0]->description!!}" />
 <meta property="og:url" content="{{Request::url()}}" />
 <meta property="og:image" content="<?php echo config('constant.IMAGE_URL').'/event/'.$name[0]->image; ?>">
 <meta http-equiv="x-ua-compatible" content="ie=edge">
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:site" content="@getsporty" />
 <meta name="twitter:title" content="{{$name[0]->name}}" />
-<meta name="twitter:description" content="{{$name[0]->description}}" />
+<meta name="twitter:description" content="{!!$name[0]->description!!}" />
 <meta name="twitter:image" content="<?php echo config('constant.IMAGE_URL').'/event/'.$name[0]->image; ?>"
  />
 @endsection
@@ -143,7 +143,7 @@
     </a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script></div>
 
      <a href=" https://www.linkedin.com/shareArticle?mini=true&url={{Request::url()}}&title={{$name[0]->name}}
-    &summary={{$name[0]->description}}&source=LinkedIn" class="cleateJob" style="background-color: #1686b0;"><i class="fa fa-linkedin"></i></a>
+    &summary={!!$name[0]->description!!}&source=LinkedIn" class="cleateJob" style="background-color: #1686b0;"><i class="fa fa-linkedin"></i></a>
 
   <div class="pin">
   <a style="background-color: #FA0001" data-pin-do="buttonPin" href="https://www.pinterest.com/pin/create/button/?url={{Request::url()}}&media=https://getsporty.in/portal/uploads/event/$name[0]->image}}&summary={{$name[0]->name}}" data-pin-config="beside"><i class="fa fa-pinterest-p"></i>  </a>
