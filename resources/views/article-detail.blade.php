@@ -104,7 +104,7 @@
                      <img src="https://getsporty.in/portal/uploads/resources/{{$name1[$i]->image}}">
                       </div>
                        <div class="white-b">
-                        <h4>{{$name1[$i]->topic_of_artical}}</h4>
+                        <h4>{{$name1[$i]->title}}</h4>
 				         <p>{{$name1[$i]->summary}}</p>
 				          <p class="read-c"><a href="{{$name1[$i]->id}}" target="_blank">Read More</a></p>
                           </div>
