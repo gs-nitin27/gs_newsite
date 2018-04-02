@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use View;;
 use App\Http\Requests;
 use App\WebModel;
+use DateTime;
+
     class WebController extends Controller
     {
 
@@ -13,7 +15,11 @@ use App\WebModel;
     {
     $obj  = new WebModel();
     $resp = $obj->getHomeData();
-    return View::make("welcome")->with('name', $resp);
+
+
+   return View::make("welcome")->with('name', $resp);
+
+    
     }
 
     public function getaboutus()

@@ -97,7 +97,7 @@
           				            <p> Organizer Name : <span> {{$name1[$i]->organizer_name}} </span></p>
           				            <p> Location  : <span> {{$name1[$i]->organizer_city}} </span></p>
                               <p> Email  : <span> {{$name1[$i]->email_app_collection}} </span></p>
-          				            <p class="read-c"> Read More </p>                                  
+          				            <p class="read-c"><a href="{{$name1[$i]->id}}" target="_blank">Read More</a> </p>                                  
                           </div>
                       </div>
                       @endfor

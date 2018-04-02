@@ -107,7 +107,7 @@
           				            <p> Location : <span> {{$name1[$i]->name}}</span></p>
           				            <p> Posted : <span> 2 days ago </span></p>
           				            <p> Organisation Name : <span> {{$name1[$i]->name}} </span></p>
-          				            <p class="read-c"> Read More </p>                                  
+          				            <p class="read-c"><a href="{{$name1[$i]->id}}" target="_blank">Read More</a> </p>                                  
                           </div>
                       </div>
                       @endfor

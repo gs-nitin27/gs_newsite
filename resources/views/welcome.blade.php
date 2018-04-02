@@ -266,7 +266,16 @@ So, if you are passionate about sports and want to handle the business side of t
                         <div class="img-box"><img src="https://getsporty.in/portal/uploads/job/{{ $value->image }}"></div>
                         <div class="white-b">
                            <h4>{{$value->title}}</h4>
-                           <p> Posted  : <span>  3 days ago </span></p>
+
+
+<?php
+$datetime1 = new DateTime();
+$datetime2 = new DateTime($value->date_updated);
+$interval = $datetime1->diff($datetime2);
+$day = $interval->format(' %a Days ago ');
+?>
+
+                           <p> Posted  : <span> {{ $day }} </span></p>
                            <p> Place  : <span> {{$value->org_city}} </span></p>   
                            <p> Organisation Name  : <span> {{$value->organisation_name}} </span></p>
                            <div class="readMoreBtn"><a href="job-detail/{{$value->id}}">Read More</a> </div>                         
