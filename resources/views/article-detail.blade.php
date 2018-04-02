@@ -1,13 +1,21 @@
 @extends('layouts.master')
-@section('pageTitle','Home')
-@section('url','{{url('/article-detail/')}}<?php echo '/'.$name[0]->id;  ?>')
-@section('image','<?php echo config('constant.IMAGE_URL').'/resources/'.$name[0]->id; ?>')
-@section('title','{{$name[0]->title}}')
-@section('item_desc','{{$name[0]->summary}}')
-@section('summary','{{$name[0]->summary}}')
-@section('title','{{$name[0]->title}}')
-@section('item_desc','{{$name[0]->summary}}')
-@section('image_url','{{url('/article-detail/')}}<?php echo '/'.$name[0]->id;  ?>')
+@section('pageTitle','article-detail')
+@section('meta')
+<meta name="description" content="{{$name[0]->summary}}">
+<meta name="keywords" content="@yield('keywords')">
+<meta name="twitter:dnt" content="on">
+<meta property="og:title" content="{{$name[0]->title}}" /> 
+<meta property="og:description" content="{{$name[0]->summary}}" />  
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<meta name="twitter:card" content="{{$name[0]->summary}}" />
+<meta name="twitter:site" content="@getsporty" />
+<meta name="twitter:title" content="{{$name[0]->title}}" />
+<meta name="twitter:description" content="{{$name[0]->summary}}" />
+<meta name="twitter:image" content="<?php echo config('constant.IMAGE_URL').'/resources/'.$name[0]->image; ?>"
+ />
+<meta property="og:url" content="{{url('/article-detail/')}}<?php echo '/'.$name[0]->id; ?>" />
+<meta property="og:image" content="<?php echo config('constant.IMAGE_URL').'/resources/'.$name[0]->image; ?>">
+@endsection
 @section('content')
 
 
