@@ -132,7 +132,7 @@
      <div><a href="https://twitter.com/share" class="twitter-share-button fa fa-twitter" data-size="large" data-text="{{$name[0]->title}}" data-url="{{Request::url()}}" data-show-count="false" >
     </a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script></div>
 
-     <a href=" https://www.linkedin.com/shareArticle?mini=true&url=http://localhost/get/gs_newsite/event-detail/{{$name[0]->id}}&title={{$name[0]->title}}
+     <a href=" https://www.linkedin.com/shareArticle?mini=true&url={{Request::url()}}&title={{$name[0]->title}}
     &summary={{$name[0]->summary}}&source=LinkedIn" class="cleateJob" style="background-color: #1686b0;"><i class="fa fa-linkedin"></i></a>
 
   <div class="pin">
