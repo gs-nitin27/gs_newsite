@@ -641,7 +641,7 @@ Overall, sports events in India are always amusing to unite with. Every year we 
                   </div>
                   @endif
                   </div>
-                    <form method="POST" action="contact" >
+                    <form method="POST" action="javascript:void(0)" onsubmit="return validateForm()" name="email_form">
                       {{ csrf_field() }} 
                         <div class="form-group">
                             <label for="email">Email</label>
@@ -855,6 +855,32 @@ Overall, sports events in India are always amusing to unite with. Every year we 
         
         });
       })
+    function validateForm(){  
+        
+        var email = $('#email').val();
+        var subject = $('#sub').val();
+        var msg = $('#exampleFormControlTextarea1').val();
+        var data = {"email" : email, "subject":subject, "msg":msg};
+
+        $.ajax({
+            method  : "POST",
+            // "_token": "{{ csrf_token() }}",
+            headers : {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
+            url     : "{{url('/contact')}}",
+            type    : $(this).attr('method'),
+            dataType: 'json',
+            data    : JSON.stringify(data),
+            success : function( data ) {
+                         alert('Submitted');
+            },
+            error   : function( xhr, err ) {
+                         alert('Error');     
+            }
+        });    
+        return false;
+   
+  }
+
     </script> 
 
           

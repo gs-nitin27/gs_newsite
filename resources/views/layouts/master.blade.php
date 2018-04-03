@@ -1,5 +1,6 @@
      <html>
      <head>
+         <meta name="csrf-token" content="{{ csrf_token() }}" />
      	   <title>Getsporty- @yield('pageTitle')</title> 
      	   @include('layouts.head')
      </head>
