@@ -399,12 +399,12 @@ Overall, sports events in India are always amusing to unite with. Every year we 
                           <div class="white-b">
                               <h4>{{$value->name}}</h4>
                               <section class="clearfix">
-                                  <aside class="pull-left"><p> Start From  : <span>  {{$value->start_date}} </span></p></aside>
-                                  <aside class="pull-right"><p> To  : <span> {{$value->end_date}} </span></p></aside>
+                                  <aside class="pull-left"><p> Start From  : <span> <?php echo date('d F',strtotime($value->start_date)) ?></span></p></aside>
+                                  <aside class="pull-right"><p> To  : <span><?php echo date('d F, Y',strtotime($value->end_date)) ?></span></p></aside>
                               </section>
                               <section class="clearfix">
-                                  <aside class="pull-left"><p> Entry : <span>  {{$value->entry_start_date}} </span></p></aside>
-                                  <aside class="pull-right"><p> To  : <span>  {{$value->entry_end_date}} </span></p></aside>
+                                  <aside class="pull-left"><p> Entry : <span> <?php echo date('d F',strtotime($value->entry_start_date)) ?> </span></p></aside>
+                                  <aside class="pull-right"><p> To  : <span><?php echo date('d F, Y',strtotime($value->entry_end_date)) ?></span></p></aside>
                               </section>
                               <section class="clearfix">
                                   <aside class="pull-left"><p>  <span> {{$value->organizer_city}} </span></p></aside>
@@ -445,12 +445,12 @@ Overall, sports events in India are always amusing to unite with. Every year we 
                           <div class="white-b">
                               <h4>{{$value->name}}</h4>
                               <section class="clearfix">
-                                  <aside class="pull-left"><p> Start From  : <span>  {{$value->start_date}} </span></p></aside>
-                                  <aside class="pull-right"><p> To  : <span> {{$value->end_date}} </span></p></aside>
+                                  <aside class="pull-left"><p> Start From  : <span><?php echo date('d F',strtotime($value->start_date)) ?></span></p></aside>
+                                  <aside class="pull-right"><p> To  : <span><?php echo date('d F, Y',strtotime($value->end_date)) ?></span></p></aside>
                               </section>
                               <section class="clearfix">
-                                  <aside class="pull-left"><p> Entry : <span>  {{$value->event_entry_date}}</span></p></aside>
-                                  <aside class="pull-right"><p> To  : <span>  {{$value->event_end_date}}</span></p></aside>
+                                  <aside class="pull-left"><p> Entry : <span><?php echo date('d F',strtotime($value->event_entry_date)) ?></span></p></aside>
+                                  <aside class="pull-right"><p> To  : <span><?php echo date('d F, Y',strtotime($value->event_end_date)) ?></span></p></aside>
                               </section>
                               <section class="clearfix">
                                   <aside class="pull-left"><p>  <span> {{$value->org_city}} </span></p></aside>

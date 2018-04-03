@@ -24,8 +24,8 @@
        	    <div class="row">
        	      <div class="col-md-12">
        		    <div class="ban-pera">
-       			  <h1>Lorem ispum is dummy </h1>
-       			  <h3>Lorem ispum is dummy text.</h3>
+       			  <h1></h1>
+       			  <h3>{{$name[0]->name}}</h3>
        			
          	    </div>
                </div>

@@ -25,8 +25,8 @@
        	    <div class="row">
        	      <div class="col-md-12">
        		    <div class="ban-pera">
-       			  <h1>Lorem ispum is dummy </h1>
-       			  <h3>Lorem ispum is dummy text.</h3>
+       			  <h1></h1>
+       			  <h3>{{$name1[0]->type}}</h3>
        			
          	    </div>
                </div>
@@ -110,10 +110,10 @@
                           <div class="slide-job-list">
                               <h4>{{$name1[$i]->name}}</h4>
           				            <p> Type :   <span> {{$name1[$i]->type}} </span></p>
-          				            <p> Organizer Name : <span> {{$name1[$i]->organizer_name}} </span></p>
+          				            <p> Start : <span>  <?php echo date('d F',strtotime($name1[$i]->start_date)) ?> - <?php echo date('d F, Y',strtotime($name1[$i]->end_date)) ?></span></p>
+                              <p> Entry : <span><?php echo date('d F',strtotime($name1[$i]->entry_start_date)) ?> - <?php echo date('d F, Y',strtotime($name1[$i]->entry_end_date)) ?></span></p>
           				            <p> Location  : <span> {{$name1[$i]->organizer_city}} </span></p>
-                              <p> Email  : <span> {{$name1[$i]->email_app_collection}} </span></p>
-          				            <p class="read-c"><a href="{{$name1[$i]->id}}" target="_blank">Read More</a> </p>                                  
+                              <p class="read-c"><a href="{{$name1[$i]->id}}" target="_blank">Read More</a> </p>                                  
                           </div>
                       </div>
                       @endfor
