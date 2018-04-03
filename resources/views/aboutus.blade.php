@@ -58,29 +58,18 @@
         	 	<div class="row">
         	 	 <div class="heading-center m0 pad15">
           	      <h3>About Us</h3>
-             	   <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod <br> tempor incididunt.</p>
-                    </div>
+             </div>
                     
                     <div class="about-content">
-                     <h4>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</h4>
-                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
+                      <p>We are all a bunch of sports freak who still pampers a dream that was suppressed and quashed by the pathetic and despicable Indian sports system (OK..not all of us..but at least one us has suffered this fate). We belong to the breed of Indian people who are concerned about the state of sports in India. There can never be a right quantitative measure to find how many dreams die every moment in India because of the lack of grass-root structure and not to mention the mystic and the hazy path that most of Indian sports enthusiasts find hard to navigate. </p>
                                             <div class="margin15 clearfix"></div>
-                       <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>	
+                       <p>So, we started Getsporty to solve the perpetual and obnoxious real world problems faced by Sports People. We have developed this portal and an App to provide Sports People with right kind of information of the grass root sports. Further, we are developing technology and services through which we hope to make life easier for all of those involved at the lowest level of the food chain in Sports in India</p>	
                    
                       <div class="margin15 clearfix"></div>
-                        <div class="margin20 clearfix"></div>
-                       <div class="row">
-                     	<div class="col-lg-6">
-                     	<iframe width="100%" height="315" src="https://www.youtube.com/embed/YeYXeoYXZwY" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-                       </div>
-                       <div class="col-lg-6">
-                       <h4>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                         </div> 
-                         </div>
-        	            </div>
-                      </div>
- 					 </div>
+                      <div class="margin20 clearfix"></div>
+                    </div>
+                    </div>
+ 					          </div>
  				
  		  <div class="margin15 clearfix"></div>			 
  			  <div class="team-bg">
@@ -89,8 +78,7 @@
 				<div class="row">
 				  <div class="white-heading">
                   <h3>Our Team</h3>
-            	  <p>See what’s included in the App</p>
-                 </div>
+            	   </div>
                <div class="owl-carousel owl-theme">
                 
 		            <div class="item">

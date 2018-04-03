@@ -651,6 +651,11 @@ Overall, sports events in India are always amusing to unite with. Every year we 
                     <form method="POST" action="javascript:void(0)" onsubmit="return validateForm()" name="email_form">
                       {{ csrf_field() }} 
                         <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" class="form-control01" id="name" aria-describedby="emailHelp" placeholder="" name="name" required="name">
+                            
+                        </div>
+                        <div class="form-group">
                             <label for="email">Email</label>
                             <input type="email" class="form-control01" id="email" aria-describedby="emailHelp" placeholder="" name="email" required="email id">
                             
@@ -864,16 +869,18 @@ Overall, sports events in India are always amusing to unite with. Every year we 
       })
     function validateForm(){  
         
+       
         var email = $('#email').val();
+        var name = $('#name').val();
         var subject = $('#sub').val();
         var msg = $('#exampleFormControlTextarea1').val();
-        var data = {"email" : email, "subject":subject, "msg":msg};
+        var data = {"name":name,"email":email,"subject":subject,"message":msg,"medium":"W"};
 
         $.ajax({
             method  : "POST",
             // "_token": "{{ csrf_token() }}",
-            headers : {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
-            url     : "{{url('/contact')}}",
+            //headers : {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
+            url     : "https://getsporty.in/liveapp/getSportyLite/contact_us.php?act=contact_us&token_id=dhs2016",//"{{url('/contact')}}",
             type    : $(this).attr('method'),
             dataType: 'json',
             data    : JSON.stringify(data),
