@@ -15,29 +15,137 @@ if(Session::has('userdata'))
    }
 ?>
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="shortcut icon" href="img/fav.png">
-  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-  <title>Login</title>
-  
-  <!-- Bootstrap -->
-  <link href="{{asset('manage_assets/css/bootstrap.min.css')}}" rel="stylesheet">
-  <link href="{{asset('manage_assets/css/style.css')}}" rel="stylesheet">
-  <link href="{{asset('manage_assets/css/font-awesome.min.css')}}" rel="stylesheet">  
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>  
-  <script src="{{asset('manage_assets/js/bootstrap.min.js')}}"></script>
-  <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
-  
+<html>
+<head>
+  <style type="text/css">
+    .loading {
+  position: fixed;
+  z-index: 999;
+  height: 2em;
+  width: 2em;
+  overflow: show;
+  margin: auto;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+/* Transparent Overlay */
+.loading:before {
+  content: '';
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+    background: radial-gradient(rgba(20, 20, 20,.8), rgba(0, 0, 0, .8));
+
+  background: -webkit-radial-gradient(rgba(20, 20, 20,.8), rgba(0, 0, 0,.8));
+}
+
+/* :not(:required) hides these rules from IE9 and below */
+.loading:not(:required) {
+  /* hide "loading..." text */
+  font: 0/0 a;
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0;
+}
+
+.loading:not(:required):after {
+  content: '';
+  display: block;
+  font-size: 10px;
+  width: 1em;
+  height: 1em;
+  margin-top: -0.5em;
+  -webkit-animation: spinner 1500ms infinite linear;
+  -moz-animation: spinner 1500ms infinite linear;
+  -ms-animation: spinner 1500ms infinite linear;
+  -o-animation: spinner 1500ms infinite linear;
+  animation: spinner 1500ms infinite linear;
+  border-radius: 0.5em;
+  -webkit-box-shadow: rgba(255,255,255, 0.75) 1.5em 0 0 0, rgba(255,255,255, 0.75) 1.1em 1.1em 0 0, rgba(255,255,255, 0.75) 0 1.5em 0 0, rgba(255,255,255, 0.75) -1.1em 1.1em 0 0, rgba(255,255,255, 0.75) -1.5em 0 0 0, rgba(255,255,255, 0.75) -1.1em -1.1em 0 0, rgba(255,255,255, 0.75) 0 -1.5em 0 0, rgba(255,255,255, 0.75) 1.1em -1.1em 0 0;
+box-shadow: rgba(255,255,255, 0.75) 1.5em 0 0 0, rgba(255,255,255, 0.75) 1.1em 1.1em 0 0, rgba(255,255,255, 0.75) 0 1.5em 0 0, rgba(255,255,255, 0.75) -1.1em 1.1em 0 0, rgba(255,255,255, 0.75) -1.5em 0 0 0, rgba(255,255,255, 0.75) -1.1em -1.1em 0 0, rgba(255,255,255, 0.75) 0 -1.5em 0 0, rgba(255,255,255, 0.75) 1.1em -1.1em 0 0;
+}
+
+/* Animation */
+
+@-webkit-keyframes spinner {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@-moz-keyframes spinner {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@-o-keyframes spinner {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes spinner {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+  </style>
+<title>Getsporty::Manage</title>
+<link href="{{asset('manage_assets/css/bootstrap.min.css')}}" rel="stylesheet">
+<link href="{{asset('manage_assets/css/style.css')}}" rel="stylesheet">
 <meta name="google-signin-client_id" content="<?php echo config('constant.GOOGLE_ID');?>">
 <meta name="csrf-token" content="{{ csrf_token() }}">
-
-<link href="{{asset('manage_assets/css/style2.css')}}" rel="stylesheet">
- <style type="text/css">
-    .btn-google {
+<style type="text/css">
+   .btn-google {
     background-color: #dd4b39;
     background-image: url(http://vagnersantana.com/social-signin-btns/img/google.svg);
 }.btn-si {
@@ -55,7 +163,22 @@ if(Session::has('userdata'))
     text-decoration: none;
     transition: all 0.5s;
 }
- </style>   
+.social_login{
+border: 0.5px solid #ccc;
+    padding: 28px 27px 21px 37px;
+    /* align-items: center; */
+    /* float: inherit; */
+    /* vertical-align: middle; */
+    /* margin-left: 0%; */
+    position: relative;
+    left: 130%;
+
+
+} </style>   
+</head>
+<script type="text/javascript" src="{{asset('manage_assets/js/set_user_data.js')}}"></script>
+<body>
+ <div class="loading" hidden>Loading&#8230;</div>   
 <div id="fb-root"></div>
 <script>
 
@@ -67,57 +190,57 @@ if(Session::has('userdata'))
   js.src = 'https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.11&appId=<?php echo config('constant.FACEBOOK_ID'); ?>';
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
-  </head>
-<body style="background-image:url({{asset('manage_assets/img/login-bg.jpg')}});height: 100vh;background-repeat: no-repeat; background-size: cover;">
-
-
-
-  <div class="container">
-    <div class="col-sm-12">      
-      <div class="row rowtop">
-
-        <div class="col-sm-6 pad28">
-          <h1>Lorem Ipsum has been industry's standard dummy text since the 1500s</h1>
-          <p >Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley.</p> 
-        </div>
-
-        
-
-        <div class="col-sm-6 text-center">
-           <div class="login logInDiv">
-               <div class="">
-                      <p class="login_heading">GETSTORY</p>
-                      <div class="form-group form_1">
-                       
-                          <button type="button" class="btn btn-danger ">
-                          <span  class="g-signin2 loginBtn loginBtn--google" data-onsuccess="onSignIn" style="width:254px;"></span> 
-                        </button>
-                      
-                      </div>
-
-                        <p style="color: black">OR</p>
-
-                      <div class="form-group form_2">
-                           <div class="fb-login-button" data-width="104" data-size="large" data-button-type="login_with" data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="false" onlogin="checkLoginState()" style="display: block" hidden></div>
-                        </button>
-                      
-                      </div>
-
-                       <p style="color: black">Lorem Ipsum has been the industry's standard dummy text ever.</p> 
-               </div>
-            </div>
+ <div class="pre-loader">
+        <div class="load-con" style="text-align: center;">
+            <img src="<?php //echo base_url('img/logo.png');?>" class="animated fadeInDown" style="width: 296px;height: auto;" alt=""> 
         </div> 
-      </div>
     </div>
-  </div>
-</body>
+<div class="background">
+<!-- <div class="loading" id="imagelodar">Loading&#8230; -->
+<div class="loader">
+<div class="inner one"></div>
+<div class="inner two"></div>
+<div class="inner three"></div>
+</div>
+</div>
+<div class="section"></div>
+<div style="text-align:center; ">
+<main>
+<div class="section"></div>
+<div class="section"></div>
+<div class="container-fluid" style="margin-top: 6%">
+<div class="row-fluid" >
+<div class="col-md-offset-4 col-md-4" id="box" style="background-color:#2698ed; ">
+<img class="responsive-img" style="width:50%; margin-top: 10%" />              
+<hr>  
+<div class="form-group" >
+<div class="col-md-12">
+<div class="input-group" style="margin-left: 21%;">
+<!-- <button class=""> -->
+<span  class="g-signin2 loginBtn loginBtn--google" data-onsuccess="onSignIn" style="width:254px;"></span> 
+<!-- </button> -->
+<br>
+<div class="fb-login-button" data-width="254" data-size="large" data-button-type="login_with" data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="false" onlogin="checkLoginState()"></div>
+</div>
+</div>
+</div>
+<div class="form-group" style="margin-top: 15%;margin-bottom:40%;margin-left: 18%;">
+<div class="col-md-12">
+<div class="input-group">
+<!-- <button class="loginBtn loginBtn--facebook">
+<span class="fa fa-facebook"></span> Sign in with Facebook
+</button>
+ --></div>
+</div>
+</div>
+<hr></body>
 <script src="https://apis.google.com/js/platform.js" async defer></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>  
 <script src="{{asset('manage_assets/js/bootstrap.min.js')}}"></script>
 <script type="text/javascript" src="{{asset('manage_assets/js/Managelogin.js')}}"></script>
 <script type="text/javascript">
- var app_id = '<?php echo config('constant.FACEBOOK_ID'); ?>';
- var app_version = '<?php echo config('constant.FACEBOOK_VERSION'); ?>';
+// var app_id = '<?php echo config('constant.FACEBOOK_ID'); ?>';
+// var app_version = '<?php echo config('constant.FACEBOOK_VERSION'); ?>';
 
 function checkLoginState(){
 FB.getLoginStatus(function(response) {
@@ -300,5 +423,4 @@ console.log(data);
     });
   }
 </script>
-
 </html>

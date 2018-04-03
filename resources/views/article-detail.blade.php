@@ -92,8 +92,8 @@
 	        <div class="container">
               <div class="row">
                 <div class="heading-center">
-          	     <h3>Related article</h3>
-             	  <p>Learn more about this feature packed App</p>
+          	     <h3>Related articles</h3>
+             	 <!--  <p>Learn more about this feature packed App</p> -->
                   </div>
                   <div id="customers-testimonials2" class="owl-carousel">
 
