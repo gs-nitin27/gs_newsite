@@ -885,7 +885,7 @@ Overall, sports events in India are always amusing to unite with. Every year we 
             dataType: 'json',
             data    : JSON.stringify(data),
             success : function( data ) {
-                         alert('Submitted');
+                         alert('Thanks for writing us');
             },
             error   : function( xhr, err ) {
                          alert('Error');     
