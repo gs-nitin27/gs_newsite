@@ -2,6 +2,7 @@
 function getListing(module,id)
 {  
 $(id).empty();
+
 (function($){   
     $.fn.loaddata = function(options) {// Settings
         var settings = $.extend({ 
@@ -26,7 +27,7 @@ $(id).empty();
     function contents(el, settings){
         var load_img = $('<img/>').attr('src',settings.loading_gif_url).addClass('loading-image'); //create load image
         var record_end_txt = $('<div/>').text(settings.end_record_text).addClass('end-record-info'); //end record text
-        
+        //$("#myModa").empty();
         if(loading == false && end_record == false){
             loading = true; //set loading flag on
             el.append(load_img); //append loading image
@@ -47,7 +48,9 @@ $(id).empty();
 
 })(jQuery);
 
+
 $(id).loaddata();
+
 
 
 } // End of Function
