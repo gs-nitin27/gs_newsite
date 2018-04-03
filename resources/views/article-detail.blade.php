@@ -73,7 +73,7 @@
         	       </div> 
         	       <div class="margin15"></div>
         	       <div class="content">
-        	       	<p>{{$name[0]->topic_of_artical}} / {{$name[0]->location}} / {{$name[0]->date_created}}</p>
+        	       	<p>{{$name[0]->topic_of_artical}} / {{$name[0]->location}} / <?php echo date('d F, Y',strtotime($name[0]->date_created))?></p>
         	         <h4>
 
 
