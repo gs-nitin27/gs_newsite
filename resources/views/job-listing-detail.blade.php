@@ -1,18 +1,15 @@
 @extends('layouts.master')
 @section('pageTitle','Home')
 @section('meta')
-<meta name="description" content="{!!$name[0]->description!!}">
 <meta name="keywords" content="@yield('keywords')">
 <meta name="twitter:dnt" content="on">
 <meta property="og:title" content="{{$name[0]->title}}" /> 
-<meta property="og:description" content="{!!$name[0]->description!!}" />
 <meta property="og:url" content="{{Request::url()}}" />
 <meta property="og:image" content="<?php echo config('constant.IMAGE_URL').'/job/'.$name[0]->image; ?>">
 <meta http-equiv="x-ua-compatible" content="ie=edge">
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:site" content="@getsporty" />
 <meta name="twitter:title" content="{{$name[0]->title}}" />
-<meta name="twitter:description" content="{!!$name[0]->description!!}" />
 <meta name="twitter:image" content="<?php echo config('constant.IMAGE_URL').'/job/'.$name[0]->image; ?>"
  />
 @endsection
