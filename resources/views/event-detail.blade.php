@@ -25,7 +25,7 @@
        	    <div class="row">
        	      <div class="col-md-12">
        		    <div class="ban-pera">
-       			  <h1>{{$name1[0]->sport}}</h1>
+       			  <h1></h1>
        			  <h3>{{$name1[0]->type}}</h3>
        			
          	    </div>
