@@ -86,7 +86,7 @@ if(Session::has('userdata'))
         <div class="col-sm-6 text-center">
            <div class="login logInDiv">
                <div class="">
-                      <p class="login_heading">GETSTORY</p>
+                      <p class="login_heading">GETSPORTY</p>
                       <div class="form-group form_1">
                        
                           <button type="button" class="btn btn-danger ">
