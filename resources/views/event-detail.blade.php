@@ -25,8 +25,8 @@
        	    <div class="row">
        	      <div class="col-md-12">
        		    <div class="ban-pera">
-       			  <h1>Lorem ispum is dummy </h1>
-       			  <h3>Lorem ispum is dummy text.</h3>
+       			  <h1>{{$name1[0]->sport}}</h1>
+       			  <h3>{{$name1[0]->type}}</h3>
        			
          	    </div>
                </div>
