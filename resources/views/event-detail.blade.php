@@ -110,8 +110,8 @@
                           <div class="slide-job-list">
                               <h4>{{$name1[$i]->name}}</h4>
           				            <p> Type :   <span> {{$name1[$i]->type}} </span></p>
-          				            <p> Start : <span>  <?php echo date('d F',strtotime($name1[$i]->start_date)) ?> - <?php echo date('d F',strtotime($name1[$i]->end_date)) ?></span></p>
-                              <p> Entry : <span><?php echo date('d F',strtotime($name1[$i]->entry_start_date)) ?> - <?php echo date('d F',strtotime($name1[$i]->entry_end_date)) ?></span></p>
+          				            <p> Start : <span>  <?php echo date('d F',strtotime($name1[$i]->start_date)) ?> - <?php echo date('d F, Y',strtotime($name1[$i]->end_date)) ?></span></p>
+                              <p> Entry : <span><?php echo date('d F',strtotime($name1[$i]->entry_start_date)) ?> - <?php echo date('d F, Y',strtotime($name1[$i]->entry_end_date)) ?></span></p>
           				            <p> Location  : <span> {{$name1[$i]->organizer_city}} </span></p>
                               <p class="read-c"><a href="{{$name1[$i]->id}}" target="_blank">Read More</a> </p>                                  
                           </div>
