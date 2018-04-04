@@ -4,6 +4,9 @@
 <!-- <style type="text/css">
   div.main-text {overflow-x: hidden;width: 800px;} 
 </style> -->
+@section('meta')
+<meta property="og:image" content="https://getsporty.in/23376596_1450074778394787_4309845126431335508_n (1).png">
+@endsection
 <style type="text/css">
   .loading {
   position: fixed;
