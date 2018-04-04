@@ -8,7 +8,7 @@ $(id).empty();
 (function($){   
     $.fn.loaddata = function(options) {// Settings
         var settings = $.extend({ 
-            loading_gif_url : "https://www.getsporty.in/staging/uploads/profile/ajax-loader.gif", //url to loading gif
+            loading_gif_url : sec+"://www.getsporty.in/staging/uploads/profile/ajax-loader.gif", //url to loading gif
             end_record_text : 'No more records found!', //no more records to load
             data_url        : sec+'://getsporty.in/testingapp/website_controller.php?act='+module+'', //url to PHP page
             start_page      : 1 //initial page
