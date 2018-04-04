@@ -74,7 +74,7 @@ box-shadow: rgba(255,255,255, 0.75) 1.5em 0 0 0, rgba(255,255,255, 0.75) 1.1em 1
             <!-- Wrapper for slides -->
             <div class="carousel-inner">
                 <section class="item active">
-                    <img src="img/sports-trials.png" alt="Chania">                
+                    <img src="public/img/sports-trials.png" alt="Chania">                
                     <div class="carousel-caption">
                         <div class="container">
                             <div class="ban-pera">
@@ -86,7 +86,7 @@ box-shadow: rgba(255,255,255, 0.75) 1.5em 0 0 0, rgba(255,255,255, 0.75) 1.1em 1
                     </div>
                 </section>
                 <section class="item">
-                    <img src="img/sports-trials1.png" alt="Chania">                
+                    <img src="public/img/sports-trials1.png" alt="Chania">                
                     <div class="carousel-caption">
                         <div class="container">
                             <div class="ban-pera">
@@ -98,7 +98,7 @@ box-shadow: rgba(255,255,255, 0.75) 1.5em 0 0 0, rgba(255,255,255, 0.75) 1.1em 1
                     </div>
                 </section>
                 <section class="item">
-                    <img src="img/sports-trials2.png" alt="Chania">                
+                    <img src="public/img/sports-trials2.png" alt="Chania">                
                     <div class="carousel-caption">
                         <div class="container">
                             <div class="ban-pera">
@@ -110,7 +110,7 @@ box-shadow: rgba(255,255,255, 0.75) 1.5em 0 0 0, rgba(255,255,255, 0.75) 1.1em 1
                     </div>
                 </section>
                 <section class="item">
-                    <img src="img/gs.png" alt="Chania">                
+                    <img src="public/img/gs.png" alt="Chania">                
                     <div class="carousel-caption">
                         <div class="container">
                             <div class="ban-pera">
@@ -132,7 +132,7 @@ box-shadow: rgba(255,255,255, 0.75) 1.5em 0 0 0, rgba(255,255,255, 0.75) 1.1em 1
          <div class="relative playHome">
            <!--  <div class="blue-bg blue-Home"></div> -->
              <div class="play-icon" data-toggle="modal" data-target="#myModal">
-                   <img src="img/play-icon.svg">
+                   <img src="public/img/play-icon.svg">
               </div>
             </div> 
          <!-- Modal -->
@@ -146,8 +146,8 @@ box-shadow: rgba(255,255,255, 0.75) 1.5em 0 0 0, rgba(255,255,255, 0.75) 1.1em 1
                             <section class="getAppBox text-center">
                                 <h3>Get app</h3>
                                 <p>Choose your native platform and get started!</p>
-                                <img src="img/play-btn.png">
-                                <img class="img-responsive" src="img/app.png">
+                                <img src="public/img/play-btn.png">
+                                <img class="img-responsive" src="public/img/app.png">
                             </section>
                          </div>
                     </div>
@@ -186,7 +186,7 @@ box-shadow: rgba(255,255,255, 0.75) 1.5em 0 0 0, rgba(255,255,255, 0.75) 1.1em 1
                      <div class="item">
                       <div class="box-app">
                         <div class="circle-box">
-                          <img src="img/feature-img.svg">
+                          <img src="public/img/feature-img.svg">
                           </div>
                          <h4>Events</h4>
                        <p>We bring you the latest updates on all the big sports events to your GetSporty App. Be it an upcoming sports trial or just a weekend sporting event, get all the information on your phone</p>
@@ -195,7 +195,7 @@ box-shadow: rgba(255,255,255, 0.75) 1.5em 0 0 0, rgba(255,255,255, 0.75) 1.1em 1
                         <div class="item">
                      <div class="box-app">
                        <div class="circle-box">
-                        <img src="img/feature-img2.svg">
+                        <img src="public/img/feature-img2.svg">
                          </div>
                         <h4>Tournaments</h4>
                        <p>Never miss an opportunity to impress and be never short on practice. Get all the updates on the latest and the upcoming sports tournaments in the area near you.</p>
@@ -204,7 +204,7 @@ box-shadow: rgba(255,255,255, 0.75) 1.5em 0 0 0, rgba(255,255,255, 0.75) 1.1em 1
                    <div class="item">
                     <div class="box-app">
                      <div class="circle-box">
-                      <img src="img/feature-img3.svg">
+                      <img src="public/img/feature-img3.svg">
                         </div>
                         <h4>Coach</h4>
                        <p>Want to become a professional player? For the best result, contact the best coach and train harder and smarter</p>
@@ -213,7 +213,7 @@ box-shadow: rgba(255,255,255, 0.75) 1.5em 0 0 0, rgba(255,255,255, 0.75) 1.1em 1
                   <div class="item">
                     <div class="box-app">
                       <div class="circle-box">
-                        <img src="img/feature-img4.svg">
+                        <img src="public/img/feature-img4.svg">
                          </div>
                          <h4>Connect</h4>
                         <p>Contact the best professionals, trainers or the coaches to help you refine your skills and be the player that you have always dreamt about</p>
@@ -223,7 +223,7 @@ box-shadow: rgba(255,255,255, 0.75) 1.5em 0 0 0, rgba(255,255,255, 0.75) 1.1em 1
                       <div class="item">
                       <div class="box-app">
                        <div class="circle-box">
-                             <img src="img/Job_Listing.png">
+                             <img src="public/img/Job_Listing.png">
                           </div>
                              <h4>Job Listing</h4>
                              <p>Find your dream sports job. Browse through all the latest sports jobs in the Goverment or private sector through our specially devoted "Sports Job Portal"</p>
@@ -232,7 +232,7 @@ box-shadow: rgba(255,255,255, 0.75) 1.5em 0 0 0, rgba(255,255,255, 0.75) 1.1em 1
                 <div class="item">
                     <div class="box-app">
                      <div class="circle-box">
-                         <img src="img/assessment.png">
+                         <img src="public/img/assessment.png">
                       </div>
                          <h4>Assessment</h4>
                          <p>Get your daily performance assessed by professionals or be the master of your own training sessions</p>
@@ -241,7 +241,7 @@ box-shadow: rgba(255,255,255, 0.75) 1.5em 0 0 0, rgba(255,255,255, 0.75) 1.1em 1
                 <div class="item">
                     <div class="box-app">
                      <div class="circle-box">
-                         <img src="img/resources.png">
+                         <img src="public/img/resources.png">
                       </div>
                          <h4>Resources</h4>
                          <p>Not an everyday content but a fearsome approach to take on the state of Indian sports and a complete guide to reveal the path for sports enthusiasts to reach the pinnacle of their sport</p>
@@ -250,7 +250,7 @@ box-shadow: rgba(255,255,255, 0.75) 1.5em 0 0 0, rgba(255,255,255, 0.75) 1.1em 1
                 <div class="item">
                     <div class="box-app">
                      <div class="circle-box">
-                         <img src="img/training_Log.png">
+                         <img src="public/img/training_Log.png">
                       </div>
                          <h4>Training Log</h4>
                          <p>Track your workouts, save your history and manage your performance with this dedicated training log</p>
@@ -259,7 +259,7 @@ box-shadow: rgba(255,255,255, 0.75) 1.5em 0 0 0, rgba(255,255,255, 0.75) 1.1em 1
                 <div class="item">
                     <div class="box-app">
                      <div class="circle-box">
-                         <img src="img/post_Results.png">
+                         <img src="public/img/post_Results.png">
                       </div>
                          <h4>Post Results</h4>
                          <p>Give yourself remarks and compare your last day's performance with your recent results</p>
@@ -268,7 +268,7 @@ box-shadow: rgba(255,255,255, 0.75) 1.5em 0 0 0, rgba(255,255,255, 0.75) 1.1em 1
                 <div class="item">
                     <div class="box-app">
                      <div class="circle-box">
-                         <img src="img/parent.png">
+                         <img src="public/img/parent.png">
                       </div>
                          <h4>Parent</h4>
                          <p>Book an upcoming event or tournament or just hire a personal trainer or coach for your child. Keep a tab on your ward's performance through this unique feature</p>
@@ -527,12 +527,12 @@ Overall, sports events in India are always amusing to unite with. Every year we 
                   <div class="row">
                       <div class="heading-center"> <h3>Our Media</h3> <p>For more info and support, contact us!</p></div>           
                       <div class="owl-carousel owl-theme">
-                          <div class="item"><div class="border-client"><img src="img/logo-client.png"></div></div>
-                          <div class="item"><div class="border-client"><img src="img/logo-client2.png"></div></div>
-                          <div class="item"><div class="border-client"><img src="img/logo-client3.png"></div></div>
-                          <div class="item"><div class="border-client"><img src="img/logo-client4.png"></div></div>
-                          <div class="item"><div class="border-client"><img src="img/logo-client6.png"></div></div>
-                          <div class="item"><div class="border-client"><img src="img/logo-client6.png"></div></div>
+                          <div class="item"><div class="border-client"><img src="public/img/logo-client.png"></div></div>
+                          <div class="item"><div class="border-client"><img src="public/img/logo-client2.png"></div></div>
+                          <div class="item"><div class="border-client"><img src="public/img/logo-client3.png"></div></div>
+                          <div class="item"><div class="border-client"><img src="public/img/logo-client4.png"></div></div>
+                          <div class="item"><div class="border-client"><img src="public/img/logo-client6.png"></div></div>
+                          <div class="item"><div class="border-client"><img src="public/img/logo-client6.png"></div></div>
                       </div>
                   </div>
               </div>
@@ -555,7 +555,7 @@ Overall, sports events in India are always amusing to unite with. Every year we 
                 
                     <div class="item">
                      <a href="team-detail.php">
-                   <img src="img/dp.png">
+                   <img src="public/img/dp.png">
                    <h4>Anirudh Singh</h4>
                    <span>Founder & Product Architect</span>
                     <div class="socails">
@@ -577,7 +577,7 @@ Overall, sports events in India are always amusing to unite with. Every year we 
 
                      <div class="item">
                        <a href="team-detail.php">
-                   <img src="img/dp2.png">
+                   <img src="public/img/dp2.png">
                    <h4>NITIN AGARWAL</h4>
                    <span>Head, Web Development</span>
                     <div class="socails">
@@ -598,7 +598,7 @@ Overall, sports events in India are always amusing to unite with. Every year we 
  
                      <div class="item">
                        <a href="team-detail.php">
-                   <img src="img/dp3.png">
+                   <img src="public/img/dp3.png">
                    <h4>Sandeep Kumar Singh</h4>
                    <span>Head, Android Development</span>
                     <div class="socails">
@@ -619,9 +619,9 @@ Overall, sports events in India are always amusing to unite with. Every year we 
 
                       <div class="item">
                         <a href="team-detail.php">
-                   <img src="img/dp4.png">
+                   <img src="public/img/dp4.png">
                    <h4>Kumar Gaurav</h4>
-                   <span>Head, IOS Development</span>
+                   <span>Android Development</span>
                     <div class="socails">
                        <ul>
                         <li><a href="#">
@@ -640,7 +640,7 @@ Overall, sports events in India are always amusing to unite with. Every year we 
                      
                  <div class="item">
                    <a href="team-detail.php">
-                   <img src="img/dp.png">
+                   <img src="public/img/dp.png">
                    <h4>Anirudh Singh</h4>
                    <span>Founder & Product Architect</span>
                     <div class="socails">
@@ -661,7 +661,7 @@ Overall, sports events in India are always amusing to unite with. Every year we 
 
                      <div class="item">
                        <a href="team-detail.php">
-                   <img src="img/dp2.png">
+                   <img src="public/img/dp2.png">
                    <h4>NITIN AGARWAL</h4>
                    <span>Head, Web Development</span>
                     <div class="socails">
@@ -730,9 +730,9 @@ Overall, sports events in India are always amusing to unite with. Every year we 
                   <div class="col-lg-5 col-md-5">
                       <div class="right-cont">
                           <h3>Contact:</h3>
-                          <p><img src="img/latitude.svg"> A 20, Sector 35, Noida, India ,201301</p>
-                          <p><img src="img/contact.svg"> +91 120 4511807</p>
-                          <p><img src="img/mail.svg"> info@darkhorsesports.in</p>
+                          <p><img src="public/img/latitude.svg"> A 20, Sector 35, Noida, India ,201301</p>
+                          <p><img src="public/img/contact.svg"> +91 120 4511807</p>
+                          <p><img src="public/img/mail.svg"> info@darkhorsesports.in</p>
                           </div>
                   </div>
 
