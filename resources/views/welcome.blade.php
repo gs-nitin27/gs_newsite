@@ -525,7 +525,7 @@ Overall, sports events in India are always amusing to unite with. Every year we 
       </div>
 
     
-          <section class="mediaSecHome">
+          <!-- <section class="mediaSecHome">
               <div class="container" id="app">
                   <div class="row">
                       <div class="heading-center"> <h3>Our Media</h3> <p>For more info and support, contact us!</p></div>           
@@ -539,7 +539,7 @@ Overall, sports events in India are always amusing to unite with. Every year we 
                       </div>
                   </div>
               </div>
-          </section>
+          </section> -->
        <!--  <div class="relative">
           <div class="phone-img">
             <img class="img-responsive" src="img/iphone-img.jpg">
