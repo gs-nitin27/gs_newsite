@@ -69,7 +69,7 @@ ob_start();
                               <h3>Get app</h3>
                               <p>Choose your native platform and get started!</p>
                               <img src="img/play-btn.png">
-                              <img class="img-responsive" src="img/app.png">
+                              <img class="img-responsive" src="public/img/app.png">
                           </section>
                        </div>
                   </div>

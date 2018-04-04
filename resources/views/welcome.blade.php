@@ -4,6 +4,9 @@
 <!-- <style type="text/css">
   div.main-text {overflow-x: hidden;width: 800px;} 
 </style> -->
+@section('meta')
+<meta property="og:image" content="https://getsporty.in/23376596_1450074778394787_4309845126431335508_n (1).png">
+@endsection
 <style type="text/css">
   .loading {
   position: fixed;
@@ -164,7 +167,7 @@ box-shadow: rgba(255,255,255, 0.75) 1.5em 0 0 0, rgba(255,255,255, 0.75) 1.1em 1
                          <button type="button" class="close" data-dismiss="modal">&times;</button>
 
 
-                          <iframe width="100%" height="315" src="https://www.youtube.com/embed/6QsIvzS4_ws" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                          <iframe width="100%" height="315" src="https://www.youtube.com/watch?v=bVcfL6KtFfs&feature=youtu.be" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 
                           <!-- <iframe width="100%" height="315" src="https://www.youtube.com/embed/njooQXjHmb0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
@@ -522,7 +525,7 @@ Overall, sports events in India are always amusing to unite with. Every year we 
       </div>
 
     
-          <section class="mediaSecHome">
+          <!-- <section class="mediaSecHome">
               <div class="container" id="app">
                   <div class="row">
                       <div class="heading-center"> <h3>Our Media</h3> <p>For more info and support, contact us!</p></div>           
@@ -536,7 +539,7 @@ Overall, sports events in India are always amusing to unite with. Every year we 
                       </div>
                   </div>
               </div>
-          </section>
+          </section> -->
        <!--  <div class="relative">
           <div class="phone-img">
             <img class="img-responsive" src="img/iphone-img.jpg">
