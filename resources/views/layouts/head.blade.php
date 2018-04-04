@@ -2,8 +2,8 @@
      <meta name="viewport" content="width=device-width, initial-scale=1">
         @yield('meta')
         <link href="{{asset('css/bootstrap.min.css')}}" rel="stylesheet">
-        <link href="{{asset('css/style.css')}}" rel="stylesheet">
-        <link href="{{asset('css/media.css')}}" rel="stylesheet">
+        <link href="{{asset('css/style1.css')}}" rel="stylesheet">
+        <link href="{{asset('css/media1.css')}}" rel="stylesheet">
         <link href="{{asset('css/font-awesome.min.css')}}" rel="stylesheet">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
         <script src="{{asset('js/bootstrap.min.js')}}"></script>
