@@ -13,3 +13,8 @@
     <link rel="stylesheet" href="{{asset('public/css/owl.theme.default.min.css')}}">
     <script src="{{asset('public/js/owl.carousel.js')}}"></script>
     <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
+    <script type="text/javascript">
+        var curr_url =  window.location.href;
+var sec = curr_url.split(':');
+sec = sec[0];
+    </script>

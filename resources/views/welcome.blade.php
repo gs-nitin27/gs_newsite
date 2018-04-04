@@ -937,7 +937,7 @@ Overall, sports events in India are always amusing to unite with. Every year we 
             method  : "POST",
             // "_token": "{{ csrf_token() }}",
             //headers : {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
-            url     : "https://getsporty.in/liveapp/getSportyLite/contact_us.php?act=contact_us&token_id=dhs2016",//"{{url('/contact')}}",
+            url     : sec+"://getsporty.in/liveapp/getSportyLite/contact_us.php?act=contact_us&token_id=dhs2016",//"{{url('/contact')}}",
             type    : $(this).attr('method'),
             dataType: 'json',
             data    : JSON.stringify(data),

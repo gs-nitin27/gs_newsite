@@ -1,6 +1,4 @@
-var curr_url =  window.location.href;
-var sec = curr_url.split(':');
-sec = sec[0];
+
 function getListing(module,id)
 {  
 $(id).empty();
