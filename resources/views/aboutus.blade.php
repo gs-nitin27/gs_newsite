@@ -260,7 +260,8 @@
      <div class="clearfix margin20"></div> 
        <div class="relative">
              <div class="map">
-             <iframe class="w100" src="https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d58883.73429876116!2d75.82270614616367!3d22.71956488732932!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e6!4m5!1s0x3962fcad1b410ddb%3A0x96ec4da356240f4!2sIndore%2C+Madhya+Pradesh!3m2!1d22.7195687!2d75.8577258!4m0!5e0!3m2!1sen!2sin!4v1503394956409" width="100%" height="400" frameborder="0" style="border:0" allowfullscreen=""></iframe>
+             <iframe class="w100" src="https://www.google.com/maps/embed/v1/place?q=A20%20Udhayan%20Marg%2C%20Block%20A%2C%20Sector%2035%2C%20Noida%2C%20Uttar%20Pradesh%2C%20India&key=AIzaSyDv7v3jJInF4dT2KKMXQIR6SHmtkMLX1SE" width="100%" height="400" frameborder="0" style="border:0" allowfullscreen=""></iframe>
+             
              </div>
        </div> 
        
