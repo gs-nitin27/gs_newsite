@@ -8,7 +8,7 @@
        	    <div class="row">
        	      <div class="col-md-12">
        		    <div class="ban-pera">
-       			  <!-- <h1>Lorem ispum is dummy </h1> -->
+       			  <h1> </h1>
        			  <h3>"WE ARE TAKING SPORTS TO PEOPLE AND PEOPLE TO SPORTS"</h3>	
          	    </div>
                </div>
