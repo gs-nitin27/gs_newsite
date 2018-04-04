@@ -1,4 +1,6 @@
-
+var curr_url =  window.location.href;
+var sec = curr_url.split(':');
+sec = sec[0];
 function getListing(module,id)
 {  
 $(id).empty();
@@ -6,9 +8,9 @@ $(id).empty();
 (function($){   
     $.fn.loaddata = function(options) {// Settings
         var settings = $.extend({ 
-            loading_gif_url : "http://www.getsporty.in/staging/uploads/profile/ajax-loader.gif", //url to loading gif
+            loading_gif_url : "https://www.getsporty.in/staging/uploads/profile/ajax-loader.gif", //url to loading gif
             end_record_text : 'No more records found!', //no more records to load
-            data_url        : 'https://getsporty.in/testingapp/website_controller.php?act='+module+'', //url to PHP page
+            data_url        : sec+'://getsporty.in/testingapp/website_controller.php?act='+module+'', //url to PHP page
             start_page      : 1 //initial page
         }, options);
         
