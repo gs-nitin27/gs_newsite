@@ -37,7 +37,7 @@
         <div class="relative">
             <div class="blue-bg"></div>
              <div class="play-icon" data-toggle="modal" data-target="#myModal">
-        	  <img src="{{asset('img/play-icon.svg')}}">
+        	  <img src="{{asset('public/img/play-icon.svg')}}">
               </div>
             </div>      
          <!-- Modal pop -->
@@ -50,8 +50,8 @@
                           <section class="getAppBox text-center">
                               <h3>Get app</h3>
                               <p>Choose your native platform and get started!</p>
-                              <img src="{{asset('img/play-btn.png')}}">
-                              <img class="img-responsive" src="{{asset('img/app.png')}}">
+                              <img src="{{asset('public/img/play-btn.png')}}">
+                              <img class="img-responsive" src="{{asset('public/img/app.png')}}">
                           </section>
                        </div>
                   </div>

@@ -18,7 +18,7 @@
         <div class="relative">
             <div class="blue-bg"></div>
              <div class="play-icon" data-toggle="modal" data-target="#myModal">
-        	  <img src="img/play-icon.svg">
+        	  <img src="public/img/play-icon.svg">
               </div>
             </div>      
           <!-- Modal pop -->
@@ -32,8 +32,8 @@
                           <section class="getAppBox text-center">
                               <h3>Get app</h3>
                               <p>Choose your native platform and get started!</p>
-                              <img src="img/play-btn.png">
-                              <img class="img-responsive" src="img/app.png">
+                              <img src="public/img/play-btn.png">
+                              <img class="img-responsive" src="public/img/app.png">
                           </section>
                        </div>
                   </div>
@@ -83,7 +83,7 @@
                 
 		            <div class="item">
 		             <a href="team-detail.php">
-		           <img src="img/dp.png">
+		           <img src="public/img/dp.png">
 		           <h4>Anirudh Singh</h4>
 		           <span>Founder & Product Architect</span>
 		            <div class="socails">
@@ -105,7 +105,7 @@
 
  				     <div class="item">
  				       <a href="team-detail.php">
-		           <img src="img/dp2.png">
+		           <img src="public/img/dp2.png">
 		           <h4>Nitin Agarwal </h4>
 		           <span>Head, Web Development</span>
 		            <div class="socails">
@@ -126,7 +126,7 @@
  
 				     <div class="item">
 				       <a href="team-detail.php">
-		           <img src="img/dp3.png">
+		           <img src="public/img/dp3.png">
 		           <h4>Sandeep Kumar Singh</h4>
 		           <span>Head, Android Development</span>
 		            <div class="socails">
@@ -148,7 +148,7 @@
  				
     <div class="item">
                <a href="team-detail.php">
-               <img src="img/dp8.png">
+               <img src="public/img/dp8.png">
                <h4>Devendra Kumar Pandey</h4>
                <span>PHP Developer</span>
                 <div class="socails">
@@ -172,7 +172,7 @@
  				 
                  <div class="item">
                <a href="team-detail.php">
-               <img src="img/dp7.png">
+               <img src="public/img/dp7.png">
                <h4>Shekhar Kashyap </h4>
                <span>Android Developer</span>
                 <div class="socails">
@@ -249,9 +249,9 @@
            <div class="col-lg-5 col-md-5">
           <div class="right-cont">
        	   <h3>Contact:</h3>
-       	    <p><img src="img/latitude.svg"> A 20, Sector 35, Noida, India ,201301</p>
-       	     <p><img src="img/contact.svg"> +91 120 4511807</p>
-       	   	   <p><img src="img/mail.svg"> info@darkhorsesports.in</p>
+       	    <p><img src="public/img/latitude.svg"> A 20, Sector 35, Noida, India ,201301</p>
+       	     <p><img src="public/img/contact.svg"> +91 120 4511807</p>
+       	   	   <p><img src="public/img/mail.svg"> info@darkhorsesports.in</p>
               </div>
                </div>
                

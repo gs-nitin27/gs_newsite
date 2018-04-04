@@ -34,7 +34,7 @@
        <div class="relative">
             <div class="blue-bg"></div>
              <div class="play-icon" data-toggle="modal" data-target="#myModal">
-        	  <img src="img/play-icon.svg">
+        	  <img src="public/img/play-icon.svg">
               </div>
             </div>      
         <!-- Modal pop -->
@@ -46,8 +46,8 @@
                         <section class="getAppBox text-center">
                             <h3>Get app</h3>
                             <p>Choose your native platform and get started!</p>
-                            <img src="img/play-btn.png">
-                            <img class="img-responsive" src="img/app.png">
+                            <img src="public/img/play-btn.png">
+                            <img class="img-responsive" src="public/img/app.png">
                         </section>
                      </div>
                 </div>

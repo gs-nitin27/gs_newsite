@@ -14,7 +14,7 @@
    <div class="container">
 	 <div class="row">
 	  <div class="logo-bottom">
-	    <img src="img/logo2.png">
+	    <img src="public/img/logo2.png">
 	     </div>
 	   
 			<ul>

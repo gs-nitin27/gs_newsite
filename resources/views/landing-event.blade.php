@@ -18,7 +18,7 @@
         <div class="relative">
               <div class="blue-bg"></div>
               <div class="play-icon" data-toggle="modal" data-target="#myModal">
-        	       <img src="img/play-icon.svg">
+        	       <img src="public/img/play-icon.svg">
               </div>
         </div>      
          <!-- Modal pop -->
@@ -58,7 +58,7 @@ events</h3>
                             <p>Competition & Events with our features.</p>  
                         </div>
                       </aside>
-                      <aside class="showCaseImg img-responsive"><img src="img/event-mob.jpg" alt=""/></aside>
+                      <aside class="showCaseImg img-responsive"><img src="public/img/event-mob.jpg" alt=""/></aside>
                   </section>                        
                   </div>
                   
@@ -72,7 +72,7 @@ events</h3>
                     </div>                          
                   </div>
                   <section class="showCaseBox">
-                      <aside class="showCaseImg"><img src="img/event-mob.jpg" alt=""/></aside>
+                      <aside class="showCaseImg"><img src="public/img/event-mob.jpg" alt=""/></aside>
                       <aside class="showCaseText">
                         <div class="clearfix">
                             <h3>register</h3>
@@ -84,7 +84,7 @@ details & other info.</p>
             </div>
             <div class="container">
                   <section class="showCaseBox odd">
-                      <aside class="showCaseImg"><img src="img/event-mob.jpg" alt=""/></aside>
+                      <aside class="showCaseImg"><img src="public/img/event-mob.jpg" alt=""/></aside>
                       <aside class="showCaseText">
                         <div class="clearfix">
                             <h3>enter details & submit</h3>
@@ -96,7 +96,7 @@ So, you input specific details about particular sports.</p>
             </div>
             <div class="container">  
                   <section class="showCaseBox">
-                      <aside class="showCaseImg"><img src="img/event-mob.jpg" alt=""/></aside>
+                      <aside class="showCaseImg"><img src="public/img/event-mob.jpg" alt=""/></aside>
                       <aside class="showCaseText">
                         <div class="clearfix">
                             <h3>Listing</h3>
@@ -109,7 +109,7 @@ as well. </p>
             </div>
             <div class="container">
                   <section class="showCaseBox odd">
-                      <aside class="showCaseImg"><img src="img/event-mob.jpg" alt=""/></aside>
+                      <aside class="showCaseImg"><img src="public/img/event-mob.jpg" alt=""/></aside>
                       <aside class="showCaseText">
                         <div class="clearfix">
                             <h3>Manage</h3>
@@ -121,7 +121,7 @@ the App. </p>
         	 	</div>        		 
   	       <div class="clearfix margin20"></div>
            <div class="clearfix landingAdv">
-            <figure><img class="img-responsive" src="img/adv_event.jpg" alt=""/></figure>
+            <figure><img class="img-responsive" src="public/img/adv_event.jpg" alt=""/></figure>
           </div>
           <section>
             <div class="container">
