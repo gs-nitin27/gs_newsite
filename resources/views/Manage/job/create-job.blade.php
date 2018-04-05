@@ -225,7 +225,7 @@
                             <aside class="col-lg-6 col-md-6 col-sm-6 col-xs-6 mobView">
                                 <div class="uploadBox">
                                     <figure><!-- <img class="img-responsive" src="{{asset('manage_assets/img/demo.jpg')}}"> -->
-                                        <img id="blah" src="{{asset('manage_assets/img/demo.jpg')}}" alt="your image" style="max-width: 100%;" />
+                                        <img id="blah" src="{{asset('public/manage_assets/img/demo.jpg')}}" alt="your image" style="max-width: 100%;" />
                                     </figure>
                                 </div>
                             </aside>

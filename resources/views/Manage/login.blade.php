@@ -25,17 +25,17 @@ if(Session::has('userdata'))
   <title>Login</title>
   
   <!-- Bootstrap -->
-  <link href="{{asset('manage_assets/css/bootstrap.min.css')}}" rel="stylesheet">
-  <link href="{{asset('manage_assets/css/style.css')}}" rel="stylesheet">
-  <link href="{{asset('manage_assets/css/font-awesome.min.css')}}" rel="stylesheet">  
+  <link href="{{asset('public/manage_assets/css/bootstrap.min.css')}}" rel="stylesheet">
+  <link href="{{asset('public/manage_assets/css/style.css')}}" rel="stylesheet">
+  <link href="{{asset('public/manage_assets/css/font-awesome.min.css')}}" rel="stylesheet">  
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>  
-  <script src="{{asset('manage_assets/js/bootstrap.min.js')}}"></script>
+  <script src="{{asset('public/manage_assets/js/bootstrap.min.js')}}"></script>
   <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
   
 <meta name="google-signin-client_id" content="<?php echo config('constant.GOOGLE_ID');?>">
 <meta name="csrf-token" content="{{ csrf_token() }}">
 
-<link href="{{asset('manage_assets/css/style2.css')}}" rel="stylesheet">
+<link href="{{asset('public/manage_assets/css/style2.css')}}" rel="stylesheet">
  <style type="text/css">
     .btn-google {
     background-color: #dd4b39;
@@ -68,7 +68,7 @@ if(Session::has('userdata'))
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
   </head>
-<body style="background-image:url({{asset('manage_assets/img/login-bg.jpg')}});height: 100vh;background-repeat: no-repeat; background-size: cover;">
+<body style="background-image:url({{asset('public/manage_assets/img/login-bg.jpg')}});height: 100vh;background-repeat: no-repeat; background-size: cover;">
 
 
 
@@ -113,8 +113,8 @@ if(Session::has('userdata'))
 </body>
 <script src="https://apis.google.com/js/platform.js" async defer></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>  
-<script src="{{asset('manage_assets/js/bootstrap.min.js')}}"></script>
-<script type="text/javascript" src="{{asset('manage_assets/js/Managelogin.js')}}"></script>
+<script src="{{asset('public/manage_assets/js/bootstrap.min.js')}}"></script>
+<script type="text/javascript" src="{{asset('public/manage_assets/js/Managelogin.js')}}"></script>
 <script type="text/javascript">
  var app_id = '<?php echo config('constant.FACEBOOK_ID'); ?>';
  var app_version = '<?php echo config('constant.FACEBOOK_VERSION'); ?>';

@@ -174,7 +174,7 @@ $contact = $sess_data->contact_no;
             </div>
         </div>
     </div>
-    <script type="text/javascript" src="{{asset('/manage_assets/js/transaction.js')}}"></script>
+    <script type="text/javascript" src="{{asset('public/manage_assets/js/transaction.js')}}"></script>
     <script type="text/javascript">
        var route_url = '<?php echo url('/'); ?>';
     

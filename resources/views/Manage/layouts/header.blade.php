@@ -48,7 +48,7 @@ $org_id = '';
                  <span class="icon-bar"></span>
                  <span class="icon-bar"></span>
                  </button>
-                 <div class="logoSec"><a href="{{url('/manage/dashbo')}}"><img class="img-responsive" src="{{asset('manage_assets/img/logo.png')}}"></a></div>
+                 <div class="logoSec"><a href="{{url('/manage/dashbo')}}"><img class="img-responsive" src="{{asset('public/manage_assets/img/logo.png')}}"></a></div>
            <a class="pull-right toggleBtn" href="#"> <i class="fa fa-bars openSideNav"></i></a>
             <center><div class="text-center"><span class="head_title"><i>Jobs</i></span></div></center>
            <div id="mySidenav" class="sideNav">
