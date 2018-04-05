@@ -6,23 +6,24 @@ $detail = $detail[0];
 @endphp
 
 <main><section class="half">
-        <h1>{{$detail->title}}</h1>
+        <h3>{{$detail->title}}</h3><a class="job-edit" href="{{url('/manage/edit/')}}/{{$detail->id}}"><span>Edit</span></a>
+             <div class="job-view col-md-12 col-xs-12 col-sm-4">
              <section class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                             <div class="clearfix jobSave" id="job_details">
-                                <p><span>Job Title:</span>  {{$detail->title}} <a href="{{url('/manage/edit/')}}/{{$detail->id}}">Edit</a></p>
-                                <p><span>Job Description:</span>  {{$detail->description}} </p>
-                                <p><span>Job Location:</span> {{$detail->org_city}} </p>
-                                <p><span>Job Type:</span> {{$detail->type}}</p>
-                                <p><span>Sport:</span>  {{$detail->sport}} </p>
-                                <p><span>Salary:</span>  {{$detail->salary}}</p>
+                                <p><span><b>Job Title:</b></span>  {{$detail->title}}</p>
+                                <p><span><b>Job Description:</b></span>  {{$detail->description}} </p>
+                                <p><span><b>Job Location:</b></span> {{$detail->org_city}} </p>
+                                <p><span><b>Job Type:</b></span> {{$detail->type}}</p>
+                                <p><span><b>Sport:</b></span>  {{$detail->sport}} </p>
+                                <p><span><b>Salary:</b></span>  {{$detail->salary}}</p>
                             </div>
                         </section>
                         <section class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                             <div class="clearfix jobSave" id="job_requirements">
-                                <p><span>Email:</span>  {{$detail->email}} </p>
-                                <p><span>WorkExperience:</span>{{$detail->work_experience}}</p>
-                                <p><span>Key Requirements:</span>{{$detail->key_requirement}} </p>
-                                <p><span>Desired Skills:</span>{{$detail->desired_skills}}</p>
+                                <p><span><b>Email:</b></span>  {{$detail->email}} </p>
+                                <p><span><b>WorkExperience:</b></span>{{$detail->work_experience}}</p>
+                                <p><span><b>Key Requirements:</b></span>{{$detail->key_requirement}} </p>
+                                <p><span><b>Desired Skills:</b></span>{{$detail->desired_skills}}</p>
                             </div>
                         </section>
                         <section class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
@@ -30,17 +31,23 @@ $detail = $detail[0];
                                 <figure><img class="img-responsive" src="<?php echo config('constant.IMAGE_URL')?>/job/{{$detail->image}}"></figure>
                                 </div>
                         </section>
+                        </div>
                         </section>
         <section class="half">
         <div>
         <div class="clearfix">
         <!-- <button class="btn btn-n viewBtn"><i class="fa fa-eye"></i> View More</button> -->
         <div class="container" style="max-height: 20px;width: 100%;">
-  <h2>Applicants List</h2>
+  <!-- <span class="cand_list"><h2>Applicants List</h2></span> -->
+
   <ul class="nav nav-tabs">
-    <li class="nav active"><a data-toggle="tab" href="#home" aria-expanded="true" id="cabnd">Applied Candidates</a></li>
-    <li><a data-toggle="tab" href="#menu2">Shortslisted</a></li>
-    <li><a data-toggle="tab" href="#menu3">Offer</a></li>
+      <div class="col-md-12 col-xs-12 col-xl-12 cand_list">
+  <h3>Applicant List</h3>
+  
+</div>
+    <li class="nav active col-xs-4 recruit_tab"><a data-toggle="tab" href="#home" aria-expanded="true" id="cabnd">Applied Candidates</a></li>
+    <li class="col-xs-4 recruit_tab"><a data-toggle="tab" href="#menu2">Shortslisted</a></li>
+    <li class="col-xs-4 recruit_tab"><a data-toggle="tab" href="#menu3">Offer</a></li>
     <!-- <li><a data-toggle="tab" href="#menu4">Offer Accepted</a></li> -->
   </ul>
 
@@ -216,6 +223,12 @@ window.getJobApplicants = function foo() {
           $('#shortlist').html(short_list);
           $('#offer').html(offer);
         }
+        else
+        {
+           $('#cand_list').html('<span>No data</span>');
+          $('#shortlist').html('<span>No data</span>');
+          $('#offer').html('<span>No data</span>');
+        }
 
      }
    });
@@ -250,7 +263,7 @@ function shortlistCandidate(data,status)
     {
       var resp  = JSON.parse(result);
       if(resp.status == '1')
-      { // alert(resp.status);
+      { // alert_msg(resp.status);
          getJobApplicants();
       }
     }
@@ -385,7 +398,7 @@ function recruitment_update(recruitment_data,act)
     },
     failure:function()
     {
-      alert('Server error');
+      alert_msg('Server error');
       $('.loading').hide();
     }
 

@@ -8,7 +8,7 @@
        	    <div class="row">
        	      <div class="col-md-12">
        		    <div class="ban-pera">
-       			  <h1> </h1>
+               <h1> </h1>
        			  <h3>"WE ARE TAKING SPORTS TO PEOPLE AND PEOPLE TO SPORTS"</h3>	
          	    </div>
                </div>
@@ -58,20 +58,18 @@
         	 	<div class="row">
         	 	 <div class="heading-center m0 pad15">
           	      <h3>About Us</h3>
-             </div>
-                    
+                    </div>
                     <div class="about-content">
-                      <p>We are all a bunch of sports freak who still pampers a dream that was suppressed and quashed by the pathetic and despicable Indian sports system (OK..not all of us..but at least one us has suffered this fate). We belong to the breed of Indian people who are concerned about the state of sports in India. There can never be a right quantitative measure to find how many dreams die every moment in India because of the lack of grass-root structure and not to mention the mystic and the hazy path that most of Indian sports enthusiasts find hard to navigate. </p>
+                     <h4>We are all a bunch of sports freak who still pampers a dream that was suppressed and quashed by the pathetic and despicable Indian sports system (OK..not all of us..but at least one us has suffered this fate). We belong to the breed of Indian people who are concerned about the state of sports in India. There can never be a right quantitative measure to find how many dreams die every moment in India because of the lack of grass-root structure and not to mention the mystic and the hazy path that most of Indian sports enthusiasts find hard to navigate.</p>
                                             <div class="margin15 clearfix"></div>
-                       <p>So, we started Getsporty to solve the perpetual and obnoxious real world problems faced by Sports People. We have developed this portal and an App to provide Sports People with right kind of information of the grass root sports. Further, we are developing technology and services through which we hope to make life easier for all of those involved at the lowest level of the food chain in Sports in India</p>	
+                       <p>So, we started Getsporty to solve the perpetual and obnoxious real world problems faced by Sports People. We have developed this portal and an App to provide Sports People with right kind of information of the grass root sports. Further, we are developing technology and services through which we hope to make life easier for all of those involved at the lowest level of the food chain in Sports in India.</p>	
                    
                       <div class="margin15 clearfix"></div>
-                      <div class="margin20 clearfix"></div>
-                    </div>
-                    </div>
- 					          </div>
- 				
- 		  <div class="margin15 clearfix"></div>			 
+                        <div class="margin20 clearfix"></div>
+                      </div>
+                      </div>
+ 					 </div>
+  		  <div class="margin15 clearfix"></div>			 
  			  <div class="team-bg">
 		     <div class="margin15 clearfix"></div>
 			<div class="container">

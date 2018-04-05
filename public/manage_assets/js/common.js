@@ -88,3 +88,17 @@ window.clearconsole = function clearconsole(){
    console.clear();
   }
 }
+function alert_msg(msg)
+{
+     $('.modal-body').append('<p>'+msg+'</p>');
+     $("#alert").modal({                    // wire up the actual modal functionality and show the dialog
+       "backdrop"  : "static",
+      "keyboard"  : true,
+       "show"      : true                     // ensure the modal is shown immediately
+     });
+    ;
+}
+
+$(document).ready(function(){
+$('#alert button').on('click',function(){$('#alert').modal('hide');});
+});
