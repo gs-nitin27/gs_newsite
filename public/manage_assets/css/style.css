@@ -413,3 +413,46 @@ box-shadow: rgba(255,255,255, 0.75) 1.5em 0 0 0, rgba(255,255,255, 0.75) 1.1em 1
     transform: rotate(360deg);
   }
 }
+.job-view{
+        background: #fff;
+    border: 1px solid #fff;
+    padding: 8px 5px 4px 13px;
+    box-shadow: 3px 5px #e9e5e2;
+    /* height: 63%; */
+    height: auto;
+
+}
+.recruit_tab{
+      padding: 1px 5px 1px 1px;
+    text-align: center;
+}
+div #job_details ,#job_requirements,#org_details span{
+
+    padding: 6px 6px 14px 0px;
+}
+section.half h3 {
+    text-align: center;
+    padding: 2px 4px 5px 2px;
+}
+.job-edit{
+      float: right;
+    margin-top: -4%;
+    background: #03a9f5;
+    padding: 8px 20px 8px 13px;
+    box-shadow: -5px 2px #e1d4d4;
+    border: 1px solid #fff;
+    color: #fff;
+    text-decoration: none;
+}
+.cand_list{
+      text-align: center;
+    text-transform: uppercase;
+    background-color:lightblue;
+    /* width: 100%; */
+    font-size: large;
+    color: #fff;
+    font-weight: bold;
+    overflow: initial;
+    bottom: 0;
+    font-family: sans-serif;
+}

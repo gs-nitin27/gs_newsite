@@ -218,7 +218,7 @@
           if(local_userdata.org_data.hasOwnProperty('org_id') == true)
           {   org_name = local_userdata.org_data.org_name;
               org_id = local_userdata.org_data.org_id;
-              //alert(org_name);return;
+              //alert_msg(org_name);return;
           if(org_name != '')
           { 
             var org_div = '<div data-target="#myModalHorizontal" onclick="getorg_details();" data-toggle="modal" style="text-decoration:none"> <h1><a><span class="company">'+org_name+'</span><h1></a></div>';
@@ -321,7 +321,7 @@
            "gstin":$('#gstin').val()
          }
        org_data = JSON.stringify(org_data);
-     // alert(org_data);return;
+     // alert_msg(org_data);return;
        $.ajax({
         url:url+'/angularapi.php?act=addOrg',
         method:"POST",
@@ -331,7 +331,7 @@
           var resp_data = result;//JSON.parse(result);
            if(resp_data != '0')
            { var org_name = '<a href="javascript:void(0)" data-target="#myModalHorizontal" onclick="getorg_details();" data-toggle="modal" style="text-decoration:none"><h1><span class="company">'+$('#org_name').val()+'</span><h1></a>';
-             alert("Organisation Created");
+             alert_msg_msg("Organisation Created");
              $('#org_div').html('');
              $('#org_div').html(org_name);
              var userdata = JSON.parse(localStorage.getItem('userdata'));
@@ -342,7 +342,7 @@
            }
            else
            {
-           alert('Something wemt wrong'); 
+           alert_msg_msg('Something wemt wrong'); 
            }
           }
         });

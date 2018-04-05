@@ -213,7 +213,7 @@ $('.loading').show();
           {
             var data = JSON.parse(result);
             if(data.status == '1')
-            { //alert(data.status);
+            { //alert_msg(data.status);
 
               var struct = '';
               var detail = '';
@@ -251,7 +251,7 @@ $('.loading').show();
 });
 // function getContent(id)
 // {
-// alert(id);
+// alert_msg(id);
 // $('#'+id).addClass("Active");
 
 // }

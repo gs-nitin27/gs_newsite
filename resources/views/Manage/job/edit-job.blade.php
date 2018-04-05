@@ -321,12 +321,12 @@ $image_data = base64_encode(file_get_contents($image_url));
                     result = JSON.parse(result);
                     if(result.status == '1')
                     {   
-                        alert('Job Sucessfully created');
+                        alert_msg('Job Sucessfully created');
                         window.location.href = "{{url('/manage/dashbo')}}";
                     }
                     else
                     {
-                        alert('Something went Wrong');
+                        alert_msg('Something went Wrong');
                     }
                     $('.loading').hide();
                    }
@@ -383,7 +383,7 @@ $image_data = base64_encode(file_get_contents($image_url));
 
         // Code For image view and Generating base64 Format
         function readURL(input) {
-            //alert(input);return;
+            //alert_msg(input);return;
         if (input.files && input.files[0]) {
             var reader = new FileReader();
             reader.onload = function (e) {
@@ -408,7 +408,7 @@ $image_data = base64_encode(file_get_contents($image_url));
         //           if(image_name.status == '1')
         //           {
         //           image_data = image_name.data;
-        //          // alert(image_data);
+        //          // alert_msg(image_data);
         //           return image_data;
         //           }
         //         else
@@ -420,8 +420,8 @@ $image_data = base64_encode(file_get_contents($image_url));
         // }
            //function for image upload ends here
     $("#imgInp").change(function(){
-        //alert;
-        //alert(this);return;
+        //alert_msg;
+        //alert_msg(this);return;
         readURL(this);
     });
     </script>

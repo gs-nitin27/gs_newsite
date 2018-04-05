@@ -329,7 +329,7 @@
                 "image":image_data,
                 "salary":$('#salary').val()
                 };
-              //  alert(JSON.stringify(job_data));return;
+              //  alert_msg(JSON.stringify(job_data));return;
                 
                 $.ajax({
                     type: "POST",
@@ -341,13 +341,13 @@
                     result = JSON.parse(result);
                     if(result.status == '1')
                     {   
-                        alert('Job Sucessfully created');
+                        alert_msg('Job Sucessfully created');
                         $('.loading').hide();
                         window.location.href = "{{url('/manage/dashbo')}}";
                     }
                     else
                     {
-                        alert('Something went Wrong');
+                        alert_msg('Something went Wrong');
                         $('.loading').hide();
                     }
                    }
@@ -430,7 +430,7 @@
                   if(image_name.status == '1')
                   {
                   image_data = image_name.data;
-                 // alert(image_data);
+                 // alert_msg(image_data);
                   return image_data;
                   }
                 else
