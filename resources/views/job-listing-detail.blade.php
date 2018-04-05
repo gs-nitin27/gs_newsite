@@ -1,18 +1,15 @@
 @extends('layouts.master')
 @section('pageTitle','Home')
 @section('meta')
-<meta name="description" content="{!!$name[0]->description!!}">
 <meta name="keywords" content="@yield('keywords')">
 <meta name="twitter:dnt" content="on">
 <meta property="og:title" content="{{$name[0]->title}}" /> 
-<meta property="og:description" content="{!!$name[0]->description!!}" />
 <meta property="og:url" content="{{Request::url()}}" />
 <meta property="og:image" content="<?php echo config('constant.IMAGE_URL').'/job/'.$name[0]->image; ?>">
 <meta http-equiv="x-ua-compatible" content="ie=edge">
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:site" content="@getsporty" />
 <meta name="twitter:title" content="{{$name[0]->title}}" />
-<meta name="twitter:description" content="{!!$name[0]->description!!}" />
 <meta name="twitter:image" content="<?php echo config('constant.IMAGE_URL').'/job/'.$name[0]->image; ?>"
  />
 @endsection
@@ -26,8 +23,8 @@
        	    <div class="row">
        	      <div class="col-md-12">
        		    <div class="ban-pera">
-       			  <h1>Lorem ispum is dummy </h1>
-       			  <h3>Lorem ispum is dummy text.</h3>
+       			  <h1></h1>
+       			  <h3>{{$name[0]->title}}</h3>
        			
          	    </div>
                </div>
@@ -39,7 +36,7 @@
         <div class="relative">
             <div class="blue-bg"></div>
              <div class="play-icon" data-toggle="modal" data-target="#myModal">
-        	  <img src="img/play-icon.svg">
+        	  <img src="public/img/play-icon.svg">
               </div>
             </div>      
          <!-- Modal pop -->
@@ -51,8 +48,8 @@
                           <section class="getAppBox text-center">
                               <h3>Get app</h3>
                               <p>Choose your native platform and get started!</p>
-                              <img src="img/play-btn.png">
-                              <img class="img-responsive" src="img/app.png">
+                              <img src="public/img/play-btn.png">
+                              <img class="img-responsive" src="public/img/app.png">
                           </section>
                        </div>
                   </div>
@@ -63,7 +60,7 @@
                   <div class="modal-content">
                        <div class="modal-body">
                           <button type="button" class="close" data-dismiss="modal">&times;</button>
-                          <iframe width="100%" height="315" src="https://www.youtube.com/embed/YeYXeoYXZwY" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                          <iframe width="100%" height="315" src="https://www.youtube.com/embed/bVcfL6KtFfs" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
                        </div>
                     </div>
                 </div>
@@ -161,13 +158,13 @@
      <div class="fb-share-button" data-href="{{Request::url()}}" data-layout="button_count" data-size="small" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse">
      <i class="fa fa-facebook"></i></a></div>
 
-     <a href="https://twitter.com/share" class="twitter-share-button fa fa-twitter" data-size="large" data-text="{!!$name[0]->description!!}" data-url="{{Request::url()}}" data-show-count="false" >
+     <a href="https://twitter.com/share" class="twitter-share-button fa fa-twitter" data-size="large" data-text="{!!$name[0]->title!!}" data-url="{{Request::url()}}" data-show-count="false" >
     </a> 
 
     <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>> 
 
      <a href=" https://www.linkedin.com/shareArticle?mini=true&url={{Request::url()}}&title={{$name[0]->title}}
-    &summary={!!$name[0]->description!!}&source=LinkedIn" class="cleateJob" style="background-color: #1686b0;"><i class="fa fa-linkedin"></i></a>
+    &summary={!!$name[0]->title!!}&source=LinkedIn" class="cleateJob" style="background-color: #1686b0;"><i class="fa fa-linkedin"></i></a>
 
   <div class="pin">
   <a style="background-color: #FA0001" data-pin-do="buttonPin" href="https://www.pinterest.com/pin/create/button/?url={{Request::url()}}&media=https://getsporty.in/portal/uploads/job/$name[0]->image}}&summary={{$name[0]->title}}" data-pin-config="beside"><i class="fa fa-pinterest-p"></i>  </a>

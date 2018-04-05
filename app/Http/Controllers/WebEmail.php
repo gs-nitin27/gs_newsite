@@ -15,13 +15,10 @@ use Session;
 
     public function send_mail(Request $request)
     {
-
-          $data =  array(
-           'email' => $request->get('email'),
-           'subject' => $request->get('subject'),
-           'user_message' => $request->get('message')
-          );
-
+          $data = json_decode(file_get_contents('php://input'));
+         // 
+         $data = array('email'=>$data->email,'msg'=>$data->msg,'user_message'=>$data->subject);
+         //print_r($data);die;
        Mail::send('support',$data,function($message) use ($data){
         $message->from($data['email']);
         $message->to('devendrakumarpandey@gmail.com');

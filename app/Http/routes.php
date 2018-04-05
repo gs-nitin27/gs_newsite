@@ -17,7 +17,10 @@ use Illuminate\Http\Request;
 // });
 
 
-
+if (env('APP_ENV') === 'production') {
+    URL::forceSchema('https');
+   
+}
 
 
 

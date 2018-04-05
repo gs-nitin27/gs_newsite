@@ -22,7 +22,7 @@
         <div class="relative">
               <div class="blue-bg"></div>
               <div class="play-icon" data-toggle="modal" data-target="#myModal">
-        	       <img src="img/play-icon.svg">
+        	       <img src="public/img/play-icon.svg">
               </div>
         </div>      
          <!-- Modal pop -->
@@ -35,8 +35,8 @@
                           <section class="getAppBox text-center">
                               <h3>Get app</h3>
                               <p>Choose your native platform and get started!</p>
-                              <img src="img/play-btn.png">
-                              <img class="img-responsive" src="img/app.png">
+                              <img src="public/img/play-btn.png">
+                              <img class="img-responsive" src="public/img/app.png">
                           </section>
                        </div>
                   </div>
@@ -48,7 +48,7 @@
                   <div class="modal-content">
                      <div class="modal-body">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <iframe width="100%" height="315" src="https://www.youtube.com/embed/YeYXeoYXZwY" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                        <iframe width="100%" height="315" src="https://www.youtube.com/embed/bVcfL6KtFfs" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
                      </div>
                     </div>
                 </div>

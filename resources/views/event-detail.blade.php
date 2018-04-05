@@ -1,18 +1,18 @@
 @extends('layouts.master')
 @section('pageTitle','Home')
 @section('meta')
-<meta name="description" content="{!!$name[0]->description!!}">
+<meta name="description" content="">
 <meta name="keywords" content="@yield('keywords')">
 <meta name="twitter:dnt" content="on">
 <meta property="og:title" content="{{$name[0]->name}}" /> 
-<meta property="og:description" content="{!!$name[0]->description!!}" />
+<meta property="og:description" content="" />
 <meta property="og:url" content="{{Request::url()}}" />
 <meta property="og:image" content="<?php echo config('constant.IMAGE_URL').'/event/'.$name[0]->image; ?>">
 <meta http-equiv="x-ua-compatible" content="ie=edge">
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:site" content="@getsporty" />
 <meta name="twitter:title" content="{{$name[0]->name}}" />
-<meta name="twitter:description" content="{!!$name[0]->description!!}" />
+<meta name="twitter:description" content="" />
 <meta name="twitter:image" content="<?php echo config('constant.IMAGE_URL').'/event/'.$name[0]->image; ?>"
  />
 @endsection
@@ -25,8 +25,8 @@
        	    <div class="row">
        	      <div class="col-md-12">
        		    <div class="ban-pera">
-       			  <h1>Lorem ispum is dummy </h1>
-       			  <h3>Lorem ispum is dummy text.</h3>
+       			  <h1></h1>
+       			  <h3>{{$name1[0]->type}}</h3>
        			
          	    </div>
                </div>
@@ -38,7 +38,7 @@
         <div class="relative">
             <div class="blue-bg"></div>
              <div class="play-icon" data-toggle="modal" data-target="#myModal">
-        	  <img src="{{asset('img/play-icon.svg')}}">
+        	  <img src="public/img/play-icon.svg">
               </div>
             </div>      
          <!-- Modal pop -->
@@ -48,7 +48,7 @@
                   <div class="modal-content">
                        <div class="modal-body">
                           <button type="button" class="close" data-dismiss="modal">&times;</button>
-                          <iframe width="100%" height="315" src="https://www.youtube.com/embed/YeYXeoYXZwY" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                          <iframe width="100%" height="315" src="https://www.youtube.com/embed/bVcfL6KtFfs" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
                        </div>
                   </div>
               </div>
@@ -110,10 +110,10 @@
                           <div class="slide-job-list">
                               <h4>{{$name1[$i]->name}}</h4>
           				            <p> Type :   <span> {{$name1[$i]->type}} </span></p>
-          				            <p> Organizer Name : <span> {{$name1[$i]->organizer_name}} </span></p>
+          				            <p> Start : <span>  <?php echo date('d F',strtotime($name1[$i]->start_date)) ?> - <?php echo date('d F, Y',strtotime($name1[$i]->end_date)) ?></span></p>
+                              <p> Entry : <span><?php echo date('d F',strtotime($name1[$i]->entry_start_date)) ?> - <?php echo date('d F, Y',strtotime($name1[$i]->entry_end_date)) ?></span></p>
           				            <p> Location  : <span> {{$name1[$i]->organizer_city}} </span></p>
-                              <p> Email  : <span> {{$name1[$i]->email_app_collection}} </span></p>
-          				            <p class="read-c"><a href="{{$name1[$i]->id}}" target="_blank">Read More</a> </p>                                  
+                              <p class="read-c"><a href="{{$name1[$i]->id}}" target="_blank">Read More</a> </p>                                  
                           </div>
                       </div>
                       @endfor
@@ -143,7 +143,7 @@
     </a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script></div>
 
      <a href=" https://www.linkedin.com/shareArticle?mini=true&url={{Request::url()}}&title={{$name[0]->name}}
-    &summary={!!$name[0]->description!!}&source=LinkedIn" class="cleateJob" style="background-color: #1686b0;"><i class="fa fa-linkedin"></i></a>
+    &summary={!!$name[0]->name!!}&source=LinkedIn" class="cleateJob" style="background-color: #1686b0;"><i class="fa fa-linkedin"></i></a>
 
   <div class="pin">
   <a style="background-color: #FA0001" data-pin-do="buttonPin" href="https://www.pinterest.com/pin/create/button/?url={{Request::url()}}&media=https://getsporty.in/portal/uploads/event/$name[0]->image}}&summary={{$name[0]->name}}" data-pin-config="beside"><i class="fa fa-pinterest-p"></i>  </a>

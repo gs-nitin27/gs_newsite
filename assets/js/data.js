@@ -2,12 +2,13 @@
 function getListing(module,id)
 {  
 $(id).empty();
+
 (function($){   
     $.fn.loaddata = function(options) {// Settings
         var settings = $.extend({ 
-            loading_gif_url : "http://www.getsporty.in/staging/uploads/profile/ajax-loader.gif", //url to loading gif
+            loading_gif_url : sec+"://www.getsporty.in/staging/uploads/profile/ajax-loader.gif", //url to loading gif
             end_record_text : 'No more records found!', //no more records to load
-            data_url        : 'https://getsporty.in/testingapp/website_controller.php?act='+module+'', //url to PHP page
+            data_url        : sec+'://getsporty.in/testingapp/website_controller.php?act='+module+'', //url to PHP page
             start_page      : 1 //initial page
         }, options);
         
@@ -26,7 +27,7 @@ $(id).empty();
     function contents(el, settings){
         var load_img = $('<img/>').attr('src',settings.loading_gif_url).addClass('loading-image'); //create load image
         var record_end_txt = $('<div/>').text(settings.end_record_text).addClass('end-record-info'); //end record text
-        
+        //$("#myModa").empty();
         if(loading == false && end_record == false){
             loading = true; //set loading flag on
             el.append(load_img); //append loading image
@@ -47,7 +48,9 @@ $(id).empty();
 
 })(jQuery);
 
+
 $(id).loaddata();
+
 
 
 } // End of Function

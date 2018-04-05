@@ -34,7 +34,7 @@
        <div class="relative">
             <div class="blue-bg"></div>
              <div class="play-icon" data-toggle="modal" data-target="#myModal">
-        	  <img src="img/play-icon.svg">
+        	  <img src="public/img/play-icon.svg">
               </div>
             </div>      
         <!-- Modal pop -->
@@ -44,10 +44,13 @@
                    <div class="modal-body">
                      <button type="button" class="close" data-dismiss="modal">&times;</button>
                         <section class="getAppBox text-center">
+                        
                             <h3>Get app</h3>
                             <p>Choose your native platform and get started!</p>
-                            <img src="img/play-btn.png">
-                            <img class="img-responsive" src="img/app.png">
+
+                            <img src="public/img/play-btn.png">
+                            <img class="img-responsive" src="public/img/app.png">
+
                         </section>
                      </div>
                 </div>
@@ -58,7 +61,7 @@
               <div class="modal-content">
                  <div class="modal-body">
                   <button type="button" class="close" data-dismiss="modal">&times;</button>
-                  <iframe width="100%" height="315" src="https://www.youtube.com/embed/YeYXeoYXZwY" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                  <iframe width="100%" height="315" src="https://www.youtube.com/embed/{{$name[0]->video_link}}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
                  </div>
               </div>
             </div>
@@ -73,15 +76,15 @@
         	       </div> 
         	       <div class="margin15"></div>
         	       <div class="content">
-        	       	<p>{{$name[0]->topic_of_artical}} / {{$name[0]->location}} / {{$name[0]->date_created}}</p>
+        	       	<p>{{$name[0]->topic_of_artical}} / {{$name[0]->location}} / <?php echo date('d F, Y',strtotime($name[0]->date_created))?></p>
         	         <h4>
 
 
                    {{$name[0]->title}}</h4>
-        	         <p>{!!$name[0]->summary!!}
+        	         <p>{!!$name[0]->summary!!} @if($name[0]->token == 0)<a href="{{$name[0]->url}}" target="_Blank">Know more..</a>@endif
         	         <div class="margin15"></div>
         	         <hr>
-        	         <h4>Here are some features of our App:</h4>
+        	         <h4></h4>
         	         <p>{{$name[0]->description}}</p>
         	        </div>       	     
              	  </div>

@@ -23,7 +23,7 @@
         <div class="relative">
             <div class="blue-bg"></div>
              <div class="play-icon" data-toggle="modal" data-target="#myModal">
-        	  <img src="img/play-icon.svg">
+        	  <img src="public/img/play-icon.svg">
               </div>
             </div>      
          <!-- Modal pop -->
@@ -37,8 +37,8 @@
                           <section class="getAppBox text-center">
                               <h3>Get app</h3>
                               <p>Choose your native platform and get started!</p>
-                              <img src="img/play-btn.png">
-                              <img class="img-responsive" src="img/app.png">
+                              <img src="public/img/play-btn.png">
+                              <img class="img-responsive" src="public/img/app.png">
                           </section>
                        </div>
                   </div>
@@ -51,7 +51,7 @@
                 <div class="modal-content">
                    <div class="modal-body">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <iframe width="100%" height="315" src="https://www.youtube.com/embed/YeYXeoYXZwY" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                    <iframe width="100%" height="315" src="https://www.youtube.com/embed/bVcfL6KtFfs" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
                    </div>
                   </div>
                 </div>
@@ -61,11 +61,17 @@
              <div class="clearfix margin20"></div>
         	    <div class="container">
         	     <div class="row">
-        	 	  <div class="heading-center  m0 pad15">
-          	       <h3>Sports jobs in India</h3>
+        	 	  <div class="heading-center m0 pad15">
+                  <h3>Sports jobs in India</h3>
+             </div>
+                   
+              <div class="about-content">
+                      
+          	       
              	   <p>We are always gratified to live in a country like India, where sports has an approach to connect people through the availability of sports jobs in India. Cricket is considered as a religion, football is a way of life and hockey highlights secularism.
-Sports jobs in India are also making an identity at various levels, most importantly in cricket, tennis, hockey, athletics and chess. There is a wide range of sports job in India in which an ample number of opportunities are available to give a boost to your career.
-Vaguely, you can treasure your dream job through our website and can conveniently browse through all the latest sports jobs in the government or private sector.Indeed, India as a nation is a breeding ground for sports jobs. Though by having a sports jobs in India you can be the part of taking India to both national and international levels.
+Sports jobs in India are also making an identity at various levels, most importantly in cricket, tennis, hockey, athletics and chess. There is a wide range of sports job in India in which an ample number of opportunities are available to give a boost to your career.</p>
+<div class="margin15 clearfix"></div>
+<p>Vaguely, you can treasure your dream job through our website and can conveniently browse through all the latest sports jobs in the government or private sector.Indeed, India as a nation is a breeding ground for sports jobs. Though by having a sports jobs in India you can be the part of taking India to both national and international levels.
 So, if you are passionate about sports and want to handle the business side of the game then there are exciting career options for you of having sports in India available on our website and can take the first step towards your fantasy world.
 Let us assist you to uncover the path of different types of sports job in India and make it easier for you to choose your kind of sports job. So here is a small list of types of sports jobs in India available on our website:
 Sports Agent:

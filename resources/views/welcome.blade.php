@@ -4,8 +4,65 @@
 <!-- <style type="text/css">
   div.main-text {overflow-x: hidden;width: 800px;} 
 </style> -->
+@section('meta')
+<meta property="og:image" content="https://getsporty.in/23376596_1450074778394787_4309845126431335508_n (1).png">
+@endsection
+<style type="text/css">
+  .loading {
+  position: fixed;
+  z-index: 999;
+  height: 2em;
+  width: 2em;
+  overflow: show;
+  margin: auto;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
 
+/* Transparent Overlay */
+.loading:before {
+  content: '';
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+    background: radial-gradient(rgba(20, 20, 20,.8), rgba(0, 0, 0, .8));
 
+  background: -webkit-radial-gradient(rgba(20, 20, 20,.8), rgba(0, 0, 0,.8));
+}
+
+/* :not(:required) hides these rules from IE9 and below */
+.loading:not(:required) {
+  /* hide "loading..." text */
+  font: 0/0 a;
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0;
+}
+
+.loading:not(:required):after {
+  content: '';
+  display: block;
+  font-size: 10px;
+  width: 1em;
+  height: 1em;
+  margin-top: -0.5em;
+  -webkit-animation: spinner 1500ms infinite linear;
+  -moz-animation: spinner 1500ms infinite linear;
+  -ms-animation: spinner 1500ms infinite linear;
+  -o-animation: spinner 1500ms infinite linear;
+  animation: spinner 1500ms infinite linear;
+  border-radius: 0.5em;
+  -webkit-box-shadow: rgba(255,255,255, 0.75) 1.5em 0 0 0, rgba(255,255,255, 0.75) 1.1em 1.1em 0 0, rgba(255,255,255, 0.75) 0 1.5em 0 0, rgba(255,255,255, 0.75) -1.1em 1.1em 0 0, rgba(255,255,255, 0.75) -1.5em 0 0 0, rgba(255,255,255, 0.75) -1.1em -1.1em 0 0, rgba(255,255,255, 0.75) 0 -1.5em 0 0, rgba(255,255,255, 0.75) 1.1em -1.1em 0 0;
+box-shadow: rgba(255,255,255, 0.75) 1.5em 0 0 0, rgba(255,255,255, 0.75) 1.1em 1.1em 0 0, rgba(255,255,255, 0.75) 0 1.5em 0 0, rgba(255,255,255, 0.75) -1.1em 1.1em 0 0, rgba(255,255,255, 0.75) -1.5em 0 0 0, rgba(255,255,255, 0.75) -1.1em -1.1em 0 0, rgba(255,255,255, 0.75) 0 -1.5em 0 0, rgba(255,255,255, 0.75) 1.1em -1.1em 0 0;
+}
+</style>
+<div class="loading" hidden>Loading&#8230;</div>
  <div id="myCarousel" class="carousel slide slideBox" data-ride="carousel" data-interval="2500">
             <!-- Indicators -->
             <ol class="carousel-indicators">
@@ -20,7 +77,7 @@
             <!-- Wrapper for slides -->
             <div class="carousel-inner">
                 <section class="item active">
-                    <img src="img/sports-trials.png" alt="Chania">                
+                    <img src="public/img/sports-trials.png" alt="Chania">                
                     <div class="carousel-caption">
                         <div class="container">
                             <div class="ban-pera">
@@ -32,7 +89,7 @@
                     </div>
                 </section>
                 <section class="item">
-                    <img src="img/sports-trials1.png" alt="Chania">                
+                    <img src="public/img/sports-trials1.png" alt="Chania">                
                     <div class="carousel-caption">
                         <div class="container">
                             <div class="ban-pera">
@@ -44,7 +101,7 @@
                     </div>
                 </section>
                 <section class="item">
-                    <img src="img/sports-trials2.png" alt="Chania">                
+                    <img src="public/img/sports-trials2.png" alt="Chania">                
                     <div class="carousel-caption">
                         <div class="container">
                             <div class="ban-pera">
@@ -56,7 +113,7 @@
                     </div>
                 </section>
                 <section class="item">
-                    <img src="img/gs.png" alt="Chania">                
+                    <img src="public/img/gs.png" alt="Chania">                
                     <div class="carousel-caption">
                         <div class="container">
                             <div class="ban-pera">
@@ -78,7 +135,7 @@
          <div class="relative playHome">
            <!--  <div class="blue-bg blue-Home"></div> -->
              <div class="play-icon" data-toggle="modal" data-target="#myModal">
-                   <img src="img/play-icon.svg">
+                   <img src="public/img/play-icon.svg">
               </div>
             </div> 
          <!-- Modal -->
@@ -92,8 +149,8 @@
                             <section class="getAppBox text-center">
                                 <h3>Get app</h3>
                                 <p>Choose your native platform and get started!</p>
-                                <img src="img/play-btn.png">
-                                <img class="img-responsive" src="img/app.png">
+                                <img src="public/img/play-btn.png">
+                                <img class="img-responsive" src="public/img/app.png">
                             </section>
                          </div>
                     </div>
@@ -108,7 +165,14 @@
                     <div class="modal-content">
                        <div class="modal-body">
                          <button type="button" class="close" data-dismiss="modal">&times;</button>
-                          <iframe width="100%" height="315" src="https://www.youtube.com/embed/yIIGQB6EMAM" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+
+                          <iframe width="100%" height="315" src="https://www.youtube.com/embed/bVcfL6KtFfs" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+
+                          <!-- <iframe width="100%" height="315" src="https://www.youtube.com/embed/njooQXjHmb0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+ -->
+
                          </div>
                     </div>
                 </div>
@@ -125,7 +189,7 @@
                      <div class="item">
                       <div class="box-app">
                         <div class="circle-box">
-                          <img src="img/feature-img.svg">
+                          <img src="public/img/feature-img.svg">
                           </div>
                          <h4>Events</h4>
                        <p>We bring you the latest updates on all the big sports events to your GetSporty App. Be it an upcoming sports trial or just a weekend sporting event, get all the information on your phone</p>
@@ -134,7 +198,7 @@
                         <div class="item">
                      <div class="box-app">
                        <div class="circle-box">
-                        <img src="img/feature-img2.svg">
+                        <img src="public/img/feature-img2.svg">
                          </div>
                         <h4>Tournaments</h4>
                        <p>Never miss an opportunity to impress and be never short on practice. Get all the updates on the latest and the upcoming sports tournaments in the area near you.</p>
@@ -143,7 +207,7 @@
                    <div class="item">
                     <div class="box-app">
                      <div class="circle-box">
-                      <img src="img/feature-img3.svg">
+                      <img src="public/img/feature-img3.svg">
                         </div>
                         <h4>Coach</h4>
                        <p>Want to become a professional player? For the best result, contact the best coach and train harder and smarter</p>
@@ -152,7 +216,7 @@
                   <div class="item">
                     <div class="box-app">
                       <div class="circle-box">
-                        <img src="img/feature-img4.svg">
+                        <img src="public/img/feature-img4.svg">
                          </div>
                          <h4>Connect</h4>
                         <p>Contact the best professionals, trainers or the coaches to help you refine your skills and be the player that you have always dreamt about</p>
@@ -162,7 +226,7 @@
                       <div class="item">
                       <div class="box-app">
                        <div class="circle-box">
-                             <img src="img/Job_Listing.png">
+                             <img src="public/img/Job_Listing.png">
                           </div>
                              <h4>Job Listing</h4>
                              <p>Find your dream sports job. Browse through all the latest sports jobs in the Goverment or private sector through our specially devoted "Sports Job Portal"</p>
@@ -171,7 +235,7 @@
                 <div class="item">
                     <div class="box-app">
                      <div class="circle-box">
-                         <img src="img/assessment.png">
+                         <img src="public/img/assessment.png">
                       </div>
                          <h4>Assessment</h4>
                          <p>Get your daily performance assessed by professionals or be the master of your own training sessions</p>
@@ -180,7 +244,7 @@
                 <div class="item">
                     <div class="box-app">
                      <div class="circle-box">
-                         <img src="img/resources.png">
+                         <img src="public/img/resources.png">
                       </div>
                          <h4>Resources</h4>
                          <p>Not an everyday content but a fearsome approach to take on the state of Indian sports and a complete guide to reveal the path for sports enthusiasts to reach the pinnacle of their sport</p>
@@ -189,7 +253,7 @@
                 <div class="item">
                     <div class="box-app">
                      <div class="circle-box">
-                         <img src="img/training_Log.png">
+                         <img src="public/img/training_Log.png">
                       </div>
                          <h4>Training Log</h4>
                          <p>Track your workouts, save your history and manage your performance with this dedicated training log</p>
@@ -198,7 +262,7 @@
                 <div class="item">
                     <div class="box-app">
                      <div class="circle-box">
-                         <img src="img/post_Results.png">
+                         <img src="public/img/post_Results.png">
                       </div>
                          <h4>Post Results</h4>
                          <p>Give yourself remarks and compare your last day's performance with your recent results</p>
@@ -207,7 +271,7 @@
                 <div class="item">
                     <div class="box-app">
                      <div class="circle-box">
-                         <img src="img/parent.png">
+                         <img src="public/img/parent.png">
                       </div>
                          <h4>Parent</h4>
                          <p>Book an upcoming event or tournament or just hire a personal trainer or coach for your child. Keep a tab on your ward's performance through this unique feature</p>
@@ -392,12 +456,12 @@ Overall, sports events in India are always amusing to unite with. Every year we 
                           <div class="white-b">
                               <h4>{{$value->name}}</h4>
                               <section class="clearfix">
-                                  <aside class="pull-left"><p> Start From  : <span>  {{$value->start_date}} </span></p></aside>
-                                  <aside class="pull-right"><p> To  : <span> {{$value->end_date}} </span></p></aside>
+                                  <aside class="pull-left"><p> Start From  : <span> <?php echo date('d F',strtotime($value->start_date)) ?></span></p></aside>
+                                  <aside class="pull-right"><p> To  : <span><?php echo date('d F, Y',strtotime($value->end_date)) ?></span></p></aside>
                               </section>
                               <section class="clearfix">
-                                  <aside class="pull-left"><p> Entry : <span>  {{$value->entry_start_date}} </span></p></aside>
-                                  <aside class="pull-right"><p> To  : <span>  {{$value->entry_end_date}} </span></p></aside>
+                                  <aside class="pull-left"><p> Entry : <span> <?php echo date('d F',strtotime($value->entry_start_date)) ?> </span></p></aside>
+                                  <aside class="pull-right"><p> To  : <span><?php echo date('d F, Y',strtotime($value->entry_end_date)) ?></span></p></aside>
                               </section>
                               <section class="clearfix">
                                   <aside class="pull-left"><p>  <span> {{$value->organizer_city}} </span></p></aside>
@@ -438,12 +502,12 @@ Overall, sports events in India are always amusing to unite with. Every year we 
                           <div class="white-b">
                               <h4>{{$value->name}}</h4>
                               <section class="clearfix">
-                                  <aside class="pull-left"><p> Start From  : <span>  {{$value->start_date}} </span></p></aside>
-                                  <aside class="pull-right"><p> To  : <span> {{$value->end_date}} </span></p></aside>
+                                  <aside class="pull-left"><p> Start From  : <span><?php echo date('d F',strtotime($value->start_date)) ?></span></p></aside>
+                                  <aside class="pull-right"><p> To  : <span><?php echo date('d F, Y',strtotime($value->end_date)) ?></span></p></aside>
                               </section>
                               <section class="clearfix">
-                                  <aside class="pull-left"><p> Entry : <span>  {{$value->event_entry_date}}</span></p></aside>
-                                  <aside class="pull-right"><p> To  : <span>  {{$value->event_end_date}}</span></p></aside>
+                                  <aside class="pull-left"><p> Entry : <span><?php echo date('d F',strtotime($value->event_entry_date)) ?></span></p></aside>
+                                  <aside class="pull-right"><p> To  : <span><?php echo date('d F, Y',strtotime($value->event_end_date)) ?></span></p></aside>
                               </section>
                               <section class="clearfix">
                                   <aside class="pull-left"><p>  <span> {{$value->org_city}} </span></p></aside>
@@ -461,21 +525,21 @@ Overall, sports events in India are always amusing to unite with. Every year we 
       </div>
 
     
-          <section class="mediaSecHome">
+          <!-- <section class="mediaSecHome">
               <div class="container" id="app">
                   <div class="row">
                       <div class="heading-center"> <h3>Our Media</h3> <p>For more info and support, contact us!</p></div>           
                       <div class="owl-carousel owl-theme">
-                          <div class="item"><div class="border-client"><img src="img/logo-client.png"></div></div>
-                          <div class="item"><div class="border-client"><img src="img/logo-client2.png"></div></div>
-                          <div class="item"><div class="border-client"><img src="img/logo-client3.png"></div></div>
-                          <div class="item"><div class="border-client"><img src="img/logo-client4.png"></div></div>
-                          <div class="item"><div class="border-client"><img src="img/logo-client6.png"></div></div>
-                          <div class="item"><div class="border-client"><img src="img/logo-client6.png"></div></div>
+                          <div class="item"><div class="border-client"><img src="public/img/logo-client.png"></div></div>
+                          <div class="item"><div class="border-client"><img src="public/img/logo-client2.png"></div></div>
+                          <div class="item"><div class="border-client"><img src="public/img/logo-client3.png"></div></div>
+                          <div class="item"><div class="border-client"><img src="public/img/logo-client4.png"></div></div>
+                          <div class="item"><div class="border-client"><img src="public/img/logo-client6.png"></div></div>
+                          <div class="item"><div class="border-client"><img src="public/img/logo-client6.png"></div></div>
                       </div>
                   </div>
               </div>
-          </section>
+          </section> -->
        <!--  <div class="relative">
           <div class="phone-img">
             <img class="img-responsive" src="img/iphone-img.jpg">
@@ -494,7 +558,7 @@ Overall, sports events in India are always amusing to unite with. Every year we 
                 
                     <div class="item">
                      <a href="team-detail.php">
-                   <img src="img/dp.png">
+                   <img src="public/img/dp.png">
                    <h4>Anirudh Singh</h4>
                    <span>Founder & Product Architect</span>
                     <div class="socails">
@@ -516,7 +580,7 @@ Overall, sports events in India are always amusing to unite with. Every year we 
 
                      <div class="item">
                        <a href="team-detail.php">
-                   <img src="img/dp2.png">
+                   <img src="public/img/dp2.png">
                    <h4>NITIN AGARWAL</h4>
                    <span>Head, Web Development</span>
                     <div class="socails">
@@ -537,7 +601,7 @@ Overall, sports events in India are always amusing to unite with. Every year we 
  
                      <div class="item">
                        <a href="team-detail.php">
-                   <img src="img/dp3.png">
+                   <img src="public/img/dp3.png">
                    <h4>Sandeep Kumar Singh</h4>
                    <span>Head, Android Development</span>
                     <div class="socails">
@@ -558,9 +622,9 @@ Overall, sports events in India are always amusing to unite with. Every year we 
 
                       <div class="item">
                         <a href="team-detail.php">
-                   <img src="img/dp4.png">
+                   <img src="public/img/dp4.png">
                    <h4>Kumar Gaurav</h4>
-                   <span>Head, IOS Development</span>
+                   <span>Android Development</span>
                     <div class="socails">
                        <ul>
                         <li><a href="#">
@@ -579,7 +643,7 @@ Overall, sports events in India are always amusing to unite with. Every year we 
                      
                  <div class="item">
                    <a href="team-detail.php">
-                   <img src="img/dp.png">
+                   <img src="public/img/dp.png">
                    <h4>Anirudh Singh</h4>
                    <span>Founder & Product Architect</span>
                     <div class="socails">
@@ -600,7 +664,7 @@ Overall, sports events in India are always amusing to unite with. Every year we 
 
                      <div class="item">
                        <a href="team-detail.php">
-                   <img src="img/dp2.png">
+                   <img src="public/img/dp2.png">
                    <h4>NITIN AGARWAL</h4>
                    <span>Head, Web Development</span>
                     <div class="socails">
@@ -641,8 +705,13 @@ Overall, sports events in India are always amusing to unite with. Every year we 
                   </div>
                   @endif
                   </div>
-                    <form method="POST" action="contact" >
+                    <form method="POST" action="javascript:void(0)" onsubmit="return validateForm()" name="email_form">
                       {{ csrf_field() }} 
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" class="form-control01" id="name" aria-describedby="emailHelp" placeholder="" name="name" required="name">
+                            
+                        </div>
                         <div class="form-group">
                             <label for="email">Email</label>
                             <input type="email" class="form-control01" id="email" aria-describedby="emailHelp" placeholder="" name="email" required="email id">
@@ -664,9 +733,9 @@ Overall, sports events in India are always amusing to unite with. Every year we 
                   <div class="col-lg-5 col-md-5">
                       <div class="right-cont">
                           <h3>Contact:</h3>
-                          <p><img src="img/latitude.svg"> A 20, Sector 35, Noida, India ,201301</p>
-                          <p><img src="img/contact.svg"> +91 120 4511807</p>
-                          <p><img src="img/mail.svg"> info@darkhorsesports.in</p>
+                          <p><img src="public/img/latitude.svg"> A 20, Sector 35, Noida, India ,201301</p>
+                          <p><img src="public/img/contact.svg"> +91 120 4511807</p>
+                          <p><img src="public/img/mail.svg"> info@darkhorsesports.in</p>
                           </div>
                   </div>
 
@@ -855,6 +924,35 @@ Overall, sports events in India are always amusing to unite with. Every year we 
         
         });
       })
+    function validateForm(){  
+        
+       $('.loading').show();
+        var email = $('#email').val();
+        var name = $('#name').val();
+        var subject = $('#sub').val();
+        var msg = $('#exampleFormControlTextarea1').val();
+        var data = {"name":name,"email":email,"subject":subject,"message":msg,"medium":"W"};
+
+        $.ajax({
+            method  : "POST",
+            // "_token": "{{ csrf_token() }}",
+            //headers : {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
+            url     : sec+"://getsporty.in/liveapp/getSportyLite/contact_us.php?act=contact_us&token_id=dhs2016",//"{{url('/contact')}}",
+            type    : $(this).attr('method'),
+            dataType: 'json',
+            data    : JSON.stringify(data),
+            success : function( data ) {
+                         alert('Thanks for writing us');
+            },
+            error   : function( xhr, err ) {
+                         alert('Error');     
+            }
+        });    
+        $('.loading').hide();
+        return false;
+        
+  }
+
     </script> 
 
           
