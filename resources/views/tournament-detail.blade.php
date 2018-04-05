@@ -1,18 +1,18 @@
 @extends('layouts.master')
 @section('pageTitle','Home')
 @section('meta')
-<meta name="description" content="{!! $name[0]->description !!}">
+<meta name="description" content="">
 <meta name="keywords" content="@yield('keywords')">
 <meta name="twitter:dnt" content="on">
 <meta property="og:title" content="{{$name[0]->name}}" /> 
-<meta property="og:description" content="{!!$name[0]->description!!}" />
+<meta property="og:description" content="" />
 <meta property="og:url" content="{{Request::url()}}" />
 <meta property="og:image" content="<?php echo config('constant.IMAGE_URL').'/tournament/'.$name[0]->image; ?>">
 <meta http-equiv="x-ua-compatible" content="ie=edge">
-<meta name="twitter:card" content="{!! $name[0]->description !!}" />
+<meta name="twitter:card" content="" />
 <meta name="twitter:site" content="@getsporty" />
 <meta name="twitter:title" content="{{$name[0]->name}}" />
-<meta name="twitter:description" content="{!! $name[0]->description !!}" />
+<meta name="twitter:description" content="" />
 <meta name="twitter:image" content="<?php echo config('constant.IMAGE_URL').'/tournament/'.$name[0]->image; ?>"
  />
 @endsection
@@ -63,7 +63,7 @@
                   <div class="modal-content">
                        <div class="modal-body">
                           <button type="button" class="close" data-dismiss="modal">&times;</button>
-                          <iframe width="100%" height="315" src="https://www.youtube.com/embed/YeYXeoYXZwY" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                          <iframe width="100%" height="315" src="https://www.youtube.com/embed/bVcfL6KtFfs" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
                        </div>
                   </div>
               </div>

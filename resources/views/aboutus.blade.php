@@ -8,8 +8,8 @@
        	    <div class="row">
        	      <div class="col-md-12">
        		    <div class="ban-pera">
-       			  <!-- <h1>Lorem ispum is dummy </h1>
-       			  <h3>Lorem ispum is dummy text.</h3> -->	
+       			  <h1> </h1>
+       			  <h3>"WE ARE TAKING SPORTS TO PEOPLE AND PEOPLE TO SPORTS"</h3>	
          	    </div>
                </div>
               </div>
@@ -48,7 +48,7 @@
                    <div class="modal-content">
                    <div class="modal-body">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <iframe width="100%" height="315" src="https://www.youtube.com/embed/YeYXeoYXZwY" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                    <iframe width="100%" height="315" src="https://www.youtube.com/embed/bVcfL6KtFfs" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
                    </div>
                   </div>
                 </div>
@@ -323,7 +323,7 @@
             method  : "POST",
             // "_token": "{{ csrf_token() }}",
             //headers : {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
-            url     : "https://getsporty.in/liveapp/getSportyLite/contact_us.php?act=contact_us&token_id=dhs2016",//"{{url('/contact')}}",
+            url     : sec+"://getsporty.in/liveapp/getSportyLite/contact_us.php?act=contact_us&token_id=dhs2016",//"{{url('/contact')}}",
             type    : $(this).attr('method'),
             dataType: 'json',
             data    : JSON.stringify(data),
