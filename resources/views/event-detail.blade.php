@@ -38,7 +38,7 @@
         <div class="relative">
             <div class="blue-bg"></div>
              <div class="play-icon" data-toggle="modal" data-target="#myModal">
-        	  <img src="public/img/play-icon.svg">
+        	  <img src="{{asset('public/img/play-icon.svg')}}">
               </div>
             </div>      
          <!-- Modal pop -->
