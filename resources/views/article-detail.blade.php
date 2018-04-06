@@ -91,6 +91,7 @@
                 </div> 
 
   		<div class="clearfix margin20"></div>
+       <?php if(!empty($name1)){ ?>
           <section class="testimonials">
 	        <div class="container">
               <div class="row">
@@ -125,7 +126,7 @@
                         </div>
                       </div>
                  </section>    
-
+               <?php } ?>
 
 
      <div class="sidebarMide">

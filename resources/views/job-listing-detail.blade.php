@@ -110,6 +110,7 @@
         		      </div>
         		    </div>
   	 <div class="clearfix margin20"></div>
+    <?php if(!empty($name1)){ ?>
       <section class="testimonials">
 	        <div class="container">
               <div class="row pad15">
@@ -151,7 +152,7 @@
 						   </div>-->
                         </div>
                       </div>
-                 </section> 
+                 </section> <?php }?>
                     
 
      <div class="sidebarMide">
