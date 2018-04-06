@@ -6,12 +6,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/js/bootstrap-datetimepicker.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   <script src="{{asset('public/manage_assets/js/custom-validation.js')}}"></script>
+  <script src="{{asset('public/manage_assets/js/common.js')}}"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/css/bootstrap-datetimepicker.min.css" />
 <style type="text/css">
   .invalid{
     color: #de1124;
@@ -143,7 +146,7 @@ box-shadow: rgba(255,255,255, 0.75) 1.5em 0 0 0, rgba(255,255,255, 0.75) 1.1em 1
  <!-- form user info -->
                     <div class="card card-outline-secondary">
                         <div class="card-header">
-                            <h3 class="mb-0">User Information</h3>
+                            <h3 class="mb-0"><center>Basic Information</center></h3>
                         </div>
                         <div class="card-body">
                             <form class="form" role="form" autocomplete="off" id="loginForm">
@@ -188,6 +191,7 @@ box-shadow: rgba(255,255,255, 0.75) 1.5em 0 0 0, rgba(255,255,255, 0.75) 1.1em 1
                                         <input class="form-control" type="text" value="" id="datepicker">
                                     </div>
                                 </div>
+                                <input size="16" type="text" value="2012-06-15 14:45" readonly class="form_datetime">
                                 <div class="form-group row">
                                     <label class="col-lg-3 col-form-label form-control-label">Gender</label>
                                     <div class="form-check form-check-inline">
@@ -201,7 +205,7 @@ box-shadow: rgba(255,255,255, 0.75) 1.5em 0 0 0, rgba(255,255,255, 0.75) 1.1em 1
                                     </label>
                                 </div>
                                 </div>
-                                <div class="form-group row">
+                                <div class="form-group row" hidden>
                                     <label class="col-lg-3 col-form-label form-control-label">Proffession</label>
                                     <div class="col-lg-9">
                                        <span id="rproffession" class="invalid"><p></p></span>
@@ -214,7 +218,7 @@ box-shadow: rgba(255,255,255, 0.75) 1.5em 0 0 0, rgba(255,255,255, 0.75) 1.1em 1
                                     <label class="col-lg-3 col-form-label form-control-label"></label>
                                     <div class="col-lg-9">
                                         <!-- <input type="reset" class="btn btn-secondary" value="Cancel"> -->
-                                        <input type="button" class="btn btn-primary" value="Save Changes" id="btnLogin">
+                                        <input type="button" class="btn btn-primary" value="Submit" id="btnLogin">
                                     </div>
                                 </div>
                             </form>
@@ -225,10 +229,11 @@ box-shadow: rgba(255,255,255, 0.75) 1.5em 0 0 0, rgba(255,255,255, 0.75) 1.1em 1
 <script type="text/javascript">
   window.register_validation = function register_validation(){};
   var url = '<?php echo config('constant.ENV_URL')?>';
+  $(".form_datetime").datepicker({format: 'yyyy-mm-dd'});
   $(document).ready(function(){
      var radioValue = $("input[name='gender']:checked").val();
             if(radioValue){
-                alert("Your are a - " + radioValue);
+                alert_msg("Your are a - " + radioValue);
             }
  
      if(window.localStorage)
@@ -272,7 +277,7 @@ $("#btnLogin").click(function(event) {
 
         }
    user_info_data  = JSON.stringify(user_info_data);
-   console.log(user_info_data);//return;
+   console.log(user_info_data);return;
    form.addClass('was-validated');
    $.ajax({
       url:url+'/user_access_controller.php?act=gs_signup',
@@ -373,6 +378,7 @@ else
 </script>
 <script type="text/javascript" src="https://maps.google.com/maps/api/js?key=AIzaSyDv7v3jJInF4dT2KKMXQIR6SHmtkMLX1SE&sensor=false&libraries=places&language=en-AU"></script>
 <script type="text/javascript">
+
             var autocomplete = new google.maps.places.Autocomplete($("#location")[0], {});
             google.maps.event.addListener(autocomplete, 'place_changed', function() {
                 var place = autocomplete.getPlace();
@@ -381,4 +387,31 @@ else
 
 
 </script>
+<div id="alert" class="modal fade">
+  <div class="modal-dialog" >
+    <div class="modal-content" style="background: #fff">
+      <!-- dialog body -->
+      <div class="modal-body">
+        <button type="button" class="close" style="color:#000;text-align: center;" data-dismiss="modal"></button>
+        
+      </div>
+      <!-- dialog buttons -->
+      <div class="modal-footer"><button type="button" class="btn btn-primary">OK</button></div>
+    </div>
+  </div>
+</div>
+ 
+<div class="input-append date form_datetime">
+    <input size="16" type="text" value="" readonly>
+    <span class="add-on"><i class="icon-th"></i></span>
+</div>
+ 
+<script type="text/javascript">
+    $(".form_datetime").datetimepicker({
+        format: "dd MM yyyy - hh:ii",
+        autoclose: true,
+        todayBtn: true,
+        pickerPosition: "bottom-left"
+    });
+</script>   
 </html>

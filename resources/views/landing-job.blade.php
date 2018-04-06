@@ -8,8 +8,8 @@
        	     <div class="row">
        	       <div class="col-md-12">
          		     <div class="ban-pera">
-             			  <h1>Lorem ispum is dummy </h1>
-             			  <h3>Lorem ispum is dummy text.</h3>         			
+             			  <!-- <h1>Lorem ispum is dummy </h1>
+             			  <h3>Lorem ispum is dummy text.</h3>       -->   			
            	     </div>
                 </div>
             </div>
@@ -57,7 +57,7 @@
                             
                         </div>
                       </aside>
-                      <aside class="showCaseImg img-responsive"><img src="public/img/job-mob.jpg" alt=""/></aside>
+                      <aside class="showCaseImg img-responsive"><img src="public/img/job-mob.jpg" alt="" height="450" width="240" /></aside>
                   </section>                        
                   </div>
                   
