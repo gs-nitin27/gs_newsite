@@ -82,15 +82,16 @@
 
                    {{$name[0]->title}}</h4>
         	         <p>{!!$name[0]->summary!!} @if($name[0]->token == 0)<a href="{{$name[0]->url}}" target="_Blank">Know more..</a>@endif
-        	         <div class="margin15"></div>
+        	         <!-- <div class="margin15"></div> -->
         	         <hr>
         	         <h4></h4>
-        	         <p>{{$name[0]->description}}</p>
+        	         <p>{!!$name[0]->description!!}</p>
         	        </div>       	     
              	  </div>
                 </div> 
 
   		<div class="clearfix margin20"></div>
+       <?php if(!empty($name1)){ ?>
           <section class="testimonials">
 	        <div class="container">
               <div class="row">
@@ -125,7 +126,7 @@
                         </div>
                       </div>
                  </section>    
-
+               <?php } ?>
 
 
      <div class="sidebarMide">

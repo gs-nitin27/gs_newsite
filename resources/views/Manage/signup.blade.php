@@ -15,8 +15,6 @@
   <script src="{{asset('public/manage_assets/js/custom-validation.js')}}"></script>
   <script src="{{asset('public/manage_assets/js/common.js')}}"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/css/bootstrap-datetimepicker.min.css" />
-
-
 <style type="text/css">
   .invalid{
     color: #de1124;
