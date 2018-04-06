@@ -743,7 +743,7 @@ Overall, sports events in India are always amusing to unite with. Every year we 
               </div>
               </div>
           </section> 
-          <script src="{{asset('js/jquery.event.move.js')}}"></script>
+          <script src="{{asset('public/js/jquery.event.move.js')}}"></script>
  <script>
     jQuery(document).ready(function($) {
             
