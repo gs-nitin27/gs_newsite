@@ -140,7 +140,7 @@ public function  getJobDetail_data($sport_name)
    
 public function  getResourcDetail_data($topic_of_artical)
 {
-   $resources  = DB::table('gs_resources')->select('id','title', 'summary','image','topic_of_artical','token')->where('topic_of_artical', $topic_of_artical)->where('publish','1')->get();
+   $resources  = DB::table('gs_resources')->select('id','title', 'summary','image','topic_of_artical','token')->where('topic_of_artical', $topic_of_artical)->where('status','1')->get();
     return $resources;
 }
 
