@@ -133,7 +133,7 @@ public function  getEventDetail_data($sport_name,$id)
 
 public function  getJobDetail_data($sport_name)
 {
-    $job  = DB::table('gs_jobInfo')->select('id','title', 'description','image','organisation_name','org_city','date_created','sport','image','date_updated')->where->where('publish','1')->where('sport', $sport_name)->get();
+    $job  = DB::table('gs_jobInfo')->select('id','title', 'description','image','organisation_name','org_city','date_created','sport','image','date_updated')->where('publish','1')->where('sport', $sport_name)->get();
     return $job;
 }
 
