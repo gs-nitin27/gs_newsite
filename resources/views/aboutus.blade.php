@@ -1,6 +1,6 @@
 
 @extends('layouts.master')
-@section('pageTitle','Home')
+@section('pageTitle','About us')
 @section('content')
 
        <div class="about-bg bannerBgSec">
