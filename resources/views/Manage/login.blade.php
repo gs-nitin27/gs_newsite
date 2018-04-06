@@ -31,6 +31,7 @@ if(Session::has('userdata'))
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>  
   <script src="{{asset('public/manage_assets/js/bootstrap.min.js')}}"></script>
   <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
+  <script src="{{asset('public/manage_assets/js/common.js')}}"></script>
   
 <meta name="google-signin-client_id" content="<?php echo config('constant.GOOGLE_ID');?>">
 <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -77,8 +78,8 @@ if(Session::has('userdata'))
       <div class="row rowtop">
 
         <div class="col-sm-6 pad28">
-          <h1>Lorem Ipsum has been industry's standard dummy text since the 1500s</h1>
-          <p >Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley.</p> 
+          <h1>Login into the World of Getsporty.</h1>
+          <p >Together, let us take sports in India to the next level.</p> 
         </div>
 
         
@@ -103,7 +104,7 @@ if(Session::has('userdata'))
                       
                       </div>
 
-                       <p style="color: black">Lorem Ipsum has been the industry's standard dummy text ever.</p> 
+                      <!--  <p style="color: black">Lorem Ipsum has been the industry's standard dummy text ever.</p> --> 
                </div>
             </div>
         </div> 
@@ -176,8 +177,6 @@ function testAPI() {
         localStorage.setItem("count", 2);
        });
       });
-// var data = '{"app":"L","data":{"email":"ntnagarwal27@gmail.com","image":"https://lh3.googleusercontent.com/-6rt_LbRDUJc/AAAAAAAAAAI/AAAAAAAADpU/4GXTlz_Rzbo/photo.jpg","name":"nitin agarwal"},"device_id":"dB0qMexOQec:APA91bH4S4kVMNSpKgtt7ZPu0Mxbf8RC-9GSvC9_8C3dNdTbO_QT0IagAY8VLkoB_g_EdwQnohfxSU4J7UzCS6Ywaa9QGIIjff-EQB20pBSR_njUfzuvrvruFsHfFSCQwzyvvsccsVGr","email":"ntnagarwal27@gmail.com","loginType":"2","password":"","userType":"104"}';
-
    
 function login(emailid,user_data,type)
 {  $('.loading').show();
@@ -207,7 +206,7 @@ console.log(data);
       $('.loading').hide();
       var result  = JSON.parse(result);
       if(result.status==4){// for Successfull login of athlete and parent
-       alert(result.status + JSON.stringify(result));return;
+       //alert(result.status + JSON.stringify(result));return;
        windlow.location.href("{{url('/')}}");
     }
     if(result.status==1)
@@ -217,24 +216,21 @@ console.log(data);
       localStorage.setItem('userdata',JSON.stringify(result.data));
       set_data();
       }else
-      {
-        alert("Invalid user");
+      { console.log("dfdjfhjfd");
+        alert_msg("Invalid user");
       }
-
-  }
+    }
     else if(result.status==2) // for updating email and other info
     { 
       result.status = result.status;
       localStorage.setItem('userdata',result.data);
       window.location.href = "<?php echo url('/'); ?>"+"/manage/register";
-      alert(result.status + JSON.stringify(result.data));//return;
+      //alert_msg(result.status + JSON.stringify(result.data));//return;
     }
     else if(result.status==3) // for creating new record
     { 
       localStorage.setItem('userid',result.data.userid);
       localStorage.setItem('userdata',data);
-      console.log(JSON.stringify(data));
-      alert(result.status + JSON.stringify(data));//return;
       window.location.href = "<?php echo url('/'); ?>"+"/manage/register";
     }
    }
@@ -300,5 +296,17 @@ console.log(data);
     });
   }
 </script>
-
+<div id="alert" class="modal fade">
+  <div class="modal-dialog" >
+    <div class="modal-content" style="background: #fff">
+      <!-- dialog body -->
+      <div class="modal-body">
+        <button type="button" class="close" style="color:#000" data-dismiss="modal">&times;</button>
+        
+      </div>
+      <!-- dialog buttons -->
+      <div class="modal-footer"><button type="button" class="btn btn-primary">OK</button></div>
+    </div>
+  </div>
+</div>
 </html>

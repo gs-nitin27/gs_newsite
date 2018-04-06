@@ -115,7 +115,7 @@ public function getTournamentDetail($id)
 public function getArticleDetail($id)
 {
         $resources  = DB::table('gs_resources')->select('id','title', 'summary','image','description','date_created','url','location','topic_of_artical','token','video_link')->where('id', $id)->get();
-     return $resources ;
+        return $resources ;
 
 }
 
@@ -126,28 +126,28 @@ public function getArticleDetail($id)
 
 public function  getEventDetail_data($sport_name,$id)
 {
-    $event      = DB::table('gs_eventinfo')->select('id','name','type', 'description','image','sport_name','organizer_city','start_date','end_date','entry_start_date','entry_end_date','pin','address_1','organizer_name','email_app_collection','event_links')->where('id','<>',$id)->where('sport_name',$sport_name)->get();
+    $event      = DB::table('gs_eventinfo')->select('id','name','type', 'description','image','sport_name','organizer_city','start_date','end_date','entry_start_date','entry_end_date','pin','address_1','organizer_name','email_app_collection','event_links')->where('id','<>',$id)->where('sport_name',$sport_name)->where('publish','1')->get();
      return $event;
 }
 
 
 public function  getJobDetail_data($sport_name)
 {
-    $job        = DB::table('gs_jobInfo')->select('id','title', 'description','image','organisation_name','org_city','date_created','sport','image','date_updated')->where('sport', $sport_name)->get();
+    $job        = DB::table('gs_jobInfo')->select('id','title', 'description','image','organisation_name','org_city','date_created','sport','image','date_updated')->where->where('publish','1')('sport', $sport_name)->get();
     return $job;
 }
 
    
 public function  getResourcDetail_data($topic_of_artical)
 {
-   $resources  = DB::table('gs_resources')->select('id','title', 'summary','image','topic_of_artical','token')->where('topic_of_artical', $topic_of_artical)->get();
+   $resources  = DB::table('gs_resources')->select('id','title', 'summary','image','topic_of_artical','token')->where('topic_of_artical', $topic_of_artical)->where('publish','1')->get();
     return $resources;
 }
 
    
 public function  getTournamentDetail_data($sport_name)
 {
-   $tournament = DB::table('gs_tournament_info')->select('id','name', 'image','start_date','end_date','event_entry_date','event_end_date','org_city','sport')->where('sport', $sport_name)->get();
+   $tournament = DB::table('gs_tournament_info')->select('id','name', 'image','start_date','end_date','event_entry_date','event_end_date','org_city','sport')->where('sport', $sport_name)->where('publish','1')->get();
   return $tournament;
 }
 
