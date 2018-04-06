@@ -45,7 +45,7 @@ s0.parentNode.insertBefore(s1,s0);
    <div class="container">
 	 <div class="row">
 	  <div class="logo-bottom">
-	    <img src="public/img/logo2.png">
+	    <img src="{{asset('public/img/logo2.png')}}">
 	     </div>
 	   
 			<ul>
