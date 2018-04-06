@@ -21,7 +21,7 @@
               <li><a href="{{url('/job')}}">Job</a></li>
               <li><a href="{{url('/tournament')}}">Tournament</a></li>
               <li><a href="{{url('/latest-sports-news-resources')}}">Article</a></li>
-              <li class="dropdown">
+              <!-- <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                    Business <b class="caret"></b>
                 </a>
@@ -30,10 +30,10 @@
                     <li><a class="" href="{{url('/landing-event')}}">Create  event </a></li>
                     <li><a class="" href="{{url('/tournament')}}">Organize tournament </a></li>
                 </ul>
-              </li>
+              </li> -->
 
               <li ><a href="{{url('/aboutus')}}">About us</a></li>
-              <li ><a href="{{url('/career')}}">Careers</a></li>
+              <!-- <li ><a href="{{url('/career')}}">Careers</a></li> -->
 
 
               
