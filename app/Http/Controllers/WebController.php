@@ -142,7 +142,7 @@ use DateTime;
 
     $sport_name = $resp[0]->sport;
 
-    $resp1 = $obj->getJobDetail_data($sport_name);
+    $resp1 = $obj->getJobDetail_data($sport_name,$id);
     
    // print_r($resp1);die();
 
@@ -158,7 +158,7 @@ use DateTime;
     $resp = $obj->getTournamentDetail($id);
 
     $sport_name = $resp[0]->sport;
-    $resp1 = $obj->getTournamentDetail_data($sport_name);
+    $resp1 = $obj->getTournamentDetail_data($sport_name,$id);
 
     return View::make("tournament-detail")->with('name', $resp)->with('name1',$resp1);
 
@@ -170,7 +170,7 @@ use DateTime;
     $obj  = new WebModel();
     $resp = $obj->getArticleDetail($id);
     $topic_of_artical = $resp[0]->topic_of_artical;
-    $resp1 = $obj->getResourcDetail_data($topic_of_artical);
+    $resp1 = $obj->getResourcDetail_data($topic_of_artical,$id);
     return View::make("article-detail")->with('name', $resp)->with('name1',$resp1);
     }
 
