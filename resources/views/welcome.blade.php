@@ -942,10 +942,10 @@ Overall, sports events in India are always amusing to unite with. Every year we 
             dataType: 'json',
             data    : JSON.stringify(data),
             success : function( data ) {
-                         alert('Thanks for writing us');
+                         alert_msg('Thanks for writing us');
             },
             error   : function( xhr, err ) {
-                         alert('Error');     
+                         alert_msg('Something went wrong!!');     
             }
         });    
         $('.loading').hide();
