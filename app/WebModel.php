@@ -91,7 +91,7 @@ class WebModel extends Model
 
 public function getEventDetail($id)
 {
-    $event      = DB::table('gs_eventinfo')->select('id','name','type', 'sport','description','image','sport_name','organizer_city','start_date','end_date','entry_start_date','entry_end_date','pin','address_1','organizer_name','email_app_collection','event_links')->where('id', $id)->whereDate('entry_start_date', '>=',DB::raw('curdate()'))->get();
+    $event      = DB::table('gs_eventinfo')->select('id','name','type', 'sport','description','image','sport_name','organizer_city','start_date','end_date','entry_start_date','entry_end_date','pin','address_1','organizer_name','email_app_collection','event_links')->where('id', $id)->get();
      return $event;
 }
     
@@ -126,7 +126,7 @@ public function getArticleDetail($id)
 
 public function  getEventDetail_data($sport_name,$id)
 {
-    $event      = DB::table('gs_eventinfo')->select('id','name','type', 'description','image','sport_name','organizer_city','start_date','end_date','entry_start_date','entry_end_date','pin','address_1','organizer_name','email_app_collection','event_links')->where('id','<>',$id)->where('sport_name',$sport_name)->where('publish','1')->get();
+    $event      = DB::table('gs_eventinfo')->select('id','name','type', 'description','image','sport_name','organizer_city','start_date','end_date','entry_start_date','entry_end_date','pin','address_1','organizer_name','email_app_collection','event_links')->where('id','<>',$id)->where('sport_name',$sport_name)->where('publish','1')->whereDate('entry_start_date', '>=',DB::raw('curdate()'))->get();
      return $event;
 }
 
