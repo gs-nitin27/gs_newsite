@@ -1,5 +1,5 @@
 @extends('layouts.master')
-@section('pageTitle','Home')
+@section('pageTitle','Tournament')
 @section('meta')
 <meta name="description" content="">
 <meta name="keywords" content="@yield('keywords')">

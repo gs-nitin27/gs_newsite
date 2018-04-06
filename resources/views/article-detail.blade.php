@@ -1,5 +1,5 @@
 @extends('layouts.master')
-@section('pageTitle','article-detail')
+@section('pageTitle','article')
 @section('meta')
 <meta name="description" content="{!!$name[0]->summary!!}">
 <meta name="keywords" content="@yield('keywords')">

@@ -1,5 +1,5 @@
 @extends('layouts.master')
-@section('pageTitle','Home')
+@section('pageTitle','Job')
 @section('meta')
 <meta name="keywords" content="@yield('keywords')">
 <meta name="twitter:dnt" content="on">
