@@ -90,13 +90,12 @@ window.clearconsole = function clearconsole(){
 }
 function alert_msg(msg)
 {
-     $('.modal-body').append('<p>'+msg+'</p>');
+     $('.modal-body').html('<center><p>'+msg+'</p></center>');
      $("#alert").modal({                    // wire up the actual modal functionality and show the dialog
        "backdrop"  : "static",
-      "keyboard"  : true,
+       "keyboard"  : true,
        "show"      : true                     // ensure the modal is shown immediately
      });
-    ;
 }
 
 $(document).ready(function(){
