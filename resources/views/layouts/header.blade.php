@@ -33,7 +33,12 @@
               </li>
 
               <li ><a href="{{url('/aboutus')}}">About us</a></li>
+<<<<<<< HEAD
               <li ><a href="{{url('/career')}}">Careers</a></li>
+=======
+              <!-- <li ><a href="{{url('/career')}}">Careers</a></li> -->
+
+>>>>>>> 9dd388598a7b5638bb7cb7e9a09e4167b24c2b30
 
               
 

@@ -48,7 +48,7 @@ $org_id = '';
                  <span class="icon-bar"></span>
                  <span class="icon-bar"></span>
                  </button>
-                 <div class="logoSec"><a href="{{url('/manage/dashbo')}}"><img class="img-responsive" src="{{asset('manage_assets/img/logo.png')}}"></a></div>
+                 <div class="logoSec"><a href="{{url('/manage/dashbo')}}"><img class="img-responsive" src="{{asset('public/manage_assets/img/logo.png')}}"></a></div>
            <a class="pull-right toggleBtn" href="#"> <i class="fa fa-bars openSideNav"></i></a>
             <center><div class="text-center"><span class="head_title"><i>Jobs</i></span></div></center>
            <div id="mySidenav" class="sideNav">
@@ -56,6 +56,7 @@ $org_id = '';
                     <li><a href="{{url('manage/my_profile/')}}<?php echo '/'.$crt_user_id; ?>"><i class="glyphicons glyphicons-user pull-right close_mySidenav"></i>{{$sess_name}}</a></li>
                     <li><a href="#"><i class="fa fa-times pull-right close_mySidenav"></i></a></li>
                     <li><a href="{{url('/manage/job/transaction_list')}}"><i class="fa fa-inr"></i>My transaction</a></li>
+                    <li><a href="javascript:void(0)"><i class="fa fa-mobile"></i>Get App</a></li>
                     <!-- <li><a href="#"><i class="fa fa-briefcase"></i>Job</a></li>
                     <li><a href="#"><i class="fa fa-bell"></i>Notification</a></li> -->
                     <li><a href="{{url('/manage/logout')}}" onclick="window.localStorage.clear();"><i class="fa fa-power-off"></i>Logout</a></li>

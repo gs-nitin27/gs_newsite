@@ -97,17 +97,17 @@ $sess_data = json_decode($value);
        <input type="hidden" name="hash_string" id="hash_string" value="" />
        <input type="hidden" name="hash"  id="hash" value=""/>
        <input type="hidden" name="txnid" id="txnid" value="" />
-<tr>
+<tr hidden>
 <td>Amount: </td>
 <td><input type="hidden" name="amount" value="{{$checkout['plan'][0]->amount + $value}}" id="amount"/></td>
 </tr>
 <tr>
-<td>First Name: </td>
+<td>Name: </td>
 <td><input  name="firstname" id="firstname" value="{{$sess_data->name}}" /></td>
 </tr>
-<tr>
+<tr hidden>
 <td>Email: </td>
-<td><input  name="email" id="email" value="{{$sess_data->email}}"  /></td>
+<td><input  name="email" id="email" value="{{$sess_data->email}}" /></td>
 </tr>
 <tr>
 <td>Phone: </td>
@@ -144,7 +144,7 @@ $contact = $sess_data->contact_no;
 </form > -->
 
                                           
-                                            <td colspan="4"><button onclick="submitPayuForm()" value="Submit" >Submit</button></td>
+                                            <td colspan="4"><button onclick="submitPayuForm()" class="btn btn-success"value="Submit" >Pay Now</button></td>
                                                                                   </tr>
                                        </form>
                                     </table>
@@ -174,7 +174,7 @@ $contact = $sess_data->contact_no;
             </div>
         </div>
     </div>
-    <script type="text/javascript" src="{{asset('/manage_assets/js/transaction.js')}}"></script>
+    <script type="text/javascript" src="{{asset('public/manage_assets/js/transaction.js')}}"></script>
     <script type="text/javascript">
        var route_url = '<?php echo url('/'); ?>';
     
@@ -196,7 +196,7 @@ $contact = $sess_data->contact_no;
 create_hash();
 function submitPayuForm()
 {
-//alert("dsdsssd");return;
+//alert_msg("dsdsssd");return;
 var payuForm = document.forms.payuForm;
 payuForm.submit();
 }
