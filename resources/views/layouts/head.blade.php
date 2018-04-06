@@ -12,6 +12,7 @@
         <link rel="stylesheet" href="{{asset('public/css/owl.carousel.min.css')}}">
     <link rel="stylesheet" href="{{asset('public/css/owl.theme.default.min.css')}}">
     <script src="{{asset('public/js/owl.carousel.js')}}"></script>
+    <script src="{{asset('public/manage_assets/js/common.js')}}"></script>
     <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
     <script type="text/javascript">
         var curr_url =  window.location.href;

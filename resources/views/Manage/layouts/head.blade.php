@@ -15,7 +15,7 @@
   <script src="{{asset('public/manage_assets/js/common.js')}}"></script>
   <script src="{{asset('public/manage_assets/js/validation.js')}}"></script>
   <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
-   <script src="{{asset('public/manage_assets/js/common.js')}}"></script>
+
 
 <!--  <script type="text/javascript">
 
