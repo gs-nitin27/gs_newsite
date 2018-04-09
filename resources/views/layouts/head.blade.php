@@ -1,6 +1,7 @@
      <meta charset="UTF-8">
      <meta name="viewport" content="width=device-width, initial-scale=1">
         @yield('meta')
+        <meta name="google-site-verification" content="1Lz4Ejk_OiCgTSYN7eBGPARofMMt7GyKbJ55yAKzzNs" />
         <link href="{{asset('public/css/bootstrap.min.css')}}" rel="stylesheet">
         <link href="{{asset('public/css/style1.css')}}" rel="stylesheet">
         <link href="{{asset('public/css/media1.css')}}" rel="stylesheet">
