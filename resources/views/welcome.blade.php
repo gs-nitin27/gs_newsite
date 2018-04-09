@@ -1,5 +1,6 @@
 @extends('layouts.master')
-@section('pageTitle','Home')
+@section('pageTitle','Sports Events & Tournaments | Sports Quota Jobs In India
+')
 @section('content')
 <!-- <style type="text/css">
   div.main-text {overflow-x: hidden;width: 800px;} 
@@ -287,7 +288,7 @@ box-shadow: rgba(255,255,255, 0.75) 1.5em 0 0 0, rgba(255,255,255, 0.75) 1.1em 1
                       <div class="white-heading">
                           <h3>Latest resources</h3>
                            <p>See what’s included in the App</p>
-                           <div class="subTitle" style="color: #b3b3b3;">Sports sector is one of the fastest growing industries not only in India but across the world. The sports sector is worth around 750 Billion dollars and in India alone, this industry is expected to great.<a href="latest-sports-news-resources">Read more....</a></div>
+                           <div class="subTitle" style="color: #b3b3b3;">Sports sector is one of the fastest growing industries not only in India but across the world. The sports sector is worth around 750 Billion dollars and in India alone, this industry is expected to great.<a href="latest-sports-news-resources.html">Read more....</a></div>
                       </div>
                       <div id="customers-testimonials" class="owl-carousel">
                  
@@ -304,7 +305,7 @@ box-shadow: rgba(255,255,255, 0.75) 1.5em 0 0 0, rgba(255,255,255, 0.75) 1.1em 1
                             @endforeach                                                                
                       </div>
                       
-                       <a href="latest-sports-news-resources" class="text-center" style="display: inherit;"><button type="button" class="btn btn-more">View All</button></a>
+                       <a href="latest-sports-news-resources.html" class="text-center" style="display: inherit;"><button type="button" class="btn btn-more">View All</button></a>
                                      
                   </div>
             </div>
@@ -318,7 +319,7 @@ box-shadow: rgba(255,255,255, 0.75) 1.5em 0 0 0, rgba(255,255,255, 0.75) 1.1em 1
               <div class="row pad15">
                 <div class="heading-center"> <h3>Sports Jobs in India</h3>  
                   <p>Learn more about this feature packed App</p> 
-                  <div class="subTitle">We are always gratified to live in a country like India, where sports has an approach to connect people through the availability of sports jobs in India. Cricket is considered as a religion, football is a way of life and hockey highlights secularism.<a href="job">Read More...</a>
+                  <div class="subTitle">We are always gratified to live in a country like India, where sports has an approach to connect people through the availability of sports jobs in India. Cricket is considered as a religion, football is a way of life and hockey highlights secularism.<a href="/sports-jobs-in-india.html">Read More...</a>
 <!-- Sports jobs in India are also making an identity at various levels, most importantly in cricket, tennis, hockey, athletics and chess. There is a wide range of sports job in India in which an ample number of opportunities are available to give a boost to your career.
 Vaguely, you can treasure your dream job through our website and can conveniently browse through all the latest sports jobs in the government or private sector.Indeed, India as a nation is a breeding ground for sports jobs. Though by having a sports jobs in India you can be the part of taking India to both national and international levels.
 So, if you are passionate about sports and want to handle the business side of the game then there are exciting career options for you of having sports in India available on our website and can take the first step towards your fantasy world.
@@ -419,7 +420,7 @@ $day = $interval->format(' %a Days ago ');
                         </div>
                     </section> -->                                                                                  
                   </div>
-                 <a href="job" class="text-center" style="display: inherit;"><button type="button" class="btn btn-more">View All</button></a>
+                 <a href="/sports-jobs-in-india.html" class="text-center" style="display: inherit;"><button type="button" class="btn btn-more">View All</button></a>
               </div>
                                <!-- <div class="text-center">
                            <a href="job-listing.php">
@@ -441,7 +442,7 @@ $day = $interval->format(' %a Days ago ');
               <div class="container" id="event">
                   <div class="row pad15">
                       <div class="w-h" style="margin: 0;"><h3>Sports event in India</h3><p>See what’s included in the App</p>
-                          <div class="subTitle main-text" style="color: #b3b3b3;">India is scrutinize as a country of teeming popular sports events and their universality is also measured by the regional prominence. While cricket is among one of the most popular sports events in India, the other prominent sports events in India include Football, Hockey, Wrestling, Badminton, Tennis, Chess, Kabaddi, Snooker and boxing.<a href="{{ url('/event') }}">Read More...</a>
+                          <div class="subTitle main-text" style="color: #b3b3b3;">India is scrutinize as a country of teeming popular sports events and their universality is also measured by the regional prominence. While cricket is among one of the most popular sports events in India, the other prominent sports events in India include Football, Hockey, Wrestling, Badminton, Tennis, Chess, Kabaddi, Snooker and boxing.<a href="{{ url('/sports-events-in-india.html') }}">Read More...</a>
 <!-- Aloof from national level sports events, India has also hosted several International sports events such as Asian Games during the year 1951 and 1982, 2010 Hockey World Cup and 2010 Commonwealth Games. However, the year 2017 has brought India to the eminence as they hosted FIFA U-17 World Cup and set high standards of the endowment.
 Overall, sports events in India are always amusing to unite with. Every year we all anxiously wait to receive the sports events calendar so we can block our agenda and plan our schedule, travel in advance. Consequently, for the sports events calendar, you don’t have to rush anywhere we will bear you to the latest updates on all the big sports events in India. Be it an upcoming sports trial or just a weekend sporting event, get all the information on your phone through our website hassle-free.
 . --></div>
@@ -478,7 +479,7 @@ Overall, sports events in India are always amusing to unite with. Every year we 
 
 
 
-                      <a href="{{ url('/event') }}" class="text-center" style="display: inherit;"><button type="button" class="btn btn-more">View All</button></a>
+                      <a href="{{ url('/sports-events-in-india.html') }}" class="text-center" style="display: inherit;"><button type="button" class="btn btn-more">View All</button></a>
                   </div>
               </div>
           </section>  
@@ -490,7 +491,7 @@ Overall, sports events in India are always amusing to unite with. Every year we 
               <div class="container" id="event">
                   <div class="row pad15">
                       <div class="w-h" style="margin: 0;"><h3>Sports Tournaments in India</h3><p>See what’s included in the App</p>
-                          <div class="subTitle" style="color: #fff;">Sports sector is one of the fastest growing industries not only in India but across the world. The sports sector is worth around 750 Billion dollars and in India alone, this industry is expected to great.<a href="{{ url('/tournament') }}">Read More...</a></div>
+                          <div class="subTitle" style="color: #fff;">Sports sector is one of the fastest growing industries not only in India but across the world. The sports sector is worth around 750 Billion dollars and in India alone, this industry is expected to great.<a href="{{ url('/sports-tournaments-in-india.html') }}">Read More...</a></div>
                       </div>
                       <div class="clearfix margin20"></div>
                       <div id="sportTournament" class="owl-carousel">
@@ -518,7 +519,7 @@ Overall, sports events in India are always amusing to unite with. Every year we 
                         </section>
                        @endforeach    
                       </div>
-                      <a href="tournament" class="text-center" style="display: inherit;"><button type="button" class="btn btn-more">View All</button></a>
+                      <a href="sports-tournaments-in-india.html" class="text-center" style="display: inherit;"><button type="button" class="btn btn-more">View All</button></a>
                   </div>
               </div>
           </section> 

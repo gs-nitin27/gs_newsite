@@ -17,10 +17,10 @@
               <!-- <li class="active"><a href="index.php">Home</a></li> -->
               
               <!-- <li><a href="#getApp" data-toggle="modal">Get app  </a></li> -->
-              <li><a href="{{url('event')}}" >Event </a></li>
-              <li><a href="{{url('/job')}}">Job</a></li>
-              <li><a href="{{url('/tournament')}}">Tournament</a></li>
-              <li><a href="{{url('/latest-sports-news-resources')}}">Article</a></li>
+              <li><a href="{{url('/sports-events-in-india.html')}}" >Event </a></li>
+              <li><a href="{{url('/sports-jobs-in-india.html')}}">Job</a></li>
+              <li><a href="{{url('/sports-tournaments-in-india.html')}}">Tournament</a></li>
+              <li><a href="{{url('/latest-sports-news-resources.html')}}">Article</a></li>
              <!--  <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                    Business <b class="caret"></b>
@@ -35,7 +35,7 @@
               <li ><a href="{{url('/aboutus')}}">About us</a></li>
 
 
-              <!-- <li ><a href="{{url('/career')}}">Careers</a></li> -->
+              <li ><a href="{{url('/career')}}">Careers</a></li>
               
 
           <!--     <li><a href="{{url('/support')}}">Contact Us</a></li> -->

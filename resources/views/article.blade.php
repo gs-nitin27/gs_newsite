@@ -1,6 +1,7 @@
 @extends('layouts.master')
-@section('pageTitle','Articles')
-@section('description','Get all the latest trending sports news, Sports Events, Sports Tournaments updates on your Getsporty App.')
+@section('pageTitle','Latest Sports News India & Resources - Getsporty')
+@section('description','We bring you the latest updates on all the big sports Resources to your GetSporty App. Get all the information on your phone')
+@section('keywords','latest sorts news india,sports news,sports resources')
 @section('content')
 <!-- @include('layouts.head') -->
 <style type="text/css">

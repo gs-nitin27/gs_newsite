@@ -29,6 +29,7 @@ Route::post('/contact',  'WebEmail@send_mail');
 
 
 Route::get('/','WebController@index');
+Route::get('/index.html','WebController@index');
 
 
 Route::get('/#st','WebController@index');
@@ -38,10 +39,10 @@ Route::get('/#st','WebController@index');
 Route::get('support','WebController@getsupport');
 
 Route::get('aboutus','WebController@getaboutus');
-Route::get('event','WebController@getevent');
-Route::get('job','WebController@getjob');
-Route::get('tournament','WebController@gettournament');
-Route::get('latest-sports-news-resources','WebController@article');
+Route::get('sports-events-in-india.html','WebController@getevent');
+Route::get('sports-jobs-in-india.html','WebController@getjob');
+Route::get('sports-tournaments-in-india.html','WebController@gettournament');
+Route::get('latest-sports-news-resources.html','WebController@article');
 Route::get('landing-job','WebController@getlandingjob');
 Route::get('landing-event','WebController@getlandingevent');
 

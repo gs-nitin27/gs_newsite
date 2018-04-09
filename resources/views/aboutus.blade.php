@@ -1,6 +1,8 @@
 
 @extends('layouts.master')
 @section('pageTitle','About us')
+@section('description','We are taking sports to people and peoople to sports. We belong to the breed of Indian people who are concerned about the state of sports in India')
+@section('keywords','getsporty, about us, sports jobs in india')
 @section('content')
 
        <div class="about-bg bannerBgSec">
@@ -183,22 +185,12 @@
                   <a href="#"><span class="twitter"><i class="fa fa-twitter" aria-hidden="true"></i></span></a></li>
                   <li><a href="#">
                   <span class="google"><i class="fa fa-google-plus" aria-hidden="true"></i>
-                    </span></a></li>
+                  </span></a></li>
                    </ul>
                    </div>
                    </a>
-                 </div>
-
-
-             
-              
-                 
-
-
-
-				 
-
-                  </div>
+                </div>
+             </div>
 			    </div>
 			  </div> 
 		    </div> 

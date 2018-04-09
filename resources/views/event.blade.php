@@ -1,7 +1,7 @@
 @extends('layouts.master')
-@section('pageTitle','Event')
-@section('description','Get all the updates on the latest and the upcoming Events & sports tournaments in India & the area near you.')
-@section('keywords','Sports Events , Sports Tournament ')
+@section('pageTitle','Sports Events In My City | Sports Events In India')
+@section('description','Get all the latest updates on the upcoming Sports Events In My City & Sports Events in India.')
+@section('keywords','sports events in india, sports events in my city')
 @section('content')
  <!--   @include('layouts.head')
  -->
