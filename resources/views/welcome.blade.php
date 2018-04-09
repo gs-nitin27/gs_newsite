@@ -340,6 +340,10 @@ $datetime1 = new DateTime();
 $datetime2 = new DateTime($value->date_updated);
 $interval = $datetime1->diff($datetime2);
 $day = $interval->format(' %a Days ago ');
+if($day == '0 Days ago')
+{
+  $day = 'Today';
+}
 ?>
 
                            <p> Posted  : <span> {{ $day }} </span></p>
@@ -443,7 +447,7 @@ $day = $interval->format(' %a Days ago ');
           <section class="testimonials commnStyle">
               <div class="container" id="event">
                   <div class="row pad15">
-                      <div class="w-h" style="margin: 0;"><h3>Sports event in India</h3><p>See what’s included in the App</p>
+                      <div class="w-h" style="margin: 0;"><h3>Sports event in India</h3><p>sports events and Trials listing</p>
                           <div class="subTitle main-text" style="color: #b3b3b3;">India is scrutinize as a country of teeming popular sports events and their universality is also measured by the regional prominence. While cricket is among one of the most popular sports events in India, the other prominent sports events in India include Football, Hockey, Wrestling, Badminton, Tennis, Chess, Kabaddi, Snooker and boxing.<a href="{{ url('/sports-events-in-india.html') }}">Read More...</a>
 <!-- Aloof from national level sports events, India has also hosted several International sports events such as Asian Games during the year 1951 and 1982, 2010 Hockey World Cup and 2010 Commonwealth Games. However, the year 2017 has brought India to the eminence as they hosted FIFA U-17 World Cup and set high standards of the endowment.
 Overall, sports events in India are always amusing to unite with. Every year we all anxiously wait to receive the sports events calendar so we can block our agenda and plan our schedule, travel in advance. Consequently, for the sports events calendar, you don’t have to rush anywhere we will bear you to the latest updates on all the big sports events in India. Be it an upcoming sports trial or just a weekend sporting event, get all the information on your phone through our website hassle-free.
