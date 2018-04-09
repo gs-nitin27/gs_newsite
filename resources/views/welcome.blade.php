@@ -340,7 +340,7 @@ $datetime1 = new DateTime();
 $datetime2 = new DateTime($value->date_updated);
 $interval = $datetime1->diff($datetime2);
 $day = $interval->format(' %a Days ago ');
-if($day == '0 Days ago')
+if($day == ' 0 Days ago ')
 {
   $day = 'Today';
 }
