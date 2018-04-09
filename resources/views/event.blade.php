@@ -1,7 +1,9 @@
 @extends('layouts.master')
 @section('pageTitle','Sports Events In My City | Sports Events In India')
-@section('description','Get all the latest updates on the upcoming Sports Events In My City & Sports Events in India.')
-@section('keywords','sports events in india, sports events in my city')
+@section('meta')
+<meta name="description" content="Get all the latest updates on the upcoming Sports Events In My City & Sports Events in India.">
+<meta name="keywords" content="sports events in india, sports events in my city">
+@endsection
 @section('content')
  <!--   @include('layouts.head')
  -->

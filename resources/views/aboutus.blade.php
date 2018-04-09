@@ -3,6 +3,10 @@
 @section('pageTitle','About us')
 @section('description','We are taking sports to people and peoople to sports. We belong to the breed of Indian people who are concerned about the state of sports in India')
 @section('keywords','getsporty, about us, sports jobs in india')
+@section('meta')
+<meta name="description" content="We are taking sports to people and peoople to sports. We belong to the breed of Indian people who are concerned about the state of sports in India">
+<meta name="keywords" content="sports events in india, sports events in my city">
+@endsection
 @section('content')
 
        <div class="about-bg bannerBgSec">

@@ -1,13 +1,15 @@
 @extends('layouts.master')
 @section('pageTitle','Sports Events & Tournaments | Sports Quota Jobs In India
 ')
+@section('meta')
+<meta name="description" content="We bring you the latest updates on all the big sports Events & Tournaments to your GetSporty App. Also, Find your dream sports Quota jobs In India.">
+<meta name="keywords" content="Sports Jobs,Sports Jobs in India,Sports Quota Jobs,Sports Quota Jobs in India,Sports Trials,Sports Events in my city,Sports tournaments in my city">
+<meta property="og:image" content="https://getsporty.in/23376596_1450074778394787_4309845126431335508_n (1).png">
+@endsection
 @section('content')
 <!-- <style type="text/css">
   div.main-text {overflow-x: hidden;width: 800px;} 
 </style> -->
-@section('meta')
-<meta property="og:image" content="https://getsporty.in/23376596_1450074778394787_4309845126431335508_n (1).png">
-@endsection
 <style type="text/css">
   .loading {
   position: fixed;

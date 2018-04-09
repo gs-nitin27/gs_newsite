@@ -1,9 +1,11 @@
 @extends('layouts.master')
 @section('pageTitle','Govt. & Private Sector Sports Jobs in India - Getsporty')
-@section('description','Find your dream sports job. Browse through all the latest Govt. & Private Sector Sports Jobs in India through our specially devoted Sports Job Portal Getsporty.')
-@section('keywords','sports job in india, sports job portal,private sector sports jobs in india,govt sports job in india')
+@section('meta')
+<meta name="description" content="Find your dream sports job. Browse through all the latest Govt. & Private Sector Sports Jobs in India through our specially devoted Sports Job Portal Getsporty.">
+<meta name="keywords" content="sports job in india, sports job portal,private sector sports jobs in india,govt sports job in india">
+<meta property="og:image" content="https://getsporty.in/23376596_1450074778394787_4309845126431335508_n (1).png">
+@endsection
 @section('content')
-<!-- @include('layouts.head') -->
 <style type="text/css">
    p{font-size: 10px;}
  </style>

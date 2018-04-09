@@ -1,7 +1,10 @@
 @extends('layouts.master')
 @section('pageTitle','Sports Tournaments In My City | Sports Tournaments In India')
-@section('description','Get all the latest updates on the upcoming Sports Tournaments In My City & Sports Tournaments in India.')
-@section('keywords','sports tournaments in my city, sports tournaments in india, sports tournaments')
+@section('meta')
+<meta name="description" content="Get all the latest updates on the upcoming Sports Tournaments In My City & Sports Tournaments in India.">
+<meta name="keywords" content="sports tournaments in my city, sports tournaments in india, sports tournaments">
+<meta property="og:image" content="https://getsporty.in/23376596_1450074778394787_4309845126431335508_n (1).png">
+@endsection
 @section('content')
 <!-- @include('layouts.head') -->
 <style type="text/css">

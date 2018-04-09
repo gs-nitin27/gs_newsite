@@ -1,7 +1,10 @@
 @extends('layouts.master')
 @section('pageTitle','Latest Sports News India & Resources - Getsporty')
-@section('description','We bring you the latest updates on all the big sports Resources to your GetSporty App. Get all the information on your phone')
-@section('keywords','latest sorts news india,sports news,sports resources')
+@section('meta')
+<meta name="description" content="We bring you the latest updates on all the big sports Resources to your GetSporty App. Get all the information on your phone">
+<meta name="keywords" content="latest sorts news india,sports news,sports resources">
+<meta property="og:image" content="https://getsporty.in/23376596_1450074778394787_4309845126431335508_n (1).png">
+@endsection
 @section('content')
 <!-- @include('layouts.head') -->
 <style type="text/css">
