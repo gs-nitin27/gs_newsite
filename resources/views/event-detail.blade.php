@@ -78,9 +78,6 @@
                         <span> {!!$name[0]->description!!}
                         </span>        			       
                     </p>        			   
-              			<p> Tournamnet Rules : <span>Recognised degree from a reputed university. Adequate experience in the related field preferably in CBSE / International School. Specialization in the subject for which a candidate is applying for the job. </span></p>
-              			   
-              			<p>Key Requirement :  <span>Fluency in English is a must.</span></p>        			    
               			<p>Event Name : <span> {{$name[0]->name}}.</span></p>        			     
               			<p>Event Organiser : 
                         <span> {{$name[0]->organizer_name}}.</span>
@@ -100,7 +97,7 @@
               <div class="row pad15">
                   <div class="heading-center">
             	       <h3>Related Event</h3>
-               	      <p>Learn more about this feature packed App</p>
+               	     
                   </div>
                   <div id="customers-testimonials2" class="owl-carousel">
                  @for($i=0;$i<count($name1);$i++)

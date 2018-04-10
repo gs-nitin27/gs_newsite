@@ -89,9 +89,7 @@
                         <span> {!!$name[0]->description!!}.
             			      </span>        			       
                     </p>        			   
-              			<p> Tournamnet Rules : <span>Recognised degree from a reputed university. Adequate experience in the related field preferably in CBSE / International School. Specialization in the subject for which a candidate is applying for the job. </span></p>
-              			   
-              			<p>Key Requirement :  <span>Fluency in English is a must.</span></p>        			    
+              		       			    
               			<p>Sponsore Name : <span> {{$name[0]->organiser_name}}.</span></p>        			     
               			<p>About Organiser : 
                         <span> {{$name[0]->name}}.</span>
