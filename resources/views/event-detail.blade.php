@@ -17,10 +17,7 @@
  />
 @endsection
 @section('content')
-
-
-
-     <div class="joblist-bg eventBg bannerBgSec">
+            <div class="joblist-bg eventBg bannerBgSec">
             <div class="container">
        	    <div class="row">
        	      <div class="col-md-12">
