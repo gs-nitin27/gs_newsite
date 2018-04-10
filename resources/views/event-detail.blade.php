@@ -64,7 +64,7 @@
                      <h4>  </h4>
       				            <h4>
                           
-                          {{$name1[0]->name}}
+                          {{$name[0]->name}}
                           </h4>
                           <p> Type : <span> {{$name[0]->type}}</span></p>
                           <p> Organizer Name : <span> {{$name[0]->organizer_name}}</span></p>
