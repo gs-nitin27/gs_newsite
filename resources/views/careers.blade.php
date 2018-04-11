@@ -74,7 +74,7 @@
               <div class="row">
                   <div class="heading-center" id="st"><h3>Contact Us</h3><p>Just Drop your Resume here</p></div>
                   <div class="col-lg-6 col-md-6">
-                  <form id="contact_body" method="post" action="http://localhost/testingapp/getSportyLite/contact_us.php?act=career">
+                  <form id="contact_body" method="post" action="https://getsporty.in/liveapp/getSportyLite/contact_us.php?act=career&token_id=dhs2016" enctype='multipart/form-data'>
                       {{ csrf_field() }} 
                         <div class="form-group">
                             <label for="name">Name</label>
@@ -113,20 +113,19 @@
               </div>
           </section> 
           <script type="text/javascript">
-            // function validateForm(){  
-        var allowed_file_size   = "1048576"; //1 MB allowed file size
+            
+var allowed_file_size   = "1048576"; //1 MB allowed file size
 var allowed_file_types  = ['image/png', 'image/gif', 'image/jpeg', 'image/pjpeg', 'application/x-zip-compressed', 'application/pdf']; //Allowed file types
 var border_color        = "#C2C2C2"; //initial input border color
 var maximum_files       = 2; //Maximum number of files allowed
 
 $("#contact_body").submit(function(e){
+   $('.loading').show();
     e.preventDefault(); //prevent default action 
     proceed = true;
-        //if(proceed){ 
         var post_url = $(this).attr("action"); //get form action url
         var request_method = $(this).attr("method"); //get form GET/POST method
         var form_data = new FormData(this); //Creates new FormData object
-        
         $.ajax({ //ajax form submit
             url : post_url,
             type: request_method,
@@ -135,17 +134,17 @@ $("#contact_body").submit(function(e){
             contentType: false,
             cache: false,
             processData:false
-        }).done(function(res){ //fetch server "json" messages when done
-            if(res.type == "error"){
-                $("#contact_results").html('<div class="error">'+ res.text +"</div>");
+        }).done(function(res){
+           //fetch server "json" messages when done
+            if(res.status == 1){
+               
+                alert_msg('Thanks for applying');
             }
-            if(res.type == "done"){
-                $("#contact_results").html('<div class="success">'+ res.text +"</div>");
+            else{
+                alert_msg('Something went wrong');
             }
+             $('.loading').hide();
         });
-   // }
-
-        
   });
           </script>
         
