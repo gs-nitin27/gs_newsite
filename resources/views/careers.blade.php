@@ -95,7 +95,7 @@
                             <textarea class="form-control" rows="5" id="about" name="about"></textarea>
                         </div>
                         <div class="form-group">
-                            <label for="exampleFormControlTextarea1">Upload Doc</label>
+                            <label for="exampleFormControlTextarea1">Upload your resume</label>
                             <input type="file" class="form-control01" id="doc" aria-describedby="emailHelp" placeholder="" name="doc" required="doc"> 
                         </div>
                         <div class="margin15 clearfix"></div>
