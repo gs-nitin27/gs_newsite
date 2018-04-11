@@ -56,7 +56,7 @@
              <div class="container">
             <div class="row">
              <div class="heading-center m0 pad15">
-                  <h3>We are not here to play sports.</h3>
+                  <h3>We are not here to play sports</h3>
                     </div>
                     <div class="about-content">
                      <h4></h4>
