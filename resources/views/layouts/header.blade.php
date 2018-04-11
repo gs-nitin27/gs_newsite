@@ -1,4 +1,4 @@
-
+<div class="loading" hidden>Loading&#8230;</div>
 <nav class="navbar navbar-default bg0 affix menuSec" data-spy="affix" data-offset-top="10">
           <div class="container">
            <!-- Brand and toggle get grouped for better mobile display -->
