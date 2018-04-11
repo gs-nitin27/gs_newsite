@@ -61,7 +61,7 @@
                     <div class="about-content">
                      <h4></h4>
                                             <div class="margin15 clearfix"></div>
-                       <p>We are here to help other people play their sport. We are the backend of sports in India. If you want to make India a force to reckon with in the field of Sport? So, Come and join us for your dream job in Sports in India and let us together make India a sports superpower.</p> 
+                       <p style="text-align: center;">We are here to help other people play their sport. We are the backend of sports in India. If you want to make India a force to reckon with in the field of Sport? So, Come and join us for your dream job in Sports in India and let us together make India a sports superpower.</p> 
                    
                       <div class="margin15 clearfix"></div>
                         <div class="margin20 clearfix"></div>

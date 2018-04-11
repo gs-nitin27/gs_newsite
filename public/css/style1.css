@@ -1011,7 +1011,8 @@ width:100%;
 }
 .about-content p{
  color: #666666;
- font:14px/20px 'Poppins';
+ font:18px/20px 'Poppins';
+ text-align: center;
 }
 
 .about-bg {
