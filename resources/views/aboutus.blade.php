@@ -58,7 +58,9 @@
                    </div>
                   </div>
                 </div>
-  </div>
+               </div>
+
+               
               <div class="clearfix"></div>
         	   <div class="container">
         	 	<div class="row">

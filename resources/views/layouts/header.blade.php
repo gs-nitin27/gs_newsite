@@ -35,7 +35,7 @@
               <li ><a href="{{url('/aboutus')}}">About us</a></li>
 
 
-             <!--  <li ><a href="{{url('/career')}}">Careers</a></li> -->
+              <li ><a href="{{url('/career')}}">Careers</a></li>
               
 
           <!--     <li><a href="{{url('/support')}}">Contact Us</a></li> -->
