@@ -91,6 +91,10 @@
                             <input type="number" class="form-control01" id="contact" aria-describedby="emailHelp" placeholder="" name="contact" required="contact">
                         </div>
                         <div class="form-group">
+                            <label for="about">About yourself.</label>
+                            <textarea class="form-control" rows="5" id="about" name="about"></textarea>
+                        </div>
+                        <div class="form-group">
                             <label for="exampleFormControlTextarea1">Upload Doc</label>
                             <input type="file" class="form-control01" id="doc" aria-describedby="emailHelp" placeholder="" name="doc" required="doc"> 
                         </div>
