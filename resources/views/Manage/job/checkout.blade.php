@@ -127,10 +127,10 @@ $contact = $sess_data->contact_no;
 <td colspan="3" style="display: none"><textarea type="hidden" name="productinfo" type="hidden" value="Book1" id="productinfo">{{$checkout['job'][0]->id}}</textarea></td>
 </tr>
 <tr>
-<td colspan="3" style="display: none" ><input type="hidden" name="surl"  size="64" id="surl" value="{{ config('constant.ENV_URL')}}/paymentapi/transactionSuccess.php" /></td>
+<td colspan="3" style="display: none" ><input type="hidden" name="surl"  size="64" id="surl" value="{{ config('constant.PAYU_URL')}}/paymentapi/transactionSuccess.php" /></td>
 </tr>
 <tr>
-<td colspan="3" style="display: none"><input type="hidden" name="furl"  size="64" id="furl" value="{{ config('constant.ENV_URL')}}/paymentapi/transactionFail.php"/></td>
+<td colspan="3" style="display: none"><input type="hidden" name="furl"  size="64" id="furl" value="{{ config('constant.PAYU_URL')}}/paymentapi/transactionFail.php"/></td>
 </tr>
 <tr>
 <td colspan="3" style="display: none"><input type="hidden" name="service_provider" value="payu_paisa" id="service_provider"/></td>
