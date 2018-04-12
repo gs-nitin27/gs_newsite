@@ -408,7 +408,10 @@ function recruitment_update(recruitment_data,act)
 // {
 //   window.location.href="{{url('/manage/job/candidate_profile/"+id+"')}}";
 // }
+ setTimeout(function() {
+              getJobApplicants();
 
+        }, 300000);    
 </script>
                        
 
