@@ -6,15 +6,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/js/bootstrap-datetimepicker.min.js"></script>
+  <!--   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/js/bootstrap-datetimepicker.min.js"></script> -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-  <script src="{{asset('public/manage_assets/js/custom-validation.js')}}"></script>
+<!--   <script src="{{asset('public/manage_assets/js/custom-validation.js')}}"></script> -->
   <script src="{{asset('public/manage_assets/js/common.js')}}"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/css/bootstrap-datetimepicker.min.css" />
+<!--   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/css/bootstrap-datetimepicker.min.css" /> -->
 <style type="text/css">
   .invalid{
     color: #de1124;
@@ -191,7 +191,7 @@ box-shadow: rgba(255,255,255, 0.75) 1.5em 0 0 0, rgba(255,255,255, 0.75) 1.1em 1
                                         <input class="form-control" type="text" value="" id="datepicker">
                                     </div>
                                 </div>
-                                <input size="16" type="text" value="2012-06-15 14:45" readonly class="form_datetime">
+                                
                                 <div class="form-group row">
                                     <label class="col-lg-3 col-form-label form-control-label">Gender</label>
                                     <div class="form-check form-check-inline">
@@ -277,7 +277,6 @@ $("#btnLogin").click(function(event) {
 
         }
    user_info_data  = JSON.stringify(user_info_data);
-   console.log(user_info_data);return;
    form.addClass('was-validated');
    $.ajax({
       url:url+'/user_access_controller.php?act=gs_signup',
@@ -401,17 +400,17 @@ else
   </div>
 </div>
  
-<div class="input-append date form_datetime">
+<!-- <div class="input-append date form_datetime">
     <input size="16" type="text" value="" readonly>
     <span class="add-on"><i class="icon-th"></i></span>
-</div>
+</div> -->
  
 <script type="text/javascript">
-    $(".form_datetime").datetimepicker({
-        format: "dd MM yyyy - hh:ii",
-        autoclose: true,
-        todayBtn: true,
-        pickerPosition: "bottom-left"
-    });
+    // $(".form_datetime").datetimepicker({
+    //     format: "dd MM yyyy - hh:ii",
+    //     autoclose: true,
+    //     todayBtn: true,
+    //     pickerPosition: "bottom-left"
+    // });
 </script>   
 </html>

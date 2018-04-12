@@ -331,7 +331,7 @@
           var resp_data = result;//JSON.parse(result);
            if(resp_data != '0')
            { var org_name = '<a href="javascript:void(0)" data-target="#myModalHorizontal" onclick="getorg_details();" data-toggle="modal" style="text-decoration:none"><h1><span class="company">'+$('#org_name').val()+'</span><h1></a>';
-             alert_msg_msg("Organisation Created");
+             alert_msg("Organisation Created");
              $('#org_div').html('');
              $('#org_div').html(org_name);
              var userdata = JSON.parse(localStorage.getItem('userdata'));
@@ -342,7 +342,7 @@
            }
            else
            {
-           alert_msg_msg('Something wemt wrong'); 
+           alert_msg('Something went wrong'); 
            }
           }
         });

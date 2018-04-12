@@ -21,6 +21,11 @@
               <li><a href="{{url('/sports-jobs-in-india.html')}}">Job</a></li>
               <li><a href="{{url('/sports-tournaments-in-india.html')}}">Tournament</a></li>
               <li><a href="{{url('/latest-sports-news-resources.html')}}">Article</a></li>
+             <?php
+               if (env('APP_ENV') === 'production') {
+    
+
+              ?>
              <!--  <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                    Business <b class="caret"></b>
@@ -31,7 +36,7 @@
                     <li><a class="" href="{{url('/tournament')}}">Organize tournament </a></li>
                 </ul>
               </li> -->
-
+                        <?php }?>
               <li ><a href="{{url('/aboutus')}}">About us</a></li>
 
 
