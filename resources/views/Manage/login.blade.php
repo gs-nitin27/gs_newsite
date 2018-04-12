@@ -1,13 +1,21 @@
 <?php 
 $url = $_SERVER['REQUEST_URI'];//die;
 $param = explode('/', $url);
-if($param['4'] == '1')
+if (env('APP_ENV') === 'production') {
+   
+   $section = $param['3'];
+   
+}else
+{
+  $section = $param['4'];
+}
+if($section == '1')
 {
 $string = '1';  
 }
 else
 {
-$string = base64_decode($param['4']);
+$string = base64_decode($section);
 }
 if(Session::has('userdata'))
    {  $value = session('userdata');
