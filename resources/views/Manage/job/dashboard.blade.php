@@ -336,8 +336,10 @@
              $('#org_div').html(org_name);
              var userdata = JSON.parse(localStorage.getItem('userdata'));
              var obj = {};
-             obj["org_id"] = resp_data;
-             obj["org_name"] = $('#org_name').val();
+             // obj["org_id"] = resp_data;
+             // obj["org_name"] = $('#org_name').val();
+             userdata.org_data.org_id = resp_data;
+             userdata.org_data.org_name = $('#org_name').val();
              userdata.org_data.push(obj);
              localStorage.setItem('userdata',JSON.stringify(userdata));
              $('.modal').modal('hide');

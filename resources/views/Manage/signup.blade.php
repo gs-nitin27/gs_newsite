@@ -6,16 +6,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <!--   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/js/bootstrap-datetimepicker.min.js"></script> -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-<!--   <script src="{{asset('public/manage_assets/js/custom-validation.js')}}"></script> -->
   <script src="{{asset('public/manage_assets/js/common.js')}}"></script>
-<!--   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/css/bootstrap-datetimepicker.min.css" /> -->
-<style type="text/css">
+  <style type="text/css">
   .invalid{
     color: #de1124;
   }
@@ -142,7 +138,6 @@ box-shadow: rgba(255,255,255, 0.75) 1.5em 0 0 0, rgba(255,255,255, 0.75) 1.1em 1
 </style>
 </head>
 <body>
-<div class="loading" hidden>Loading&#8230;</div>  
  <!-- form user info -->
                     <div class="card card-outline-secondary">
                         <div class="card-header">
@@ -214,6 +209,83 @@ box-shadow: rgba(255,255,255, 0.75) 1.5em 0 0 0, rgba(255,255,255, 0.75) 1.1em 1
                                         </select>
                                     </div>
                                 </div>
+                                <div class="card-header">
+                            <h3 class="mb-0"><center>Add Company Info</center></h3>
+                                </div>
+                <input type="hidden" class="form-control" id="org_id" />
+                <form class="form-horizontal" role="form">
+                   <div class="form-group row">
+                        <label class="col-lg-3 col-form-label form-control-label">Organisation Name</label>
+                        <div class="col-lg-9">
+                            <span id="jorg_name" class="invalid"><p></p></span>
+                            <input class="form-control" type="text" id="org_name" placeholder="Organisation Name">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-lg-3 col-form-label form-control-label">About</label>
+                        <div class="col-lg-9">
+                            <span id="jabout" class="invalid"><p></p></span>
+                            <input class="form-control" type="text" id="about" placeholder="About">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-lg-3 col-form-label form-control-label">Address</label>
+                        <div class="col-lg-9">
+                            <span id="jaddress1" class="invalid"><p></p></span>
+                            <input class="form-control" type="text" id="address1" placeholder="Address">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-lg-3 col-form-label form-control-label">Landmark</label>
+                        <div class="col-lg-9">
+                            <span id="jaddress2" class="invalid"><p></p></span>
+                            <input class="form-control" type="text" id="address2" placeholder="">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-lg-3 col-form-label form-control-label">City</label>
+                        <div class="col-lg-9">
+                            <span id="jcity" class="invalid"><p></p></span>
+                            <input class="form-control" type="text" id="city" placeholder="city">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-lg-3 col-form-label form-control-label">State</label>
+                        <div class="col-lg-9">
+                            <span id="jstate" class="invalid"><p></p></span>
+                            <input class="form-control" type="text" id="state" placeholder="state">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-lg-3 col-form-label form-control-label">Pin</label>
+                        <div class="col-lg-9">
+                            <span id="jpin" class="invalid"><p></p></span>
+                            <input class="form-control" type="text" id="pin" placeholder="201301">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-lg-3 col-form-label form-control-label">Mobile No.</label>
+                        <div class="col-lg-9">
+                            <span id="jmobile" class="invalid"><p></p></span>
+                            <input class="form-control" type="text" id="mobile" placeholder="1001254124">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-lg-3 col-form-label form-control-label">Email</label>
+                        <div class="col-lg-9">
+                            <span id="jemail" class="invalid"><p></p></span>
+                            <input class="form-control" type="text" id="co_email" placeholder="example@example.com">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-lg-3 col-form-label form-control-label">GSTIN</label>
+                        <div class="col-lg-9">
+                            <!-- <span id="jemail" class="invalid"><p></p></span> -->
+                            <input class="form-control" type="text" id="gstin" placeholder="GSTIN">
+                        </div>
+                    </div>
+                </form>
+            
                                 <div class="form-group row">
                                     <label class="col-lg-3 col-form-label form-control-label"></label>
                                     <div class="col-lg-9">
@@ -244,6 +316,7 @@ box-shadow: rgba(255,255,255, 0.75) 1.5em 0 0 0, rgba(255,255,255, 0.75) 1.1em 1
       {
         $('#email_div').hide();
         $('#email').val(data.email);
+         $('#co_email').val(data.email);
         $('#name').val(data.data.name);
       }
      }
@@ -287,8 +360,15 @@ $("#btnLogin").click(function(event) {
       { 
         var response  = JSON.parse(result);
         if(response.status==1)
-        {
+        { 
+          if(add_organisation(response.data.userid) != 0)
+          {
           window.location.href = "<?php echo url('/'); ?>"+"/manage/dashbo";
+          }
+          else
+          {
+            alert_msg("Something Went wrong, Please try after some time");
+          }
         }
         
       $('.loading').hide();
@@ -304,7 +384,7 @@ var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 var i = 0;
 if($('#name').val()== '')
 {
-  $('#rname').text('Please enter the you name');
+  $('#rname').text('*Please enter the you name');
   i++;
 }
 else
@@ -317,12 +397,12 @@ if($('#email').val().match(mailformat))
 }
 else
 {
-  $('#remail').text('Please enter a valid email');
+  $('#remail').text('*Please enter a valid email');
   i++;  
 }
 if($('#mobile').val()== '')
 {
-  $('#rmobile').text('Please enter the valid number');
+  $('#rmobile').text('*Please enter the valid number');
   i++;
 }
 else
@@ -331,7 +411,7 @@ else
 }
 if($('#location').val() == '')
 {
-   $('#rlocation').text('Please enter the location');
+   $('#rlocation').text('*Please enter the location');
    i++;
 }else
 {
@@ -339,7 +419,7 @@ if($('#location').val() == '')
 }
 if($('#datepicker').val() == '')
 {
-   $('#rdob').text('Please enter the dob');
+   $('#rdob').text('*Please enter the dob');
    i++;
 }else
 {
@@ -347,13 +427,69 @@ if($('#datepicker').val() == '')
 }
 if($('#proffession').val() == '')
 {
-   $('#rproffession').text('Please enter the proffession');
+   $('#rproffession').text('*Please enter the proffession');
    $i++;
 }else
 {  
    $('#rproffession').text('');
 }
 
+if($('#org_name').val()=='')
+  {
+     $('#jorg_name').html('<p>*Company name required.</p>');
+     i++;
+  }else
+  {
+   $('#jorg_name').html('');
+  }
+if($('#about').val()=='')
+  {
+     $('#jabout').html('<p>*about company required.</p>');
+     i++;
+  }else
+  {
+   $('#jabout').html('');
+  }
+if($('#address1').val()=='')
+  {
+     $('#jaddress1').html('<p>*Company address required.</p>');
+     i++;
+  }else
+  {
+   $('#jaddress1').html('');
+  }
+if($('#city').val()=='')
+  {
+     $('#jcity').html('<p>*city name required.</p>');
+     i++;
+  }else
+  {
+   $('#jcity').html('');
+  }
+if($('#pin').val()=='')
+  {  
+     $('#jpin').html('<p>*Company pin required.</p>');
+     i++;
+  }else
+  {
+   $('#jpin').html('');
+  }
+if($('#mobile').val()=='')
+  {
+     $('#jmobile').html('<p>*Company mobile required.</p>');
+     i++;
+  }else
+  {
+   $('#jmobile').html('');
+  }
+if($('#co_email').val()=='')
+  {
+     $('#jemail').html('<p>*Company email required.</p>');
+     i++;
+  }else
+  {
+   $('#jemail').html('');
+  }      
 if(i == 0)
 {
   return true;
@@ -381,9 +517,60 @@ else
             var autocomplete = new google.maps.places.Autocomplete($("#location")[0], {});
             google.maps.event.addListener(autocomplete, 'place_changed', function() {
                 var place = autocomplete.getPlace();
-                console.log(place.address_components);
+               // console.log(place.address_components);
             });
+            var autocomplete = new google.maps.places.Autocomplete($("#address1")[0], {});
+            google.maps.event.addListener(autocomplete, 'place_changed', function() {
+                var place = autocomplete.getPlace();
+               // console.log(place.address_components);
+            });
+            
 
+</script>
+<!-- <div class="input-append date form_datetime">
+    <input size="16" type="text" value="" readonly>
+    <span class="add-on"><i class="icon-th"></i></span>
+</div> -->
+ 
+<script type="text/javascript">
+function add_organisation(sess_userid)
+      {  var userid =  sess_userid;
+         var org_data = 
+         { "id":$('#org_id').val(),//org_id,
+           "userid":sess_userid,
+           "org_name":$('#org_name').val(),
+           "about":$('#about').val(),
+           "address1":$('#address1').val(),
+           "address2":$('#address2').val(),
+           "city":$('#city').val(),
+           "pin":$('#pin').val(),
+           "state":$('#state').val(),
+           "mobile":$('#mobile').val(),
+           "email":$('#co_email').val(),
+           "gstin":$('#gstin').val()
+         }
+       org_data = JSON.stringify(org_data);
+       $.ajax({
+        url:url+'/angularapi.php?act=addOrg',
+        method:"POST",
+        data:org_data,
+        dataType:'text',
+        success:function(result)
+        {
+            if($.trim(result) != 0)
+            { 
+              return $.trim(result);
+            }
+        },
+        failure:function(result)
+        {
+          
+          alert_msg("Something went wrong");
+          return false;
+        }
+
+      });
+     }
 
 </script>
 <div id="alert" class="modal fade">
@@ -399,18 +586,5 @@ else
     </div>
   </div>
 </div>
- 
-<!-- <div class="input-append date form_datetime">
-    <input size="16" type="text" value="" readonly>
-    <span class="add-on"><i class="icon-th"></i></span>
-</div> -->
- 
-<script type="text/javascript">
-    // $(".form_datetime").datetimepicker({
-    //     format: "dd MM yyyy - hh:ii",
-    //     autoclose: true,
-    //     todayBtn: true,
-    //     pickerPosition: "bottom-left"
-    // });
-</script>   
+<div class="loading" hidden>Loading&#8230;</div>   
 </html>
