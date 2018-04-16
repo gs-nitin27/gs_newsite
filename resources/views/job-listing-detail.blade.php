@@ -104,6 +104,9 @@
         			  
         			   <p>For more info : <span class="read-c"><a href="{{$name[0]->job_link}}"> Click here</a> </span></p>
         			    </div>
+                  <div>
+  <h4>Note:</h4><p>GetSporty is not an organizer for this event / tournament and has no control over any changes in the above given information. For any info. Please connect to the above given contact details.</p>
+</div>
         		      </div>
         		    </div>
   	 <div class="clearfix margin20"></div>
