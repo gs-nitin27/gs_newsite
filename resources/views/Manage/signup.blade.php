@@ -370,8 +370,7 @@ $("#btnLogin").click(function(event) {
             alert_msg("Something Went wrong, Please try after some time");
           }
         }
-        
-      $('.loading').hide();
+        $('.loading').hide();
       }
 
    });
