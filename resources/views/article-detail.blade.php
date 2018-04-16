@@ -198,5 +198,7 @@
 		    });
 
     </script>
-
+@section('disclaimer')
+<div style="font-size: 8px"><p>Disclaimer:  The information contained in this website is for general information purposes only. The information is provided by GetSporty and while we endeavour to keep the information up to date and correct. Through this website you are able to link to other websites which are not under the control of GetSporty. We have no control over the nature, content and availability of those sites. The inclusion of any links does not necessarily imply a recommendation or endorse the views expressed within them.We make no representations or warranties of any kind, express or implied, about the completeness, accuracy, reliability, suitability or availability with respect to the website or the information contained on the website for any purpose.</p></div>
+@endsection
 @stop

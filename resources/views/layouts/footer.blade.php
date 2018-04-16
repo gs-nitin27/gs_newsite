@@ -72,3 +72,4 @@ s0.parentNode.insertBefore(s1,s0);
          </div>
       </div>
    </div>
+@yield('disclaimer')
