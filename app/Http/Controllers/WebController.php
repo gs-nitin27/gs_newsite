@@ -174,17 +174,20 @@ use DateTime;
     return View::make("article-detail")->with('name', $resp)->with('name1',$resp1);
     }
 
-
-
-
- 
 public function getw()
     {
        
     return View::make("support");
     }
     
-
+public function getSportsList(Request $request)
+   {
+    $id   = $request->id;
+    $obj  = new WebModel();
+    $resp = $obj->getSportsList($id);
+    $resp = array('data' => $resp );
+    echo json_encode($resp);
+   }
 
 
 }

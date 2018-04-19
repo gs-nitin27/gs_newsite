@@ -17,6 +17,8 @@
     <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
     <script type="text/javascript">
         var curr_url =  window.location.href;
-var sec = curr_url.split(':');
-sec = sec[0];
+        var sec = curr_url.split(':');
+        sec = sec[0];
+        var service_url = '<?php echo url('/');?>';
+
     </script>

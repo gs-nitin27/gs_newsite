@@ -31,9 +31,8 @@ Route::post('/contact',  'WebEmail@send_mail');
 Route::get('/','WebController@index');
 Route::get('/index.html','WebController@index');
 
-
 Route::get('/#st','WebController@index');
-
+Route::get('getSportsList/{id}','WebController@getSportsList');
 
 
 Route::get('support','WebController@getsupport');

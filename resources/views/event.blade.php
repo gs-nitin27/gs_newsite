@@ -38,10 +38,12 @@ form textarea, form input {
  #contactform {  
   width: 400px;
   left: -405px;
-  height: 500px;
+  height: auto;
   margin: 25px 0;
   position: fixed;
   box-shadow: 0 0 12px 0 #333;  
+  z-index: 1;
+  top: 30%;
 }
 
 #contact-button { 
@@ -88,7 +90,14 @@ form textarea, form input {
     float: left;
     margin-top: 100%;
 }
-
+form #module{
+  width: 305px;
+    border: 3px solid #666;
+    height: 37px;
+    border-radius: 5px;
+    align-items: center;
+    margin-left: 28px;
+}
  </style>
  <div class="joblist-bg tournamentBg bannerBgSec">
            <div class="container">
@@ -105,20 +114,19 @@ form textarea, form input {
 
 <div id="contactform">
   <div id="contact-button">   
-    <div class="rotated-text">Contact</div>
+    <div class="rotated-text">Subscribe</div>
   </div>
   <form>
     <input type="text" name="name" id="name" placeholder="Full Name" Required/>
     <input type="text" name="email" id="email" placeholder="Email" Required/>
     <input type="Number" name="phone" id="phone" placeholder="Contact No." Required/>
-    <input type="text" name="email" id="email" placeholder="Email" Required />
+    <input type="text" name="sport" id="sport" placeholder="Sport" Required />
     <select id="module">
     <option value="2">Trails</option>
     <option value="3">Tournaments</option>
     <option value="2">Camp</option>
     <option value="6">Article</option>
     </select>
-    <textarea row="6" col="5"></textarea> 
   </form> 
 </div>
         <div class="relative">
@@ -217,7 +225,25 @@ getListing(module,id);
 </body>
          <script type="text/javascript">
            var image_url = '<?php echo config('constant.IMAGE_URL');?>';
-           var service_url = '<?php echo url('/');?>';
+           var data = ''
+          $('#sport').on('keyup',function(){
+             $.ajax({
+            headers: {
+        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+          },
+           url:service_url+'/getSportsList/'+$('#sport').val(),
+           method:"GET",
+           dataType:'JSON',
+           success:function(result){
+
+           data = result.data;
+
+           }   
+
+           });
+
+          });
+           
          </script>
    </html>  
    @stop
