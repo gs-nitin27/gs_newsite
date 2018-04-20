@@ -1,3 +1,20 @@
+function getSportsList()
+         {
+            $.ajax({
+            url:url+'/angularapi.php?act=sportlisting',
+            type:'GET',
+            dataType:'text',
+            success:function(result)
+            {  var data = JSON.parse(result);
+               var option = '<option></option>';
+               data.forEach(function(data){
+                option += '<option>'+data.sports+'</option>';
+               });
+                $('#sport').html(option);
+            }
+           });
+          }
+
 function Base64Encode(str) {
     if (/([^\u0000-\u00ff])/.test(str)) throw Error('String must be ASCII');
 
@@ -69,7 +86,6 @@ function Base64Decode(str) {
 }
 
 $(document).ready(function(){
-
 $('.btn.btn-n.nextBtn').click(function(){ var id = $("#myTabContent div.active").attr('id');
             $('#myTab li').removeClass('active');
             var id_val =  parseInt(id['4'])+1;

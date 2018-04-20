@@ -153,12 +153,8 @@ public function  getTournamentDetail_data($sport_name,$id)
 
 public function getSportsList($id)
 {
-
-$list = DB::raw("SELECT `sports` FROM `gs_sports` WHERE `sports` LIKE '%".$id."%'");
-//dd(DB::getQueryLog());
-return $list;
-
-
+$tournament = DB::table('gs_sports')->select('sports')->get();
+return $tournament;
 } 
 
     

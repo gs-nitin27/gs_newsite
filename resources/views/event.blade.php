@@ -90,7 +90,7 @@ form textarea, form input {
     float: left;
     margin-top: 100%;
 }
-form #module{
+form #module,button{
   width: 305px;
     border: 3px solid #666;
     height: 37px;
@@ -120,6 +120,7 @@ form #module{
     <input type="text" name="name" id="name" placeholder="Full Name" Required/>
     <input type="text" name="email" id="email" placeholder="Email" Required/>
     <input type="Number" name="phone" id="phone" placeholder="Contact No." Required/>
+    <input type="number" name="age" id="age" placeholder="Your Age" Required />
     <input type="text" name="sport" id="sport" placeholder="Sport" Required />
     <select id="module">
     <option value="2">Trails</option>
@@ -127,6 +128,8 @@ form #module{
     <option value="2">Camp</option>
     <option value="6">Article</option>
     </select>
+    <br><br>
+    <button type="submit" name="submit">Subscribe</button>
   </form> 
 </div>
         <div class="relative">
@@ -223,27 +226,5 @@ getListing(module,id);
 </script>
 
 </body>
-         <script type="text/javascript">
-           var image_url = '<?php echo config('constant.IMAGE_URL');?>';
-           var data = ''
-          $('#sport').on('keyup',function(){
-             $.ajax({
-            headers: {
-        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-          },
-           url:service_url+'/getSportsList/'+$('#sport').val(),
-           method:"GET",
-           dataType:'JSON',
-           success:function(result){
-
-           data = result.data;
-
-           }   
-
-           });
-
-          });
-           
-         </script>
-   </html>  
+</html>  
    @stop
