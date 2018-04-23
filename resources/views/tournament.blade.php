@@ -61,7 +61,20 @@
         	     <div class="row">
         	 	      <div class="heading-center  m0 pad15">
             	       <h3>Sports tournaments in India</h3>
-               	   <p>Never miss an opportunity to impress and be never short on practice. Get all the updates on the latest and the upcoming sports tournaments in the area near you.</p>
+               	   <p>Tournaments are basically a competition involving a relatively large number of competitors, all participating in a sport or game. In brief, tournaments is a competition involving a number of matches, each involving a subset of the competitors and the winner is determined based on the combined results of these individual matches.
+India is a country which hosts a large number of sports tournaments every year and with a large number of sports tournaments in India including 2018 will be yet another year to look forward to. So people who are going to be a part of any sports tournaments in India should never miss an opportunity to impress and be never short on practice. 
+Nevertheless, for all the updates and information about the upcoming sports tournaments in the area near you, you don’t have to surge anywhere just visit out the website and get all the enlightenment at one place.
+Although cricket will have its share of the notoriety, other sports will also have their time to shine. So, take a look at the cramped list of sports tournaments in India to be held in 2018. Trust us, there’s a lot to look forward to:
+U-14 Football Tournament
+Meister Cup
+7 heaven Football Tournament
+7 heaven VolleyBall Tournament
+Jaipur Cricket 
+All India League
+
+
+Consequently. India may not be the sports capital but it might have a large number of sports tournaments for the sports freaks to showcase their talent. The potential of sports to inspire people is not a new concept. Sports tournaments in India are used as highly effective vehicles to inspire and inveigle people.
+</p>
                   </div>   
 
                   <div id="tour_listing"></div>  
