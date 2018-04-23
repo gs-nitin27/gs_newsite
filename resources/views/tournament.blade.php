@@ -61,6 +61,8 @@
         	     <div class="row">
         	 	      <div class="heading-center  m0 pad15">
             	       <h3>Sports tournaments in India</h3>
+                   </div>
+                   <div class="about-content">
                	   <p>Tournaments are basically a competition involving a relatively large number of competitors, all participating in a sport or game. In brief, tournaments is a competition involving a number of matches, each involving a subset of the competitors and the winner is determined based on the combined results of these individual matches.
 India is a country which hosts a large number of sports tournaments every year and with a large number of sports tournaments in India including 2018 will be yet another year to look forward to. So people who are going to be a part of any sports tournaments in India should never miss an opportunity to impress and be never short on practice. 
 Nevertheless, for all the updates and information about the upcoming sports tournaments in the area near you, you don’t have to surge anywhere just visit out the website and get all the enlightenment at one place.
