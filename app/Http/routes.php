@@ -62,10 +62,10 @@ Route::get('/career', function()
             return View::make('careers');
            //Route::get('get_Tounament','ManageController@get_Tounament');
         });
+Route::post('user_susbcription','WebController@user_subscription');
 
 
-
- Route::group(array('prefix' => 'manage'), function()
+Route::group(array('prefix' => 'manage'), function()
     {
         // main page for the admin section (app/views/admin/dashboard.blade.php)
         Route::post('create_hash','ManageController@create_hash');

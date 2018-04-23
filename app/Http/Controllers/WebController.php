@@ -188,6 +188,12 @@ public function getSportsList(Request $request)
     $resp = array('data' => $resp );
     echo json_encode($resp);
    }
+public function user_subscription(Request $request)
+   {
+     print_r($_POST);die;
 
+
+
+   }
 
 }

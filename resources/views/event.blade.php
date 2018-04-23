@@ -116,13 +116,14 @@ form #module,button{
   <div id="contact-button">   
     <div class="rotated-text">Subscribe</div>
   </div>
-  <form>
+  <form id="subs_form" action="{{url('/user_susbcription')}}" method="POST">
     <input type="text" name="name" id="name" placeholder="Full Name" Required/>
     <input type="text" name="email" id="email" placeholder="Email" Required/>
     <input type="Number" name="phone" id="phone" placeholder="Contact No." Required/>
     <input type="number" name="age" id="age" placeholder="Your Age" Required />
     <input type="text" name="sport" id="sport" placeholder="Sport" Required />
     <select id="module">
+    <option value="">--Select--</option>
     <option value="2">Trails</option>
     <option value="3">Tournaments</option>
     <option value="2">Camp</option>
@@ -167,18 +168,7 @@ Commonwealth games 2010 in India
 Asian Games in India
 South Asian Games in India
 Paramountly, for sports freaks we are soon going to organize sports events in India in which any sports person can take part and take one step ahead of their dreams to become a marvellous sportsperson and represent their country on both national and international level. Shortly, we will update you all about our sports events. So, get ready for the venture!
-
-</p>
-                  </div>      
-
-
- <div  id="event_listing"> 
-
-
- </div> 
-                            
-         </div>       					 
-  	       
+ </p> </div> <div  id="event_listing"> </div> </div>
 
     	      <!--  <div class="text-center">
     	       	<i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
@@ -221,10 +211,37 @@ jQuery(document).ready(function()
 var module  = "event";
 var id = "#event_listing";
 getListing(module,id);
-
 });// End of Doucument Ready
+$('#subs_form').on('submit',function(){
+var post_url = $(this).attr('action');
+var request_method = $(this).attr('method');
+var form_data = New form_data(this);
+$.ajax({
+url:post_url,
+type:request_method,
+data:form_data,
+dataType:"json",
+contentType:false,
+cache: false,
+processData:false
+}).done(function(res){
+if(res.status == 1)
+  {
+    alert("Successfully Submitted");
+  }
+  else
+  {
+    alert("Something went wrong"); 
+  }
+ });
+});
+
+
+
+
+//});
 </script>
 
 </body>
 </html>  
-   @stop
+@stop
