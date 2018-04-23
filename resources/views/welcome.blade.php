@@ -497,7 +497,7 @@ Overall, sports events in India are always amusing to unite with. Every year we 
               <div class="container" id="event">
                   <div class="row pad15">
                       <div class="w-h" style="margin: 0;"><h3>Sports Tournaments in India</h3><p>See what’s included in the App</p>
-                          <div class="subTitle" style="color: #fff;">Sports sector is one of the fastest growing industries not only in India but across the world. The sports sector is worth around 750 Billion dollars and in India alone, this industry is expected to great.<a href="{{ url('/sports-tournaments-in-india.html') }}">Read More...</a></div>
+                          <div class="subTitle" style="color: #fff;">Tournaments are basically a competition involving a relatively large number of competitors, all participating in a sport or game. In brief, tournaments is a competition involving a number of matches, each involving a subset of the competitors and the winner is determined based on the combined results of these individual matches <a href="{{ url('/sports-tournaments-in-india.html') }}">Read More...</a></div>
                       </div>
                       <div class="clearfix margin20"></div>
                       <div id="sportTournament" class="owl-carousel">
