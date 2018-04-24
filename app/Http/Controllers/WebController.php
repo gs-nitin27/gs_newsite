@@ -11,6 +11,16 @@ use DateTime;
     class WebController extends Controller
     {
 
+
+    // public function __construct()
+    // {
+
+     
+
+
+    // }
+
+
     public function index()
     {
     $obj  = new WebModel();
@@ -190,10 +200,51 @@ public function getSportsList(Request $request)
    }
 public function user_subscription(Request $request)
    {
-     print_r($_POST);die;
+     $data = $request->all();
+     $obj_test = new WebModel();
+     $varify = $obj_test->getSubscribed($data['phone']);
+     $n = 0;
+     $subscribe = 0;
+    if(!empty($varify))
+    {
+          foreach ($varify as $key => $value) 
+          {
 
-
+              if($value->module == $data['module'] && $value->sport == $data['sport'] && $value->age_group == $data['age'])
+              {
+                $n++;
+                break;
+              }
+          }
+     if($n==0)
+         {
+           $subscribe = $obj_test->saveSubscribed($data);
+         }else
+         {
+            $subscribe = '-1';
+         }
+    }
+     else
+     {
+     $subscribe = $obj_test->saveSubscribed($data);
+     }
+        if($subscribe == 1)
+        {
+         $res = 1;
+         $msg = 'Successfully subscribed';   
+        }else if($subscribe == '-1')
+        {
+         $res = 0;
+         $msg = 'Already subscribed for same criteria';
+        }
+        else
+        {
+         $res = 0;
+         $msg = 'Something Went wrong';
+        }
+        $resp = array('status' =>$res ,'msg'=>$msg );
+        echo json_encode($resp);
 
    }
 
-}
+ }

@@ -18,7 +18,8 @@ else
 $string = base64_decode($section);
 }
 if(Session::has('userdata'))
-   {  $value = session('userdata');
+   { 
+      $value = session('userdata');
       Redirect::to('manage/dashbo')->send();
    }
 ?>

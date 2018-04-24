@@ -22,3 +22,6 @@
         var service_url = '<?php echo url('/');?>';
 
     </script>
+    <style type="text/css">
+
+    </style>

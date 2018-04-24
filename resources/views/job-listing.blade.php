@@ -4,6 +4,7 @@
 <meta name="description" content="Find your dream sports job. Browse through all the latest Govt. & Private Sector Sports Jobs in India through our specially devoted Sports Job Portal Getsporty.">
 <meta name="keywords" content="sports job in india, sports job portal,private sector sports jobs in india,govt sports job in india">
 <meta property="og:image" content="https://getsporty.in/23376596_1450074778394787_4309845126431335508_n (1).png">
+<link href="{{asset('public/css/subscribe.css')}}" rel="stylesheet">
 @endsection
 @section('content')
 <style type="text/css">
@@ -22,6 +23,29 @@
                </div>
               </div>
                </div>
+               <div id="contactform">
+  <div id="contact-button">   
+    <div class="rotated-text">Subscribe</div>
+  </div>
+  <form id="subs_form" action="{{url('/user_susbcription')}}" method="POST"  enctype='multipart/form-data'>
+    {{ csrf_field() }} 
+    <input type="text" name="name" id="name" placeholder="Full Name" Required/>
+    <input type="text" name="email" id="email" placeholder="Email" Required/>
+    <input type="Number" name="phone" id="phone" placeholder="Contact No." Required/>
+    <select id="module" name="module">
+    <option value="">--Select--</option>
+    <option value="1">Jobs</option>
+    <option value="2">Trials</option>
+    <option value="3">Tournaments</option>
+    <option value="2">Camps</option>
+    <option value="6">Articles</option>
+    </select>
+    <input type="number" name="age" id="age" placeholder="Your Age" Required />
+    <input type="text" name="sport" id="sport" placeholder="Sport" Required />
+    <input type="hidden" name="ipaddress" value="<?php echo $_SERVER['REMOTE_ADDR']; ?>">
+    <button type="submit" name="submit">Subscribe</button>
+  </form> 
+</div>
         <div class="relative">
             <div class="blue-bg"></div>
              <div class="play-icon" data-toggle="modal" data-target="#myModal">

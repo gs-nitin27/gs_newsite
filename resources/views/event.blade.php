@@ -4,100 +4,13 @@
 <meta name="description" content="Get all the latest updates on the upcoming Sports Events In My City & Sports Events in India.">
 <meta name="keywords" content="sports events in india, sports events in my city">
 <script src="{{asset('public/js/notification_box.js')}}"></script>
-<script src="{{asset('public/css/notification_box.css')}}"></script>
+<link href="{{asset('public/css/subscribe.css')}}" rel="stylesheet">
 @endsection
 @section('content')
  <!--   @include('layouts.head')
  -->
  <style type="text/css">
    p{font-size: 10px;}
-   form {
-  width: 100%;
-  padding: 20px;
-}
-
-form input {
-  display: block;
-  border: none;
-  width: 300px;
-  height: 35px; 
-  margin: 15px 30px;  
-}
-
-form textarea {
-  width: 300px;
-  margin: 40px 30px;
-  height: 170px;
-}
-
-form textarea, form input { 
-  border: 3px solid #666666;
-  border-radius: 5px;
-  background: #f2f2f2;  
-}
- #contactform {  
-  width: 400px;
-  left: -405px;
-  height: auto;
-  margin: 25px 0;
-  position: fixed;
-  box-shadow: 0 0 12px 0 #333;  
-  z-index: 1;
-  top: 30%;
-}
-
-#contact-button { 
-  width: 10%;  
-  padding: 7% 3%;  
-  cursor: pointer;
-  margin-left: 400px;
-  margin-top: 40px;
-  font-size: 23px; 
-  color: white;  
-  position: absolute;
-}
-
-#contactform, #contact-button {
-  background-color: #03a9f4;
-  border-radius: 0 15px 15px 0; 
-  border: 5px solid #fff; 
-  border-left: none;
-}
-.rotated-text {
-    display: inline-block;
-    white-space: nowrap;
-    /* this is for shity "non IE" browsers
-       that dosn't support writing-mode */
-    -webkit-transform: translate(1.1em,0) rotate(90deg);
-       -moz-transform: translate(1.1em,0) rotate(90deg);
-         -o-transform: translate(1.1em,0) rotate(90deg);
-            transform: translate(1.1em,0) rotate(90deg);
-    -webkit-transform-origin: 0 0;
-       -moz-transform-origin: 0 0;
-         -o-transform-origin: 0 0;
-            transform-origin: 0 0;*/
-   /* IE9+ */
-   -ms-transform: none;
-   -ms-transform-origin: none;
-   /* IE8+ */
-   -ms-writing-mode: tb-rl;
-   /* IE7 and below */
-   *writing-mode: tb-rl;
-}
-
-.rotated-text:before {
-    content: "";
-    float: left;
-    margin-top: 100%;
-}
-form #module,button{
-  width: 305px;
-    border: 3px solid #666;
-    height: 37px;
-    border-radius: 5px;
-    align-items: center;
-    margin-left: 28px;
-}
  </style>
  <div class="joblist-bg tournamentBg bannerBgSec">
            <div class="container">
@@ -116,20 +29,22 @@ form #module,button{
   <div id="contact-button">   
     <div class="rotated-text">Subscribe</div>
   </div>
-  <form id="subs_form" action="{{url('/user_susbcription')}}" method="POST">
+  <form id="subs_form" action="{{url('/user_susbcription')}}" method="POST"  enctype='multipart/form-data'>
+    {{ csrf_field() }} 
     <input type="text" name="name" id="name" placeholder="Full Name" Required/>
     <input type="text" name="email" id="email" placeholder="Email" Required/>
     <input type="Number" name="phone" id="phone" placeholder="Contact No." Required/>
+    <select id="module" name="module">
+    <option value="">--Select--</option>
+    <option value="1">Jobs</option>
+    <option value="2">Trials</option>
+    <option value="3">Tournaments</option>
+    <option value="2">Camps</option>
+    <option value="6">Articles</option>
+    </select>
     <input type="number" name="age" id="age" placeholder="Your Age" Required />
     <input type="text" name="sport" id="sport" placeholder="Sport" Required />
-    <select id="module">
-    <option value="">--Select--</option>
-    <option value="2">Trails</option>
-    <option value="3">Tournaments</option>
-    <option value="2">Camp</option>
-    <option value="6">Article</option>
-    </select>
-    <br><br>
+    <input type="hidden" name="ipaddress" value="<?php echo $_SERVER['REMOTE_ADDR']; ?>">
     <button type="submit" name="submit">Subscribe</button>
   </form> 
 </div>
@@ -212,34 +127,6 @@ var module  = "event";
 var id = "#event_listing";
 getListing(module,id);
 });// End of Doucument Ready
-$('#subs_form').on('submit',function(){
-var post_url = $(this).attr('action');
-var request_method = $(this).attr('method');
-var form_data = New form_data(this);
-$.ajax({
-url:post_url,
-type:request_method,
-data:form_data,
-dataType:"json",
-contentType:false,
-cache: false,
-processData:false
-}).done(function(res){
-if(res.status == 1)
-  {
-    alert("Successfully Submitted");
-  }
-  else
-  {
-    alert("Something went wrong"); 
-  }
- });
-});
-
-
-
-
-//});
 </script>
 
 </body>

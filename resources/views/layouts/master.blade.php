@@ -24,10 +24,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <header>
            @include('layouts.header')
         </header>
-	  
+	          
            @yield('content')
-		 
-        <footer>
+      <footer>
            @include('layouts.footer')
         </footer>
          </body>
@@ -75,6 +74,27 @@ document.getElementById('contact-button').onclick = function() {
     opened = true;  
   }  
 }
+$('#subs_form').submit(function(e){
+    e.preventDefault(); //prevent default action 
+    proceed = true;
+var post_url = $(this).attr('action');
+var request_method = $(this).attr('method');
+var form_data = new FormData(this);
+$.ajax({
+url:post_url,
+headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
+type:request_method,
+data:form_data,
+dataType:"json",
+contentType:false,
+cache: false,
+processData:false
+}).done(function(res){
+   alert(res.msg);
+   Animate(elem, 'left', 800, 0, -405);    
+    opened = false;
+ });
+});
          </script>
    </html>
 

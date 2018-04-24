@@ -156,6 +156,24 @@ public function getSportsList($id)
 $tournament = DB::table('gs_sports')->select('sports')->get();
 return $tournament;
 } 
+public function getSubscribed($where)
+{
+$getData  = DB::table('visitor_subscribe')->select('*')->where('phone','=',$where)->get();
+return $getData;
+}
 
+public function saveSubscribed($data)
+{ 
+$data_insert = DB::table('visitor_subscribe')->insert(
+    ['email' =>$data['email'], 'sport' =>$data['sport'], 'age_group' =>$data['age'], 'phone' =>$data['phone'],'module'=>$data['module'],'ip_address'=>$data['ipaddress']]
+);
+  if($data_insert)
+  {
+    return 1;
+  }else
+  {
+    return 0;
+  }
+}
     
 } // End of Class
