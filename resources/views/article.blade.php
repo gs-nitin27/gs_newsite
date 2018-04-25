@@ -33,15 +33,18 @@
     <input type="text" name="name" id="name" placeholder="Full Name" Required/>
     <input type="text" name="email" id="email" placeholder="Email" Required/>
     <input type="Number" name="phone" id="phone" placeholder="Contact No." Required/>
-     <select id="module" name="module">
-    <option value="">--Select--</option>
-    <option value="2">Trails</option>
-    <option value="3">Tournaments</option>
-    <option value="2">Camp</option>
-    <option value="6">Article</option>
+    <select id="type" name="type">
+    <option value="">--Type--</option>
+    <option value="Training & Knowledge">Training & Knowledge</option>
+    <option value="News & Articles">News & Articles</option>
+    <option value="Camp">Camp</option>
+    <option value="Tournaments">Tournaments</option>
+    <option value="Events">Events</option>
+    <option value="Jobs">Jobs</option>
     </select>
-    <input type="number" name="age" id="age" placeholder="Your Age" Required />
     <input type="text" name="sport" id="sport" placeholder="Sport" Required />
+    <input type="hidden" name="module" id="module" value="6" Required />
+    <input type="hidden" name="mod_name" id="mod_name" value="article" Required />
     <input type="hidden" name="ipaddress" value="<?php echo $_SERVER['REMOTE_ADDR']; ?>">
     <button type="submit" name="submit">Subscribe</button>
   </form> 
