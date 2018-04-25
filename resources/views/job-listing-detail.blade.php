@@ -4,12 +4,14 @@
 <meta name="keywords" content="@yield('keywords')">
 <meta name="twitter:dnt" content="on">
 <meta property="og:title" content="{{$name[0]->title}}" /> 
+<meta property="og:description" content="{{strip_tags($name[0]->description)}}" />
 <meta property="og:url" content="{{Request::url()}}" />
 <meta property="og:image" content="<?php echo config('constant.IMAGE_URL').'/job/'.$name[0]->image; ?>">
 <meta http-equiv="x-ua-compatible" content="ie=edge">
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:site" content="@getsporty" />
 <meta name="twitter:title" content="{{$name[0]->title}}" />
+<meta name="twitter:description" content="{{strip_tags($name[0]->description)}}" />
 <meta name="twitter:image" content="<?php echo config('constant.IMAGE_URL').'/job/'.$name[0]->image; ?>"
  />
 @endsection
@@ -154,7 +156,7 @@
 
      <div class="sidebarMide">
      <div class="fb-share-button" data-href="{{Request::url()}}" data-layout="button_count" data-size="small" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse">
-     <i class="fa fa-facebook"></i></a></div>
+     <!-- <i class="fa fa-facebook"></i> --></a></div>
 
      <a href="https://twitter.com/share" class="twitter-share-button fa fa-twitter" data-size="large" data-text="{!!$name[0]->title!!}" data-url="{{Request::url()}}" data-show-count="false" >
     </a> 

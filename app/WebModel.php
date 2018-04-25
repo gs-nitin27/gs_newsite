@@ -164,8 +164,9 @@ return $getData;
 
 public function saveSubscribed($data)
 { 
+$unique_code = md5($data['module'].$data['sport'].$data['age'].$data['phone']); 
 $data_insert = DB::table('visitor_subscribe')->insert(
-    ['email' =>$data['email'], 'sport' =>$data['sport'], 'age_group' =>$data['age'], 'phone' =>$data['phone'],'module'=>$data['module'],'ip_address'=>$data['ipaddress']]
+    ['email' =>$data['email'], 'sport' =>$data['sport'], 'age_group' =>$data['age'], 'phone' =>$data['phone'],'module'=>$data['module'],'ip_address'=>$data['ipaddress'],'unique_code'=>$unique_code]
 );
   if($data_insert)
   {

@@ -207,10 +207,10 @@ public function user_subscription(Request $request)
      $subscribe = 0;
     if(!empty($varify))
     {
-          foreach ($varify as $key => $value) 
+      foreach ($varify as $key => $value) 
           {
 
-              if($value->module == $data['module'] && $value->sport == $data['sport'] && $value->age_group == $data['age'])
+              if($value->module == $data['module'] && $value->sport == $data['sport'] && $value->age_group == $data['age'] && $value->phone  == $data['phone'])
               {
                 $n++;
                 break;
@@ -219,7 +219,8 @@ public function user_subscription(Request $request)
      if($n==0)
          {
            $subscribe = $obj_test->saveSubscribed($data);
-         }else
+         }
+         else
          {
             $subscribe = '-1';
          }
@@ -244,7 +245,6 @@ public function user_subscription(Request $request)
         }
         $resp = array('status' =>$res ,'msg'=>$msg );
         echo json_encode($resp);
-
    }
 
  }
