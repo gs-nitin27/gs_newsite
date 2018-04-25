@@ -131,7 +131,7 @@
 
      <div class="sidebarMide">
      <div class="fb-share-button" data-href="{{Request::url()}}" data-layout="button_count" data-size="small" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse">
-     <i class="fa fa-facebook"></i></a></div>
+     <!-- <i class="fa fa-facebook"></i> --></a></div>
 
      <div><a href="https://twitter.com/share" class="twitter-share-button fa fa-twitter" data-size="large" data-text="{{$name[0]->title}}" data-url="{{Request::url()}}" data-show-count="false" >
     </a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script></div>
@@ -140,9 +140,7 @@
     &summary={!!$name[0]->summary!!}&source=LinkedIn" class="cleateJob" style="background-color: #1686b0;"><i class="fa fa-linkedin"></i></a>
 
   <div class="pin">
-  <a style="background-color: #FA0001" data-pin-do="buttonPin" href="https://www.pinterest.com/pin/create/button/?url={{Request::url()}}&media=https://getsporty.in/portal/uploads/resources/$name[0]->image}}&summary={{$name[0]->title}}" data-pin-config="beside"><i class="fa fa-pinterest-p"></i>  </a>
-  
-  </div>
+  <a style="background-color: #FA0001" data-pin-do="buttonPin" href="https://www.pinterest.com/pin/create/button/?url={{Request::url()}}&media=https://getsporty.in/portal/uploads/resources/$name[0]->image}}&summary={{$name[0]->title}}" data-pin-config="beside"><i class="fa fa-pinterest-p"></i>  </a></div>
   
 
    <div class="g-plusflat">
