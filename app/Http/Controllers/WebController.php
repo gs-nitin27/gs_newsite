@@ -209,8 +209,7 @@ public function user_subscription(Request $request)
     {
       foreach ($varify as $key => $value) 
           {
-
-              if($value->module == $data['module'] && $value->sport == $data['sport'] && $value->age_group == $data['age'] && $value->phone  == $data['phone'])
+            if($value->module == $data['module'] && $value->sport == $data['sport'] && $value->age_group == $data['age'] && $value->phone  == $data['phone'])
               {
                 $n++;
                 break;
@@ -245,6 +244,6 @@ public function user_subscription(Request $request)
         }
         $resp = array('status' =>$res ,'msg'=>$msg );
         echo json_encode($resp);
-   }
+ }
 
  }

@@ -85,3 +85,8 @@ form #module,button{
     align-items: center;
     margin-left: 8% !important;
 }
+.sub_label{
+      text-align: center;
+    color: #fff;
+    font-size: large;
+}

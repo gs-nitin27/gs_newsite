@@ -29,16 +29,10 @@
   </div>
   <form id="subs_form" action="{{url('/user_susbcription')}}" method="POST"  enctype='multipart/form-data'>
     {{ csrf_field() }} 
+     <div class="sub_label">Tournaments</div>
     <input type="text" name="name" id="name" placeholder="Full Name" Required/>
     <input type="text" name="email" id="email" placeholder="Email" Required/>
     <input type="Number" name="phone" id="phone" placeholder="Contact No." Required/>
-    <select id="module" name="module">
-    <option value="">--Select--</option>
-    <option value="2">Trails</option>
-    <option value="3">Tournaments</option>
-    <option value="2">Camp</option>
-    <option value="6">Article</option>
-    </select>
     <input type="number" name="age" id="age" placeholder="Your Age" Required />
     <input type="text" name="sport" id="sport" placeholder="Sport" Required />
     <input type="hidden" name="ipaddress" value="<?php echo $_SERVER['REMOTE_ADDR']; ?>">

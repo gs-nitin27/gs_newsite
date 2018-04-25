@@ -1,5 +1,5 @@
 @extends('layouts.master')
-@section('pageTitle','Sports Events In My City | Sports Events In India')
+@section('pageTitle','Sports Trials In My City | Sports Trials In India')
 @section('meta')
 <meta name="description" content="Get all the latest updates on the upcoming Sports Events In My City & Sports Events in India.">
 <meta name="keywords" content="sports events in india, sports events in my city">
@@ -17,7 +17,7 @@
              <div class="row">
                <div class="col-md-12">
                  <div class="ban-pera">
-                  <br><br><h1>Event</h1>
+                  <br><br><h1>Trials</h1>
              			  <h3>Never miss out on Sports Trials or coaching camps. Get first hand information on your GetSporty App.</h3>         			
            	     </div>
                 </div>
@@ -30,19 +30,12 @@
     <div class="rotated-text">Subscribe</div>
   </div>
   <form id="subs_form" action="{{url('/user_susbcription')}}" method="POST"  enctype='multipart/form-data'>
-    {{ csrf_field() }}
-    <div class="sub_label">Subscribe for events</div> 
+    {{ csrf_field() }} 
+    <div class="sub_label">Trials</div>
     <input type="text" name="name" id="name" placeholder="Full Name" Required/>
     <input type="text" name="email" id="email" placeholder="Email" Required/>
     <input type="Number" name="phone" id="phone" placeholder="Contact No." Required/>
-    <select name="type" id="type">
-      <option value="camps">Camps</option>
-      <option value="competetions">Competetions</option>
-      <option value="seminars">Seminars</option>
-      <option value="events">Events</option>
-    </select>
     <input type="number" name="age" id="age" placeholder="Your Age" Required />
-    <input type="text" name="sport" id="sport" placeholder="Sport" Required />
     <input type="text" name="sport" id="sport" placeholder="Sport" Required />
     <input type="hidden" name="ipaddress" value="<?php echo $_SERVER['REMOTE_ADDR']; ?>">
     <button type="submit" name="submit">Subscribe</button>
@@ -123,8 +116,8 @@ function closeNav() {
 <script type="text/javascript" >
 jQuery(document).ready(function()
 { 
-var module  = "event";
-var id = "#event_listing";
+var module  = "trials";
+var id = "#trial_listing";
 getListing(module,id);
 });// End of Doucument Ready
 </script>
