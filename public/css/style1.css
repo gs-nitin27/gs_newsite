@@ -1146,7 +1146,8 @@ margin: 0px;
 
 #event_listing > div,
 #job_listing > div,
-#tour_listing > div {
+#tour_listing > div,
+#trial_listing > div {
     min-height: 400px;
     max-height: 400px;
     float: left;
