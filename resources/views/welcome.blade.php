@@ -453,9 +453,9 @@ if($day == ' 0 Days ago ')
              <div class="blue-bg-left"></div>
                </div> -->
    
-      <div class="bg-event" style="height: 768px !important">
+      <div class="clearfix sportTournamentSec">
 
-          <section class="testimonials commnStyle">
+          <section class="testimonials" id="slider-bg" style="height: 768px !important">
               <div class="container" id="event">
                   <div class="row pad15">
                       <div class="w-h" style="margin: 0;"><h3>Sports event in India</h3><p>sports events and Trials listing</p>

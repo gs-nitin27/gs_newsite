@@ -10,7 +10,8 @@ if(Request::url() == 'https://getsporty.in/index.html' || Request::url() == 'htt
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+'GTM-N3SWFF5';
-})(window,document,'script','dataLayer','GTM-N3SWFF5');</script>
+})(window,document,'script','dataLayer','GTM-N3SWFF5');
+</script>
 <meta charset="utf-8">
 <meta name="google-site-verification" content="1Lz4Ejk_OiCgTSYN7eBGPARofMMt7GyKbJ55yAKzzNs" />
 <meta name="google-site-verification" content="RjBA1hezj08g12vWgRFMJjRoPJTTSZ86ubx2Qvo5nig" />
@@ -19,6 +20,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
          <meta name="csrf-token" content="{{ csrf_token() }}" />
      	   <title>Getsporty- @yield('pageTitle')</title> 
      	   @include('layouts.head')
+         <?php
+if (env('APP_ENV') === 'production') {
+?>
+<script type="text/javascript">
+           $(document).ready(function(){
+             $('#contactform').hide();
+           });
+</script><?php } ?>
      </head>
       <body data-spy="scroll" data-target=".navbar" data-offset="180">
         <header>
