@@ -927,6 +927,16 @@ Overall, sports events in India are always amusing to unite with. Every year we 
 
   <script>
       $(document).ready(function() {
+<?php
+if (env('APP_ENV') === 'production') {
+?>  
+if(sec == 'http')
+        {
+          window.location.href = 'https://getsporty.in';
+        }
+
+<?php }?>
+        
         $('#Mycarousel').owlCarousel({
         
         });
