@@ -7,6 +7,19 @@
 <meta property="og:image" content="https://getsporty.in/23376596_1450074778394787_4309845126431335508_n (1).png">
 @endsection
 @section('content')
+<script type="text/javascript">
+  $(document).ready(function(){
+    <?php
+if (env('APP_ENV') === 'production') {
+?>  
+if(sec == 'http')
+        {
+          window.location.href = 'https://getsporty.in';
+        }
+
+<?php }?>
+});
+</script>
 <!-- <style type="text/css">
   div.main-text {overflow-x: hidden;width: 800px;} 
 </style> -->
@@ -927,17 +940,7 @@ Overall, sports events in India are always amusing to unite with. Every year we 
 
   <script>
       $(document).ready(function() {
-<?php
-if (env('APP_ENV') === 'production') {
-?>  
-if(sec == 'http')
-        {
-          window.location.href = 'https://getsporty.in';
-        }
-
-<?php }?>
-        
-        $('#Mycarousel').owlCarousel({
+      $('#Mycarousel').owlCarousel({
         
         });
       })
