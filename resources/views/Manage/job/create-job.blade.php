@@ -58,7 +58,7 @@
                             <aside class="col-lg-6 col-md-6 col-sm-6 col-xs-6 mobView">
                                 <div class="form-group ">
                                     <label for="" class="">Job sport</label>
-                                     <select class="form-control" id="sport" name="sport">
+                                     <select class="form-control" id="sport" name="sport" onclick="getSportsList()">
                                         
                                     </select><span id="jsport"></span>
                                 </div>
@@ -271,23 +271,7 @@
          }
        });
         }getorg_details();
-           function getSportsList()
-             {
-                $.ajax({
-                url:url+'/angularapi.php?act=sportlisting',
-                type:'GET',
-                dataType:'text',
-                success:function(result)
-                {  var data = JSON.parse(result);
-                   var option = '<option></option>';
-                   data.forEach(function(data){
-                    option += '<option>'+data.sports+'</option>';
-                   });
-                    $('#sport').html(option);
-                }
-               });
-              }
-              getSportsList();
+        // getSportsList();
         
         $('#create_job').click(function(){
         if(validate())

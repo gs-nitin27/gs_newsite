@@ -11,25 +11,17 @@ class WebModel extends Model
     public function getHomeData()
     {
 
- //     $resources  = DB::table('gs_resources')->select('id','title', 'summary','image','video_link')->where('status', '1')->limit(8)->get();
-
- //     $job = DB::table('gs_jobInfo')->select('id','title', 'description','image','organisation_name','org_city','date_updated')->where('publish', '1')->limit(8)->get();
-
- //     $event 	 = DB::table('gs_eventinfo')->select('id','name', 'description','image','sport_name','organizer_city','start_date','end_date','entry_start_date','entry_end_date')->where('publish', '1')->limit(8)->get();
-
- //     $tournament = DB::table('gs_tournament_info')->select('id','name', 'image','start_date','end_date','event_entry_date','event_end_date','org_city','sport')->where('publish', '1')->limit(8)->get();
-
-	// $data =  array('resources' => $resources,'job'=>$job,'event'=>$event,'tournament'=>$tournament );
-
     $resources  = DB::table('gs_resources')->select('id','title', 'summary','image','video_link')->where('status', '1')->limit(8)->orderBy('id', 'desc')->get();
     
     $job = DB::table('gs_jobInfo')->select('id','title', 'description','image','organisation_name','org_city','date_updated')->where('publish', '1')->limit(8)->orderBy('id', 'desc')->get();
 
-     $event 	 = DB::table('gs_eventinfo')->select('id','name', 'description','image','sport_name','organizer_city','start_date','end_date','entry_start_date','entry_end_date')->where('publish', '1')->limit(8)->orderBy('id', 'desc')->get();
+     $event = DB::table('gs_eventinfo')->select('id','name', 'description','image','sport_name','organizer_city','start_date','end_date','entry_start_date','entry_end_date')->where('publish', '1')->where('type','!=', 'Trial')->limit(8)->orderBy('id', 'desc')->get();
 
     $tournament = DB::table('gs_tournament_info')->select('id','name', 'image','start_date','end_date','event_entry_date','event_end_date','org_city','sport')->where('publish', '1')->limit(8)->orderBy('id', 'desc')->get();
 
-	  $data =  array('resources' => $resources,'job'=>$job,'event'=>$event,'tournament'=>$tournament );
+    $trial  = DB::table('gs_eventinfo')->select('id','name', 'description','image','sport_name','organizer_city','start_date','end_date','entry_start_date','entry_end_date')->where('publish', '1')->where('type','=', 'Trial')->limit(8)->orderBy('id', 'desc')->get();
+
+	  $data =  array('resources' => $resources,'job'=>$job,'event'=>$event,'tournament'=>$tournament ,'trial'=>$trial);
 
     return $data;
 
@@ -151,7 +143,30 @@ public function  getTournamentDetail_data($sport_name,$id)
   return $tournament;
 }
 
-   
+public function getSportsList($id)
+{
+$tournament = DB::table('gs_sports')->select('sports')->get();
+return $tournament;
+} 
+public function getSubscribed($where)
+{
+$getData  = DB::table('visitor_subscribe')->select('*')->where('phone','=',$where)->get();
+return $getData;
+}
 
+public function saveSubscribed($data)
+{ 
+$unique_code = md5($data['module'].$data['sport'].$data['age'].$data['phone']); 
+$data_insert = DB::table('visitor_subscribe')->insert(
+    ['email' =>$data['email'], 'sport' =>$data['sport'], 'age_group' =>$data['age'], 'phone' =>$data['phone'],'module'=>$data['module'],'ip_address'=>$data['ipaddress'],'unique_code'=>$unique_code]
+);
+  if($data_insert)
+  {
+    return 1;
+  }else
+  {
+    return 0;
+  }
+}
     
 } // End of Class

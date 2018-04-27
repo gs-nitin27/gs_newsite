@@ -448,14 +448,12 @@ if($day == ' 0 Days ago ')
                            </div> -->
             </div>
         </section>  
-
-
-         <div class="clearfix"></div>
+        <div class="clearfix"></div>
            <!-- <div class="relative">
              <div class="blue-bg-left"></div>
                </div> -->
    
-      <div class="bg-event" style="margin: 0">
+      <div class="bg-event" style="height: 768px !important">
 
           <section class="testimonials commnStyle">
               <div class="container" id="event">
@@ -543,8 +541,48 @@ Overall, sports events in India are always amusing to unite with. Every year we 
               </div>
           </section> 
       </div>
-
     
+
+    <div class="clearfix sportTournamentSec">
+    <section class="testimonials" id="slider-bg" style="height: 768px !important">
+               <div class="container relative" id="latest">
+                  <div class="row pad15">
+                      <div class="white-heading">
+                          <h3>Sports Trials In India</h3>
+                           <p>See what’s included in the App</p>
+                           <div class="subTitle" style="color: #b3b3b3;">Sports sector is one of the fastest growing industries not only in India but across the world. The sports sector is worth around 750 Billion dollars and in India alone, this industry is expected to great.<a href="latest-sports-news-resources.html">Read more....</a></div>
+                      </div>
+                      <div id="customers-testimonials" class="owl-carousel">
+                 
+
+                            @foreach($name['trial'] as $value)
+                            <section class="item">
+                              <div class="img-box"><img src="https://getsporty.in/portal/uploads/event/{{ $value->image }}"></div>
+                              <div class="white-b">
+                              <h4>{{$value->name}}</h4>
+                              <section class="clearfix">
+                                  <aside class="pull-left"><p> Start From  : <span> <?php echo date('d F',strtotime($value->start_date)) ?></span></p></aside>
+                                  <aside class="pull-right"><p> To  : <span><?php echo date('d F, Y',strtotime($value->end_date)) ?></span></p></aside>
+                              </section>
+                              <section class="clearfix">
+                                  <aside class="pull-left"><p> Entry : <span> <?php echo date('d F',strtotime($value->entry_start_date)) ?> </span></p></aside>
+                                  <aside class="pull-right"><p> To  : <span><?php echo date('d F, Y',strtotime($value->entry_end_date)) ?></span></p></aside>
+                              </section>
+                              <section class="clearfix">
+                                  <aside class="pull-left"><p>  <span> {{$value->organizer_city}} </span></p></aside>
+                                  <aside class="pull-right"><p>    <span>{{$value->sport_name}}  </span></p></aside>
+                              </section>
+                              <div class="readMoreBtn"><a href="event-detail/{{$value->id}}">Read More</a> </div> 
+                          </div>
+                          </section>
+                            @endforeach                                                                
+                      </div>
+                      
+                       <a href="latest-sports-news-resources.html" class="text-center" style="display: inherit;"><button type="button" class="btn btn-more">View All</button></a>
+                                     
+                  </div>
+            </div>
+        </section></div>
           <!-- <section class="mediaSecHome">
               <div class="container" id="app">
                   <div class="row">

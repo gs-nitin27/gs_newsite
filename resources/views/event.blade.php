@@ -3,6 +3,8 @@
 @section('meta')
 <meta name="description" content="Get all the latest updates on the upcoming Sports Events In My City & Sports Events in India.">
 <meta name="keywords" content="sports events in india, sports events in my city">
+<script src="{{asset('public/js/notification_box.js')}}"></script>
+<link href="{{asset('public/css/subscribe.css')}}" rel="stylesheet">
 @endsection
 @section('content')
  <!--   @include('layouts.head')
@@ -22,6 +24,32 @@
             </div>
           </div>
         </div>
+
+<div id="contactform">
+  <div id="contact-button">   
+    <div class="rotated-text">Subscribe</div>
+  </div>
+  <form id="subs_form" action="{{url('/user_susbcription')}}" method="POST"  enctype='multipart/form-data'>
+    {{ csrf_field() }}
+    <div class="sub_label">Subscribe for events</div> 
+    <input type="text" name="name" id="name" placeholder="Full Name" Required/>
+    <input type="text" name="email" id="email" placeholder="Email" Required/>
+    <input type="Number" name="phone" id="phone" placeholder="Contact No." Required/>
+    <select name="type" id="type">
+      <option value="">--Type--</option>
+      <option value="camps">Camps</option>
+      <option value="competetions">Competetions</option>
+      <option value="seminars">Seminars</option>
+      <option value="events">Events</option>
+    </select>
+    <input type="number" name="age" id="age" placeholder="Your Age" Required />
+    <input type="text" name="sport" id="sport" placeholder="Sport" Required />
+    <input type="hidden" name="module" id="module" value="2" Required />
+    <input type="hidden" name="mod_name" id="mod_name" value="event" Required />
+    <input type="hidden" name="ipaddress" value="<?php echo $_SERVER['REMOTE_ADDR']; ?>">
+    <button type="submit" name="submit">Subscribe</button>
+  </form> 
+</div>
         <div class="relative">
               <div class="blue-bg"></div>
               <div class="play-icon" data-toggle="modal" data-target="#myModal">
@@ -57,18 +85,7 @@ Commonwealth games 2010 in India
 Asian Games in India
 South Asian Games in India
 Paramountly, for sports freaks we are soon going to organize sports events in India in which any sports person can take part and take one step ahead of their dreams to become a marvellous sportsperson and represent their country on both national and international level. Shortly, we will update you all about our sports events. So, get ready for the venture!
-
-</p>
-                  </div>      
-
-
- <div  id="event_listing"> 
-
-
- </div> 
-                            
-         </div>       					 
-  	       
+ </p> </div> <div  id="event_listing"> </div> </div>
 
     	      <!--  <div class="text-center">
     	       	<i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
@@ -111,14 +128,9 @@ jQuery(document).ready(function()
 var module  = "event";
 var id = "#event_listing";
 getListing(module,id);
-
 });// End of Doucument Ready
 </script>
 
 </body>
-         <script type="text/javascript">
-           var image_url = '<?php echo config('constant.IMAGE_URL');?>';
-           var service_url = '<?php echo url('/');?>';
-         </script>
-   </html>  
-   @stop
+</html>  
+@stop

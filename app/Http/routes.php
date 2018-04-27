@@ -31,9 +31,8 @@ Route::post('/contact',  'WebEmail@send_mail');
 Route::get('/','WebController@index');
 Route::get('/index.html','WebController@index');
 
-
 Route::get('/#st','WebController@index');
-
+Route::get('getSportsList/{id}','WebController@getSportsList');
 
 
 Route::get('support','WebController@getsupport');
@@ -51,7 +50,10 @@ Route::get('get_Article','WebController@get_Article');
 Route::get('get_Event/{page}','WebController@get_Event');
 Route::get('get_Tounament','WebController@get_Tounament');
 
-
+//Route::get('sports-trials-in-india.html','WebController@get_trial');
+Route::get('sports-trials-in-india.html',function(){
+           return View::make('trials');
+});
 Route::get('event-detail/{id}','WebController@event_detail');
 Route::get('job-detail/{id}','WebController@job_detail');
 
@@ -61,12 +63,11 @@ Route::get('article-detail/{id}','WebController@article_detail');
 Route::get('/career', function()
         {
             return View::make('careers');
-           //Route::get('get_Tounament','ManageController@get_Tounament');
         });
+Route::post('user_susbcription','WebController@user_subscription');
 
 
-
- Route::group(array('prefix' => 'manage'), function()
+Route::group(array('prefix' => 'manage'), function()
     {
         // main page for the admin section (app/views/admin/dashboard.blade.php)
         Route::post('create_hash','ManageController@create_hash');

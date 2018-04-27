@@ -4,6 +4,7 @@
 <meta name="description" content="Get all the latest updates on the upcoming Sports Tournaments In My City & Sports Tournaments in India.">
 <meta name="keywords" content="sports tournaments in my city, sports tournaments in india, sports tournaments">
 <meta property="og:image" content="https://getsporty.in/23376596_1450074778394787_4309845126431335508_n (1).png">
+<link href="{{asset('public/css/subscribe.css')}}" rel="stylesheet">
 @endsection
 @section('content')
 <!-- @include('layouts.head') -->
@@ -22,6 +23,24 @@
             </div>
           </div>
         </div>
+        <div id="contactform">
+  <div id="contact-button">   
+    <div class="rotated-text">Subscribe</div>
+  </div>
+  <form id="subs_form" action="{{url('/user_susbcription')}}" method="POST"  enctype='multipart/form-data'>
+    {{ csrf_field() }} 
+     <div class="sub_label">Tournaments</div>
+    <input type="text" name="name" id="name" placeholder="Full Name" Required/>
+    <input type="text" name="email" id="email" placeholder="Email" Required/>
+    <input type="Number" name="phone" id="phone" placeholder="Contact No." Required/>
+    <input type="number" name="age" id="age" placeholder="Your Age" Required />
+    <input type="text" name="sport" id="sport" placeholder="Sport" Required />
+    <input type="hidden" name="module" id="module" value="3" Required />
+    <input type="hidden" name="mod_name" id="mod_name" value="tournament" Required />
+    <input type="hidden" name="ipaddress" value="<?php echo $_SERVER['REMOTE_ADDR']; ?>">
+    <button type="submit" name="submit">Subscribe</button>
+  </form> 
+</div>
         <div class="relative">
               <div class="blue-bg"></div>
               <div class="play-icon" data-toggle="modal" data-target="#myModal">

@@ -14,18 +14,17 @@
           <!-- Collect the nav links, forms, and other content for toggling -->
            <div class="navbar-collapse collapse" id="navbar-collapse-1">
              <ul class="nav navbar-nav navbar-right text-uppercase">
-              <!-- <li class="active"><a href="index.php">Home</a></li> -->
-              
-              <!-- <li><a href="#getApp" data-toggle="modal">Get app  </a></li> -->
-              <li><a href="{{url('/sports-events-in-india.html')}}" >Event </a></li>
-              <li><a href="{{url('/sports-jobs-in-india.html')}}">Job</a></li>
-              <li><a href="{{url('/sports-tournaments-in-india.html')}}">Tournament</a></li>
               <li><a href="{{url('/latest-sports-news-resources.html')}}">Article</a></li>
+              <li><a href="{{url('/sports-jobs-in-india.html')}}">Job</a></li>
+              <li><a href="{{url('/sports-events-in-india.html')}}" >Event </a></li>
+              <li><a href="{{url('/sports-tournaments-in-india.html')}}">Tournament</a></li>
+              <li><a href="{{url('/sports-trials-in-india.html')}}">Trials</a></li>
              <?php
                if (env('APP_ENV') === 'local') {
     
 
               ?>
+              <li><a href="{{url('/sports-trials-in-india.html')}}">Trials</a></li>
               <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                    Business <b class="caret"></b>
