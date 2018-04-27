@@ -550,7 +550,7 @@ Overall, sports events in India are always amusing to unite with. Every year we 
                       <div class="white-heading">
                           <h3>Sports Trials In India</h3>
                            <p>See what’s included in the App</p>
-                           <div class="subTitle" style="color: #b3b3b3;">Sports sector is one of the fastest growing industries not only in India but across the world. The sports sector is worth around 750 Billion dollars and in India alone, this industry is expected to great.<a href="latest-sports-news-resources.html">Read more....</a></div>
+                           <div class="subTitle" style="color: #b3b3b3;">Sports sector is one of the fastest growing industries not only in India but across the world. The sports sector is worth around 750 Billion dollars and in India alone, this industry is expected to great.<a href="sports-trials-in-india.html">Read more....</a></div>
                       </div>
                       <div id="customers-testimonials" class="owl-carousel">
                  
@@ -578,7 +578,7 @@ Overall, sports events in India are always amusing to unite with. Every year we 
                             @endforeach                                                                
                       </div>
                       
-                       <a href="latest-sports-news-resources.html" class="text-center" style="display: inherit;"><button type="button" class="btn btn-more">View All</button></a>
+                       <a href="sports-trials-in-india.html" class="text-center" style="display: inherit;"><button type="button" class="btn btn-more">View All</button></a>
                                      
                   </div>
             </div>
