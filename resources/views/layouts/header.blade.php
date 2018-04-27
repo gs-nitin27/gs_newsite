@@ -18,7 +18,7 @@
               <li><a href="{{url('/sports-jobs-in-india.html')}}">Job</a></li>
               <li><a href="{{url('/sports-events-in-india.html')}}" >Event </a></li>
               <li><a href="{{url('/sports-tournaments-in-india.html')}}">Tournament</a></li>
-              <li><a href="{{url('/sports-trials-in-india.html')}}">Trials</a></li>
+              <li><a href="{{url('/sports-trials-in-india.html')}}">Trial</a></li>
              <?php
                if (env('APP_ENV') === 'local') {
     
