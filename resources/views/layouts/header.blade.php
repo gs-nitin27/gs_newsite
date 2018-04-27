@@ -14,10 +14,10 @@
           <!-- Collect the nav links, forms, and other content for toggling -->
            <div class="navbar-collapse collapse" id="navbar-collapse-1">
              <ul class="nav navbar-nav navbar-right text-uppercase">
-              <li><a href="{{url('/sports-events-in-india.html')}}" >Event </a></li>
-              <li><a href="{{url('/sports-jobs-in-india.html')}}">Job</a></li>
-              <li><a href="{{url('/sports-tournaments-in-india.html')}}">Tournament</a></li>
               <li><a href="{{url('/latest-sports-news-resources.html')}}">Article</a></li>
+              <li><a href="{{url('/sports-jobs-in-india.html')}}">Job</a></li>
+              <li><a href="{{url('/sports-events-in-india.html')}}" >Event </a></li>
+              <li><a href="{{url('/sports-tournaments-in-india.html')}}">Tournament</a></li>
               <li><a href="{{url('/sports-trials-in-india.html')}}">Trials</a></li>
              <?php
                if (env('APP_ENV') === 'local') {
