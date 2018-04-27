@@ -50,7 +50,10 @@ Route::get('get_Article','WebController@get_Article');
 Route::get('get_Event/{page}','WebController@get_Event');
 Route::get('get_Tounament','WebController@get_Tounament');
 
-
+//Route::get('sports-trials-in-india.html','WebController@get_trial');
+Route::get('sports-trials-in-india.html',function(){
+           return View::make('trials');
+});
 Route::get('event-detail/{id}','WebController@event_detail');
 Route::get('job-detail/{id}','WebController@job_detail');
 
@@ -60,7 +63,6 @@ Route::get('article-detail/{id}','WebController@article_detail');
 Route::get('/career', function()
         {
             return View::make('careers');
-           //Route::get('get_Tounament','ManageController@get_Tounament');
         });
 Route::post('user_susbcription','WebController@user_subscription');
 
