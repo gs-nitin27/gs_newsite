@@ -7,6 +7,7 @@
         <link href="{{asset('public/css/media1.css')}}" rel="stylesheet">
         <link href="{{asset('public/css/font-awesome.min.css')}}" rel="stylesheet">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <!-- <script src="{{asset('public/js/jquery-1.9.1.min.js')}}"></script> -->
         <script src="{{asset('public/js/bootstrap.min.js')}}"></script>
         <link rel="shortcut icon" href="{{asset('public/img/fav.png')}}">
         <script src="{{asset('public/js/story-box.min.js')}}"></script>

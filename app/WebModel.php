@@ -139,7 +139,7 @@ public function  getResourcDetail_data($topic_of_artical,$id)
    
 public function  getTournamentDetail_data($sport_name,$id)
 {
-   $tournament = DB::table('gs_tournament_info')->select('id','name', 'image','start_date','end_date','event_entry_date','event_end_date','org_city','sport')->where('sport', $sport_name)->where('publish','1')->where('id','<>',$id)->get();
+   $tournament = DB::table('gs_tournament_info')->select('id','name', 'image','start_date','end_date','event_entry_date','event_end_date','org_city','sport','date_updated')->where('sport', $sport_name)->where('publish','1')->where('id','<>',$id)->get();
   return $tournament;
 }
 
