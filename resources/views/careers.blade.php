@@ -79,7 +79,7 @@
                     <div class="about-content">
                      <h4></h4>
                      <ol>
-                       <li><a href="{{url('/public/docs/JOB_001.pdf')}}" target="_blank">UI/UX Designer</a><br>Noida, Uttar Pradesh</li>
+                       <li><a href="{{url('/gs-vacancies')}}" target="_blank">UI/UX Designer</a><br>Noida, Uttar Pradesh</li>
                      </ol>
                                             <!-- <div class="margin15 clearfix"></div>
                        <p style="text-align: center;">We are here to help other people play their sport. We are the backend of sports in India. If you want to make India a force to reckon with in the field of Sport? So, Come and join us for your dream job in Sports in India and let us together make India a sports superpower.</p> 

@@ -64,6 +64,10 @@ Route::get('/career', function()
         {
             return View::make('careers');
         });
+Route::get('/gs-vacancies', function()
+        {
+            return View::make('vacancy_view');
+        });
 Route::post('user_susbcription','WebController@user_subscription');
 
 
