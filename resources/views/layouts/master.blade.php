@@ -1,7 +1,7 @@
 <?php 
-if(Request::url() == 'https://getsporty.in/index.html' || Request::url() == 'https://getsporty.in/.env')
+if(Request::url() == 'http://getsporty.in')
    {  $value = session('userdata');
-      Redirect::to('/')->send();
+      Redirect::to('https://getsporty.in')->send();
   }
 ?>
 <html>
