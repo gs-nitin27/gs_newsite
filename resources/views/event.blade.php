@@ -35,15 +35,9 @@
     <input type="text" name="name" id="name" placeholder="Full Name" Required/>
     <input type="text" name="email" id="email" placeholder="Email" Required/>
     <input type="Number" name="phone" id="phone" placeholder="Contact No." Required/>
-    <select name="type" id="type">
-      <option value="">--Type--</option>
-      <option value="camps">Camps</option>
-      <option value="competetions">Competetions</option>
-      <option value="seminars">Seminars</option>
-      <option value="events">Events</option>
-    </select>
     <input type="number" name="age" id="age" placeholder="Your Age" Required />
     <input type="text" name="sport" id="sport" placeholder="Sport" Required />
+    <input type="hidden" name="where" id="" value="" Required />
     <input type="hidden" name="module" id="module" value="2" Required />
     <input type="hidden" name="mod_name" id="mod_name" value="event" Required />
     <input type="hidden" name="ipaddress" value="<?php echo $_SERVER['REMOTE_ADDR']; ?>">
