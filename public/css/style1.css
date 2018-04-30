@@ -491,7 +491,7 @@ filter: progid:DXImageTransform.Microsoft.Shadow(Strength=10, Direction=180, Col
 	background-color: #fff;
     padding: 12px;
     text-align: left;
-    width: 100%;
+    width: 124%;
     margin-top: -9px;
     border-radius: 0px 0px 10px 10px;
     
@@ -1001,6 +1001,10 @@ width:100%;
 }
 .about-text a {
 	text-decoration: none;
+}
+.about-content ol li{
+    text-decoration: none;
+    font-size: 18px;
 }
 .about-content{
 	padding: 15px;
