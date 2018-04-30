@@ -12,29 +12,15 @@ use DateTime;
     {
 
 
-    // public function __construct()
-    // {
-
-     
-
-
-    // }
-
-
     public function index()
     {
     $obj  = new WebModel();
     $resp = $obj->getHomeData();
-
-
-   return View::make("welcome")->with('name', $resp);
-
-    
+    return View::make("welcome")->with('name', $resp);
     }
 
     public function getaboutus()
     {
-       
     return View::make("aboutus");
     }
 
@@ -51,7 +37,6 @@ use DateTime;
 
     public function getjob()
     {
-       
     return View::make("job-listing");
     }
 
@@ -205,13 +190,16 @@ public function user_subscription(Request $request)
     $where1 = "`sport` ='".$data['sport']."' ";
     if($data['where'] != '')
     {
-    $where2  = " AND `".$data['where']."` LIKE '%".$data['type']."'";    
+    $where2  = " AND `".$data['where']."` LIKE '%".$data['type']."%'";    
     }else
     {
     $where2 = '';
     }
     $where = $where1.$where2;
-   
+    if($data['module'] == '4')
+    {
+        $where = $where."  AND `type` LIKE '%trial%'";
+    }
     $phone = $data['phone'];
     $unique_code = md5($phone.$where.$data['mod_name']);
     
