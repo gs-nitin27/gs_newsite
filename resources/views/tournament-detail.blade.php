@@ -78,8 +78,8 @@
         			       <div class="right-list-job" style="padding: 50px 0 0 0;">
         				          <h4>{{$name[0]->name}}</h4>
                           <p> Location : <span> {{$name[0]->address_1}}</span></p>
-                          <p> Start : <span> {{$name[0]->start_date}}</span></p>
-                          <p> Entry : <span> {{$name[0]->event_entry_date}} </span></p>
+                          <p> Start : <span> <?php echo date('d F Y',strtotime($name[0]->start_date)); ?></span></p>
+                          <p> Entry : <span><?php echo date('d F Y',strtotime($name[0]->event_entry_date)) ?> </span></p>
                           <p> Sport : <span>{{$name[0]->sport}} </span></p>
         			       </div>
         		    </div>
@@ -123,7 +123,13 @@
                           <div class="slide-job-list">
                               <h4>{{$name1[$i]->name}}</h4>
           				            <p> Location : <span> {{$name1[$i]->name}}</span></p>
-          				            <p> Posted : <span> 2 days ago </span></p>
+          				            <?php
+                              $datetime1 = new DateTime();
+                              $datetime2 = new DateTime($name1[$i]->date_updated);
+                              $interval = $datetime1->diff($datetime2);
+                              $day = $interval->format(' %a Days ago ');
+                               ?>
+                              <p> Posted : <span> {{$day}} </span></p>
           				            <p> Organisation Name : <span> {{$name1[$i]->name}} </span></p>
           				            <p class="read-c"><a href="{{$name1[$i]->id}}" target="_blank">Read More</a> </p>                                  
                           </div>

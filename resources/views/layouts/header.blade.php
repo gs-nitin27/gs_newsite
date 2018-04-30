@@ -24,8 +24,7 @@
     
 
               ?>
-              <li><a href="{{url('/sports-trials-in-india.html')}}">Trials</a></li>
-              <li class="dropdown">
+                <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                    Business <b class="caret"></b>
                 </a>
