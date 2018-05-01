@@ -35,7 +35,8 @@
     <input type="Number" name="phone" id="phone" placeholder="Contact No." Required/>
     <input type="number" name="age" id="age" placeholder="Your Age" Required />
     <input type="text" name="sport" id="sport" placeholder="Sport" Required />
-    <input type="hidden" name="module" id="module" value="2" Required />
+    <input type="hidden" name="where" id="where" value="" Required />
+    <input type="hidden" name="module" id="module" value="4" Required />
     <input type="hidden" name="mod_name" id="mod_name" value="trial" Required />
     <input type="hidden" name="ipaddress" value="<?php echo $_SERVER['REMOTE_ADDR']; ?>">
     <button type="submit" name="submit">Subscribe</button>

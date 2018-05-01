@@ -150,15 +150,14 @@ return $tournament;
 } 
 public function getSubscribed($where)
 {
-$getData  = DB::table('visitor_subscribe')->select('*')->where('phone','=',$where)->get();
+$getData  = DB::table('visitor_subscribe')->select('*')->where('unique_code','=',$where)->get();
 return $getData;
 }
 
-public function saveSubscribed($data)
+public function saveSubscribed($data,$where,$code)
 { 
-$unique_code = md5($data['module'].$data['sport'].$data['age'].$data['phone']); 
-$data_insert = DB::table('visitor_subscribe')->insert(
-    ['email' =>$data['email'], 'sport' =>$data['sport'], 'age_group' =>$data['age'], 'phone' =>$data['phone'],'module'=>$data['module'],'ip_address'=>$data['ipaddress'],'unique_code'=>$unique_code]
+  $data_insert = DB::table('visitor_subscribe')->insert(
+    ['email' =>$data['email'], 'sport' =>$data['sport'],'phone' =>$data['phone'],'where'=>$where,'module'=>$data['module'],'ip_address'=>$data['ipaddress'],'unique_code'=>$code]
 );
   if($data_insert)
   {

@@ -12,29 +12,15 @@ use DateTime;
     {
 
 
-    // public function __construct()
-    // {
-
-     
-
-
-    // }
-
-
     public function index()
     {
     $obj  = new WebModel();
     $resp = $obj->getHomeData();
-
-
-   return View::make("welcome")->with('name', $resp);
-
-    
+    return View::make("welcome")->with('name', $resp);
     }
 
     public function getaboutus()
     {
-       
     return View::make("aboutus");
     }
 
@@ -51,7 +37,6 @@ use DateTime;
 
     public function getjob()
     {
-       
     return View::make("job-listing");
     }
 
@@ -201,50 +186,52 @@ public function getSportsList(Request $request)
 public function user_subscription(Request $request)
    {
      $data = $request->all();
-     print_r($data);die;
-    //  $obj_test = new WebModel();
-    //  $varify = $obj_test->getSubscribed($data['phone']);
+   
+    $where1 = "`sport` ='".$data['sport']."' ";
+    if($data['where'] != '')
+    {
+    $where2  = " AND `".$data['where']."` LIKE '%".$data['type']."%'";    
+    }else
+    {
+    $where2 = '';
+    }
+    $where = $where1.$where2;
+    if($data['module'] == '4')
+    {
+        $where = $where."  AND `type` LIKE '%trial%'";
+    }
+    $phone = $data['phone'];
+    $unique_code = md5($phone.$where.$data['mod_name']);
+    
+     $obj_test = new WebModel();
+     $varify = $obj_test->getSubscribed($unique_code);
     //  $n = 0;
     //  $subscribe = 0;
-    // if(!empty($varify))
-    // {
-    //   foreach ($varify as $key => $value) 
-    //       {
-    //         if($value->module == $data['module'] && $value->sport == $data['sport'] &&  $value->phone  == $data['phone'])
-    //           {
-    //             $n++;
-    //             break;
-    //           }
-    //       }
-    //   if($n==0)
-    //      {
-    //        $subscribe = $obj_test->saveSubscribed($data);
-    //      }
-    //      else
-    //      {
-    //         $subscribe = '-1';
-    //      }
-    // }
-    //  else
-    //  {
-    //  $subscribe = $obj_test->saveSubscribed($data);
-    //  }
-    //     if($subscribe == 1)
-    //     {
-    //      $res = 1;
-    //      $msg = 'Successfully subscribed';   
-    //     }else if($subscribe == '-1')
-    //     {
-    //      $res = 0;
-    //      $msg = 'Already subscribed for same criteria';
-    //     }
-    //     else
-    //     {
-    //      $res = 0;
-    //      $msg = 'Something Went wrong';
-    //     }
-    //     $resp = array('status' =>$res ,'msg'=>$msg );
-    //     echo json_encode($resp);
+   // print_r($varify);die;
+    if(!empty($varify))
+    { 
+      $subscribe = '-1';
+    }
+ else
+    {
+     $subscribe = $obj_test->saveSubscribed($data,$where,$unique_code);
+    }
+        if($subscribe == 1)
+        {
+         $res = 1;
+         $msg = 'Successfully subscribed';   
+        }else if($subscribe == '-1')
+        {
+         $res = 0;
+         $msg = 'Already subscribed for same criteria';
+        }
+        else
+        {
+         $res = 0;
+         $msg = 'Something Went wrong';
+        }
+        $resp = array('status' =>$res ,'msg'=>$msg );
+        echo json_encode($resp);
  }
 
  }

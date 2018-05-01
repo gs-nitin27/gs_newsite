@@ -44,6 +44,7 @@
     </select>
     <input type="text" name="sport" id="sport" placeholder="Sport" Required />
     <input type="hidden" name="module" id="module" value="6" Required />
+    <input type="hidden" name="where" id="where" value="topic_of_artical" Required />
     <input type="hidden" name="mod_name" id="mod_name" value="article" Required />
     <input type="hidden" name="ipaddress" value="<?php echo $_SERVER['REMOTE_ADDR']; ?>">
     <button type="submit" name="submit">Subscribe</button>
