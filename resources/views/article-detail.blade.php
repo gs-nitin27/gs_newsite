@@ -9,12 +9,12 @@
 <meta property="og:url" content="{{Request::url()}}" />
 <meta property="og:image" content="<?php echo config('constant.IMAGE_URL').'/resources/'.$name[0]->image; ?>">
 <meta http-equiv="x-ua-compatible" content="ie=edge">
-<meta name="twitter:card" content="{!!$name[0]->summary!!}" />
+<meta name="twitter:card" content="summary" />
 <meta name="twitter:site" content="@getsporty" />
 <meta name="twitter:title" content="{{$name[0]->title}}" />
 <meta name="twitter:description" content="{!!$name[0]->summary!!}" />
-<meta name="twitter:image" content="<?php echo config('constant.IMAGE_URL').'/resources/'.$name[0]->image; ?>"
- />
+<meta name="twitter:image" content="<?php echo config('constant.IMAGE_URL').'/resources/'.$name[0]->image; ?>"/>
+
 @endsection
 @section('content')
 
@@ -135,6 +135,7 @@
 
      <div><a href="https://twitter.com/share" class="twitter-share-button fa fa-twitter" data-size="large" data-text="{{$name[0]->title}}" data-url="{{Request::url()}}" data-show-count="false" >
     </a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script></div>
+
 
      <a href=" https://www.linkedin.com/shareArticle?mini=true&url={{Request::url()}}&title={{$name[0]->title}}
     &summary={!!$name[0]->summary!!}&source=LinkedIn" class="cleateJob" style="background-color: #1686b0;"><i class="fa fa-linkedin"></i></a>

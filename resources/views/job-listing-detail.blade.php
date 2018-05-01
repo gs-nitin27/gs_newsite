@@ -20,22 +20,18 @@
 
 
      <div class="joblist-bg bannerBgSec">
-     
-          <div class="container">
+     <div class="container">
        	    <div class="row">
        	      <div class="col-md-12">
        		    <div class="ban-pera">
        			  <h1></h1>
        			  <h3>{{$name[0]->title}}</h3>
-       			
-         	    </div>
-               </div>
+       			  </div>
               </div>
-             </div>
-             
-           
             </div>
-        <div class="relative">
+          </div>
+      </div>
+      <div class="relative">
             <div class="blue-bg"></div>
              <div class="play-icon" data-toggle="modal" data-target="#myModal">
         	  <img src="{{asset('public/img/play-icon.svg')}}">

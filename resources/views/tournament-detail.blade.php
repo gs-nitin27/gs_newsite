@@ -9,7 +9,7 @@
 <meta property="og:url" content="{{Request::url()}}" />
 <meta property="og:image" content="<?php echo config('constant.IMAGE_URL').'/tournament/'.$name[0]->image; ?>">
 <meta http-equiv="x-ua-compatible" content="ie=edge">
-<meta name="twitter:card" content="" />
+<meta name="twitter:card" content="summary" />
 <meta name="twitter:site" content="@getsporty" />
 <meta name="twitter:title" content="{{$name[0]->name}}" />
 <meta name="twitter:description" content="{{strip_tags($name[0]->description)}}" />
