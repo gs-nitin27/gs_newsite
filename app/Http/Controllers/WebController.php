@@ -187,18 +187,18 @@ public function user_subscription(Request $request)
    {
      $data = $request->all();
    
-    $where1 = "`sport` ='".$data['sport']."' ";
+    //$where1 = "`sport` ='".$data['sport']."' ";
     if($data['where'] != '')
     {
-    $where2  = " AND `".$data['where']."` LIKE '%".$data['type']."%'";    
+    $where2  = "`".$data['where']."` LIKE '%".$data['type']."%' AND";    
     }else
     {
     $where2 = '';
     }
-    $where = $where1.$where2;
+    $where = $where2;
     if($data['module'] == '4')
     {
-        $where = $where."  AND `type` LIKE '%trial%'";
+        $where = "`type` LIKE '%trial%' AND ".$where;
     }
     $phone = $data['phone'];
     $unique_code = md5($phone.$where.$data['mod_name']);
