@@ -201,7 +201,7 @@ public function user_subscription(Request $request)
         $where = "`type` LIKE '%trial%' AND ".$where;
     }
     $phone = $data['phone'];
-    $unique_code = md5($phone.$where.$data['mod_name']);
+    $unique_code = md5($phone.$where.$data['mod_name'].$data['sport']);
     
      $obj_test = new WebModel();
      $varify = $obj_test->getSubscribed($unique_code);
