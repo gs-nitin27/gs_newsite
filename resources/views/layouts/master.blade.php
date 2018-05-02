@@ -24,9 +24,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 if (env('APP_ENV') === 'production') {
 ?>
 <script type="text/javascript">
-           $(document).ready(function(){
-             $('#contactform').hide();
-           });
+           // $(document).ready(function(){
+           //   $('#contactform').hide();
+           // });
 </script><?php } ?>
      </head>
       <body data-spy="scroll" data-target=".navbar" data-offset="180">
