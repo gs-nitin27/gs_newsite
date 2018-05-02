@@ -100,7 +100,7 @@ contentType:false,
 cache: false,
 processData:false
 }).done(function(res){
-   alert_msg(res.msg);
+   alert(res.msg);
    Animate(elem, 'left', 800, 0, -405);    
     opened = false;
  });
