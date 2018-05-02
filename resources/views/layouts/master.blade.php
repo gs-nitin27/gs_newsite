@@ -86,6 +86,7 @@ document.getElementById('contact-button').onclick = function() {
 $('#subs_form').submit(function(e){
     e.preventDefault(); //prevent default action 
     proceed = true;
+ $('.loading').show();
 var post_url = $(this).attr('action');
 var request_method = $(this).attr('method');
 var form_data = new FormData(this);
@@ -103,6 +104,7 @@ processData:false
    Animate(elem, 'left', 800, 0, -405);    
     opened = false;
  });
+ $('.loading').hide();
 });
          </script>
    </html>

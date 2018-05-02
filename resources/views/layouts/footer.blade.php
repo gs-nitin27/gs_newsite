@@ -12,20 +12,20 @@
   </div>
 </div>
 <script type="text/javascript">
-    $(document).ready(function(){
-  $('#module').on('change',function(){
+  //   $(document).ready(function(){
+  // $('#module').on('change',function(){
     
-    if($('#module').val()=='1')
-    {
-     $('#subs_form').prepend('<input type="text" name="designation" id="designation" placeholder="Designation" Required />'); 
-    }else
-    {
-      $('#designation').remove();
-    }
+  //   if($('#module').val()=='1')
+  //   {
+  //    $('#subs_form').prepend('<input type="text" name="designation" id="designation" placeholder="Designation" Required />'); 
+  //   }else
+  //   {
+  //     $('#designation').remove();
+  //   }
 
-  });
+  // });
 
-  });
+  // });
 </script>
      <div id="fb-root"></div>
 <script>(function(d, s, id) {
