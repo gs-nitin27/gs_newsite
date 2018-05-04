@@ -25,7 +25,7 @@ use Session;
       'name'=>$user_data['name']
     );
       Mail::send('emails.contact-message', ['user' => $data], function ($m) use ($data) {
-            $m->from('info@darkhorsesports.in', 'Welcome to getsporty manage');
+            $m->from('info@darkhorsesports.in', 'Getsporty Manage');
 
             $m->to($data['email'], $data['name'])->subject('Your Reminder!');
         });
