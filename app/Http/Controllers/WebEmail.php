@@ -19,7 +19,7 @@ use Session;
       'email' => 'ntnagarwal27@gmail.com',
       'subject' => "hjhjgjghj",//$request->subject,
       'mailbody' => "ghjgjggh",
-      'name'=>'chutiya'
+      'name'=>'nitin'
     );
           //$data = json_encode($data);
       Mail::send('emails.contact-message', ['user' => $data], function ($m) use ($data) {
