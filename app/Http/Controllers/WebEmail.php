@@ -1,10 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-use Illuminate\Http\Request;
-use Mail;
 
-use App\Http\Requests;
+use Mail;
+use App\User;
+use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 use Session;
@@ -14,18 +14,25 @@ use Session;
     
     public function send_mail(Request $request)
     { 
-       
-       $data = array(
+          $data = array(
       'email' => $request->email,
       'subject' => "dsdaadadad",//$request->subject,
       'mailbody' => "asdadadadadadadadadadadaadasdadadadaas"
     );
-//print_r($data);die;
-    Mail::send('event', $data, function($message) use ($data) {
-      $message->from(env('MAIL_USERNAME'));
-      $message->to('nitin@darkhorsesports.in');
-      $message->subject($data['subject']);
-    });
+          $data = json_encode($data);
+      Mail::send('emails.contact-message', ['user' => $data], function ($m) use ($data) {
+            $m->from('hello@app.com', 'Your Application');
+
+            $m->to($data->email, $data->name)->subject('Your Reminder!');
+        });
+       
+       
+// //print_r($data);die;
+//     Mail::send('event', $data, function($message) use ($data) {
+//       $message->from(env('MAIL_USERNAME'));
+//       $message->to('nitin@darkhorsesports.in');
+//       $message->subject($data['subject']);
+//     });
 
 
       //    $data = $_REQUEST;

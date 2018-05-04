@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta name="csrf-token" content="{{ csrf_token() }}" />
   <title></title>
 <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -12,6 +13,9 @@
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   <script src="{{asset('public/manage_assets/js/common.js')}}"></script>
   <style type="text/css">
+  .hide_div{
+    display: none;
+  }
   .invalid{
     color: #de1124;
   }
@@ -200,12 +204,16 @@ box-shadow: rgba(255,255,255, 0.75) 1.5em 0 0 0, rgba(255,255,255, 0.75) 1.1em 1
                                     </label>
                                 </div>
                                 </div>
-                                <div class="form-group row" hidden>
+                                <div class="form-group row" id="prof">
                                     <label class="col-lg-3 col-form-label form-control-label">Proffession</label>
                                     <div class="col-lg-9">
                                        <span id="rproffession" class="invalid"><p></p></span>
                                         <select class="form-control" size="0" id="proffession">
-                                          <option value="5">job-creator</option>
+                                          <option value="">--Select--</option>
+                                          <option value="2">Coach</option>
+                                          <option value="5">Academy manager</option>
+                                          <option value="5">Club manager</option>
+                                          <option value="5">Recruiter</option>
                                         </select>
                                     </div>
                                 </div>
@@ -303,6 +311,7 @@ box-shadow: rgba(255,255,255, 0.75) 1.5em 0 0 0, rgba(255,255,255, 0.75) 1.1em 1
   var url = '<?php echo config('constant.ENV_URL')?>';
   $(".form_datetime").datepicker({format: 'yyyy-mm-dd'});
   $(document).ready(function(){
+    if(window.opener)
      var radioValue = $("input[name='gender']:checked").val();
             if(radioValue){
                 alert_msg("Your are a - " + radioValue);
@@ -312,12 +321,17 @@ box-shadow: rgba(255,255,255, 0.75) 1.5em 0 0 0, rgba(255,255,255, 0.75) 1.1em 1
      {var userid = localStorage.getItem('userid');
       var data = localStorage.getItem('userdata');
       data = JSON.parse(data);
+      //alert(JSON.stringify(data));return;
       if(data.email != '')
       {
         $('#email_div').hide();
         $('#email').val(data.email);
          $('#co_email').val(data.email);
         $('#name').val(data.data.name);
+      }
+      if(window.location.href.substr(window.location.href.lastIndexOf('/') +1) == '1')
+      {
+        $("#prof").hide();
       }
      }
      // validation example for Login form
@@ -363,6 +377,8 @@ $("#btnLogin").click(function(event) {
         { 
           if(add_organisation(response.data.userid) != 0)
           {
+           send_acknowlegemail();
+           alert_msg("Thanks for registering with us");return;
           window.location.href = "<?php echo url('/'); ?>"+"/manage/dashbo";
           }
           else
@@ -427,7 +443,7 @@ if($('#datepicker').val() == '')
 if($('#proffession').val() == '')
 {
    $('#rproffession').text('*Please enter the proffession');
-   $i++;
+   i++;
 }else
 {  
    $('#rproffession').text('');
@@ -570,7 +586,26 @@ function add_organisation(sess_userid)
 
       });
      }
+function send_acknowlegemail()
+ {
 
+     $.ajax({
+      async:false,
+      headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
+      url:"{{url('/manage/send_mail')}}",
+      method:"POST",
+      dataType:"text",
+      data:'data='+localStorage.getItem('userdata'),
+      success:function(result)
+      {
+         
+        conasole.log(result);
+
+      }
+    });
+
+
+ }
 </script>
 <div id="alert" class="modal fade">
   <div class="modal-dialog" >

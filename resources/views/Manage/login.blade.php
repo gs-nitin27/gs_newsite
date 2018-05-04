@@ -8,10 +8,14 @@ if (env('APP_ENV') === 'production') {
 }else
 {
   $section = $param['4'];
+ // echo $section;die;
 }
 if($section == '1')
 {
 $string = '1';  
+}
+else if ($section == '2') {
+$string = '2';
 }
 else
 {
@@ -168,6 +172,9 @@ function testAPI() {
   {
    url_param = '<?php echo $string; ?>';
    url_param = url_param.split('|');
+  }else
+  {
+    url_param = '<?php echo $string; ?>';
   }
  
 /*  gapi.signin2.render('my-signin2', {
@@ -225,7 +232,7 @@ console.log(data);
       localStorage.setItem('userdata',JSON.stringify(result.data));
       set_data();
       }else
-      { console.log("dfdjfhjfd");
+      { //console.log("dfdjfhjfd");
         alert_msg("Invalid user");
       }
     }
@@ -233,14 +240,16 @@ console.log(data);
     { 
       result.status = result.status;
       localStorage.setItem('userdata',result.data);
-      window.location.href = "<?php echo url('/'); ?>"+"/manage/register";
+      window.location.href = "<?php echo url('/'); ?>"+"/manage/register/"+url_param;
       //alert_msg(result.status + JSON.stringify(result.data));//return;
     }
     else if(result.status==3) // for creating new record
     { 
+      //alert(url_param+'jitin');return;
       localStorage.setItem('userid',result.data.userid);
       localStorage.setItem('userdata',data);
-      window.location.href = "<?php echo url('/'); ?>"+"/manage/register";
+      //alert("<?php echo url('/'); ?>"+"/manage/register/"+url_param);//return;
+      window.location.href = "<?php echo url('/'); ?>"+"/manage/register/"+url_param;
     }
    }
   });
@@ -297,7 +306,7 @@ console.log(data);
         }
         else
         {
-          alert('server Error');
+          alert_msg('server Error');
         }
         //alert(JSON.stringify(result));
       } 

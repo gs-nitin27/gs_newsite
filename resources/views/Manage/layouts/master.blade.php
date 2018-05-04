@@ -9,7 +9,7 @@ if(!Session::has('userdata'))
 <!DOCTYPE html>
      <html>
      <head>
-        {{ csrf_field() }}
+        <meta name="csrf-token" content="{{ csrf_token() }}" />
      	   <title>Getsporty- @yield('pageTitle')</title> 
      	   @include('Manage.layouts.head')
      </head>
