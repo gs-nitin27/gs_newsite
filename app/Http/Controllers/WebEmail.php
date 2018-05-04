@@ -6,7 +6,7 @@ use Mail;
 use App\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-
+use Illuminate\Support\Facades\Input;
 use Session;
 
     class WebEmail extends Controller
@@ -14,16 +14,18 @@ use Session;
     
     public function send_mail(Request $request)
     { 
+
+          $user_data = $request->all();    
+         
           $data = array(
 
-      'email' => 'ntnagarwal27@gmail.com',
-      'subject' => "hjhjgjghj",//$request->subject,
-      'mailbody' => "ghjgjggh",
-      'name'=>'nitin'
+      'email' =>$user_data['email'],
+      'subject' => "Welcome to getsporty manage",//$request->subject,
+      'mailbody' => "Thanks for registering withus",
+      'name'=>$user_data['name']
     );
-          //$data = json_encode($data);
       Mail::send('emails.contact-message', ['user' => $data], function ($m) use ($data) {
-            $m->from('nitin@darkhorsesports.in', 'Your Application');
+            $m->from('info@darkhorsesports.in', 'Welcome to getsporty manage');
 
             $m->to($data['email'], $data['name'])->subject('Your Reminder!');
         });

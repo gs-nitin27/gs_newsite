@@ -375,17 +375,16 @@ $("#btnLogin").click(function(event) {
       method:'POST',
       data:user_info_data,
       dataType:'text',
+      async:false,
       success:function(result)
       { 
         var response  = JSON.parse(result);
-        send_mail();
-          return;
         if(response.status==1)
         { 
           if(add_organisation(response.data.userid) != 0)
           {
-           send_acknowlegemail();
-           alert_msg("Thanks for registering with us");return;
+             send_mail(response.data);
+            alert_msg("Thanks for registering with us");//return;
           window.location.href = "<?php echo url('/'); ?>"+"/manage/dashbo";
           }
           else
@@ -593,7 +592,7 @@ function add_organisation(sess_userid)
 
       });
      }
-function send_mail()
+function send_mail(data)
 {
 
 $.ajax({
@@ -601,7 +600,7 @@ $.ajax({
 url:"{{url('/manage/welcome_mail')}}",
 headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
 method:"POST",
-data:user_info_data,
+data:data,
 success:function(result)
 {
    alert_msg("Sucessfully Registered");
