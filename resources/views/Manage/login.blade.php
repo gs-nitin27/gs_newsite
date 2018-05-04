@@ -171,12 +171,14 @@ function testAPI() {
  if(url_param != '1')
   {
    url_param = '<?php echo $string; ?>';
+   if(url_param != '2'){
    url_param = url_param.split('|');
-  }else
-  {
-    url_param = '<?php echo $string; ?>';
   }
- 
+}
+ // else
+ //  {
+ //    url_param = '<?php echo $string; ?>';
+ //  }
 /*  gapi.signin2.render('my-signin2', {
         'scope': 'profile email',
         'width': 240,
@@ -232,7 +234,8 @@ console.log(data);
       localStorage.setItem('userdata',JSON.stringify(result.data));
       set_data();
       }else
-      { //console.log("dfdjfhjfd");
+
+      { 
         alert_msg("Invalid user");
       }
     }
@@ -248,7 +251,6 @@ console.log(data);
       //alert(url_param+'jitin');return;
       localStorage.setItem('userid',result.data.userid);
       localStorage.setItem('userdata',data);
-      //alert("<?php echo url('/'); ?>"+"/manage/register/"+url_param);//return;
       window.location.href = "<?php echo url('/'); ?>"+"/manage/register/"+url_param;
     }
    }

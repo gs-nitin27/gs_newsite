@@ -15,15 +15,17 @@ use Session;
     public function send_mail(Request $request)
     { 
           $data = array(
-      'email' => $request->email,
-      'subject' => "dsdaadadad",//$request->subject,
-      'mailbody' => "asdadadadadadadadadadadaadasdadadadaas"
-    );
-          $data = json_encode($data);
-      Mail::send('emails.contact-message', ['user' => $data], function ($m) use ($data) {
-            $m->from('hello@app.com', 'Your Application');
 
-            $m->to($data->email, $data->name)->subject('Your Reminder!');
+      'email' => 'ntnagarwal27@gmail.com',
+      'subject' => "hjhjgjghj",//$request->subject,
+      'mailbody' => "ghjgjggh",
+      'name'=>'chutiya'
+    );
+          //$data = json_encode($data);
+      Mail::send('emails.contact-message', ['user' => $data], function ($m) use ($data) {
+            $m->from('nitin@darkhorsesports.in', 'Your Application');
+
+            $m->to($data['email'], $data['name'])->subject('Your Reminder!');
         });
        
        

@@ -210,15 +210,15 @@ box-shadow: rgba(255,255,255, 0.75) 1.5em 0 0 0, rgba(255,255,255, 0.75) 1.1em 1
                                        <span id="rproffession" class="invalid"><p></p></span>
                                         <select class="form-control" size="0" id="proffession">
                                           <option value="">--Select--</option>
-                                          <option value="2">Coach</option>
+                                          <option value="2">Coach</option> 
+                                          <option value="5">Recruiter</option>
                                           <option value="5">Academy manager</option>
                                           <option value="5">Club manager</option>
-                                          <option value="5">Recruiter</option>
                                         </select>
                                     </div>
                                 </div>
                                 <div class="card-header">
-                            <h3 class="mb-0"><center>Add Company Info</center></h3>
+                                <h3 class="mb-0"><center>Add Company Info</center></h3>
                                 </div>
                 <input type="hidden" class="form-control" id="org_id" />
                 <form class="form-horizontal" role="form">
@@ -307,6 +307,7 @@ box-shadow: rgba(255,255,255, 0.75) 1.5em 0 0 0, rgba(255,255,255, 0.75) 1.1em 1
                 
 </body>
 <script type="text/javascript">
+  var user_info_data = '';
   window.register_validation = function register_validation(){};
   var url = '<?php echo config('constant.ENV_URL')?>';
   $(".form_datetime").datepicker({format: 'yyyy-mm-dd'});
@@ -334,6 +335,10 @@ box-shadow: rgba(255,255,255, 0.75) 1.5em 0 0 0, rgba(255,255,255, 0.75) 1.1em 1
         $("#prof").hide();
       }
      }
+     if(window.location.pathname.split("/").pop() == '1')
+     {
+      $('#prof').hide();
+     }
      // validation example for Login form
 $("#btnLogin").click(function(event) {
     
@@ -345,7 +350,7 @@ $("#btnLogin").click(function(event) {
     }
     else
     {$('.loading').show();
-      var user_info_data = {
+       user_info_data = {
         'userid':userid,
         'loginType':data.loginType,
         'email':$('#email').val(),
@@ -353,7 +358,7 @@ $("#btnLogin").click(function(event) {
         'location':$('#location').val(),
         'dob':$('#datepicker').val(),
         'gender':$("input[name='gender']:checked").val(),//radioValue,//$('#gender').val(),
-        'prof_name':$('#proffession').text().trim(),
+        'prof_name':$("#proffession :selected").text(),
         'data':data.data,
         'userType':'103',
         'prof_id':$('#proffession').val(),
@@ -373,6 +378,8 @@ $("#btnLogin").click(function(event) {
       success:function(result)
       { 
         var response  = JSON.parse(result);
+        send_mail();
+          return;
         if(response.status==1)
         { 
           if(add_organisation(response.data.userid) != 0)
@@ -586,26 +593,26 @@ function add_organisation(sess_userid)
 
       });
      }
-function send_acknowlegemail()
- {
+function send_mail()
+{
 
-     $.ajax({
-      async:false,
-      headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
-      url:"{{url('/manage/send_mail')}}",
-      method:"POST",
-      dataType:"text",
-      data:'data='+localStorage.getItem('userdata'),
-      success:function(result)
-      {
-         
-        conasole.log(result);
+$.ajax({
 
-      }
-    });
+url:"{{url('/manage/welcome_mail')}}",
+headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
+method:"POST",
+data:user_info_data,
+success:function(result)
+{
+   alert_msg("Sucessfully Registered");
+  console.log(JSON.stringfy(result));
+  return;
+}
+});
 
 
- }
+
+}
 </script>
 <div id="alert" class="modal fade">
   <div class="modal-dialog" >

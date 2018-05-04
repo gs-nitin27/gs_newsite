@@ -118,8 +118,7 @@ Route::group(array('prefix' => 'manage'), function()
         return redirect('manage/login/1');
     });
     Route::get('my_profile/{id}','ManageController@getAdminuserData');
-    Route::post('send_mail','WebEmail@send_mail');
-
+    Route::post('welcome_mail','WebEmail@send_mail');
     });
     
 
