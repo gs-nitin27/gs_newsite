@@ -1,3 +1,8 @@
+<?php 
+if($_SERVER['REMOTE_ADDR'] == '182.69.203.174' || $_SERVER['REMOTE_ADDR'] == '::1')
+{
+
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -628,3 +633,9 @@ success:function(result)
 </div>
 <div class="loading" hidden>Loading&#8230;</div>   
 </html>
+<?php 
+}else
+{
+Redirect::to('/')->send();
+} 
+?>

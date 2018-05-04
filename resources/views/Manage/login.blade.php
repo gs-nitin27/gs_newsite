@@ -1,4 +1,7 @@
 <?php 
+
+if($_SERVER['REMOTE_ADDR'] == '182.69.203.174' || $_SERVER['REMOTE_ADDR'] == '::1')
+{
 $url = $_SERVER['REQUEST_URI'];//die;
 $param = explode('/', $url);
 if (env('APP_ENV') === 'production') {
@@ -329,4 +332,9 @@ console.log(data);
     </div>
   </div>
 </div>
-</html>
+</html><?php }
+else
+{
+   Redirect::to('/')->send();
+}
+?>
