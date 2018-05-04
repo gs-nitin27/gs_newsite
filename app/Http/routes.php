@@ -88,7 +88,7 @@ Route::group(array('prefix' => 'manage'), function()
            //Route::get('get_Tounament','ManageController@get_Tounament');
         });
 
-        Route::get('/register', function()
+        Route::get('/register/{id}', function()
         {
             return View::make('Manage.signup');
            //Route::get('get_Tounament','ManageController@get_Tounament');
@@ -118,6 +118,7 @@ Route::group(array('prefix' => 'manage'), function()
         return redirect('manage/login/1');
     });
     Route::get('my_profile/{id}','ManageController@getAdminuserData');
+    Route::post('welcome_mail','WebEmail@send_mail');
     });
 
 

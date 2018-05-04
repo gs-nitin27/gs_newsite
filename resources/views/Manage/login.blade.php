@@ -13,6 +13,10 @@ if($section == '1')
 {
 $string = '1';  
 }
+else if($section == '2')
+{
+$string = '2';  
+}
 else
 {
 $string = base64_decode($section);
@@ -169,7 +173,10 @@ function testAPI() {
    url_param = '<?php echo $string; ?>';
    url_param = url_param.split('|');
   }
- 
+ else
+  {
+    url_param = '<?php echo $string; ?>';
+  }
 /*  gapi.signin2.render('my-signin2', {
         'scope': 'profile email',
         'width': 240,
@@ -225,7 +232,7 @@ console.log(data);
       localStorage.setItem('userdata',JSON.stringify(result.data));
       set_data();
       }else
-      { console.log("dfdjfhjfd");
+      { 
         alert_msg("Invalid user");
       }
     }
@@ -233,14 +240,14 @@ console.log(data);
     { 
       result.status = result.status;
       localStorage.setItem('userdata',result.data);
-      window.location.href = "<?php echo url('/'); ?>"+"/manage/register";
+      window.location.href = "<?php echo url('/'); ?>"+"/manage/register/"+url_param;
       //alert_msg(result.status + JSON.stringify(result.data));//return;
     }
     else if(result.status==3) // for creating new record
     { 
       localStorage.setItem('userid',result.data.userid);
       localStorage.setItem('userdata',data);
-      window.location.href = "<?php echo url('/'); ?>"+"/manage/register";
+      window.location.href = "<?php echo url('/'); ?>"+"/manage/register/"+url_param;
     }
    }
   });
