@@ -1,8 +1,13 @@
-<?php 
+<?php
+if (env('APP_ENV') === 'testing') {
+if($_SERVER['REMOTE_ADDR'] == '182.69.203.174' || $_SERVER['REMOTE_ADDR'] == '::1')
+{
+
+?> 
 if(Request::url() == 'http://getsporty.in')
    {  $value = session('userdata');
       Redirect::to('https://getsporty.in')->send();
-  }
+   }
 ?>
 <html>
      <head>
@@ -109,7 +114,8 @@ processData:false
          </script>
    </html>
 
-
+<?php  }
+}  ?>
 
 
     
