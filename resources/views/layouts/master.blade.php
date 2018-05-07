@@ -3,7 +3,7 @@
 if (env('APP_ENV') === 'testing') {
 if($_SERVER['REMOTE_ADDR'] == '182.69.203.174' || $_SERVER['REMOTE_ADDR'] == '::1')
 {
-  Redirect::to('https://demo.getsporty.in')->send();
+  Redirect::to('http://demo.getsporty.in')->send();
 ?> 
 <?php  
 }else
