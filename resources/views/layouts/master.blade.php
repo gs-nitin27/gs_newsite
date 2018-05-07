@@ -1,5 +1,5 @@
 <?php
-//die($_SERVER['REMOTE_ADDR']);die;
+die($_SERVER['REMOTE_ADDR']);die;
 if (env('APP_ENV') === 'testing') {
 if($_SERVER['REMOTE_ADDR'] != '182.69.203.174' || $_SERVER['REMOTE_ADDR'] != '::1')
 {
