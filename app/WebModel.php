@@ -91,7 +91,7 @@ public function getEventDetail($id)
 
 public function getJobDetail($id)
 {
-    $job         = DB::table('gs_jobInfo')->select('id','title', 'description','image','organisation_name','org_city','gender','type','type','work_experience','organisation_name','about','address1','org_city','pin','job_link','sport','salary')->where('id', $id)->get();
+    $job         = DB::table('gs_jobInfo')->select('id','title', 'description','qualification','image','organisation_name','org_city','gender','type','type','work_experience','organisation_name','about','address1','org_city','pin','job_link','sport','salary')->where('id', $id)->get();
 
      return $job;
 }
