@@ -88,12 +88,8 @@
         			    <p>Job Description : <span> {!!$name[0]->description!!}.
         			      </span>
         			       </p>
-        			 
-<<<<<<< HEAD
-        			 <p> Qualification : <span>{!!$name[0]->qualification!!}</span></p>
-=======
+
         			 <p> Qualification : <span>{!!$name[0]->qualification!!}. </span></p>
->>>>>>> 63b484446bc6ae123a5dddef69f04c8685da8984
         			 <p>Organiser Name : <span> {{$name[0]->organisation_name}}.</span></p>
         			     
         			<p>About Organiser : <span> {{$name[0]->about}}.</span></p>
