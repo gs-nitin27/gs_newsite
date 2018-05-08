@@ -89,7 +89,7 @@
         			      </span>
         			       </p>
         			 
-        			 <p> Qualification : <span>{!!$name[0]->description!!}. </span></p>
+        			 <p> Qualification : <span>{!!$name[0]->qualification!!}</span></p>
         			 <p>Organiser Name : <span> {{$name[0]->organisation_name}}.</span></p>
         			     
         			<p>About Organiser : <span> {{$name[0]->about}}.</span></p>
