@@ -217,15 +217,18 @@ box-shadow: rgba(255,255,255, 0.75) 1.5em 0 0 0, rgba(255,255,255, 0.75) 1.1em 1
                                           <option value="">--Select--</option>
                                           <option value="2">Coach</option> 
                                           <option value="5">Recruiter</option>
+                                          <option value="5">Event manager</option>
                                           <option value="5">Academy manager</option>
-                                          <option value="5">Club manager</option>
                                         </select>
                                     </div>
-                                </div>
-                                <div class="card-header">
+                                  </div>
+                                
+                                <div class="card-header" id="org_div">
+                                  <span>Add</span>
                                 <h3 class="mb-0"><center>Add Company Info</center></h3>
                                 </div>
                 <input type="hidden" class="form-control" id="org_id" />
+                <div  id="org_form">
                 <form class="form-horizontal" role="form">
                    <div class="form-group row">
                         <label class="col-lg-3 col-form-label form-control-label">Organisation Name</label>
@@ -296,16 +299,14 @@ box-shadow: rgba(255,255,255, 0.75) 1.5em 0 0 0, rgba(255,255,255, 0.75) 1.1em 1
                             <!-- <span id="jemail" class="invalid"><p></p></span> -->
                             <input class="form-control" type="text" id="gstin" placeholder="GSTIN">
                         </div>
-                    </div>
-                </form>
-            
-                                <div class="form-group row">
+                    </div><div class="form-group row">
                                     <label class="col-lg-3 col-form-label form-control-label"></label>
                                     <div class="col-lg-9">
                                         <!-- <input type="reset" class="btn btn-secondary" value="Cancel"> -->
                                         <input type="button" class="btn btn-primary" value="Submit" id="btnLogin">
                                     </div>
                                 </div>
+                        </form></div>
                             </form>
                         </div>
                     </div>
@@ -617,6 +618,18 @@ success:function(result)
 
 
 }
+$('#org_div').click(function(){
+
+$('#org_form').toggle();
+});
+$('#proffession').on('change',function(){
+
+if($(this).val() == '2')
+{
+  $('#user_type').show();
+}
+
+});
 </script>
 <div id="alert" class="modal fade">
   <div class="modal-dialog" >

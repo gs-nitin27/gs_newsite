@@ -89,7 +89,7 @@
                 
 		            <div class="item">
 		             <a href="team-detail.php">
-		           <img src="public/img/team/1.jpg">
+		           <img src="public/img/dp.png">
 		           <h4>Anirudh Singh</h4>
 		           <span>Founder & Product Architect</span>
 		            <div class="socails">
