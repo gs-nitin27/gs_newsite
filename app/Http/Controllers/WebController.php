@@ -132,15 +132,11 @@ use DateTime;
 
     public function job_detail($id)
     {
+    $id = json_decode($id);    
     $obj  = new WebModel();
     $resp = $obj->getJobDetail($id);
-
     $sport_name = $resp[0]->sport;
-
     $resp1 = $obj->getJobDetail_data($sport_name,$id);
-    
-   // print_r($resp1);die();
-
     return View::make("job-listing-detail")->with('name', $resp)->with('name1',$resp1);
     }
 
