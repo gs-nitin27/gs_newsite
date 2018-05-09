@@ -4,7 +4,7 @@ if($_SERVER['REMOTE_ADDR'] == '182.69.203.174' || $_SERVER['REMOTE_ADDR'] == '::
 {
 $url = $_SERVER['REQUEST_URI'];//die;
 $param = explode('/', $url);
-if (env('APP_ENV') === 'production') {
+if (env('APP_ENV') === 'production' || env('APP_ENV') === 'testing') {
    
    $section = $param['3'];
    
