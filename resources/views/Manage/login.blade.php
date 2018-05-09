@@ -6,11 +6,11 @@ $url = $_SERVER['REQUEST_URI'];//die;
 $param = explode('/', $url);
 if (env('APP_ENV') === 'production' || env('APP_ENV') === 'testing') {
    
-   $section = $param['3'];
+   $section = base64_decode($param['3']);
    
 }else
 {
-  $section = $param['4'];
+  $section = base64_decode($param['4']);
  // echo $section;die;
 }
 if($section == '1')
@@ -20,10 +20,10 @@ $string = '1';
 else if ($section == '2') {
 $string = '2';
 }
-else
-{
-$string = base64_decode($section);
-}
+// else
+// {
+// $string = base64_decode($section);
+// }
 if(Session::has('userdata'))
    { 
       $value = session('userdata');

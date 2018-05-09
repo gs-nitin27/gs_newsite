@@ -1,7 +1,17 @@
 <?php 
 if($_SERVER['REMOTE_ADDR'] == '182.69.203.174' || $_SERVER['REMOTE_ADDR'] == '::1')
 {
-
+$url = $_SERVER['REQUEST_URI'];//die;
+$param = explode('/', $url);
+if (env('APP_ENV') === 'production' || env('APP_ENV') === 'testing') {
+   
+   $section = $param['3'];
+   
+}else
+{
+  $section = $param['4'];
+ // echo $section;die;
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -209,7 +219,22 @@ box-shadow: rgba(255,255,255, 0.75) 1.5em 0 0 0, rgba(255,255,255, 0.75) 1.1em 1
                                     </label>
                                 </div>
                                 </div>
-                                <div class="form-group row" id="prof">
+
+                                <div class="form-group row" id="coach_reg">
+                                    <label class="col-lg-3 col-form-label form-control-label">Register as/with</label>
+                                    <div class="form-check form-check-inline">
+                                    <label class="form-check-label">
+                                        <input class="form-check-input" type="radio" name="reg_type" onchange="show_org(1)"> Indivisual
+                                    </label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <label class="form-check-label">
+                                        <input class="form-check-input" type="radio" name="reg_type" onchange="show_org(2)"> Organisation
+                                    </label>
+                                </div>
+                                </div>
+
+                                <!-- <div class="form-group row" id="prof">
                                     <label class="col-lg-3 col-form-label form-control-label">Proffession</label>
                                     <div class="col-lg-9">
                                        <span id="rproffession" class="invalid"><p></p></span>
@@ -221,14 +246,15 @@ box-shadow: rgba(255,255,255, 0.75) 1.5em 0 0 0, rgba(255,255,255, 0.75) 1.1em 1
                                           <option value="5">Academy manager</option>
                                         </select>
                                     </div>
-                                  </div>
+                                  </div> -->
                                 
-                                <div class="card-header" id="org_div">
-                                  <span>Add</span>
-                                <h3 class="mb-0"><center>Add Company Info</center></h3>
-                                </div>
+                                
                 <input type="hidden" class="form-control" id="org_id" />
                 <div  id="org_form">
+                <div class="card-header"">
+                                  
+                                <h3 class="mb-0"><center>Add Company Info</center></h3>
+                                </div>
                 <form class="form-horizontal" role="form">
                    <div class="form-group row">
                         <label class="col-lg-3 col-form-label form-control-label">Organisation Name</label>
@@ -236,6 +262,21 @@ box-shadow: rgba(255,255,255, 0.75) 1.5em 0 0 0, rgba(255,255,255, 0.75) 1.1em 1
                             <span id="jorg_name" class="invalid"><p></p></span>
                             <input class="form-control" type="text" id="org_name" placeholder="Organisation Name">
                         </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-lg-3 col-form-label form-control-label">Organisation Type</label>
+                        <div class="col-lg-9">
+                                       <span class="invalid"><p></p></span>
+                                        <select class="form-control" size="0" id="org_type">
+                                          <option value="">--Select--</option>
+                                          <option value="5">Club</option>
+                                          <option value="5">Academy</option>
+                                        </select>
+                                    </div>
+                        <!-- <div class="col-lg-9">
+                            <span id="jorg_name" class="invalid"><p></p></span>
+                            <input class="form-control" type="text" id="org_name" placeholder="Organisation Name">
+                        </div> -->
                     </div>
                     <div class="form-group row">
                         <label class="col-lg-3 col-form-label form-control-label">About</label>
@@ -313,7 +354,33 @@ box-shadow: rgba(255,255,255, 0.75) 1.5em 0 0 0, rgba(255,255,255, 0.75) 1.1em 1
                 
 </body>
 <script type="text/javascript">
+  // OPTIONS BASED ON USER TYPE REGISTRATION
+  var select  = '<?php echo $section; ?>';
+  if(select == '1')
+  {
+   $('#proffession :selected').text('Recruiter');
+   $('#proffession').val('5');
+   $('#coach_reg').hide();
+  }
+  else if(select == '2')
+  {
+   $('#proffession :selected').text('Coach');
+   $('#proffession').val('2');
+   $('#coach_reg').show();
+  }
+  else
+  { 
+    $('#coach_reg').hide();
+    $('#proffession :selected').text('Manager');
+    $('#proffession').val('5');
+  }
+
+  //user type option select code ends here
+
+
+
   var user_info_data = '';
+  var a = '';
   window.register_validation = function register_validation(){};
   var url = '<?php echo config('constant.ENV_URL')?>';
   $(".form_datetime").datepicker({format: 'yyyy-mm-dd'});
@@ -336,10 +403,10 @@ box-shadow: rgba(255,255,255, 0.75) 1.5em 0 0 0, rgba(255,255,255, 0.75) 1.1em 1
          $('#co_email').val(data.email);
         $('#name').val(data.data.name);
       }
-      if(window.location.href.substr(window.location.href.lastIndexOf('/') +1) == '1')
-      {
-        $("#prof").hide();
-      }
+      // if(window.location.href.substr(window.location.href.lastIndexOf('/') +1) == '1')
+      // {
+      //   $("#prof").hide();
+      // }
      }
      if(window.location.pathname.split("/").pop() == '1')
      {
@@ -461,7 +528,8 @@ if($('#proffession').val() == '')
 {  
    $('#rproffession').text('');
 }
-
+if(a == '2')
+{
 if($('#org_name').val()=='')
   {
      $('#jorg_name').html('<p>*Company name required.</p>');
@@ -518,6 +586,7 @@ if($('#co_email').val()=='')
   {
    $('#jemail').html('');
   }      
+}
 if(i == 0)
 {
   return true;
@@ -612,7 +681,6 @@ data:data,
 success:function(result)
 {
    alert_msg("Sucessfully Registered");
-  console.log(JSON.stringfy(result));
   return;
 }
 });
@@ -620,18 +688,17 @@ success:function(result)
 
 
 }
-$('#org_div').click(function(){
-
-$('#org_form').toggle();
-});
-$('#proffession').on('change',function(){
-
-if($(this).val() == '2')
+function show_org(a) 
 {
-  $('#user_type').show();
+ if(a=='1')
+    {
+    $('#org_form').hide();
+    }
+ else
+    {
+    $('#org_form').show();  
+    }
 }
-
-});
 </script>
 <div id="alert" class="modal fade">
   <div class="modal-dialog" >
@@ -649,8 +716,9 @@ if($(this).val() == '2')
 <div class="loading" hidden>Loading&#8230;</div>   
 </html>
 <?php 
-}else
+}
+else
 {
 Redirect::to('/')->send();
-} 
+}
 ?>

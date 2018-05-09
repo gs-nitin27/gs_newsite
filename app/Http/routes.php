@@ -54,6 +54,9 @@ Route::get('get_Tounament','WebController@get_Tounament');
 Route::get('sports-trials-in-india.html',function(){
            return View::make('trials');
 });
+Route::get('partner.html',function(){
+           return View::make('partner');
+});
 Route::get('event-detail/{id}','WebController@event_detail');
 Route::get('job-detail/{id}','WebController@job_detail');
 
