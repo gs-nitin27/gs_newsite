@@ -231,6 +231,7 @@
           $.ajax({
           url:url+'/angularapi.php?act=getjoblist&id='+sess_userid,
           method:"GET",
+          crossDomain: true,
           dataType:"text",
           success:function(result)
           {  clearconsole();
@@ -325,6 +326,7 @@
        $.ajax({
         url:url+'/angularapi.php?act=addOrg',
         method:"POST",
+        crossDomain: true,
         data:org_data,
         success:function(result)
         {//console.log(result);return;
@@ -357,6 +359,7 @@
         $.ajax({
         url:url+'/angularapi.php?act=getorgdetails&userid='+sess_userid,
         method:"GET",
+        crossDomain: true,
         // data:org_data,
         success:function(result)
         {
