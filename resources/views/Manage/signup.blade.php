@@ -379,6 +379,7 @@ $("#btnLogin").click(function(event) {
    $.ajax({
       url:url+'/user_access_controller.php?act=gs_signup',
       method:'POST',
+      crossDomain: true,
       data:user_info_data,
       dataType:'text',
       async:false,
@@ -580,6 +581,7 @@ function add_organisation(sess_userid)
        $.ajax({
         url:url+'/angularapi.php?act=addOrg',
         method:"POST",
+        crossDomain: true,
         data:org_data,
         dataType:'text',
         success:function(result)

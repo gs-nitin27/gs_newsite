@@ -26,7 +26,7 @@
               ?>
                 <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                   Business <b class="caret"></b>
+                   Partners <b class="caret"></b>
                 </a>
                 <ul class="dropdown-menu">
                     <li><a class="" href="{{url('/landing-job')}}">  Job posting</a></li>
