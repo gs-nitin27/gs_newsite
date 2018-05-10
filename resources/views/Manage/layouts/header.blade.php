@@ -55,6 +55,7 @@ $org_id = '';
                 <ul><img src="{{$sess_image}}" height="50" width="50" pull-right>   
                     <li><a href="{{url('manage/my_profile/')}}<?php echo '/'.$crt_user_id; ?>"><i class="glyphicons glyphicons-user pull-right close_mySidenav"></i>{{$sess_name}}</a></li>
                     <li><a href="#"><i class="fa fa-times pull-right close_mySidenav"></i></a></li>
+                    <li><a href="{{url('/manage/dashbo')}}"><i class="fa fa-dashboard"></i>Dashboard</a></li>
                     <li><a href="{{url('/manage/job/transaction_list')}}"><i class="fa fa-inr"></i>My transaction</a></li>
                     <li><a href="javascript:void(0)"><i class="fa fa-mobile"></i>Get App</a></li>
                     <!-- <li><a href="#"><i class="fa fa-briefcase"></i>Job</a></li>
