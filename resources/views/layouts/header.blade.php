@@ -21,14 +21,10 @@
               <li><a href="{{url('/sports-trials-in-india.html')}}">Trial</a></li>
              <?php
                if (env('APP_ENV') == 'local') {
-    
+                   
 
               ?>
-                
-                        <?php }?>
-              <li ><a href="{{url('/aboutus')}}">About us</a></li>
-              <li ><a href="{{url('/career')}}">Careers</a></li>
-              <li class="dropdown">
+                <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                    Partners <b class="caret"></b>
                 </a>
@@ -43,6 +39,10 @@
                     <li><a class="" href="{{url('/tournament')}}">Organize tournament </a></li>
                 </ul -->
               </li>
+                        <?php }?>
+              <li ><a href="{{url('/aboutus')}}">About us</a></li>
+              <li ><a href="{{url('/career')}}">Careers</a></li>
+              
 
           <!--     <li><a href="{{url('/support')}}">Contact Us</a></li> -->
 

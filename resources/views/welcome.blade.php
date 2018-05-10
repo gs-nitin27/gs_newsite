@@ -602,143 +602,44 @@ Overall, sports events in India are always amusing to unite with. Every year we 
             <img class="img-responsive" src="img/iphone-img.jpg">
              </div> 
               </div> -->
-         <div class="margin15 clearfix"></div>
-           <div class="team-bg" style="display: none;">
-             <div class="margin15 clearfix"></div>
+         
+           <div class="testimonial-bg">
+             
                <div class="container">
                 <div class="row">
-                  <div class="white-heading">
-                  <h3>Our Team</h3>
-                  <p>See what’s included in the App</p>
+                  <div class="heading-center h3">
+                  <h3>Testimonials</h3>
                  </div>
                  <div class="owl-carousel owl-theme">
-                
-                    <div class="item">
-                     <a href="team-detail.php">
-                   <img src="public/img/dp.png">
-                   <h4>Anirudh Singh</h4>
-                   <span>Founder & Product Architect</span>
-                    <div class="socails">
-                       <ul>
-                        <li><a href="#">
-                         <span class="fb"><i class="fa fa-facebook" aria-hidden="true"></i></span>
-                           </a>
-                            </li>
-                        <li>
-                        <a href="#"><span class="twitter"><i class="fa fa-twitter" aria-hidden="true"></i></span></a></li>
-                        <li><a href="#">
-                        <span class="google"><i class="fa fa-google-plus" aria-hidden="true"></i>
-                          </span></a></li>
-                         </ul>
-                       </div>
-                       </a>
-                     </div>
-                     
+                 
 
-                     <div class="item">
+                 <div class="item">
                        <a href="team-detail.php">
-                   <img src="public/img/dp2.png">
-                   <h4>NITIN AGARWAL</h4>
-                   <span>Head, Web Development</span>
-                    <div class="socails">
-                       <ul>
-                        <li><a href="#">
-                         <span class="fb"><i class="fa fa-facebook" aria-hidden="true"></i></span>
-                           </a>
-                            </li>
-                        <li>
-                        <a href="#"><span class="twitter"><i class="fa fa-twitter" aria-hidden="true"></i></span></a></li>
-                        <li><a href="#">
-                        <span class="google"><i class="fa fa-google-plus" aria-hidden="true"></i>
-                          </span></a></li>
-                         </ul>
-                       </div>
-                       </a>
+                   <img src="public/img/tmnl1.png">
+                   <i><h4>"I have got selected in Punjab United FC Trials. Behind my success, GetSporty has played an important role. Thankyou for your Support!"</h4></i>
+                   <span><b><h5>Ishwar Anjana, Football Player from Indore<h5></b></span>
+                    </a>
                      </div>
  
-                     <div class="item">
-                       <a href="team-detail.php">
-                   <img src="public/img/dp3.png">
-                   <h4>Sandeep Kumar Singh</h4>
-                   <span>Head, Android Development</span>
-                    <div class="socails">
-                       <ul>
-                        <li><a href="#">
-                         <span class="fb"><i class="fa fa-facebook" aria-hidden="true"></i></span>
-                           </a>
-                            </li>
-                        <li>
-                        <a href="#"><span class="twitter"><i class="fa fa-twitter" aria-hidden="true"></i></span></a></li>
-                        <li><a href="#">
-                        <span class="google"><i class="fa fa-google-plus" aria-hidden="true"></i>
-                          </span></a></li>
-                         </ul>
-                       </div>
-                       </a>
-                     </div>
-
                       <div class="item">
-                        <a href="team-detail.php">
-                   <img src="public/img/dp4.png">
-                   <h4>Kumar Gaurav</h4>
-                   <span>Android Development</span>
-                    <div class="socails">
-                       <ul>
-                        <li><a href="#">
-                         <span class="fb"><i class="fa fa-facebook" aria-hidden="true"></i></span>
-                           </a>
-                            </li>
-                        <li>
-                        <a href="#"><span class="twitter"><i class="fa fa-twitter" aria-hidden="true"></i></span></a></li>
-                        <li><a href="#">
-                        <span class="google"><i class="fa fa-google-plus" aria-hidden="true"></i>
-                          </span></a></li>
-                         </ul>
-                       </div>
-                       </a>
+                       <a href="team-detail.php">
+                   <img src="public/img/tmnl3.jpeg">
+                   <i><h4>"I really liked this website.  Thanks for your kind support throughout the trials"</h4></i>
+                   <span><b><h5>Roshan C. Paslein, A football Player from Assam<h5></b></span>
+                    </a>
                      </div>
                      
-                 <div class="item">
-                   <a href="team-detail.php">
-                   <img src="public/img/dp.png">
-                   <h4>Anirudh Singh</h4>
-                   <span>Founder & Product Architect</span>
-                    <div class="socails">
-                       <ul>
-                        <li><a href="#">
-                         <span class="fb"><i class="fa fa-facebook" aria-hidden="true"></i></span>
-                           </a>
-                            </li>
-                        <li>
-                        <a href="#"><span class="twitter"><i class="fa fa-twitter" aria-hidden="true"></i></span></a></li>
-                        <li><a href="#">
-                        <span class="google"><i class="fa fa-google-plus" aria-hidden="true"></i>
-                          </span></a></li>
-                         </ul>
-                       </div>
-                       </a>
-                     </div>
+
 
                      <div class="item">
                        <a href="team-detail.php">
-                   <img src="public/img/dp2.png">
-                   <h4>NITIN AGARWAL</h4>
-                   <span>Head, Web Development</span>
-                    <div class="socails">
-                       <ul>
-                        <li><a href="#">
-                         <span class="fb"><i class="fa fa-facebook" aria-hidden="true"></i></span>
-                           </a>
-                            </li>
-                        <li>
-                        <a href="#"><span class="twitter"><i class="fa fa-twitter" aria-hidden="true"></i></span></a></li>
-                        <li><a href="#">
-                        <span class="google"><i class="fa fa-google-plus" aria-hidden="true"></i>
-                          </span></a></li>
-                         </ul>
-                       </div>
-                       </a>
-                     </div>
+                   <img src="public/img/tmnl2.jpeg">
+                   <i><h4>"I think Getsporty is the best experience because they provide a personal guidance to a Player and guide them regarding what is right and what is wrong.
+                    They provide all the information about trials in various locations in India. Getsporty having a team which constantly motivates to do better. 
+                    Thank you"</h4></i>
+                   <span><b><h5>Neeraj Kashyap, Football Player from Hardoi<h5></b></span>
+                   </a>
+                  </div>
 
                  
 
@@ -883,7 +784,7 @@ Overall, sports events in India are always amusing to unite with. Every year we 
                 $('#customers-testimonials3').owlCarousel({
                     loop: true,
                     center: true,
-                    items: 4,
+                    items: 3,
                     margin: 0,
                     autoplay:true,
                     dots:false,
@@ -952,7 +853,7 @@ Overall, sports events in India are always amusing to unite with. Every year we 
                 margin: 25,
                   dots:true,
                 responsiveClass: true,
-                 autoplay: true,
+                 autoplay: false,
                 responsive: {
                   0: {
                     items: 1,
@@ -963,7 +864,7 @@ Overall, sports events in India are always amusing to unite with. Every year we 
                     nav: false
                   },
                   1000: {
-                    items: 4,
+                    items: 3,
                     nav: true,
                    
                 
