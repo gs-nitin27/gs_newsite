@@ -258,7 +258,7 @@
                 card2 += '<section class="clearfix colSec"> <div class="colBox" id="'+data.id+'" onclick="getid(this);"> <figure><img class="img-responsive" src="'+image_url+'/job/'+data.image+'"></figure> <p class="">'+data.title+'</p> </div> <p class="cricket"><i class="fa fa-map-marker"></i>'+data.org_city+'- '+data.sport+'</p></section>';
                  }else if(data.publish < 0)
                  {
-                    card3 += '<section class="clearfix colSec"> <div class="colBox" id="'+data.id+'" onclick="getid(this);"> <figure><img class="img-responsive" src="'+image_url+'/job/'+data.image+'"></figure> <p class="">'+data.title+'</p> </div> <p class="cricket"><i class="fa fa-map-marker"></i>'+data.org_city+'- '+data.sport+'</p> <a href="{{url("/manage/View")}}" class="publishCard" onclick="get_job_id('+data.id+');">Republish</a> </section>';
+                    card3 += '<section class="clearfix colSec"> <div class="colBox" id="'+data.id+'" onclick="getid(this);"> <figure><img class="img-responsive" src="'+image_url+'/job/'+data.image+'"></figure> <p class="">'+data.title+'</p> </div> <p class="cricket"><i class="fa fa-map-marker"></i>'+data.org_city+'- '+data.sport+'</p> <a href="javascript:void(0)" class="publishCard" onclick="get_job_id('+data.id+');">Republish</a> </section>';
                  }
              
 
