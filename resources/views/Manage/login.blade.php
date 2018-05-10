@@ -181,7 +181,7 @@ function testAPI() {
 }
  // else
  //  {
- //    url_param = '<?php echo $string; ?>';
+ //    url_param = '<?php //echo $string; ?>';
  //  }
 /*  gapi.signin2.render('my-signin2', {
         'scope': 'profile email',

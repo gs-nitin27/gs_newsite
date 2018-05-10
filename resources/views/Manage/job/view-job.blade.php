@@ -137,7 +137,9 @@ $detail = $detail[0];
              </div>
 
 <script type="text/javascript">
-var id = '';
+// var url_string = window.location.href;
+//   var param = url_string.split('/');
+  var id = window.location.pathname.split("/").pop();
 // var getJobApplicants = function(){};
 window.getJobApplicants = function foo() {
     {
@@ -242,9 +244,6 @@ window.getJobApplicants = function foo() {
   return ageYear;
   }
 $(document).ready(function(){
-  var url_string = window.location.href;
-  var param = url_string.split('/');
-  id = param['6'];
   getJobApplicants();
 
   
