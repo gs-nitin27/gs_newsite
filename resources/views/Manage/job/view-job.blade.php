@@ -411,7 +411,7 @@ function recruitment_update(recruitment_data,act)
  setTimeout(function() {
               getJobApplicants();
 
-        }, 300000);    
+        }, 30000);    
 </script>
                        
 
