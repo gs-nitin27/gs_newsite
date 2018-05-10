@@ -232,7 +232,7 @@ console.log(data);
     }
     if(result.status==1)
     {      // for Successfull login
-      if(result.data.prof_id == '5')  // 5 for job creator
+      if(result.data.prof_id == '5' && result.data.prof_name == 'Recruiter')  // 5 for job creator
       {
       localStorage.setItem('userdata',JSON.stringify(result.data));
       set_data();

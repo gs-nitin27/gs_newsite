@@ -118,7 +118,8 @@ Route::group(array('prefix' => 'manage'), function()
        if ($request->session()->has('userdata')) {
            $request->session()->forget('userdata');
         }
-        return redirect('manage/login/1');
+        $login_url = 'manage/login/'.base64_encode(1);
+        return redirect($login_url);
     });
     Route::get('my_profile/{id}','ManageController@getAdminuserData');
     Route::post('welcome_mail','WebEmail@send_mail');

@@ -34,7 +34,7 @@
                 </a>
                 <ul class="dropdown-menu">
                     <li><a class="" href="{{url('/partner.html')}}">Partner With us</a></li>
-                    <li><a class="" href="{{url('/login/1')}}">Partner Login</a></li>
+                    <li><a class="" href="{{url('manage/login/')}}<?php echo '/'.base64_encode(1); ?>">Partner Login</a></li>
                     <!-- <li><a class="" href="{{url('/tournament')}}">Organize tournament </a></li> -->
                 </ul>
                 <!-- <ul class="dropdown-menu">

@@ -4,7 +4,8 @@ if($_SERVER['REMOTE_ADDR'] == '182.69.203.174' || $_SERVER['REMOTE_ADDR'] == '::
 {
 if(!Session::has('userdata'))
    {  $value = session('userdata');
-      Redirect::to('manage/login/1')->send();
+      $login_url = 'manage/login/'.base64_encode(1);
+      Redirect::to($login_url)->send();
   }else
    {
     $value = session('userdata');

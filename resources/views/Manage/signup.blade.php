@@ -234,7 +234,7 @@ box-shadow: rgba(255,255,255, 0.75) 1.5em 0 0 0, rgba(255,255,255, 0.75) 1.1em 1
                                 </div>
                                 </div>
 
-                                <!-- <div class="form-group row" id="prof">
+                                <div class="form-group row" id="prof" hidden>
                                     <label class="col-lg-3 col-form-label form-control-label">Proffession</label>
                                     <div class="col-lg-9">
                                        <span id="rproffession" class="invalid"><p></p></span>
@@ -246,7 +246,7 @@ box-shadow: rgba(255,255,255, 0.75) 1.5em 0 0 0, rgba(255,255,255, 0.75) 1.1em 1
                                           <option value="5">Academy manager</option>
                                         </select>
                                     </div>
-                                  </div> -->
+                                  </div>
                                 
                                 
                 <input type="hidden" class="form-control" id="org_id" />
@@ -269,8 +269,8 @@ box-shadow: rgba(255,255,255, 0.75) 1.5em 0 0 0, rgba(255,255,255, 0.75) 1.1em 1
                                        <span class="invalid"><p></p></span>
                                         <select class="form-control" size="0" id="org_type">
                                           <option value="">--Select--</option>
-                                          <option value="5">Club</option>
-                                          <option value="5">Academy</option>
+                                          <option value="club">Club</option>
+                                          <option value="academy">Academy</option>
                                         </select>
                                     </div>
                         <!-- <div class="col-lg-9">
@@ -422,7 +422,8 @@ $("#btnLogin").click(function(event) {
 
     }
     else
-    {$('.loading').show();
+    {
+      $('.loading').show();
        user_info_data = {
         'userid':userid,
         'loginType':data.loginType,
@@ -442,6 +443,8 @@ $("#btnLogin").click(function(event) {
 
         }
    user_info_data  = JSON.stringify(user_info_data);
+   //return;
+   //console.log(user_info_data);return;
    form.addClass('was-validated');
    $.ajax({
       url:url+'/user_access_controller.php?act=gs_signup',
@@ -455,23 +458,25 @@ $("#btnLogin").click(function(event) {
         var response  = JSON.parse(result);
         if(response.status==1)
         { 
-          if(add_organisation(response.data.userid) != 0)
+      if(a != '1')
           {
-             send_mail(response.data);
-            alert_msg("Thanks for registering with us");//return;
+          add_organisation(response.data.userid);
+          }
+          send_mail(response.data);
+          alert_msg("Thanks for registering with us");//return;
           window.location.href = "<?php echo url('/'); ?>"+"/manage/dashbo";
-          }
-          else
-          {
-            alert_msg("Something Went wrong, Please try after some time");
-          }
         }
-        $('.loading').hide();
-      }
-
-   });
-}
+      else
+        {
+          alert_msg("Something Went wrong, Please try after some time");
+        }
+          $('.loading').hide();
+        }
+     });
+   }
 });
+
+
 function register_validation()
 {
 var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
@@ -520,15 +525,15 @@ if($('#datepicker').val() == '')
 {
    $('#rdob').text('');
 }
-if($('#proffession').val() == '')
-{
-   $('#rproffession').text('*Please enter the proffession');
-   i++;
-}else
-{  
-   $('#rproffession').text('');
-}
-if(a == '2')
+// if($('#proffession').val() == '')
+// {
+//    $('#rproffession').text('*Please enter the proffession');
+//    i++;
+// }else
+// {  
+//    $('#rproffession').text('');
+// }
+if(a != '1')
 {
 if($('#org_name').val()=='')
   {
@@ -587,6 +592,7 @@ if($('#co_email').val()=='')
    $('#jemail').html('');
   }      
 }
+
 if(i == 0)
 {
   return true;
@@ -636,6 +642,7 @@ function add_organisation(sess_userid)
          { "id":$('#org_id').val(),//org_id,
            "userid":sess_userid,
            "org_name":$('#org_name').val(),
+           "type":$('#org_type').val(),
            "about":$('#about').val(),
            "address1":$('#address1').val(),
            "address2":$('#address2').val(),
@@ -671,23 +678,20 @@ function add_organisation(sess_userid)
      }
 function send_mail(data)
 {
+  $.ajax({
 
-$.ajax({
-
-url:"{{url('/manage/welcome_mail')}}",
-headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
-method:"POST",
-data:data,
-success:function(result)
-{
-   alert_msg("Sucessfully Registered");
-  return;
+  url:"{{url('/manage/welcome_mail')}}",
+  headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
+  method:"POST",
+  data:data,
+  success:function(result)
+  {
+     alert_msg("Sucessfully Registered");
+    return;
+  }
+  });
 }
-});
 
-
-
-}
 function show_org(a) 
 {
  if(a=='1')
