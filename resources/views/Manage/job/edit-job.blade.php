@@ -273,7 +273,7 @@ $image_data = base64_encode(file_get_contents($image_url));
         $('#create_job').click(function(){
         if(validate())
           {
-           $('.loading').show(); 
+          // $('.loading').show(); 
            create_job();
           }
       });
@@ -320,12 +320,10 @@ $image_data = base64_encode(file_get_contents($image_url));
                     data: JSON.stringify(job_data),
                     dataType: "text",
                      beforeSend: function(){
-                           $('.loading').show()
+                           showLoader();
                        },
-                      complete: function(){
-                           $('.loading').hide();
-                      },
                     success: function(result){
+                    hideLoader();
                     result = JSON.parse(result);
                     if(result.status == '1')
                     {   
@@ -432,6 +430,14 @@ $image_data = base64_encode(file_get_contents($image_url));
         //alert_msg(this);return;
         readURL(this);
     });
+    function  showLoader()
+    {
+        $('.loading').show();
+    }
+    function  hideLoader()
+    {
+        $('.loading').hide();
+    }
     </script>
     @stop
     
