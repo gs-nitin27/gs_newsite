@@ -319,6 +319,12 @@ $image_data = base64_encode(file_get_contents($image_url));
                     url: url+'/create_database.php?act=createjob',
                     data: JSON.stringify(job_data),
                     dataType: "text",
+                     beforeSend: function(){
+                           $('.loading').show()
+                       },
+                      complete: function(){
+                           $('.loading').hide();
+                      }
                     success: function(result){
                     result = JSON.parse(result);
                     if(result.status == '1')
@@ -330,7 +336,7 @@ $image_data = base64_encode(file_get_contents($image_url));
                     {
                         alert_msg('Something went wrong');
                     }
-                    $('.loading').hide();
+                    
                    }
                   }); 
             }
