@@ -85,7 +85,7 @@ if(Session::has('userdata'))
            <div class="login logInDiv">
                <div class="">
                       <h3 class="login_heading">GETSPORTY</h3>
-                      <div class="form-group form_1">
+                      <div class="form-group form_1" style="color: #000">
                        <p>Thanks for registering with us</p>  
                       </div>
 
@@ -110,9 +110,9 @@ if(Session::has('userdata'))
 <script src="{{asset('public/manage_assets/js/bootstrap.min.js')}}"></script>
 <script type="text/javascript" src="{{asset('public/manage_assets/js/Managelogin.js')}}"></script>
 <script type="text/javascript">
-    // setTimeout(function() {
-    //           window.location = '<?php echo env('SESSION_DOMAIN'); ?>';
-    //     }, );   
+    setTimeout(function() {
+              window.location = '<?php echo env('SESSION_DOMAIN'); ?>';
+        }, 3000);   
 </script>
 </html><?php }
 else
