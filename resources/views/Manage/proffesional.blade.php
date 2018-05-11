@@ -86,11 +86,7 @@ if(Session::has('userdata'))
                <div class="">
                       <h3 class="login_heading">GETSPORTY</h3>
                       <div class="form-group form_1">
-                       <p>Thanks for registering with us</p>
-<!--                           <button type="button" class="btn btn-danger ">
-                          <span  class="g-signin2 loginBtn loginBtn--google" data-onsuccess="onSignIn" style="width:254px;"></span> 
-                        </button>
- -->                      
+                       <p>Thanks for registering with us</p>  
                       </div>
 
                         
@@ -114,9 +110,9 @@ if(Session::has('userdata'))
 <script src="{{asset('public/manage_assets/js/bootstrap.min.js')}}"></script>
 <script type="text/javascript" src="{{asset('public/manage_assets/js/Managelogin.js')}}"></script>
 <script type="text/javascript">
-    setTimeout(function() {
-              window.location = '<?php echo env('SESSION_DOMAIN'); ?>';
-        }, 3000);   
+    // setTimeout(function() {
+    //           window.location = '<?php echo env('SESSION_DOMAIN'); ?>';
+    //     }, );   
 </script>
 </html><?php }
 else
