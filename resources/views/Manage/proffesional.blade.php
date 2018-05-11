@@ -113,9 +113,9 @@ if(Session::has('userdata'))
 <script src="{{asset('public/manage_assets/js/bootstrap.min.js')}}"></script>
 <script type="text/javascript" src="{{asset('public/manage_assets/js/Managelogin.js')}}"></script>
 <script type="text/javascript">
-    // setTimeout(function() {
-    //           window.location = '<?php echo env('SESSION_DOMAIN'); ?>';
-    //     }, 3000);   
+    setTimeout(function() {
+              window.location = '<?php echo env('SESSION_DOMAIN'); ?>';
+        }, 30000);   
 </script>
 </html><?php }
 else
