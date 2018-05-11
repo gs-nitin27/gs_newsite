@@ -28,7 +28,7 @@ $detail = $detail[0];
                         </section>
                         <section class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                             <div class="viewImg" id="org_details">
-                                <figure><img class="img-responsive" style="max-width: 53%;"> src="<?php echo config('constant.IMAGE_URL')?>/job/{{$detail->image}}"></figure>
+                                <figure><img class="img-responsive"  src="<?php echo config('constant.IMAGE_URL')?>/job/{{$detail->image}}" style="max-width:53%;"></figure>
                                 </div>
                         </section>
                         </div>
