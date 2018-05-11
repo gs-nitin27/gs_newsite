@@ -273,6 +273,7 @@ $image_data = base64_encode(file_get_contents($image_url));
         $('#create_job').click(function(){
         if(validate())
           {
+           $('.loading').show(); 
            create_job();
           }
       });
@@ -311,7 +312,7 @@ $image_data = base64_encode(file_get_contents($image_url));
                 "old_image":'{{$data[0]->image}}'
                 };
                 //console.log(JSON.stringify(job_data));return;
-                $('.loading').show();
+                
                 $.ajax({
                     type: "POST",
                     async:false,
@@ -322,12 +323,12 @@ $image_data = base64_encode(file_get_contents($image_url));
                     result = JSON.parse(result);
                     if(result.status == '1')
                     {   
-                        alert_msg('Job Sucessfully created');
+                        alert_msg('Job sucessfully updated');
                         window.location.href = "{{url('/manage/dashbo')}}";
                     }
                     else
                     {
-                        alert_msg('Something went Wrong');
+                        alert_msg('Something went wrong');
                     }
                     $('.loading').hide();
                    }
