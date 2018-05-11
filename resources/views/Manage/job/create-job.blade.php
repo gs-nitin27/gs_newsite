@@ -58,7 +58,7 @@
                             <aside class="col-lg-6 col-md-6 col-sm-6 col-xs-6 mobView">
                                 <div class="form-group ">
                                     <label for="" class="">Job sport</label>
-                                     <select class="form-control" id="sport" name="sport" onclick="getSportsList()">
+                                     <select class="form-control" id="sport" name="sport">
                                         
                                     </select><span id="jsport"></span>
                                 </div>
@@ -271,7 +271,7 @@
          }
        });
         }getorg_details();
-        // getSportsList();
+         getSportsList();
         
         $('#create_job').click(function(){
         if(validate())
