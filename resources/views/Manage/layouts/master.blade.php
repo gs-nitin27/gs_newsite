@@ -1,6 +1,6 @@
 <?php 
 
-if($_SERVER['REMOTE_ADDR'] == '182.69.203.174' || $_SERVER['REMOTE_ADDR'] == '::1')
+if($_SERVER['REMOTE_ADDR'] == '171.61.135.200' || $_SERVER['REMOTE_ADDR'] == '::1')
 {
 if(!Session::has('userdata'))
    {  $value = session('userdata');
