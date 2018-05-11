@@ -93,7 +93,7 @@ $sess_data = json_decode($value);
 
                                         <table class="table table-striped" style="font-weight: bold;">
                                         <form method="post" name="payuForm" action="https://secure.payu.in/_payment">
-       <input type="hidden" name="key" id="key" value="2g3RdB" />
+       <input type="hidden" name="key" id="key" value="rjQUPktU" />
        <input type="hidden" name="hash_string" id="hash_string" value="" />
        <input type="hidden" name="hash"  id="hash" value=""/>
        <input type="hidden" name="txnid" id="txnid" value="" />
