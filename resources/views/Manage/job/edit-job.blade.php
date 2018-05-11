@@ -280,7 +280,7 @@ $image_data = base64_encode(file_get_contents($image_url));
            
            // funtion for creating a job
            function create_job() 
-           {  
+           {   $('.loading').show();
                var job_data = {
                 "id":'{{$data[0]->id}}',
                 "userid":sess_userid,
@@ -330,14 +330,8 @@ $image_data = base64_encode(file_get_contents($image_url));
                     {
                         alert_msg('Something went wrong');
                     }
-                    
-                   },
-                   beforeSend: function(){
-                     showLoader();
-                  },
-                  complete: function(){
-                    hideLoader();
-                  }
+                    $('.loading').hide();
+                   }
                               }); 
             }
           //Create job function Ends here
@@ -432,14 +426,7 @@ $image_data = base64_encode(file_get_contents($image_url));
         //alert_msg(this);return;
         readURL(this);
     });
-    function  showLoader()
-    {
-        $('.loading').show();
-    }
-    function  hideLoader()
-    {
-        $('.loading').hide();
-    }
+   
     </script>
     @stop
     
