@@ -86,7 +86,10 @@ if(Session::has('userdata'))
                <div class="">
                       <h3 class="login_heading">GETSPORTY</h3>
                       <div class="form-group form_1" style="color: #000">
-                       <p>Thanks for registering with us</p>  
+                       <p>Thanks for registering with us</p>
+                       <p>Getsporty is gearing up to manage your business</p>
+                       <p>Stay Tuned</p>
+                       <p>We'll get back to you soon.</p>  
                       </div>
 
                         
