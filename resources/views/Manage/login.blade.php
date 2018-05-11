@@ -241,7 +241,7 @@ console.log(data);
       }else
 
       { 
-        window.location.href = "<?php echo url('/'); ?>"+"/professional/";
+        window.location.href = "<?php echo url('/'); ?>"+"/manage/professional/";
       }
     }
     else if(result.status==2) // for updating email and other info
