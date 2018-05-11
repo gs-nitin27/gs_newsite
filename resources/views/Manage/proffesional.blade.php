@@ -71,7 +71,7 @@ if(Session::has('userdata'))
 
 
   <div class="container">
-    <div class="col-sm-12">      
+    <div class="col-sm-12" style="margin-left: 31%;">      
       <div class="row rowtop">
 
         <!-- <div class="col-sm-6 pad28">
