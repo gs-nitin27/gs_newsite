@@ -84,16 +84,16 @@ if(Session::has('userdata'))
         <div class="col-sm-6 text-center">
            <div class="login logInDiv">
                <div class="">
-                      <p class="login_heading">GETSPORTY</p>
+                      <h3 class="login_heading">GETSPORTY</h3>
                       <div class="form-group form_1">
-                       
+                       <p>Thanks for registering with us</p>
 <!--                           <button type="button" class="btn btn-danger ">
                           <span  class="g-signin2 loginBtn loginBtn--google" data-onsuccess="onSignIn" style="width:254px;"></span> 
                         </button>
  -->                      
                       </div>
 
-                        <p style="color: black">OR</p>
+                        
 
                       <div class="form-group form_2">
                          <!--   <div class="fb-login-button" data-width="104" data-size="large" data-button-type="login_with" data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="false" onlogin="checkLoginState()" style="display: block" hidden></div>
