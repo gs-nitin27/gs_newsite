@@ -279,7 +279,7 @@ $image_data = base64_encode(file_get_contents($image_url));
            
            // funtion for creating a job
            function create_job() 
-           {  $('.loading').show();
+           {  
                var job_data = {
                 "id":'{{$data[0]->id}}',
                 "userid":sess_userid,
@@ -311,6 +311,7 @@ $image_data = base64_encode(file_get_contents($image_url));
                 "old_image":'{{$data[0]->image}}'
                 };
                 //console.log(JSON.stringify(job_data));return;
+                $('.loading').show();
                 $.ajax({
                     type: "POST",
                     async:false,
