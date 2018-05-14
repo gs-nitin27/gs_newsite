@@ -58,6 +58,29 @@
                   </div>
                   <div class="form-group">
                     <label  class="col-sm-2 control-label"
+                              for="inputEmail3">Type</label>
+                    <div class="col-sm-10">
+                        <span id="jtype" class="invalid"></span>
+                        <select class="form-control" size="0" id="org_type">
+                          <option value="">--Select--</option>
+                          <option value="club">Club</option>
+                          <option value="academy">Academy</option>
+                        </select>
+                    </div>
+                  </div>
+                  <!-- <div class="form-group">
+                        <label class="col-lg-3 col-form-label form-control-label">Organisation Type</label>
+                        <div class="col-lg-9">
+                       <span class="invalid"><p></p></span>
+                        <select class="form-control" size="0" id="org_type">
+                          <option value="">--Select--</option>
+                          <option value="club">Club</option>
+                          <option value="academy">Academy</option>
+                        </select>
+                        </div>
+                    </div> -->
+                  <div class="form-group">
+                    <label  class="col-sm-2 control-label"
                               for="inputEmail3">About</label>
                     <div class="col-sm-10">
                         <span id="jabout" class="invalid"></span>
@@ -311,6 +334,7 @@
          { "id":$('#org_id').val(),//org_id,
            "userid":sess_userid,
            "org_name":$('#org_name').val(),
+           "type":$('#org_type').val(),
            "about":$('#about').val(),
            "address1":$('#address1').val(),
            "address2":$('#address2').val(),
@@ -329,26 +353,25 @@
         crossDomain: true,
         data:org_data,
         success:function(result)
-        {//console.log(result);return;
-          var resp_data = result;//JSON.parse(result);
+        { var resp_data = JSON.parse(result);//console.log(result);return;
+          resp_data = resp_data.status;//JSON.parse(result);
            if(resp_data != '0')
            { var org_name = '<a href="javascript:void(0)" data-target="#myModalHorizontal" onclick="getorg_details();" data-toggle="modal" style="text-decoration:none"><h1><span class="company">'+$('#org_name').val()+'</span><h1></a>';
-             alert_msg("Organisation Created");
+             alert("Organisation Created");
              $('#org_div').html('');
              $('#org_div').html(org_name);
              var userdata = JSON.parse(localStorage.getItem('userdata'));
              var obj = {};
-             // obj["org_id"] = resp_data;
-             // obj["org_name"] = $('#org_name').val();
-             userdata.org_data.org_id = resp_data;
+             userdata.org_data.org_id = JSON.parse(result);
              userdata.org_data.org_name = $('#org_name').val();
-             userdata.org_data.push(obj);
+             //userdata.org_data.push(obj);
+             console.log(JSON.stringify(userdata));
              localStorage.setItem('userdata',JSON.stringify(userdata));
              $('.modal').modal('hide');
            }
            else
            {
-           alert_msg('Something went wrong'); 
+           alert('Something went wrong'); 
            }
           }
         });
@@ -369,6 +392,7 @@
             var org_data = resp_data.data;
             $('#org_id').val(org_data.id);
             $('#org_name').val(org_data.org_name);
+            $('#org_type').val(org_data.type);
             $('#about').val(org_data.about);
             $('#address1').val(org_data.address1);
             $('#address2').val(org_data.address2);
