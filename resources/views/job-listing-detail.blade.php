@@ -99,9 +99,10 @@
         			 <p>Organazition City : <span>{{$name[0]->org_city}}</span></p>
         			 
         			  <p>Organazition Pin : <span>{{$name[0]->pin}}</span></p>
-        			  
+        			  @if($name[0]->is_native == '1')
         			   <p>For more info : <span class="read-c"><a href="{{$name[0]->job_link}}"> Click here</a> </span></p>
-        			    </div>
+        			  @endif
+                  </div>
         		      </div>
         		    </div>
   	 <div class="clearfix margin20"></div>
