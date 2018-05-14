@@ -99,7 +99,7 @@
         			 <p>Organazition City : <span>{{$name[0]->org_city}}</span></p>
         			 
         			  <p>Organazition Pin : <span>{{$name[0]->pin}}</span></p>
-        			  <?php if($name[0]->is_native == '1'){?>
+        			  <?php if($name[0]->is_native == '0'){?>
         			   <p>For more info : <span class="read-c"><a href="{{$name[0]->job_link}}"> Click here</a> </span></p>
         			  <?php }?>
                   </div>
