@@ -667,6 +667,17 @@ body{
       <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-suitcase fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Latest Result</h2>
        @if(!empty($user_detail->LatestResults))
        @foreach ($user_detail->LatestResults as $latest_result)
+      @if({{$basic->sport}} == 'Swimming')
+      <div class="w3-container">
+      <h3>{{$latest_result->nameOfCompetation}}</h3>
+      <h5 class="w3-opacity"><b>Date of competetion : </b></h5><p>{{$latest_result->dateOfCompetation}}</p> 
+      <h5 class="w3-opacity"><b>Round / Heat : </b></h5><p>{{$latest_result->roundOrHeat}}</p>
+      <h5 class="w3-opacity"><b>Result : </b></h5><p>{{$latest_result->result}}</p>
+      <h5 class="w3-opacity"><b>Event : </b></h5><p>{{$latest_result->event}}</p>
+      <h5 class="w3-opacity"><b>Time : </b></h5><p>{{$latest_result->time}}</p> 
+      <hr>
+      </div>
+      @else
       <div class="w3-container">
       <h3>{{$latest_result->nameOfCompetation}}</h3>
       <h5 class="w3-opacity"><b>Date of competetion : </b></h5><p>{{$latest_result->dateOfCompetation}}</p> 
@@ -675,6 +686,7 @@ body{
       <h5 class="w3-opacity"><b>Round : </b></h5><p>{{$latest_result->round}}</p> 
       <hr>
       </div>
+      @endif
       @endforeach
       @endif
       </div>
