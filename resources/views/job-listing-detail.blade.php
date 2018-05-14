@@ -18,7 +18,7 @@
 @section('content')
 
 
-
+<?php print_r($name[0]);die; ?>
      <div class="joblist-bg bannerBgSec">
      <div class="container">
        	    <div class="row">
