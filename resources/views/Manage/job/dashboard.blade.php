@@ -364,8 +364,6 @@
              var obj = {};
              userdata.org_data.org_id = JSON.parse(result);
              userdata.org_data.org_name = $('#org_name').val();
-             //userdata.org_data.push(obj);
-             console.log(JSON.stringify(userdata));
              localStorage.setItem('userdata',JSON.stringify(userdata));
              $('.modal').modal('hide');
            }
