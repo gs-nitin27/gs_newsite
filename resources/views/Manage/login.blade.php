@@ -226,7 +226,7 @@ console.log(data);
     data: data,
     dataType: "text",
     success: function(result) {
-      console.log(result);return;
+      //console.log(result);return;
       $('.loading').hide();
       var result  = JSON.parse(result);
       if(result.status==4){// for Successfull login of athlete and parent
