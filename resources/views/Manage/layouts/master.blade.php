@@ -1,7 +1,7 @@
 <?php 
 
-if($_SERVER['REMOTE_ADDR'] == '171.61.135.200' || $_SERVER['REMOTE_ADDR'] == '::1')
-{
+// if($_SERVER['REMOTE_ADDR'] == '171.61.135.200' || $_SERVER['REMOTE_ADDR'] == '::1')
+// {
 if(!Session::has('userdata'))
    {  $value = session('userdata');
       $login_url = 'manage/login/'.base64_encode(1);
@@ -31,6 +31,7 @@ if(!Session::has('userdata'))
    </html>
 
 
-<?php } }else{ Redirect::to('/')->send();}?>
+<?php } //}else{ Redirect::to('/')->send();}
+?>
 
     

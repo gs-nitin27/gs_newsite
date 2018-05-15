@@ -1,6 +1,6 @@
 <?php 
-if($_SERVER['REMOTE_ADDR'] == '171.61.135.200' || $_SERVER['REMOTE_ADDR'] == '::1')
-{
+// if($_SERVER['REMOTE_ADDR'] == '171.61.135.200' || $_SERVER['REMOTE_ADDR'] == '::1')
+// {
 $url = $_SERVER['REQUEST_URI'];//die;
 $param = explode('/', $url);
 if (env('APP_ENV') === 'production' || env('APP_ENV') === 'testing') {
@@ -730,9 +730,9 @@ function show_org(a)
 <div class="loading" hidden>Loading&#8230;</div>   
 </html>
 <?php 
-}
-else
-{
-Redirect::to('/')->send();
-}
+// }
+// else
+// {
+// Redirect::to('/')->send();
+// }
 ?>

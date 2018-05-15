@@ -1,7 +1,7 @@
 <?php 
 
-if($_SERVER['REMOTE_ADDR'] == '171.61.135.200' || $_SERVER['REMOTE_ADDR'] == '::1')
-{
+// if($_SERVER['REMOTE_ADDR'] == '171.61.135.200' || $_SERVER['REMOTE_ADDR'] == '::1')
+// {
 $url = $_SERVER['REQUEST_URI'];//die;
 $param = explode('/', $url);
 if (env('APP_ENV') === 'production' || env('APP_ENV') === 'testing') {
@@ -337,9 +337,9 @@ console.log(data);
     </div>
   </div>
 </div>
-</html><?php }
-else
-{
-   Redirect::to('/')->send();
-}
+</html><?php //}
+ // else
+ // {
+ //    Redirect::to('/')->send();
+ // }
 ?>
