@@ -402,7 +402,11 @@ box-shadow: rgba(255,255,255, 0.75) 1.5em 0 0 0, rgba(255,255,255, 0.75) 1.1em 1
         $('#email').val(data.email);
          $('#co_email').val(data.email);
         $('#name').val(data.data.name);
+      }else
+      {
+        $('#email_div').show();
       }
+      cosole.log(JSON.stringify(data));
       // if(window.location.href.substr(window.location.href.lastIndexOf('/') +1) == '1')
       // {
       //   $("#prof").hide();
