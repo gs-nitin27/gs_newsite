@@ -632,7 +632,7 @@ else
                 var place = autocomplete.getPlace();
                // console.log(place.address_components);
             });
-            var autocomplete = new google.maps.places.Autocomplete($("#address1")[0], {});
+            var autocomplete = new google.maps.places.Autocomplete($("#address2")[0], {});
             google.maps.event.addListener(autocomplete, 'place_changed', function() {
                 var place = autocomplete.getPlace();
                // console.log(place.address_components);
