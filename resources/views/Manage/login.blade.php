@@ -248,7 +248,7 @@ console.log(data);
     { 
       result.status = result.status;
       localStorage.setItem('userdata',result.data);
-      
+      window.location.href = "<?php echo url('/'); ?>"+"/manage/register/"+url_param;
       //alert_msg(result.status + JSON.stringify(result.data));//return;
     }
     else if(result.status==3) // for creating new record
