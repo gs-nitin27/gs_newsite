@@ -1,6 +1,6 @@
 <?php 
 
-if($_SERVER['REMOTE_ADDR'] == '182.69.203.174' || $_SERVER['REMOTE_ADDR'] == '::1')
+if($_SERVER['REMOTE_ADDR'] == '171.61.135.200' || $_SERVER['REMOTE_ADDR'] == '::1')
 {
 $url = $_SERVER['REQUEST_URI'];//die;
 $param = explode('/', $url);
@@ -73,7 +73,8 @@ if(Session::has('userdata'))
     text-decoration: none;
     transition: all 0.5s;
 }
- </style>   
+ </style> 
+  <a class="navbar-brand logo" href="{{url('/')}}"><img class="img-responsive" src="{{asset('public/img/logo.png')}}"></a>  
 <div id="fb-root"></div>
 <script>
 
@@ -240,14 +241,14 @@ console.log(data);
       }else
 
       { 
-        alert_msg("Invalid user");
+        window.location.href = "<?php echo url('/'); ?>"+"/manage/professional/";
       }
     }
     else if(result.status==2) // for updating email and other info
     { 
       result.status = result.status;
       localStorage.setItem('userdata',result.data);
-      window.location.href = "<?php echo url('/'); ?>"+"/manage/register/"+url_param;
+      
       //alert_msg(result.status + JSON.stringify(result.data));//return;
     }
     else if(result.status==3) // for creating new record

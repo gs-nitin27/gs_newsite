@@ -273,13 +273,14 @@ $image_data = base64_encode(file_get_contents($image_url));
         $('#create_job').click(function(){
         if(validate())
           {
+          // $('.loading').show(); 
            create_job();
           }
       });
            
            // funtion for creating a job
            function create_job() 
-           {  $('.loading').show();
+           {   $('.loading').show();
                var job_data = {
                 "id":'{{$data[0]->id}}',
                 "userid":sess_userid,
@@ -311,26 +312,35 @@ $image_data = base64_encode(file_get_contents($image_url));
                 "old_image":'{{$data[0]->image}}'
                 };
                 //console.log(JSON.stringify(job_data));return;
+                
                 $.ajax({
                     type: "POST",
                     async:false,
                     url: url+'/create_database.php?act=createjob',
                     data: JSON.stringify(job_data),
                     dataType: "text",
+                    beforeSend: function(){
+                        // Show image container
+                        $(".loading").show();
+                       },
                     success: function(result){
                     result = JSON.parse(result);
                     if(result.status == '1')
                     {   
-                        alert_msg('Job Sucessfully created');
+                        alert_msg('Job sucessfully updated');
                         window.location.href = "{{url('/manage/dashbo')}}";
                     }
                     else
                     {
-                        alert_msg('Something went Wrong');
+                        alert_msg('Something went wrong');
                     }
                     $('.loading').hide();
-                   }
-                  }); 
+                   },
+                   complete:function(){
+                        // Show image container
+                        $(".loading").hide();
+                       }
+                }); 
             }
           //Create job function Ends here
      });
@@ -424,6 +434,7 @@ $image_data = base64_encode(file_get_contents($image_url));
         //alert_msg(this);return;
         readURL(this);
     });
+   
     </script>
     @stop
     

@@ -20,46 +20,25 @@
               <li><a href="{{url('/sports-tournaments-in-india.html')}}">Tournament</a></li>
               <li><a href="{{url('/sports-trials-in-india.html')}}">Trial</a></li>
              <?php
-               if (env('APP_ENV') == 'local') {
+               if (env('APP_ENV') === 'testing') {
                    
 
               ?>
-                <li class="dropdown">
+              <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                    Partners <b class="caret"></b>
                 </a>
                 <ul class="dropdown-menu">
                     <li><a class="" href="{{url('/partner.html')}}">Partner With us</a></li>
                     <li><a class="" href="{{url('manage/login/')}}<?php echo '/'.base64_encode(1); ?>">Partner Login</a></li>
-                    <!-- <li><a class="" href="{{url('/tournament')}}">Organize tournament </a></li> -->
                 </ul>
-                <!-- <ul class="dropdown-menu">
-                    <li><a class="" href="{{url('/landing-job')}}">  Job posting</a></li>
-                    <li><a class="" href="{{url('/landing-event')}}">Create  event </a></li>
-                    <li><a class="" href="{{url('/tournament')}}">Organize tournament </a></li>
-                </ul -->
               </li>
+                
                         <?php }?>
+
               <li ><a href="{{url('/aboutus')}}">About us</a></li>
               <li ><a href="{{url('/career')}}">Careers</a></li>
-              
-
-          <!--     <li><a href="{{url('/support')}}">Contact Us</a></li> -->
-
-          </ul>
+            </ul>
            </div><!-- /.navbar-collapse -->
           </div><!-- /.container -->
          </nav><!-- /.navbar -->
-       <!-- <div class="full-banner bannerBgSec" id="top">
-          <div class="container">
-       	    <div class="row">
-       	      <div class="col-md-12">
-       		    <div class="ban-pera">
-       			  <h1>Lorem ispum is dummy </h1>
-       			  <h3>Lorem ispum is dummy text.</h3>
-       			  <button type="button" class="btn btn-read">Read More</button>
-         	     </div>
-                </div>
-               </div>
-              </div>
-             </div> -->

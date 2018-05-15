@@ -122,6 +122,10 @@ Route::group(array('prefix' => 'manage'), function()
         return redirect($login_url);
     });
     Route::get('my_profile/{id}','ManageController@getAdminuserData');
+    Route::get('/professional', function()
+         {
+             return View::make('Manage.proffesional');
+         });
     Route::post('welcome_mail','WebEmail@send_mail');
     });
     

@@ -99,9 +99,10 @@
         			 <p>Organazition City : <span>{{$name[0]->org_city}}</span></p>
         			 
         			  <p>Organazition Pin : <span>{{$name[0]->pin}}</span></p>
-        			  
+        			  <?php if($name[0]->is_native == '0'){?>
         			   <p>For more info : <span class="read-c"><a href="{{$name[0]->job_link}}"> Click here</a> </span></p>
-        			    </div>
+        			  <?php }?>
+                  </div>
         		      </div>
         		    </div>
   	 <div class="clearfix margin20"></div>
@@ -130,6 +131,7 @@
 				          <p> Location : <span> {{$name1[$i]->org_city}} </span></p>
 				           <p> Posted : <span> {{ $day }}</span></p>
 				             <p> Organisation Name : <span> {{$name1[$i]->organisation_name}} </span></p>
+
 				               <p class="read-c"> <a href="{{$name1[$i]->id}}" target="_blank">Read More</a></p>
                              </div>
                           </div>

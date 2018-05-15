@@ -614,7 +614,7 @@ Overall, sports events in India are always amusing to unite with. Every year we 
                  
 
                  <div class="item">
-                       <a href="team-detail.php">
+                       <a href="javascript:void(0)">
                    <img src="public/img/tmnl1.png">
                    <i><h4>"I have got selected in Punjab United FC Trials. Behind my success, GetSporty has played an important role. Thankyou for your Support!"</h4></i>
                    <span><b><h5>Ishwar Anjana, Football Player from Indore<h5></b></span>
@@ -622,7 +622,7 @@ Overall, sports events in India are always amusing to unite with. Every year we 
                      </div>
  
                       <div class="item">
-                       <a href="team-detail.php">
+                       <a href="javascript:void(0)">
                    <img src="public/img/tmnl3.jpeg">
                    <i><h4>"I really liked this website.  Thanks for your kind support throughout the trials"</h4></i>
                    <span><b><h5>Roshan C. Paslein, A football Player from Assam<h5></b></span>
@@ -632,7 +632,7 @@ Overall, sports events in India are always amusing to unite with. Every year we 
 
 
                      <div class="item">
-                       <a href="team-detail.php">
+                       <a href="javascript:void(0)">
                    <img src="public/img/tmnl2.jpeg">
                    <i><h4>"I think Getsporty is the best experience because they provide a personal guidance to a Player and guide them regarding what is right and what is wrong.
                     They provide all the information about trials in various locations in India. Getsporty having a team which constantly motivates to do better. 
