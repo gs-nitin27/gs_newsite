@@ -254,7 +254,7 @@ console.log(data);
     }
     else if(result.status==3) // for creating new record
     { 
-      //alert(url_param+'jitin');return;
+      result.data.data = data1;
       localStorage.setItem('userid',result.data.userid);
       localStorage.setItem('userdata',data);
       window.location.href = "<?php echo url('/'); ?>"+"/manage/register/"+url_param;

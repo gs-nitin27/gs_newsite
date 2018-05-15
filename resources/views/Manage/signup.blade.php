@@ -430,7 +430,7 @@ $("#btnLogin").click(function(event) {
       $('.loading').show();
        user_info_data = {
         'userid':userid,
-        'loginType':data.loginType,
+        'loginType':data.data.loginType,
         'email':$('#email').val(),
         'phone_no':$('#mobile').val(),
         'location':$('#location').val(),
