@@ -2,8 +2,16 @@
 @section('pageTitle','Home')
 @section('content')
 <?php
-$image_url = config('constant.IMAGE_URL').'/job/'.$data[0]->image;
+if(file_exists(config('constant.IMAGE_URL').'/job/'.$data[0]->image))
+{
+$image_url = config('constant.IMAGE_URL').'/job/'.$data[0]->image; 
 $image_data = base64_encode(file_get_contents($image_url));
+}else
+{
+$image_url = '';//config('constant.IMAGE_URL').'/job/'.$data[0]->image; 
+$image_data = '';
+}
+
  ?>
 <section class="bodySec">
         <div class="container">
