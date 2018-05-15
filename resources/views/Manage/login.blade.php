@@ -248,6 +248,7 @@ console.log(data);
     { 
       result.status = result.status;
       result.data = $.extend(result.data, data1);
+      localStorage.setItem('userid',result.data.userid);
       localStorage.setItem('userdata',JSON.stringify(result.data));
       window.location.href = "<?php echo url('/'); ?>"+"/manage/register/"+url_param;
       //alert_msg(result.status + JSON.stringify(result.data));//return;
