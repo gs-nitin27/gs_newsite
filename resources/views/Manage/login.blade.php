@@ -247,6 +247,7 @@ console.log(data);
     else if(result.status==2) // for updating email and other info
     { 
       result.status = result.status;
+      result.data.data = data1;
       localStorage.setItem('userdata',JSON.stringify(result.data));
       window.location.href = "<?php echo url('/'); ?>"+"/manage/register/"+url_param;
       //alert_msg(result.status + JSON.stringify(result.data));//return;

@@ -440,7 +440,6 @@ $("#btnLogin").click(function(event) {
         'data':data.data,
         'userType':'103',
         'prof_id':$('#proffession').val(),
-        'app':data.app,
         'device_id':'',
         'sport':'',
         'app':data.app
