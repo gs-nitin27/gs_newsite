@@ -400,7 +400,7 @@ box-shadow: rgba(255,255,255, 0.75) 1.5em 0 0 0, rgba(255,255,255, 0.75) 1.1em 1
       {
         $('#email_div').hide();
         $('#email').val(data.email);
-         $('#co_email').val(data.email);
+        $('#co_email').val(data.email);
         $('#name').val(data.data.name);
       }else
       {
@@ -409,7 +409,6 @@ box-shadow: rgba(255,255,255, 0.75) 1.5em 0 0 0, rgba(255,255,255, 0.75) 1.1em 1
       if(data.loginType == '1')
       {
        $('#name').val(data.data.first_name);
-     
       }
       console.log(JSON.stringify(data));
       // if(window.location.href.substr(window.location.href.lastIndexOf('/') +1) == '1')
@@ -423,7 +422,10 @@ box-shadow: rgba(255,255,255, 0.75) 1.5em 0 0 0, rgba(255,255,255, 0.75) 1.1em 1
      }
      // validation example for Login form
 $("#btnLogin").click(function(event) {
-    
+    if(!data.data.hasOwnProperty("email"))
+    {
+       data.data.email = $('#email').val(); 
+    }
     var form = $("#loginForm");
     if (register_validation() == false) {
       console.log(1);
