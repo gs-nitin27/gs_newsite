@@ -396,7 +396,7 @@ box-shadow: rgba(255,255,255, 0.75) 1.5em 0 0 0, rgba(255,255,255, 0.75) 1.1em 1
       var data = localStorage.getItem('userdata');
       data = JSON.parse(data);
       //alert(JSON.stringify(data));return;
-      if(data.email != '')
+      if((data.hasOwnProperty("email")==true) && data.email != '')
       {
         $('#email_div').hide();
         $('#email').val(data.email);
