@@ -598,11 +598,11 @@ if($('#co_email').val()=='')
 }
 
 if(i == 0)
-{
+{  console.log(i);
   return true;
 }
 else
-{
+{ console.log(i);
   return false;
 }
 
