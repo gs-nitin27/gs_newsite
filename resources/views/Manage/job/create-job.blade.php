@@ -68,13 +68,13 @@
                             <aside class="col-lg-6 col-md-6 col-sm-6 col-xs-6 mobView">
                                 <div class="form-group adrs">
                                     <label for="" class="">Address Line 1</label>
-                                    <textarea class="form-control" placeholder=" "></textarea>
+                                    <textarea class="form-control" placeholder=" "  id="address1"></textarea>
                                 </div>
                             </aside>
                             <aside class="col-lg-6 col-md-6 col-sm-6 col-xs-6 mobView">
                                 <div class="form-group adrs">
                                     <label for="" class="">Address Line 2</label>
-                                    <textarea class="form-control" placeholder=" "></textarea>
+                                    <textarea class="form-control" placeholder=" "  id="address2"></textarea>
                                 </div>
                             </aside>
                         </section>
