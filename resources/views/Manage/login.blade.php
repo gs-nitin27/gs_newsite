@@ -247,14 +247,14 @@ console.log(data);
     else if(result.status==2) // for updating email and other info
     { 
       result.status = result.status;
-      result.data.data = data1;
-      localStorage.setItem('userdata',JSON.stringify(result.data));
+      result.data = $.extend(result.data, data1);
+      localStorage.setItem('userdata',result.data);
       window.location.href = "<?php echo url('/'); ?>"+"/manage/register/"+url_param;
       //alert_msg(result.status + JSON.stringify(result.data));//return;
     }
     else if(result.status==3) // for creating new record
     { 
-      result.data.data = data1;
+      //alert(url_param+'jitin');return;
       localStorage.setItem('userid',result.data.userid);
       localStorage.setItem('userdata',data);
       window.location.href = "<?php echo url('/'); ?>"+"/manage/register/"+url_param;

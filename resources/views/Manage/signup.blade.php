@@ -408,7 +408,8 @@ box-shadow: rgba(255,255,255, 0.75) 1.5em 0 0 0, rgba(255,255,255, 0.75) 1.1em 1
       }
       if(data.data.loginType == '1')
       {
-       $('#name').val(data.data.data.first_name); 
+       $('#name').val(data.data.first_name);
+     
       }
       console.log(JSON.stringify(data));
       // if(window.location.href.substr(window.location.href.lastIndexOf('/') +1) == '1')
@@ -434,7 +435,7 @@ $("#btnLogin").click(function(event) {
       $('.loading').show();
        user_info_data = {
         'userid':userid,
-        'loginType':data.data.loginType,
+        'loginType':data.loginType,
         'email':$('#email').val(),
         'phone_no':$('#mobile').val(),
         'location':$('#location').val(),
