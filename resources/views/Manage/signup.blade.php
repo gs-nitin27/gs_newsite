@@ -1,6 +1,6 @@
 <?php 
-if($_SERVER['REMOTE_ADDR'] == '171.61.135.200' || $_SERVER['REMOTE_ADDR'] == '::1')
-{
+// if($_SERVER['REMOTE_ADDR'] == '171.61.135.200' || $_SERVER['REMOTE_ADDR'] == '::1')
+// {
 $url = $_SERVER['REQUEST_URI'];//die;
 $param = explode('/', $url);
 if (env('APP_ENV') === 'production' || env('APP_ENV') === 'testing') {
@@ -17,7 +17,7 @@ if (env('APP_ENV') === 'production' || env('APP_ENV') === 'testing') {
 <html>
 <head>
   <meta name="csrf-token" content="{{ csrf_token() }}" />
-  <title></title>
+  <title>Getsporty:Registration</title>
 <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
@@ -396,13 +396,21 @@ box-shadow: rgba(255,255,255, 0.75) 1.5em 0 0 0, rgba(255,255,255, 0.75) 1.1em 1
       var data = localStorage.getItem('userdata');
       data = JSON.parse(data);
       //alert(JSON.stringify(data));return;
-      if(data.email != '')
+      if((data.hasOwnProperty("email")==true) && data.email != '')
       {
         $('#email_div').hide();
         $('#email').val(data.email);
-         $('#co_email').val(data.email);
+        $('#co_email').val(data.email);
         $('#name').val(data.data.name);
+      }else
+      {
+        $('#email_div').show();
       }
+      if(data.loginType == '1')
+      {
+       $('#name').val(data.data.first_name);
+      }
+      console.log(JSON.stringify(data));
       // if(window.location.href.substr(window.location.href.lastIndexOf('/') +1) == '1')
       // {
       //   $("#prof").hide();
@@ -414,7 +422,10 @@ box-shadow: rgba(255,255,255, 0.75) 1.5em 0 0 0, rgba(255,255,255, 0.75) 1.1em 1
      }
      // validation example for Login form
 $("#btnLogin").click(function(event) {
-    
+    if(!data.data.hasOwnProperty("email"))
+    {
+       data.data.email = $('#email').val(); 
+    }
     var form = $("#loginForm");
     if (register_validation() == false) {
       console.log(1);
@@ -436,7 +447,6 @@ $("#btnLogin").click(function(event) {
         'data':data.data,
         'userType':'103',
         'prof_id':$('#proffession').val(),
-        'app':data.app,
         'device_id':'',
         'sport':'',
         'app':data.app
@@ -594,11 +604,11 @@ if($('#co_email').val()=='')
 }
 
 if(i == 0)
-{
+{  console.log(i);
   return true;
 }
 else
-{
+{ console.log(i);
   return false;
 }
 
@@ -622,7 +632,7 @@ else
                 var place = autocomplete.getPlace();
                // console.log(place.address_components);
             });
-            var autocomplete = new google.maps.places.Autocomplete($("#address1")[0], {});
+            var autocomplete = new google.maps.places.Autocomplete($("#address2")[0], {});
             google.maps.event.addListener(autocomplete, 'place_changed', function() {
                 var place = autocomplete.getPlace();
                // console.log(place.address_components);
@@ -720,9 +730,9 @@ function show_org(a)
 <div class="loading" hidden>Loading&#8230;</div>   
 </html>
 <?php 
-}
-else
-{
-Redirect::to('/')->send();
-}
+// }
+// else
+// {
+// Redirect::to('/')->send();
+// }
 ?>

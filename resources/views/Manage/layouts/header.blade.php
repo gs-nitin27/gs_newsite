@@ -57,7 +57,7 @@ $org_id = '';
                     <li><a href="#"><i class="fa fa-times pull-right close_mySidenav"></i></a></li>
                     <li><a href="{{url('/manage/dashbo')}}"><i class="fa fa-dashboard"></i>Dashboard</a></li>
                     <li><a href="{{url('/manage/job/transaction_list')}}"><i class="fa fa-inr"></i>My transaction</a></li>
-                    <li><a href="javascript:void(0)"><i class="fa fa-mobile"></i>Get App</a></li>
+                    <!-- <li><a href="javascript:void(0)"><i class="fa fa-mobile"></i>Get App</a></li> -->
                     <!-- <li><a href="#"><i class="fa fa-briefcase"></i>Job</a></li>
                     <li><a href="#"><i class="fa fa-bell"></i>Notification</a></li> -->
                     <li><a href="{{url('/manage/logout')}}" onclick="window.localStorage.clear();"><i class="fa fa-power-off"></i>Logout</a></li>

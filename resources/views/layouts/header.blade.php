@@ -24,6 +24,12 @@
                    
 
               ?>
+              
+                
+                        <?php }?>
+
+              <li ><a href="{{url('/aboutus')}}">About us</a></li>
+              <li ><a href="{{url('/career')}}">Careers</a></li>
               <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                    Partners <b class="caret"></b>
@@ -33,11 +39,6 @@
                     <li><a class="" href="{{url('manage/login/')}}<?php echo '/'.base64_encode(1); ?>">Partner Login</a></li>
                 </ul>
               </li>
-                
-                        <?php }?>
-
-              <li ><a href="{{url('/aboutus')}}">About us</a></li>
-              <li ><a href="{{url('/career')}}">Careers</a></li>
             </ul>
            </div><!-- /.navbar-collapse -->
           </div><!-- /.container -->

@@ -2,8 +2,16 @@
 @section('pageTitle','Home')
 @section('content')
 <?php
-$image_url = config('constant.IMAGE_URL').'/job/'.$data[0]->image;
+if(file_exists(config('constant.IMAGE_URL').'/job/'.$data[0]->image))
+{
+$image_url = config('constant.IMAGE_URL').'/job/'.$data[0]->image; 
 $image_data = base64_encode(file_get_contents($image_url));
+}else
+{
+$image_url = '';//config('constant.IMAGE_URL').'/job/'.$data[0]->image; 
+$image_data = '';
+}
+
  ?>
 <section class="bodySec">
         <div class="container">
@@ -91,7 +99,7 @@ $image_data = base64_encode(file_get_contents($image_url));
                             <aside class="col-lg-6 col-md-6 col-sm-6 col-xs-6 mobView">
                                 <div class="form-group">                                    
                                     <label for="" class="">Job  Discription*</label>
-                                    <textarea class="form-control" placeholder=" " name="desc" id="desc">{{$data[0]->email}}</textarea><span id="jdesc"></span>
+                                    <textarea class="form-control" placeholder=" " name="desc" id="desc">{{$data[0]->description}}</textarea><span id="jdesc"></span>
                                 </div>                                    
                             </aside>                           
                         </section>

@@ -1,7 +1,7 @@
 <?php 
 
-if($_SERVER['REMOTE_ADDR'] == '171.61.135.200' || $_SERVER['REMOTE_ADDR'] == '::1')
-{
+// if($_SERVER['REMOTE_ADDR'] == '171.61.135.200' || $_SERVER['REMOTE_ADDR'] == '::1')
+// {
 $url = $_SERVER['REQUEST_URI'];//die;
 $param = explode('/', $url);
 if (env('APP_ENV') === 'production' || env('APP_ENV') === 'testing') {
@@ -229,6 +229,7 @@ console.log(data);
     data: data,
     dataType: "text",
     success: function(result) {
+      //console.log(result);return;
       $('.loading').hide();
       var result  = JSON.parse(result);
       if(result.status==4){// for Successfull login of athlete and parent
@@ -250,8 +251,10 @@ console.log(data);
     else if(result.status==2) // for updating email and other info
     { 
       result.status = result.status;
-      localStorage.setItem('userdata',result.data);
-      
+      result.data = $.extend(result.data, data1);
+      localStorage.setItem('userid',result.data.userid);
+      localStorage.setItem('userdata',JSON.stringify(result.data));
+      window.location.href = "<?php echo url('/'); ?>"+"/manage/register/"+url_param;
       //alert_msg(result.status + JSON.stringify(result.data));//return;
     }
     else if(result.status==3) // for creating new record
@@ -337,9 +340,9 @@ console.log(data);
     </div>
   </div>
 </div>
-</html><?php }
-else
-{
-   Redirect::to('/')->send();
-}
+</html><?php //}
+ // else
+ // {
+ //    Redirect::to('/')->send();
+ // }
 ?>
