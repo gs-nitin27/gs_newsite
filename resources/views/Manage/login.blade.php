@@ -70,7 +70,7 @@ if(Session::has('userdata'))
     height: 4em;
     line-height: 1em;
     padding: 0 2em 0 4em;
-    text-decoration: none;
+    text-decoration: none; 
     transition: all 0.5s;
 }
 .form_1{
