@@ -73,6 +73,9 @@ if(Session::has('userdata'))
     text-decoration: none;
     transition: all 0.5s;
 }
+.form_1{
+margin-left: 17%;
+}
  </style> 
   <a class="navbar-brand logo" href="{{url('/')}}"><img class="img-responsive" src="{{asset('public/img/logo.png')}}"></a>  
 <div id="fb-root"></div>
@@ -108,9 +111,9 @@ if(Session::has('userdata'))
                       <p class="login_heading">GETSPORTY</p>
                       <div class="form-group form_1">
                        
-                          <button type="button" class="btn btn-danger ">
+                          <!-- <button type="button" class="btn btn-danger "> -->
                           <span  class="g-signin2 loginBtn loginBtn--google" data-onsuccess="onSignIn" style="width:254px;"></span> 
-                        </button>
+                        <!-- </button> -->
                       
                       </div>
 
