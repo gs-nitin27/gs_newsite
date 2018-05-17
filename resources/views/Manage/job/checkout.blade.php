@@ -159,12 +159,12 @@ $contact = $sess_data->contact_no;
                                             Now
                                         </button> -->
                                         <br/>
-                                        <!-- <div style="text-align: left;"><br/>
+                                        <div style="text-align: left;"><br/>
                                             By submiting this order you are agreeing to our universal
-                                                billing agreement, and terms of service.
+                                                <a>billing agreement</a>, and <a>terms of service</a>.
                                             If you have any questions about our products or services please contact us
                                             before placing this order.
-                                        </div> -->
+                                        </div>
                                     </div>
                                 </div>
                             </div>
