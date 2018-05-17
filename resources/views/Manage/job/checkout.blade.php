@@ -92,8 +92,8 @@ $sess_data = json_decode($value);
                                         <br/><br/>
 
                                         <table class="table table-striped" style="font-weight: bold;">
-                                        <form method="post" name="payuForm" action="https://secure.payu.in/_payment">
-       <input type="hidden" name="key" id="key" value="2g3RdB" />
+                                        <form method="post" name="payuForm" action="{{ config('constant.FORM_PAYU_URL')}}">
+       <input type="hidden" name="key" id="key" value="{{ config('constant.KEY')}}" />
        <input type="hidden" name="hash_string" id="hash_string" value="" />
        <input type="hidden" name="hash"  id="hash" value=""/>
        <input type="hidden" name="txnid" id="txnid" value="" />
@@ -103,7 +103,7 @@ $sess_data = json_decode($value);
 </tr>
 <tr>
 <td>Name: </td>
-<td><input  name="firstname" id="firstname" value="{{$sess_data->name}}" disabled="true" /></td>
+<td><input  name="firstname" id="firstname" value="{{$sess_data->name}}"/></td>
 </tr>
 <tr hidden>
 <td>Email: </td>

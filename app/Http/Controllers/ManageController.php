@@ -69,7 +69,7 @@ public function create_hash()
   $txnid = substr(hash('sha256', mt_rand() . microtime()), 0, 20);
   $data->txnid = $txnid;
   unset($data->hash);
-  $SALT = 'AwGMsoxe';//'e5iIg1jwi8';
+  $SALT = config('constant.SALT');//'e5iIg1jwi8';//'e5iIg1jwi8';
     $hashSequence = "key|txnid|amount|productinfo|firstname|email|udf1|udf2|udf3|udf4|udf5|udf6|udf7|udf8|udf9|udf10";
 
   
@@ -117,6 +117,6 @@ public function getAdminuserData(Request $request)
    $obj = new Manage_Model();
    $resp = $obj->getAdminData($userid);
    return view::make("Manage.job.Myprofile")->with('data',$resp);
-}
+ }
 
 }
