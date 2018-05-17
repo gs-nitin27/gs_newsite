@@ -408,7 +408,7 @@ box-shadow: rgba(255,255,255, 0.75) 1.5em 0 0 0, rgba(255,255,255, 0.75) 1.1em 1
       {
        $('#name').val(data.data.first_name);
       }
-      console.log(JSON.stringify(data));
+     // console.log(JSON.stringify(data));
       // if(window.location.href.substr(window.location.href.lastIndexOf('/') +1) == '1')
       // {
       //   $("#prof").hide();
@@ -426,7 +426,7 @@ $("#btnLogin").click(function(event) {
     }
     var form = $("#loginForm");
     if (register_validation() == false) {
-      console.log(1);
+     // console.log(1);
       return;
 
     }
@@ -602,11 +602,11 @@ if($('#co_email').val()=='')
 }
 
 if(i == 0)
-{  console.log(i);
+{ // console.log(i);
   return true;
 }
 else
-{ console.log(i);
+{ //console.log(i);
   return false;
 }
 

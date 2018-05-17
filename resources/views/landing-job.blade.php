@@ -75,7 +75,7 @@
                       <aside class="showCaseText">
                         <div class="clearfix">
                             <h3>register</h3>
-                            <p>Register as an Event Manager & provide organisation 
+                            <p>Register as recruiter & provide organisation 
 details & other info.</p>
                         </div>
                       </aside>
