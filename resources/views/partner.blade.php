@@ -12,8 +12,8 @@
             <div class="row">
               <div class="col-md-12">
               <div class="ban-pera">
-              <h1>Lorem ispum is dummy </h1>
-              <h3>Lorem ispum is dummy text.</h3> 
+              <h1>Getsporty Manage</h1>
+              <h3></h3> 
               </div>
                </div>
               </div>
@@ -45,6 +45,16 @@
    <div class="clearfix margin20"></div> 
   <div class="clearfix"></div>
     <div class="container" id="support">
+      <div class="col-lg-6 col-md-5">
+              <div class="right-cont cont_box">
+               <h3>For Sports Facility Owners</h3>
+               <p>Help to get more revenue out of the facility</p>
+               <ul  class="cont_box_li">
+                 <li>To maintain the facility better</li>
+                 <li>Best and dedicated coaches</li>
+               </ul>
+            </div>
+        </div>
 <!--       <div class="registration vertical-text">
         <a href="#" class=""><i class="fa fa-address-card "></i> Registration</a>
       </div> -->

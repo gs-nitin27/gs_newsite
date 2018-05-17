@@ -9,6 +9,7 @@ function create_hash()
         data:JSON.stringify(data),
         type:"text",
         processData: false,
+        async:false,
         success:function(result){
          // var result = JSON.parse(result);
           var txnid = result.txnid
@@ -17,9 +18,10 @@ function create_hash()
           $('#hash').val(hash);
           $('#txnid').val(txnid);
           $('#hash_string').val(hash_string);
+          return true;
           //$('#key').val(key);
           //alert(JSON.stringify(result));
-          console.log(JSON.stringify(result));return;
+          //console.log(JSON.stringify(result));return;
         }
 	});
 }
