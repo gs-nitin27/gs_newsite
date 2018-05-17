@@ -12,7 +12,7 @@
             <div class="row">
               <div class="col-md-12">
               <div class="ban-pera">
-              <h1>Getsporty Manage</h1>
+              <h1>Getsporty for partners</h1>
               <h3></h3> 
               </div>
                </div>

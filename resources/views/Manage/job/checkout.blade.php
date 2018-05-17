@@ -193,14 +193,11 @@ $contact = $sess_data->contact_no;
                  };
 
 
-//create_hash();
+create_hash();
 function submitPayuForm()
 {
-//alert_msg("dsdsssd");return;
-if(create_hash()){
 var payuForm = document.forms.payuForm;
 payuForm.submit();
-}
 }
     </script>
 @stop
