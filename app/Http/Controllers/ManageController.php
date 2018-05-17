@@ -53,7 +53,7 @@ public function method(Request $request)
 { 
  $data = Input::all();
  //$data = $this->array_except($data, ['_token']);
- return redirect()->away('https://test.payu.in/_payment')->withInputs($data);
+ return redirect()->away('https://secure.payu.in/_payment')->withInputs($data);
 }
   
 
@@ -69,7 +69,7 @@ public function create_hash()
   $txnid = substr(hash('sha256', mt_rand() . microtime()), 0, 20);
   $data->txnid = $txnid;
   unset($data->hash);
-  $SALT = 'AwGMsoxe';//'e5iIg1jwi8';
+  $SALT = config('constant.SALT');//'e5iIg1jwi8';
     $hashSequence = "key|txnid|amount|productinfo|firstname|email|udf1|udf2|udf3|udf4|udf5|udf6|udf7|udf8|udf9|udf10";
 
   
