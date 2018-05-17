@@ -42,7 +42,7 @@
                             <h3>Get started with a professinals consultation</h3>
                         </div>
                         <div class="pull-left col-lg-5 col-md-5 col-sm-5 col-xs-12">
-                            <a href="manage/login/1" class="pull-right">Create job</a>
+                            <a href="{{url('manage/login/')}}<?php echo '/'.base64_encode(1);?>" class="pull-right">Create job</a>
                         </div>
                     </div>
                 </div>
@@ -57,7 +57,7 @@
                             
                         </div>
                       </aside>
-                      <aside class="showCaseImg img-responsive"><img src="public/img/job-mob.jpg" alt="" height="450" width="240" /></aside>
+                      <aside class="showCaseImg img-responsive"><img src="public/img/lap_1.png" alt="" height="240" width="450" /></aside>
                   </section>                        
                   </div>
                   
@@ -67,11 +67,11 @@
         	       <div class="row">
           	 	      <div class="heading-center  m0 pad15">
               	       <h3>how it works</h3>
-                 	      <p style="font-size: 20px;">Lorem Ipsum is simply dummy text of the printing.</p>
+                 	      <p style="font-size: 20px;"></p>
                     </div>                          
                   </div>
                   <section class="showCaseBox">
-                      <aside class="showCaseImg"><img src="public/img/job-mob.jpg" alt=""/></aside>
+                      <aside class="showCaseImg"><img src="public/img/m4.png" alt=""/></aside>
                       <aside class="showCaseText">
                         <div class="clearfix">
                             <h3>register</h3>
@@ -81,7 +81,7 @@ details & other info.</p>
                       </aside>
                   </section>
                   <section class="showCaseBox odd">
-                      <aside class="showCaseImg"><img src="public/img/job-mob.jpg" alt=""/></aside>
+                      <aside class="showCaseImg"><img src="public/img/lap_2.png" alt="" height="240" width="450"/></aside>
                       <aside class="showCaseText">
                         <div class="clearfix">
                             <h3>enter details & submit</h3>
@@ -91,7 +91,7 @@ So, you input specific details about particular sports.</p>
                       </aside>
                   </section>  
                   <section class="showCaseBox">
-                      <aside class="showCaseImg"><img src="public/img/job-mob.jpg" alt=""/></aside>
+                      <aside class="showCaseImg"><img src="public/img/m1.png" alt=""/></aside>
                       <aside class="showCaseText">
                         <div class="clearfix">
                             <h3>Listing</h3>
@@ -102,11 +102,11 @@ as well. </p>
                       </aside>
                   </section>
                   <section class="showCaseBox odd">
-                      <aside class="showCaseImg"><img src="public/img/job-mob.jpg" alt=""/></aside>
+                      <aside class="showCaseImg"><img src="public/img/m5.png" alt=""/></aside>
                       <aside class="showCaseText">
                         <div class="clearfix">
                             <h3>Manage</h3>
-                            <p>Manage participants, take attendance through
+                            <p>Manage candidates and recruit through
 the App. </p>
                         </div>
                       </aside>
@@ -117,7 +117,7 @@ the App. </p>
            <div class="clearfix landingAdv">
             <figure><img class="img-responsive" src="public/img/adv_job.jpg" alt=""/></figure>
           </div>
-          <section>
+          <!-- <section>
             <div class="container">
                   <div class="heading-center  m0 pad15">
                        <h3>want to know in detail</h3>
@@ -152,7 +152,7 @@ the App. </p>
                   </div>
 
             </div>
-          </section>
+          </section> -->
   	   
 
 

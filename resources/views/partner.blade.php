@@ -76,7 +76,7 @@
          
          <div class="clearfix margin20"></div> 
        </div>
-       <a href="{{url('manage/login/')}}<?php echo '/'.base64_encode(1);?>"><button class="btn btn-success">Post a job</button></a>
+       <a href="{{url('landing-job/')}}"><button class="btn btn-success">Post a job</button></a>
    </div>
 
 
