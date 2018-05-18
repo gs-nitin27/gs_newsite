@@ -146,7 +146,7 @@ FB.getLoginStatus(function(response) {
     statusChangeCallback(response);
   });}
 function statusChangeCallback(response) {
-    console.log('statusChangeCallback');
+  //  console.log('statusChangeCallback');
     if (response.status === 'connected') {
       testAPI();
     } else {
@@ -155,12 +155,12 @@ function statusChangeCallback(response) {
     }
   }
 function testAPI() {
-  console.log('Welcome!  Fetching your information.... ');
+ // console.log('Welcome!  Fetching your information.... ');
   FB.api('/me?fields=id,email,first_name,last_name',function(response) {
-        console.log(response);
+      //  console.log(response);
         var email = response.email;
         login(email,response,1)
-        console.log('Successful login for: ' + response.name);
+ //       console.log('Successful login for: ' + response.name);
      //   document.getElementById('status').innerHTML = "<img src='"+response.picture.data.url+"'>";
       }, {scope:'email'});
   }
@@ -219,7 +219,7 @@ function login(emailid,user_data,type)
 
 var url = '<?php echo config('constant.ENV_URL')?>';
 var data = JSON.stringify(data1);
-console.log(data);
+//console.log(data);
   $.ajax({
     type: "POST",
     // headers: {
@@ -271,14 +271,14 @@ console.log(data);
 
  function onSignIn(googleUser) {
         var profile = googleUser.getBasicProfile();
-        console.log("ID: " + profile.getId()); // Don't send this directly to your server!
-        console.log('Full Name: ' + profile.getName());
-        console.log('Given Name: ' + profile.getGivenName());
-        console.log('Family Name: ' + profile.getFamilyName());
-        console.log("Image URL: " + profile.getImageUrl());
-        console.log("Email: " + profile.getEmail());
+        // console.log("ID: " + profile.getId()); // Don't send this directly to your server!
+        // console.log('Full Name: ' + profile.getName());
+        // console.log('Given Name: ' + profile.getGivenName());
+        // console.log('Family Name: ' + profile.getFamilyName());
+        // console.log("Image URL: " + profile.getImageUrl());
+        // console.log("Email: " + profile.getEmail());
         var id_token = googleUser.getAuthResponse().id_token;
-        console.log("ID Token: " + id_token);
+        //console.log("ID Token: " + id_token);
         
         if( localStorage.getItem("count") == 2)
         {

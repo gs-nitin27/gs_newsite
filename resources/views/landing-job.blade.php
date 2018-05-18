@@ -75,7 +75,7 @@
                       <aside class="showCaseText">
                         <div class="clearfix">
                             <h3>register</h3>
-                            <p>Register as an Event Manager & provide organisation 
+                            <p>Register as recruiter & provide organisation 
 details & other info.</p>
                         </div>
                       </aside>
@@ -85,8 +85,7 @@ details & other info.</p>
                       <aside class="showCaseText">
                         <div class="clearfix">
                             <h3>enter details & submit</h3>
-                            <p>Getsporty sports event manager is sport specific.
-So, you input specific details about particular sports.</p>
+                            <p>Enter your requirements and get it published.</p>
                         </div>
                       </aside>
                   </section>  
@@ -95,7 +94,7 @@ So, you input specific details about particular sports.</p>
                       <aside class="showCaseText">
                         <div class="clearfix">
                             <h3>Listing</h3>
-                            <p>After your event is approved  by us then it start 
+                            <p>After a job is published by us then it start 
 showing in our listing. This comes on our site 
 as well. </p>
                         </div>
