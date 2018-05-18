@@ -103,7 +103,7 @@ $sess_data = json_decode($value);
 </tr>
 <tr>
 <td>Name: </td>
-<td><input  name="firstname" id="firstname" value="{{$sess_data->name}}"/></td>
+<td><input  name="firstname" id="firstname" value="{{$sess_data->name}}" readonly/></td>
 </tr>
 <tr hidden>
 <td>Email: </td>
