@@ -24,7 +24,7 @@ use Session;
       'mailbody' => "Thanks for registering with us",
       'name'=>$user_data['name']
     );
-      Mail::send('emails.contact-message', ['user' => $data], function ($m) use ($data) {
+      Mail::send('emails.contact-message', ['user' => $data , 'name'=>$user_data['name']], function ($m) use ($data) {
             $m->from('info@darkhorsesports.in', 'Getsporty Manage');
 
             $m->to($data['email'], $data['name'])->subject('Welcome to getsporty manage');
