@@ -113,9 +113,9 @@ the App. </p>
                   
         	 	</div>        		 
   	       <div class="clearfix margin20"></div>
-           <div class="clearfix landingAdv">
+           <!-- <div class="clearfix landingAdv">
             <figure><img class="img-responsive" src="public/img/adv_job.jpg" alt=""/></figure>
-          </div>
+          </div> -->
           <!-- <section>
             <div class="container">
                   <div class="heading-center  m0 pad15">
