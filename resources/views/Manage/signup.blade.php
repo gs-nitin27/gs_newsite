@@ -472,8 +472,8 @@ $("#btnLogin").click(function(event) {
           }
           send_mail(response.data);
           alert_msg("Thanks for registering with us");//return;
-          //window.location.href = "<?php echo url('/'); ?>"+"/manage/dashbo";
-          return;
+          window.location.href = "<?php echo url('/'); ?>"+"/manage/dashbo";
+          //return;
         }
       else
         {
