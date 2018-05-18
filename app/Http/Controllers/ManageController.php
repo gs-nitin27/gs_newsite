@@ -123,7 +123,7 @@ public function user_email_validate(Request $request)
  {
    $id = $request->id;
    $obj = new Manage_Model();
-   $resp = $obj->useractivate($id);
+   $resp = $obj->useractivate(base64_decode($id));
    return view::make("Manage.proffesional")->with('data',$resp);
  }
 

@@ -127,7 +127,7 @@ Route::group(array('prefix' => 'manage'), function()
              return View::make('Manage.proffesional');
          });
     Route::post('welcome_mail','WebEmail@send_mail');
-    Route::post('activateyouraccount/{id}','ManageController@user_email_validate');
+    Route::get('activateyouraccount/{id}','ManageController@user_email_validate');
     });
     
 
