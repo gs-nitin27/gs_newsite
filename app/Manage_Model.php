@@ -65,7 +65,7 @@ public function getAdminData($userid)
 
 public function useractivate($id)
 {
-$data = DB::table('users')
+$data = DB::table('user')
         ->where('userid', $id)  // find your user by their email
         ->limit(1)  // optional - to ensure only one record is updated.
         ->update(array('status' => '1'));  // update the record in the DB.
