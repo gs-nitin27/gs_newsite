@@ -119,4 +119,12 @@ public function getAdminuserData(Request $request)
    return view::make("Manage.job.Myprofile")->with('data',$resp);
  }
 
+public function user_email_validate(Request $request)
+ {
+   $id = $request->id;
+   $obj = new Manage_Model();
+   $resp = $obj->useractivate($id);
+   return view::make("Manage.proffesional")->with('data',$resp);
+ }
+
 }

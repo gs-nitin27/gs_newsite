@@ -6,6 +6,7 @@ use Mail;
 use App\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Manage_Model;
 use Illuminate\Support\Facades\Input;
 use Session;
 
@@ -16,38 +17,45 @@ use Session;
     { 
 
           $user_data = $request->all();    
-         
+          $obj  = new Manage_Model();
           $data = array(
-
       'email' =>$user_data['email'],
       'subject' => "Welcome to getsporty manage",//$request->subject,
       'mailbody' => "Thanks for registering with us",
       'name'=>$user_data['name']
-    );
-      Mail::send('emails.contact-message', ['user' => $data , 'name'=>$user_data['name']], function ($m) use ($data) {
+      );
+
+      Mail::send('emails.contact-message', ['user' => $data , 'name'=>$user_data['name'] , 'id'=>base64_encode($user_data['userid'])], function ($m) use ($data) {
             $m->from('info@darkhorsesports.in', 'Getsporty Manage');
 
             $m->to($data['email'], $data['name'])->subject('Welcome to getsporty manage');
         });
-       
-       
-// //print_r($data);die;
-//     Mail::send('event', $data, function($message) use ($data) {
-//       $message->from(env('MAIL_USERNAME'));
-//       $message->to('nitin@darkhorsesports.in');
-//       $message->subject($data['subject']);
-//     });
 
-
-      //    $data = $_REQUEST;
-      //    Mail::send('support',$data,function($message) use ($data){
-      //    $message->from(env('MAIL_USERNAME'));
-      //    $message->to('ntnagarwal27@gmail.com');
-      //    $message->subject('dsdsdsdsd');
-
-      // });
-      //  Session::flash('success','Your Email was sent!');
-      //  return redirect('/#st');
      }
+    // public function activate_account($user_data)
+    // {
+    
+    //  $user_data = $request->all();    
+    //       $obj  = new Manage_Model();
+    //       $data = array(
+    //   'email' =>$user_data['email'],
+    //   'subject' => "Welcome to getsporty manage",//$request->subject,
+    //   'mailbody' => "Thanks for registering with us",
+    //   'name'=>$user_data['name']
+    //   );
+    //  $code = $obj->get_code($user_data);    
+    //   if($code)
+    //   {
+    //     $code = base64_decode($code[0]->password);
+    //   }
+    
+    //   Mail::send('emails.contact-message', ['user' => $data , 'name'=>$user_data['name'] , 'code'=>$code], function ($m) use ($data) {
+    //         $m->from('info@darkhorsesports.in', 'Getsporty Manage');
+
+    //         $m->to($data['email'], $data['name'])->subject('Welcome to getsporty manage');
+    //     });
+
+    // }
+
 
     }
