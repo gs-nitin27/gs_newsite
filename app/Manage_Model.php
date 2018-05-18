@@ -77,7 +77,7 @@ public function get_code($user_data)
 $code  = DB::table('user')->select('password')->where('userid', $user_data)->get();
 if($code)
 {
-  return $code
+  return $code;
 }
 
 
