@@ -32,6 +32,27 @@ use Session;
         });
 
      }
+
+      public function send_app_inmail(Request $request)
+    { 
+
+          $user_data = $request->all();    
+          $obj  = new Manage_Model();
+          $pathToFile = env('APP_URL').'/public/build/manage.apk';
+          $data = array(
+      'email' =>$user_data['email'],
+      'subject' => "Getsporty manage app",//$request->subject,
+      'mailbody' => "Thanks for registering with us",
+      'name'=>$user_data['name']
+      );
+
+      Mail::send('emails.contact-message', ['user' => $data , 'name'=>$user_data['name'] , 'id'=>base64_encode($user_data['userid'])], function ($m) use ($data) {
+            $m->from('info@darkhorsesports.in', 'Getsporty Manage');
+            $m->attach($pathToFile);
+            $m->to($data['email'], $data['name'])->subject('Getsporty manage app');
+        });
+
+     }
     // public function activate_account($user_data)
     // {
     

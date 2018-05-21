@@ -34,7 +34,7 @@
 function getApp()
 {
 
-alert("getApp");
+
 
 }
 
