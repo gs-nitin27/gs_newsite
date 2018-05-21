@@ -33,9 +33,25 @@
     
 function getApp()
 {
-
-
-
+    $.ajax({
+    url:url+'/get_app',
+    headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+          },
+    method:"GET",
+    dataType:"text",
+    data:localStorage.getItem('userdata'),
+    success:function(result)
+    {
+      if result.text == '1'
+      {
+         alert('app sent in mail');
+      }else
+      {
+        alert('Something went wrong');
+      }
+    }
+    });
 }
 
 

@@ -46,12 +46,19 @@ use Session;
       'name'=>$user_data['name']
       );
 
-      Mail::send('emails.contact-message', ['user' => $data , 'name'=>$user_data['name'] , 'id'=>base64_encode($user_data['userid'])], function ($m) use ($data) {
+       $send  =    Mail::send('emails.contact-message', ['user' => $data , 'name'=>$user_data['name'] , 'id'=>base64_encode($user_data['userid'])], function ($m) use ($data) {
             $m->from('info@darkhorsesports.in', 'Getsporty Manage');
             $m->attach($pathToFile);
             $m->to($data['email'], $data['name'])->subject('Getsporty manage app');
         });
 
+     if($send)
+     {
+      echo '1'
+     }else
+     {
+      echo '0';
+     }
      }
     // public function activate_account($user_data)
     // {
