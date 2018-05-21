@@ -38,14 +38,14 @@ use Session;
 
           $user_data = json_decode(file_get_contents("php://input"));    
           $obj  = new Manage_Model();
-          //$pathToFile = env('APP_URL').'/public/build/manage.apk';
+          $code = $obj->get_code($user_data->userid);
           $data = array(
       'email' =>$user_data->email,
       'subject' => "Getsporty manage app",//$request->subject,
       'mailbody' => "Thanks for registering with us",
       'name'=>$user_data->name
       );
-      $send  =    Mail::send('emails.download-app', ['user' => $data , 'name'=>$user_data->name ,'download'=> env('APP_URL').'/public/build/manage.apk' ,'id'=>base64_encode($user_data->userid)], function ($m) use ($data) {
+      $send  =    Mail::send('emails.download-app', ['user' => $data , 'name'=>$user_data->name ,'code'=>$code,'download'=> env('APP_URL').'/public/build/manage.apk' ,'id'=>base64_encode($user_data->userid)], function ($m) use ($data) {
             $m->from('info@darkhorsesports.in', 'Getsporty Manage');
             //$m->attach( env('APP_URL').'/public/build/manage.apk');
             $m->to($data['email'], $data['name'])->subject('Getsporty manage app');
