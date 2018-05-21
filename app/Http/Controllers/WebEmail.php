@@ -33,7 +33,7 @@ use Session;
 
      }
 
-      public function send_app_inmail(Request $request)
+  public function send_app_inmail(Request $request)
     { 
 
           $user_data = json_decode(file_get_contents("php://input"));    
@@ -52,7 +52,6 @@ use Session;
       );
       $send  =    Mail::send('emails.download-app', ['user' => $data , 'name'=>$user_data->name ,'code'=>$data['code'],'download'=> env('APP_URL').'/public/build/manage.apk' ,'id'=>base64_encode($user_data->userid)], function ($m) use ($data) {
             $m->from('info@darkhorsesports.in', 'Getsporty Manage');
-            //$m->attach( env('APP_URL').'/public/build/manage.apk');
             $m->to($data['email'], $data['name'])->subject('Getsporty manage app');
         });
 
