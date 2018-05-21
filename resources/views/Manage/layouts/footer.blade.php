@@ -34,16 +34,15 @@
 function getApp()
 {
     $.ajax({
-    url:url+'/get_app',
+    url:'<?php echo url('/manage/get_app'); ?>',
     headers: {
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
           },
-    method:"GET",
-    dataType:"text",
+    method:"POST",
     data:localStorage.getItem('userdata'),
     success:function(result)
     {
-      if result.text == '1'
+      if (result.text == '1')
       {
          alert('app sent in mail');
       }else
