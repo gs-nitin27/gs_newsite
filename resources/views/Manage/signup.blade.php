@@ -381,8 +381,17 @@ box-shadow: rgba(255,255,255, 0.75) 1.5em 0 0 0, rgba(255,255,255, 0.75) 1.1em 1
   var a = '';
   window.register_validation = function register_validation(){};
   var url = '<?php echo config('constant.ENV_URL')?>';
-  $(".form_datetime").datepicker({format: 'yyyy-mm-dd'});
+  //$(".form_datetime").datepicker({format: 'yyyy-mm-dd'});
   $(document).ready(function(){
+    var date = new Date();
+    var currentMonth = date.getMonth();
+    var currentDate = date.getDate();
+    var currentYear = date.getFullYear();
+
+    $('#datepicker').datepicker({
+        maxDate: new Date(currentYear, currentMonth, currentDate),
+        dateFormat: 'yy-mm-dd'
+    });
     if(window.opener)
      var radioValue = $("input[name='gender']:checked").val();
             if(radioValue){
