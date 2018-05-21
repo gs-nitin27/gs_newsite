@@ -31,5 +31,13 @@
       });
 });
     
+function getApp()
+{
+
+alert("getApp");
+
+}
+
+
 
   </script>
