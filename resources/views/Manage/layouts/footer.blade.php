@@ -50,7 +50,7 @@ function getApp()
       {
         alert('Something went wrong');
       }
-    $('.loading').hide;();
+    $('.loading').hide();
     }
 
     });
