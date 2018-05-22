@@ -242,8 +242,17 @@ var data = JSON.stringify(data1);
       {
       localStorage.setItem('userdata',JSON.stringify(result.data));
       set_data();
-      }else
-
+      }
+      else if(result.data.prof_id == '' && result.data.prof_name == '')
+      {
+      console.log("Register your profession");  
+      result.status = result.status;
+      result.data = $.extend(result.data, data1);
+      localStorage.setItem('userid',result.data.userid);
+      localStorage.setItem('userdata',JSON.stringify(result.data));
+      window.location.href = "<?php echo url('/'); ?>"+"/manage/register/"+url_param;
+      }
+      else
       { 
         window.location.href = "<?php echo url('/'); ?>"+"/manage/professional/";
       }
