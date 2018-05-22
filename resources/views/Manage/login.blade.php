@@ -77,6 +77,7 @@ if(Session::has('userdata'))
 margin-left: 17%;
 }
  </style> 
+ <div class="loading" style="display: none" id="loading">Loading&#8230;</div>
   <a class="navbar-brand logo" href="{{url('/')}}"><img class="img-responsive" src="{{asset('public/img/logo.png')}}"></a>  
 <div id="fb-root"></div>
 <script>
@@ -205,7 +206,7 @@ function testAPI() {
       });
    
 function login(emailid,user_data,type)
-{  $('.loading').show();
+{  loading.style.display = "block";
    var data1 = {
      "email"    : emailid,
      "password" : emailid,
@@ -230,7 +231,7 @@ var data = JSON.stringify(data1);
     dataType: "text",
     success: function(result) {
       //console.log(result);return;
-      $('.loading').hide();
+      loading.style.display = "none";
       var result  = JSON.parse(result);
       if(result.status==4){// for Successfull login of athlete and parent
        //alert(result.status + JSON.stringify(result));return;

@@ -288,7 +288,7 @@ $image_data = '';
            
            // funtion for creating a job
            function create_job() 
-           {   $('.loading').show();
+           {   loading.style.display = "block";
                var job_data = {
                 "id":'{{$data[0]->id}}',
                 "userid":sess_userid,
@@ -329,7 +329,7 @@ $image_data = '';
                     dataType: "text",
                     beforeSend: function(){
                         // Show image container
-                        $(".loading").show();
+                        loading.style.display = "none";
                        },
                     success: function(result){
                     result = JSON.parse(result);
@@ -342,11 +342,11 @@ $image_data = '';
                     {
                         alert_msg('Something went wrong');
                     }
-                    $('.loading').hide();
+                    loading.style.display = "none";
                    },
                    complete:function(){
                         // Show image container
-                        $(".loading").hide();
+                        loading.style.display = "none";
                        }
                 }); 
             }

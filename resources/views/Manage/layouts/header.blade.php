@@ -38,6 +38,10 @@ $org_id = '';
  </script>
 </script>
 <div class="loading" style="display: none" id="loading">Loading&#8230;</div>
+<script type="text/javascript">
+    
+    var loading = document.getElementById('loading');
+</script>
 <header class="headerSec">
         <div class="container">
            <!-- Brand and toggle get grouped for better mobile display -->

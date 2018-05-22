@@ -155,6 +155,11 @@ box-shadow: rgba(255,255,255, 0.75) 1.5em 0 0 0, rgba(255,255,255, 0.75) 1.1em 1
 </style>
 </head>
 <body>
+
+ <div class="loading" style="display: none" id="loading">Loading&#8230;</div>
+ <script type="text/javascript">
+   var loading = document.getElementById('loading');
+ </script>
  <!-- form user info -->
                     <div class="card card-outline-secondary">
                         <div class="card-header">
@@ -441,7 +446,7 @@ $("#btnLogin").click(function(event) {
     }
     else
     {
-      $('.loading').show();
+      loading.style.display = "block";
        user_info_data = {
         'userid':userid,
         'loginType':data.loginType,
@@ -488,7 +493,7 @@ $("#btnLogin").click(function(event) {
         {
           alert_msg("Something Went wrong, Please try after some time");
         }
-          $('.loading').hide();
+         loading.style.display = "none";
         }
      });
    }
@@ -734,6 +739,5 @@ function show_org(a)
       <div class="modal-footer"><button type="button" class="btn btn-primary">OK</button></div>
     </div>
   </div>
-</div>
-<div class="loading" hidden>Loading&#8230;</div>   
+</div>   
 </html>

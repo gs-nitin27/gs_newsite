@@ -276,7 +276,7 @@
         $('#create_job').click(function(){
         if(validate())
           {
-           $('.loading').show();
+           loading.style.display = "block";
            create_job();
           }
       });
@@ -326,13 +326,13 @@
                     if(result.status == '1')
                     {   
                         alert_msg('Job Sucessfully created');
-                        $('.loading').hide();
+                        loading.style.display = "none";
                         window.location.href = "{{url('/manage/dashbo')}}";
                     }
                     else
                     {
                         alert_msg('Something went Wrong');
-                        $('.loading').hide();
+                        loading.style.display = "none";
                     }
                    }
                   }); 
@@ -389,7 +389,7 @@
         // Code For image view and Generating base64 Format
         function readURL(input) {
         if (input.files && input.files[0]) {
-             $('.loading').show();
+            loading.style.display = "block";
             var reader = new FileReader();
             reader.onload = function (e) {
                 $('#blah').attr('src', e.target.result);
@@ -397,7 +397,7 @@
                 image_data = image_data.split(',')[1];
             }
              reader.readAsDataURL(input.files[0]);
-              $('.loading').hide();
+             loading.style.display = "none";
         }
     }
     //function for image upload starts

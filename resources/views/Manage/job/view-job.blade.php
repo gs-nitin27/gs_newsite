@@ -383,7 +383,7 @@ else
 }
 
 function recruitment_update(recruitment_data,act)
-{ $('.loading').show();
+{ loading.style.display = "block";
   $.ajax({
     
     url:url+'/create_database.php?act='+act,
@@ -393,12 +393,12 @@ function recruitment_update(recruitment_data,act)
     {
        getJobApplicants();
        $('#myModal').modal('hide');
-       $('.loading').hide();
+       loading.style.display = "none";
     },
     failure:function()
     {
       alert_msg('Server error');
-      $('.loading').hide();
+      loading.style.display = "none";
     }
 
   });
