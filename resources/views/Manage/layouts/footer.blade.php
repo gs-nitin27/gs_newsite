@@ -46,10 +46,10 @@ function getApp()
     {
       if (result == '1')
       {
-         alert('The app has been sent to your registered emailId '+sess_email+' with the login credentials');
+         alert_msg('The app download link has been sent to your registered emailid '+sess_email+' with the login credentials');
       }else
       {
-        alert('Something went wrong');
+        alert_msg('Something went wrong');
       }
     loading.style.display = "none";
     }
