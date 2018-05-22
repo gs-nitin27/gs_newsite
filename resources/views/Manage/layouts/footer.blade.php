@@ -32,7 +32,7 @@
 });
 
 function getApp()
-{   $('.loading').show();
+{   loading.style.display = "block";
     $.ajax({
     url:'<?php echo url('/manage/get_app'); ?>',
     async:false,
@@ -50,7 +50,7 @@ function getApp()
       {
         alert('Something went wrong');
       }
-    $('.loading').hide();
+    loading.style.display = "none";
     }
 
     });
