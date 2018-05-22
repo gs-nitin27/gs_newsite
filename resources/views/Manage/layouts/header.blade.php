@@ -37,7 +37,7 @@ $org_id = '';
    // var org_name ='<?php //echo $org_name;?>';
  </script>
 </script>
-<div class="loading" style="display: none">Loading&#8230;</div>
+<div class="loading" style="display: none" id="loading">Loading&#8230;</div>
 <header class="headerSec">
         <div class="container">
            <!-- Brand and toggle get grouped for better mobile display -->
