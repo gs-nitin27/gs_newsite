@@ -44,7 +44,7 @@ function getApp()
     data:localStorage.getItem('userdata'),
     success:function(result)
     {
-      if (result.text == '1')
+      if (result == '1')
       {
          alert('The app has been sent to your registered emailId '+sess_email+' with the login credentials');
       }else
