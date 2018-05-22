@@ -251,7 +251,15 @@ window.getJobApplicants = function foo() {
 $(document).ready(function(){
   getJobApplicants();
 
-  
+  var date = new Date();
+    var currentMonth = date.getMonth();
+    var currentDate = date.getDate();
+    var currentYear = date.getFullYear();
+
+    $('#date').datepicker({
+        minDate: new Date(currentYear, currentMonth, currentDate),
+        dateFormat: 'yy-mm-dd'
+    });
         
   
 });   
