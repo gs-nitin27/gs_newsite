@@ -40,6 +40,7 @@ function getApp()
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
           },
     method:"POST",
+    dataType:"text",
     data:localStorage.getItem('userdata'),
     success:function(result)
     {
