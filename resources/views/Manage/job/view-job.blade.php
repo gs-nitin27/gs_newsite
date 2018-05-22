@@ -251,17 +251,6 @@ window.getJobApplicants = function foo() {
 $(document).ready(function(){
   getJobApplicants();
 
-  var date = new Date();
-    var currentMonth = date.getMonth();
-    var currentDate = date.getDate();
-    var currentYear = date.getFullYear();
-
-    $('#date').datepicker({
-        minDate: new Date(currentYear, currentMonth, currentDate),
-        dateFormat: 'yy-mm-dd'
-    });
-        
-  
 });   
 function shortlistCandidate(data,status)
 {if(status == 1)
@@ -316,6 +305,15 @@ else
        }
      });
    });
+   var date = new Date();
+    var currentMonth = date.getMonth();
+    var currentDate = date.getDate();
+    var currentYear = date.getFullYear();
+
+    $('#date').datepicker({
+        minDate: new Date(currentYear, currentMonth, currentDate),
+        dateFormat: 'yy-mm-dd'
+    });
     if($('#venue').val() == '')
     {
       $('#ivenue').text('Please enter the venue');
