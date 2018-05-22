@@ -161,6 +161,7 @@ window.getJobApplicants = function foo() {
            var j = 0;
            var k = 0;
            var profile_pic = '';
+           var interview_date = '';
            
 
           data.forEach(function(data){
@@ -196,13 +197,17 @@ window.getJobApplicants = function foo() {
             {
                 interview_status = 'Schedule';
                 offer_status = 'Disabled';
+                interview_date = '';
+
             }
             else
             {
                 interview_status = 'Re-Schedule';
                 offer_status    = '';
+                var d = new Date(data.interview_date);
+                interview_date = d.toDateString();
             }  
-            short_list +='<tr> <th scope="row">'+j+'</th> <td><a href="'+route_url+'/manage/job/candidate_profile/'+data.userid+'" target="_blank"><img src="'+profile_pic+'" class="pull-left img-circle nav-user-photo" alt="Smiley face" width="42" height="42" target="_blank"></a>&nbsp;&nbsp; </div> <!----> </td><td>'+data.name+'</td> <td>'+data.contact_no+'</td> <td><button class="btb btn-primary" id="'+data.userid+'" data-myval="'+data.name+'" onclick="open_modal(this,1);">'+interview_status+' Interview</button></td> <td>'+data.interview_date+'</td> <td><button class="btn btn-success" '+offer_status+' onclick="open_modal('+data.userid+',2)">'+'Send offer'+'</button></td> </tr>';
+            short_list +='<tr> <th scope="row">'+j+'</th> <td><a href="'+route_url+'/manage/job/candidate_profile/'+data.userid+'" target="_blank"><img src="'+profile_pic+'" class="pull-left img-circle nav-user-photo" alt="Smiley face" width="42" height="42" target="_blank"></a>&nbsp;&nbsp; </div> <!----> </td><td>'+data.name+'</td> <td>'+data.contact_no+'</td> <td><button class="btb btn-primary" id="'+data.userid+'" data-myval="'+data.name+'" onclick="open_modal(this,1);">'+interview_status+' Interview</button></td> <td>'+interview_date+'</td> <td><button class="btn btn-success" '+offer_status+' onclick="open_modal('+data.userid+',2)">'+'Send offer'+'</button></td> </tr>';
             }
              else if(data.status >= '4')
             {++k;
