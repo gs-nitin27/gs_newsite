@@ -26,6 +26,7 @@ if(!Session::has('userdata'))
 		 
         <footer>
            @include('Manage.layouts.footer')
+        <div class="loading" style="display: none">Loading&#8230;</div>
         </footer>
          </body>
    </html>
