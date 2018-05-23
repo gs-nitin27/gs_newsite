@@ -163,13 +163,13 @@ $image_data = '';
                         <section class="clearfix">
                             <aside class="col-lg-6 col-md-6 col-sm-6 col-xs-6 mobView">
                                 <div class="form-group">
-                                    <label for="" class="">Orgenization Name</label>
+                                    <label for="" class="">Organization Name</label>
                                     <input class="form-control" placeholder=" " type="text" name="org_name" id="org_name" value="{{$data[0]->organisation_name}}">
                                 </div>
                             </aside>
                             <aside class="col-lg-6 col-md-6 col-sm-6 col-xs-6 mobView">
                                 <div class="form-group">
-                                    <label for="" class="">About Orgenization</label>
+                                    <label for="" class="">About Organization</label>
                                     <input class="form-control" placeholder=" " type="text" id="about" name="about" value="{{$data[0]->about}}">
                                 </div>
                             </aside>
@@ -353,7 +353,7 @@ $image_data = '';
           //Create job function Ends here
      });
          function validate()
-         {
+         {  var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
             $('#validate_div').html('');
             var n = 0;
             var message = [];
@@ -387,9 +387,16 @@ $image_data = '';
                 n=n+1;
                 message.push('<span>*Contact number Required</span>');
             }if($('#email').val()=='')
-            {
+            {    
+                
                 n=n+1;
                 message.push('<span>*Contact email Required</span>');
+            }
+            if(!($('#email').val().match(mailformat)))
+            {
+
+                n=n+1;
+                message.push('<span>*Enter valid email address</span>');
             }
             if($('#desiredskill').val()=='')
             {

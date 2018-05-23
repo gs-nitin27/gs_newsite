@@ -57,7 +57,7 @@
                <h3>For Sports Recruiters</h3>
                <p>Get Sports specific candidates</p>
                <ul class="cont_box_li">
-                 <li>Able to post job on GeSporty job section</li>
+                 <li>Able to post job on GetSporty job section</li>
                  <li>Use our app for easy recruitment process</li>
                </ul>
             </div>
