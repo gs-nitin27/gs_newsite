@@ -316,19 +316,19 @@ else
     }
     if($('#message').val() == '')
     {
-      $('#message').text('Please enter the message');
+      $('#imessage').text('Please enter the message');
       valid++;
     }else
     {
-      $('#message').text('');
+      $('#imessage').text('');
     }
     if($('#date').val() == '')
     {
-      $('#message').text('Please select the date of interview');
+      $('#idate').text('Please select the date of interview');
       valid++;
     }else
     {
-      $('#ivenue').text('');
+      $('#idate').text('');
     }
     if(valid == 0)
     {  var interview_data = {};
