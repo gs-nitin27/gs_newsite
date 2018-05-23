@@ -312,7 +312,7 @@ else
    });
     if($('#venue').val() == '')
     {
-      $('#ivenue').text('Please enter the venue');
+      $('#ivenue').text('* Please enter the venue');
       valid++;
     }else
     {
@@ -320,7 +320,7 @@ else
     }
     if($('#int_message').val() == '')
     {
-      $('#imessage').text('Please enter the message');
+      $('#imessage').text('* Please enter the message');
       valid++;
     }else
     {
@@ -328,7 +328,7 @@ else
     }
     if($('#date').val() == '')
     {
-      $('#idate').text('Please select the date of interview');
+      $('#idate').text('* Please select the date of interview');
       valid++;
     }else
     {
@@ -358,7 +358,7 @@ else
     valid = 0;
     if($('#joindate').val() == '')
     {
-      $('#ijoindate').text('Please enter the joining date');
+      $('#ijoindate').text('* Please enter the joining date');
       valid++;
     }else
     {
@@ -366,7 +366,7 @@ else
     }
     if($('#salary').val() == '')
     {
-      $('#isalary').text('Please enter the salary');
+      $('#isalary').text('* Please enter the salary');
       valid++;
     }else
     {
