@@ -281,7 +281,7 @@ function open_modal(data,status)
   var act = '';
   if(status == '1')
 {
-  $('.modal-body').html(' <input type="hidden" class="form-control" id="org_id" /> <form class="form-horizontal" role="form"> <div class="form-group"> <label  class="col-sm-2 control-label"for="inputEmail3">Interview Date</label> <div class="col-sm-10"> <span id="idate"><p></p></span> <input type="date" class="form-control"id="date" /> </div> </div> <div class="form-group"> <label  class="col-sm-2 control-label"for="inputEmail3">Venue</label> <div class="col-sm-10"> <span id="ivenue"><p></p></span> <input type="text" class="form-control"id="venue" placeholder="Venue"/> </div> </div> <div class="form-group"> <label  class="col-sm-2 control-label"for="inputEmail3">Message</label> <div class="col-sm-10"> <span id="imessage"><p><p></span> <input type="text" class="form-control" id="message" placeholder="Enter Message..."/> </div> </div> </form> <div class="modal-footer"> <button type="button" class="btn btn-default"data-dismiss="modal" id="close">Cancel</button> <button type="button" class="btn btn-primary" id="schedule_interview">Shedule Interview</button> </div>');
+  $('.modal-body').html(' <input type="hidden" class="form-control" id="org_id" /> <form class="form-horizontal" role="form"> <div class="form-group"> <label  class="col-sm-2 control-label"for="inputEmail3">Interview Date</label> <div class="col-sm-10"> <span id="idate"><p></p></span> <input type="date" class="form-control"id="date" /> </div> </div> <div class="form-group"> <label  class="col-sm-2 control-label"for="inputEmail3">Venue</label> <div class="col-sm-10"> <span id="ivenue"><p></p></span> <input type="text" class="form-control"id="venue" placeholder="Venue"/> </div> </div> <div class="form-group"> <label  class="col-sm-2 control-label"for="inputEmail3">Message</label> <div class="col-sm-10"> <span id="imessage"><p><p></span> <input type="text" class="form-control" id="int_message" placeholder="Enter Message..."/> </div> </div> </form> <div class="modal-footer"> <button type="button" class="btn btn-default"data-dismiss="modal" id="close">Cancel</button> <button type="button" class="btn btn-primary" id="schedule_interview">Shedule Interview</button> </div>');
 }
 else
 {
@@ -314,7 +314,7 @@ else
     {
       $('#ivenue').text('');
     }
-    if($('#message').val() == '')
+    if($('#int_message').val() == '')
     {
       $('#imessage').text('Please enter the message');
       valid++;
@@ -339,7 +339,7 @@ else
        interview_data.status      =  '3';
        interview_data.module      =  '1';
        interview_data.date        =  $('#date').val();
-       interview_data.msg         =  $('#message').val();
+       interview_data.msg         =  $('#int_message').val();
        interview_data.venue       =  $('#venue').val();
        act = 'interview_schedule';
        recruitment_update(interview_data,act);
