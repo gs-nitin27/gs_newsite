@@ -100,7 +100,7 @@ $detail = $detail[0];
       <th scope="col">Location</th>
       <th scope="col">Mobile</th>
       <th scope="col">Age</th>
-      <th scope="col">OFFER STATUS</th>
+      <th scope="col">Offer Status</th>
     </tr>
   </thead>
   <tbody id="offer">
