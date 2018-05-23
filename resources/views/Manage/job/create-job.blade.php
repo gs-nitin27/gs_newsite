@@ -195,13 +195,13 @@
                             <aside class="col-lg-6 col-md-6 col-sm-6 col-xs-6 mobView">
                                 <div class="form-group">
                                     <label for="" class="">Mobile No.*</label>
-                                    <input class="form-control" placeholder=" " type="number" id="contact" name="contact" maxlength="11">
+                                    <input class="form-control" placeholder=" " type="tel" id="contact" name="contact" maxlength="11">
                                 </div>
                             </aside>
                             <aside class="col-lg-6 col-md-6 col-sm-6 col-xs-6 mobView">
                                 <div class="form-group">
                                     <label for="" class="">Pin</label>
-                                    <input class="form-control" placeholder=" " type="text" name="pin" id="org_pin">
+                                    <input class="form-control" placeholder=" " type="text" name="pin" id="org_pin" maxlength="8">
                                 </div>
                             </aside>
                          </section>

@@ -276,7 +276,7 @@ function shortlistCandidate(data,status)
 
 function open_modal(data,status)
 { 
-  var val = 0;
+  var valid = 0;
   $("#myModal").modal();
   var act = '';
   if(status == '1')
@@ -288,6 +288,7 @@ else
    $('.modal-body').html(' <input type="hidden" class="form-control" id="org_id" /> <form class="form-horizontal" role="form"> <div class="form-group"> <label  class="col-sm-2 control-label"for="inputEmail3">Joining Date</label> <div class="col-sm-10"> <span id="ijoindate"><p></p></span> <input type="date" class="form-control"id="joindate" /> </div> </div> <div class="form-group"> <label  class="col-sm-2 control-label"for="inputEmail3">Salary</label> <div class="col-sm-10"> <span id="isalary"><p></p></span> <input type="text" class="form-control"id="salary" placeholder="salary"/> </div> </div></form> <div class="modal-footer"> <button type="button" class="btn btn-default"data-dismiss="modal" id="close">Send Later</button> <button type="button" class="btn btn-primary" id="Send_offer">Send Offer </button> </div>');
 }
   $('#schedule_interview').click(function(){
+  valid = 0;
   var applicant_data = ''; 
   var applicant_id = '';
   $(data).each(function() {
@@ -308,7 +309,7 @@ else
     if($('#venue').val() == '')
     {
       $('#ivenue').text('Please enter the venue');
-      val++;
+      valid++;
     }else
     {
       $('#ivenue').text('');
@@ -316,7 +317,7 @@ else
     if($('#message').val() == '')
     {
       $('#message').text('Please enter the message');
-      val++;
+      valid++;
     }else
     {
       $('#message').text('');
@@ -324,12 +325,12 @@ else
     if($('#date').val() == '')
     {
       $('#message').text('Please select the date of interview');
-      val++;
+      valid++;
     }else
     {
       $('#ivenue').text('');
     }
-    if(val == 0)
+    if(valid == 0)
     {  var interview_data = {};
        interview_data.employer_id =  sess_userid;
        interview_data.username    =  applicant_data;
@@ -350,10 +351,11 @@ else
     });
 
   $('#Send_offer').click(function(){
+    valid = 0;
     if($('#joindate').val() == '')
     {
       $('#ijoindate').text('Please enter the joining date');
-      val++;
+      valid++;
     }else
     {
       $('#ijoindate').text('');
@@ -361,13 +363,13 @@ else
     if($('#salary').val() == '')
     {
       $('#isalary').text('Please enter the salary');
-      val++;
+      valid++;
     }else
     {
       $('#isalary').text('');
     }
     
-    if(val == 0)
+    if(valid == 0)
     {  var offer_data = {};
        offer_data.emp_id       =  sess_userid;
        offer_data.salary       =  $("#salary").val();
