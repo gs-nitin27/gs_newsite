@@ -107,7 +107,7 @@
                             </aside>
                             <aside class="col-lg-6 col-md-6 col-sm-6 col-xs-6 mobView">
                                 <div class="form-group">
-                                    <label for="" class="">Qualification</label>
+                                    <label for="" class="">Qualification*</label>
                                     <input class="form-control" placeholder=" " type="text" name="qualification" id="qualification">
                                 </div>
                             </aside>
@@ -195,7 +195,7 @@
                             <aside class="col-lg-6 col-md-6 col-sm-6 col-xs-6 mobView">
                                 <div class="form-group">
                                     <label for="" class="">Mobile No.*</label>
-                                    <input class="form-control" placeholder=" " type="text" id="contact" name="contact">
+                                    <input class="form-control" placeholder=" " type="number" id="contact" name="contact" maxlength="11">
                                 </div>
                             </aside>
                             <aside class="col-lg-6 col-md-6 col-sm-6 col-xs-6 mobView">
@@ -373,6 +373,21 @@
             {
                 n=n+1;
                 message.push('<span>*Contact number Required</span>');
+            }
+            if($('#email').val()=='')
+            {
+                n=n+1;
+                message.push('<span>*Contact email Required</span>');
+            }
+            if($('#desiredskill').val()=='')
+            {
+                n=n+1;
+                message.push('<span>*Specify the Desired skill</span>');
+            }
+            if($('#qualification').val()=='')
+            {
+                n=n+1;
+                message.push('<span>*Please specify the required qualifications</span>');
             }
             if(n>0)
             {   var msg_data = message.join('</br>');
