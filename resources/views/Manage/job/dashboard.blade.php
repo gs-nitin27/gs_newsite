@@ -346,7 +346,7 @@
            "gstin":$('#gstin').val()
          }
        org_data = JSON.stringify(org_data);
-     // alert_msg(org_data);return;
+       loading.style.display = "display";
        $.ajax({
         url:url+'/angularapi.php?act=addOrg',
         method:"POST",
@@ -365,7 +365,7 @@
              userdata.org_data.org_id = JSON.parse(result);
              userdata.org_data.org_name = $('#org_name').val();
              localStorage.setItem('userdata',JSON.stringify(userdata));
-             $('.modal').modal('hide');
+             loading.style.display = "none";
            }
            else
            {

@@ -32,7 +32,7 @@
 });
 
 function getApp()
-{   $('.loading').show();
+{   loading.style.display = "block";
     $.ajax({
     url:'<?php echo url('/manage/get_app'); ?>',
     async:false,
@@ -40,17 +40,18 @@ function getApp()
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
           },
     method:"POST",
+    dataType:"text",
     data:localStorage.getItem('userdata'),
     success:function(result)
     {
-      if (result.text == '1')
+      if (result == '1')
       {
-         alert('The app has been sent to your registered emailId '+sess_email+' with the login credentials');
+         alert_msg('The app download link has been sent to your registered emailid '+sess_email+' with the login credentials');
       }else
       {
-        alert('Something went wrong');
+        alert_msg('Something went wrong');
       }
-    $('.loading').hide();
+    loading.style.display = "none";
     }
 
     });

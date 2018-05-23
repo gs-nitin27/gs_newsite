@@ -45,19 +45,18 @@
    <div class="clearfix margin20"></div> 
   <div class="clearfix"></div>
     <div class="container" id="support">
-      <div class="col-lg-6 col-md-6 text-center">
-          <img src="public/img/recruiter.png">
-         </div>
+      <div class="row">
+
 <!--       <div class="registration vertical-text">
         <a href="#" class=""><i class="fa fa-address-card "></i> Registration</a>
       </div> -->
-      <div class="row">
+      
       	<div class="col-lg-6 col-md-6 ">
           <div class="right-cont cont_box">
                <h3>For Sports Recruiters</h3>
                <p>Get Sports specific candidates</p>
                <ul class="cont_box_li">
-                 <li>Able to post job on GeSporty job section</li>
+                 <li>Able to post job on GetSporty job section</li>
                  <li>Use our app for easy recruitment process</li>
                </ul>
             </div>
@@ -66,7 +65,9 @@
            <h3>Support</h3>
              <p>For more info and support, contact us!</p>
          </div> -->
-         
+         <div class="col-lg-6 col-md-6 text-center rec">
+          <img src="public/img/recruiter.png">
+         </div>
          <div class="clearfix margin20"></div> 
        </div>
        <a href="{{url('landing-job/')}}"><button class="btn btn-success">Post a job</button></a>

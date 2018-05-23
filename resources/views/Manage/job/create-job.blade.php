@@ -107,7 +107,7 @@
                             </aside>
                             <aside class="col-lg-6 col-md-6 col-sm-6 col-xs-6 mobView">
                                 <div class="form-group">
-                                    <label for="" class="">Qualification</label>
+                                    <label for="" class="">Qualification*</label>
                                     <input class="form-control" placeholder=" " type="text" name="qualification" id="qualification">
                                 </div>
                             </aside>
@@ -195,13 +195,13 @@
                             <aside class="col-lg-6 col-md-6 col-sm-6 col-xs-6 mobView">
                                 <div class="form-group">
                                     <label for="" class="">Mobile No.*</label>
-                                    <input class="form-control" placeholder=" " type="text" id="contact" name="contact">
+                                    <input class="form-control" placeholder=" " type="tel" id="contact" name="contact" maxlength="11">
                                 </div>
                             </aside>
                             <aside class="col-lg-6 col-md-6 col-sm-6 col-xs-6 mobView">
                                 <div class="form-group">
                                     <label for="" class="">Pin</label>
-                                    <input class="form-control" placeholder=" " type="text" name="pin" id="org_pin">
+                                    <input class="form-control" placeholder=" " type="text" name="pin" id="org_pin" maxlength="8">
                                 </div>
                             </aside>
                          </section>
@@ -276,7 +276,7 @@
         $('#create_job').click(function(){
         if(validate())
           {
-           $('.loading').show();
+           loading.style.display = "block";
            create_job();
           }
       });
@@ -326,13 +326,13 @@
                     if(result.status == '1')
                     {   
                         alert_msg('Job Sucessfully created');
-                        $('.loading').hide();
+                        loading.style.display = "none";
                         window.location.href = "{{url('/manage/dashbo')}}";
                     }
                     else
                     {
                         alert_msg('Something went Wrong');
-                        $('.loading').hide();
+                        loading.style.display = "none";
                     }
                    }
                   }); 
@@ -340,7 +340,7 @@
           //Create job function Ends here
      });
          function validate()
-         {
+         {  var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
             $('#validate_div').html('');
             var n = 0;
             var message = [];
@@ -374,6 +374,32 @@
                 n=n+1;
                 message.push('<span>*Contact number Required</span>');
             }
+            if($('#email').val()=='')
+            {
+                n=n+1;
+                message.push('<span>*Contact email Required</span>');
+            }
+            if($('#desiredskill').val()=='')
+            {
+                n=n+1;
+                message.push('<span>*Specify the Desired skill</span>');
+            }
+            if($('#qualification').val()=='')
+            {
+                n=n+1;
+                message.push('<span>*Please specify the required qualifications</span>');
+            }
+            if(!($('#email').val().match(mailformat)))
+            {
+
+                n=n+1;
+                message.push('<span>*Enter valid email address</span>');
+            }
+            if(image_data=='' || image_data == undefined)
+            {
+                n=n+1;
+                message.push('<span>*Job image required</span>');
+            }
             if(n>0)
             {   var msg_data = message.join('</br>');
                 $('#validate_div').html(msg_data);
@@ -389,7 +415,7 @@
         // Code For image view and Generating base64 Format
         function readURL(input) {
         if (input.files && input.files[0]) {
-             $('.loading').show();
+            loading.style.display = "block";
             var reader = new FileReader();
             reader.onload = function (e) {
                 $('#blah').attr('src', e.target.result);
@@ -397,7 +423,7 @@
                 image_data = image_data.split(',')[1];
             }
              reader.readAsDataURL(input.files[0]);
-              $('.loading').hide();
+             loading.style.display = "none";
         }
     }
     //function for image upload starts

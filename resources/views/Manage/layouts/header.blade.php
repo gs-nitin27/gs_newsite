@@ -36,6 +36,10 @@ $org_id = '';
 
    // var org_name ='<?php //echo $org_name;?>';
  </script>
+<div class="loading" style="display: none" id="loading">Loading&#8230;</div>
+<script type="text/javascript">
+    
+    var loading = document.getElementById('loading');
 </script>
 <header class="headerSec">
         <div class="container">

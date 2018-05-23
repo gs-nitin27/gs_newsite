@@ -163,13 +163,13 @@ $image_data = '';
                         <section class="clearfix">
                             <aside class="col-lg-6 col-md-6 col-sm-6 col-xs-6 mobView">
                                 <div class="form-group">
-                                    <label for="" class="">Orgenization Name</label>
+                                    <label for="" class="">Organization Name</label>
                                     <input class="form-control" placeholder=" " type="text" name="org_name" id="org_name" value="{{$data[0]->organisation_name}}">
                                 </div>
                             </aside>
                             <aside class="col-lg-6 col-md-6 col-sm-6 col-xs-6 mobView">
                                 <div class="form-group">
-                                    <label for="" class="">About Orgenization</label>
+                                    <label for="" class="">About Organization</label>
                                     <input class="form-control" placeholder=" " type="text" id="about" name="about" value="{{$data[0]->about}}">
                                 </div>
                             </aside>
@@ -288,7 +288,7 @@ $image_data = '';
            
            // funtion for creating a job
            function create_job() 
-           {   $('.loading').show();
+           {   loading.style.display = "block";
                var job_data = {
                 "id":'{{$data[0]->id}}',
                 "userid":sess_userid,
@@ -329,7 +329,7 @@ $image_data = '';
                     dataType: "text",
                     beforeSend: function(){
                         // Show image container
-                        $(".loading").show();
+                        loading.style.display = "none";
                        },
                     success: function(result){
                     result = JSON.parse(result);
@@ -342,18 +342,18 @@ $image_data = '';
                     {
                         alert_msg('Something went wrong');
                     }
-                    $('.loading').hide();
+                    loading.style.display = "none";
                    },
                    complete:function(){
                         // Show image container
-                        $(".loading").hide();
+                        loading.style.display = "none";
                        }
                 }); 
             }
           //Create job function Ends here
      });
          function validate()
-         {
+         {  var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
             $('#validate_div').html('');
             var n = 0;
             var message = [];
@@ -386,16 +386,43 @@ $image_data = '';
             {
                 n=n+1;
                 message.push('<span>*Contact number Required</span>');
+            }if($('#email').val()=='')
+            {    
+                
+                n=n+1;
+                message.push('<span>*Contact email Required</span>');
             }
+            if(!($('#email').val().match(mailformat)))
+            {
+
+                n=n+1;
+                message.push('<span>*Enter valid email address</span>');
+            }
+            if($('#desiredskill').val()=='')
+            {
+                n=n+1;
+                message.push('<span>*Specify the Desired skill</span>');
+            }
+            if($('#qualification').val()=='')
+            {
+                n=n+1;
+                message.push('<span>*Specify the required qualifications</span>');
+            }
+            // if(image_data=='' || image_data == undefined)
+            // {
+            //     n=n+1;
+            //     message.push('<span>*Job image required</span>');
+            // }
             if(n>0)
-            {   var msg_data = message.join('</br>');
+            {   
+                var msg_data = message.join('</br>');
                 $('#validate_div').html(msg_data);
                 window.scrollTo(500, 0);
                 return false;
             }
             else
             {
-              return true;
+                return true;
             }
            }
 
