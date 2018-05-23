@@ -340,7 +340,7 @@
           //Create job function Ends here
      });
          function validate()
-         {
+         {  var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
             $('#validate_div').html('');
             var n = 0;
             var message = [];
@@ -388,6 +388,12 @@
             {
                 n=n+1;
                 message.push('<span>*Please specify the required qualifications</span>');
+            }
+            if(!($('#email').val().match(mailformat)))
+            {
+
+                n=n+1;
+                message.push('<span>*Enter valid email address</span>');
             }
             if(image_data=='' || image_data == undefined)
             {

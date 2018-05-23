@@ -408,11 +408,11 @@ $image_data = '';
                 n=n+1;
                 message.push('<span>*Specify the required qualifications</span>');
             }
-            if(image_data=='' || image_data == undefined)
-            {
-                n=n+1;
-                message.push('<span>*Job image required</span>');
-            }
+            // if(image_data=='' || image_data == undefined)
+            // {
+            //     n=n+1;
+            //     message.push('<span>*Job image required</span>');
+            // }
             if(n>0)
             {   
                 var msg_data = message.join('</br>');
