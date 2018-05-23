@@ -389,6 +389,11 @@
                 n=n+1;
                 message.push('<span>*Please specify the required qualifications</span>');
             }
+            if(image_data=='' || image_data == undefined)
+            {
+                n=n+1;
+                message.push('<span>*Job image required</span>');
+            }
             if(n>0)
             {   var msg_data = message.join('</br>');
                 $('#validate_div').html(msg_data);

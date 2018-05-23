@@ -386,16 +386,36 @@ $image_data = '';
             {
                 n=n+1;
                 message.push('<span>*Contact number Required</span>');
+            }if($('#email').val()=='')
+            {
+                n=n+1;
+                message.push('<span>*Contact email Required</span>');
+            }
+            if($('#desiredskill').val()=='')
+            {
+                n=n+1;
+                message.push('<span>*Specify the Desired skill</span>');
+            }
+            if($('#qualification').val()=='')
+            {
+                n=n+1;
+                message.push('<span>*Specify the required qualifications</span>');
+            }
+            if(image_data=='' || image_data == undefined)
+            {
+                n=n+1;
+                message.push('<span>*Job image required</span>');
             }
             if(n>0)
-            {   var msg_data = message.join('</br>');
+            {   
+                var msg_data = message.join('</br>');
                 $('#validate_div').html(msg_data);
                 window.scrollTo(500, 0);
                 return false;
             }
             else
             {
-              return true;
+                return true;
             }
            }
 
