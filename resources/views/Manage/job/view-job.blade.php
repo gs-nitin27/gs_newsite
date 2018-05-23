@@ -4,7 +4,11 @@
 @php 
 $detail = $detail[0];
 @endphp
-
+<style type="text/css">
+  .modal-body span{
+    color: #ff0b0b;
+  }
+</style>
 <main><section class="half">
         <h3>{{$detail->title}}</h3><a class="job-edit" href="{{url('/manage/edit/')}}/{{$detail->id}}"><span>Edit</span></a>
              <div class="job-view col-md-12 col-xs-12 col-sm-4">
