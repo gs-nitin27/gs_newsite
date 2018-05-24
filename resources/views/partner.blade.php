@@ -27,7 +27,7 @@
             </div>      
           <!-- Modal pop -->
             <div id="myModal" class="modal fade" role="dialog">
-  <div class="modal-dialog">
+    <div class="modal-dialog">
 
     <!-- Modal content-->
     <div class="modal-content">
@@ -66,7 +66,7 @@
              <p>For more info and support, contact us!</p>
          </div> -->
          <div class="col-lg-6 col-md-6 text-center rec">
-          <img src="public/img/recruiter.png">
+          <img src="public/img/recruiter.png" height="250" width="250" style="margin-left: -50%;">
          </div>
          <div class="clearfix margin20"></div> 
        </div>
@@ -181,6 +181,6 @@
          
          <div class="clearfix margin20"></div> 
        </div>
-       <a href="{{url('manage/login/')}}<?php echo '/'.base64_encode(2);?>"><button class="btn btn-success">Join us</button></a>
+       <a href="{{url('coach')}}"><button class="btn btn-success">Join us</button></a>
    </div>
 @stop

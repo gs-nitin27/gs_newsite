@@ -72,7 +72,10 @@ Route::get('/gs-vacancies', function()
             return View::make('vacancy_view');
         });
 Route::post('user_susbcription','WebController@user_subscription');
-
+Route::get('/coach', function()
+         {
+             return View::make('coach');
+         });
 
 Route::group(array('prefix' => 'manage'), function()
     {

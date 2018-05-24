@@ -998,4 +998,18 @@ margin: 0px;
         .play-icon{margin-bottom: 20px}
 }
 
+.Business_professional{
+     background-image: url(../img/Business_professional.png);
+    background-size: cover;
+    height: 414px;
+    background-position: center;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 59%, 0 99%);
+    clip-path: polygon(0 0, 100% 0, 100% 59%, 0 99%);
+    margin-top: -64px;
+}
 
+.Business_professional{
+    background-image: url(../img/Business_professional.png);
+    background-size: cover;
+    padding: 20px
+}
