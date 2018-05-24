@@ -7,13 +7,13 @@
   <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
   
   <!-- Bootstrap -->
-  <link href="{{asset('public/manage_assets/css/bootstrap.min.css')}}" rel="stylesheet">
-  <link href="{{asset('public/manage_assets/css/style.css')}}" rel="stylesheet">
-  <link href="{{asset('public/manage_assets/css/font-awesome.min.css')}}" rel="stylesheet">  
+  <link href="{{asset('public/manage_assets/css/bootstrap.min.css?v=')}}<?php echo rand(1,3);?>" rel="stylesheet">
+  <link href="{{asset('public/manage_assets/css/style.css?v=')}}<?php echo rand(1,3);?>" rel="stylesheet">
+  <link href="{{asset('public/manage_assets/css/font-awesome.min.css?v=')}}<?php echo rand(1,3);?>" rel="stylesheet">  
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>  
-  <script src="{{asset('public/manage_assets/js/bootstrap.min.js')}}"></script>
-  <script src="{{asset('public/manage_assets/js/common.js')}}"></script>
-  <script src="{{asset('public/manage_assets/js/validation.js')}}"></script>
+  <script src="{{asset('public/manage_assets/js/bootstrap.min.js?v=')}}<?php echo rand(1,3);?>"></script>
+  <script src="{{asset('public/manage_assets/js/common.js?v=')}}<?php echo rand(1,3);?>"></script>
+  <script src="{{asset('public/manage_assets/js/validation.js?v=')}}<?php echo rand(1,3);?>"></script>
   <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
 
 

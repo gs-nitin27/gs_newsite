@@ -33,7 +33,9 @@
 
 function getApp()
 {   loading.style.display = "block";
-    $.ajax({
+    if(loading.style.display == "block")
+    {
+       $.ajax({
     url:'<?php echo url('/manage/get_app'); ?>',
     async:false,
     headers: {
@@ -43,7 +45,7 @@ function getApp()
     dataType:"text",
     data:localStorage.getItem('userdata'),
     success:function(result)
-    {
+    {  return;
       if (result == '1')
       {
          alert_msg('The app download link has been sent to your registered emailid '+sess_email+' with the login credentials');
@@ -55,6 +57,7 @@ function getApp()
     }
 
     });
+    }
 }
 
 

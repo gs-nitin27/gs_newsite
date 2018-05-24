@@ -32,15 +32,23 @@ $org_id = '';
     var sess_name = '<?php echo $sess_name; ?>';
     var sess_email = '<?php echo $sess_email; ?>';
     var route_url = '<?php echo url('/'); ?>';
-
-
-   // var org_name ='<?php //echo $org_name;?>';
- </script>
 </script>
+
 <div class="loading" style="display: none" id="loading">Loading&#8230;</div>
 <script type="text/javascript">
     
     var loading = document.getElementById('loading');
+    var $loading = $('#loading').hide();
+                   //Attach the event handler to any element
+                   $(document)
+                     .ajaxStart(function () {
+                        //ajax request went so show the loading image
+                         $loading.show();
+                     })
+                   .ajaxStop(function () {
+                       //got response so hide the loading image
+                        $loading.hide();
+                    });
 </script>
 <header class="headerSec">
         <div class="container">
