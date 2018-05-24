@@ -11,7 +11,9 @@
     </div>
   </div>
 </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.0/jquery-confirm.min.js"></script>
   <script type="text/javascript">
+   
     $(document).ready(function() {
        
 
@@ -33,7 +35,9 @@
 
 function getApp()
 {   loading.style.display = "block";
-    $.ajax({
+    if(loading.style.display == "block")
+    {
+       $.ajax({
     url:'<?php echo url('/manage/get_app'); ?>',
     async:false,
     headers: {
@@ -43,7 +47,7 @@ function getApp()
     dataType:"text",
     data:localStorage.getItem('userdata'),
     success:function(result)
-    {
+    { // return;
       if (result == '1')
       {
          alert_msg('The app download link has been sent to your registered emailid '+sess_email+' with the login credentials');
@@ -55,6 +59,7 @@ function getApp()
     }
 
     });
+    }
 }
 
 
