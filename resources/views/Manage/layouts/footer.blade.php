@@ -45,7 +45,7 @@ function getApp()
     dataType:"text",
     data:localStorage.getItem('userdata'),
     success:function(result)
-    {  return;
+    { // return;
       if (result == '1')
       {
          alert_msg('The app download link has been sent to your registered emailid '+sess_email+' with the login credentials');
