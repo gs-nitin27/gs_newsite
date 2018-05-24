@@ -15,6 +15,8 @@
   <script src="{{asset('public/manage_assets/js/common.js?v=')}}<?php echo rand(1,3);?>"></script>
   <script src="{{asset('public/manage_assets/js/validation.js?v=')}}<?php echo rand(1,3);?>"></script>
   <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.0/jquery-confirm.min.css">
+
 
 
 <!--  <script type="text/javascript">

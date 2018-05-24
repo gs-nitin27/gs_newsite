@@ -104,16 +104,15 @@ window.clearconsole = function clearconsole(){
    console.clear();
   }
 }
-function alert_msg(msg)
-{
+ function alert_msg(msg)
+    {
+      $.alert({
+    title: 'Alert!',
+    animation: 'zoom',
+    closeAnimation: 'scale',
+    content: msg
+});}
 
-     $('.modal-body').html('<center><p>'+msg+'</p></center>');
-     $("#alert").modal({                    // wire up the actual modal functionality and show the dialog
-       "backdrop"  : "static",
-       "keyboard"  : true,
-       "show"      : true                     // ensure the modal is shown immediately
-     });
-}
 
 $(document).ready(function(){
 $('#alert button').on('click',function(){$('#alert').modal('hide');});
