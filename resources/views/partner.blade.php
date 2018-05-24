@@ -66,7 +66,7 @@
              <p>For more info and support, contact us!</p>
          </div> -->
          <div class="col-lg-6 col-md-6 text-center rec">
-          <img src="public/img/recruiter.png" height="250" width="250" style="margin-left: -50%;">
+          <img src="public/img/recruiter.png" height="250" width="260" style="margin-left: -50%;">
          </div>
          <div class="clearfix margin20"></div> 
        </div>
