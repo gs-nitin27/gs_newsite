@@ -107,9 +107,11 @@ window.clearconsole = function clearconsole(){
  function alert_msg(msg)
     {
       $.alert({
-    title: 'Alert!',
-    animation: 'zoom',
+    title: '',
+    animation: 'top',
     closeAnimation: 'scale',
+    animationSpeed: 200,
+    type:'blue',
     content: msg
 });}
 
