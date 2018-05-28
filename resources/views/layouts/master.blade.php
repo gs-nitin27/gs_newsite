@@ -1,7 +1,7 @@
 <?php
 //die($_SERVER['REMOTE_ADDR'].env('APP_ENV'));die;
 if (env('APP_ENV') === 'testing') {
-if($_SERVER['REMOTE_ADDR'] == '171.61.135.200' || $_SERVER['REMOTE_ADDR'] == '::1')  // Check fr testing environment
+if($_SERVER['REMOTE_ADDR'] == '122.177.103.232' || $_SERVER['REMOTE_ADDR'] == '::1')  // Check fr testing environment
 {
 
 ?> 
