@@ -19,7 +19,7 @@
              <div class="play-icon" data-toggle="modal" data-target="#myModal">
         	  <img src="public/img/play-icon.svg">
               </div>
-            </div>      
+        </div>      
           <!-- Modal pop -->
 
             <div id="getApp" class="modal fade" role="dialog">

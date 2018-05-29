@@ -16,6 +16,7 @@
 <meta name="twitter:image" content="<?php echo config('constant.IMAGE_URL').'/event/'.$name[0]->image; ?>"
  />
 @endsection
+
 @section('content')
             <div class="joblist-bg eventBg bannerBgSec">
             <div class="container">
@@ -83,7 +84,11 @@
               			<p>Event City : <span>{{$name[0]->organizer_city}}</span></p>        			 
             			  <p>Event Pin : <span>{{$name[0]->pin}} </span></p>      			  
             			  <p>For more info : <span class="read-c"><a href="{{$name[0]->event_links}}"> Click here</a> </span></p>
-        			 </div>
+        			     <!--    <h1>{{$name[0]->is_native}}</h1> -->
+                       @if($name[0]->is_native == '1')
+                       <a href="{{url('/')}}/user/login/{{base64_encode('3/'.$name[0]->id)}}"><span><h1>APPLY NOW</h1></span></a>
+                      @endif
+               </div>
                <div>
   <h4>Note:</h4><p>GetSporty is not an organizer for this event / tournament and has no control over any changes in the above given information. For any info. Please connect to the above given contact details.</p>
 </div>

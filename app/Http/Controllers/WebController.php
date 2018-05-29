@@ -118,6 +118,7 @@ use DateTime;
     {
     $obj  = new WebModel();
     $resp = $obj->getEventDetail($id);
+   
     $sport_name = $resp[0]->sport_name;
     $resp1 = $obj->getEventDetail_data($sport_name,$id);
     if (count($resp1)==0)

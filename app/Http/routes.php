@@ -134,4 +134,17 @@ Route::group(array('prefix' => 'manage'), function()
     Route::post('/get_app','WebEmail@send_app_inmail');
     });
     
+    Route::group(array('prefix' => 'user'), function()
+    {
 
+
+      Route::get('/login/{id}',function(){
+       
+            return View::make('user_login');
+     });
+     
+     Route::get('set_user_data','user_controller@set_user_data');
+     Route::get('user_apply/{id}','user_controller@get_apply_view');
+
+    
+    });
