@@ -26,7 +26,10 @@ class user_controller extends Controller
 
     public function get_apply_view($id)
     {
-
+          $value = Session::get('lite_user_data');
+          $value = session('lite_user_data');
+          echo $id;
+          print_r($value);
     	 return view('lite_user.event_participate');
      //     $value = Session::get('lite_user_data');
      //     $value = session('lite_user_data');
