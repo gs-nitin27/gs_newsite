@@ -24,7 +24,7 @@ class user_controller extends Controller
 	    } 
     }
 
-    public function get_apply_view($id)
+    public function get_apply_view(Request $request)
     {     $value = $request->session()->get('key');
           echo $value;
           $value = Session::get('lite_user_data');
