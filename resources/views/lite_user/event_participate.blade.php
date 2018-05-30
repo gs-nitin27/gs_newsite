@@ -1,7 +1,3 @@
-<?php 
-
- $value = Session::get('lite_user_data');
- $value = session('lite_user_data');
- $sess_data = json_decode($value);
- print_r($sess_data);die;
-?>
+@extends('lite_user.template.master')
+@section('pageTitle','')
+<h1>{{print_r($data['item_data'][0])}}</h1>

@@ -86,7 +86,7 @@
             			  <p>For more info : <span class="read-c"><a href="{{$name[0]->event_links}}"> Click here</a> </span></p>
         			     <!--    <h1>{{$name[0]->is_native}}</h1> -->
                        @if($name[0]->is_native == '1')
-                       <a href="{{url('/')}}/user/login/{{base64_encode('3/'.$name[0]->id)}}"><span><h1>APPLY NOW</h1></span></a>
+                      <!--  <a href="{{url('/')}}/user/login/{{base64_encode('2/'.$name[0]->id)}}"><span><h1>APPLY NOW</h1></span></a> -->
                       @endif
                </div>
                <div>

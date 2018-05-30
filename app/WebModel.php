@@ -82,12 +82,18 @@ class WebModel extends Model
 
 
 public function getEventDetail($id)
-{
+{  
     $event      = DB::table('gs_eventinfo')->select('id','name','type', 'sport','description','image','sport_name','organizer_city','start_date','end_date','entry_start_date','entry_end_date','pin','address_1','organizer_name','email_app_collection','event_links','is_native')->where('id', $id)->get();
      //print_r($event);die;
      return $event;
 }
-    
+ 
+// public function getTrialDetail($id)
+// {
+//     $trial      = DB::table('gs_eventinfo')->select('id','name','type', 'sport','description','image','sport_name','organizer_city','start_date','end_date','entry_start_date','entry_end_date','pin','address_1','organizer_name','email_app_collection','event_links','is_native')->where('id', $id)->where('type','<>','Trial')->get();
+//      //print_r($event);die;
+//      return $trial;
+// }   
 
 
 public function getJobDetail($id)
@@ -158,8 +164,7 @@ return $getData;
 public function saveSubscribed($data,$where,$code)
 { 
   $data_insert = DB::table('visitor_subscribe')->insert(
-    ['email' =>$data['email'], 'sport' =>$data['sport'],'phone' =>$data['phone'],'where'=>$where,'module'=>$data['module'],'ip_address'=>$data['ipaddress'],'unique_code'=>$code]
-);
+    ['email' =>$data['email'], 'sport' =>$data['sport'],'phone' =>$data['phone'],'where'=>$where,'module'=>$data['module'],'ip_address'=>$data['ipaddress'],'unique_code'=>$code]);
   if($data_insert)
   {
     return 1;

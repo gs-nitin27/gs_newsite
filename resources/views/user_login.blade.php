@@ -18,11 +18,13 @@ $section1 = explode('/',$section);
 $string = $section1[0];
 $item   = $section1[1];
 if(Session::has('lite_user_data'))
-   { 
+   {  
       $value = session('lite_user_data');
       $url = 'user/user_apply/'.base64_encode($section);
       Redirect::to($url)->send();
    }
+   $value = session('lite_user_data');
+          print_r($value);
 ?>
 
 <!-- <!DOCTYPE html>
@@ -312,7 +314,7 @@ var data = JSON.stringify(data1);
       headers: {
         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
       },
-      url:"{{url('/manage/setdata')}}",
+      url:"{{url('/user/set_user_data')}}",
       method:"GET",
       dataType:"text",
       data:'data='+localStorage.getItem('liteuserdata'),
@@ -320,16 +322,11 @@ var data = JSON.stringify(data1);
       {
           if(result != 0)
         {
-          if(url_param == '3')
+          if(url_param == '2')
           {
            var url = "<?php echo url('/'); ?>"+"/user/user_apply/"+apply_data;
            window.location.href = encodeURI(url);
           }
-          // else
-          // { 
-          //  var id = "<?php //echo base64_encode($string); ?>";
-          //  window.location.href = "<?php //echo url('/'); ?>"+"/manage/create_update/"+id;
-          // }
         }
         else
         {

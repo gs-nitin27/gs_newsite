@@ -8,13 +8,13 @@ if($_SERVER['REMOTE_ADDR'] == '122.177.103.232' || $_SERVER['REMOTE_ADDR'] == ':
 <?php  
 }else
 {
- Redirect::to('https://getsporty.in')->send();
+ Redirect::to('http://getsporty.in')->send();
 }
 }  
 
 if(Request::url() == 'http://getsporty.in')
    {  $value = session('userdata');
-      Redirect::to('https://getsporty.in')->send();
+      Redirect::to('http://getsporty.in')->send();
    }
 ?>
 <html>
