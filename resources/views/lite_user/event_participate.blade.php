@@ -16,7 +16,7 @@ $userdata = json_decode($data['user_data']);
     height: 51%;
     padding: 0px 8px 3px 29px;
 }
-
+  
 </style>
 <div class="container">
         	 	 <div class="row">
