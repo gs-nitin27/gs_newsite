@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use View;
 use App\Http\Requests;
 use App\WebModel;
+use App\UserModel;
 
 class user_controller extends Controller
 {
@@ -26,9 +27,11 @@ class user_controller extends Controller
 
     public function get_apply_view(Request $request)
     {  
-        if(Session::has('lite_user_data'))
+      if(Session::has('lite_user_data'))
 			{
 			    $value = session('lite_user_data');
+          $userdata = json_decode($value);
+          $userid = $userdata->userid; 
 			} 
 		  $id =  explode('/', base64_decode($request->id));
           $module = $id[0];
@@ -42,6 +45,9 @@ class user_controller extends Controller
           	case '2':
           $item_var = $item_obj->getEventDetail($item);
           $view = 'event_participate';
+          $application_id = $item.$userid;
+          $userObj = new UserModel();
+          $apply_status = $userObj->get_event_application($application_id);
           		break;
           	case '3':
           $item_var = $item_obj->getTournamentDetail($item);
@@ -55,7 +61,27 @@ class user_controller extends Controller
           		# code...
           		break;
           }
-          $apply_data = array('user_data' =>$value ,'item_data'=>$item_var); 
-    	  return View::make('lite_user.'.$view)->with('data',$apply_data);
+          $apply_data = array('user_data' =>$value ,'item_data'=>$item_var,'apply_status'=>$apply_status); 
+    	    return View::make('lite_user.'.$view)->with('data',$apply_data);
     } 
+
+    public function get_checkout_data(Request $request)
+      {   $data = explode('|', base64_decode($request->id));
+          if(Session::has('lite_user_data'))
+            {
+                $value = session('lite_user_data');
+                $userdata = json_decode($value);
+                $userid = $userdata->userid; 
+                $item_obj = new WebModel();
+                $item_var = $item_obj->getEventDetail($data[0]);
+                $apply_data = array('user_data' =>$value ,'item_data'=>$item_var); 
+                return View::make('lite_user.checkout')->with('data',$apply_data);
+
+            }else
+            {
+              $id = base64_encode('2/'.$data[0]);
+              Redirect::to('/user/login/'.$id)->send();
+            } 
+          
+      }
 }

@@ -83,7 +83,7 @@ class WebModel extends Model
 
 public function getEventDetail($id)
 {  
-    $event      = DB::table('gs_eventinfo')->select('id','name','type', 'sport','description','image','sport_name','organizer_city','start_date','end_date','entry_start_date','entry_end_date','pin','address_1','organizer_name','email_app_collection','event_links','is_native')->where('id', $id)->get();
+    $event      = DB::table('gs_eventinfo')->select('id','feetype','fee','name','type', 'sport','description','image','sport_name','organizer_city','start_date','end_date','entry_start_date','entry_end_date','pin','address_1','organizer_name','email_app_collection','event_links','is_native')->where('id', $id)->get();
      //print_r($event);die;
      return $event;
 }

@@ -8,7 +8,7 @@
         <header>
            @include('lite_user.template.header')
         </header>
-	  
+	         
            @yield('content')
 		 
         <footer>

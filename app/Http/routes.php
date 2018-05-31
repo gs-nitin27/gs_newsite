@@ -142,9 +142,17 @@ Route::group(array('prefix' => 'manage'), function()
        
             return View::make('user_login');
      });
-     
+     Route::get('/signup/{id}',function(){
+       
+            return View::make('user_signup');
+     });
      Route::get('set_user_data','user_controller@set_user_data');
      Route::get('user_apply/{id}','user_controller@get_apply_view');
-
-    
+     Route::get('checkout/{id}', 'user_controller@get_checkout_data');
+      Route::get('/logout', function(Request $request) {
+       if ($request->session()->has('lite_user_data')) {
+           $request->session()->forget('lite_user_data');
+           Redirect::to('/')->send();
+        }
+    });
     });
