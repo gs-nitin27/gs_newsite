@@ -188,6 +188,7 @@ span.price {
           </div> -->
 
         </div>
+        <!-- <a href="javascript:void(0)" onclick="event_apply()"><button class="btn btn-success btn-lg">Confirm Booking</button></a> -->
         <input value="Confirm booking" class="btn" onclick="event_apply()">
       </form>
     </div>
@@ -300,7 +301,7 @@ function event_apply()
         //var data = JSON.parse(result);
         if(result == 1)
         {
-          alert_msg("Event sucessfully booked"+'<br>'+'a confirmation mail has been sent to your registered email id'+{{$userdata->email}});
+          alert_msg("Event sucessfully booked"+'<br>'+'a confirmation mail has been sent to your registered email id '+' {{$userdata->email}}');
         }else
         {
           alert_msg("Something went wrong! Please try after sometime");
