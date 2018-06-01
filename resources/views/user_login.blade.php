@@ -268,7 +268,7 @@ var data = JSON.stringify(data1);
       result.data = $.extend(result.data, data1);
       localStorage.setItem('userid',result.data.userid);
       localStorage.setItem('userdata',JSON.stringify(result.data));
-      window.location.href = "<?php echo url('/'); ?>"+"/user/signup/"+url_param;
+      window.location.href = "<?php echo url('/'); ?>"+"/user/signup/"+apply_data;
       //alert_msg(result.status + JSON.stringify(result.data));//return;
     }
     else if(result.status==3) // for creating new record
@@ -276,7 +276,7 @@ var data = JSON.stringify(data1);
       //alert(url_param+'jitin');return;
       localStorage.setItem('userid',result.data.userid);
       localStorage.setItem('userdata',data);
-      window.location.href = "<?php echo url('/'); ?>"+"/user/signup/"+url_param;
+      window.location.href = "<?php echo url('/'); ?>"+"/user/signup/"+apply_data;
     }
    }
   });

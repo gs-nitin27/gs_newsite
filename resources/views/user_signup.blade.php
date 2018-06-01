@@ -3,13 +3,15 @@ $url = $_SERVER['REQUEST_URI'];//die;
 $param = explode('/', $url);
 if (env('APP_ENV') === 'production' || env('APP_ENV') === 'testing') {
    
-   $section = $param['3'];
+   $section = explode('/', base64_decode($param['3']));
+   $apply_data = $param['3'];
    
 }else
 {
-  $section = $param['4'];
- // echo $section;die;
+  $section = explode('/', base64_decode($param['4']));
+  $apply_data = $param['4'];
 }
+  $section = $section['0'];
 ?>
 <!DOCTYPE html>
 <html>
@@ -26,6 +28,51 @@ if (env('APP_ENV') === 'production' || env('APP_ENV') === 'testing') {
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   <script src="{{asset('public/manage_assets/js/common.js')}}"></script>
   <style type="text/css">
+  * { box-sizing: border-box; }
+body {
+  font: 16px Arial; 
+}
+.autocomplete {
+  /*the container must be positioned relative:*/
+  position: relative;
+  display: inline-block;
+}
+input {
+  border: 1px solid transparent;
+  background-color: #f1f1f1;
+  padding: 10px;
+  font-size: 16px;
+}
+input[type=text] {
+  background-color: #f1f1f1;
+  width: 100%;
+}
+.autocomplete-items {
+  position: absolute;
+  border: 1px solid #d4d4d4;
+  border-bottom: none;
+  border-top: none;
+  z-index: 99;
+  /*position the autocomplete items to be the same width as the container:*/
+  top: 100%;
+  left: 0;
+  right: 0;
+}
+.autocomplete-items div {
+  padding: 10px;
+  cursor: pointer;
+  background-color: #fff; 
+  border-bottom: 1px solid #d4d4d4; 
+}
+.autocomplete-items div:hover {
+  /*when hovering an item:*/
+  background-color: #e9e9e9; 
+}
+.autocomplete-active {
+  /*when navigating through the items using the arrow keys:*/
+  background-color: DodgerBlue !important; 
+  color: #ffffff; 
+}
   .hide_div{
     display: none;
   }
@@ -223,6 +270,14 @@ box-shadow: rgba(255,255,255, 0.75) 1.5em 0 0 0, rgba(255,255,255, 0.75) 1.1em 1
                                     </div>
                                 </div>
                                 <div class="form-group row">
+                                    <label class="col-lg-3 col-form-label form-control-label">Sport</label>
+                                    <div class="col-lg-9">
+                                      <span id="rsport" class="invalid"><p></p></span>
+                                        <select class="form-control" id="sport" name="sport" onfocus="getSportsList()">
+                                        </select><span id="jsport"></span>
+                                    </div>
+                                </div>
+                                <!-- <div class="form-group row">
                                     <label class="col-lg-3 col-form-label form-control-label">Height</label>
                                     <div class="col-lg-9">
                                       <span id="rlocation" class="invalid"><p></p></span>
@@ -235,10 +290,11 @@ box-shadow: rgba(255,255,255, 0.75) 1.5em 0 0 0, rgba(255,255,255, 0.75) 1.1em 1
                                       <span id="rlocation" class="invalid"><p></p></span>
                                         <input class="form-control" type="text" Placeholder="weight" id="weight">
                                     </div>
-                                </div>
-                                <div class="form-group row">
+                                </div> -->
+                                <!-- <div class="form-group row">
                                     <label class="col-lg-3 col-form-label form-control-label">Gender</label>
-                                    <div class="form-check form-check-inline">
+                                    
+                                <div class="form-check form-check-inline">
                                     <label class="form-check-label">
                                         <input class="form-check-input" type="radio" name="gender" id="Male" value="Male"> Male
                                     </label>
@@ -247,9 +303,19 @@ box-shadow: rgba(255,255,255, 0.75) 1.5em 0 0 0, rgba(255,255,255, 0.75) 1.1em 1
                                     <label class="form-check-label">
                                         <input class="form-check-input" type="radio" name="gender" id="Female" value="Female"> Female
                                     </label>
-                                </div>
-                                </div>
-                                
+                                </div><span id="rgender" class="invalid"><p></p></span>
+                                </div> -->
+                                <div class="form-group row">
+                                    <label class="col-lg-3 col-form-label form-control-label">Gender</label>
+                                    <div class="col-lg-9">
+                                       <span id="rgender" class="invalid"><p></p></span>
+                                        <select class="form-control" size="0" id="gender">
+                                          <option value="">--Select--</option>
+                                          <option value="Male">Male</option> 
+                                          <option value="Female">Female</option>
+                                        </select>
+                                    </div>
+                                  </div>
 
                                 <!-- <div class="form-group row" id="coach_reg">
                                     <label class="col-lg-3 col-form-label form-control-label">Register as/with</label>
@@ -265,20 +331,19 @@ box-shadow: rgba(255,255,255, 0.75) 1.5em 0 0 0, rgba(255,255,255, 0.75) 1.1em 1
                                 </div>
                                 </div> -->
 
-                                <!-- <div class="form-group row" id="prof" hidden>
+                                <div class="form-group row" id="prof" hidden>
                                     <label class="col-lg-3 col-form-label form-control-label">Proffession</label>
                                     <div class="col-lg-9">
                                        <span id="rproffession" class="invalid"><p></p></span>
                                         <select class="form-control" size="0" id="proffession">
                                           <option value="">--Select--</option>
                                           <option value="2">Coach</option> 
-                                          <option value="5">Recruiter</option>
-                                          <option value="5">Event manager</option>
-                                          <option value="5">Academy manager</option>
+                                          <option value="1">Athlete</option>
+                                          <option value="6">Parent</option>
                                         </select>
                                     </div>
                                   </div>
-                                 -->
+                                
                                 
                                <div class="form-group row">
                                     <label class="col-lg-3 col-form-label form-control-label"></label>
@@ -296,21 +361,22 @@ box-shadow: rgba(255,255,255, 0.75) 1.5em 0 0 0, rgba(255,255,255, 0.75) 1.1em 1
 <script type="text/javascript">
   // OPTIONS BASED ON USER TYPE REGISTRATION
   var select  = '<?php echo $section; ?>';
+  var apply_data = '<?php echo $apply_data; ?>';
   if(select == '1')
   {
    $('#proffession :selected').text('Recruiter');
    $('#proffession').val('5');
-   $('#coach_reg').hide();
+   //$('#coach_reg').hide();
   }
   else if(select == '2')
   {
-   $('#proffession :selected').text('Coach');
-   $('#proffession').val('2');
-   $('#coach_reg').show();
+   $('#proffession :selected').text('Athlete');
+   $('#proffession').val('1');
+   //$('#coach_reg').show();
   }
   else
   { 
-    $('#coach_reg').hide();
+    //$('#coach_reg').hide();
     $('#proffession :selected').text('Manager');
     $('#proffession').val('5');
   }
@@ -359,16 +425,8 @@ box-shadow: rgba(255,255,255, 0.75) 1.5em 0 0 0, rgba(255,255,255, 0.75) 1.1em 1
       {
        $('#name').val(data.data.first_name);
       }
-     // console.log(JSON.stringify(data));
-      // if(window.location.href.substr(window.location.href.lastIndexOf('/') +1) == '1')
-      // {
-      //   $("#prof").hide();
-      // }
-     }
-     if(window.location.pathname.split("/").pop() == '1')
-     {
-      $('#prof').hide();
-     }
+    }
+     
      // validation example for Login form
 $("#btnLogin").click(function(event) {
     if(!data.data.hasOwnProperty("email"))
@@ -390,14 +448,16 @@ $("#btnLogin").click(function(event) {
         'email':$('#email').val(),
         'phone_no':$('#mobile').val(),
         'location':$('#location').val(),
+        'address1':$('#address1').val(),
+        'state':$('#state').val(),
         'dob':$('#datepicker').val(),
-        'gender':$("input[name='gender']:checked").val(),//radioValue,//$('#gender').val(),
+        'gender':$("#gender").val(),//radioValue,//$('#gender').val(),
         'prof_name':$("#proffession :selected").text(),
         'data':data.data,
-        'userType':'103',
+        'userType':'104',
         'prof_id':$('#proffession').val(),
         'device_id':'',
-        'sport':'',
+        'sport':$('#sport').val(),
         'app':data.app
 
         }
@@ -413,18 +473,13 @@ $("#btnLogin").click(function(event) {
       dataType:'text',
       async:false,
       success:function(result)
-      { 
+      { loading.style.display = "none";
         var response  = JSON.parse(result);
         if(response.status==1)
         { 
-      if(a != '1')
-          {
-          add_organisation(response.data.userid);
-          }
-          send_mail(response.data);
-          alert_msg("Thanks for registering with us");//return;
-          window.location.href = "<?php echo url('/'); ?>"+"/manage/dashbo";
-          //return;
+          var result  = JSON.parse(result);
+          localStorage.setItem('liteuserdata',JSON.stringify(result.data));
+          set_data();
         }
       else
         {
@@ -435,7 +490,36 @@ $("#btnLogin").click(function(event) {
      });
    }
 });
+function set_data(){
+      var _token = $('input[name="_token"]').val();
+      $.ajax({
+      async:false,
+      headers: {
+        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+      },
+      url:"{{url('/user/set_user_data')}}",
+      method:"GET",
+      dataType:"text",
+      data:'data='+localStorage.getItem('liteuserdata'),
+      success:function(result)
+      {
+          if(result != 0)
+        {
+          if(select == '2')
+          {
+           var url = "<?php echo url('/'); ?>"+"/user/user_apply/"+apply_data;
+           window.location.href = encodeURI(url);
+          }
+        }
+        else
+        {
+          alert_msg('server Error');
+        }
+        //alert(JSON.stringify(result));
+      } 
 
+    });
+  }
 
 function register_validation()
 {
@@ -459,6 +543,16 @@ else
 {
   $('#remail').text('*Please enter a valid email');
   i++;  
+}
+if($('#email').val() == '')
+{
+  $('#remail').text('*Please enter your email address');
+  i++; 
+}
+else
+{
+  $('#remail').text('');
+   
 }
 if($('#mobile').val()== '')
 {
@@ -485,6 +579,14 @@ if($('#datepicker').val() == '')
 {
    $('#rdob').text('');
 }
+if($('#sport').val() == '')
+{
+   $('#rsport').text('*Please select a sport');
+   i++;
+}else
+{
+   $('#rsport').text('');
+}
 if($('#city').val() == '')
 {
    $('#rcity').text('*Please enter your city');
@@ -501,81 +603,16 @@ if($('#state').val() == '')
 {
    $('#rstate').text('');
 }
-if($('#gender').val() == '')
+
+if($('#gender').val()=='')
 {
-   $('#rgender').text('*Please specify the gender');
+   $('#rgender').text('*Please select gender Type');
    i++;
 }else
 {
    $('#rgender').text('');
 }
-// if($('#proffession').val() == '')
-// {
-//    $('#rproffession').text('*Please enter the proffession');
-//    i++;
-// }else
-// {  
-//    $('#rproffession').text('');
-// }
-// if(a != '1')
-// {
-// if($('#org_name').val()=='')
-//   {
-//      $('#jorg_name').html('<p>*Company name required.</p>');
-//      i++;
-//   }else
-//   {
-//    $('#jorg_name').html('');
-//   }
-// if($('#about').val()=='')
-//   {
-//      $('#jabout').html('<p>*about company required.</p>');
-//      i++;
-//   }else
-//   {
-//    $('#jabout').html('');
-//   }
-// if($('#address1').val()=='')
-//   {
-//      $('#jaddress1').html('<p>*Company address required.</p>');
-//      i++;
-//   }else
-//   {
-//    $('#jaddress1').html('');
-//   }
-// if($('#city').val()=='')
-//   {
-//      $('#jcity').html('<p>*city name required.</p>');
-//      i++;
-//   }else
-//   {
-//    $('#jcity').html('');
-//   }
-// if($('#pin').val()=='')
-//   {  
-//      $('#jpin').html('<p>*Company pin required.</p>');
-//      i++;
-//   }else
-//   {
-//    $('#jpin').html('');
-//   }
-// if($('#mobile').val()=='')
-//   {
-//      $('#jmobile').html('<p>*Company mobile required.</p>');
-//      i++;
-//   }else
-//   {
-//    $('#jmobile').html('');
-//   }
-// if($('#co_email').val()=='')
-//   {
-//      $('#jemail').html('<p>*Company email required.</p>');
-//      i++;
-//   }else
-//   {
-//    $('#jemail').html('');
-//   }      
-// }
+
 
 if(i == 0)
 { // console.log(i);
