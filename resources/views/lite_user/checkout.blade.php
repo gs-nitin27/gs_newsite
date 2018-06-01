@@ -300,7 +300,7 @@ function event_apply()
         //var data = JSON.parse(result);
         if(result == 1)
         {
-          alert_msg("Event sucessfully booked");
+          alert_msg("Event sucessfully booked"+'<br>'+'a confirmation mail has been sent to your registered email id'+{{$userdata->email}});
         }else
         {
           alert_msg("Something went wrong! Please try after sometime");
