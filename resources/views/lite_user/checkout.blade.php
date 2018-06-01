@@ -142,7 +142,7 @@ span.price {
             <input type="text" id="city" name="city" placeholder="New York" value="{{$userdata->location}}">
             <span id="rfincome" class="invalid"><p></p></span>
             <label for="fincome"><i class="fa fa-institution"></i>Family income(per annum)</label>
-            <input type="text" id="fincome" name="fincome" placeholder="1000000" value="">
+            <input type="text" id="fincome" name="fincome" placeholder="Ex:1000000" value="">
 
             <div class="row">
               <div class="col-50">
@@ -274,16 +274,44 @@ function user_details_validate()
 
 function event_apply()  
 {
+  if(user_details_validate() == true)
+     {
+     var ApplyEvent = [{"applicant_id":"{{$userdata->userid}}","event_id":"{{$data['item_data'][0]->id}}","fee_amount":"{{$data['item_data'][0]->fee + ($data['item_data'][0]->fee * 0.18)}}","organiser_id":"{{$data['item_data'][0]->userid}}"}];
+     var userdata = {"email":$('#email').val(),"name":$('#fname').val(),"address":$('#adr').val(),"city":$('#city').val(),"fincome":$('#fincome').val()};
+     var response_data = '';
+     if({{$data['item_data'][0]->fee}} == 0)
+     {
+      response_data = {"amount":"0"}
+     }else
+     {
+      response_data = {"amount":"{{$data['item_data'][0]->fee + ($data['item_data'][0]->fee * 0.18)}}"}
+     }
+     var apply_data =JSON.stringify({"ApplyEvent":ApplyEvent,"userdata":userdata,"response_data":JSON.stringify(response_data)}); 
+     $.ajax({
+      url:url+'/eventcontroller.php?act=quick_event_apply',
+      method:'POST',
+      crossDomain: true,
+      data:apply_data,
+      dataType:'text',
+      async:false,
+      success:function(result)
+      {
+        //var data = JSON.parse(result);
+        if(result == 1)
+        {
+          alert_msg("Event sucessfully booked");
+        }else
+        {
+          alert_msg("Something went wrong! Please try after sometime");
+        }
+      }
 
-  var apply_data = {"applicant_id":"{{$userdata->userid}}","event_id":"{{$data['item_data'][0]->id}}","fee_amount":"{{$data['item_data'][0]->fee + ($data['item_data'][0]->fee * 0.18)}}","organiser_id":"{{$data['item_data'][0]->userid}}"};
- // console.log(apply_data);return;
-  var userdata = {"email":$('#email').val(),"name":$('#fname').val()}
- if(user_details_validate()==true)
- {
- }else
- {
-  alert('server Error');
- }
+     })
+   }
+ else
+   {
+    alert_msg("Please fill up all details");
+   }
 }
 
 </script>

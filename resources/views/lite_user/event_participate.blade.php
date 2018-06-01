@@ -1,4 +1,5 @@
 @extends('lite_user.template.master')
+@section('pageTitle','Event')
 @section('content')
 <?php
 $userdata = json_decode($data['user_data']);
@@ -37,7 +38,7 @@ $userdata = json_decode($data['user_data']);
                           @else
                           <p><a href="javascript:void(0)"><button class="btn btn-danger">Already Applied</button></a></p>
                            @endif		 
-                           </div>
+                          </div>
         		    </div>
         		    <div class=" clearfix margin15"></div>
         			  <div class="right-list-job pad15">
@@ -47,15 +48,13 @@ $userdata = json_decode($data['user_data']);
                     </p>        			   
               			<p>Event Name : <span> {{$data['item_data'][0]->name}}.</span></p>        			     
               			<p>Event Organiser : 
-                        <span> {{$data['item_data'][0]->organizer_name}}.</span>
+                        <span>{{$data['item_data'][0]->organizer_name}}</span>
                     </p>        			
               			<p>Event Address : <span>{{$data['item_data'][0]->address_1}}</span></p>        			
               			<p>Event City : <span>{{$data['item_data'][0]->organizer_city}}</span></p>        			 
             			<p>Event Pin : <span>{{$data['item_data'][0]->pin}} </span></p>      			  
-            			  
-        			     
-               </div>
-               <div>
+            	</div>
+<div>
   <h4>Note:</h4><p>GetSporty is not an organizer for this event / tournament and has no control over any changes in the above given information. For any info. Please connect to the above given contact details.</p>
 </div>
         		</div>
