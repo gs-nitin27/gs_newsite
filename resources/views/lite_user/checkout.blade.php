@@ -302,6 +302,7 @@ function event_apply()
         if(result == 1)
         {
           alert_msg("Event sucessfully booked"+'<br>'+'a confirmation mail has been sent to your registered email id '+' {{$userdata->email}}');
+          window.location.href = "<?php echo url('/'); ?>";
         }else
         {
           alert_msg("Something went wrong! Please try after sometime");
