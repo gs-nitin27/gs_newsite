@@ -279,7 +279,7 @@ function event_apply()
   if(user_details_validate() == true)
      {
      var ApplyEvent = [{"applicant_id":"{{$userdata->userid}}","event_id":"{{$data['item_data'][0]->id}}","fee_amount":"{{$data['item_data'][0]->fee + ($data['item_data'][0]->fee * 0.18)}}","organiser_id":"{{$data['item_data'][0]->userid}}"}];
-     var userdata = {"email":$('#email').val(),"name":$('#fname').val(),"address":$('#adr').val(),"city":$('#city').val(),"fincome":$('#fincome').val(),"dob":"{{$userdata->dob}}","gender":"{{$userdata->gender}}"};
+     var userdata = {"email":$('#email').val(),"name":$('#fname').val(),"address":$('#adr').val(),"city":$('#city').val(),"fincome":$('#fincome').val(),"dob":"{{$userdata->dob}}","gender":"{{$userdata->gender}}","event_title":"{{$data['item_data'][0]->name}}"};
      var response_data = '';
      if({{$data['item_data'][0]->fee}} == 0)
      {
