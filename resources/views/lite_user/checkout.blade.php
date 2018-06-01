@@ -43,9 +43,11 @@ form span{
   float: right;
 }
 .section{
+  margin-top: 1%;
   padding: 5px 20px 15px 20px;
   border: 1px solid lightgrey;
   border-radius: 3px;
+  background: #fff
 }
 input[type=text] {
   width: 100%;
@@ -116,7 +118,6 @@ span.price {
       <p><a href="#"><b>Fee</b></a> <span class="price">{{$data['item_data'][0]->fee}}</span></p>
       <p><a href="#"><b>GST(9% SGST + 9% CGST)</b></a> <span class="price">{{$value = $data['item_data'][0]->fee * 0.18 }}</span></p>
       <p style="font-size:xx-large;">Total <span class="price" style="color:black"><b><i class="fas fa-rupee-sign"></i>{{$value+$data['item_data'][0]->fee}}</b></span></p>
-      <p><i>(To be paid at venue)</i></p>
       @endif
       <hr>
       
@@ -138,10 +139,10 @@ span.price {
             <label for="adr"><i class="fa fa-address-card-o"></i> Address</label>
             <input type="text" id="adr" name="address" placeholder="542 W. 15th Street" value="{{$userdata->address1}}">
             <span id="rcity" class="invalid"><p></p></span>
-            <label for="city"><i class="fa fa-institution"></i> City</label>
+            <label for="city"><i class="fa fa-map-marker"></i> City</label>
             <input type="text" id="city" name="city" placeholder="New York" value="{{$userdata->location}}">
             <span id="rfincome" class="invalid"><p></p></span>
-            <label for="fincome"><i class="fa fa-institution"></i>Family income(per annum)</label>
+            <label for="fincome"><i class="fa fa-money"></i> Family income(per annum)</label>
             <input type="text" id="fincome" name="fincome" placeholder="Ex:1000000" value="">
 
             <div class="row">
@@ -277,7 +278,7 @@ function event_apply()
   if(user_details_validate() == true)
      {
      var ApplyEvent = [{"applicant_id":"{{$userdata->userid}}","event_id":"{{$data['item_data'][0]->id}}","fee_amount":"{{$data['item_data'][0]->fee + ($data['item_data'][0]->fee * 0.18)}}","organiser_id":"{{$data['item_data'][0]->userid}}"}];
-     var userdata = {"email":$('#email').val(),"name":$('#fname').val(),"address":$('#adr').val(),"city":$('#city').val(),"fincome":$('#fincome').val()};
+     var userdata = {"email":$('#email').val(),"name":$('#fname').val(),"address":$('#adr').val(),"city":$('#city').val(),"fincome":$('#fincome').val(),"dob":"{{$userdata->dob}}","gender":"{{$userdata->gender}}"};
      var response_data = '';
      if({{$data['item_data'][0]->fee}} == 0)
      {

@@ -1,5 +1,5 @@
 @extends('lite_user.template.master')
-@section('pageTitle','Event')
+
 @section('content')
 <?php
 $userdata = json_decode($data['user_data']);
@@ -16,6 +16,7 @@ $userdata = json_decode($data['user_data']);
     margin-top: 1%;
     height: 51%;
     padding: 0px 8px 3px 29px;
+    min-height: 50%;
 }
   
 </style>
@@ -25,11 +26,8 @@ $userdata = json_decode($data['user_data']);
             			 <div class="left-img-job"> <img src="https://getsporty.in/portal/uploads/event/{{$data['item_data'][0]->image}}"> </div>		
         		    </div>
         		    <div class="col-lg-5 col-md-5 confirm">
-        			       <div class="right-list-job" style="padding: 50px 0 0 0;">
-                     <h4>  </h4>
-                          <b>{{$data['item_data'][0]->name}}</b>
-                          <!-- <p> Type : <span> {{$data['item_data'][0]->type}}</span></p>
-                          <p> Organizer Name : <span> {{$data['item_data'][0]->organizer_name}}</span></p> -->
+        			      <div class="right-list-job" style="padding: 50px 0 0 0;">
+                          <h2><b>{{$data['item_data'][0]->name}}</b></h2>
                           <br><br>
                           <p><span class="fa fa-location-arrow">{{$data['item_data'][0]->organizer_city}}</span></p>
                           <p><span class="fa fa-calendar"><b>From:</b> <?php echo date('d F',strtotime($data['item_data'][0]->start_date)); ?> <b>To:</b> <?php echo date('d F',strtotime($data['item_data'][0]->end_date)); ?> </span></p>
