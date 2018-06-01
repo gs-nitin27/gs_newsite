@@ -113,9 +113,10 @@ span.price {
       @if($data['item_data'][0]->fee == '0' )
      <!--  <p><a href="#">Entry</a> <span class="price">Free</span></p> -->
       @else
-      <p><a href="#">Fee</a> <span class="price">{{$data['item_data'][0]->fee}}</span></p>
+      <p><a href="#"><b>Fee</b></a> <span class="price">{{$data['item_data'][0]->fee}}</span></p>
       <p><a href="#"><b>GST(9% SGST + 9% CGST)</b></a> <span class="price">{{$value = $data['item_data'][0]->fee * 0.18 }}</span></p>
       <p style="font-size:xx-large;">Total <span class="price" style="color:black"><b><i class="fas fa-rupee-sign"></i>{{$value+$data['item_data'][0]->fee}}</b></span></p>
+      <p><i>(To be paid at venue)</i></p>
       @endif
       <hr>
       
