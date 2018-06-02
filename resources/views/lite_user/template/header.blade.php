@@ -30,6 +30,7 @@ $org_id = '';
 
 </script>
 <header class="headerSec">
+<div class="loading" style="display: none" id="loading">Loading&#8230;</div>
         <div class="container">
            <!-- Brand and toggle get grouped for better mobile display -->
            
