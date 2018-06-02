@@ -24,6 +24,7 @@
     padding: 8px 6px 7px 13px;
     font-size: 25px;
     font-family: inherit;
+    min-width: 147px;
   }
 </style>
 @section('content')
