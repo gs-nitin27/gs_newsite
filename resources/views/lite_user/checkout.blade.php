@@ -307,7 +307,7 @@ function event_apply()
     content: 'a confirmation mail has been sent to your registered email id '+' {{$userdata->email}}',
     buttons: {
         Ok: function () {
-            window.location.href = "<?php echo url('/'); ?>";
+            window.location.href = "<?php echo url('/user/logout'); ?>";
          },
         // cancel: function () {
         //     window.location.href = "<?php //echo url('/'); ?>";

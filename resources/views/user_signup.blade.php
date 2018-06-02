@@ -400,11 +400,11 @@ box-shadow: rgba(255,255,255, 0.75) 1.5em 0 0 0, rgba(255,255,255, 0.75) 1.1em 1
         maxDate: new Date(currentYear, currentMonth, currentDate),
         dateFormat: 'yy-mm-dd'
     });
-    if(window.opener)
-     var radioValue = $("input[name='gender']:checked").val();
-            if(radioValue){
-                alert_msg("Your are a - " + radioValue);
-            }
+    //if(window.opener)
+     // var radioValue = $("input[name='gender']:checked").val();
+     //        if(radioValue){
+     //            alert_msg("Your are a - " + radioValue);
+     //        }
  
      if(window.localStorage)
      {var userid = localStorage.getItem('userid');
@@ -483,7 +483,7 @@ $("#btnLogin").click(function(event) {
         }
       else
         {
-          alert_msg("Something Went wrong, Please try after some time");
+          alert(response.msg);
         }
          loading.style.display = "none";
         }
@@ -498,9 +498,9 @@ function set_data(){
         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
       },
       url:"{{url('/user/set_user_data')}}",
-      method:"GET",
+      method:"POST",
       dataType:"text",
-      data:'data='+localStorage.getItem('liteuserdata'),
+      data:localStorage.getItem('liteuserdata'),
       success:function(result)
       {
           if(result != 0)
@@ -513,7 +513,7 @@ function set_data(){
         }
         else
         {
-          alert_msg('server Error');
+          alert('server Error');
         }
         //alert(JSON.stringify(result));
       } 
@@ -692,7 +692,7 @@ else
 //         failure:function(result)
 //         {
           
-//           alert_msg("Something went wrong");
+//           alert("Something went wrong");
 //           return false;
 //         }
 
@@ -708,7 +708,7 @@ function send_mail(data)
   data:data,
   success:function(result)
   {
-     alert_msg("Sucessfully Registered");
+     alert("Sucessfully Registered");
     return;
   }
   });
@@ -726,17 +726,6 @@ function show_org(a)
     }
 }
 </script>
-<div id="alert" class="modal fade">
-  <div class="modal-dialog" >
-    <div class="modal-content" style="background: #fff">
-      <!-- dialog body -->
-      <div class="modal-body">
-        <button type="button" class="close" style="color:#000;text-align: center;" data-dismiss="modal"></button>
-        
-      </div>
-      <!-- dialog buttons -->
-      <div class="modal-footer"><button type="button" class="btn btn-primary">OK</button></div>
-    </div>
-  </div>
-</div>   
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.0/jquery-confirm.min.js"></script>
 </html>
+

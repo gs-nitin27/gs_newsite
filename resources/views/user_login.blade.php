@@ -269,7 +269,7 @@ var data = JSON.stringify(data1);
       localStorage.setItem('userid',result.data.userid);
       localStorage.setItem('userdata',JSON.stringify(result.data));
       window.location.href = "<?php echo url('/'); ?>"+"/user/signup/"+apply_data;
-      //alert_msg(result.status + JSON.stringify(result.data));//return;
+      //alert(result.status + JSON.stringify(result.data));//return;
     }
     else if(result.status==3) // for creating new record
     { 
@@ -314,22 +314,22 @@ var data = JSON.stringify(data1);
         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
       },
       url:"{{url('/user/set_user_data')}}",
-      method:"GET",
+      method:"POST",
       dataType:"text",
-      data:'data='+localStorage.getItem('liteuserdata'),
+      data:localStorage.getItem('liteuserdata'),
       success:function(result)
       {
           if(result != 0)
         {
           if(url_param == '2')
-          {
+          {//console.log(localStorage.getItem('liteuserdata'));return;
            var url = "<?php echo url('/'); ?>"+"/user/user_apply/"+apply_data;
            window.location.href = encodeURI(url);
           }
         }
         else
         {
-          alert_msg('server Error');
+          alert('server Error');
         }
         //alert(JSON.stringify(result));
       } 

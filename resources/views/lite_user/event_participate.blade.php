@@ -1,5 +1,5 @@
 @extends('lite_user.template.master')
-
+@section('pageTitle','Book event')
 @section('content')
 <?php
 $userdata = json_decode($data['user_data']);

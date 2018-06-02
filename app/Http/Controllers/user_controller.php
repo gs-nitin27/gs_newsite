@@ -11,9 +11,8 @@ use App\UserModel;
 class user_controller extends Controller
 {
     public function set_user_data(Request $request)
-    {
-		$value    = $request->data;
-	    Session::put('lite_user_data', $request->data);
+    { $data = file_get_contents("php://input");
+		  Session::put('lite_user_data', $data);
 	    $value = Session::get('lite_user_data');
 	    if($value != '')
 	    {
@@ -28,9 +27,11 @@ class user_controller extends Controller
     public function get_apply_view(Request $request)
     {  
       if(Session::has('lite_user_data'))
-			{
+			{   
 			    $value = session('lite_user_data');
           $userdata = json_decode($value);
+          //print_r($value);echo "nitin";
+          //print_r($userdata);
           $userid = $userdata->userid; 
 			} 
 		  $id =  explode('/', base64_decode($request->id));
