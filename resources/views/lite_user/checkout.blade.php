@@ -306,11 +306,11 @@ function event_apply()
     title: 'Successfylly applied',
     content: 'a confirmation mail has been sent to your registered email id '+' {{$userdata->email}}',
     buttons: {
-        confirm: function () {
+        Ok: function () {
             window.location.href = "<?php echo url('/'); ?>";
          },
         // cancel: function () {
-        //     window.location.href = "<?php echo url('/'); ?>";
+        //     window.location.href = "<?php //echo url('/'); ?>";
         //   },
         // somethingElse: {
         //     text: 'Something else',

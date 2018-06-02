@@ -16,7 +16,7 @@ $userdata = json_decode($data['user_data']);
     margin-top: 1%;
     height: 51%;
     padding: 0px 8px 3px 29px;
-    min-height: 50%;
+    min-height: 350px;
     width: 100%;
     max-width: 100%;
     min-width: 100%;
