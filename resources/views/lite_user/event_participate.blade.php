@@ -64,9 +64,6 @@ $userdata = json_decode($data['user_data']);
               			<p>Event City : <span>{{$data['item_data'][0]->organizer_city}}</span></p>        			 
             			<p>Event Pin : <span>{{$data['item_data'][0]->pin}} </span></p>      			  
             	</div>
-<div>
-  <h4>Note:</h4><p>GetSporty is not an organizer for this event / tournament and has no control over any changes in the above given information. For any info. Please connect to the above given contact details.</p>
-</div>
         		</div>
         </div>
 @stop
