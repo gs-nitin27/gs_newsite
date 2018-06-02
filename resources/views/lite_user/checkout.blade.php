@@ -1,4 +1,5 @@
 @extends('lite_user.template.master')
+@section('pageTitle','Event booking checkout')
 @section('content')
 <?php
 $userdata = json_decode($data['user_data']);
