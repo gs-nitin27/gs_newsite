@@ -303,7 +303,7 @@ function event_apply()
         {
           // alert_msg("Event sucessfully booked"+'<br>'+'a confirmation mail has been sent to your registered email id '+' {{$userdata->email}}');
           $.confirm({
-    title: 'Successfylly applied',
+    title: 'Successfully applied',
     content: 'a confirmation mail has been sent to your registered email id '+' {{$userdata->email}}',
     buttons: {
         Ok: function () {
