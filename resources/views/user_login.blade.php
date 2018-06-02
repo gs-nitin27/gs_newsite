@@ -82,7 +82,7 @@ margin-left: 17%;
   var js, fjs = d.getElementsByTagName(s)[0];
   if (d.getElementById(id)) return;
   js = d.createElement(s); js.id = id;
-  js.src = 'https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.11&appId=<?php echo config('constant.FACEBOOK_ID'); ?>';
+  js.src = 'https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.11&appId=<?php echo config('constant.FACEBOOK_LITE_ID'); ?>';
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
   </head>
@@ -134,7 +134,7 @@ margin-left: 17%;
 <script src="{{asset('public/manage_assets/js/bootstrap.min.js')}}"></script>
 <script type="text/javascript" src="{{asset('public/manage_assets/js/Managelogin.js')}}"></script>
 <script type="text/javascript">
- var app_id = '<?php echo config('constant.FACEBOOK_ID'); ?>';
+ var app_id = '<?php echo config('constant.FACEBOOK_LITE_ID'); ?>';
  var app_version = '<?php echo config('constant.FACEBOOK_VERSION'); ?>';
 
 function checkLoginState(){
@@ -164,7 +164,7 @@ function testAPI() {
  var apply_data = '';
 
  $(document).ready(function(){
-   var app_id = '<?php echo config('constant.FACEBOOK_ID'); ?>';
+   var app_id = '<?php echo config('constant.FACEBOOK_LITE_ID'); ?>';
    var app_version = '<?php echo config('constant.FACEBOOK_VERSION'); ?>';
    window.fbAsyncInit = function() {
     FB.init({
