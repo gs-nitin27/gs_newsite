@@ -16,7 +16,16 @@
 <meta name="twitter:image" content="<?php echo config('constant.IMAGE_URL').'/event/'.$name[0]->image; ?>"
  />
 @endsection
-
+<style type="text/css">
+  .book_now{
+    background: red;
+    width: 13%;
+    color: #fff;
+    padding: 8px 6px 6px 3px;
+    font-size: 25px;
+    font-family: inherit;
+  }
+</style>
 @section('content')
             <div class="joblist-bg eventBg bannerBgSec">
             <div class="container">
@@ -80,13 +89,15 @@
               			<p>Event Organiser : 
                         <span> {{$name[0]->organizer_name}}.</span>
                     </p>        			
-              			<p>Event Address : <span>{{$name[0]->address_1}}</span></p>        			
-              			<p>Event City : <span>{{$name[0]->organizer_city}}</span></p>        			 
-            			  <p>Event Pin : <span>{{$name[0]->pin}} </span></p>      			  
-            			  <p>For more info : <span class="read-c"><a href="{{$name[0]->event_links}}"> Click here</a> </span></p>
+              			<p>Address : <span>{{$name[0]->address_1}}</span></p>        			
+              			<p>City : <span>{{$name[0]->organizer_city}}</span></p>        			 
+            			  <p>Pin : <span>{{$name[0]->pin}} </span></p>      			  
+            			  
         			     <!--    <h1>{{$name[0]->is_native}}</h1> -->
                        @if($name[0]->is_native == '1')
-                       <a href="{{url('/')}}/user/login/{{base64_encode('2/'.$name[0]->id)}}"><span><h1>APPLY NOW</h1></span></a>
+                       <a href="{{url('/')}}/user/login/{{base64_encode('2/'.$name[0]->id)}}"><span><h1 class="book_now">Book Now</h1></span></a>
+                       @else
+                       <p>For more info : <span class="read-c"><a href="{{$name[0]->event_links}}"> Click here</a> </span></p>
                       @endif
                </div>
 @if($name[0]->is_native == '0')
