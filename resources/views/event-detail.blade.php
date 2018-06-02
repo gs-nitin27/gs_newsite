@@ -21,7 +21,7 @@
     background: red;
     width: 13%;
     color: #fff;
-    padding: 8px 6px 6px 3px;
+    padding: 8px 6px 7px 13px;
     font-size: 25px;
     font-family: inherit;
   }
