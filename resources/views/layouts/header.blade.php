@@ -53,6 +53,11 @@
 }  .panel-footer {
     text-align: right;
   }
+  @media screen and (max-width: 767px) {
+    #popup {
+        width: 80%;
+    }
+}
 </style>
 <?php $value = Cookie::get('visit_event'); ?>
 <script type="text/javascript">
