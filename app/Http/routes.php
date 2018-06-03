@@ -49,7 +49,12 @@ Route::get('get_job','WebController@get_Job');
 Route::get('get_Article','WebController@get_Article');
 Route::get('get_Event/{page}','WebController@get_Event');
 Route::get('get_Tounament','WebController@get_Tounament');
-
+Route::get('set_event_cookie',function(){
+    Cookie::queue('visit_event', '1', 45000);
+    //$value = Cookie::get('visit_event');
+    if(Cookie::get('visit_event') !== false)
+        return 1;
+});
 //Route::get('sports-trials-in-india.html','WebController@get_trial');
 Route::get('sports-trials-in-india.html',function(){
            return View::make('trials');

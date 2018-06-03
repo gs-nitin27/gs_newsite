@@ -35,3 +35,5 @@
            </div><!-- /.navbar-collapse -->
           </div><!-- /.container -->
          </nav><!-- /.navbar -->
+           <!-- let's call the following div as the POPUP FRAME -->
+   
