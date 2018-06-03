@@ -90,44 +90,8 @@ if (env('APP_ENV') === 'production') {
   -webkit-box-shadow: rgba(255,255,255, 0.75) 1.5em 0 0 0, rgba(255,255,255, 0.75) 1.1em 1.1em 0 0, rgba(255,255,255, 0.75) 0 1.5em 0 0, rgba(255,255,255, 0.75) -1.1em 1.1em 0 0, rgba(255,255,255, 0.75) -1.5em 0 0 0, rgba(255,255,255, 0.75) -1.1em -1.1em 0 0, rgba(255,255,255, 0.75) 0 -1.5em 0 0, rgba(255,255,255, 0.75) 1.1em -1.1em 0 0;
 box-shadow: rgba(255,255,255, 0.75) 1.5em 0 0 0, rgba(255,255,255, 0.75) 1.1em 1.1em 0 0, rgba(255,255,255, 0.75) 0 1.5em 0 0, rgba(255,255,255, 0.75) -1.1em 1.1em 0 0, rgba(255,255,255, 0.75) -1.5em 0 0 0, rgba(255,255,255, 0.75) -1.1em -1.1em 0 0, rgba(255,255,255, 0.75) 0 -1.5em 0 0, rgba(255,255,255, 0.75) 1.1em -1.1em 0 0;
 }
- #popup {
-   display: none;
-    position: absolute;
-    top:0;
-    left: 0;
-    right: 0;
-    margin: 0 auto;
-    z-index: 9999;
-    width: 40%;
-    padding: 10px;
-    background: #ccc;
-    background-color: #002f5d78;
-    border: none
-}
 
-}
-  .panel-footer {
-    text-align: right;
-  }
 </style>
-<div class="popup-wrap">
- <div id="popup" class="popup panel panel-primary">
-        
-        <!-- and here comes the image -->
-        <img class="img-responsive" src="{{url('public/img/Football-Phamplet.jpg')}}" alt="popup">
-            
-            <!-- Now this is the button which closes the popup-->
-        <div class="panel-footer">
-            <button id="close" style="float: right;" class="btn btn-lg btn-danger">Close</button>
-            <button id="apply" class="btn btn-lg btn-success">Apply Now</button>
-        </div>
-            
-            <!-- and finally we close the POPUP FRAME-->
-            <!-- everything on it will show up within the popup so you can add more things not just an image -->
-    </div></div>
-<script type="text/javascript">
-  
-</script>
 <div class="loading" hidden>Loading&#8230;</div>
  <div id="myCarousel" class="carousel slide slideBox" data-ride="carousel" data-interval="2500">
             <!-- Indicators -->
@@ -929,30 +893,7 @@ Overall, sports events in India are always amusing to unite with. Every year we 
   <script>
 
       $(document).ready(function() {
-      $('.panel-footer button').on('click',function(){
-        var button_id = $(this).attr('id');
-        $.ajax({
-         url:"{{url('/set_event_cookie')}}",
-         method:"GET",
-         async:false,
-         headers: {
-            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-          },
-          success:function(result)
-          {
-            if(result == 1){
-            if(button_id == 'apply'){
-            window.location.href = "{{url('/')}}/user/login/{{base64_encode('2/198')}}";
-            }
-          }
-
-           
-          }
-
-        });
       
-        
-      });
          
          // $('#apply').on('click',function(){
              
