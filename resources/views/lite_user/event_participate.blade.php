@@ -39,7 +39,7 @@ $userdata = json_decode($data['user_data']);
         			      <div class="right-list-job" style="padding: 50px 0 0 0;">
                           <h2><b>{{$data['item_data'][0]->name}}</b></h2>
                           <br><br>
-                          <p><span class="fa fa-location-arrow">{{$data['item_data'][0]->organizer_city}}</span></p>
+                          <p><span class="fa fa-location-arrow">{{$data['item_data'][0]->address_1}}</span></p>
                           <p><span class="fa fa-calendar"><b>From:</b> <?php echo date('d F',strtotime($data['item_data'][0]->start_date)); ?> <b>To:</b> <?php echo date('d F',strtotime($data['item_data'][0]->end_date)); ?> </span></p>
                           <p><span class="fas fa-rupee-sign">{{$data['item_data'][0]->fee}}</span></p>	
                           @if($data['apply_status'] == '0')
