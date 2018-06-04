@@ -19,7 +19,6 @@
               <li><a href="{{url('/sports-events-in-india.html')}}" >Event </a></li>
               <li><a href="{{url('/sports-tournaments-in-india.html')}}">Tournament</a></li>
               <li><a href="{{url('/sports-trials-in-india.html')}}">Trial</a></li>
-              <li ><a href="{{url('/')}}/user/login/{{base64_encode('2/198')}}" style="border: 5px solid #fff;border-radius: 12px;padding: 22px 8px 15px 8px;">GS FOOTBALL CAMP</a></li>
               <li ><a href="{{url('/aboutus')}}">About us</a></li>
               <li ><a href="{{url('/career')}}">Careers</a></li>
               <li class="dropdown">
@@ -31,6 +30,7 @@
                     <li><a class="" href="{{url('manage/login/')}}<?php echo '/'.base64_encode(1); ?>">Partner Login</a></li>
                 </ul>
               </li>
+               <li ><a href="{{url('/')}}/user/login/{{base64_encode('2/198')}}" class="gs_camp">FOOTBALL CAMP</a></li>
             </ul>
            </div><!-- /.navbar-collapse -->
           </div><!-- /.container -->
