@@ -190,7 +190,7 @@ span.price {
 
         </div>
         <!-- <a href="javascript:void(0)" onclick="event_apply()"><button class="btn btn-success btn-lg">Confirm Booking</button></a> -->
-        <input value="Confirm booking" class="btn" onclick="event_apply()">
+        <input id="booking" value="Confirm booking" class="btn" onclick="event_apply()">
       </form>
     </div>
   </div>
@@ -278,7 +278,9 @@ function user_details_validate()
 function event_apply()  
 {
   if(user_details_validate() == true)
-     {loading.style.display = "block";
+     {
+     
+      loading.style.display = "block";
      var ApplyEvent = [{"applicant_id":"{{$userdata->userid}}","event_id":"{{$data['item_data'][0]->id}}","fee_amount":"{{$data['item_data'][0]->fee + ($data['item_data'][0]->fee * 0.18)}}","organiser_id":"{{$data['item_data'][0]->userid}}"}];
      var userdata = {"email":$('#email').val(),"name":$('#fname').val(),"address":$('#adr').val(),"city":$('#city').val(),"fincome":$('#fincome').val(),"dob":"{{$userdata->dob}}","gender":"{{$userdata->gender}}","event_title":"{{$data['item_data'][0]->name}}"};
      var response_data = '';
@@ -296,12 +298,13 @@ function event_apply()
       crossDomain: true,
       data:apply_data,
       dataType:'text',
-      async:false,
+      beforeSend: function () { loading.style.display = "block"; },
       success:function(result)
       {loading.style.display = "none";
+      
         //var data = JSON.parse(result);
         if(result == 1)
-        {
+        {  $('#booking').text('Booking Confirmed');
           // alert_msg("Event sucessfully booked"+'<br>'+'a confirmation mail has been sent to your registered email id '+' {{$userdata->email}}');
           $.confirm({
     title: 'Successfully applied',
@@ -310,27 +313,17 @@ function event_apply()
         Ok: function () {
             window.location.href = "<?php echo url('/user/logout'); ?>";
          },
-        // cancel: function () {
-        //     window.location.href = "<?php //echo url('/'); ?>";
-        //   },
-        // somethingElse: {
-        //     text: 'Something else',
-        //     btnClass: 'btn-blue',
-        //     keys: ['enter', 'shift'],
-        //     action: function(){
-        //         $.alert('Something else?');
-        //     }
-        // }
-    }
+     }
 });
-          
-        }else
-        {
+        }
+        else
+        { 
+          $('#booking').attr('disabled',false);
           alert_msg("Something went wrong! Please try after sometime");
         }
       }
 
-     })
+     });
    }
  else
    {
