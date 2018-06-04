@@ -76,8 +76,15 @@ class user_controller extends Controller
                 $item_obj = new WebModel();
                 $item_var = $item_obj->getEventDetail($data[0]);
                 $apply_data = array('user_data' =>$value ,'item_data'=>$item_var); 
+                if($data[2] == '0')
+                {
                 return View::make('lite_user.checkout')->with('data',$apply_data);
-
+                }
+                else
+                {
+                  return View::make('lite_user.payment_checkout')->with('data',$apply_data); 
+                }
+                
             }else
             {
               $id = base64_encode('2/'.$data[0]);
