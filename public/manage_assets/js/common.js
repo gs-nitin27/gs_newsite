@@ -108,14 +108,27 @@ window.clearconsole = function clearconsole(){
 }
  function alert_msg(msg)
     {
-      $.alert({
-    title: '',
-    animation: 'top',
-    closeAnimation: 'scale',
-    animationSpeed: 200,
-    type:'blue',
-    content: msg
-});}
+//       $.alert({
+//     title: '',
+//     animation: 'top',
+//     closeAnimation: 'scale',
+//     animationSpeed: 200,
+//     type:'blue',
+//     content: msg
+// });
+      $.confirm({
+    title: 'Message',
+    content: msg,
+    buttons: {
+        Ok: function () {
+            //window.location.href = "<?php echo url('/user/logout'); ?>";
+         },
+     }
+});
+
+
+
+    }
 
 
 $(document).ready(function(){
