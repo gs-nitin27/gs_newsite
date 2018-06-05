@@ -138,15 +138,14 @@ span.price {
             <input type="text" id="email" name="email" placeholder="john@example.com" value="{{$userdata->email}}">
             <span id="radr" class="invalid"><p></p></span>
             <label for="adr"><i class="fa fa-address-card-o"></i> Address</label>
-            <input type="text" id="adr" name="address" placeholder="542 W. 15th Street" value="{{$userdata->address1}}">
+            <input type="text" id="adr" name="address" placeholder="542 W. 15th Street" value="{{trim($userdata->address1)}}">
             <span id="rcity" class="invalid"><p></p></span>
             <label for="city"><i class="fa fa-map-marker"></i> City</label>
             <input type="text" id="city" name="city" placeholder="New York" value="{{$userdata->location}}">
             <span id="rfincome" class="invalid"><p></p></span>
             <label for="fincome"><i class="fa fa-money"></i> Family income(per annum)</label>
             <input type="text" id="fincome" name="fincome" placeholder="Ex:1000000" value="">
-
-            <div class="row">
+              <div class="row">
               <div class="col-50">
                 <span id="rstate" class="invalid"><p></p></span>
                 <label for="state">State</label>
@@ -159,36 +158,7 @@ span.price {
               </div>
             </div>
           </div>
-
-          <!-- <div class="col-50">
-            <h3>Payment</h3>
-            <label for="fname">Accepted Cards</label>
-            <div class="icon-container">
-              <i class="fa fa-cc-visa" style="color:navy;"></i>
-              <i class="fa fa-cc-amex" style="color:blue;"></i>
-              <i class="fa fa-cc-mastercard" style="color:red;"></i>
-              <i class="fa fa-cc-discover" style="color:orange;"></i>
-            </div>
-            <label for="cname">Name on Card</label>
-            <input type="text" id="cname" name="cardname" placeholder="John More Doe">
-            <label for="ccnum">Credit card number</label>
-            <input type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444">
-            <label for="expmonth">Exp Month</label>
-            <input type="text" id="expmonth" name="expmonth" placeholder="September">
-
-            <div class="row">
-              <div class="col-50">
-                <label for="expyear">Exp Year</label>
-                <input type="text" id="expyear" name="expyear" placeholder="2018">
-              </div>
-              <div class="col-50">
-                <label for="cvv">CVV</label>
-                <input type="text" id="cvv" name="cvv" placeholder="352">
-              </div>
-            </div>
-          </div> -->
-
-        </div>
+         </div>
         <!-- <a href="javascript:void(0)" onclick="event_apply()"><button class="btn btn-success btn-lg">Confirm Booking</button></a> -->
         <input id="booking" value="Confirm booking" class="btn" onclick="event_apply()">
       </form>

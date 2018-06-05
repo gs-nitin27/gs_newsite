@@ -104,7 +104,7 @@ span.price {
 
 </style>
     <div class="row">
-      <div class="col-25">
+    <div class="col-25">
     <div class="container section">
       <!-- <h4>Cart 
         <span class="price" style="color:black">
@@ -137,10 +137,7 @@ span.price {
             <input type="hidden" name="hash"  id="hash" value=""/>
             <input type="hidden" name="txnid" id="txnid" value="" />
             <tr hidden>
-<td>Amount: </td>
-<td><input type="hidden" name="amount" value="{{$value = $data['item_data'][0]->fee * 0.18 }}" id="amount"/></td>
-</tr>
-<input type="hidden" name="amount" id="amount" value="{{$productinfo}}">
+<input type="hidden" id="amount" name="amount" value="{{$data['item_data'][0]->fee + $data['item_data'][0]->fee * 0.18 }}">
 <span id="rfname" class="invalid"><p></p></span>
 <label for="fname"><i class="fa fa-user"></i> Full Name</label>
 <input type="text" id="firstname" name="firstname" placeholder="John M. Doe" value="{{$userdata->name}}">
@@ -152,37 +149,39 @@ span.price {
 <input type="text" id="phone" name="phone" placeholder="+91 1001200154" value="{{$userdata->contact_no}}">
 <span id="radr" class="invalid"><p></p></span>
 <label for="adr"><i class="fa fa-address-card-o"></i> Address</label>
-<input type="text" id="adr" name="address1" placeholder="542 W. 15th Street" value="{{$userdata->address1}}">
+<input type="text" id="adr" name="udf2" placeholder="542 W. 15th Street" value="{{trim($userdata->address1)}}">
 <span id="rcity" class="invalid"><p></p></span>
 <label for="city"><i class="fa fa-address-card-o"></i> City</label>
-<input type="text" id="city" name="city" placeholder="542 W. 15th Street" value="{{$userdata->location}}">
+<input type="text" id="city" name="udf3" placeholder="542 W. 15th Street" value="{{$userdata->location}}">
 <span id="rfincome" class="invalid"><p></p></span>
 <label for="fincome"><i class="fa fa-money"></i> Family income(per annum)</label>
-<input type="text" id="fincome" name="fincome" placeholder="Ex:1000000" value="">
+<input type="text" id="fincome" name="udf1" placeholder="Ex:1000000" value="">
 <span id="rzip" class="invalid"><p></p></span>
 <label for="zip">Zip</label>
-<input type="text" id="zip" name="zipcode" placeholder="10001">
+<input type="text" id="zip" name="udf4" placeholder="10001">
+<input type="hidden" id="eventdata" name="udf5" placeholder="" value="">
+<input type="hidden" id="userdata" name="udf6"  placeholder="" value="">
 <input  name="productinfo" id="productinfo" type="hidden" placeholder="10001" value="{{$productinfo}}">
-<input  name="surl" id="surl" type="hidden" value="{{ config('constant.PAYU_URL')}}/paymentapi/transactionSuccess.php">
-<input  name="furl" id="furl" type="hidden" value="{{ config('constant.PAYU_URL')}}/paymentapi/transactionFail.php">
+<input  name="surl" id="surl" type="hidden" value="{{ config('constant.PAYU_URL')}}/paymentapi/event_payment_success.php">
+<input  name="furl" id="furl" type="hidden" value="{{ config('constant.PAYU_URL')}}/paymentapi/event_payment_failure.php">
 <input  name="service_provider" id="service_provider" type="hidden" value="payu_paisa">
 </div>
-<button onclick="submitPayuForm()" class="btn btn-success" >Pay Now</button>
-<!-- <input id="booking" value="Confirm booking" class="btn" onclick="event_apply()"> -->
-</form>
-</div>
-</div>
 
-  
+<input id="booking" value="Confirm booking" class="btn" onclick="event_apply()">
+</form>
+<!-- <button onclick="void(0)">Pay Now</button> -->
 </div>
+</div>
+</div>
+<script type="text/javascript" src="{{asset('public/user_assets/event_attend.js')}}"></script>
 <script type="text/javascript">
 function user_details_validate()
 {
   var i = 0;
   var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-  if($('#fname').val() == '')
+  if($('#firstname').val() == '')
   {
-    $('#rfname').text('*Please enter the you name');
+    $('#rfname').text('*Please enter your name');
     i++;
   }
   else
@@ -235,6 +234,15 @@ function user_details_validate()
   {
     $('#rzip').text('');
   }
+  if($('#phone').val() == '')
+  {
+    $('#rphone').text('*Please enter the phone number');
+    i++;
+  }
+  else
+  {
+    $('#rphone').text('');
+  }
   if($('#fincome').val() == '')
   {
     $('#rfincome').text('*Please specify the family income');
@@ -253,72 +261,46 @@ function user_details_validate()
   }
 }
 
-// function event_apply()  
-// {
-//   if(user_details_validate() == true)
-//      {
-     
-//       loading.style.display = "block";
-//      var ApplyEvent = [{"applicant_id":"{{$userdata->userid}}","event_id":"{{$data['item_data'][0]->id}}","fee_amount":"{{$data['item_data'][0]->fee + ($data['item_data'][0]->fee * 0.18)}}","organiser_id":"{{$data['item_data'][0]->userid}}"}];
-//      var userdata = {"email":$('#email').val(),"name":$('#fname').val(),"address":$('#adr').val(),"city":$('#city').val(),"fincome":$('#fincome').val(),"dob":"{{$userdata->dob}}","gender":"{{$userdata->gender}}","event_title":"{{$data['item_data'][0]->name}}"};
-//      var response_data = '';
-//      if({{$data['item_data'][0]->fee}} == 0)
-//      {
-//       response_data = {"amount":"0"}
-//      }else
-//      {
-//       response_data = {"amount":"{{$data['item_data'][0]->fee + ($data['item_data'][0]->fee * 0.18)}}"}
-//      }
-//      var apply_data =JSON.stringify({"ApplyEvent":ApplyEvent,"userdata":userdata,"response_data":JSON.stringify(response_data)}); 
-//      $.ajax({
-//       url:url+'/eventcontroller.php?act=quick_event_apply',
-//       method:'POST',
-//       crossDomain: true,
-//       data:apply_data,
-//       dataType:'text',
-//       beforeSend: function () { loading.style.display = "block"; },
-//       success:function(result)
-//       {loading.style.display = "none";
-      
-//         //var data = JSON.parse(result);
-//         if(result == 1)
-//         {  $('#booking').text('Booking Confirmed');
-//           // alert_msg("Event sucessfully booked"+'<br>'+'a confirmation mail has been sent to your registered email id '+' {{$userdata->email}}');
-//           $.confirm({
-//     title: 'Successfully applied',
-//     content: 'a confirmation mail has been sent to your registered email id '+' {{$userdata->email}}',
-//     buttons: {
-//         Ok: function () {
-//             window.location.href = "<?php //echo url('/user/logout'); ?>";
-//          },
-//      }
-// });
-//         }
-//         else
-//         { 
-//           $('#booking').attr('disabled',false);
-//           alert_msg("Something went wrong! Please try after sometime");
-//         }
-//       }
-
-//      });
-//    }
-//  else
-//    {
-//     alert_msg("Please fill up all details");
-//    }
-// }
-function submitPayuForm()
-{ 
-if(user_details_validate() == true){
-//var payuForm = document.forms.payuForm;
-//payuForm.submit();
-}else
+function event_apply()  
 {
-    return;
-}
-}
+  if(user_details_validate() == true)
+     {
+     
+      loading.style.display = "block";
+     var ApplyEvent = JSON.stringify([{"applicant_id":"{{$userdata->userid}}","event_id":"{{$data['item_data'][0]->id}}","fee_amount":"{{$data['item_data'][0]->fee + ($data['item_data'][0]->fee * 0.18)}}","organiser_id":"{{$data['item_data'][0]->userid}}"}]);
+     var userdata = {"email":$('#email').val(),"name":$('#fname').val(),"address":$('#adr').val(),"city":$('#city').val(),"fincome":$('#fincome').val(),"dob":"{{$userdata->dob}}","gender":"{{$userdata->gender}}","event_title":"{{$data['item_data'][0]->name}}"};
+
+        $('#eventdata').val(ApplyEvent);
+        
+        $('#userdata').val(JSON.stringify(userdata));
+        var route_url = '<?php echo url('/'); ?>';
+        var key = $('#key').val();
+        data = {
+        "key": $('#key').val(),
+        "amount": $('#amount').val(),
+        "firstname":$('#firstname').val(),
+        "email":$('#email').val(),
+        "phone":$('#phone').val(),
+        "productinfo":$('#productinfo').val() ,
+        "surl":$('#surl').val(),
+        "furl":$('#furl').val(),
+        "service_provider":$('#service_provider').val(),
+        "udf1":$('#fincome').val(),
+        "udf2":$('#adr').val(),
+        "udf3":$('#city').val(),
+        "udf4":$('#zip').val(),
+        "udf5":$('#eventdata').val(),
+        "udf6":$('#userdata').val()
+        };
+        
+        console.log(data);
+        //create_hash();
+    }
+else
+    {  
+        alert_msg("please fill all details");
+        return;
+    }
+   }
 </script>
-
-
 @stop

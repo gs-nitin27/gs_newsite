@@ -43,7 +43,7 @@ $userdata = json_decode($data['user_data']);
                           <p><span class="fa fa-calendar"><b>From:</b> <?php echo date('d F',strtotime($data['item_data'][0]->start_date)); ?> <b>To:</b> <?php echo date('d F',strtotime($data['item_data'][0]->end_date)); ?> </span></p>
                           <p><span class="fas fa-rupee-sign">{{$data['item_data'][0]->fee}}</span></p>	
                           @if($data['apply_status'] == '0')
-                          @if($data['item_data'][0]->fee !== '0')
+                          @if($data['item_data'][0]->fee != '0')
                           <p><a href="{{url('/')}}/user/checkout/<?php echo base64_encode($data['item_data'][0]->id.'|'.$userdata->userid.'|'.'1')?>"><button class="btn btn-warning btn-lg">Book Now</button></a></p>
                           @else
                           <p><a href="{{url('/')}}/user/checkout/<?php echo base64_encode($data['item_data'][0]->id.'|'.$userdata->userid.'|'.'0')?>"><button class="btn btn-warning btn-lg">Book Now</button></a></p>
