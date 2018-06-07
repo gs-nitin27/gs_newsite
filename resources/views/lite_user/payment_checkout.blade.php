@@ -129,6 +129,7 @@ span.price {
   <div class="col-75">
     <div class="container section">
       <form method="post" name="payuForm" action="{{ config('constant.FORM_PAYU_URL')}}">
+      <input type="hidden" name="_token" value="{{csrf_token()}}"/>  
          <div class="row">
           <div class="col-50">
             <h3>Basic Details</h3>
@@ -162,8 +163,8 @@ span.price {
 <input type="hidden" id="eventdata" name="udf5" placeholder="" value="">
 <input type="hidden" id="userdata" name="udf6"  placeholder="" value="">
 <input  name="productinfo" id="productinfo" type="hidden" placeholder="10001" value="{{$productinfo}}">
-<input  name="surl" id="surl" type="hidden" value="{{ config('constant.PAYU_URL')}}/paymentapi/event_payment_success.php">
-<input  name="furl" id="furl" type="hidden" value="{{ config('constant.PAYU_URL')}}/paymentapi/event_payment_failure.php">
+<input  name="surl" id="surl" type="hidden" value="{{url('/user/booking_confirm/321')}}">
+<input  name="furl" id="furl" type="hidden" value="{{url('/user/booking_confirm/321')}}">
 <input  name="service_provider" id="service_provider" type="hidden" value="payu_paisa">
 </div>
 
@@ -294,7 +295,7 @@ function event_apply()
         };
         
         console.log(data);
-        //create_hash();
+        create_hash();
     }
 else
     {  

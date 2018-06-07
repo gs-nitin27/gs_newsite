@@ -65,7 +65,7 @@ public function method(Request $request)
 public function create_hash()
 { 
   $data = json_decode(file_get_contents('php://input'));
-//print_r($data);die;
+  print_r($data);die;
   $txnid = substr(hash('sha256', mt_rand() . microtime()), 0, 20);
   $data->txnid = $txnid;
   unset($data->hash);

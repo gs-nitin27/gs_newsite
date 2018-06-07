@@ -92,4 +92,14 @@ class user_controller extends Controller
             } 
           
       }
+      public function transaction_success(Request $request)
+      {
+        
+
+
+           return View::make('lite_user.payment_checkout');
+
+
+
+      }
 }

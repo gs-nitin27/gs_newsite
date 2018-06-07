@@ -161,5 +161,5 @@ Route::group(array('prefix' => 'manage'), function()
            Redirect::to('/')->send();
         }
     });
-    
+    Route::post('booking_confirm/{id}','user_controller@transaction_success');
     });

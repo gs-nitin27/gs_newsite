@@ -19,8 +19,8 @@ function create_hash()
           $('#txnid').val(txnid);
           $('#hash_string').val(hash_string);
           return_value = '1'; 
-          var payuForm = document.forms.payuForm;
-          payuForm.submit(); 
+          //var payuForm = document.forms.payuForm;
+          //payuForm.submit(); 
           
         }
 	});
