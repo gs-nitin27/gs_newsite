@@ -19,6 +19,7 @@
               <li><a href="{{url('/sports-events-in-india.html')}}" >Event </a></li>
               <li><a href="{{url('/sports-tournaments-in-india.html')}}">Tournament</a></li>
               <li><a href="{{url('/sports-trials-in-india.html')}}">Trial</a></li>
+              <!-- <li ><a href="{{url('/')}}/user/login/{{base64_encode('2/198')}}" style="border: 5px solid #fff;border-radius: 12px;padding: 22px 8px 15px 8px;">GS FOOTBALL CAMP</a></li> -->
               <li ><a href="{{url('/aboutus')}}">About us</a></li>
               <li ><a href="{{url('/career')}}">Careers</a></li>
               <li class="dropdown">
@@ -30,7 +31,6 @@
                     <li><a class="" href="{{url('manage/login/')}}<?php echo '/'.base64_encode(1); ?>">Partner Login</a></li>
                 </ul>
               </li>
-               <li ><a href="{{url('/')}}/user/login/{{base64_encode('2/198')}}" class="gs_camp">FOOTBALL CAMP</a></li>
             </ul>
            </div><!-- /.navbar-collapse -->
           </div><!-- /.container -->
@@ -62,7 +62,7 @@
 <?php $value = Cookie::get('visit_event'); ?>
 <script type="text/javascript">
   $(document).ready(function(){
-    //var visit_event = '<?php //echo $value; ?>';
+    //var visit_event = '<?php// echo $value; ?>';
     
     // if(visit_event != '1')
     // {
@@ -74,30 +74,43 @@
     //     e.preventDefault();
     //     $("#popup").fadeOut(1000);
     // });
-$('.panel-footer button').on('click',function(){
-        var button_id = $(this).attr('id');
-        $.ajax({
-         url:"{{url('/set_event_cookie')}}",
-         method:"GET",
-         async:false,
-         headers: {
-            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-          },
-          success:function(result)
-          {
-            if(result == 1){
-            if(button_id == 'apply'){
-            window.location.href = "{{url('/')}}/user/login/{{base64_encode('2/198')}}";
-            }
-          }
+// $('.panel-footer button').on('click',function(){
+//         var button_id = $(this).attr('id');
+//         $.ajax({
+//          url:"{{url('/set_event_cookie')}}",
+//          method:"GET",
+//          async:false,
+//          headers: {
+//             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+//           },
+//           success:function(result)
+//           {
+//             if(result == 1){
+//             if(button_id == 'apply'){
+//             window.location.href = "{{url('/')}}/user/login/{{base64_encode('2/198')}}";
+//             }
+//           }
 
            
-          }
+//           }
 
-        });
+//         });
       
         
-      });
+//       });
   })
    </script>
- 
+   <div class="popup-wrap">
+ <div id="popup" class="popup panel panel-primary">
+        
+        <!-- and here comes the image -->
+        <img class="img-responsive" src="{{url('public/img/Football-Phamplet.jpg')}}" alt="popup">
+            
+        <div class="panel-footer">
+            <button id="apply" class="btn btn-lg btn-success">Apply Now</button>
+            <button id="close"  class="btn btn-lg btn-danger">Close</button>
+        </div>
+            
+            <!-- and finally we close the POPUP FRAME-->
+            <!-- everything on it will show up within the popup so you can add more things not just an image -->
+    </div></div>
