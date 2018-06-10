@@ -62,18 +62,18 @@
 <?php $value = Cookie::get('visit_event'); ?>
 <script type="text/javascript">
   $(document).ready(function(){
-    var visit_event = '<?php echo $value; ?>';
+    //var visit_event = '<?php //echo $value; ?>';
     
-    if(visit_event != '1')
-    {
-      $("#popup").hide().fadeIn(1000);
-    }
+    // if(visit_event != '1')
+    // {
+    //   $("#popup").hide().fadeIn(1000);
+    // }
     
-    //close the POPUP if the button with id="close" is clicked
-    $("#close").on("click", function (e) {
-        e.preventDefault();
-        $("#popup").fadeOut(1000);
-    });
+    // //close the POPUP if the button with id="close" is clicked
+    // $("#close").on("click", function (e) {
+    //     e.preventDefault();
+    //     $("#popup").fadeOut(1000);
+    // });
 $('.panel-footer button').on('click',function(){
         var button_id = $(this).attr('id');
         $.ajax({
@@ -100,17 +100,4 @@ $('.panel-footer button').on('click',function(){
       });
   })
    </script>
-   <div class="popup-wrap">
- <div id="popup" class="popup panel panel-primary">
-        
-        <!-- and here comes the image -->
-        <img class="img-responsive" src="{{url('public/img/Football-Phamplet.jpg')}}" alt="popup">
-            
-        <div class="panel-footer">
-            <button id="apply" class="btn btn-lg btn-success">Apply Now</button>
-            <button id="close"  class="btn btn-lg btn-danger">Close</button>
-        </div>
-            
-            <!-- and finally we close the POPUP FRAME-->
-            <!-- everything on it will show up within the popup so you can add more things not just an image -->
-    </div></div>
+ 
