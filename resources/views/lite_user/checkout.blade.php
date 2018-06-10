@@ -283,8 +283,8 @@ function event_apply()
         Ok: function () {
             window.location.href = "<?php echo url('/user/logout'); ?>";
          },
-     }
-});
+               }
+          });
         }
         else
         { 

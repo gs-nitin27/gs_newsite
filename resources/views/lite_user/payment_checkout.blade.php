@@ -5,6 +5,7 @@
 $userdata = json_decode($data['user_data']);
 $productinfo  = array('id' =>$data['item_data'][0]->id,'name'=>$data['item_data'][0]->name);
 $productinfo = json_encode($productinfo);
+$apply_id =  base64_encode($data['item_data'][0]->id.'|'.$userdata->userid);
  ?>
 <style type="text/css">
   
@@ -115,7 +116,7 @@ span.price {
       <p style="font-size:xx-large;"><a href="#"><b>{{$data['item_data'][0]->name}}</b></a> <span class="price"></span></p>
       <p><a href="#"><b>{{$data['item_data'][0]->organizer_city}}</b></a> <span class="price"></span></p>
       <p><span class="fa fa-calendar"><b>From:</b> <?php echo date('d F',strtotime($data['item_data'][0]->start_date)); ?> <b>To:</b> <?php echo date('d F',strtotime($data['item_data'][0]->end_date)); ?> </span></p>
-      @if($data['item_data'][0]->fee == '0' )
+      @if($data['item_data'][0]->fee == '0')
      <!--  <p><a href="#">Entry</a> <span class="price">Free</span></p> -->
       @else
       <p><a href="#"><b>Fee</b></a> <span class="price">{{$data['item_data'][0]->fee}}</span></p>
@@ -163,8 +164,8 @@ span.price {
 <input type="hidden" id="eventdata" name="udf5" placeholder="" value="">
 <input type="hidden" id="userdata" name="udf6"  placeholder="" value="">
 <input  name="productinfo" id="productinfo" type="hidden" placeholder="10001" value="{{$productinfo}}">
-<input  name="surl" id="surl" type="hidden" value="{{url('/user/booking_confirm/321')}}">
-<input  name="furl" id="furl" type="hidden" value="{{url('/user/booking_confirm/321')}}">
+<input  name="surl" id="surl" type="hidden" value="{{url('/user/booking_confirm/')}}/<?php echo $apply_id; ?>">
+<input  name="furl" id="furl" type="hidden" value="{{url('/user/booking_confirm/')}}/<?php echo $apply_id; ?>">
 <input  name="service_provider" id="service_provider" type="hidden" value="payu_paisa">
 </div>
 
@@ -270,10 +271,9 @@ function event_apply()
       loading.style.display = "block";
      var ApplyEvent = JSON.stringify([{"applicant_id":"{{$userdata->userid}}","event_id":"{{$data['item_data'][0]->id}}","fee_amount":"{{$data['item_data'][0]->fee + ($data['item_data'][0]->fee * 0.18)}}","organiser_id":"{{$data['item_data'][0]->userid}}"}]);
      var userdata = {"email":$('#email').val(),"name":$('#fname').val(),"address":$('#adr').val(),"city":$('#city').val(),"fincome":$('#fincome').val(),"dob":"{{$userdata->dob}}","gender":"{{$userdata->gender}}","event_title":"{{$data['item_data'][0]->name}}"};
-
-        $('#eventdata').val(ApplyEvent);
-        
-        $('#userdata').val(JSON.stringify(userdata));
+      
+        var apply_data = JSON.stringify({"apply_event":ApplyEvent,"userdata":userdata});
+        localStorage.setItem('apply_data',apply_data);
         var route_url = '<?php echo url('/'); ?>';
         var key = $('#key').val();
         data = {

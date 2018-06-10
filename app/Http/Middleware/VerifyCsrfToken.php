@@ -14,6 +14,7 @@ class VerifyCsrfToken extends BaseVerifier
     protected $except = [
        'manage/job/transaction/success/*',
        'manage/job/transaction/failure/*',
+       'user/booking_confirm/*',
     ];
    
 protected function tokensMatch($request)

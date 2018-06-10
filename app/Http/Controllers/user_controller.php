@@ -93,13 +93,14 @@ class user_controller extends Controller
           
       }
       public function transaction_success(Request $request)
-      {
-        
-
-
-           return View::make('lite_user.payment_checkout');
-
-
-
+      { 
+           $data = explode('|', base64_decode($request->id));
+           $value = session('lite_user_data');
+                $userdata = json_decode($value);
+                $userid = $userdata->userid; 
+                $item_obj = new WebModel();
+                $item_var = $item_obj->getEventDetail($data[0]);
+                $apply_data = array('user_data' =>$value ,'item_data'=>$item_var,'resp_data'=>$request->all()); 
+          return View::make('lite_user.transaction_success')->with('userdata',$value)->with('item_data',$item_var)->with('resp_data',json_encode($request->all()));
       }
 }
