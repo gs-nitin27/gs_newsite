@@ -119,6 +119,7 @@ window.clearconsole = function clearconsole(){
       $.confirm({
     title: 'Message',
     content: msg,
+    type:'blue',
     buttons: {
         Ok: function () {
             //window.location.href = "<?php echo url('/user/logout'); ?>";
