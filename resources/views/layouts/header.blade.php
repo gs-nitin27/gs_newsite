@@ -62,7 +62,6 @@
 <?php $value = Cookie::get('visit_event'); ?>
 <script type="text/javascript">
   $(document).ready(function(){
-    //var visit_event = '<?php// echo $value; ?>';
     
     // if(visit_event != '1')
     // {
