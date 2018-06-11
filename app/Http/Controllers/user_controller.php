@@ -76,13 +76,31 @@ class user_controller extends Controller
                 $item_obj = new WebModel();
                 $item_var = $item_obj->getEventDetail($data[0]);
                 $apply_data = array('user_data' =>$value ,'item_data'=>$item_var); 
+                if($data[2] == '0')
+                {
                 return View::make('lite_user.checkout')->with('data',$apply_data);
-
+                }
+                else
+                {
+                  return View::make('lite_user.payment_checkout')->with('data',$apply_data); 
+                }
+                
             }else
             {
               $id = base64_encode('2/'.$data[0]);
               Redirect::to('/user/login/'.$id)->send();
             } 
           
+      }
+      public function transaction_success(Request $request)
+      { 
+           $data = explode('|', base64_decode($request->id));
+           $value = session('lite_user_data');
+                $userdata = json_decode($value);
+                $userid = $userdata->userid; 
+                $item_obj = new WebModel();
+                $item_var = $item_obj->getEventDetail($data[0]);
+                $apply_data = array('user_data' =>$value ,'item_data'=>$item_var,'resp_data'=>$request->all()); 
+          return View::make('lite_user.transaction_success')->with('userdata',$value)->with('item_data',$item_var)->with('resp_data',json_encode($request->all()));
       }
 }

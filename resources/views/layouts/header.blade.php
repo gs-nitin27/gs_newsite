@@ -19,6 +19,7 @@
               <li><a href="{{url('/sports-events-in-india.html')}}" >Event </a></li>
               <li><a href="{{url('/sports-tournaments-in-india.html')}}">Tournament</a></li>
               <li><a href="{{url('/sports-trials-in-india.html')}}">Trial</a></li>
+              <!-- <li ><a href="{{url('/')}}/user/login/{{base64_encode('2/198')}}" style="border: 5px solid #fff;border-radius: 12px;padding: 22px 8px 15px 8px;">GS FOOTBALL CAMP</a></li> -->
               <li ><a href="{{url('/aboutus')}}">About us</a></li>
               <li ><a href="{{url('/career')}}">Careers</a></li>
               <li class="dropdown">
@@ -30,7 +31,6 @@
                     <li><a class="" href="{{url('manage/login/')}}<?php echo '/'.base64_encode(1); ?>">Partner Login</a></li>
                 </ul>
               </li>
-               <li ><a href="{{url('/')}}/user/login/{{base64_encode('2/198')}}" class="gs_camp">FOOTBALL CAMP</a></li>
             </ul>
            </div><!-- /.navbar-collapse -->
           </div><!-- /.container -->
@@ -61,19 +61,19 @@
 </style>
 
 <script type="text/javascript">
-//   $(document).ready(function(){
-   
+
+//  $(document).ready(function(){
     
-//     if(visit_event != '1')
-//     {
-//       $("#popup").hide().fadeIn(1000);
-//     }
+    // if(visit_event != '1')
+    // {
+    //   $("#popup").hide().fadeIn(1000);
+    // }
     
-//     //close the POPUP if the button with id="close" is clicked
-//     $("#close").on("click", function (e) {
-//         e.preventDefault();
-//         $("#popup").fadeOut(1000);
-//     });
+    // //close the POPUP if the button with id="close" is clicked
+    // $("#close").on("click", function (e) {
+    //     e.preventDefault();
+    //     $("#popup").fadeOut(1000);
+    // });
 // $('.panel-footer button').on('click',function(){
 //         var button_id = $(this).attr('id');
 //         $.ajax({
@@ -98,7 +98,9 @@
       
         
 //       });
+
 //   })
+
    </script>
    <!-- <div class="popup-wrap">
  <div id="popup" class="popup panel panel-primary"> -->
