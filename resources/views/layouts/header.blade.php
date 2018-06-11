@@ -59,58 +59,58 @@
     }
 }
 </style>
-<?php $value = Cookie::get('visit_event'); ?>
+
 <script type="text/javascript">
-  $(document).ready(function(){
-    var visit_event = '<?php echo $value; ?>';
+//   $(document).ready(function(){
+   
     
-    if(visit_event != '1')
-    {
-      $("#popup").hide().fadeIn(1000);
-    }
+//     if(visit_event != '1')
+//     {
+//       $("#popup").hide().fadeIn(1000);
+//     }
     
-    //close the POPUP if the button with id="close" is clicked
-    $("#close").on("click", function (e) {
-        e.preventDefault();
-        $("#popup").fadeOut(1000);
-    });
-$('.panel-footer button').on('click',function(){
-        var button_id = $(this).attr('id');
-        $.ajax({
-         url:"{{url('/set_event_cookie')}}",
-         method:"GET",
-         async:false,
-         headers: {
-            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-          },
-          success:function(result)
-          {
-            if(result == 1){
-            if(button_id == 'apply'){
-            window.location.href = "{{url('/')}}/user/login/{{base64_encode('2/198')}}";
-            }
-          }
+//     //close the POPUP if the button with id="close" is clicked
+//     $("#close").on("click", function (e) {
+//         e.preventDefault();
+//         $("#popup").fadeOut(1000);
+//     });
+// $('.panel-footer button').on('click',function(){
+//         var button_id = $(this).attr('id');
+//         $.ajax({
+//          url:"{{url('/set_event_cookie')}}",
+//          method:"GET",
+//          async:false,
+//          headers: {
+//             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+//           },
+//           success:function(result)
+//           {
+//             if(result == 1){
+//             if(button_id == 'apply'){
+//             window.location.href = "{{url('/')}}/user/login/{{base64_encode('2/198')}}";
+//             }
+//           }
 
            
-          }
+//           }
 
-        });
+//         });
       
         
-      });
-  })
+//       });
+//   })
    </script>
-   <div class="popup-wrap">
- <div id="popup" class="popup panel panel-primary">
+   <!-- <div class="popup-wrap">
+ <div id="popup" class="popup panel panel-primary"> -->
         
         <!-- and here comes the image -->
-        <img class="img-responsive" src="{{url('public/img/Football-Phamplet.jpg')}}" alt="popup">
+        <!-- <img class="img-responsive" src="{{url('public/img/Football-Phamplet.jpg')}}" alt="popup">
             
         <div class="panel-footer">
             <button id="apply" class="btn btn-lg btn-success">Apply Now</button>
             <button id="close"  class="btn btn-lg btn-danger">Close</button>
-        </div>
+        </div> -->
             
             <!-- and finally we close the POPUP FRAME-->
             <!-- everything on it will show up within the popup so you can add more things not just an image -->
-    </div></div>
+    <!-- </div></div> -->
