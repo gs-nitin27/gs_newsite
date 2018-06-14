@@ -12,7 +12,8 @@ use Illuminate\Support\Facades\Redirect;
 class user_controller extends Controller
 {
     public function set_user_data(Request $request)
-    { $data = file_get_contents("php://input");
+    { 
+      $data = file_get_contents("php://input");
 		  Session::put('lite_user_data', $data);
 	    $value = Session::get('lite_user_data');
 	    if($value != '')

@@ -3,8 +3,7 @@
 @section('content')
 <?php
 $userdata = json_decode($data['user_data']);
-$productinfo  = array('id' =>$data['item_data'][0]->id,'name'=>$data['item_data'][0]->name);
-$productinfo = json_encode($productinfo);
+$productinfo = $data['item_data'][0]->id;
 $apply_id =  base64_encode($data['item_data'][0]->id.'|'.$userdata->userid);
  ?>
 <style type="text/css">
