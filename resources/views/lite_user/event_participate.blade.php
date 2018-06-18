@@ -49,7 +49,6 @@ $userdata = json_decode($data['user_data']);
                                   <li><i class="fa fa-map-marker"></i>{{$data['item_data'][0]->address_1}}</li>
                                   <li><i class="fa fa-calendar"></i> <span class="pll_color">From :-</span> <?php echo date('d F',strtotime($data['item_data'][0]->start_date)); ?> <span class="pll_color"> To :-</span>  <?php echo date('d F',strtotime($data['item_data'][0]->end_date)); ?></li>
                                   <li><i class="fa fa-users"></i> <span class="pll_color">320</span> people viewed this event.</li>
-                                  <li><i class="fa fa-rupee"></i> <span class="pll_color">{{$data['item_data'][0]->fee}}</span> </li>
                                  </ul>                           
                                   @if($data['apply_status'] == '0')
                                   @if($data['item_data'][0]->fee != '0')
