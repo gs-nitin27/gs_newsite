@@ -30,7 +30,7 @@ $userdata = json_decode($data['user_data']);
 }
 <?php 
 
-echo " config('constant.IMAGE_URL') }}/event/{{$data['item_data'][0]->image}}";die;
+echo " config('constant.IMAGE_URL')/event/$data['item_data'][0]->image";die;
 
 ?>
 </style>
