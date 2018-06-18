@@ -37,7 +37,7 @@ $userdata = json_decode($data['user_data']);
                       <div class="margin15 clearfix"></div>
                         <div class="margin20 clearfix"></div>
                        <div class="row">
-                         <div class="col-lg-6 text-center">
+                         <div class="col-lg-6 text-center" style="margin-top:2%">
                             <img src="https://getsporty.in/portal/uploads/event/{{$data['item_data'][0]->image}}" class="img-responsive">
                          </div> 
 
@@ -61,12 +61,9 @@ $userdata = json_decode($data['user_data']);
                                  </div>
                                  @endif
                                  @else
-                                 <div class="pll_btn">
-                                     <a  href="javascript:void(0)">Already Applied</a>
-                                 </div><br>
-                                 <div class="fa fa-envelope">
-                                     <a  href="javascript:void(0)">Print Invoice</a>
-                                 </div>
+                                 <ul class="business_list">
+                                 <li><i class="fa fa-envelope"></i><span class="pll_color">View Invoice</span></li>
+                                 </ul>
                                  @endif
                              </div>
                          </div>
@@ -102,9 +99,9 @@ $userdata = json_decode($data['user_data']);
                                  </div>
                                  @endif
                                  @else
-                                 <div class="pll_btn">
+                                 <!-- <div class="pll_btn">
                                      <a  href="javascript:void(0)">Already Applied</a>
-                                 </div><br>
+                                 </div><br> -->
                                  @endif
             </div>
         </div>
