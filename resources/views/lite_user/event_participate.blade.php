@@ -3,7 +3,9 @@
 @section('content')
 <?php
 $userdata = json_decode($data['user_data']);
+print_r($userdata);die;
  ?>
+
 <style type="text/css">
 .left-img-job img{
   max-width: 70%;max-height: 70%;
