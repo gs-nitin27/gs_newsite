@@ -3,7 +3,7 @@
 @section('content')
 <?php
 $userdata = json_decode($data['user_data']);
-print_r($userdata);die;
+print_r($data);die;
  ?>
 
 <style type="text/css">
