@@ -68,7 +68,7 @@ $userdata = json_decode($data['user_data']);
                                  @endif
                                  @else
                                  <ul class="business_list">
-                                 <li><i class="fa fa-envelope"></i><span class="pll_color">View Invoice</span></li>
+                                 <li><i class="fa fa-envelope"></i><span class="pll_color">Entry Pass</span></li>
                                  </ul>
                                  @endif
                              </div>
