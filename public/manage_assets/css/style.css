@@ -461,3 +461,86 @@ section.half h3 {
     height: 41%;
     margin-right: 62%;
 }
+.bg_home{
+     background-image: url(../img/bg_img.jpg);
+    background-size: cover;
+    height: 414px;
+    background-position: center;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 59%, 0 99%);
+    clip-path: polygon(0 0, 100% 0, 100% 59%, 0 99%);
+    margin-top: -64px;
+}
+
+
+.bg_home{
+    background-image: url(../img/bg_img.jpg);
+    background-size: cover;
+    padding: 20px
+}
+
+
+.pll_btn{margin-top: 30px}
+.pll_btn a{
+
+    border: 1px solid #0cacf4;
+    padding: 12px 24px;
+    border-radius: 60px;
+    text-transform: uppercase;
+    color: #0cacf4;
+
+}
+.pll_btn a:hover{
+    background-color: #0cacf4;
+    color: #ffffff;
+    text-decoration: none;
+    transform: 0.6s; 
+
+}
+
+
+.pll_color{color:#0cacf4 }
+.about_dis{background-color: #ffffff;
+padding: 25px}
+
+.s_img_icon ul li{list-style: none;;float: left;margin: 10px}
+.s_img_icon ul{padding: 0 0px 54px 50px;}
+
+.pll_sb_btn a{  
+    background-color: #0cacf4;
+    padding: 12px 24px;
+    border-radius: 60px;
+    color: #ffffff;
+    text-transform: uppercase;}
+
+.pll_sb_btn a:hover{
+    background-color: #ffffff;
+    color:  #0cacf4;
+    text-decoration: none;
+    transform: 0.6s; 
+    border-color: #0cacf4;
+    border: 1px solid #0cacf4;
+
+}
+
+
+
+.pll_sb_btn{margin: 25px 0}    
+
+.pll_font{font-size: 15px}
+.pll_font i{font-size: 40px} 
+
+.form_input input{border: none;padding-left: 10px}
+.form_input .form-group{border-bottom:  1px solid grey;padding: 5px 0}
+
+.business_list{ font-size: 15px }
+.business_list i{padding: 10px}
+
+
+@media only screen and (max-width: 1180px) and (min-width: 320px)  {
+.s_img_icon{ margin-top:  30px;text-align: center;
+
+}
+.s_img_icon ul li{ margin:5px;text-align: center;
+    
+}
+}

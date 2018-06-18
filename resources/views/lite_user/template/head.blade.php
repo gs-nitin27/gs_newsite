@@ -13,5 +13,9 @@
   <script src="{{asset('public/manage_assets/js/bootstrap.min.js?v=')}}<?php echo rand(1,3);?>"></script>
   <script src="{{asset('public/manage_assets/js/common.js?v=')}}<?php echo rand(1,3);?>"></script>
   <script src="{{asset('public/manage_assets/js/validation.js?v=')}}<?php echo rand(1,3);?>"></script>
+  <script src="{{asset('public/js/story-box.min.js')}}"></script>
+        <link rel="stylesheet" href="{{asset('public/css/owl.carousel.min.css')}}">
+    <link rel="stylesheet" href="{{asset('public/css/owl.theme.default.min.css')}}">
+    <script src="{{asset('public/js/owl.carousel.js')}}"></script>
   <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.0/jquery-confirm.min.css">
