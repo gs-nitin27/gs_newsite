@@ -4,7 +4,7 @@
 <?php
 $userdata = json_decode($data['user_data']);
  ?>
- <?php echo config('constant.IMAGE_URL')."/event/".$data['item_data'][0]->image;die;?>
+
 <style type="text/css">
 .left-img-job img{
   max-width: 70%;max-height: 70%;
@@ -39,7 +39,7 @@ $userdata = json_decode($data['user_data']);
                         <div class="margin20 clearfix"></div>
                        <div class="row">
                          <div class="col-lg-6 text-center" style="margin-top:2%">
-                            <img src="<?php echo config('constant.IMAGE_URL');?>/event/{{$data['item_data'][0]->image}}" class="img-responsive">
+                            <img src="https://getsporty.in/portal/uploads/event/{{$data['item_data'][0]->image}}" class="img-responsive">
                          </div> 
 
                             <div class="col-lg-6">
