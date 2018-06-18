@@ -29,7 +29,7 @@ $userdata = json_decode($data['user_data']);
   float: right;
 }
 </style>
-
+<div class="clearfix"></div>
 <div class="clearfix margin20"></div>
              <div class="container">
              <div class="row">
@@ -91,9 +91,21 @@ $userdata = json_decode($data['user_data']);
                 Address : {{$data['item_data'][0]->address_1}}<br>
                 City : {{$data['item_data'][0]->organizer_city}}<br>
                 Pin : {{$data['item_data'][0]->pin}}</p>
+             @if($data['apply_status'] == '0')
+             @if($data['item_data'][0]->fee != '0')
               <div class="pll_btn">
-              <a  href="#">Already Applied</a>
-              </div>
+                                     <a  href="{{url('/')}}/user/checkout/<?php echo base64_encode($data['item_data'][0]->id.'|'.$userdata->userid.'|'.'1')?>">Book Now</a>
+                                 </div>
+                                 @else
+                                 <div class="pll_btn">
+                                     <a  href="{{url('/')}}/user/checkout/<?php echo base64_encode($data['item_data'][0]->id.'|'.$userdata->userid.'|'.'1')?>">Book Now</a>
+                                 </div>
+                                 @endif
+                                 @else
+                                 <div class="pll_btn">
+                                     <a  href="javascript:void(0)">Already Applied</a>
+                                 </div><br>
+                                 @endif
             </div>
         </div>
         <div class="col-lg-4" >
@@ -128,9 +140,9 @@ $userdata = json_decode($data['user_data']);
             <h3>Map & Directions :-</h3><hr>
                 <div class="text-center pll_font">
                 <i class="fa fa-map-marker text-center"></i>
-                <p>Juggernaut Arena, Civil Lines,<br>
+                <p>{{$data['item_data'][0]->address_1}}<br>
                 New Delhi<br>
-                7th to 28th June 2018</p>
+                <?php echo date('d F',strtotime($data['item_data'][0]->start_date)); ?> to <?php echo date('d F',strtotime($data['item_data'][0]->end_date)); ?></p>
               </div>
             </div>
           </div>
