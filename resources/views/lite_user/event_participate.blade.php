@@ -28,6 +28,11 @@ $userdata = json_decode($data['user_data']);
 .right-list-job button{
   float: right;
 }
+<?php 
+
+echo " config('constant.IMAGE_URL') }}/event/{{$data['item_data'][0]->image}}";die;
+
+?>
 </style>
 <div class="clearfix"></div>
 <div class="clearfix margin20"></div>
