@@ -38,7 +38,7 @@ $userdata = json_decode($data['user_data']);
                         <div class="margin20 clearfix"></div>
                        <div class="row">
                          <div class="col-lg-6 text-center" style="margin-top:2%">
-                            <img src="https://getsporty.in/portal/uploads/event/{{$data['item_data'][0]->image}}" class="img-responsive">
+                            <img src="<?php echo config('constant.IMAGE_URL');?>/event/{{$data['item_data'][0]->image}}" class="img-responsive">
                          </div> 
 
                             <div class="col-lg-6">
@@ -47,7 +47,7 @@ $userdata = json_decode($data['user_data']);
                                 <ul class="business_list">
                                   <li><i class="fa fa-map-marker"></i>{{$data['item_data'][0]->address_1}}</li>
                                   <li><i class="fa fa-calendar"></i> <span class="pll_color">From :-</span> <?php echo date('d F',strtotime($data['item_data'][0]->start_date)); ?> <span class="pll_color"> To :-</span>  <?php echo date('d F',strtotime($data['item_data'][0]->end_date)); ?></li>
-                                  <li><i class="fa fa-users"></i> <span class="pll_color">320</span>   people viewed this event.</li>
+                                  <li><i class="fa fa-users"></i> <span class="pll_color">320</span> people viewed this event.</li>
                                   <li><i class="fa fa-rupee"></i> <span class="pll_color">{{$data['item_data'][0]->fee}}</span> </li>
                                  </ul>                           
                                   @if($data['apply_status'] == '0')
@@ -57,7 +57,7 @@ $userdata = json_decode($data['user_data']);
                                  </div>
                                  @else
                                  <div class="pll_btn">
-                                     <a  href="{{url('/')}}/user/checkout/<?php echo base64_encode($data['item_data'][0]->id.'|'.$userdata->userid.'|'.'1')?>">Book Now</a>
+                                     <a  href="{{url('/')}}/user/checkout/<?php echo base64_encode($data['item_data'][0]->id.'|'.$userdata->userid.'|'.'0')?>">Book Now</a>
                                  </div>
                                  @endif
                                  @else
