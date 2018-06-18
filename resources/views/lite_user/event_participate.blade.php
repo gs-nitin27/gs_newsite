@@ -53,10 +53,16 @@ $userdata = json_decode($data['user_data']);
                                  </ul>                           
                                   @if($data['apply_status'] == '0')
                                   @if($data['item_data'][0]->fee != '0')
+                                  <ul class="business_list">
+                                 <li><i class="fa fa-rupee"></i> <span class="pll_color">{{$data['item_data'][0]->fee}}</span> </li>
+                                 </ul> 
                                  <div class="pll_btn">
                                      <a  href="{{url('/')}}/user/checkout/<?php echo base64_encode($data['item_data'][0]->id.'|'.$userdata->userid.'|'.'1')?>">Book Now</a>
                                  </div>
                                  @else
+                                 <ul class="business_list">
+                                 <li><i class="fa fa-rupee"></i> <span class="pll_color">Entry Free</span> </li>
+                                 </ul> 
                                  <div class="pll_btn">
                                      <a  href="{{url('/')}}/user/checkout/<?php echo base64_encode($data['item_data'][0]->id.'|'.$userdata->userid.'|'.'0')?>">Book Now</a>
                                  </div>
