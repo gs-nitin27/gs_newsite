@@ -83,7 +83,7 @@ class WebModel extends Model
 
 public function getEventDetail($id)
 {  
-    $event      = DB::table('gs_eventinfo')->select('id','userid','feetype','fee','name','type', 'sport','description','image','sport_name','organizer_city','start_date','end_date','entry_start_date','entry_end_date','pin','address_1','organizer_name','email_app_collection','event_links','is_native')->where('id', $id)->get();
+    $event      = DB::table('gs_eventinfo')->select('id','userid','feetype','fee','name','type','location','sport','description','image','sport_name','organizer_city','start_date','end_date','entry_start_date','entry_end_date','pin','address_1','organizer_name','email_app_collection','event_links','is_native')->where('id', $id)->get();
      //print_r($event);die;
      return $event;
 }
@@ -125,7 +125,7 @@ public function getArticleDetail($id)
 
 public function  getEventDetail_data($sport_name,$id,$type)
 {
-    $event = DB::table('gs_eventinfo')->select('id','name','type', 'description','image','sport_name','organizer_city','start_date','end_date','entry_start_date','entry_end_date','pin','address_1','organizer_name','email_app_collection','event_links')->where('id','<>',$id)->where('sport_name',$sport_name)->where('type',$type)->where('publish','1')->get();
+    $event = DB::table('gs_eventinfo')->select('id','name','type', 'description','location','image','sport_name','organizer_city','start_date','end_date','entry_start_date','entry_end_date','pin','address_1','organizer_name','email_app_collection','event_links')->where('id','<>',$id)->where('sport_name',$sport_name)->where('type',$type)->where('publish','1')->get();
      return $event;
 }
 

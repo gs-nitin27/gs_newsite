@@ -144,7 +144,7 @@ $userdata = json_decode($data['user_data']);
                 <div class="text-center pll_font">
                 <i class="fa fa-map-marker text-center"></i>
                 <p>{{$data['item_data'][0]->address_1}}<br>
-                New Delhi<br>
+               {{$data['item_data'][0]->location}}<br>
                 <?php echo date('d F',strtotime($data['item_data'][0]->start_date)); ?> to <?php echo date('d F',strtotime($data['item_data'][0]->end_date)); ?></p>
               </div>
             </div>
