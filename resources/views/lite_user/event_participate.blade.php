@@ -68,7 +68,7 @@ $userdata = json_decode($data['user_data']);
                                  @endif
                                  @else
                                  <ul class="business_list">
-                                 <li><i class="fa fa-envelope"></i><span class="pll_color">Entry Pass</span></li>
+                                 <li><i class="fa fa-envelope"></i><span class="pll_color">View Entry Pass</span></li>
                                  </ul>
                                  @endif
                              </div>
@@ -125,7 +125,7 @@ $userdata = json_decode($data['user_data']);
         <div class="col-lg-4 ">
             <div style="background-color: #ffffff;padding:10px 25px;margin: 20px 0">
               <h3>Subscribe to :-</h3><hr>
-              <p>Get more updates and info about ralted events</p>
+              <p>Get more updates and info about related events</p>
               <form class="form_input">
                 <div class="form-group">
                 <i class="fa fa-envelope"></i><input type="email" class="" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
