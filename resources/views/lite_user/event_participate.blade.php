@@ -153,7 +153,7 @@ $userdata = json_decode($data['user_data']);
       </div>
     </div>
   </div>
-
+<?php $recommend = $data['recommend'];?>
 
      <div class="clearfix margin20"></div>
       <section class="testimonials">
@@ -164,48 +164,23 @@ $userdata = json_decode($data['user_data']);
                 <p>See what’s included in the App</p>
                   </div>
                   <div id="customers-testimonials2" class="owl-carousel">
+                    @foreach ($recommend as $item)
                     <div class="item">
                       <div class="img-box">
                         <img src="{{asset('public/img/slid_img3.png')}}">
                       </div>
                       <div class="slide-job-list">
-                        <h4>Lorem Ipsum is simply dummy text of the printing andtypesetting industry.</h4>
-                        <p> Location : <span> Lorem Ipsum</span></p>
-                        <p> Start: <span> Jun 1, 2018 - Jun 27, 2018 </span></p>
-                        <p> Entry: <span> Jun 1, 2018 - Jun 27, 2018 </span></p>
-                        <p> Sport:<span> Lawn Tennis </span></p>
+                        <h4>{{$item->name}}</h4>
+                        <p> Location : <span> {{$item->address_1}}</span></p>
+                        <p> Start: <span> <?php echo date('d F Y',strtotime($item->start_date)); ?> - <?php echo date('d F Y',strtotime($item->end_date)); ?> </span></p>
+                        <p> Entry: <span> <?php echo date('d F Y',strtotime($item->entry_start_date)); ?> - <?php echo date('d F Y',strtotime($item->entry_end_date)); ?> </span></p>
+                        <p> Sport:<span> {{$item->sport_name}}</span></p>
                         <p class="read-c"> Read More </p>
                       </div>
                     </div>
-                     <div class="item">
-                      <div class="img-box">
-                        <img src="{{asset('public/img/slid_img1.png')}}">
-                      </div>
-                      <div class="slide-job-list">
-                       <h4>Lorem Ipsum is simply dummy text of the printing andtypesetting industry.</h4>
-                        <p> Location : <span> Lorem Ipsum</span></p>
-                        <p> Start: <span> Jun 1, 2018 - Jun 27, 2018 </span></p>
-                        <p> Entry: <span> Jun 1, 2018 - Jun 27, 2018 </span></p>
-                        <p> Sport:<span> Lawn Tennis </span></p>
-                        <p class="read-c"> Read More </p>
-                      </div>
-                    </div>
-                       <div class="item">
-                      <div class="img-box">
-                        <img src="{{asset('public/img/slid_img.png')}}">
-                      </div>
-                      <div class="slide-job-list">
-                       <h4>Lorem Ipsum is simply dummy text of the printing andtypesetting industry.</h4>
-                        <p> Location : <span> Lorem Ipsum</span></p>
-                        <p> Start: <span> Jun 1, 2018 - Jun 27, 2018 </span></p>
-                        <p> Entry: <span> Jun 1, 2018 - Jun 27, 2018 </span></p>
-                        <p> Sport:<span> Lawn Tennis </span></p>
-                        <p class="read-c"> Read More </p>
-                      </div>
-                    </div>  
+                    @endforeach
                   </div>
-
-                        </div>
+                      </div>
                       </div>
                  </section>    
  <script>

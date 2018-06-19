@@ -51,20 +51,25 @@ class user_controller extends Controller
           $application_id = $item.$userid;
           $userObj = new UserModel();
           $apply_status = $userObj->get_event_application($application_id);
-          		break;
+          $sport_name = $item_var[0]->sport_name;
+          $id  = $item_var[0]->id;
+          $type = $item_var[0]->type;
+          $obj = new WebModel();
+          $resp1 = $obj->getEventDetail_data($sport_name,$id,$type);
+             break;
           	case '3':
           $item_var = $item_obj->getTournamentDetail($item);
           		break;
           	case '4':
           $item_var = $item_obj->getEventDetail($item);
-
           		break;
           	
           	default:
           		# code...
           		break;
           }
-          $apply_data = array('user_data' =>$value ,'item_data'=>$item_var,'apply_status'=>$apply_status); 
+          
+          $apply_data = array('user_data' =>$value ,'item_data'=>$item_var,'apply_status'=>$apply_status,'recommend'=>$resp1); 
     	    return View::make('lite_user.'.$view)->with('data',$apply_data);
     } 
 
@@ -113,4 +118,6 @@ class user_controller extends Controller
         Redirect::to('/user/login/'.$data)->send();
       }
     }
+   
+
 }

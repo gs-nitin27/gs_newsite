@@ -120,7 +120,8 @@ use DateTime;
     $resp = $obj->getEventDetail($id);
    
     $sport_name = $resp[0]->sport_name;
-    $resp1 = $obj->getEventDetail_data($sport_name,$id);
+    $type = $resp[0]->type;
+    $resp1 = $obj->getEventDetail_data($sport_name,$id,$type);
     if (count($resp1)==0)
     {
      $resp1 = $resp;
@@ -170,13 +171,13 @@ use DateTime;
     return View::make("article-detail")->with('name', $resp)->with('name1',$resp1);
     }
 
-public function getw()
+    public function getw()
     {
        
     return View::make("support");
     }
     
-public function getSportsList(Request $request)
+   public function getSportsList(Request $request)
    {
     $id   = $request->id;
     $obj  = new WebModel();
@@ -184,7 +185,7 @@ public function getSportsList(Request $request)
     $resp = array('data' => $resp );
     echo json_encode($resp);
    }
-public function user_subscription(Request $request)
+   public function user_subscription(Request $request)
    {
      $data = $request->all();
    
