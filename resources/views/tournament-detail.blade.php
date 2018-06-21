@@ -72,7 +72,7 @@
         	<div class="container">
         	 	 <div class="row">
         		   <div class="col-lg-7 col-md-7">
-            			 <div class="left-img-job"> <img src="https://getsporty.in/portal/uploads/tournament/{{$name[0]->image}}"> </div>		
+            			 <div class="left-img-job"> <img src="{{config('constant.IMAGE_URL')}}tournament/{{$name[0]->image}}"> </div>		
         		    </div>
         		    <div class="col-lg-5 col-md-5">
         			       <div class="right-list-job" style="padding: 50px 0 0 0;">
@@ -118,7 +118,7 @@
 
                       <div class="item">
                           <div class="img-box">
-                              <img src="https://getsporty.in/portal/uploads/tournament/{{$name1[$i]->image}}">
+                              <img src="{{config('constant.IMAGE_URL')}}tournament/{{$name1[$i]->image}}">
                           </div>
                           <div class="slide-job-list">
                               <h4>{{$name1[$i]->name}}</h4>

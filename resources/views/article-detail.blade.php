@@ -105,7 +105,7 @@
 
                    <div class="item">
                     <div class="img-box">
-                     <img src="https://getsporty.in/portal/uploads/resources/{{$name1[$i]->image}}">
+                     <img src="{{config('constant.IMAGE_URL')}}resources/{{$name1[$i]->image}}">
                       </div>
                        <div class="white-b">
                         <h4>{{$name1[$i]->title}}</h4>

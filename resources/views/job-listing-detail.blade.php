@@ -70,7 +70,7 @@
         	 	 <div class="row">
         		   <div class="col-lg-7 col-md-7">
         			 <div class="left-img-job">
-        				<img src="https://getsporty.in/portal/uploads/job/{{$name[0]->image}}">
+        				<img src="{{config('constant.IMAGE_URL')}}job/{{$name[0]->image}}">
         			  </div>		
         		    </div>
         		    <div class="col-lg-5 col-md-5">
@@ -124,7 +124,7 @@
                 ?>
                    <div class="item">
                     <div class="img-box">
-                     <img src="https://getsporty.in/portal/uploads/job/{{$name1[$i]->image}}">
+                     <img src="{{config('constant.IMAGE_URL')}}job/{{$name1[$i]->image}}">
                       </div>
                        <div class="slide-job-list">
                          <h4>{{$name1[$i]->title}}</h4>
