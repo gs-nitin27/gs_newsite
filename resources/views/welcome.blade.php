@@ -324,7 +324,7 @@ box-shadow: rgba(255,255,255, 0.75) 1.5em 0 0 0, rgba(255,255,255, 0.75) 1.1em 1
 
                             @foreach($name['resources'] as $value)
                             <section class="item">
-                              <div class="img-box"><img src="https://getsporty.in/portal/uploads/resources/{{ $value->image }}"></div>
+                              <div class="img-box"><img src="{{config('constant.IMAGE_URL')}}/resources/{{ $value->image }}"></div>
                               <div class="white-b">
                                   <h4>{{$value->title}}</h4>
                                   <p>{{$value->summary}}</p>
@@ -357,7 +357,7 @@ So, if you are passionate about sports and want to handle the business side of t
                   <div id="customers-testimonials2" class="owl-carousel">
                   @foreach($name['job'] as $value)
                      <section class="item">
-                        <div class="img-box"><img src="https://getsporty.in/portal/uploads/job/{{ $value->image }}"></div>
+                        <div class="img-box"><img src="{{config('constant.IMAGE_URL')}}job/{{ $value->image }}"></div>
                         <div class="white-b">
                            <h4>{{$value->title}}</h4>
 
@@ -530,7 +530,7 @@ Overall, sports events in India are always amusing to unite with. Every year we 
                         @foreach($name['tournament'] as $value)
 
                         <section class="item">
-                          <div class="img-box"><img src="https://getsporty.in/portal/uploads/tournament/{{ $value->image }}"></div>
+                          <div class="img-box"><img src="{{config('constant.IMAGE_URL')}}/tournament/{{ $value->image }}"></div>
                           <div class="white-b">
                               <h4>{{$value->name}}</h4>
                               <section class="clearfix">
@@ -570,7 +570,7 @@ Overall, sports events in India are always amusing to unite with. Every year we 
 
                             @foreach($name['trial'] as $value)
                             <section class="item">
-                              <div class="img-box"><img src="https://getsporty.in/portal/uploads/event/{{ $value->image }}"></div>
+                              <div class="img-box"><img src="{{config('constant.IMAGE_URL')}}event/{{ $value->image }}"></div>
                               <div class="white-b">
                               <h4>{{$value->name}}</h4>
                               <section class="clearfix">
