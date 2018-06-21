@@ -117,9 +117,4 @@ if(Session::has('userdata'))
               window.location = '<?php echo env('SESSION_DOMAIN'); ?>';
         }, 30000);   
 </script>
-</html><?php// }
-// else
-// {
-//    Redirect::to('/')->send();
-// }
-?>
+</html>
