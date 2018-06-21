@@ -484,7 +484,7 @@ Overall, sports events in India are always amusing to unite with. Every year we 
                       @foreach($name['event'] as $value)
 
                         <section class="item">
-                          <div class="img-box"><img src="https://getsporty.in/portal/uploads/event/{{ $value->image }}"></div>
+                          <div class="img-box"><img src="{{config('constant.IMAGE_URL')}}/{{ $value->image }}"></div>
                           <div class="white-b">
                               <h4>{{$value->name}}</h4>
                               <section class="clearfix">
