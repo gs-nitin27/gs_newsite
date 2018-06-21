@@ -167,7 +167,7 @@ $userdata = json_decode($data['user_data']);
                     @foreach ($recommend as $item)
                     <div class="item">
                       <div class="img-box">
-                        <img src="{{config('constant.IMAGE_URL')}}event/{{$item[$i]->image}}">
+                        <img src="{{config('constant.IMAGE_URL')}}event/{{$item->image}}">
                       </div>
                       <div class="slide-job-list">
                         <h4>{{$item->name}}</h4>
