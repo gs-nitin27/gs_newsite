@@ -255,7 +255,7 @@ var data = JSON.stringify(data1);
       window.location.href = "<?php echo url('/'); ?>"+"/manage/register/"+url_param;
       }
       else
-      { console.log("{{url('/')}}/manage/professional/");return;
+      { //console.log("{{url('/')}}/manage/professional/");return;
         window.location.href = "{{url('/')}}/manage/professional/";
       }
     }
