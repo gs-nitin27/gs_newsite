@@ -1,7 +1,7 @@
 <?php 
 
-if($_SERVER['REMOTE_ADDR'] == '171.61.135.200' || $_SERVER['REMOTE_ADDR'] == '::1')
-{
+// if($_SERVER['REMOTE_ADDR'] == '122.177.29.59' || $_SERVER['REMOTE_ADDR'] == '::1')
+// {
 
 if(Session::has('userdata'))
    { 
@@ -118,8 +118,8 @@ if(Session::has('userdata'))
         }, 30000);   
 </script>
 </html><?php }
-else
-{
-   Redirect::to('/')->send();
-}
+// else
+// {
+//    Redirect::to('/')->send();
+// }
 ?>
