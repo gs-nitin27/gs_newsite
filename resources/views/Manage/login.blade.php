@@ -13,13 +13,14 @@ if (env('APP_ENV') === 'production' || env('APP_ENV') === 'testing') {
   $section = base64_decode($param['4']);
  // echo $section;die;
 }
-if($section == '1')
-{
-$string = '1';  
-}
-else if ($section == '2') {
-$string = '2';
-}
+ $string  = $section;
+// if($section == '1')
+// {
+// $string = '1';  
+// }
+// else if ($section == '2') {
+// $string = '2';
+// }
 // else
 // {
 // $string = base64_decode($section);
@@ -254,8 +255,8 @@ var data = JSON.stringify(data1);
       window.location.href = "<?php echo url('/'); ?>"+"/manage/register/"+url_param;
       }
       else
-      { 
-        window.location.href = "<?php echo url('/'); ?>"+"/manage/professional/";
+      { console.log("{{url('/')}}/manage/professional/");return;
+        window.location.href = "{{url('/')}}/manage/professional/";
       }
     }
     else if(result.status==2) // for updating email and other info
@@ -316,7 +317,7 @@ var data = JSON.stringify(data1);
       success:function(result)
       {
           if(result != 0)
-        {
+          {
           if(url_param == '1')
           {
            window.location.href = "<?php echo url('/'); ?>"+"/manage/dashbo";

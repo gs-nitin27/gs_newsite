@@ -3,7 +3,7 @@
 @section('content')
 <?php
 $userdata = json_decode($data['user_data']);
- ?>
+?>
 
 <style type="text/css">
 .left-img-job img{
