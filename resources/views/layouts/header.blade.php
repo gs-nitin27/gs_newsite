@@ -22,6 +22,7 @@
               <!-- <li ><a href="{{url('/')}}/user/login/{{base64_encode('2/198')}}" style="border: 5px solid #fff;border-radius: 12px;padding: 22px 8px 15px 8px;">GS FOOTBALL CAMP</a></li> -->
               <li ><a href="{{url('/aboutus')}}">About us</a></li>
               <li ><a href="{{url('/career')}}">Careers</a></li>
+              <li ><a href="https://play.google.com/store/apps/details?id=getsportylite.darkhoprsesport.com.getsportylite" target="_blank" style="border: 5px solid #fff;border-radius: 12px;padding: 22px 8px 15px 8px;">Download App</a></li>
               <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                    Partners <b class="caret"></b>
