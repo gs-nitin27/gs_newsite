@@ -27,7 +27,7 @@ class user_controller extends Controller
     }
 
     public function get_apply_view(Request $request)
-    {  
+    {  //echo $request->id;die;
       if(Session::has('lite_user_data'))
 			{   
 			    $value = session('lite_user_data');
@@ -35,7 +35,7 @@ class user_controller extends Controller
           //print_r($value);echo "nitin";
           //print_r($userdata);
           $userid = $userdata->userid; 
-			} 
+			 
 		  $id =  explode('/', base64_decode($request->id));
           $module = $id[0];
           $item   = $id[1];
@@ -71,6 +71,11 @@ class user_controller extends Controller
           
           $apply_data = array('user_data' =>$value ,'item_data'=>$item_var,'apply_status'=>$apply_status,'recommend'=>$resp1); 
     	    return View::make('lite_user.'.$view)->with('data',$apply_data);
+        }
+        else
+        {
+          Redirect::to('/user/login/'.$request->id)->send();
+        }
     } 
 
     public function get_checkout_data(Request $request)
