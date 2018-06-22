@@ -61,9 +61,9 @@ s0.parentNode.insertBefore(s1,s0);
 	    <img src="{{asset('public/img/logo2.png')}}">
 	     </div>
        <ul>
-       <li><a href="https://www.facebook.com/getsportyindia/"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-       <li><a href="https://twitter.com/GetsportyIn"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-       <li><a href="https://www.youtube.com/channel/UC0SgQyTExXPyHLuUCMNO70A"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+       <li><a href="https://www.facebook.com/getsportyindia/" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+       <li><a href="https://twitter.com/GetsportyIn" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+       <li><a href="https://www.youtube.com/channel/UC0SgQyTExXPyHLuUCMNO70A" target="_blank"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
       </ul>
 	     <div class="m5"></div>
 			<span>© 2017 getsporty. All rights reserved</span>
