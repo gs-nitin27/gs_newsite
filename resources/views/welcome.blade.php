@@ -729,6 +729,7 @@ Overall, sports events in India are always amusing to unite with. Every year we 
                     autoplay: true,
                     dots:false,
                     autoplayTimeout: 2000,
+                    autoplayHoverPause: true,
                     smartSpeed: 450,
                     responsive: {
                       0: {
@@ -767,6 +768,7 @@ Overall, sports events in India are always amusing to unite with. Every year we 
                     autoplay: true,
                     dots:false,
                     autoplayTimeout: 2000,
+                    autoplayHoverPause: true,
                     smartSpeed: 450,
                     responsive: {
                       0: {
@@ -803,6 +805,7 @@ Overall, sports events in India are always amusing to unite with. Every year we 
                     autoplay:true,
                     dots:false,
                     autoplayTimeout: 2000,
+                    autoplayHoverPause: true,
                     smartSpeed: 450,
                     responsive: {
                       0: {
@@ -841,6 +844,7 @@ Overall, sports events in India are always amusing to unite with. Every year we 
                 dots:false,
                 autoplayTimeout: 2000,
                 smartSpeed: 450,
+                autoplayHoverPause: true,
                 responsive: {
                   0: {
                     items: 1
@@ -867,6 +871,7 @@ Overall, sports events in India are always amusing to unite with. Every year we 
                 margin: 25,
                   dots:true,
                 responsiveClass: true,
+                autoplayHoverPause: true,
                  autoplay: false,
                 responsive: {
                   0: {
