@@ -8,7 +8,8 @@
         "php": ">=5.5.9",
         "laravel/framework": "5.2.*",
         "laravelcollective/html": "^5.2.0",
-        "nitmedia/wkhtml2pdf": "dev-master"
+        "nitmedia/wkhtml2pdf": "dev-master",
+        "barryvdh/laravel-dompdf": "^0.8.2"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
