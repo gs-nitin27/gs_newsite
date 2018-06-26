@@ -68,7 +68,7 @@ $userdata = json_decode($data['user_data']);
                                  @endif
                                  @else
                                  <ul class="business_list">
-                                 <li><i class="fa fa-envelope"></i><span class="pll_color">View Entry Pass</span></li>
+                                 <li><a href="{{url('/')}}/user/htmltopdfview/<?php echo base64_encode($data['item_data'][0]->id.'|'.$userdata->userid)?>" target="_blank"><i class="fa fa-envelope"></i><span class="pll_color">View Entry Pass</span></li></a>
                                  </ul>
                                  @endif
                              </div>

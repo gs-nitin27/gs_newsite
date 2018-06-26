@@ -162,4 +162,5 @@ Route::group(array('prefix' => 'manage'), function()
         }
     });
     Route::post('booking_confirm/{id}','user_controller@transaction_success');
+    Route::get('htmltopdfview/{id}',array('as'=>'htmltopdfview','uses'=>'user_controller@htmltopdfview'));
     });

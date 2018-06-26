@@ -8,6 +8,7 @@ use App\Http\Requests;
 use App\WebModel;
 use App\UserModel;
 use Illuminate\Support\Facades\Redirect;
+use \PDF;
 
 class user_controller extends Controller
 {
@@ -50,7 +51,7 @@ class user_controller extends Controller
           $view = 'event_participate';
           $application_id = $item.$userid;
           $userObj = new UserModel();
-          $apply_status = $userObj->get_event_application($application_id);
+          $apply_status = $userObj->get_event_application($application_id,1);
           $sport_name = $item_var[0]->sport_name;
           $id  = $item_var[0]->id;
           $type = $item_var[0]->type;
@@ -124,5 +125,24 @@ class user_controller extends Controller
       }
     }
    
+  
+    public function htmltopdfview(Request $request)
+    {
+        $products = $request->id;
+        $booking_id_var = explode('|',base64_decode($products));
+        $booking_id = $booking_id_var[0].$booking_id_var[1];
+        $obj = new UserModel();
+        $booking_data = $obj->get_event_application($booking_id,2);
+        $transaction_data = $obj->get_event_transaction($booking_id_var);
+        $get_user_data = $obj->gs_user_info($booking_id_var[0]);
+        $user_data = array('book' => $booking_data,'transact'=>$transaction_data,'user_info'=>$get_user_data);
+        view()->share('book',$user_data);
+        $pdf = PDF::loadView('lite_user.htmltopdfview', ['book' =>$user_data]);
+        return $pdf->download('lite_user.htmltopdfview');
+    }
 
+
+
+
+  
 }
