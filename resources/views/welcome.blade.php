@@ -631,7 +631,7 @@ Overall, sports events in India are always amusing to unite with. Every year we 
                   <div class="item">
                        <a href="javascript:void(0)">
                    <img src="public/img/partners/SJFC.jpg">
-                   <span><b><h5>Shivansh Jharkhand Football Club<h5></b></span>
+                   <span><b><h5>Shivansh Jhaarkhand Football Club<h5></b></span>
                    </a>
                   </div>                                                                    
                       </div>
