@@ -143,8 +143,8 @@ span.price {
             <label for="city"><i class="fa fa-map-marker"></i> City</label>
             <input type="text" id="city" name="city" placeholder="New York" value="{{$userdata->location}}">
             <span id="rfincome" class="invalid"><p></p></span>
-            <label for="fincome"><i class="fa fa-money"></i> Family income(per annum)</label>
-            <input type="text" id="fincome" name="fincome" placeholder="Ex:1000000" value="">
+            <label for="fincome" style="display: none"><i class="fa fa-money"></i> Family income(per annum)</label>
+            <input type="hidden" id="fincome" name="fincome" placeholder="Ex:1000000" value="">
               <div class="row">
               <div class="col-50">
                 <span id="rstate" class="invalid"><p></p></span>

@@ -594,8 +594,51 @@ Overall, sports events in India are always amusing to unite with. Every year we 
                        <a href="sports-trials-in-india.html" class="text-center" style="display: inherit;"><button type="button" class="btn btn-more">View All</button></a>
                                      
                   </div>
-            </div>
-        </section></div>
+             </section></div>
+
+       <div class="clearfix sportTournamentSec">
+       <section class="testimonials" id="partner-bg">
+               <div class="container relative" id="latest">
+                  <div class="row pad15">
+                      <div class="white-heading">
+                          <h3>OUR PARTNERS</h3>
+                          </div>
+                      </div>
+                      <div id="customers-testimonials" class="owl-carousel">
+                  <div class="item">
+                       <a href="javascript:void(0)">
+                   <img src="public/img/partners/MPFC.jpg">
+                  <span><b><h5>Minerva Punjab, Football club<h5></b></span>
+                   </a>
+                  </div>
+                  <div class="item">
+                       <a href="javascript:void(0)">
+                   <img src="public/img/partners/MSC.png">
+                   <span><b><h5>Madhya Bharat, Sports Club<h5></b></span>
+                   </a>
+                  </div><div class="item">
+                       <a href="javascript:void(0)">
+                   <img src="public/img/partners/SFCBU.jpg">
+                   <span><b><h5>Shirsh Bihar United, Football Club<h5></b></span>
+                   </a>
+                  </div>
+                  <div class="item">
+                       <a href="javascript:void(0)">
+                   <img src="public/img/partners/SHFC.jpg">
+                   <span><b><h5>Shivanand Haryana Football Club<h5></b></span>
+                   </a>
+                  </div>
+                  <div class="item">
+                       <a href="javascript:void(0)">
+                   <img src="public/img/partners/SJFC.jpg">
+                   <span><b><h5>Shivansh Jharkhand Football Club<h5></b></span>
+                   </a>
+                  </div>                                                                    
+                      </div>
+                      
+                                     
+                  </div>
+             </section></div>
           <!-- <section class="mediaSecHome">
               <div class="container" id="app">
                   <div class="row">
@@ -872,7 +915,7 @@ Overall, sports events in India are always amusing to unite with. Every year we 
                   dots:true,
                 responsiveClass: true,
                 autoplayHoverPause: true,
-                 autoplay: false,
+                 autoplay: true,
                 responsive: {
                   0: {
                     items: 1,
