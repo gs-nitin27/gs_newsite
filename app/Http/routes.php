@@ -59,6 +59,9 @@ Route::get('set_event_cookie',function(){
 Route::get('sports-trials-in-india.html',function(){
            return View::make('trials');
 });
+Route::get('athletes.html',function(){
+           return View::make('athlete_landing');
+});
 Route::get('partner.html',function(){
            return View::make('partner');
 });
