@@ -65,10 +65,10 @@ Route::get('athletes.html',function(){
 Route::get('partner.html',function(){
            return View::make('partner');
 });
-Route::get('event-detail/{id}','WebController@event_detail');
-Route::get('job-detail/{id}','WebController@job_detail');
+Route::get('event-detail/{id}/{name}','WebController@event_detail');
+Route::get('job-detail/{id}/{name}','WebController@job_detail');
 
-Route::get('tournament-detail/{id}','WebController@tournament_detail');
+Route::get('tournament-detail/{id}/{name}','WebController@tournament_detail');
 
 Route::get('article-detail/{id}','WebController@article_detail');
 Route::get('/career', function()

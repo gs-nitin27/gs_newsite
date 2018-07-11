@@ -114,8 +114,9 @@ use DateTime;
 
 
     
-    public function event_detail($id)
+    public function event_detail(Request $request)
     {
+    $id = $request->id;  
     $obj  = new WebModel();
     $resp = $obj->getEventDetail($id);
    
@@ -132,8 +133,9 @@ use DateTime;
     }
 
 
-    public function job_detail($id)
+    public function job_detail(Request $request)
     {
+    $id = $request->id;
     $obj  = new WebModel();
     $resp = $obj->getJobDetail($id);
 
@@ -148,9 +150,9 @@ use DateTime;
 
 
 
-    public function tournament_detail($id)
+    public function tournament_detail(Request $request)
     {
-      
+    $id = $request->id; 
     $obj  = new WebModel();
     $resp = $obj->getTournamentDetail($id);
 
@@ -161,9 +163,9 @@ use DateTime;
 
     }
 
-    public function article_detail($id)
+    public function article_detail(Request $request)
     {
-
+    $id = $request->id;
     $obj  = new WebModel();
     $resp = $obj->getArticleDetail($id);
     $topic_of_artical = $resp[0]->topic_of_artical;
