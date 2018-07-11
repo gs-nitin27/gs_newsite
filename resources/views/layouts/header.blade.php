@@ -14,15 +14,23 @@
           <!-- Collect the nav links, forms, and other content for toggling -->
            <div class="navbar-collapse collapse" id="navbar-collapse-1">
              <ul class="nav navbar-nav navbar-right text-uppercase">
-              <li><a href="{{url('/latest-sports-news-resources.html')}}">Article</a></li>
-              <li><a href="{{url('/sports-jobs-in-india.html')}}">Job</a></li>
-              <li><a href="{{url('/sports-events-in-india.html')}}" >Event </a></li>
-              <li><a href="{{url('/sports-tournaments-in-india.html')}}">Tournament</a></li>
-              <li><a href="{{url('/sports-trials-in-india.html')}}">Trial</a></li>
+              
               <!-- <li ><a href="{{url('/')}}/user/login/{{base64_encode('2/198')}}" style="border: 5px solid #fff;border-radius: 12px;padding: 22px 8px 15px 8px;">GS FOOTBALL CAMP</a></li> -->
-              <li ><a href="{{url('/aboutus')}}">About us</a></li>
-              <li ><a href="{{url('/career')}}">Careers</a></li>
-              <li ><a href="https://play.google.com/store/apps/details?id=getsportylite.darkhoprsesport.com.getsportylite" target="_blank" style="border: 5px solid #fff;border-radius: 12px;padding: 22px 8px 15px 8px;">Download App</a></li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                   INFORMATION<b class="caret"></b>
+                </a>
+              <ul class="dropdown-menu">
+                <li><a href="{{url('/latest-sports-news-resources.html')}}">Articles</a></li>
+                <li><a href="{{url('/sports-jobs-in-india.html')}}">Jobs</a></li>
+                <li><a href="{{url('/sports-events-in-india.html')}}" >Events</a></li>
+                <li><a href="{{url('/sports-tournaments-in-india.html')}}">Tournaments</a></li>
+                <li><a href="{{url('/sports-trials-in-india.html')}}">Trials</a></li>
+              </ul>
+              </li>
+              <li><a href="{{url('/athletes.html')}}">Athletes</a></li>
+              <!-- <li ><a href="{{url('/aboutus')}}">About us</a></li>
+              <li ><a href="{{url('/career')}}">Careers</a></li> -->
               <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                    Partners <b class="caret"></b>
@@ -32,6 +40,7 @@
                     <li><a class="" href="{{url('manage/login/')}}<?php echo '/'.base64_encode(1); ?>">Partner Login</a></li>
                 </ul>
               </li>
+              <li><a href="https://play.google.com/store/apps/details?id=getsportylite.darkhoprsesport.com.getsportylite" target="_blank" style="border: 5px solid #fff;border-radius: 12px;padding: 22px 8px 15px 8px;background-color:#03a9f4">Download App</a></li>
             </ul>
            </div><!-- /.navbar-collapse -->
           </div><!-- /.container -->

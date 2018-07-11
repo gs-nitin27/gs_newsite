@@ -56,7 +56,13 @@ s0.parentNode.insertBefore(s1,s0);
      </div>
 <div class="foot-bg">
    <div class="container">
-	 <div class="row">
+	 <div class="menuitems col-md-4 text-uppercase cust_footer">
+   
+    <li><a href="{{url('/aboutus')}}">About us</a></li>
+    <li><a href="{{url('/career')}}">Careers</a></li> 
+   
+   </div>
+   <div class="row">
 	  <div class="logo-bottom">
 	    <img src="{{asset('public/img/logo2.png')}}">
 	     </div>
