@@ -376,7 +376,7 @@ if($day == ' 0 Days ago ')
                            <p> Posted  : <span> {{ $day }} </span></p>
                            <p> Place  : <span> {{$value->org_city}} </span></p>   
                            <p> Organisation Name  : <span> {{$value->organisation_name}} </span></p>
-                            <?php $job_url_title = explode(' ',$value->title);$job_url_title = str_replace( '\/', '-', implode('-',$job_url_title)); ?>
+                            <?php $job_url_title = explode(' ',$value->title);$job_url_title = stripslashes(str_replace('/', '',  implode('-',$job_url_title))); ?>
                            <div class="readMoreBtn"><a href="job-detail/{{$value->id}}/{{$job_url_title}}">Read More</a> </div>                         
                         </div>
                     </section>
@@ -500,7 +500,7 @@ Overall, sports events in India are always amusing to unite with. Every year we 
                                   <aside class="pull-left"><p>  <span> {{$value->organizer_city}} </span></p></aside>
                                   <aside class="pull-right"><p>    <span>{{$value->sport_name}}  </span></p></aside>
                               </section>
-                               <?php $event_url_title = explode(' ',$value->name);$event_url_title = str_replace( '\/', '-', implode('-',$event_url_title)); ?>
+                               <?php $event_url_title = explode(' ',$value->name);$event_url_title = stripslashes(str_replace('/', '',  implode('-',$event_url_title))); ?>
                               <div class="readMoreBtn"><a href="event-detail/{{$value->id}}/{{$event_url_title}}">Read More</a> </div> 
                           </div>
                         </section>
@@ -547,7 +547,7 @@ Overall, sports events in India are always amusing to unite with. Every year we 
                                   <aside class="pull-left"><p>  <span> {{$value->org_city}} </span></p></aside>
                                   <aside class="pull-right"><p>    <span>{{$value->sport}} </span></p></aside>
                               </section>
-                              <?php $tournament_url_title = explode(' ',$value->name);$tournament_url_title = str_replace( '\/', '-', implode('-',$tournament_url_title)); ?>
+                              <?php $tournament_url_title = explode(' ',$value->name);$tournament_url_title = stripslashes(str_replace('/', '',  implode('-',$tournament_url_title))); ?>
                               <div class="readMoreBtn"><a href="tournament-detail/{{$value->id}}/{{$tournament_url_title}}">Read More</a> </div> 
                           </div>
                         </section>
@@ -588,7 +588,7 @@ Overall, sports events in India are always amusing to unite with. Every year we 
                                   <aside class="pull-left"><p>  <span> {{$value->organizer_city}} </span></p></aside>
                                   <aside class="pull-right"><p>    <span>{{$value->sport_name}}  </span></p></aside>
                               </section>
-                              <?php $trial_url_title = explode(' ',$value->name);$trial_url_title = str_replace( '\/', '-', implode('-',$trial_url_title)); ?>
+                              <?php $trial_url_title = explode(' ',$value->name);$trial_url_title = stripslashes(str_replace('/', '',  implode('-',$trial_url_title))); ?>
                               <div class="readMoreBtn"><a href="event-detail/{{$value->id}}/{{$trial_url_title}}">Read More</a> </div> 
                           </div>
                           </section>
