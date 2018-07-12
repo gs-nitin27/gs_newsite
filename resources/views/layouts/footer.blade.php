@@ -57,12 +57,17 @@ s0.parentNode.insertBefore(s1,s0);
 <div class="foot-bg">
    <div class="container">
 	 <div class="menuitems col-md-4 text-uppercase cust_footer">
-   
-    <li><a href="{{url('/aboutus')}}">About us</a></li>
-    <li><a href="{{url('/career')}}">Careers</a></li> 
-   
+   <div class="foot-menu">
+   <li><a href="{{url('/latest-sports-news-resources.html')}}">Articles</a></li>
+   <li><a href="{{url('/sports-jobs-in-india.html')}}">Jobs</a></li>
+   <li><a href="{{url('/sports-events-in-india.html')}}" >Events</a></li>
+   <li><a href="{{url('/sports-tournaments-in-india.html')}}">Tournaments</a></li>
+   <li><a href="{{url('/sports-trials-in-india.html')}}">Trials</a></li>
+   <li><a href="{{url('/aboutus')}}">About us</a></li>
+    <li><a href="{{url('/career')}}">Careers</a></li>
    </div>
-   <div class="row">
+   </div>
+   <div class="row" style="float: right;">
 	  <div class="logo-bottom">
 	    <img src="{{asset('public/img/logo2.png')}}">
 	     </div>
@@ -73,7 +78,7 @@ s0.parentNode.insertBefore(s1,s0);
       </ul>
 	     <div class="m5"></div>
 			<span>© 2017 getsporty. All rights reserved</span>
-         </div>
+  </div>
       </div>
    </div>
 @yield('disclaimer')

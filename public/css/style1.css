@@ -743,10 +743,18 @@ label{
     text-align: center;
 }
 .cust_footer{
-    margin-top: 4%;
     color: #fff !important;
     text-align: left;
     float: left;
+}
+.foot-menu li{
+    list-style: none;
+}
+.foot-menu li a{
+    color: #fff;
+}
+.foot-menu li a:hover{
+    color: #ccc;
 }
 .foot-top{
 /*background: #03a9f4 url(../img/ball-img.png);*/
@@ -758,9 +766,6 @@ label{
     position: absolute;
     left: 0px;
     bottom: -165px;
-}
-.logo-bottom{
-	margin-top:108px;
 }
 .foot-bg ul{
 	margin: 0px;
