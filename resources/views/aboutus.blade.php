@@ -88,19 +88,19 @@
                <div class="owl-carousel owl-theme">
                 
 		            <div class="item">
-		             <a href="team-detail.php">
+		             <a href="javascript:void(0)">
 		           <img src="public/img/dp.png">
 		           <h4>Anirudh Singh</h4>
 		           <span>Founder & Product Architect</span>
 		            <div class="socails">
 		               <ul>
-		           		<li><a href="#">
+		           		<li><a href="javascript:void(0)">
 		           		 <span class="fb"><i class="fa fa-facebook" aria-hidden="true"></i></span>
 		           		   </a>
 		           		    </li>
 		           		<li>
 		           		<a href="#"><span class="twitter"><i class="fa fa-twitter" aria-hidden="true"></i></span></a></li>
-		           		<li><a href="#">
+		           		<li><a href="javascript:void(0)">
 		           		<span class="google"><i class="fa fa-google-plus" aria-hidden="true"></i>
 		           		  </span></a></li>
 		             	 </ul>
@@ -110,19 +110,19 @@
 		             
 
  				     <div class="item">
- 				       <a href="team-detail.php">
+ 				       <a href="javascript:void(0)">
 		           <img src="public/img/dp2.png">
 		           <h4>Nitin Agarwal </h4>
 		           <span>Head, Web Development</span>
 		            <div class="socails">
 		               <ul>
-		           		<li><a href="#">
+		           		<li><a href="javascript:void(0)">
 		           		 <span class="fb"><i class="fa fa-facebook" aria-hidden="true"></i></span>
 		           		   </a>
 		           		    </li>
 		           		<li>
 		           		<a href="#"><span class="twitter"><i class="fa fa-twitter" aria-hidden="true"></i></span></a></li>
-		           		<li><a href="#">
+		           		<li><a href="javascript:void(0)">
 		           		<span class="google"><i class="fa fa-google-plus" aria-hidden="true"></i>
 		           		  </span></a></li>
 		             	 </ul>
@@ -131,19 +131,19 @@
 		             </div>
  
 				     <div class="item">
-				       <a href="team-detail.php">
+				       <a href="javascript:void(0)">
 		           <img src="public/img/dp3.png">
 		           <h4>Sandeep Kumar Singh</h4>
 		           <span>Head, Android Development</span>
 		            <div class="socails">
 		               <ul>
-		           		<li><a href="#">
+		           		<li><a href="javascript:void(0)">
 		           		 <span class="fb"><i class="fa fa-facebook" aria-hidden="true"></i></span>
 		           		   </a>
 		           		    </li>
 		           		<li>
 		           		<a href="#"><span class="twitter"><i class="fa fa-twitter" aria-hidden="true"></i></span></a></li>
-		           		<li><a href="#">
+		           		<li><a href="javascript:void(0)">
 		           		<span class="google"><i class="fa fa-google-plus" aria-hidden="true"></i>
 		           		  </span></a></li>
 		             	 </ul>
@@ -153,19 +153,19 @@
 
  				
     <div class="item">
-               <a href="team-detail.php">
+               <a href="javascript:void(0)">
                <img src="public/img/dp8.png">
                <h4>Devendra Kumar Pandey</h4>
                <span>PHP Developer</span>
                 <div class="socails">
                    <ul>
-                  <li><a href="#">
+                  <li><a href="javascript:void(0)">
                    <span class="fb"><i class="fa fa-facebook" aria-hidden="true"></i></span>
                      </a>
                       </li>
                   <li>
-                  <a href="#"><span class="twitter"><i class="fa fa-twitter" aria-hidden="true"></i></span></a></li>
-                  <li><a href="#">
+                  <a href="javascript:void(0)"><span class="twitter"><i class="fa fa-twitter" aria-hidden="true"></i></span></a></li>
+                  <li><a href="javascript:void(0)">
                   <span class="google"><i class="fa fa-google-plus" aria-hidden="true"></i>
                     </span></a></li>
                    </ul>
@@ -177,19 +177,19 @@
 
  				 
                  <div class="item">
-               <a href="team-detail.php">
+               <a href="javascript:void(0)">
                <img src="public/img/dp7.png">
                <h4>Shekhar Kashyap </h4>
                <span>Android Developer</span>
                 <div class="socails">
                    <ul>
-                  <li><a href="#">
+                  <li><a href="javascript:void(0)">
                    <span class="fb"><i class="fa fa-facebook" aria-hidden="true"></i></span>
                      </a>
                       </li>
                   <li>
-                  <a href="#"><span class="twitter"><i class="fa fa-twitter" aria-hidden="true"></i></span></a></li>
-                  <li><a href="#">
+                  <a href="javascript:void(0)"><span class="twitter"><i class="fa fa-twitter" aria-hidden="true"></i></span></a></li>
+                  <li><a href="javascript:void(0)">
                   <span class="google"><i class="fa fa-google-plus" aria-hidden="true"></i>
                   </span></a></li>
                    </ul>
