@@ -61,7 +61,11 @@
               <div class="modal-content">
                  <div class="modal-body">
                   <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  @if($name[0]->video_link == '')
+                  <iframe width="100%" height="315" src="https://www.youtube.com/embed/bVcfL6KtFfs" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                  @else
                   <iframe width="100%" height="315" src="https://www.youtube.com/embed/{{$name[0]->video_link}}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                 @endif
                  </div>
               </div>
             </div>
