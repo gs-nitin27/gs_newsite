@@ -868,6 +868,7 @@ width:100%;
 }
 .article-detail{
     width: 100%;
+        margin-left: 21%;
    /* height: 281px;*/
     overflow: hidden;
     padding: 10px;
