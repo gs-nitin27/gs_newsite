@@ -40,7 +40,7 @@
                     <li><a class="" href="{{url('manage/login/')}}<?php echo '/'.base64_encode(1); ?>">Partner Login</a></li>
                 </ul>
               </li>
-              <li><a href="https://play.google.com/store/apps/details?id=getsportylite.darkhoprsesport.com.getsportylite" target="_blank" style="border: 5px solid #fff;border-radius: 12px;padding: 22px 8px 15px 8px;background-color:#03a9f4">Download App</a></li>
+              <li><a href="https://play.google.com/store/apps/details?id=getsportylite.darkhoprsesport.com.getsportylite" target="_blank" style="border: 3px solid #fff;border-radius: 12px;padding: 16px 8px 15px 8px;background-color:#03a9f4;margin-top: 6%;">Download App</a></li>
             </ul>
            </div><!-- /.navbar-collapse -->
           </div><!-- /.container -->
