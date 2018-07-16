@@ -1,5 +1,5 @@
 @extends('layouts.master')
-@section('pageTitle','Sports Events & Tournaments | Sports Quota Jobs In India
+@section('pageTitle','Athletes | BECOME A PROFESSIONAL SPORTSPERSON
 ')
 @section('meta')
 @endsection
