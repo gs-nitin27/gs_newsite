@@ -28,7 +28,7 @@
                 <li><a href="{{url('/sports-trials-in-india.html')}}">Trials</a></li>
               </ul>
               </li>
-             <!--  <li><a href="{{url('/athletes.html')}}">Athletes</a></li> -->
+              <li><a href="{{url('/athletes.html')}}">Athletes</a></li>
               <!-- <li ><a href="{{url('/aboutus')}}">About us</a></li>
               <li ><a href="{{url('/career')}}">Careers</a></li> -->
               <li class="dropdown">
