@@ -185,6 +185,7 @@
 		            autoplay: true,
 		            dots:false,
 		            autoplayTimeout: 2000,
+                autoplayHoverPause: true,
 		            smartSpeed: 450,
 		            responsive: {
 		              0: {
