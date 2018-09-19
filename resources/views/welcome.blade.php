@@ -212,9 +212,9 @@ box-shadow: rgba(255,255,255, 0.75) 1.5em 0 0 0, rgba(255,255,255, 0.75) 1.1em 1
                <div class="container" id="feature">
                 <div class="row pad15">
                  <div class="heading-center">
-                  <h3>App Features</h3>
-                   <p>Learn more about this feature packed App</p>
-                    </div>
+                  <h3>Services</h3>
+<!--                    <p>Learn more about this feature packed App</p>
+ -->                    </div>
                     <div class="owl-carousel owl-theme">
                      <div class="item">
                       <div class="box-app">
