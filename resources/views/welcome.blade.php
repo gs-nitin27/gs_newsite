@@ -234,7 +234,7 @@ box-shadow: rgba(255,255,255, 0.75) 1.5em 0 0 0, rgba(255,255,255, 0.75) 1.1em 1
                        <p>Never miss an opportunity to impress and be never short on practice. Get all the updates on the latest and the upcoming sports tournaments in the area near you.</p>
                       </div>
                      </div>
-                   <div class="item">
+                   <!-- <div class="item">
                     <div class="box-app">
                      <div class="circle-box">
                       <img src="public/img/feature-img3.svg">
@@ -242,8 +242,8 @@ box-shadow: rgba(255,255,255, 0.75) 1.5em 0 0 0, rgba(255,255,255, 0.75) 1.1em 1
                         <h4>Coach</h4>
                        <p>Want to become a professional player? For the best result, contact the best coach and train harder and smarter</p>
                        </div>
-                     </div>
-                  <div class="item">
+                     </div> -->
+                  <!-- <div class="item">
                     <div class="box-app">
                       <div class="circle-box">
                         <img src="public/img/feature-img4.svg">
@@ -251,7 +251,7 @@ box-shadow: rgba(255,255,255, 0.75) 1.5em 0 0 0, rgba(255,255,255, 0.75) 1.1em 1
                          <h4>Connect</h4>
                         <p>Contact the best professionals, trainers or the coaches to help you refine your skills and be the player that you have always dreamt about</p>
                         </div>
-                      </div>
+                      </div> -->
                       
                       <div class="item">
                       <div class="box-app">
@@ -262,7 +262,7 @@ box-shadow: rgba(255,255,255, 0.75) 1.5em 0 0 0, rgba(255,255,255, 0.75) 1.1em 1
                              <p>Find your dream sports job. Browse through all the latest sports jobs in the Goverment or private sector through our specially devoted "Sports Job Portal"</p>
                       </div>
                   </div>
-                <div class="item">
+                <!-- <div class="item">
                     <div class="box-app">
                      <div class="circle-box">
                          <img src="public/img/assessment.png">
@@ -270,8 +270,8 @@ box-shadow: rgba(255,255,255, 0.75) 1.5em 0 0 0, rgba(255,255,255, 0.75) 1.1em 1
                          <h4>Assessment</h4>
                          <p>Get your daily performance assessed by professionals or be the master of your own training sessions</p>
                     </div>
-                </div>
-                <div class="item">
+                </div> -->
+                <!-- <div class="item">
                     <div class="box-app">
                      <div class="circle-box">
                          <img src="public/img/resources.png">
@@ -279,8 +279,8 @@ box-shadow: rgba(255,255,255, 0.75) 1.5em 0 0 0, rgba(255,255,255, 0.75) 1.1em 1
                          <h4>Resources</h4>
                          <p>Not an everyday content but a fearsome approach to take on the state of Indian sports and a complete guide to reveal the path for sports enthusiasts to reach the pinnacle of their sport</p>
                     </div>
-                </div>
-                <div class="item">
+                </div> -->
+                <!-- <div class="item">
                     <div class="box-app">
                      <div class="circle-box">
                          <img src="public/img/training_Log.png">
@@ -288,8 +288,8 @@ box-shadow: rgba(255,255,255, 0.75) 1.5em 0 0 0, rgba(255,255,255, 0.75) 1.1em 1
                          <h4>Training Log</h4>
                          <p>Track your workouts, save your history and manage your performance with this dedicated training log</p>
                     </div>
-                </div>
-                <div class="item">
+                </div> -->
+                <!-- <div class="item">
                     <div class="box-app">
                      <div class="circle-box">
                          <img src="public/img/post_Results.png">
@@ -297,8 +297,8 @@ box-shadow: rgba(255,255,255, 0.75) 1.5em 0 0 0, rgba(255,255,255, 0.75) 1.1em 1
                          <h4>Post Results</h4>
                          <p>Give yourself remarks and compare your last day's performance with your recent results</p>
                     </div>
-                </div>
-                <div class="item">
+                </div> -->
+                <!-- <div class="item">
                     <div class="box-app">
                      <div class="circle-box">
                          <img src="public/img/parent.png">
@@ -306,7 +306,7 @@ box-shadow: rgba(255,255,255, 0.75) 1.5em 0 0 0, rgba(255,255,255, 0.75) 1.1em 1
                          <h4>Parent</h4>
                          <p>Book an upcoming event or tournament or just hire a personal trainer or coach for your child. Keep a tab on your ward's performance through this unique feature</p>
                     </div>
-                </div>
+                </div> -->
               </div>
         </div>
                 </div>
