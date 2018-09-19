@@ -222,7 +222,7 @@ box-shadow: rgba(255,255,255, 0.75) 1.5em 0 0 0, rgba(255,255,255, 0.75) 1.1em 1
                           <img src="public/img/feature-img.svg">
                           </div>
                          <h4>Events</h4>
-                       <p>We bring you the latest updates on all the big sports events to your GetSporty App. Be it an upcoming sports trial or just a weekend sporting event, get all the information on your phone</p>
+                       <p> Never miss out on Sports Trials or coaching camps. Get first-hand information on your GetSporty App.</p>
                        </div>
                         </div>
                         <div class="item">
@@ -231,7 +231,7 @@ box-shadow: rgba(255,255,255, 0.75) 1.5em 0 0 0, rgba(255,255,255, 0.75) 1.1em 1
                         <img src="public/img/feature-img2.svg">
                          </div>
                         <h4>Tournaments</h4>
-                       <p>Never miss an opportunity to impress and be never short on practice. Get all the updates on the latest and the upcoming sports tournaments in the area near you.</p>
+                       <p>Get regular updates about the upcoming Sports Tournaments in your city.</p>
                       </div>
                      </div>
                    <!-- <div class="item">
@@ -259,7 +259,8 @@ box-shadow: rgba(255,255,255, 0.75) 1.5em 0 0 0, rgba(255,255,255, 0.75) 1.1em 1
                              <img src="public/img/Job_Listing.png">
                           </div>
                              <h4>Job Listing</h4>
-                             <p>Find your dream sports job. Browse through all the latest sports jobs in the Goverment or private sector through our specially devoted "Sports Job Portal"</p>
+                             <p>A unique platform dedicated only to Sports-based Jobs. Browse and apply to thousands of Sports Jobs.</p>
+                             <!-- <p>Find your dream sports job. Browse through all the latest sports jobs in the Goverment or private sector through our specially devoted "Sports Job Portal"</p> -->
                       </div>
                   </div>
                 <!-- <div class="item">
