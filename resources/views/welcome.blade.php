@@ -99,7 +99,7 @@ box-shadow: rgba(255,255,255, 0.75) 1.5em 0 0 0, rgba(255,255,255, 0.75) 1.1em 1
               <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
               <li data-target="#myCarousel" data-slide-to="1"></li>
               <li data-target="#myCarousel" data-slide-to="2"></li>
-              <li data-target="#myCarousel" data-slide-to="3"></li>
+              <!-- <li data-target="#myCarousel" data-slide-to="3"></li> -->
               <!-- <li data-target="#myCarousel" data-slide-to="2"></li>
               <li data-target="#myCarousel" data-slide-to="3"></li>
               <li data-target="#myCarousel" data-slide-to="4"></li> -->
@@ -142,18 +142,18 @@ box-shadow: rgba(255,255,255, 0.75) 1.5em 0 0 0, rgba(255,255,255, 0.75) 1.1em 1
                         </div>
                     </div>
                 </section>
-                <section class="item">
+                <!-- <section class="item">
                     <img src="public/img/gs.png" alt="Chania">                
                     <div class="carousel-caption">
                         <div class="container">
                             <div class="ban-pera">
-                               <!--  <h1>Lorem ispum is dummy </h1>
+                                <h1>Lorem ispum is dummy </h1>
                                 <h3>Lorem ispum is dummy text.</h3>
-                                <button type="button" class="btn btn-read">Read More</button> -->
+                                <button type="button" class="btn btn-read">Read More</button>
                             </div>
                         </div>
                     </div>
-                </section>
+                </section> -->
                 <div class="blue-bg blue-Home"> </div>
             </div>
         </div>
