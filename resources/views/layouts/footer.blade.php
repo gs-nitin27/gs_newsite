@@ -58,8 +58,8 @@ s0.parentNode.insertBefore(s1,s0);
    <div class="container">
 	 <div class="menuitems col-md-4 text-uppercase cust_footer">
    <div class="foot-menu">
-   <li><a href="{{url('/latest-sports-news-resources.html')}}">Articles</a></li>
-   <li><a href="{{url('/sports-jobs-in-india.html')}}">Jobs</a></li>
+<!--    <li><a href="{{url('/latest-sports-news-resources.html')}}">Articles</a></li>
+ -->   <li><a href="{{url('/sports-jobs-in-india.html')}}">Jobs</a></li>
    <li><a href="{{url('/sports-events-in-india.html')}}" >Events</a></li>
    <li><a href="{{url('/sports-tournaments-in-india.html')}}">Tournaments</a></li>
    <li><a href="{{url('/sports-trials-in-india.html')}}">Trials</a></li>

@@ -312,7 +312,9 @@ box-shadow: rgba(255,255,255, 0.75) 1.5em 0 0 0, rgba(255,255,255, 0.75) 1.1em 1
         </div>
                 </div>
          <div class="clearfix margin15"></div>
-        <section class="testimonials resourceSec" id="slider-bg">
+         <!-- HIDE THE ARTICLE SECTION AS PER REQUIREMENT ON 12/11/2018 -->
+        
+        <!-- <section class="testimonials resourceSec" id="slider-bg">
                <div class="container relative" id="latest">
                   <div class="row pad15">
                       <div class="white-heading">
@@ -339,7 +341,8 @@ box-shadow: rgba(255,255,255, 0.75) 1.5em 0 0 0, rgba(255,255,255, 0.75) 1.1em 1
                                      
                   </div>
             </div>
-        </section>
+        </section> -->
+         <!-- HIDE THE ARTICLE SECTION AS PER REQUIREMENT ON 12/11/2018 -->
               <!--   <div class="relative">
                   <div class="blue-bg"></div>
                     </div> -->

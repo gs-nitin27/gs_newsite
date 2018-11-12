@@ -21,8 +21,8 @@
                    INFORMATION<b class="caret"></b>
                 </a>
               <ul class="dropdown-menu">
-                <li><a href="{{url('/latest-sports-news-resources.html')}}">Articles</a></li>
-                <li><a href="{{url('/sports-jobs-in-india.html')}}">Jobs</a></li>
+<!--                 <li><a href="{{url('/latest-sports-news-resources.html')}}">Articles</a></li>
+ -->                <li><a href="{{url('/sports-jobs-in-india.html')}}">Jobs</a></li>
                 <li><a href="{{url('/sports-events-in-india.html')}}" >Events</a></li>
                 <li><a href="{{url('/sports-tournaments-in-india.html')}}">Tournaments</a></li>
                 <li><a href="{{url('/sports-trials-in-india.html')}}">Trials</a></li>
