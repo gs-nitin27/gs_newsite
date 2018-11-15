@@ -78,7 +78,7 @@
                       </div>
  					 </div>
   		  <div class="margin15 clearfix"></div>			 
- 			  <div class="team-bg">
+ 			  <!-- <div class="team-bg">
 		     <div class="margin15 clearfix"></div>
 			<div class="container">
 				<div class="row">
@@ -199,7 +199,7 @@
              </div>
 			    </div>
 			  </div> 
-		    </div> 
+		    </div>  -->
 	      <!--  <div class="relative">
              <div class="blue-bg"></div>
                </div> -->
