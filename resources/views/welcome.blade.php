@@ -758,7 +758,7 @@ Overall, sports events in India are always amusing to unite with. Every year we 
                           <h3>Contact:</h3>
                           <p><img src="public/img/latitude.svg"> A 20, Sector 35, Noida, India ,201301</p>
                           <p><img src="public/img/contact.svg"> +91 120 4511807</p>
-                          <p><img src="public/img/mail.svg"> info@darkhorsesports.in</p>
+                          <p><img src="public/img/mail.svg"> info@getsporty.in</p>
                           </div>
                   </div>
 
